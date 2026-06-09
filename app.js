@@ -17,10 +17,15 @@ const KO_ROUNDS = [
   { stage: "F", n: 1, date: "2026-07-19" },
 ];
 
+const ACC_TXT = {
+  es: ["Expandir todo", "Colapsar todo"], en: ["Expand all", "Collapse all"],
+  pt: ["Expandir tudo", "Recolher tudo"], fr: ["Tout déplier", "Tout replier"], ar: ["توسيع الكل", "طي الكل"],
+};
+
 const state = {
-  data: null, team: null, view: "fecha", onlyMine: false, tab: "fixture",
+  data: null, team: null, onlyMine: false, tab: "fixture",
   lang: "es", tz: null, tzCity: "", tzOff: "",
-  factTimer: null, factIdx: 0, countdownTimer: null,
+  factTimer: null, factIdx: 0, countdownTimer: null, allExpanded: false,
 };
 
 /* --------------------------- helpers --------------------------------- */
@@ -142,8 +147,7 @@ function applyI18n() {
   $("#tab-grupos").textContent = t("tabs.groups");
   $("#tab-bracket").textContent = t("tabs.bracket");
   $("#tab-seleccion").textContent = t("tabs.team");
-  $("#seg-fecha").textContent = t("byMatchday");
-  $("#seg-grupo").textContent = t("byGroup");
+  updateToggleAllLabel();
   $("#selector-title").textContent = t("chooseTeam");
   $("#country-search").placeholder = t("searchCountry");
   $("#neutral-name").textContent = t("neutralMode");
@@ -256,33 +260,47 @@ function stageLabel(m) {
   return t(`stages.${m.stage}`) || m.stageName || t("knockouts");
 }
 
+/* --------------------------- acordeón -------------------------------- */
+function accordionEl(key, headHtml, innerHtml, open, highlight, cls = "") {
+  return `<section class="acc ${cls} ${open ? "open" : ""} ${highlight ? "acc-hl" : ""}" data-key="${key}">
+    <button class="acc-head" type="button" aria-expanded="${open ? "true" : "false"}">
+      ${headHtml}
+      <svg class="acc-chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+    </button>
+    <div class="acc-body"><div class="acc-inner">${innerHtml}</div></div>
+  </section>`;
+}
+function miniFlags(matches, max = 7) {
+  const seen = [];
+  for (const m of matches) for (const tn of [m.home, m.away]) if (!seen.includes(tn)) seen.push(tn);
+  const shown = seen.slice(0, max).map((n) => { const c = flagCodeOf(n); return c ? `<img src="${FLAG(c)}" alt="">` : ""; }).join("");
+  const extra = seen.length > max ? `<span class="mini-more">+${seen.length - max}</span>` : "";
+  return `<span class="mini-flags">${shown}${extra}</span>`;
+}
+function nextOpenDayKey(keys, byDay) {
+  const now = Date.now();
+  for (const k of keys) if (byDay[k].some((m) => { const d = parseUTC(m.timestamp); return d && d.getTime() >= now; })) return k;
+  return keys[keys.length - 1] || null;
+}
+
 function renderFixture() {
   const cont = $("#fixture-list");
   let matches = [...state.data.matches];
   if (state.onlyMine && state.team) matches = matches.filter((m) => m.home === state.team || m.away === state.team);
   if (!matches.length) { cont.innerHTML = `<div class="status">${t("noMatches")}</div>`; return; }
+  const byDay = {};
+  for (const m of matches) { const d = parseUTC(m.timestamp); (byDay[d ? dayKey(d) : "zzz"] ||= []).push(m); }
+  const keys = Object.keys(byDay).sort();
+  const openKey = nextOpenDayKey(keys, byDay);
   let html = "";
-  if (state.view === "grupo") {
-    const groups = {}, ko = [];
-    for (const m of matches) { if (m.stage === "GROUP" && m.group) (groups[m.group] ||= []).push(m); else ko.push(m); }
-    for (const g of Object.keys(groups).sort()) {
-      html += `<div class="day-group"><div class="day-head"><h3>${t("group", { g })}</h3><span class="line"></span></div>`;
-      groups[g].sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || "")).forEach((m) => (html += matchCard(m)));
-      html += `</div>`;
-    }
-    if (ko.length) {
-      html += `<div class="day-group"><div class="day-head"><h3>${t("knockouts")}</h3><span class="line"></span></div>`;
-      ko.forEach((m) => (html += matchCard(m))); html += `</div>`;
-    }
-  } else {
-    const byDay = {};
-    for (const m of matches) { const d = parseUTC(m.timestamp); (byDay[d ? dayKey(d) : "zzz"] ||= []).push(m); }
-    for (const k of Object.keys(byDay).sort()) {
-      const s = parseUTC(byDay[k][0].timestamp);
-      html += `<div class="day-group"><div class="day-head"><h3>${s ? fmtDayLong(s) : "—"}</h3><span class="line"></span></div>`;
-      byDay[k].sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || "")).forEach((m) => (html += matchCard(m)));
-      html += `</div>`;
-    }
+  for (const k of keys) {
+    const day = byDay[k].sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
+    const s = parseUTC(day[0].timestamp);
+    const myDay = !!(state.team && day.some((m) => m.home === state.team || m.away === state.team));
+    const isOpen = state.allExpanded || state.onlyMine || k === openKey;
+    const head = `<div class="acc-titles"><div class="acc-title">${s ? fmtDayLong(s) : "—"}</div>
+      <div class="acc-sub">${day.length} ${t("matchesLabel")}${myDay ? ' <span class="acc-star">★</span>' : ""} ${miniFlags(day)}</div></div>`;
+    html += accordionEl(k, head, day.map(matchCard).join(""), isOpen, myDay, "acc-day");
   }
   cont.innerHTML = html;
   scrollReveal(cont);
@@ -312,23 +330,32 @@ function renderGroups() {
   const keys = Object.keys(groups).sort();
   if (!keys.length) { cont.innerHTML = `<div class="status">${t("noMatches")}</div>`; return; }
   const TH = L().th;
+  const teamWord = state.lang === "es" ? "Equipo" : state.lang === "pt" ? "Seleção" : state.lang === "fr" ? "Équipe" : state.lang === "ar" ? "المنتخب" : "Team";
+  const matchesByGroup = {};
+  state.data.matches.forEach((m) => { if (m.stage === "GROUP" && m.group) (matchesByGroup[m.group] ||= []).push(m); });
   let html = "";
   for (const g of keys) {
     const rows = Object.values(groups[g]).sort((a, b) => b.pts - a.pts || (b.gf - b.gc) - (a.gf - a.gc) || b.gf - a.gf || dispName(a.team).localeCompare(dispName(b.team), state.lang));
-    html += `<div class="group-card reveal"><h3>${t("group", { g })}</h3><table class="table"><thead><tr>
-      <th class="pos"></th><th class="team-cell">${state.lang === "es" ? "Equipo" : state.lang === "pt" ? "Seleção" : state.lang === "fr" ? "Équipe" : "Team"}</th>
+    const myGroup = !!(state.team && rows.some((r) => r.team === state.team));
+    const flags = rows.map((r) => { const c = flagCodeOf(r.team); return c ? `<img src="${FLAG(c)}" alt="${dispName(r.team)}" loading="lazy">` : `<span class="gf-x">⚽</span>`; }).join("");
+    const head = `<div class="grp-head-main"><span class="grp-letter">${g}</span>
+      <div class="grp-headinfo"><div class="grp-label">${t("group", { g })}</div><div class="grp-flags">${flags}</div></div></div>`;
+    let inner = `<table class="table"><thead><tr><th class="pos"></th><th class="team-cell">${teamWord}</th>
       <th>${TH.pj}</th><th>${TH.g}</th><th>${TH.e}</th><th>${TH.p}</th><th>${TH.dif}</th><th>${TH.pts}</th></tr></thead><tbody>`;
     rows.forEach((r, i) => {
       const dif = r.gf - r.gc;
       const code = flagCodeOf(r.team);
-      const img = r.badge
-        ? `<img src="${r.badge}" alt="" loading="lazy" onerror="this.onerror=null;this.src='${code ? FLAG(code) : ""}'">`
+      const img = r.badge ? `<img src="${r.badge}" alt="" loading="lazy" onerror="this.onerror=null;this.src='${code ? FLAG(code) : ""}'">`
         : (code ? `<img src="${FLAG(code)}" alt="" loading="lazy">` : `<span>⚽</span>`);
-      html += `<tr class="${i < 2 ? "qualify" : ""}"><td class="pos">${i + 1}</td>
+      const me = r.team === state.team ? " is-me" : "";
+      inner += `<tr class="${i < 2 ? "qualify" : ""}${me}"><td class="pos">${i + 1}</td>
         <td class="team-cell"><div class="team-cell-inner">${img}<span>${dispName(r.team)}</span></div></td>
         <td>${r.pj}</td><td>${r.g}</td><td>${r.e}</td><td>${r.p}</td><td>${dif > 0 ? "+" + dif : dif}</td><td class="pts">${r.pts}</td></tr>`;
     });
-    html += `</tbody></table><div class="group-legend">${t("groupLegend")}</div></div>`;
+    inner += `</tbody></table><div class="group-legend">${t("groupLegend")}</div>`;
+    const gms = (matchesByGroup[g] || []).sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || "")).map(matchCard).join("");
+    if (gms) inner += `<div class="grp-matches">${gms}</div>`;
+    html += accordionEl(g, head, inner, state.allExpanded || myGroup, myGroup, "acc-grp");
   }
   cont.innerHTML = html;
   scrollReveal(cont);
@@ -441,7 +468,11 @@ function scrollReveal(container) {
       entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); _revealIO.unobserve(e.target); } });
     }, { rootMargin: "0px 0px -6% 0px", threshold: 0.05 });
   }
-  items.forEach((e, i) => { e.style.transitionDelay = ((i % 6) * 0.04).toFixed(3) + "s"; _revealIO.observe(e); });
+  items.forEach((e, i) => {
+    if (e.closest(".acc:not(.open)")) return;                 // en acordeón cerrado: se revela al abrir
+    if (e.closest(".acc")) { e.classList.add("in"); return; } // en acordeón abierto: visible ya (la entrada es el despliegue)
+    e.style.transitionDelay = ((i % 6) * 0.04).toFixed(3) + "s"; _revealIO.observe(e); // resto: reveal on scroll
+  });
 }
 
 /* --------------------------- selector + idioma ----------------------- */
@@ -496,6 +527,29 @@ function renderSkeletons(n = 6) {
     `<div class="sk-card"><div class="sk sk-head"></div><div class="sk-row"><div class="sk sk-av"></div><div class="sk sk-time"></div><div class="sk sk-av"></div></div></div>`).join("");
 }
 
+/* --------------------------- acordeón: toggles ----------------------- */
+function toggleAccordion(sec) {
+  if (!sec) return;
+  const open = sec.classList.toggle("open");
+  const head = sec.querySelector(".acc-head");
+  if (head) head.setAttribute("aria-expanded", open ? "true" : "false");
+  if (open) scrollReveal(sec);
+}
+function toggleAllAccordions() {
+  state.allExpanded = !state.allExpanded;
+  $$(".panel.is-active .acc").forEach((sec) => {
+    sec.classList.toggle("open", state.allExpanded);
+    const head = sec.querySelector(".acc-head");
+    if (head) head.setAttribute("aria-expanded", state.allExpanded ? "true" : "false");
+    if (state.allExpanded) scrollReveal(sec);
+  });
+  updateToggleAllLabel();
+}
+function updateToggleAllLabel() {
+  const el = $("#toggle-all-text");
+  if (el) el.textContent = (ACC_TXT[state.lang] || ACC_TXT.es)[state.allExpanded ? 1 : 0];
+}
+
 /* --------------------------- tabs + eventos -------------------------- */
 function switchTab(tab) {
   state.tab = tab;
@@ -506,7 +560,8 @@ function switchTab(tab) {
 }
 function wireEvents() {
   $("#tabs").addEventListener("click", (e) => { const b = e.target.closest(".tab"); if (b) switchTab(b.dataset.tab); });
-  $("#fixture-view-seg").addEventListener("click", (e) => { const b = e.target.closest(".seg-btn"); if (!b) return; state.view = b.dataset.view; $$(".seg-btn", $("#fixture-view-seg")).forEach((x) => x.classList.toggle("is-active", x === b)); renderFixture(); });
+  $("#main").addEventListener("click", (e) => { const h = e.target.closest(".acc-head"); if (h) toggleAccordion(h.parentElement); });
+  $("#toggle-all").addEventListener("click", toggleAllAccordions);
   $("#only-mine").addEventListener("change", (e) => { state.onlyMine = e.target.checked; renderFixture(); });
   $("#open-selector").addEventListener("click", openSelector);
   $("#share-btn").addEventListener("click", shareApp);

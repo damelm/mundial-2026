@@ -269,6 +269,45 @@ main { padding: 0 16px 44px; }
   animation: shimmerBtn 4.5s ease-in-out infinite; }
 @keyframes shimmerBtn { 0%, 12% { left: -60%; } 38%, 100% { left: 130%; } }
 
+/* ============================ ACORDEONES ============================= */
+.ghost-btn { border: 1px solid var(--line); background: var(--surface); color: var(--ink-dim); font: inherit; font-weight: 700; font-size: 13px; padding: 8px 14px; border-radius: 999px; cursor: pointer; box-shadow: var(--sh-sm); }
+.ghost-btn:active { transform: scale(.96); }
+.ghost-btn:hover { border-color: var(--brand); color: var(--brand); }
+
+.acc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 11px; box-shadow: var(--sh-sm); overflow: hidden; }
+.acc-hl { box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--brand) 55%, var(--line)), var(--sh-sm); }
+.acc-head { width: 100%; display: flex; align-items: center; gap: 12px; padding: 14px 15px; background: transparent; border: 0; cursor: pointer; font: inherit; text-align: left; color: var(--ink); }
+.acc-titles { flex: 1; min-width: 0; }
+.acc-title { font-weight: 800; font-size: 13.5px; text-transform: uppercase; letter-spacing: .03em; }
+.acc-sub { display: flex; align-items: center; gap: 8px; font-size: 11.5px; color: var(--ink-dim); font-weight: 600; margin-top: 4px; flex-wrap: wrap; }
+.acc-star { color: var(--brand); }
+.acc-chevron { flex: 0 0 auto; color: var(--ink-faint); transition: transform .3s ease; }
+.acc.open > .acc-head .acc-chevron { transform: rotate(180deg); }
+.acc-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .34s cubic-bezier(.3,.8,.3,1); }
+.acc.open > .acc-body { grid-template-rows: 1fr; }
+.acc-inner { overflow: hidden; }
+.acc-day .acc-inner { padding: 4px 12px 6px; }
+
+.mini-flags { display: inline-flex; align-items: center; gap: 3px; }
+.mini-flags img { width: 17px; height: 12px; border-radius: 2px; object-fit: cover; box-shadow: 0 1px 2px rgba(0,0,0,.12); }
+.mini-more { font-size: 10.5px; color: var(--ink-faint); font-weight: 700; }
+
+/* Tarjeta de grupo */
+.grupos-grid { grid-template-columns: 1fr; }
+@media (min-width: 560px) { .grupos-grid { grid-template-columns: 1fr; } }
+.acc-grp .grp-head-main { display: flex; align-items: center; gap: 13px; flex: 1; min-width: 0; }
+.grp-letter { font-family: var(--font-display); font-size: 32px; line-height: 1; color: var(--brand); width: 40px; text-align: center; flex: 0 0 auto; }
+.grp-headinfo { flex: 1; min-width: 0; }
+.grp-label { font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-dim); }
+.grp-flags { display: flex; gap: 6px; margin-top: 6px; }
+.grp-flags img { width: 30px; height: 21px; border-radius: 3px; object-fit: cover; box-shadow: 0 1px 3px rgba(0,0,0,.16); }
+.gf-x { font-size: 16px; }
+.acc-grp .acc-inner > .table { width: calc(100% - 24px); margin: 0 12px; }
+.acc-grp .group-legend { margin: 6px 0 0; }
+.grp-matches { padding: 8px 12px 6px; margin-top: 8px; border-top: 1px solid var(--line-2); }
+.table tr.is-me td { background: var(--brand-soft); }
+.table tr.is-me .team-cell span { color: var(--brand); font-weight: 800; }
+
 /* Skeletons de carga */
 .sk-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 15px 14px; margin-bottom: 11px; box-shadow: var(--sh-sm); }
 .sk { background: linear-gradient(100deg, var(--line-2) 30%, var(--surface-2) 50%, var(--line-2) 70%); background-size: 200% 100%; animation: skShimmer 1.3s linear infinite; border-radius: 6px; }
