@@ -7,7 +7,7 @@
 //  - En vivo / recientes: eventsnextleague + eventspastleague (marcadores live).
 //  - Se mezcla todo por idEvent (lo mas fresco gana).
 
-import { writeFile, mkdir } from "node:fs/promises";
+import { writeFile, mkdir, readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -126,6 +126,21 @@ async function main() {
     return ta < tb ? -1 : ta > tb ? 1 : 0;
   });
 
+  // Solo reescribe (y por ende commitea) si los PARTIDOS cambiaron, para
+  // no generar commits ni rebuilds de Pages innecesarios cada 15 minutos.
+  const matchesJSON = JSON.stringify(matches);
+  let prevUpdatedAt = null;
+  try {
+    const prev = JSON.parse(await readFile(OUT, "utf8"));
+    if (JSON.stringify(prev.matches) === matchesJSON) {
+      console.log(`\nSin cambios en los partidos (${matches.length}). No se reescribe.`);
+      return;
+    }
+    prevUpdatedAt = prev.updatedAt;
+  } catch {
+    /* primera vez o archivo inexistente */
+  }
+
   const out = {
     updatedAt: new Date().toISOString(),
     source: "TheSportsDB",
@@ -138,7 +153,7 @@ async function main() {
 
   await mkdir(dirname(OUT), { recursive: true });
   await writeFile(OUT, JSON.stringify(out, null, 2) + "\n", "utf8");
-  console.log(`\nOK -> ${OUT} (${matches.length} partidos)`);
+  console.log(`\nOK -> ${OUT} (${matches.length} partidos)${prevUpdatedAt ? " · datos actualizados" : ""}`);
 }
 
 main().catch((err) => {
