@@ -44,6 +44,22 @@ function flagImg(name, cls) {
   return `<span class="${cls} emoji">⚽</span>`;
 }
 
+/* ---- color: marca legible del país (texto blanco siempre contrasta) -- */
+function hexToRgb(h) { h = h.replace("#", ""); if (h.length === 3) h = h.split("").map((c) => c + c).join(""); return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)]; }
+function rgbToHex(r, g, b) { return "#" + [r, g, b].map((x) => Math.round(Math.max(0, Math.min(255, x))).toString(16).padStart(2, "0")).join(""); }
+function lum(hex) { const a = hexToRgb(hex).map((v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); }); return 0.2126 * a[0] + 0.7152 * a[1] + 0.0722 * a[2]; }
+function mixHex(h1, h2, t) { const a = hexToRgb(h1), b = hexToRgb(h2); return rgbToHex(a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t); }
+function adjustToLum(hex, target) { let c = hex, i = 0; while (lum(c) > target + 0.03 && i++ < 12) c = mixHex(c, "#000000", 0.1); i = 0; while (lum(c) < target - 0.03 && i++ < 12) c = mixHex(c, "#ffffff", 0.09); return c; }
+function brandColors(tm) {
+  const cands = [tm.c1, tm.c2, tm.c3];
+  const ideal = 0.26; // elige el color más "vibrante medio" (evita blancos/amarillos y negros)
+  const usable = cands.filter((c) => lum(c) >= 0.05);
+  const pool = usable.length ? usable : cands;
+  const hue = pool.reduce((best, c) => (Math.abs(lum(c) - ideal) < Math.abs(lum(best) - ideal) ? c : best));
+  const brand = adjustToLum(hue, 0.2); // oscuro suficiente para texto blanco legible
+  return { brand, brand2: mixHex(brand, "#ffffff", 0.18), soft: mixHex(brand, "#ffffff", 0.9) };
+}
+
 function parseUTC(ts) {
   if (!ts) return null;
   const s = /[zZ]|[+-]\d\d:?\d\d$/.test(ts) ? ts : ts + "Z";
@@ -138,7 +154,12 @@ function applyTheme(name) {
   root.style.setProperty("--c1", tm.c1);
   root.style.setProperty("--c2", tm.c2);
   root.style.setProperty("--c3", tm.c3);
-  $("#meta-theme").setAttribute("content", "#05060c");
+  const b = brandColors(tm);
+  root.style.setProperty("--brand", b.brand);
+  root.style.setProperty("--brand-2", b.brand2);
+  root.style.setProperty("--brand-soft", b.soft);
+  root.style.setProperty("--on-brand", "#ffffff");
+  $("#meta-theme").setAttribute("content", b.brand);
 
   // bandera del hero
   const code = name ? flagCodeOf(name) : null;
@@ -183,12 +204,16 @@ function startFacts(facts) {
 /* --------------------------- render ---------------------------------- */
 function render() {
   if (!state.data) return;
-  renderFixture();
-  renderGroups();
-  renderBracket();
-  renderSeleccion();
+  renderActivePanel();   // solo la pestaña visible (evita cargar todas las imágenes juntas)
   renderCountdown();
   buildMarquee();
+}
+function renderActivePanel() {
+  if (!state.data) return;
+  if (state.tab === "fixture") renderFixture();
+  else if (state.tab === "grupos") renderGroups();
+  else if (state.tab === "bracket") renderBracket();
+  else if (state.tab === "seleccion") renderSeleccion();
 }
 
 function teamCell(name, badge) {
@@ -455,19 +480,12 @@ function animateConfetti() {
   if (confettiParts.length) confettiRAF = requestAnimationFrame(animateConfetti); else { confettiRAF = null; ctx.clearRect(0, 0, canvas.width, canvas.height); }
 }
 
-/* --------------------------- sparkles + meteoros --------------------- */
-function spawnAmbient() {
-  const sp = $("#sparkles");
-  for (let i = 0; i < 26; i++) { const s = document.createElement("span"); s.className = "spark"; s.style.left = Math.random() * 100 + "%"; s.style.top = Math.random() * 100 + "%"; s.style.animationDelay = (Math.random() * 3).toFixed(2) + "s"; sp.appendChild(s); }
-  const me = $("#meteors");
-  for (let i = 0; i < 8; i++) { const m = document.createElement("span"); m.className = "meteor"; m.style.left = (40 + Math.random() * 60) + "%"; m.style.top = (Math.random() * 40) + "%"; m.style.animationDuration = (3 + Math.random() * 4).toFixed(1) + "s"; m.style.animationDelay = (Math.random() * 8).toFixed(1) + "s"; me.appendChild(m); }
-}
-
 /* --------------------------- tabs + eventos -------------------------- */
 function switchTab(tab) {
   state.tab = tab;
   $$(".tab").forEach((b) => b.classList.toggle("is-active", b.dataset.tab === tab));
   $$(".panel").forEach((p) => p.classList.toggle("is-active", p.dataset.panel === tab));
+  renderActivePanel();
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 function wireEvents() {
@@ -491,7 +509,7 @@ async function init() {
   let storedLang = null; try { storedLang = localStorage.getItem(STORE_LANG); } catch {}
   if (storedLang && I18N[storedLang]) state.lang = storedLang;
   setTimezone(null); // browser por defecto hasta geo
-  buildLangChips(); wireEvents(); spawnAmbient(); applyI18n();
+  buildLangChips(); wireEvents(); applyI18n();
 
   $("#status").innerHTML = `<div class="spinner"></div>${t("loading")}`;
   const [data, geo] = await Promise.all([loadData().catch(() => null), detectGeo()]);
