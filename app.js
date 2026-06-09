@@ -239,10 +239,10 @@ function matchCard(m) {
   const grp = m.group ? `<span class="match-grouptag">${t("group", { g: m.group })}</span>` : stageLabel(m);
   const venue = m.venue ? ` · ${m.venue}${m.city ? ", " + m.city.split(",")[0] : ""}` : "";
   return `<article class="match ${isMine ? "mine" : ""} ${st === "live" ? "live" : ""}">
+    <div class="match-meta">${grp}${venue}</div>
     <div class="team-side home">${teamCell(m.home, m.homeBadge)}<span class="team-name">${dispName(m.home)}</span></div>
     <div class="match-center">${center}</div>
-    <div class="team-side away">${teamCell(m.away, m.awayBadge)}<span class="team-name">${dispName(m.away)}</span></div>
-    <div class="match-meta">${grp}${venue}</div></article>`;
+    <div class="team-side away">${teamCell(m.away, m.awayBadge)}<span class="team-name">${dispName(m.away)}</span></div></article>`;
 }
 function stageLabel(m) {
   if (m.stage === "GROUP") return t("stages.GROUP", { r: m.round });
