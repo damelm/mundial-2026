@@ -141,7 +141,26 @@
   <script src="app.js"></script>
   <script>
     if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+      // Si ya había un SW controlando la página, al activarse uno nuevo recargamos
+      // UNA vez para tomar la versión nueva (no recarga en la primera visita).
+      if (navigator.serviceWorker.controller) {
+        let refreshing = false;
+        navigator.serviceWorker.addEventListener("controllerchange", () => {
+          if (refreshing) return; refreshing = true; location.reload();
+        });
+      }
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("sw.js").then((reg) => {
+          // Busca actualizaciones del SW al volver a la pestaña.
+          reg.addEventListener("updatefound", () => {
+            const sw = reg.installing;
+            if (sw) sw.addEventListener("statechange", () => {
+              if (sw.state === "installed" && navigator.serviceWorker.controller) sw.postMessage?.("skip-waiting");
+            });
+          });
+          document.addEventListener("visibilitychange", () => { if (!document.hidden) reg.update().catch(() => {}); });
+        }).catch(() => {});
+      });
     }
   </script>
 </body>
