@@ -87,7 +87,12 @@ main { padding: 0 16px 44px; }
 
 .hero-main { position: relative; }
 .hero-kicker { text-transform: uppercase; letter-spacing: .2em; font-size: 10.5px; font-weight: 800; opacity: .82; margin-bottom: 6px; }
-.hero-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 13.5vw, 66px); line-height: .9; letter-spacing: .005em; text-transform: uppercase; word-break: break-word; }
+.hero-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 13.5vw, 66px); line-height: .9; letter-spacing: .005em; text-transform: uppercase; word-break: break-word;
+  /* Magic UI · Animated Shiny Text (glare que recorre el texto) */
+  background: linear-gradient(100deg, rgba(255,255,255,.82) 35%, #fff 50%, rgba(255,255,255,.82) 65%);
+  background-size: 220% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: shinyText 5.5s ease-in-out infinite; }
+@keyframes shinyText { 0% { background-position: 180% 0; } 100% { background-position: -120% 0; } }
 .hero-nick { font-size: 16px; font-weight: 700; margin-top: 8px; opacity: .95; letter-spacing: 0; }
 .hero-titles { font-size: 12px; font-weight: 600; opacity: .72; margin-top: 4px; letter-spacing: .01em; }
 .hero-rule { height: 1px; background: rgba(255,255,255,.22); margin: 16px 0 0; }
@@ -251,5 +256,32 @@ main { padding: 0 16px 44px; }
 /* ============================ FOOTER ================================ */
 .footer { text-align: center; padding: 26px 16px calc(32px + var(--safe-bottom)); color: var(--ink-faint); font-size: 11.5px; line-height: 1.8; }
 .footer a { color: var(--ink-dim); }
+
+/* ============================ ANIMACIONES (21st.dev · Magic UI) ====== */
+
+/* Border Beam — haz de luz que recorre el borde de la tarjeta "próximo partido" */
+.countdown { overflow: hidden; }
+.countdown > * { position: relative; z-index: 2; }
+.countdown::before { content: ""; position: absolute; z-index: 0; left: 50%; top: 50%; width: 150%; aspect-ratio: 1; translate: -50% -50%;
+  background: conic-gradient(from 0deg, transparent 0 72%, color-mix(in srgb, var(--brand) 35%, transparent) 80%, var(--brand) 88%, transparent 96%);
+  animation: beamSpin 4.5s linear infinite; }
+.countdown::after { content: ""; position: absolute; z-index: 1; inset: 2px; border-radius: calc(var(--radius) - 2px); background: var(--surface); }
+@keyframes beamSpin { to { rotate: 360deg; } }
+
+/* Blur Fade — entrada suave (se aplica con .bf y un retardo escalonado por JS) */
+@keyframes blurFade { from { opacity: 0; transform: translateY(12px); filter: blur(6px); } to { opacity: 1; transform: none; filter: blur(0); } }
+.bf { animation: blurFade .5s cubic-bezier(.2,.7,.3,1) backwards; }
+
+/* Number Ticker — el dígito salta cuando cambia */
+.cd-num { display: inline-block; }
+.cd-num.pop { animation: cdPop .32s cubic-bezier(.3,.9,.3,1); }
+@keyframes cdPop { 0% { transform: translateY(-45%); opacity: .15; } 60% { transform: translateY(8%); } 100% { transform: none; opacity: 1; } }
+
+/* Shimmer Button — destello que cruza el botón de selección de país */
+.country-btn { position: relative; overflow: hidden; }
+.country-btn::after { content: ""; position: absolute; top: 0; left: -60%; width: 45%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.45), transparent); transform: skewX(-18deg);
+  animation: shimmerBtn 4.5s ease-in-out infinite; }
+@keyframes shimmerBtn { 0%, 12% { left: -60%; } 38%, 100% { left: 130%; } }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }

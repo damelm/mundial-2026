@@ -238,7 +238,7 @@ function matchCard(m) {
   }
   const grp = m.group ? `<span class="match-grouptag">${t("group", { g: m.group })}</span>` : stageLabel(m);
   const venue = m.venue ? ` · ${m.venue}${m.city ? ", " + m.city.split(",")[0] : ""}` : "";
-  return `<article class="match ${isMine ? "mine" : ""} ${st === "live" ? "live" : ""}">
+  return `<article class="match bf ${isMine ? "mine" : ""} ${st === "live" ? "live" : ""}">
     <div class="match-meta">${grp}${venue}</div>
     <div class="team-side home">${teamCell(m.home, m.homeBadge)}<span class="team-name">${dispName(m.home)}</span></div>
     <div class="match-center">${center}</div>
@@ -278,7 +278,7 @@ function renderFixture() {
     }
   }
   cont.innerHTML = html;
-  revealOnScroll(cont);
+  staggerReveal(cont);
 }
 
 /* --------------------------- grupos ---------------------------------- */
@@ -308,7 +308,7 @@ function renderGroups() {
   let html = "";
   for (const g of keys) {
     const rows = Object.values(groups[g]).sort((a, b) => b.pts - a.pts || (b.gf - b.gc) - (a.gf - a.gc) || b.gf - a.gf || dispName(a.team).localeCompare(dispName(b.team), state.lang));
-    html += `<div class="group-card"><h3>${t("group", { g })}</h3><table class="table"><thead><tr>
+    html += `<div class="group-card bf"><h3>${t("group", { g })}</h3><table class="table"><thead><tr>
       <th class="pos"></th><th class="team-cell">${state.lang === "es" ? "Equipo" : state.lang === "pt" ? "Seleção" : state.lang === "fr" ? "Équipe" : "Team"}</th>
       <th>${TH.pj}</th><th>${TH.g}</th><th>${TH.e}</th><th>${TH.p}</th><th>${TH.dif}</th><th>${TH.pts}</th></tr></thead><tbody>`;
     rows.forEach((r, i) => {
@@ -324,6 +324,7 @@ function renderGroups() {
     html += `</tbody></table><div class="group-legend">${t("groupLegend")}</div></div>`;
   }
   cont.innerHTML = html;
+  staggerReveal(cont);
 }
 
 /* --------------------------- bracket (104) --------------------------- */
@@ -342,11 +343,11 @@ function renderBracket() {
       const m = real[i];
       if (m) {
         const sc = m.homeScore != null ? `${m.homeScore}-${m.awayScore}` : `<span class="ko-vs">${t("vs")}</span>`;
-        html += `<div class="ko-match"><div class="ko-team">${teamCellFlag(m.home)}<span>${dispName(m.home)}</span></div>
+        html += `<div class="ko-match bf"><div class="ko-team">${teamCellFlag(m.home)}<span>${dispName(m.home)}</span></div>
           <div class="ko-score">${sc}</div>
           <div class="ko-team away"><span>${dispName(m.away)}</span>${teamCellFlag(m.away)}</div></div>`;
       } else {
-        html += `<div class="ko-match tbd"><div class="ko-team"><span class="tbd-badge">?</span><span>${t("tbd")}</span></div>
+        html += `<div class="ko-match tbd bf"><div class="ko-team"><span class="tbd-badge">?</span><span>${t("tbd")}</span></div>
           <div class="ko-score"><span class="ko-vs">${t("vs")}</span></div>
           <div class="ko-team away"><span>${t("tbd")}</span><span class="tbd-badge">?</span></div></div>`;
       }
@@ -354,6 +355,7 @@ function renderBracket() {
     html += `</div>`;
   }
   cont.innerHTML = html;
+  staggerReveal(cont);
 }
 function teamCellFlag(name) {
   const code = flagCodeOf(name);
@@ -379,10 +381,10 @@ function renderSeleccion() {
       <div class="sel-chips"><span class="sel-chip">${tm.confed}</span><span class="sel-chip">${pick(tm.titles)}</span></div>
     </div>
     <div class="sel-section-title">${t("trivia")}</div>
-    <div class="sel-facts">${(pick(tm.facts) || tm.facts.en).map((f) => `<div class="sel-fact">${f}</div>`).join("")}</div>
+    <div class="sel-facts">${(pick(tm.facts) || tm.facts.en).map((f) => `<div class="sel-fact bf">${f}</div>`).join("")}</div>
     <div class="sel-section-title">${t("matchesOf", { team: dispName(state.team) })}</div>
     <div class="fixture-list">${mine.length ? mine.map(matchCard).join("") : `<div class="status">${t("noMatches")}</div>`}</div>`;
-  revealOnScroll(cont);
+  staggerReveal(cont);
 }
 
 /* --------------------------- countdown ------------------------------- */
@@ -399,12 +401,24 @@ function renderCountdown() {
   box.hidden = false;
   $("#countdown-label").textContent = (state.team && (next.home === state.team || next.away === state.team)) ? t("nextMatchOf", { team: dispName(state.team) }) : t("nextMatchWC");
   $("#countdown-teams").innerHTML = `${flagImg(next.home, "fl")}<span>${dispName(next.home)}</span> ${t("vs")} <span>${dispName(next.away)}</span>${flagImg(next.away, "fl")}`.replace(/class="fl"/g, 'style="width:22px;height:16px;border-radius:3px;object-fit:cover"');
-  const seg = (v, lbl) => `<span class="cd-seg">${String(v).padStart(2, "0")}<small>${lbl}</small></span>`;
+  let mode = null;
+  const setNum = (k, v) => {
+    const el = $(`#cd-clock .cd-num[data-k="${k}"]`); if (!el) return;
+    const s = String(v).padStart(2, "0");
+    if (el.textContent !== s) { el.textContent = s; el.classList.remove("pop"); void el.offsetWidth; el.classList.add("pop"); }
+  };
   const tick = () => {
     const diff = d.getTime() - Date.now();
-    if (diff <= 0) { $("#cd-clock").innerHTML = `<span class="cd-seg" style="min-width:auto;padding:2px 14px">${t("inPlay")}</span>`; clearInterval(state.countdownTimer); return; }
+    if (diff <= 0) { $("#cd-clock").innerHTML = `<span class="cd-seg" style="min-width:auto;padding:6px 18px">${t("inPlay")}</span>`; clearInterval(state.countdownTimer); return; }
     const days = Math.floor(diff / 86400000), h = Math.floor((diff % 86400000) / 3600000), m = Math.floor((diff % 3600000) / 60000), s = Math.floor((diff % 60000) / 1000);
-    $("#cd-clock").innerHTML = days > 0 ? seg(days, "D") + seg(h, "H") + seg(m, "M") : seg(h, "H") + seg(m, "M") + seg(s, "S");
+    const newMode = days > 0 ? "dhm" : "hms";
+    if (newMode !== mode) {
+      mode = newMode;
+      const labels = newMode === "dhm" ? [["a", "D"], ["b", "H"], ["c", "M"]] : [["a", "H"], ["b", "M"], ["c", "S"]];
+      $("#cd-clock").innerHTML = labels.map(([k, lbl]) => `<span class="cd-seg"><span class="cd-num" data-k="${k}">00</span><small>${lbl}</small></span>`).join("");
+    }
+    const v = newMode === "dhm" ? [days, h, m] : [h, m, s];
+    setNum("a", v[0]); setNum("b", v[1]); setNum("c", v[2]);
   };
   tick();
   state.countdownTimer = setInterval(tick, 1000);
@@ -424,12 +438,13 @@ function buildMarquee() {
   $("#marquee-track").innerHTML = seq + seq; // duplicado para loop continuo
 }
 
-/* --------------------------- reveal ---------------------------------- */
-function revealOnScroll(container) {
-  const items = $$(".match", container);
-  if (!("IntersectionObserver" in window)) { items.forEach((i) => i.classList.add("reveal")); return; }
-  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("reveal"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -40px 0px" });
-  items.forEach((i) => io.observe(i));
+/* --------------------------- blur fade (Magic UI) -------------------- */
+function staggerReveal(container) {
+  // Solo los primeros ítems hacen blur-fade (liviano en gama media); el resto aparece directo.
+  $$(".bf", container).forEach((el, i) => {
+    if (i < 12) el.style.animationDelay = (i * 0.045).toFixed(3) + "s";
+    else el.style.animation = "none";
+  });
 }
 
 /* --------------------------- selector + idioma ----------------------- */
@@ -516,6 +531,7 @@ async function init() {
 
   if (data) {
     state.data = data;
+    state.sig = JSON.stringify(data.matches);
     $("#status").innerHTML = "";
     const upd = parseUTC(data.updatedAt);
     $("#footer-updated").textContent = data.updatedAt ? `${t("updated")}: ${upd ? upd.toLocaleString(state.lang, tzOpt()) : data.updatedAt} · ${data.count} ${t("matches")}` : "";
@@ -538,10 +554,12 @@ async function init() {
 
   setInterval(async () => {
     try {
-      const fresh = await loadData(); state.data = fresh;
+      const fresh = await loadData();
+      const sig = JSON.stringify(fresh.matches);
+      state.data = fresh;
       const upd = parseUTC(fresh.updatedAt);
       $("#footer-updated").textContent = fresh.updatedAt ? `${t("updated")}: ${upd ? upd.toLocaleString(state.lang, tzOpt()) : fresh.updatedAt} · ${fresh.count} ${t("matches")}` : "";
-      render();
+      if (sig !== state.sig) { state.sig = sig; render(); } // solo re-render si cambiaron los partidos
     } catch {}
   }, REFRESH_MS);
 }
