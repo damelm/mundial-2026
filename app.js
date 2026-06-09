@@ -362,29 +362,83 @@ function renderGroups() {
 }
 
 /* --------------------------- bracket (104) --------------------------- */
+const WINNER_W = { es: "Ganador", en: "Winner", pt: "Vencedor", fr: "Vainqueur", ar: "الفائز" };
+const LOSER_W = { es: "Perdedor", en: "Loser", pt: "Perdedor", fr: "Perdant", ar: "الخاسر" };
+let _combos = null;
+function loadCombosOnce() {
+  if (_combos !== null) return;
+  _combos = [];
+  fetch("data/combos495.json").then((r) => r.json()).then((j) => { _combos = j; if (state.tab === "bracket") renderBracket(); }).catch(() => { _combos = []; });
+}
+function bracketProjection() {
+  const st = computeStandings();
+  const cmp = (a, b) => b.pts - a.pts || (b.gf - b.gc) - (a.gf - a.gc) || b.gf - a.gf || dispName(a.team).localeCompare(dispName(b.team), state.lang);
+  const rowsByG = {}, done = {};
+  let complete = 0;
+  for (const g of Object.keys(st)) {
+    const rows = Object.values(st[g]).sort(cmp);
+    rowsByG[g] = rows;
+    done[g] = rows.length >= 4 && rows.every((r) => r.pj >= 3);
+    if (done[g]) complete++;
+  }
+  const winner = (g) => (done[g] && rowsByG[g][0] ? rowsByG[g][0].team : null);
+  const runner = (g) => (done[g] && rowsByG[g][1] ? rowsByG[g][1].team : null);
+  const thirds = Object.keys(rowsByG).map((g) => (rowsByG[g][2] ? { grp: g, ...rowsByG[g][2] } : null)).filter(Boolean);
+  thirds.sort((a, b) => b.pts - a.pts || (b.gf - b.gc) - (a.gf - a.gc) || b.gf - a.gf || a.grp.localeCompare(b.grp));
+  const best8 = thirds.slice(0, 8).map((x) => x.grp).sort();
+  const thirdAssign = {};
+  if (complete === 12 && Array.isArray(_combos) && _combos.length) {
+    const row = _combos.find((c) => c.qualified_third_groups === best8.join(""));
+    if (row) for (const [k, v] of Object.entries(row.assign)) thirdAssign[parseInt(k.match(/M(\d+)/)[1], 10)] = v.replace("3", "");
+  }
+  return { winner, runner, thirdAssign, rowsByG, complete };
+}
+function resolveSlot(slot, matchNo, proj) {
+  if (slot.t === "W") { const tm = proj.winner(slot.g); return tm ? { team: tm } : { label: `1.º ${slot.g}` }; }
+  if (slot.t === "R") { const tm = proj.runner(slot.g); return tm ? { team: tm } : { label: `2.º ${slot.g}` }; }
+  const tg = proj.thirdAssign[matchNo];
+  if (tg && proj.rowsByG[tg] && proj.rowsByG[tg][2]) return { team: proj.rowsByG[tg][2].team };
+  return { label: `3.º (${slot.from.join("/")})` };
+}
+function koSide(res, away) {
+  if (res.team) {
+    const f = teamCellFlag(res.team), n = `<span>${dispName(res.team)}</span>`;
+    return `<div class="ko-team ${away ? "away" : ""}">${away ? n + f : f + n}</div>`;
+  }
+  return `<div class="ko-team ${away ? "away" : ""} slot"><span class="slot-pill">${res.label}</span></div>`;
+}
+function koCard(homeHtml, scoreHtml, awayHtml, extra = "") {
+  return `<div class="ko-match reveal ${extra}">${homeHtml}<div class="ko-score">${scoreHtml}</div>${awayHtml}</div>`;
+}
 function renderBracket() {
   const cont = $("#bracket-content");
-  const koData = state.data.matches.filter((m) => m.stage !== "GROUP");
-  const byStage = {};
-  koData.forEach((m) => (byStage[m.stage] ||= []).push(m));
+  loadCombosOnce();
+  const proj = bracketProjection();
+  const koByStage = {};
+  state.data.matches.filter((m) => m.stage !== "GROUP").forEach((m) => (koByStage[m.stage] ||= []).push(m));
+  const tree = { R16: BRACKET_TREE.R16, QF: BRACKET_TREE.QF, SF: BRACKET_TREE.SF, TP: [BRACKET_TREE.TP], F: [BRACKET_TREE.F] };
+
   let html = `<div class="bracket-head"><div class="big">🏆 ${t("knockouts")}</div><p>${t("bracketSub")}</p></div>`;
   for (const r of KO_ROUNDS) {
-    const real = (byStage[r.stage] || []).sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
     const d = parseUTC(r.date + "T18:00:00");
-    html += `<div class="bracket-round"><h3>${t(`stages.${r.stage}`)}</h3>`;
-    html += `<span class="ko-date">${d ? fmtDayShort(d) : ""}</span>`;
-    for (let i = 0; i < r.n; i++) {
-      const m = real[i];
-      if (m) {
+    html += `<div class="bracket-round"><h3>${t(`stages.${r.stage}`)}</h3><span class="ko-date">${d ? fmtDayShort(d) : ""}</span>`;
+    const real = (koByStage[r.stage] || []).sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
+    if (real.length) {
+      real.forEach((m, i) => {
         const sc = m.homeScore != null ? `${m.homeScore}-${m.awayScore}` : `<span class="ko-vs">${t("vs")}</span>`;
-        html += `<div class="ko-match reveal"><div class="ko-team">${teamCellFlag(m.home)}<span>${dispName(m.home)}</span></div>
-          <div class="ko-score">${sc}</div>
-          <div class="ko-team away"><span>${dispName(m.away)}</span>${teamCellFlag(m.away)}</div></div>`;
-      } else {
-        html += `<div class="ko-match tbd reveal"><div class="ko-team"><span class="tbd-badge">?</span><span>${t("tbd")}</span></div>
-          <div class="ko-score"><span class="ko-vs">${t("vs")}</span></div>
-          <div class="ko-team away"><span>${t("tbd")}</span><span class="tbd-badge">?</span></div></div>`;
+        html += koCard(koSide({ team: m.home }), sc, koSide({ team: m.away }, true), r.stage === "F" ? "beam ko-final" : "");
+      });
+    } else if (r.stage === "R32") {
+      for (const rm of R32_MATCHES) {
+        html += koCard(koSide(resolveSlot(rm.home, rm.m, proj)), `<span class="ko-vs">${t("vs")}</span>`, koSide(resolveSlot(rm.away, rm.m, proj), true));
       }
+    } else {
+      const word = r.stage === "TP" ? (LOSER_W[state.lang] || LOSER_W.es) : (WINNER_W[state.lang] || WINNER_W.es);
+      tree[r.stage].forEach((node) => {
+        const a = `<div class="ko-team slot"><span class="slot-pill">${word} P${node.f[0]}</span></div>`;
+        const b = `<div class="ko-team away slot"><span class="slot-pill">${word} P${node.f[1]}</span></div>`;
+        html += koCard(a, `<span class="ko-vs">${t("vs")}</span>`, b, r.stage === "F" ? "beam ko-final" : "");
+      });
     }
     html += `</div>`;
   }

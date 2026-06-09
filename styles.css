@@ -198,6 +198,15 @@ main { padding: 0 16px 44px; }
 .ko-team .tbd-badge { width: 26px; height: 18px; border-radius: 3px; background: var(--line); display: grid; place-items: center; font-size: 11px; color: var(--ink-dim); }
 .ko-score { font-family: var(--font-display); font-size: 17px; min-width: 40px; text-align: center; color: var(--ink); font-variant-numeric: tabular-nums; }
 .ko-vs { color: var(--ink-faint); font-weight: 800; font-size: 11px; }
+.ko-team.slot { flex: 1; }
+.slot-pill { font-size: 11.5px; font-weight: 800; color: var(--ink-dim); background: var(--surface-2); border: 1px dashed var(--line); border-radius: 8px; padding: 5px 9px; display: inline-block; letter-spacing: .01em; }
+.ko-team.away.slot { text-align: right; }
+.ko-final { border-color: var(--brand) !important; }
+/* Border Beam genérico (Magic UI) — usado en la Final */
+.beam { position: relative; overflow: hidden; }
+.beam::before { content: ""; position: absolute; z-index: 0; left: 50%; top: 50%; width: 180%; aspect-ratio: 1; translate: -50% -50%; background: conic-gradient(from 0deg, transparent 0 72%, color-mix(in srgb, var(--brand) 35%, transparent) 82%, var(--brand) 92%, transparent 98%); animation: beamSpin 5s linear infinite; }
+.beam::after { content: ""; position: absolute; z-index: 1; inset: 2px; border-radius: inherit; background: var(--surface); }
+.beam > * { position: relative; z-index: 2; }
 
 /* ============================ MI SELECCIÓN ========================== */
 .sel-hero { position: relative; text-align: center; padding: 26px 16px; background: linear-gradient(158deg, var(--brand), color-mix(in srgb, var(--brand) 78%, #000)); color: var(--on-brand); border-radius: var(--radius); margin-top: 16px; box-shadow: var(--sh); overflow: hidden; }
