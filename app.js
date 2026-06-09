@@ -28,12 +28,18 @@ const TX = {
   map: { es: "Ver en mapa", en: "View on map", pt: "Ver no mapa", fr: "Voir sur la carte", ar: "عرض على الخريطة" },
   squadNote: { es: "Lista parcial (datos abiertos)", en: "Partial list (open data)", pt: "Lista parcial (dados abertos)", fr: "Liste partielle (données ouvertes)", ar: "قائمة جزئية (بيانات مفتوحة)" },
   squadEmpty: { es: "Plantel no disponible por ahora.", en: "Squad not available yet.", pt: "Elenco indisponível por enquanto.", fr: "Effectif indisponible pour l'instant.", ar: "التشكيلة غير متاحة بعد." },
+  fAll: { es: "Todos", en: "All", pt: "Todos", fr: "Tous", ar: "الكل" },
+  fToday: { es: "Hoy", en: "Today", pt: "Hoje", fr: "Aujourd'hui", ar: "اليوم" },
+  fLive: { es: "En vivo", en: "Live", pt: "Ao vivo", fr: "En direct", ar: "مباشر" },
+  noToday: { es: "No hay partidos hoy.", en: "No matches today.", pt: "Nenhum jogo hoje.", fr: "Aucun match aujourd'hui.", ar: "لا مباريات اليوم." },
+  noLive: { es: "No hay partidos en vivo ahora.", en: "No live matches right now.", pt: "Nenhum jogo ao vivo agora.", fr: "Aucun match en direct.", ar: "لا مباريات مباشرة الآن." },
+  addCal: { es: "Agendar", en: "Add to calendar", pt: "Agendar", fr: "Ajouter au calendrier", ar: "أضف إلى التقويم" },
 };
 const tw = (m) => m[state.lang] || m.es;
 
 const state = {
-  data: null, team: null, onlyMine: false, tab: "fixture",
-  lang: "es", tz: null, tzCity: "", tzOff: "",
+  data: null, team: null, filter: "all", tab: "fixture",
+  lang: "es", tz: null, tzCity: "", tzOff: "", dark: false,
   factTimer: null, factIdx: 0, countdownTimer: null, allExpanded: false,
 };
 
@@ -80,7 +86,9 @@ function brandColors(tm) {
   const pool = usable.length ? usable : cands;
   const hue = pool.reduce((best, c) => (Math.abs(lum(c) - ideal) < Math.abs(lum(best) - ideal) ? c : best));
   const brand = adjustToLum(hue, 0.2); // oscuro suficiente para texto blanco legible
-  return { brand, brand2: mixHex(brand, "#ffffff", 0.18), soft: mixHex(brand, "#ffffff", 0.9) };
+  const accent = state.dark ? adjustToLum(hue, 0.6) : brand; // en dark, acento claro legible sobre superficies oscuras
+  const soft = state.dark ? mixHex(accent, "#202127", 0.84) : mixHex(brand, "#ffffff", 0.9);
+  return { brand, accent, brand2: mixHex(brand, "#ffffff", 0.18), soft };
 }
 
 function parseUTC(ts) {
@@ -157,6 +165,11 @@ function applyI18n() {
   $("#tab-bracket").textContent = t("tabs.bracket");
   $("#tab-seleccion").textContent = t("tabs.team");
   $("#tab-sedes").textContent = tw(TX.venues);
+  $("#tab-trivia").textContent = "Trivia";
+  $("#fchip-all").textContent = tw(TX.fAll);
+  $("#fchip-today").textContent = tw(TX.fToday);
+  $("#fchip-live").textContent = tw(TX.fLive);
+  $("#fchip-mine").textContent = state.team ? t("onlyTeam", { team: dispName(state.team) }) : t("tabs.team");
   updateToggleAllLabel();
   $("#selector-title").textContent = t("chooseTeam");
   $("#country-search").placeholder = t("searchCountry");
@@ -179,6 +192,7 @@ function applyTheme(name) {
   root.style.setProperty("--c3", tm.c3);
   const b = brandColors(tm);
   root.style.setProperty("--brand", b.brand);
+  root.style.setProperty("--brand-accent", b.accent);
   root.style.setProperty("--brand-2", b.brand2);
   root.style.setProperty("--brand-soft", b.soft);
   root.style.setProperty("--on-brand", "#ffffff");
@@ -202,9 +216,10 @@ function applyTheme(name) {
   if (code) { cbf.src = FLAG(code); cbf.style.display = ""; } else { cbf.style.display = "none"; }
   $("#country-btn-text").textContent = name ? dispName(name) : t("chooseCountry");
 
-  const wrap = $("#only-mine-wrap");
-  if (name) { wrap.hidden = false; $("#only-mine-text").textContent = t("onlyTeam", { team: dispName(name) }); }
-  else { wrap.hidden = true; state.onlyMine = false; $("#only-mine").checked = false; }
+  const mineChip = $("#fchip-mine");
+  if (name) { mineChip.hidden = false; mineChip.textContent = t("onlyTeam", { team: dispName(name) }); }
+  else { mineChip.hidden = true; if (state.filter === "mine") state.filter = "all"; }
+  syncFilterChips();
 
   startFacts(localTeam(state.team, "facts"));
   markActiveCountry();
@@ -236,6 +251,7 @@ function renderActivePanel() {
   else if (state.tab === "bracket") renderBracket();
   else if (state.tab === "seleccion") renderSeleccion();
   else if (state.tab === "sedes") renderStadiums();
+  else if (state.tab === "trivia") renderTrivia();
 }
 
 function teamCell(name, badge) {
@@ -260,8 +276,9 @@ function matchCard(m) {
   }
   const grp = m.group ? `<span class="match-grouptag">${t("group", { g: m.group })}</span>` : stageLabel(m);
   const venue = m.venue ? ` · ${m.venue}${m.city ? ", " + m.city.split(",")[0] : ""}` : "";
+  const cal = st === "ns" ? `<button class="cal-btn" data-mid="${m.id}" aria-label="${tw(TX.addCal)}" title="${tw(TX.addCal)}"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 15H5V9h14v10zM7 11h5v5H7z"/></svg></button>` : "";
   return `<article class="match reveal ${isMine ? "mine" : ""} ${st === "live" ? "live" : ""}">
-    <div class="match-meta">${grp}${venue}</div>
+    <div class="match-meta">${grp}${venue}${cal}</div>
     <div class="team-side home">${teamCell(m.home, m.homeBadge)}<span class="team-name">${dispName(m.home)}</span></div>
     <div class="match-center">${center}</div>
     <div class="team-side away">${teamCell(m.away, m.awayBadge)}<span class="team-name">${dispName(m.away)}</span></div></article>`;
@@ -296,19 +313,26 @@ function nextOpenDayKey(keys, byDay) {
 
 function renderFixture() {
   const cont = $("#fixture-list");
+  const todayKey = dayKey(new Date());
   let matches = [...state.data.matches];
-  if (state.onlyMine && state.team) matches = matches.filter((m) => m.home === state.team || m.away === state.team);
-  if (!matches.length) { cont.innerHTML = `<div class="status">${t("noMatches")}</div>`; return; }
+  if (state.filter === "mine" && state.team) matches = matches.filter((m) => m.home === state.team || m.away === state.team);
+  else if (state.filter === "today") matches = matches.filter((m) => { const d = parseUTC(m.timestamp); return d && dayKey(d) === todayKey; });
+  else if (state.filter === "live") matches = matches.filter((m) => classifyStatus(m) === "live");
+  if (!matches.length) {
+    const msg = state.filter === "today" ? tw(TX.noToday) : state.filter === "live" ? tw(TX.noLive) : t("noMatches");
+    cont.innerHTML = `<div class="status">${msg}</div>`; return;
+  }
   const byDay = {};
   for (const m of matches) { const d = parseUTC(m.timestamp); (byDay[d ? dayKey(d) : "zzz"] ||= []).push(m); }
   const keys = Object.keys(byDay).sort();
   const openKey = nextOpenDayKey(keys, byDay);
+  const expandAll = state.allExpanded || state.filter !== "all"; // los filtros (hoy/vivo/mi) abren todo
   let html = "";
   for (const k of keys) {
     const day = byDay[k].sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
     const s = parseUTC(day[0].timestamp);
     const myDay = !!(state.team && day.some((m) => m.home === state.team || m.away === state.team));
-    const isOpen = state.allExpanded || state.onlyMine || k === openKey;
+    const isOpen = expandAll || k === openKey;
     const head = `<div class="acc-titles"><div class="acc-title">${s ? fmtDayLong(s) : "—"}</div>
       <div class="acc-sub">${day.length} ${t("matchesLabel")}${myDay ? ' <span class="acc-star">★</span>' : ""} ${miniFlags(day)}</div></div>`;
     html += accordionEl(k, head, day.map(matchCard).join(""), isOpen, myDay, "acc-day");
@@ -680,11 +704,96 @@ function switchTab(tab) {
   renderActivePanel();
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
+/* --------------------------- filtros fixture ------------------------- */
+function syncFilterChips() {
+  $$("#fixture-filters .fchip").forEach((b) => b.classList.toggle("is-active", b.dataset.filter === state.filter));
+}
+
+/* --------------------------- calendario (.ics) ----------------------- */
+const pad2 = (n) => String(n).padStart(2, "0");
+const icsDate = (d) => d.getUTCFullYear() + pad2(d.getUTCMonth() + 1) + pad2(d.getUTCDate()) + "T" + pad2(d.getUTCHours()) + pad2(d.getUTCMinutes()) + "00Z";
+function addToCalendar(mid) {
+  const m = state.data.matches.find((x) => String(x.id) === String(mid));
+  if (!m) return;
+  const d = parseUTC(m.timestamp); if (!d) return;
+  const end = new Date(d.getTime() + 2 * 3600000);
+  const title = `${dispName(m.home)} vs ${dispName(m.away)} · Mundial 2026`;
+  const loc = [m.venue, m.city ? m.city.split(",")[0] : ""].filter(Boolean).join(", ");
+  const stage = m.group ? t("group", { g: m.group }) : stageLabel(m);
+  const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Mundial2026//ES", "CALSCALE:GREGORIAN", "BEGIN:VEVENT",
+    `UID:wc26-${m.id}@damelm.github.io`, `DTSTAMP:${icsDate(new Date())}`, `DTSTART:${icsDate(d)}`, `DTEND:${icsDate(end)}`,
+    `SUMMARY:${title}`, `LOCATION:${loc}`, `DESCRIPTION:${stage} — Mundial 2026`, "BEGIN:VALARM", "TRIGGER:-PT30M", "ACTION:DISPLAY", `DESCRIPTION:${title}`, "END:VALARM", "END:VEVENT", "END:VCALENDAR"].join("\r\n");
+  const url = URL.createObjectURL(new Blob([ics], { type: "text/calendar" }));
+  const a = document.createElement("a");
+  a.href = url; a.download = `mundial-${m.home}-${m.away}.ics`.replace(/[^\w.-]+/g, "_");
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1500);
+  flashToast("📅 " + dispName(m.home) + " vs " + dispName(m.away));
+}
+
+/* --------------------------- modo oscuro ----------------------------- */
+function applyDark(dark) {
+  state.dark = dark;
+  document.documentElement.dataset.theme = dark ? "dark" : "light";
+  const ic = $("#dark-icon"); if (ic) ic.textContent = dark ? "☀️" : "🌙";
+  try { localStorage.setItem("wc26-dark", dark ? "1" : "0"); } catch {}
+  applyTheme(state.team); // recalcula --brand-accent/--brand-soft según el modo
+}
+
+/* --------------------------- trivia ---------------------------------- */
+let _trivia = { order: null, idx: 0, score: 0, answered: false };
+const TRIVIA_TXT = {
+  again: { es: "Jugar de nuevo", en: "Play again", pt: "Jogar de novo", fr: "Rejouer", ar: "العب مجدداً" },
+  great: { es: "¡Crack mundialista!", en: "World Cup expert!", pt: "Craque da Copa!", fr: "Expert du Mondial !", ar: "خبير كأس العالم!" },
+  good: { es: "¡Bien jugado!", en: "Well played!", pt: "Bem jogado!", fr: "Bien joué !", ar: "أحسنت!" },
+  keep: { es: "¡Seguí practicando!", en: "Keep practicing!", pt: "Continue praticando!", fr: "Continue à t'entraîner !", ar: "واصل التدريب!" },
+};
+function startTrivia() {
+  const idxs = TRIVIA.map((_, i) => i);
+  for (let i = idxs.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [idxs[i], idxs[j]] = [idxs[j], idxs[i]]; }
+  _trivia = { order: idxs.slice(0, 10), idx: 0, score: 0, answered: false };
+}
+function renderTrivia() {
+  if (!_trivia.order) startTrivia();
+  drawTrivia();
+}
+function drawTrivia() {
+  const cont = $("#trivia-content");
+  const total = _trivia.order.length;
+  if (_trivia.idx >= total) {
+    const pct = (_trivia.score / total) * 100;
+    const msg = pct >= 80 ? tw(TRIVIA_TXT.great) : pct >= 50 ? tw(TRIVIA_TXT.good) : tw(TRIVIA_TXT.keep);
+    cont.innerHTML = `<div class="trivia-end"><div class="trivia-emoji">${pct >= 80 ? "🏆" : pct >= 50 ? "⚽" : "🎯"}</div>
+      <div class="trivia-score">${_trivia.score} / ${total}</div><p>${msg}</p>
+      <button class="trivia-btn" id="trivia-again">${tw(TRIVIA_TXT.again)}</button></div>`;
+    return;
+  }
+  const q = TRIVIA[_trivia.order[_trivia.idx]];
+  const opts = q.options[state.lang] || q.options.en;
+  cont.innerHTML = `<div class="trivia-head"><div class="trivia-progress">${_trivia.idx + 1} / ${total}</div><div class="trivia-scorechip">⭐ ${_trivia.score}</div></div>
+    <div class="trivia-q">${q.q[state.lang] || q.q.en}</div>
+    <div class="trivia-opts">${opts.map((o, i) => `<button class="trivia-opt" data-i="${i}">${o}</button>`).join("")}</div>`;
+}
+function answerTrivia(i) {
+  if (_trivia.answered) return;
+  _trivia.answered = true;
+  const correct = TRIVIA[_trivia.order[_trivia.idx]].correct;
+  $$(".trivia-opt").forEach((b, j) => { b.disabled = true; if (j === correct) b.classList.add("ok"); else if (j === i) b.classList.add("bad"); });
+  if (i === correct) _trivia.score++;
+  setTimeout(() => { _trivia.idx++; _trivia.answered = false; drawTrivia(); }, 1100);
+}
 function wireEvents() {
   $("#tabs").addEventListener("click", (e) => { const b = e.target.closest(".tab"); if (b) switchTab(b.dataset.tab); });
-  $("#main").addEventListener("click", (e) => { const h = e.target.closest(".acc-head"); if (h) toggleAccordion(h.parentElement); });
+  $("#main").addEventListener("click", (e) => {
+    const cb = e.target.closest(".cal-btn"); if (cb) { e.stopPropagation(); addToCalendar(cb.dataset.mid); return; }
+    const oo = e.target.closest(".trivia-opt"); if (oo) { answerTrivia(+oo.dataset.i); return; }
+    if (e.target.closest("#trivia-again")) { startTrivia(); drawTrivia(); return; }
+    const h = e.target.closest(".acc-head"); if (h) toggleAccordion(h.parentElement);
+  });
   $("#toggle-all").addEventListener("click", toggleAllAccordions);
-  $("#only-mine").addEventListener("change", (e) => { state.onlyMine = e.target.checked; renderFixture(); });
+  $("#fixture-filters").addEventListener("click", (e) => { const b = e.target.closest(".fchip"); if (!b) return; state.filter = b.dataset.filter; syncFilterChips(); renderFixture(); });
+  $("#dark-btn").addEventListener("click", () => applyDark(!state.dark));
   $("#open-selector").addEventListener("click", openSelector);
   $("#share-btn").addEventListener("click", shareApp);
   $("#open-lang").addEventListener("click", () => { const order = ["es", "en", "pt", "fr", "ar"]; setLang(order[(order.indexOf(state.lang) + 1) % order.length]); });
@@ -702,6 +811,11 @@ async function init() {
   // idioma guardado (provisorio hasta geo)
   let storedLang = null; try { storedLang = localStorage.getItem(STORE_LANG); } catch {}
   if (storedLang && I18N[storedLang]) state.lang = storedLang;
+  // modo oscuro: preferencia guardada o del sistema
+  let storedDark = null; try { storedDark = localStorage.getItem("wc26-dark"); } catch {}
+  state.dark = storedDark != null ? storedDark === "1" : !!(window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
+  document.documentElement.dataset.theme = state.dark ? "dark" : "light";
+  const _di = $("#dark-icon"); if (_di) _di.textContent = state.dark ? "☀️" : "🌙";
   setTimezone(null); // browser por defecto hasta geo
   buildLangChips(); wireEvents(); applyI18n();
 
