@@ -1,0 +1,46 @@
+name: Actualizar fixture Mundial 2026
+
+on:
+  schedule:
+    # Cada 15 minutos (UTC). Mantiene marcadores y eliminatorias al dia.
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {} # permite correrlo a mano desde la pestaña Actions
+  push:
+    branches: [main]
+    paths:
+      - "scripts/fetch-data.mjs"
+      - ".github/workflows/update-data.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Descargar datos
+        run: node scripts/fetch-data.mjs
+
+      - name: Commit si hay cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain data/fixture.json)" ]; then
+            git add data/fixture.json
+            git commit -m "data: actualizar fixture ($(date -u '+%Y-%m-%d %H:%M UTC'))"
+            git push
+          else
+            echo "Sin cambios en el fixture."
+          fi

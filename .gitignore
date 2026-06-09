@@ -1,0 +1,10 @@
+# Config local de desarrollo (preview, etc.)
+.claude/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Logs / temporales
+*.log
+node_modules/
