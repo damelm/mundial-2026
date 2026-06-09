@@ -1,69 +1,78 @@
-/* app.js — Mundial 2026 fixture. Vanilla JS, sin dependencias.
- * Usa themes.js (TEAMS, NEUTRAL, CODE_TO_TEAM, TEAM_NAMES_SORTED).
- */
+/* app.js — Mundial 2026. Vanilla JS. Usa i18n.js + themes.js. */
 "use strict";
 
 const DATA_URL = "data/fixture.json";
-const STORE_KEY = "wc26-choice"; // guarda elección explícita del usuario
+const STORE_TEAM = "wc26-choice";
+const STORE_LANG = "wc26-lang";
 const REFRESH_MS = 60_000;
+const FLAG = (code) => `https://flagcdn.com/${code}.svg`;
+
+// Esqueleto de eliminatorias para completar los 104 partidos.
+const KO_ROUNDS = [
+  { stage: "R32", n: 16, date: "2026-06-28" },
+  { stage: "R16", n: 8, date: "2026-07-04" },
+  { stage: "QF", n: 4, date: "2026-07-09" },
+  { stage: "SF", n: 2, date: "2026-07-14" },
+  { stage: "TP", n: 1, date: "2026-07-18" },
+  { stage: "F", n: 1, date: "2026-07-19" },
+];
 
 const state = {
-  data: null,
-  team: null,        // nombre del equipo (clave de TEAMS) o null = neutral
-  view: "fecha",     // "fecha" | "grupo"
-  onlyMine: false,
-  tab: "fixture",
-  factTimer: null,
-  factIdx: 0,
-  countdownTimer: null,
+  data: null, team: null, view: "fecha", onlyMine: false, tab: "fixture",
+  lang: "es", tz: null, tzCity: "", tzOff: "",
+  factTimer: null, factIdx: 0, countdownTimer: null,
 };
 
-/* ------------------------- Utilidades --------------------------------- */
-const $ = (sel, ctx = document) => ctx.querySelector(sel);
-const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
-const themeOf = (name) => (name && TEAMS[name]) || NEUTRAL;
-const esName = (name) => (TEAMS[name] ? TEAMS[name].es : name);
-const flagOf = (name) => (TEAMS[name] ? TEAMS[name].flag : "⚽");
+/* --------------------------- helpers --------------------------------- */
+const $ = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+const L = () => I18N[state.lang] || I18N.es;
+function t(path, vars) {
+  const val = path.split(".").reduce((o, k) => (o ? o[k] : null), L());
+  return vars ? tmpl(val || "", vars) : (val || "");
+}
+const pick = (o) => (o ? (o[state.lang] ?? o.en ?? o.es) : "");
+const theme = () => (state.team ? TEAMS[state.team] : NEUTRAL);
+function dispName(name) {
+  if (!name) return pick({ es: NEUTRAL.es, en: NEUTRAL.en });
+  const tm = TEAMS[name];
+  return tm ? pick({ es: tm.es, en: tm.en }) : name;
+}
+function flagImg(name, cls) {
+  const code = flagCodeOf(name);
+  if (code) return `<img class="${cls}" src="${FLAG(code)}" alt="${dispName(name)}" loading="lazy" onerror="this.style.visibility='hidden'">`;
+  return `<span class="${cls} emoji">⚽</span>`;
+}
 
 function parseUTC(ts) {
   if (!ts) return null;
-  // TheSportsDB entrega "YYYY-MM-DDTHH:MM:SS" (UTC). Añadimos Z si falta zona.
   const s = /[zZ]|[+-]\d\d:?\d\d$/.test(ts) ? ts : ts + "Z";
   const d = new Date(s);
   return isNaN(d) ? null : d;
 }
+const tzOpt = () => (state.tz ? { timeZone: state.tz } : {});
+const fmtTime = (d) => d.toLocaleTimeString(state.lang, { hour: "2-digit", minute: "2-digit", ...tzOpt() });
+const fmtDayLong = (d) => d.toLocaleDateString(state.lang, { weekday: "long", day: "numeric", month: "long", ...tzOpt() });
+const fmtDayShort = (d) => d.toLocaleDateString(state.lang, { day: "2-digit", month: "short", ...tzOpt() });
+const dayKey = (d) => d.toLocaleDateString("en-CA", tzOpt());
 
 function classifyStatus(m) {
   const s = (m.status || "").toUpperCase();
-  const finished = ["FT", "AET", "PEN", "MATCH FINISHED", "FINISHED", "AP"];
-  const live = ["1H", "2H", "HT", "ET", "LIVE", "P", "BT", "IN PLAY", "PLAYING"];
-  if (finished.some((x) => s.includes(x)) || (m.homeScore != null && m.awayScore != null && (s === "" ))) return "ft";
+  const fin = ["FT", "AET", "PEN", "MATCH FINISHED", "FINISHED", "AP"];
+  const live = ["1H", "2H", "HT", "ET", "LIVE", "IN PLAY", "PLAYING", "BT"];
+  if (fin.some((x) => s.includes(x))) return "ft";
   if (live.some((x) => s.includes(x))) return "live";
-  if (m.homeScore != null && m.awayScore != null && s !== "NS") return "ft";
+  if (m.homeScore != null && m.awayScore != null && s !== "NS" && s !== "") return "ft";
   return "ns";
 }
 
-function fmtTime(d) {
-  return d.toLocaleTimeString("es", { hour: "2-digit", minute: "2-digit" });
-}
-function fmtDayLong(d) {
-  return d.toLocaleDateString("es", { weekday: "long", day: "numeric", month: "long" });
-}
-function fmtDayShort(d) {
-  return d.toLocaleDateString("es", { day: "2-digit", month: "short" });
-}
-function dayKey(d) {
-  return d.toLocaleDateString("en-CA"); // YYYY-MM-DD en zona local
-}
-
-/* ------------------------- Carga de datos ----------------------------- */
+/* --------------------------- carga ----------------------------------- */
 async function loadData() {
   const res = await fetch(`${DATA_URL}?t=${Math.floor(Date.now() / 60000)}`, { cache: "no-store" });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.json();
 }
-
-async function detectCountry() {
+async function detectGeo() {
   try {
     const ctrl = new AbortController();
     const to = setTimeout(() => ctrl.abort(), 4500);
@@ -71,68 +80,107 @@ async function detectCountry() {
     clearTimeout(to);
     if (!res.ok) return null;
     const j = await res.json();
-    return j.country_code || null;
-  } catch {
-    return null;
-  }
+    return { code: j.country_code || null, tz: j.timezone || null, off: j.utc_offset || null };
+  } catch { return null; }
 }
 
-/* ------------------------- Temática ----------------------------------- */
+/* --------------------------- zona horaria ---------------------------- */
+function setTimezone(tz, off) {
+  if (tz) {
+    state.tz = tz;
+    state.tzCity = tz.split("/").pop().replace(/_/g, " ");
+    if (off && /^[+-]\d{4}$/.test(off)) state.tzOff = `UTC${off.slice(0, 3)}:${off.slice(3)}`;
+    else state.tzOff = offsetLabelFor(tz);
+  } else {
+    state.tz = Intl.DateTimeFormat().resolvedOptions().timeZone || null;
+    state.tzCity = state.tz ? state.tz.split("/").pop().replace(/_/g, " ") : "";
+    const m = -new Date().getTimezoneOffset();
+    const sg = m >= 0 ? "+" : "-";
+    state.tzOff = `UTC${sg}${String(Math.floor(Math.abs(m) / 60)).padStart(2, "0")}:${String(Math.abs(m) % 60).padStart(2, "0")}`;
+  }
+}
+function offsetLabelFor(tz) {
+  try {
+    const parts = new Intl.DateTimeFormat("en", { timeZone: tz, timeZoneName: "shortOffset" }).formatToParts(new Date());
+    const o = parts.find((p) => p.type === "timeZoneName");
+    return o ? o.value.replace("GMT", "UTC") : "";
+  } catch { return ""; }
+}
+
+/* --------------------------- i18n estático --------------------------- */
+function applyI18n() {
+  document.documentElement.lang = state.lang;
+  $("#lang-current").textContent = state.lang.toUpperCase();
+  $("#fact-label").textContent = t("didYouKnow");
+  $("#tab-fixture").textContent = t("tabs.fixture");
+  $("#tab-grupos").textContent = t("tabs.groups");
+  $("#tab-bracket").textContent = t("tabs.bracket");
+  $("#tab-seleccion").textContent = t("tabs.team");
+  $("#seg-fecha").textContent = t("byMatchday");
+  $("#seg-grupo").textContent = t("byGroup");
+  $("#ledboard-tag").textContent = t("ticker");
+  $("#selector-title").textContent = t("chooseTeam");
+  $("#country-search").placeholder = t("searchCountry");
+  $("#neutral-name").textContent = t("neutralMode");
+  $("#footer-made").innerHTML = `${t("madeWith")} · <a href="https://www.thesportsdb.com" target="_blank" rel="noopener">TheSportsDB</a>`;
+  setTzHint();
+  buildLangChips();
+}
+function setTzHint() {
+  $("#tz-hint").innerHTML = `🕒 ${t("tzHint", { zone: state.tzCity || "—", off: state.tzOff || "" })}`;
+}
+
+/* --------------------------- temática -------------------------------- */
 function applyTheme(name) {
   state.team = name;
-  const t = themeOf(name);
+  const tm = theme();
   const root = document.documentElement;
-  root.style.setProperty("--c1", t.c1);
-  root.style.setProperty("--c2", t.c2);
-  root.style.setProperty("--c3", t.c3);
-  $("#meta-theme").setAttribute("content", t.c1);
+  root.style.setProperty("--c1", tm.c1);
+  root.style.setProperty("--c2", tm.c2);
+  root.style.setProperty("--c3", tm.c3);
+  $("#meta-theme").setAttribute("content", "#05060c");
 
-  // Hero
-  $("#hero-flag").textContent = t.flag;
-  $("#hero-confed").textContent = t.confed;
-  $("#hero-title").textContent = name ? t.es : "Mundial 2026";
-  $("#hero-nick").textContent = t.nick;
-  $("#hero-titles").textContent = t.titles;
+  // bandera del hero
+  const code = name ? flagCodeOf(name) : null;
+  const hf = $("#hero-flag-img");
+  if (code) { hf.src = FLAG(code); hf.style.display = ""; }
+  else { hf.removeAttribute("src"); hf.style.display = "none"; $("#hero-badge").dataset.empty = "🏆"; }
+  $("#hero-badge").innerHTML = code
+    ? `<img id="hero-flag-img" src="${FLAG(code)}" alt="${dispName(name)}">`
+    : `<span style="font-size:32px">🏆</span>`;
 
-  // Botón selector
-  $("#country-btn-flag").textContent = t.flag;
-  $("#country-btn-text").textContent = name ? t.es : "Elegir país";
+  $("#hero-confed").textContent = tm.confed;
+  $("#hero-title").textContent = name ? dispName(name) : t("appTitle");
+  $("#hero-nick").textContent = pick(tm.nick);
+  $("#hero-titles").textContent = pick(tm.titles);
 
-  // Filtro "solo mi selección"
+  const cbf = $("#country-btn-flag");
+  if (code) { cbf.src = FLAG(code); cbf.style.display = ""; } else { cbf.style.display = "none"; }
+  $("#country-btn-text").textContent = name ? dispName(name) : t("chooseCountry");
+
   const wrap = $("#only-mine-wrap");
-  if (name) {
-    wrap.hidden = false;
-    $("#only-mine-text").textContent = `Solo ${t.es}`;
-  } else {
-    wrap.hidden = true;
-    state.onlyMine = false;
-    $("#only-mine").checked = false;
-  }
+  if (name) { wrap.hidden = false; $("#only-mine-text").textContent = t("onlyTeam", { team: dispName(name) }); }
+  else { wrap.hidden = true; state.onlyMine = false; $("#only-mine").checked = false; }
 
-  startFacts(t.facts);
+  startFacts(pick(tm.facts) || tm.facts.en || tm.facts.es);
   burstConfetti(true);
   markActiveCountry();
   render();
 }
-
 function startFacts(facts) {
   clearInterval(state.factTimer);
-  state.factIdx = 0;
   const el = $("#fact-text");
-  const show = () => {
-    el.classList.add("fading");
-    setTimeout(() => {
-      el.textContent = facts[state.factIdx % facts.length];
-      state.factIdx++;
-      el.classList.remove("fading");
-    }, 300);
-  };
   el.textContent = facts[0];
   state.factIdx = 1;
-  if (facts.length > 1) state.factTimer = setInterval(show, 5500);
+  if (facts.length > 1) {
+    state.factTimer = setInterval(() => {
+      el.classList.add("fading");
+      setTimeout(() => { el.textContent = facts[state.factIdx % facts.length]; state.factIdx++; el.classList.remove("fading"); }, 300);
+    }, 5500);
+  }
 }
 
-/* ------------------------- Render principal --------------------------- */
+/* --------------------------- render ---------------------------------- */
 function render() {
   if (!state.data) return;
   renderFixture();
@@ -140,96 +188,67 @@ function render() {
   renderBracket();
   renderSeleccion();
   renderCountdown();
+  buildMarquee();
 }
 
-function teamBadge(name, badge, size = 44) {
-  const flag = flagOf(name);
-  if (badge) {
-    return `<img class="team-badge" style="width:${size}px;height:${size}px" src="${badge}" alt="${esName(name)}"
-      loading="lazy" onerror="this.outerHTML='<span class=&quot;team-badge-fallback&quot; style=&quot;width:${size}px;height:${size}px&quot;>${flag}</span>'">`;
-  }
-  return `<span class="team-badge-fallback" style="width:${size}px;height:${size}px">${flag}</span>`;
+function teamCell(name, badge) {
+  // Prefiere el escudo de TheSportsDB; si falla, bandera.
+  const code = flagCodeOf(name);
+  const fb = code ? FLAG(code) : "";
+  if (badge) return `<img class="team-badge" src="${badge}" alt="${dispName(name)}" loading="lazy" onerror="this.onerror=null;this.className='team-flag';this.src='${fb}'">`;
+  if (code) return `<img class="team-flag" src="${fb}" alt="${dispName(name)}" loading="lazy">`;
+  return `<span class="team-flag emoji">⚽</span>`;
 }
-
 function matchCard(m) {
   const d = parseUTC(m.timestamp);
   const st = classifyStatus(m);
   const isMine = state.team && (m.home === state.team || m.away === state.team);
   let center;
   if (st === "ns") {
-    center = `<div class="match-time">${d ? fmtTime(d) : "--:--"}</div>
-              <div class="match-date-sm">${d ? fmtDayShort(d) : ""}</div>
-              <span class="match-status st-ns">Programado</span>`;
+    center = `<div class="match-time">${d ? fmtTime(d) : "--:--"}</div><div class="match-date-sm">${d ? fmtDayShort(d) : ""}</div><span class="match-status st-ns">${t("status.ns")}</span>`;
   } else {
     const score = `${m.homeScore ?? "-"}<span class="sep">:</span>${m.awayScore ?? "-"}`;
-    const label = st === "live"
-      ? `<span class="match-status st-live">● En vivo</span>`
-      : `<span class="match-status st-ft">Final</span>`;
+    const label = st === "live" ? `<span class="match-status st-live">● ${t("status.live")}</span>` : `<span class="match-status st-ft">${t("status.ft")}</span>`;
     center = `<div class="match-score">${score}</div>${label}`;
   }
-  const grp = m.group ? `<span class="match-grouptag">Grupo ${m.group}</span>` : (m.stageName || "");
+  const grp = m.group ? `<span class="match-grouptag">${t("group", { g: m.group })}</span>` : stageLabel(m);
   const venue = m.venue ? ` · ${m.venue}${m.city ? ", " + m.city.split(",")[0] : ""}` : "";
-  return `
-  <article class="match ${isMine ? "mine" : ""} ${st === "live" ? "live" : ""}">
-    <div class="team-side home">
-      ${teamBadge(m.home, m.homeBadge)}
-      <span class="team-name">${esName(m.home)}</span>
-    </div>
+  return `<article class="match ${isMine ? "mine" : ""} ${st === "live" ? "live" : ""}">
+    <div class="team-side home">${teamCell(m.home, m.homeBadge)}<span class="team-name">${dispName(m.home)}</span></div>
     <div class="match-center">${center}</div>
-    <div class="team-side away">
-      ${teamBadge(m.away, m.awayBadge)}
-      <span class="team-name">${esName(m.away)}</span>
-    </div>
-    <div class="match-meta">${grp}${venue}</div>
-  </article>`;
+    <div class="team-side away">${teamCell(m.away, m.awayBadge)}<span class="team-name">${dispName(m.away)}</span></div>
+    <div class="match-meta">${grp}${venue}</div></article>`;
+}
+function stageLabel(m) {
+  if (m.stage === "GROUP") return t("stages.GROUP", { r: m.round });
+  return t(`stages.${m.stage}`) || m.stageName || t("knockouts");
 }
 
 function renderFixture() {
   const cont = $("#fixture-list");
   let matches = [...state.data.matches];
-  if (state.onlyMine && state.team) {
-    matches = matches.filter((m) => m.home === state.team || m.away === state.team);
-  }
-  if (!matches.length) {
-    cont.innerHTML = `<div class="status">No hay partidos para mostrar.</div>`;
-    return;
-  }
-
+  if (state.onlyMine && state.team) matches = matches.filter((m) => m.home === state.team || m.away === state.team);
+  if (!matches.length) { cont.innerHTML = `<div class="status">${t("noMatches")}</div>`; return; }
   let html = "";
   if (state.view === "grupo") {
-    const groups = {};
-    const ko = [];
-    for (const m of matches) {
-      if (m.stage === "GROUP" && m.group) (groups[m.group] ||= []).push(m);
-      else ko.push(m);
-    }
+    const groups = {}, ko = [];
+    for (const m of matches) { if (m.stage === "GROUP" && m.group) (groups[m.group] ||= []).push(m); else ko.push(m); }
     for (const g of Object.keys(groups).sort()) {
-      html += `<div class="day-group"><div class="day-head"><h3>Grupo ${g}</h3><span class="line"></span></div>`;
-      groups[g]
-        .sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""))
-        .forEach((m) => (html += matchCard(m)));
+      html += `<div class="day-group"><div class="day-head"><h3>${t("group", { g })}</h3><span class="line"></span></div>`;
+      groups[g].sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || "")).forEach((m) => (html += matchCard(m)));
       html += `</div>`;
     }
     if (ko.length) {
-      html += `<div class="day-group"><div class="day-head"><h3>Eliminatorias</h3><span class="line"></span></div>`;
-      ko.forEach((m) => (html += matchCard(m)));
-      html += `</div>`;
+      html += `<div class="day-group"><div class="day-head"><h3>${t("knockouts")}</h3><span class="line"></span></div>`;
+      ko.forEach((m) => (html += matchCard(m))); html += `</div>`;
     }
   } else {
-    // por jornada/fecha
     const byDay = {};
-    for (const m of matches) {
-      const d = parseUTC(m.timestamp);
-      const k = d ? dayKey(d) : "zzz";
-      (byDay[k] ||= []).push(m);
-    }
+    for (const m of matches) { const d = parseUTC(m.timestamp); (byDay[d ? dayKey(d) : "zzz"] ||= []).push(m); }
     for (const k of Object.keys(byDay).sort()) {
-      const sample = parseUTC(byDay[k][0].timestamp);
-      const title = sample ? fmtDayLong(sample) : "Fecha por confirmar";
-      html += `<div class="day-group"><div class="day-head"><h3>${title}</h3><span class="line"></span></div>`;
-      byDay[k]
-        .sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""))
-        .forEach((m) => (html += matchCard(m)));
+      const s = parseUTC(byDay[k][0].timestamp);
+      html += `<div class="day-group"><div class="day-head"><h3>${s ? fmtDayLong(s) : "—"}</h3><span class="line"></span></div>`;
+      byDay[k].sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || "")).forEach((m) => (html += matchCard(m)));
       html += `</div>`;
     }
   }
@@ -237,357 +256,275 @@ function renderFixture() {
   revealOnScroll(cont);
 }
 
-/* ------------------------- Tablas de grupos --------------------------- */
+/* --------------------------- grupos ---------------------------------- */
 function computeStandings() {
   const groups = {};
   for (const m of state.data.matches) {
     if (m.stage !== "GROUP" || !m.group) continue;
     const g = (groups[m.group] ||= {});
-    for (const tm of [m.home, m.away]) {
-      g[tm] ||= { team: tm, pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0, badge: null };
-    }
-    const badgeHome = m.homeBadge, badgeAway = m.awayBadge;
-    if (badgeHome) g[m.home].badge = badgeHome;
-    if (badgeAway) g[m.away].badge = badgeAway;
-    const st = classifyStatus(m);
-    if (st === "ns" || m.homeScore == null || m.awayScore == null) continue;
+    for (const tn of [m.home, m.away]) g[tn] ||= { team: tn, pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0, badge: null };
+    if (m.homeBadge) g[m.home].badge = m.homeBadge;
+    if (m.awayBadge) g[m.away].badge = m.awayBadge;
+    if (classifyStatus(m) === "ns" || m.homeScore == null || m.awayScore == null) continue;
     const H = g[m.home], A = g[m.away];
-    H.pj++; A.pj++;
-    H.gf += m.homeScore; H.gc += m.awayScore;
-    A.gf += m.awayScore; A.gc += m.homeScore;
+    H.pj++; A.pj++; H.gf += m.homeScore; H.gc += m.awayScore; A.gf += m.awayScore; A.gc += m.homeScore;
     if (m.homeScore > m.awayScore) { H.g++; A.p++; H.pts += 3; }
     else if (m.homeScore < m.awayScore) { A.g++; H.p++; A.pts += 3; }
     else { H.e++; A.e++; H.pts++; A.pts++; }
   }
   return groups;
 }
-
 function renderGroups() {
   const cont = $("#grupos-list");
   const groups = computeStandings();
   const keys = Object.keys(groups).sort();
-  if (!keys.length) { cont.innerHTML = `<div class="status">Aún no hay grupos cargados.</div>`; return; }
-
+  if (!keys.length) { cont.innerHTML = `<div class="status">${t("noMatches")}</div>`; return; }
+  const TH = L().th;
   let html = "";
   for (const g of keys) {
-    const rows = Object.values(groups[g]).sort((a, b) =>
-      b.pts - a.pts || (b.gf - b.gc) - (a.gf - a.gc) || b.gf - a.gf ||
-      esName(a.team).localeCompare(esName(b.team), "es")
-    );
-    html += `<div class="group-card"><h3>Grupo ${g}</h3>
-      <table class="table"><thead><tr>
-        <th class="pos"></th><th class="team-cell">Equipo</th>
-        <th>PJ</th><th>G</th><th>E</th><th>P</th><th>DIF</th><th>PTS</th>
-      </tr></thead><tbody>`;
+    const rows = Object.values(groups[g]).sort((a, b) => b.pts - a.pts || (b.gf - b.gc) - (a.gf - a.gc) || b.gf - a.gf || dispName(a.team).localeCompare(dispName(b.team), state.lang));
+    html += `<div class="group-card"><h3>${t("group", { g })}</h3><table class="table"><thead><tr>
+      <th class="pos"></th><th class="team-cell">${state.lang === "es" ? "Equipo" : state.lang === "pt" ? "Seleção" : state.lang === "fr" ? "Équipe" : "Team"}</th>
+      <th>${TH.pj}</th><th>${TH.g}</th><th>${TH.e}</th><th>${TH.p}</th><th>${TH.dif}</th><th>${TH.pts}</th></tr></thead><tbody>`;
     rows.forEach((r, i) => {
       const dif = r.gf - r.gc;
-      const badge = r.badge
-        ? `<img src="${r.badge}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'flag',textContent:'${flagOf(r.team)}'}))">`
-        : `<span class="flag">${flagOf(r.team)}</span>`;
-      html += `<tr class="${i < 2 ? "qualify" : ""}">
-        <td class="pos">${i + 1}</td>
-        <td class="team-cell"><div class="team-cell-inner">${badge}<span>${esName(r.team)}</span></div></td>
-        <td>${r.pj}</td><td>${r.g}</td><td>${r.e}</td><td>${r.p}</td>
-        <td>${dif > 0 ? "+" + dif : dif}</td><td class="pts">${r.pts}</td>
-      </tr>`;
+      const code = flagCodeOf(r.team);
+      const img = r.badge
+        ? `<img src="${r.badge}" alt="" loading="lazy" onerror="this.onerror=null;this.src='${code ? FLAG(code) : ""}'">`
+        : (code ? `<img src="${FLAG(code)}" alt="" loading="lazy">` : `<span>⚽</span>`);
+      html += `<tr class="${i < 2 ? "qualify" : ""}"><td class="pos">${i + 1}</td>
+        <td class="team-cell"><div class="team-cell-inner">${img}<span>${dispName(r.team)}</span></div></td>
+        <td>${r.pj}</td><td>${r.g}</td><td>${r.e}</td><td>${r.p}</td><td>${dif > 0 ? "+" + dif : dif}</td><td class="pts">${r.pts}</td></tr>`;
     });
-    html += `</tbody></table>
-      <div class="group-legend">Clasifican los 2 primeros de cada grupo + los 8 mejores terceros.</div></div>`;
+    html += `</tbody></table><div class="group-legend">${t("groupLegend")}</div></div>`;
   }
   cont.innerHTML = html;
 }
 
-/* ------------------------- Bracket ------------------------------------ */
+/* --------------------------- bracket (104) --------------------------- */
 function renderBracket() {
   const cont = $("#bracket-content");
-  const ko = state.data.matches.filter((m) => m.stage !== "GROUP");
-  if (!ko.length) {
-    cont.innerHTML = `
-      <div class="bracket-intro">
-        <div class="big">🏆 Eliminatorias</div>
-        <p>El cuadro de octavos, cuartos, semis y final se completará automáticamente
-        en cuanto terminen los grupos y se definan los cruces.</p>
-        <p style="margin-top:10px;color:var(--ink-dim);font-size:13px">
-        32 equipos avanzan a la fase final (los 2 primeros de cada grupo + los 8 mejores terceros).</p>
-      </div>`;
-    return;
-  }
-  const order = ["R32", "R16", "QF", "SF", "TP", "F"];
+  const koData = state.data.matches.filter((m) => m.stage !== "GROUP");
   const byStage = {};
-  ko.forEach((m) => (byStage[m.stage] ||= []).push(m));
-  let html = "";
-  for (const s of order) {
-    if (!byStage[s]) continue;
-    const title = byStage[s][0].stageName || s;
-    html += `<div class="bracket-round"><h3>${title}</h3>`;
-    byStage[s]
-      .sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""))
-      .forEach((m) => {
-        const badgeH = m.homeBadge ? `<img src="${m.homeBadge}" alt="">` : `<span>${flagOf(m.home)}</span>`;
-        const badgeA = m.awayBadge ? `<img src="${m.awayBadge}" alt="">` : `<span>${flagOf(m.away)}</span>`;
-        const sc = m.homeScore != null ? `${m.homeScore}-${m.awayScore}` : "";
-        html += `<div class="ko-match">
-          <div class="ko-team">${badgeH}${esName(m.home)}</div>
-          <div class="ko-score">${sc || '<span class="ko-vs">vs</span>'}</div>
-          <div class="ko-team">${esName(m.away)}${badgeA}</div>
-        </div>`;
-      });
+  koData.forEach((m) => (byStage[m.stage] ||= []).push(m));
+  let html = `<div class="bracket-head"><div class="big">🏆 ${t("knockouts")}</div><p>${t("bracketSub")}</p></div>`;
+  for (const r of KO_ROUNDS) {
+    const real = (byStage[r.stage] || []).sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
+    const d = parseUTC(r.date + "T18:00:00");
+    html += `<div class="bracket-round"><h3>${t(`stages.${r.stage}`)}</h3>`;
+    html += `<span class="ko-date">${d ? fmtDayShort(d) : ""}</span>`;
+    for (let i = 0; i < r.n; i++) {
+      const m = real[i];
+      if (m) {
+        const sc = m.homeScore != null ? `${m.homeScore}-${m.awayScore}` : `<span class="ko-vs">${t("vs")}</span>`;
+        html += `<div class="ko-match"><div class="ko-team">${teamCellFlag(m.home)}<span>${dispName(m.home)}</span></div>
+          <div class="ko-score">${sc}</div>
+          <div class="ko-team away"><span>${dispName(m.away)}</span>${teamCellFlag(m.away)}</div></div>`;
+      } else {
+        html += `<div class="ko-match tbd"><div class="ko-team"><span class="tbd-badge">?</span><span>${t("tbd")}</span></div>
+          <div class="ko-score"><span class="ko-vs">${t("vs")}</span></div>
+          <div class="ko-team away"><span>${t("tbd")}</span><span class="tbd-badge">?</span></div></div>`;
+      }
+    }
     html += `</div>`;
   }
   cont.innerHTML = html;
 }
+function teamCellFlag(name) {
+  const code = flagCodeOf(name);
+  return code ? `<img src="${FLAG(code)}" alt="${dispName(name)}" loading="lazy">` : `<span class="tbd-badge">⚽</span>`;
+}
 
-/* ------------------------- Mi selección ------------------------------- */
+/* --------------------------- mi selección ---------------------------- */
 function renderSeleccion() {
   const cont = $("#seleccion-content");
   if (!state.team) {
-    cont.innerHTML = `
-      <div class="sel-empty">
-        <div class="big">⭐</div>
-        <p>Elegí tu selección para ver sus datos, curiosidades y partidos.</p>
-        <p style="margin-top:14px"><button class="country-btn" onclick="document.getElementById('open-selector').click()">
-          <span>🌍</span> Elegir país</button></p>
-      </div>`;
+    cont.innerHTML = `<div class="sel-empty"><div class="big">⭐</div><p>${t("pickToSee")}</p>
+      <p style="margin-top:14px"><button class="country-btn" onclick="document.getElementById('open-selector').click()">🌍 ${t("chooseCountry")}</button></p></div>`;
     return;
   }
-  const t = themeOf(state.team);
-  const mine = state.data.matches
-    .filter((m) => m.home === state.team || m.away === state.team)
-    .sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
-
-  let html = `
+  const tm = TEAMS[state.team];
+  const code = flagCodeOf(state.team);
+  const mine = state.data.matches.filter((m) => m.home === state.team || m.away === state.team).sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
+  cont.innerHTML = `
     <div class="sel-hero">
-      <div class="sel-flag">${t.flag}</div>
-      <div class="sel-name">${t.es}</div>
-      <div class="sel-nick">${t.nick}</div>
-      <div class="sel-chips">
-        <span class="sel-chip">${t.confed}</span>
-        <span class="sel-chip">${t.titles}</span>
-      </div>
+      ${code ? `<img class="sel-flag" src="${FLAG(code)}" alt="${dispName(state.team)}">` : ""}
+      <div class="sel-name">${dispName(state.team)}</div>
+      <div class="sel-nick">${pick(tm.nick)}</div>
+      <div class="sel-chips"><span class="sel-chip">${tm.confed}</span><span class="sel-chip">${pick(tm.titles)}</span></div>
     </div>
-    <div class="sel-section-title">Curiosidades</div>
-    <div class="sel-facts">
-      ${t.facts.map((f) => `<div class="sel-fact">${f}</div>`).join("")}
-    </div>
-    <div class="sel-section-title">Partidos de ${t.es}</div>
-    <div class="fixture-list">
-      ${mine.length ? mine.map(matchCard).join("") : '<div class="status">Sin partidos cargados todavía.</div>'}
-    </div>`;
-  cont.innerHTML = html;
+    <div class="sel-section-title">${t("trivia")}</div>
+    <div class="sel-facts">${(pick(tm.facts) || tm.facts.en).map((f) => `<div class="sel-fact">${f}</div>`).join("")}</div>
+    <div class="sel-section-title">${t("matchesOf", { team: dispName(state.team) })}</div>
+    <div class="fixture-list">${mine.length ? mine.map(matchCard).join("") : `<div class="status">${t("noMatches")}</div>`}</div>`;
   revealOnScroll(cont);
 }
 
-/* ------------------------- Countdown ---------------------------------- */
+/* --------------------------- countdown ------------------------------- */
 function renderCountdown() {
   clearInterval(state.countdownTimer);
   const box = $("#countdown");
   const now = Date.now();
-  let pool = state.data.matches.filter((m) => {
-    const d = parseUTC(m.timestamp);
-    return d && d.getTime() > now && classifyStatus(m) === "ns";
-  });
-  if (state.team) {
-    const mineNext = pool.filter((m) => m.home === state.team || m.away === state.team);
-    if (mineNext.length) pool = mineNext;
-  }
+  let pool = state.data.matches.filter((m) => { const d = parseUTC(m.timestamp); return d && d.getTime() > now && classifyStatus(m) === "ns"; });
+  if (state.team) { const mn = pool.filter((m) => m.home === state.team || m.away === state.team); if (mn.length) pool = mn; }
   pool.sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
   const next = pool[0];
   if (!next) { box.hidden = true; return; }
   const d = parseUTC(next.timestamp);
   box.hidden = false;
-  $("#countdown-label").textContent =
-    (state.team && (next.home === state.team || next.away === state.team))
-      ? `Próximo partido de ${esName(state.team)}` : "Próximo partido del Mundial";
-
+  $("#countdown-label").textContent = (state.team && (next.home === state.team || next.away === state.team)) ? t("nextMatchOf", { team: dispName(state.team) }) : t("nextMatchWC");
+  $("#countdown-teams").innerHTML = `${flagImg(next.home, "fl")}<span>${dispName(next.home)}</span> ${t("vs")} <span>${dispName(next.away)}</span>${flagImg(next.away, "fl")}`.replace(/class="fl"/g, 'style="width:22px;height:16px;border-radius:3px;object-fit:cover"');
+  const seg = (v, lbl) => `<span class="cd-seg">${String(v).padStart(2, "0")}<small>${lbl}</small></span>`;
   const tick = () => {
     const diff = d.getTime() - Date.now();
-    if (diff <= 0) { $("#countdown-body").innerHTML = `<span class="countdown-time">¡EN JUEGO!</span>`; clearInterval(state.countdownTimer); return; }
-    const days = Math.floor(diff / 86400000);
-    const h = Math.floor((diff % 86400000) / 3600000);
-    const min = Math.floor((diff % 3600000) / 60000);
-    const sec = Math.floor((diff % 60000) / 1000);
-    const t = days > 0 ? `${days}d ${h}h ${min}m` : `${String(h).padStart(2,"0")}:${String(min).padStart(2,"0")}:${String(sec).padStart(2,"0")}`;
-    $("#countdown-body").innerHTML =
-      `<div>${esName(next.home)} vs ${esName(next.away)}</div><span class="countdown-time">${t}</span>`;
+    if (diff <= 0) { $("#cd-clock").innerHTML = `<span class="cd-seg" style="min-width:auto;padding:2px 14px">${t("inPlay")}</span>`; clearInterval(state.countdownTimer); return; }
+    const days = Math.floor(diff / 86400000), h = Math.floor((diff % 86400000) / 3600000), m = Math.floor((diff % 3600000) / 60000), s = Math.floor((diff % 60000) / 1000);
+    $("#cd-clock").innerHTML = days > 0 ? seg(days, "D") + seg(h, "H") + seg(m, "M") : seg(h, "H") + seg(m, "M") + seg(s, "S");
   };
   tick();
   state.countdownTimer = setInterval(tick, 1000);
 }
 
-/* ------------------------- Reveal on scroll --------------------------- */
+/* --------------------------- marquee LED ----------------------------- */
+function buildMarquee() {
+  const now = Date.now();
+  const up = state.data.matches
+    .filter((m) => { const d = parseUTC(m.timestamp); return d && d.getTime() > now && classifyStatus(m) === "ns"; })
+    .sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || "")).slice(0, 12);
+  const board = $("#ledboard");
+  if (!up.length) { board.hidden = true; return; }
+  board.hidden = false;
+  const item = (m) => { const d = parseUTC(m.timestamp); return `<span class="led-item">${flagImg(m.home, "")}<b>${dispName(m.home)}</b> ${t("vs")} <b>${dispName(m.away)}</b>${flagImg(m.away, "")}<span class="led-time">${d ? fmtDayShort(d) + " " + fmtTime(d) : ""}</span></span><span class="led-dot"></span>`; };
+  const seq = up.map(item).join("");
+  $("#marquee-track").innerHTML = seq + seq; // duplicado para loop continuo
+}
+
+/* --------------------------- reveal ---------------------------------- */
 function revealOnScroll(container) {
   const items = $$(".match", container);
   if (!("IntersectionObserver" in window)) { items.forEach((i) => i.classList.add("reveal")); return; }
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("reveal"); io.unobserve(e.target); } });
-  }, { rootMargin: "0px 0px -40px 0px" });
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("reveal"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -40px 0px" });
   items.forEach((i) => io.observe(i));
 }
 
-/* ------------------------- Selector de país --------------------------- */
+/* --------------------------- selector + idioma ----------------------- */
+function sortedNames() { return Object.keys(TEAMS).sort((a, b) => dispName(a).localeCompare(dispName(b), state.lang)); }
 function buildCountryGrid() {
-  const grid = $("#country-grid");
-  grid.innerHTML = TEAM_NAMES_SORTED.map((name) => `
-    <button class="country-item" data-team="${name}">
-      <span class="ci-flag">${TEAMS[name].flag}</span>
-      <span class="ci-name">${TEAMS[name].es}</span>
-    </button>`).join("");
+  $("#country-grid").innerHTML = sortedNames().map((name) => {
+    const code = flagCodeOf(name);
+    const fl = code ? `<img class="ci-flag" src="${FLAG(code)}" alt="" loading="lazy">` : `<span class="ci-flag emoji">⚽</span>`;
+    return `<button class="country-item" data-team="${name}">${fl}<span class="ci-name">${dispName(name)}</span></button>`;
+  }).join("");
+  markActiveCountry();
 }
-function markActiveCountry() {
-  $$(".country-item").forEach((b) =>
-    b.classList.toggle("is-active", (b.dataset.team || "") === (state.team || "")));
+function markActiveCountry() { $$(".country-item").forEach((b) => b.classList.toggle("is-active", (b.dataset.team || "") === (state.team || ""))); }
+function buildLangChips() {
+  $("#lang-row").innerHTML = ["es", "en", "pt", "fr"].map((lg) => `<button class="lang-chip ${lg === state.lang ? "is-active" : ""}" data-lang="${lg}">${lg.toUpperCase()}</button>`).join("");
 }
-function openSelector() { $("#selector").hidden = false; $("#country-search").value = ""; filterCountries(""); markActiveCountry(); }
+function openSelector() { $("#selector").hidden = false; $("#country-search").value = ""; filterCountries(""); markActiveCountry(); buildLangChips(); }
 function closeSelector() { $("#selector").hidden = true; }
 function filterCountries(q) {
   const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
   const nq = norm(q);
-  $$(".country-item", $("#country-grid")).forEach((b) => {
-    b.style.display = norm(b.textContent).includes(nq) ? "" : "none";
-  });
+  $$(".country-item", $("#country-grid")).forEach((b) => { b.style.display = norm(b.textContent).includes(nq) ? "" : "none"; });
+}
+function setLang(lang) {
+  if (!I18N[lang]) return;
+  state.lang = lang;
+  try { localStorage.setItem(STORE_LANG, lang); } catch {}
+  applyI18n();
+  buildCountryGrid();
+  applyTheme(state.team); // re-render con idioma nuevo
 }
 
-/* ------------------------- Confetti ----------------------------------- */
-let confettiParts = [];
-let confettiRAF = null;
+/* --------------------------- confetti -------------------------------- */
+let confettiParts = [], confettiRAF = null;
 function burstConfetti(big = false) {
-  const canvas = $("#confetti");
-  const ctx = canvas.getContext("2d");
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  canvas.width = innerWidth * dpr; canvas.height = innerHeight * dpr;
-  ctx.scale(dpr, dpr);
-  const t = themeOf(state.team);
-  const colors = [t.c1, t.c2, t.c3, "#ffffff"];
-  const n = big ? 110 : 50;
-  for (let i = 0; i < n; i++) {
-    confettiParts.push({
-      x: innerWidth / 2 + (Math.random() - 0.5) * innerWidth * 0.6,
-      y: -20,
-      vx: (Math.random() - 0.5) * 5,
-      vy: Math.random() * 3 + 2,
-      g: 0.12 + Math.random() * 0.08,
-      size: 5 + Math.random() * 6,
-      rot: Math.random() * Math.PI,
-      vr: (Math.random() - 0.5) * 0.2,
-      color: colors[(Math.random() * colors.length) | 0],
-      life: 0,
-      ttl: 140 + Math.random() * 60,
-    });
-  }
+  const canvas = $("#confetti"), ctx = canvas.getContext("2d");
+  const dpr = Math.min(devicePixelRatio || 1, 2);
+  canvas.width = innerWidth * dpr; canvas.height = innerHeight * dpr; ctx.scale(dpr, dpr);
+  const tm = theme(), colors = [tm.c1, tm.c2, tm.c3, "#ffffff"], n = big ? 110 : 50;
+  for (let i = 0; i < n; i++) confettiParts.push({ x: innerWidth / 2 + (Math.random() - .5) * innerWidth * .6, y: -20, vx: (Math.random() - .5) * 5, vy: Math.random() * 3 + 2, g: .12 + Math.random() * .08, size: 5 + Math.random() * 6, rot: Math.random() * Math.PI, vr: (Math.random() - .5) * .2, color: colors[(Math.random() * colors.length) | 0], life: 0, ttl: 140 + Math.random() * 60 });
   if (!confettiRAF) animateConfetti();
 }
 function animateConfetti() {
-  const canvas = $("#confetti");
-  const ctx = canvas.getContext("2d");
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const canvas = $("#confetti"), ctx = canvas.getContext("2d"), dpr = Math.min(devicePixelRatio || 1, 2);
   ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
   confettiParts = confettiParts.filter((p) => p.life < p.ttl && p.y < innerHeight + 30);
-  confettiParts.forEach((p) => {
-    p.vy += p.g; p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.life++;
-    ctx.save();
-    ctx.translate(p.x, p.y); ctx.rotate(p.rot);
-    ctx.fillStyle = p.color;
-    ctx.globalAlpha = Math.max(0, 1 - p.life / p.ttl);
-    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
-    ctx.restore();
-  });
-  if (confettiParts.length) confettiRAF = requestAnimationFrame(animateConfetti);
-  else { confettiRAF = null; ctx.clearRect(0, 0, canvas.width, canvas.height); }
+  confettiParts.forEach((p) => { p.vy += p.g; p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.life++; ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.fillStyle = p.color; ctx.globalAlpha = Math.max(0, 1 - p.life / p.ttl); ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * .6); ctx.restore(); });
+  if (confettiParts.length) confettiRAF = requestAnimationFrame(animateConfetti); else { confettiRAF = null; ctx.clearRect(0, 0, canvas.width, canvas.height); }
 }
 
-/* ------------------------- Tabs --------------------------------------- */
+/* --------------------------- sparkles + meteoros --------------------- */
+function spawnAmbient() {
+  const sp = $("#sparkles");
+  for (let i = 0; i < 26; i++) { const s = document.createElement("span"); s.className = "spark"; s.style.left = Math.random() * 100 + "%"; s.style.top = Math.random() * 100 + "%"; s.style.animationDelay = (Math.random() * 3).toFixed(2) + "s"; sp.appendChild(s); }
+  const me = $("#meteors");
+  for (let i = 0; i < 8; i++) { const m = document.createElement("span"); m.className = "meteor"; m.style.left = (40 + Math.random() * 60) + "%"; m.style.top = (Math.random() * 40) + "%"; m.style.animationDuration = (3 + Math.random() * 4).toFixed(1) + "s"; m.style.animationDelay = (Math.random() * 8).toFixed(1) + "s"; me.appendChild(m); }
+}
+
+/* --------------------------- tabs + eventos -------------------------- */
 function switchTab(tab) {
   state.tab = tab;
   $$(".tab").forEach((b) => b.classList.toggle("is-active", b.dataset.tab === tab));
   $$(".panel").forEach((p) => p.classList.toggle("is-active", p.dataset.panel === tab));
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
-
-/* ------------------------- Eventos ------------------------------------ */
 function wireEvents() {
-  $("#tabs").addEventListener("click", (e) => {
-    const b = e.target.closest(".tab"); if (b) switchTab(b.dataset.tab);
-  });
-  $("#fixture-view-seg").addEventListener("click", (e) => {
-    const b = e.target.closest(".seg-btn"); if (!b) return;
-    state.view = b.dataset.view;
-    $$(".seg-btn", $("#fixture-view-seg")).forEach((x) => x.classList.toggle("is-active", x === b));
-    renderFixture();
-  });
+  $("#tabs").addEventListener("click", (e) => { const b = e.target.closest(".tab"); if (b) switchTab(b.dataset.tab); });
+  $("#fixture-view-seg").addEventListener("click", (e) => { const b = e.target.closest(".seg-btn"); if (!b) return; state.view = b.dataset.view; $$(".seg-btn", $("#fixture-view-seg")).forEach((x) => x.classList.toggle("is-active", x === b)); renderFixture(); });
   $("#only-mine").addEventListener("change", (e) => { state.onlyMine = e.target.checked; renderFixture(); });
-
   $("#open-selector").addEventListener("click", openSelector);
+  $("#open-lang").addEventListener("click", () => { const order = ["es", "en", "pt", "fr"]; setLang(order[(order.indexOf(state.lang) + 1) % order.length]); });
   $("#selector").addEventListener("click", (e) => { if (e.target.dataset.close !== undefined) closeSelector(); });
-  $("#country-grid").addEventListener("click", (e) => {
-    const b = e.target.closest(".country-item"); if (!b) return;
-    chooseTeam(b.dataset.team || null);
-    closeSelector();
-  });
+  $("#country-grid").addEventListener("click", (e) => { const b = e.target.closest(".country-item"); if (!b) return; chooseTeam(b.dataset.team || null); closeSelector(); });
+  $("#lang-row").addEventListener("click", (e) => { const b = e.target.closest(".lang-chip"); if (b) setLang(b.dataset.lang); });
   $(".neutral-item").addEventListener("click", () => { chooseTeam(null); closeSelector(); });
   $("#country-search").addEventListener("input", (e) => filterCountries(e.target.value));
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSelector(); });
 }
+function chooseTeam(name) { try { localStorage.setItem(STORE_TEAM, name || "__NEUTRAL__"); } catch {} applyTheme(name); }
 
-function chooseTeam(name) {
-  try { localStorage.setItem(STORE_KEY, name || "__NEUTRAL__"); } catch {}
-  applyTheme(name);
-}
-
-/* ------------------------- Inicio ------------------------------------- */
-function setTzHint() {
-  try {
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "tu zona";
-    const offMin = -new Date().getTimezoneOffset();
-    const sign = offMin >= 0 ? "+" : "-";
-    const off = `UTC${sign}${String(Math.floor(Math.abs(offMin) / 60)).padStart(2, "0")}:${String(Math.abs(offMin) % 60).padStart(2, "0")}`;
-    $("#tz-hint").innerHTML = `🕒 Horarios en tu hora local (${tz}, ${off}) · preliminares hasta el inicio del torneo`;
-  } catch {
-    $("#tz-hint").textContent = "🕒 Horarios en tu hora local · preliminares";
-  }
-}
-
+/* --------------------------- init ------------------------------------ */
 async function init() {
-  buildCountryGrid();
-  wireEvents();
-  setTzHint();
+  // idioma guardado (provisorio hasta geo)
+  let storedLang = null; try { storedLang = localStorage.getItem(STORE_LANG); } catch {}
+  if (storedLang && I18N[storedLang]) state.lang = storedLang;
+  setTimezone(null); // browser por defecto hasta geo
+  buildLangChips(); wireEvents(); spawnAmbient(); applyI18n();
 
-  // 1) Datos del fixture
-  $("#status").innerHTML = `<div class="spinner"></div>Cargando fixture del Mundial…`;
-  try {
-    state.data = await loadData();
+  $("#status").innerHTML = `<div class="spinner"></div>${t("loading")}`;
+  const [data, geo] = await Promise.all([loadData().catch(() => null), detectGeo()]);
+
+  if (data) {
+    state.data = data;
     $("#status").innerHTML = "";
-    $("#footer-updated").textContent = state.data.updatedAt
-      ? `Actualizado: ${parseUTC(state.data.updatedAt)?.toLocaleString("es") || state.data.updatedAt} · ${state.data.count} partidos`
-      : "";
-  } catch (err) {
-    $("#status").innerHTML = `<div class="error">No se pudo cargar el fixture (${err.message}). Reintentá en unos minutos.</div>`;
-  }
-
-  // 2) Tema: elección guardada o autodetección por país
-  let stored = null;
-  try { stored = localStorage.getItem(STORE_KEY); } catch {}
-  if (stored === "__NEUTRAL__") {
-    applyTheme(null);
-  } else if (stored && TEAMS[stored]) {
-    applyTheme(stored);
+    const upd = parseUTC(data.updatedAt);
+    $("#footer-updated").textContent = data.updatedAt ? `${t("updated")}: ${upd ? upd.toLocaleString(state.lang, tzOpt()) : data.updatedAt} · ${data.count} ${t("matches")}` : "";
   } else {
-    applyTheme(null); // base mientras detecta
-    const code = await detectCountry();
-    const team = code && CODE_TO_TEAM[code];
-    if (team) applyTheme(team);
+    $("#status").innerHTML = `<div class="error">${t("loadError")}</div>`;
   }
 
-  // 3) Refresco en vivo
+  // zona horaria por geolocalización (no por reloj del PC)
+  if (geo && geo.tz) setTimezone(geo.tz, geo.off);
+
+  // idioma: guardado > geolocalización > navegador
+  if (!storedLang) { state.lang = langForCountry(geo && geo.code); }
+  applyI18n(); buildCountryGrid();
+
+  // temática: elección guardada > país detectado > neutral
+  let storedTeam = null; try { storedTeam = localStorage.getItem(STORE_TEAM); } catch {}
+  if (storedTeam === "__NEUTRAL__") applyTheme(null);
+  else if (storedTeam && TEAMS[storedTeam]) applyTheme(storedTeam);
+  else { const team = geo && geo.code && CODE_TO_TEAM[geo.code]; applyTheme(team || null); }
+
   setInterval(async () => {
     try {
-      const fresh = await loadData();
-      state.data = fresh;
-      $("#footer-updated").textContent = fresh.updatedAt
-        ? `Actualizado: ${parseUTC(fresh.updatedAt)?.toLocaleString("es") || fresh.updatedAt} · ${fresh.count} partidos`
-        : "";
+      const fresh = await loadData(); state.data = fresh;
+      const upd = parseUTC(fresh.updatedAt);
+      $("#footer-updated").textContent = fresh.updatedAt ? `${t("updated")}: ${upd ? upd.toLocaleString(state.lang, tzOpt()) : fresh.updatedAt} · ${fresh.count} ${t("matches")}` : "";
       render();
     } catch {}
   }, REFRESH_MS);
 }
-
 document.addEventListener("DOMContentLoaded", init);

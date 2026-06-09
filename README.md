@@ -41,10 +41,15 @@ scripts/fetch-data.mjs       → baja y normaliza los datos
 
 ## 📝 Notas
 
-- Los datos provienen de TheSportsDB; los horarios y cruces de eliminatorias se van
-  completando/ajustando a medida que la fuente los confirma.
-- Las banderas usan emojis: en Android/iOS se ven perfectas; en Windows se muestran
-  como las dos letras del país (limitación del sistema, no de la app).
+- **104 partidos**: 72 de fase de grupos (datos en vivo) + 32 de eliminatorias
+  (esqueleto que se completa solo cuando TheSportsDB define los cruces).
+- **Horarios por geolocalización**: la hora se calcula con la zona horaria de tu
+  ubicación (vía ipapi), no con el reloj del dispositivo. Los timestamps de la fuente
+  son UTC y se convierten a tu hora local.
+- **Idioma automático** (ES/EN/PT/FR) según el país detectado, con selector manual.
+- **Banderas** como imágenes vectoriales (flagcdn.com), se ven igual en todos los sistemas.
+- Identidad visual inspirada en la marca oficial "We Are 26" (negro/dorado + color por
+  selección) y animaciones estilo 21st.dev (aurora, beams, meteoros, marquee, scoreboard).
 
 ---
 Datos: [TheSportsDB](https://www.thesportsdb.com) · Hecho con ⚽

@@ -3,94 +3,107 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#0b0f1a" id="meta-theme" />
-  <meta name="description" content="Fixture del Mundial 2026 en tiempo real, temático según tu país. Partidos, grupos, tabla de posiciones y eliminatorias." />
+  <meta name="theme-color" content="#05060c" id="meta-theme" />
+  <meta name="description" content="Fixture del Mundial 2026 en tiempo real, temático según tu país. 104 partidos, grupos, posiciones y eliminatorias." />
   <title>Mundial 2026 · Fixture en vivo</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://flagcdn.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏆</text></svg>" />
 </head>
 <body>
-  <!-- Capas de fondo vibrantes -->
-  <div class="bg-gradient" aria-hidden="true"></div>
-  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
-  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+  <!-- ===================== FONDO: ESTADIO + EFECTOS ==================== -->
+  <div class="stage" aria-hidden="true">
+    <div class="aurora"><b></b><b></b><b></b></div>
+    <div class="beams"><i></i><i></i><i></i><i></i></div>
+    <div class="pattern"></div>
+    <div class="watermark">26</div>
+    <div class="flood l"></div>
+    <div class="flood r"></div>
+    <div class="pitch"></div>
+  </div>
+  <div class="spotlight" aria-hidden="true"></div>
+  <div id="sparkles" aria-hidden="true"></div>
+  <div id="meteors" aria-hidden="true"></div>
   <canvas id="confetti" aria-hidden="true"></canvas>
 
-  <!-- HERO / CABECERA TEMÁTICA -->
+  <!-- ===================== HERO ======================================= -->
   <header class="hero" id="hero">
     <div class="hero-top">
-      <div class="hero-badge">
-        <span class="hero-flag" id="hero-flag">🏆</span>
+      <div class="hero-badge" id="hero-badge"><img id="hero-flag-img" alt="" /></div>
+      <div class="top-actions">
+        <button class="icon-btn" id="open-lang" aria-label="Idioma" title="Idioma"><span id="lang-current">ES</span></button>
+        <button class="country-btn" id="open-selector" aria-haspopup="dialog">
+          <img class="fl" id="country-btn-flag" alt="" />
+          <span class="country-btn-text" id="country-btn-text">Elegir país</span>
+          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+        </button>
       </div>
-      <button class="country-btn" id="open-selector" aria-haspopup="dialog">
-        <span class="country-btn-flag" id="country-btn-flag">🌍</span>
-        <span class="country-btn-text" id="country-btn-text">Elegir país</span>
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
-      </button>
     </div>
 
     <div class="hero-main">
       <p class="hero-kicker" id="hero-confed">FIFA · USA · Canadá · México</p>
       <h1 class="hero-title" id="hero-title">Mundial 2026</h1>
-      <p class="hero-nick" id="hero-nick">La fiesta del fútbol mundial</p>
-      <p class="hero-titles" id="hero-titles">48 selecciones · 104 partidos · 16 sedes</p>
+      <p class="hero-nick" id="hero-nick"></p>
+      <p class="hero-titles" id="hero-titles"></p>
     </div>
 
     <div class="fact-card" id="fact-card">
-      <span class="fact-label">¿Sabías que…?</span>
-      <p class="fact-text" id="fact-text">Cargando datos…</p>
+      <span class="fact-label" id="fact-label">¿Sabías que…?</span>
+      <p class="fact-text" id="fact-text">…</p>
     </div>
 
     <div class="countdown" id="countdown" hidden>
-      <span class="countdown-label" id="countdown-label">Próximo partido</span>
-      <div class="countdown-body" id="countdown-body"></div>
+      <span class="countdown-label" id="countdown-label"></span>
+      <div class="countdown-teams" id="countdown-teams"></div>
+      <div class="cd-clock" id="cd-clock"></div>
     </div>
   </header>
 
-  <!-- NAVEGACIÓN -->
+  <!-- ===================== LED MARQUEE ================================ -->
+  <div class="ledboard" id="ledboard" hidden>
+    <div class="ledboard-tag" id="ledboard-tag">PRÓXIMOS</div>
+    <div class="marquee"><div class="marquee-track" id="marquee-track"></div></div>
+  </div>
+
+  <!-- ===================== TABS ======================================= -->
   <nav class="tabs" id="tabs">
-    <button class="tab is-active" data-tab="fixture">📅 Fixture</button>
-    <button class="tab" data-tab="grupos">📊 Grupos</button>
-    <button class="tab" data-tab="bracket">🏆 Eliminatorias</button>
-    <button class="tab" data-tab="seleccion">⭐ Mi selección</button>
+    <button class="tab is-active" data-tab="fixture" id="tab-fixture">Fixture</button>
+    <button class="tab" data-tab="grupos" id="tab-grupos">Grupos</button>
+    <button class="tab" data-tab="bracket" id="tab-bracket">Eliminatorias</button>
+    <button class="tab" data-tab="seleccion" id="tab-seleccion">Mi selección</button>
   </nav>
 
   <main id="main">
-    <!-- estado de carga / error -->
     <div id="status" class="status"></div>
 
-    <!-- FIXTURE -->
     <section class="panel is-active" id="panel-fixture" data-panel="fixture">
       <div class="panel-controls">
         <div class="seg" id="fixture-view-seg">
-          <button class="seg-btn is-active" data-view="fecha">Por jornada</button>
-          <button class="seg-btn" data-view="grupo">Por grupo</button>
+          <button class="seg-btn is-active" data-view="fecha" id="seg-fecha">Por jornada</button>
+          <button class="seg-btn" data-view="grupo" id="seg-grupo">Por grupo</button>
         </div>
         <label class="switch" id="only-mine-wrap" hidden>
           <input type="checkbox" id="only-mine" />
           <span class="switch-track"><span class="switch-thumb"></span></span>
-          <span class="switch-text" id="only-mine-text">Solo mi selección</span>
+          <span class="switch-text" id="only-mine-text"></span>
         </label>
       </div>
       <p class="tz-hint" id="tz-hint"></p>
       <div id="fixture-list" class="fixture-list"></div>
     </section>
 
-    <!-- GRUPOS -->
     <section class="panel" id="panel-grupos" data-panel="grupos">
       <div id="grupos-list" class="grupos-grid"></div>
     </section>
 
-    <!-- ELIMINATORIAS -->
     <section class="panel" id="panel-bracket" data-panel="bracket">
       <div id="bracket-content"></div>
     </section>
 
-    <!-- MI SELECCIÓN -->
     <section class="panel" id="panel-seleccion" data-panel="seleccion">
       <div id="seleccion-content"></div>
     </section>
@@ -98,12 +111,11 @@
 
   <footer class="footer">
     <p id="footer-updated">—</p>
-    <p>Datos: <a href="https://www.thesportsdb.com" target="_blank" rel="noopener">TheSportsDB</a> ·
-       Hecho con ⚽ y actualizado automáticamente vía GitHub Actions</p>
-    <p><a href="https://github.com/damelm/mundial-2026" target="_blank" rel="noopener">Código en GitHub</a></p>
+    <p id="footer-made">Datos: <a href="https://www.thesportsdb.com" target="_blank" rel="noopener">TheSportsDB</a></p>
+    <p><a href="https://github.com/damelm/mundial-2026" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
 
-  <!-- MODAL SELECTOR DE PAÍS -->
+  <!-- ===================== MODAL SELECTOR ============================= -->
   <div class="modal" id="selector" role="dialog" aria-modal="true" aria-labelledby="selector-title" hidden>
     <div class="modal-backdrop" data-close></div>
     <div class="modal-sheet">
@@ -111,15 +123,17 @@
         <h2 id="selector-title">Elegí tu selección</h2>
         <button class="modal-close" data-close aria-label="Cerrar">✕</button>
       </div>
+      <div class="lang-row" id="lang-row"></div>
       <input type="search" id="country-search" class="country-search" placeholder="Buscar país…" autocomplete="off" />
       <button class="country-item neutral-item" data-team="">
-        <span class="ci-flag">🏆</span>
-        <span class="ci-name">Modo neutral (Mundial)</span>
+        <span class="ci-flag emoji">🏆</span>
+        <span class="ci-name" id="neutral-name">Modo neutral (Mundial)</span>
       </button>
       <div class="country-grid" id="country-grid"></div>
     </div>
   </div>
 
+  <script src="i18n.js"></script>
   <script src="themes.js"></script>
   <script src="app.js"></script>
 </body>
