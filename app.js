@@ -491,23 +491,38 @@ function renderSeleccion() {
 
 /* --------------------------- plantel + sedes ------------------------- */
 const _squadCache = {};
+let _squadsFile = null;
+async function loadSquadsFile() {
+  if (_squadsFile) return _squadsFile;
+  try { _squadsFile = await fetch("data/squads.json?t=" + Math.floor(Date.now() / 3600000)).then((r) => (r.ok ? r.json() : {})); }
+  catch { _squadsFile = {}; }
+  return _squadsFile;
+}
 async function loadSquad(name) {
   const cont = $("#squad"); if (!cont) return;
+  // 1) Plantel completo (26) desde squads.json (API-Football vía Action)
+  const file = await loadSquadsFile();
+  if (file[name] && file[name].players && file[name].players.length) {
+    if ($("#squad")) renderSquad($("#squad"), file[name].players, true);
+    return;
+  }
+  // 2) Respaldo: TheSportsDB (~10) mientras squads.json se completa
   const id = TEAM_IDS[name];
   if (!id) { cont.innerHTML = `<div class="status">${tw(TX.squadEmpty)}</div>`; return; }
-  if (_squadCache[id]) return renderSquad(cont, _squadCache[id]);
+  if (_squadCache[id]) return renderSquad(cont, _squadCache[id], false);
   try {
     const j = await fetch(`https://www.thesportsdb.com/api/v1/json/3/lookup_all_players.php?id=${id}`).then((r) => r.json());
-    _squadCache[id] = (j && j.player) || [];
-    if ($("#squad")) renderSquad($("#squad"), _squadCache[id]);
+    _squadCache[id] = ((j && j.player) || []).map((p) => ({ name: p.strPlayer, number: p.strNumber, pos: p.strPosition, photo: p.strCutout || p.strThumb }));
+    if ($("#squad")) renderSquad($("#squad"), _squadCache[id], false);
   } catch { if ($("#squad")) $("#squad").innerHTML = `<div class="status">${tw(TX.squadEmpty)}</div>`; }
 }
-function renderSquad(cont, players) {
+function renderSquad(cont, players, full) {
   if (!players.length) { cont.innerHTML = `<div class="status">${tw(TX.squadEmpty)}</div>`; return; }
+  const note = full ? "" : `<p class="squad-note">${tw(TX.squadNote)}</p>`;
   cont.innerHTML = `<div class="squad-grid">${players.map((p) => {
-    const img = p.strCutout || p.strThumb || "";
-    return `<div class="player reveal"><div class="player-photo">${img ? `<img src="${img}" alt="${p.strPlayer}" loading="lazy" onerror="this.remove()">` : "⚽"}${p.strNumber ? `<span class="player-num">${p.strNumber}</span>` : ""}</div><div class="player-name">${p.strPlayer}</div><div class="player-pos">${p.strPosition || ""}</div></div>`;
-  }).join("")}</div><p class="squad-note">${tw(TX.squadNote)}</p>`;
+    const img = p.photo || "";
+    return `<div class="player reveal"><div class="player-photo">${img ? `<img src="${img}" alt="${p.name}" loading="lazy" onerror="this.remove()">` : "⚽"}${p.number ? `<span class="player-num">${p.number}</span>` : ""}</div><div class="player-name">${p.name}</div><div class="player-pos">${p.pos || ""}</div></div>`;
+  }).join("")}</div>${note}`;
   scrollReveal(cont);
 }
 

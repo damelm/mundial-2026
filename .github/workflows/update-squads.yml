@@ -1,0 +1,43 @@
+name: Actualizar planteles (API-Football)
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    # Diario 09:00 UTC. El script es resumable y respeta el límite de 100 req/día.
+    - cron: "0 9 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-squads
+  cancel-in-progress: false
+
+jobs:
+  squads:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Bajar planteles
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+        run: node scripts/fetch-squads.mjs
+
+      - name: Commit si hay cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain data/squads.json)" ]; then
+            git add data/squads.json
+            git commit -m "data: actualizar planteles ($(date -u '+%Y-%m-%d'))"
+            git push
+          else
+            echo "Sin cambios en planteles."
+          fi

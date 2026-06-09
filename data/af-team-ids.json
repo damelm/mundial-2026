@@ -1,0 +1,194 @@
+{
+ "Mexico": {
+  "id": 16,
+  "apiName": "Mexico"
+ },
+ "South Africa": {
+  "id": 1531,
+  "apiName": "South Africa"
+ },
+ "South Korea": {
+  "id": 17,
+  "apiName": "South Korea"
+ },
+ "Czech Republic": {
+  "id": 770,
+  "apiName": "Czech Republic"
+ },
+ "Canada": {
+  "id": 5529,
+  "apiName": "Canada"
+ },
+ "Qatar": {
+  "id": 1569,
+  "apiName": "Qatar"
+ },
+ "Switzerland": {
+  "id": 15,
+  "apiName": "Switzerland"
+ },
+ "Bosnia-Herzegovina": {
+  "id": 1113,
+  "apiName": "Bosnia & Herzegovina"
+ },
+ "Brazil": {
+  "id": 6,
+  "apiName": "Brazil"
+ },
+ "Morocco": {
+  "id": 31,
+  "apiName": "Morocco"
+ },
+ "Scotland": {
+  "id": 1108,
+  "apiName": "Scotland"
+ },
+ "Haiti": {
+  "id": 2386,
+  "apiName": "Haiti"
+ },
+ "USA": {
+  "id": 2384,
+  "apiName": "USA"
+ },
+ "Paraguay": {
+  "id": 2380,
+  "apiName": "Paraguay"
+ },
+ "Australia": {
+  "id": 20,
+  "apiName": "Australia"
+ },
+ "Turkey": {
+  "id": 777,
+  "apiName": "Türkiye"
+ },
+ "Germany": {
+  "id": 25,
+  "apiName": "Germany"
+ },
+ "Ecuador": {
+  "id": 2382,
+  "apiName": "Ecuador"
+ },
+ "Ivory Coast": {
+  "id": 1501,
+  "apiName": "Ivory Coast"
+ },
+ "Curaçao": {
+  "id": 5530,
+  "apiName": "Curaçao"
+ },
+ "Netherlands": {
+  "id": 1118,
+  "apiName": "Netherlands"
+ },
+ "Japan": {
+  "id": 12,
+  "apiName": "Japan"
+ },
+ "Tunisia": {
+  "id": 28,
+  "apiName": "Tunisia"
+ },
+ "Sweden": {
+  "id": 5,
+  "apiName": "Sweden"
+ },
+ "Belgium": {
+  "id": 1,
+  "apiName": "Belgium"
+ },
+ "Egypt": {
+  "id": 32,
+  "apiName": "Egypt"
+ },
+ "Iran": {
+  "id": 22,
+  "apiName": "Iran"
+ },
+ "New Zealand": {
+  "id": 4673,
+  "apiName": "New Zealand"
+ },
+ "Spain": {
+  "id": 9,
+  "apiName": "Spain"
+ },
+ "Uruguay": {
+  "id": 7,
+  "apiName": "Uruguay"
+ },
+ "Saudi Arabia": {
+  "id": 23,
+  "apiName": "Saudi Arabia"
+ },
+ "Cape Verde": {
+  "id": 1533,
+  "apiName": "Cape Verde Islands"
+ },
+ "France": {
+  "id": 2,
+  "apiName": "France"
+ },
+ "Senegal": {
+  "id": 13,
+  "apiName": "Senegal"
+ },
+ "Norway": {
+  "id": 1090,
+  "apiName": "Norway"
+ },
+ "Iraq": {
+  "id": 1567,
+  "apiName": "Iraq"
+ },
+ "Argentina": {
+  "id": 26,
+  "apiName": "Argentina"
+ },
+ "Algeria": {
+  "id": 1532,
+  "apiName": "Algeria"
+ },
+ "Austria": {
+  "id": 775,
+  "apiName": "Austria"
+ },
+ "Jordan": {
+  "id": 1548,
+  "apiName": "Jordan"
+ },
+ "Portugal": {
+  "id": 27,
+  "apiName": "Portugal"
+ },
+ "Colombia": {
+  "id": 8,
+  "apiName": "Colombia"
+ },
+ "Uzbekistan": {
+  "id": 1568,
+  "apiName": "Uzbekistan"
+ },
+ "DR Congo": {
+  "id": 1508,
+  "apiName": "Congo DR"
+ },
+ "England": {
+  "id": 10,
+  "apiName": "England"
+ },
+ "Croatia": {
+  "id": 3,
+  "apiName": "Croatia"
+ },
+ "Ghana": {
+  "id": 1504,
+  "apiName": "Ghana"
+ },
+ "Panama": {
+  "id": 11,
+  "apiName": "Panama"
+ }
+}
