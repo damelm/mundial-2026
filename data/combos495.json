@@ -1,0 +1,6932 @@
+[
+{
+"no": 1,
+"qualified_third_groups": "EFGHIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3F",
+"M82_1G": "3H",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 2,
+"qualified_third_groups": "DFGHIJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 3,
+"qualified_third_groups": "DEGHIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 4,
+"qualified_third_groups": "DEFHIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 5,
+"qualified_third_groups": "DEFGIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 6,
+"qualified_third_groups": "DEFGHJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 7,
+"qualified_third_groups": "DEFGHIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 8,
+"qualified_third_groups": "DEFGHIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 9,
+"qualified_third_groups": "DEFGHIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 10,
+"qualified_third_groups": "CFGHIJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 11,
+"qualified_third_groups": "CEGHIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 12,
+"qualified_third_groups": "CEFHIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 13,
+"qualified_third_groups": "CEFGIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 14,
+"qualified_third_groups": "CEFGHJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 15,
+"qualified_third_groups": "CEFGHIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 16,
+"qualified_third_groups": "CEFGHIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 17,
+"qualified_third_groups": "CEFGHIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 18,
+"qualified_third_groups": "CDGHIJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 19,
+"qualified_third_groups": "CDFHIJKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 20,
+"qualified_third_groups": "CDFGIJKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 21,
+"qualified_third_groups": "CDFGHJKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 22,
+"qualified_third_groups": "CDFGHIKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 23,
+"qualified_third_groups": "CDFGHIJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 24,
+"qualified_third_groups": "CDFGHIJK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 25,
+"qualified_third_groups": "CDEHIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 26,
+"qualified_third_groups": "CDEGIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 27,
+"qualified_third_groups": "CDEGHJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 28,
+"qualified_third_groups": "CDEGHIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 29,
+"qualified_third_groups": "CDEGHIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 30,
+"qualified_third_groups": "CDEGHIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 31,
+"qualified_third_groups": "CDEFIJKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3I",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 32,
+"qualified_third_groups": "CDEFHJKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 33,
+"qualified_third_groups": "CDEFHIKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3E",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 34,
+"qualified_third_groups": "CDEFHIJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 35,
+"qualified_third_groups": "CDEFHIJK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 36,
+"qualified_third_groups": "CDEFGJKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 37,
+"qualified_third_groups": "CDEFGIKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3I",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 38,
+"qualified_third_groups": "CDEFGIJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 39,
+"qualified_third_groups": "CDEFGIJK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 40,
+"qualified_third_groups": "CDEFGHKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 41,
+"qualified_third_groups": "CDEFGHJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 42,
+"qualified_third_groups": "CDEFGHJK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 43,
+"qualified_third_groups": "CDEFGHIL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 44,
+"qualified_third_groups": "CDEFGHIK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 45,
+"qualified_third_groups": "CDEFGHIJ",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 46,
+"qualified_third_groups": "BFGHIJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3I",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 47,
+"qualified_third_groups": "BEGHIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3B",
+"M82_1G": "3H",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 48,
+"qualified_third_groups": "BEFHIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3I",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 49,
+"qualified_third_groups": "BEFGIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3I",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 50,
+"qualified_third_groups": "BEFGHJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3H",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 51,
+"qualified_third_groups": "BEFGHIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3I",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 52,
+"qualified_third_groups": "BEFGHIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3H",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 53,
+"qualified_third_groups": "BEFGHIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3H",
+"M77_1I": "3G",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 54,
+"qualified_third_groups": "BDGHIJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3I",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 55,
+"qualified_third_groups": "BDFHIJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3I",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 56,
+"qualified_third_groups": "BDFGIJKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 57,
+"qualified_third_groups": "BDFGHJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 58,
+"qualified_third_groups": "BDFGHIKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3I",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 59,
+"qualified_third_groups": "BDFGHIJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 60,
+"qualified_third_groups": "BDFGHIJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 61,
+"qualified_third_groups": "BDEHIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3I",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 62,
+"qualified_third_groups": "BDEGIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3I",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 63,
+"qualified_third_groups": "BDEGHJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 64,
+"qualified_third_groups": "BDEGHIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3I",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 65,
+"qualified_third_groups": "BDEGHIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 66,
+"qualified_third_groups": "BDEGHIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3G",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 67,
+"qualified_third_groups": "BDEFIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3I",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 68,
+"qualified_third_groups": "BDEFHJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 69,
+"qualified_third_groups": "BDEFHIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3I",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 70,
+"qualified_third_groups": "BDEFHIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 71,
+"qualified_third_groups": "BDEFHIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 72,
+"qualified_third_groups": "BDEFGJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 73,
+"qualified_third_groups": "BDEFGIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3I",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 74,
+"qualified_third_groups": "BDEFGIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 75,
+"qualified_third_groups": "BDEFGIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 76,
+"qualified_third_groups": "BDEFGHKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 77,
+"qualified_third_groups": "BDEFGHJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 78,
+"qualified_third_groups": "BDEFGHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 79,
+"qualified_third_groups": "BDEFGHIL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 80,
+"qualified_third_groups": "BDEFGHIK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 81,
+"qualified_third_groups": "BDEFGHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 82,
+"qualified_third_groups": "BCGHIJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3I",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 83,
+"qualified_third_groups": "BCFHIJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3I",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 84,
+"qualified_third_groups": "BCFGIJKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 85,
+"qualified_third_groups": "BCFGHJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 86,
+"qualified_third_groups": "BCFGHIKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3I",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 87,
+"qualified_third_groups": "BCFGHIJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 88,
+"qualified_third_groups": "BCFGHIJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 89,
+"qualified_third_groups": "BCEHIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3I",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 90,
+"qualified_third_groups": "BCEGIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3I",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 91,
+"qualified_third_groups": "BCEGHJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 92,
+"qualified_third_groups": "BCEGHIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3I",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 93,
+"qualified_third_groups": "BCEGHIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 94,
+"qualified_third_groups": "BCEGHIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3G",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 95,
+"qualified_third_groups": "BCEFIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3I",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 96,
+"qualified_third_groups": "BCEFHJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 97,
+"qualified_third_groups": "BCEFHIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3I",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 98,
+"qualified_third_groups": "BCEFHIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 99,
+"qualified_third_groups": "BCEFHIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 100,
+"qualified_third_groups": "BCEFGJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 101,
+"qualified_third_groups": "BCEFGIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3I",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 102,
+"qualified_third_groups": "BCEFGIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 103,
+"qualified_third_groups": "BCEFGIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 104,
+"qualified_third_groups": "BCEFGHKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 105,
+"qualified_third_groups": "BCEFGHJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 106,
+"qualified_third_groups": "BCEFGHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 107,
+"qualified_third_groups": "BCEFGHIL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 108,
+"qualified_third_groups": "BCEFGHIK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 109,
+"qualified_third_groups": "BCEFGHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 110,
+"qualified_third_groups": "BCDHIJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3I",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 111,
+"qualified_third_groups": "BCDGIJKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 112,
+"qualified_third_groups": "BCDGHJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 113,
+"qualified_third_groups": "BCDGHIKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3I",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 114,
+"qualified_third_groups": "BCDGHIJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 115,
+"qualified_third_groups": "BCDGHIJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 116,
+"qualified_third_groups": "BCDFIJKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3I",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 117,
+"qualified_third_groups": "BCDFHJKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 118,
+"qualified_third_groups": "BCDFHIKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3I",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 119,
+"qualified_third_groups": "BCDFHIJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 120,
+"qualified_third_groups": "BCDFHIJK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 121,
+"qualified_third_groups": "BCDFGJKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 122,
+"qualified_third_groups": "BCDFGIKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3I",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 123,
+"qualified_third_groups": "BCDFGIJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 124,
+"qualified_third_groups": "BCDFGIJK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 125,
+"qualified_third_groups": "BCDFGHKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 126,
+"qualified_third_groups": "BCDFGHJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3J"
+}
+},
+{
+"no": 127,
+"qualified_third_groups": "BCDFGHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3K"
+}
+},
+{
+"no": 128,
+"qualified_third_groups": "BCDFGHIL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 129,
+"qualified_third_groups": "BCDFGHIK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 130,
+"qualified_third_groups": "BCDFGHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3I"
+}
+},
+{
+"no": 131,
+"qualified_third_groups": "BCDEIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3I",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 132,
+"qualified_third_groups": "BCDEHJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 133,
+"qualified_third_groups": "BCDEHIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3I",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 134,
+"qualified_third_groups": "BCDEHIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 135,
+"qualified_third_groups": "BCDEHIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 136,
+"qualified_third_groups": "BCDEGJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 137,
+"qualified_third_groups": "BCDEGIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3I",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 138,
+"qualified_third_groups": "BCDEGIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 139,
+"qualified_third_groups": "BCDEGIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 140,
+"qualified_third_groups": "BCDEGHKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 141,
+"qualified_third_groups": "BCDEGHJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 142,
+"qualified_third_groups": "BCDEGHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3D",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 143,
+"qualified_third_groups": "BCDEGHIL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 144,
+"qualified_third_groups": "BCDEGHIK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3H",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 145,
+"qualified_third_groups": "BCDEGHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3D",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 146,
+"qualified_third_groups": "BCDEFJKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3E",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 147,
+"qualified_third_groups": "BCDEFIKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3I",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 148,
+"qualified_third_groups": "BCDEFIJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3E",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 149,
+"qualified_third_groups": "BCDEFIJK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3E",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 150,
+"qualified_third_groups": "BCDEFHKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 151,
+"qualified_third_groups": "BCDEFHJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 152,
+"qualified_third_groups": "BCDEFHJK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 153,
+"qualified_third_groups": "BCDEFHIL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 154,
+"qualified_third_groups": "BCDEFHIK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 155,
+"qualified_third_groups": "BCDEFHIJ",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 156,
+"qualified_third_groups": "BCDEFGKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3E",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 157,
+"qualified_third_groups": "BCDEFGJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 158,
+"qualified_third_groups": "BCDEFGJK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 159,
+"qualified_third_groups": "BCDEFGIL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3E",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 160,
+"qualified_third_groups": "BCDEFGIK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3E",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 161,
+"qualified_third_groups": "BCDEFGIJ",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 162,
+"qualified_third_groups": "BCDEFGHL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 163,
+"qualified_third_groups": "BCDEFGHK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 164,
+"qualified_third_groups": "BCDEFGHJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3J",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3E"
+}
+},
+{
+"no": 165,
+"qualified_third_groups": "BCDEFGHI",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3H",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 166,
+"qualified_third_groups": "AFGHIJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 167,
+"qualified_third_groups": "AEGHIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3A",
+"M82_1G": "3H",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 168,
+"qualified_third_groups": "AEFHIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 169,
+"qualified_third_groups": "AEFGIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 170,
+"qualified_third_groups": "AEFGHJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 171,
+"qualified_third_groups": "AEFGHIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 172,
+"qualified_third_groups": "AEFGHIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 173,
+"qualified_third_groups": "AEFGHIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 174,
+"qualified_third_groups": "ADGHIJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 175,
+"qualified_third_groups": "ADFHIJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 176,
+"qualified_third_groups": "ADFGIJKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 177,
+"qualified_third_groups": "ADFGHJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 178,
+"qualified_third_groups": "ADFGHIKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 179,
+"qualified_third_groups": "ADFGHIJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 180,
+"qualified_third_groups": "ADFGHIJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 181,
+"qualified_third_groups": "ADEHIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 182,
+"qualified_third_groups": "ADEGIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 183,
+"qualified_third_groups": "ADEGHJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 184,
+"qualified_third_groups": "ADEGHIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 185,
+"qualified_third_groups": "ADEGHIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 186,
+"qualified_third_groups": "ADEGHIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 187,
+"qualified_third_groups": "ADEFIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 188,
+"qualified_third_groups": "ADEFHJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 189,
+"qualified_third_groups": "ADEFHIKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3E",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 190,
+"qualified_third_groups": "ADEFHIJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 191,
+"qualified_third_groups": "ADEFHIJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 192,
+"qualified_third_groups": "ADEFGJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 193,
+"qualified_third_groups": "ADEFGIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 194,
+"qualified_third_groups": "ADEFGIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 195,
+"qualified_third_groups": "ADEFGIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 196,
+"qualified_third_groups": "ADEFGHKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 197,
+"qualified_third_groups": "ADEFGHJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 198,
+"qualified_third_groups": "ADEFGHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 199,
+"qualified_third_groups": "ADEFGHIL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 200,
+"qualified_third_groups": "ADEFGHIK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 201,
+"qualified_third_groups": "ADEFGHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 202,
+"qualified_third_groups": "ACGHIJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 203,
+"qualified_third_groups": "ACFHIJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 204,
+"qualified_third_groups": "ACFGIJKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 205,
+"qualified_third_groups": "ACFGHJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 206,
+"qualified_third_groups": "ACFGHIKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 207,
+"qualified_third_groups": "ACFGHIJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 208,
+"qualified_third_groups": "ACFGHIJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 209,
+"qualified_third_groups": "ACEHIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 210,
+"qualified_third_groups": "ACEGIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 211,
+"qualified_third_groups": "ACEGHJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 212,
+"qualified_third_groups": "ACEGHIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 213,
+"qualified_third_groups": "ACEGHIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 214,
+"qualified_third_groups": "ACEGHIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 215,
+"qualified_third_groups": "ACEFIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 216,
+"qualified_third_groups": "ACEFHJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 217,
+"qualified_third_groups": "ACEFHIKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3E",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 218,
+"qualified_third_groups": "ACEFHIJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 219,
+"qualified_third_groups": "ACEFHIJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 220,
+"qualified_third_groups": "ACEFGJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 221,
+"qualified_third_groups": "ACEFGIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 222,
+"qualified_third_groups": "ACEFGIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 223,
+"qualified_third_groups": "ACEFGIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 224,
+"qualified_third_groups": "ACEFGHKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 225,
+"qualified_third_groups": "ACEFGHJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 226,
+"qualified_third_groups": "ACEFGHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 227,
+"qualified_third_groups": "ACEFGHIL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 228,
+"qualified_third_groups": "ACEFGHIK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 229,
+"qualified_third_groups": "ACEFGHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 230,
+"qualified_third_groups": "ACDHIJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 231,
+"qualified_third_groups": "ACDGIJKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 232,
+"qualified_third_groups": "ACDGHJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 233,
+"qualified_third_groups": "ACDGHIKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 234,
+"qualified_third_groups": "ACDGHIJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 235,
+"qualified_third_groups": "ACDGHIJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 236,
+"qualified_third_groups": "ACDFIJKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 237,
+"qualified_third_groups": "ACDFHJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3F",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 238,
+"qualified_third_groups": "ACDFHIKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3F",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 239,
+"qualified_third_groups": "ACDFHIJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3F",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 240,
+"qualified_third_groups": "ACDFHIJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3F",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 241,
+"qualified_third_groups": "ACDFGJKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 242,
+"qualified_third_groups": "ACDFGIKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 243,
+"qualified_third_groups": "ACDFGIJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 244,
+"qualified_third_groups": "ACDFGIJK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 245,
+"qualified_third_groups": "ACDFGHKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3F",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 246,
+"qualified_third_groups": "ACDFGHJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3H"
+}
+},
+{
+"no": 247,
+"qualified_third_groups": "ACDFGHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3K"
+}
+},
+{
+"no": 248,
+"qualified_third_groups": "ACDFGHIL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3F",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 249,
+"qualified_third_groups": "ACDFGHIK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3F",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 250,
+"qualified_third_groups": "ACDFGHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3I"
+}
+},
+{
+"no": 251,
+"qualified_third_groups": "ACDEIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 252,
+"qualified_third_groups": "ACDEHJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 253,
+"qualified_third_groups": "ACDEHIKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3E",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 254,
+"qualified_third_groups": "ACDEHIJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 255,
+"qualified_third_groups": "ACDEHIJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 256,
+"qualified_third_groups": "ACDEGJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 257,
+"qualified_third_groups": "ACDEGIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3I",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 258,
+"qualified_third_groups": "ACDEGIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 259,
+"qualified_third_groups": "ACDEGIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 260,
+"qualified_third_groups": "ACDEGHKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 261,
+"qualified_third_groups": "ACDEGHJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 262,
+"qualified_third_groups": "ACDEGHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 263,
+"qualified_third_groups": "ACDEGHIL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 264,
+"qualified_third_groups": "ACDEGHIK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 265,
+"qualified_third_groups": "ACDEGHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 266,
+"qualified_third_groups": "ACDEFJKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 267,
+"qualified_third_groups": "ACDEFIKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3E",
+"M81_1D": "3I",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 268,
+"qualified_third_groups": "ACDEFIJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 269,
+"qualified_third_groups": "ACDEFIJK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 270,
+"qualified_third_groups": "ACDEFHKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3E",
+"M81_1D": "3F",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 271,
+"qualified_third_groups": "ACDEFHJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3F",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 272,
+"qualified_third_groups": "ACDEFHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3K"
+}
+},
+{
+"no": 273,
+"qualified_third_groups": "ACDEFHIL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3E",
+"M81_1D": "3F",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 274,
+"qualified_third_groups": "ACDEFHIK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3E",
+"M81_1D": "3F",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 275,
+"qualified_third_groups": "ACDEFHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3E",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3I"
+}
+},
+{
+"no": 276,
+"qualified_third_groups": "ACDEFGKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 277,
+"qualified_third_groups": "ACDEFGJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 278,
+"qualified_third_groups": "ACDEFGJK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 279,
+"qualified_third_groups": "ACDEFGIL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 280,
+"qualified_third_groups": "ACDEFGIK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 281,
+"qualified_third_groups": "ACDEFGIJ",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 282,
+"qualified_third_groups": "ACDEFGHL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3F",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 283,
+"qualified_third_groups": "ACDEFGHK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3K"
+}
+},
+{
+"no": 284,
+"qualified_third_groups": "ACDEFGHJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3J",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3E"
+}
+},
+{
+"no": 285,
+"qualified_third_groups": "ACDEFGHI",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3E",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3I"
+}
+},
+{
+"no": 286,
+"qualified_third_groups": "ABGHIJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3A",
+"M82_1G": "3I",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 287,
+"qualified_third_groups": "ABFHIJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3A",
+"M82_1G": "3I",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 288,
+"qualified_third_groups": "ABFGIJKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 289,
+"qualified_third_groups": "ABFGHJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 290,
+"qualified_third_groups": "ABFGHIKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3A",
+"M82_1G": "3I",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 291,
+"qualified_third_groups": "ABFGHIJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 292,
+"qualified_third_groups": "ABFGHIJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 293,
+"qualified_third_groups": "ABEHIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3A",
+"M82_1G": "3I",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 294,
+"qualified_third_groups": "ABEGIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3A",
+"M82_1G": "3I",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 295,
+"qualified_third_groups": "ABEGHJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3A",
+"M82_1G": "3H",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 296,
+"qualified_third_groups": "ABEGHIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3A",
+"M82_1G": "3I",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 297,
+"qualified_third_groups": "ABEGHIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3A",
+"M82_1G": "3H",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 298,
+"qualified_third_groups": "ABEGHIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3A",
+"M82_1G": "3H",
+"M77_1I": "3G",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 299,
+"qualified_third_groups": "ABEFIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3A",
+"M82_1G": "3I",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 300,
+"qualified_third_groups": "ABEFHJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 301,
+"qualified_third_groups": "ABEFHIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3I",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 302,
+"qualified_third_groups": "ABEFHIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 303,
+"qualified_third_groups": "ABEFHIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 304,
+"qualified_third_groups": "ABEFGJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 305,
+"qualified_third_groups": "ABEFGIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3A",
+"M82_1G": "3I",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 306,
+"qualified_third_groups": "ABEFGIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 307,
+"qualified_third_groups": "ABEFGIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 308,
+"qualified_third_groups": "ABEFGHKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 309,
+"qualified_third_groups": "ABEFGHJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 310,
+"qualified_third_groups": "ABEFGHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 311,
+"qualified_third_groups": "ABEFGHIL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 312,
+"qualified_third_groups": "ABEFGHIK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 313,
+"qualified_third_groups": "ABEFGHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 314,
+"qualified_third_groups": "ABDHIJKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 315,
+"qualified_third_groups": "ABDGIJKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 316,
+"qualified_third_groups": "ABDGHJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 317,
+"qualified_third_groups": "ABDGHIKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 318,
+"qualified_third_groups": "ABDGHIJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 319,
+"qualified_third_groups": "ABDGHIJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 320,
+"qualified_third_groups": "ABDFIJKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 321,
+"qualified_third_groups": "ABDFHJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 322,
+"qualified_third_groups": "ABDFHIKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3I",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 323,
+"qualified_third_groups": "ABDFHIJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 324,
+"qualified_third_groups": "ABDFHIJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 325,
+"qualified_third_groups": "ABDFGJKL",
+"assign": {
+"M79_1A": "3F",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 326,
+"qualified_third_groups": "ABDFGIKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 327,
+"qualified_third_groups": "ABDFGIJL",
+"assign": {
+"M79_1A": "3F",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 328,
+"qualified_third_groups": "ABDFGIJK",
+"assign": {
+"M79_1A": "3F",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 329,
+"qualified_third_groups": "ABDFGHKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 330,
+"qualified_third_groups": "ABDFGHJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3J"
+}
+},
+{
+"no": 331,
+"qualified_third_groups": "ABDFGHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3J",
+"M80_1L": "3K"
+}
+},
+{
+"no": 332,
+"qualified_third_groups": "ABDFGHIL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 333,
+"qualified_third_groups": "ABDFGHIK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 334,
+"qualified_third_groups": "ABDFGHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3J"
+}
+},
+{
+"no": 335,
+"qualified_third_groups": "ABDEIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3A",
+"M82_1G": "3I",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 336,
+"qualified_third_groups": "ABDEHJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 337,
+"qualified_third_groups": "ABDEHIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3I",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 338,
+"qualified_third_groups": "ABDEHIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 339,
+"qualified_third_groups": "ABDEHIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 340,
+"qualified_third_groups": "ABDEGJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 341,
+"qualified_third_groups": "ABDEGIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3A",
+"M82_1G": "3I",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 342,
+"qualified_third_groups": "ABDEGIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 343,
+"qualified_third_groups": "ABDEGIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 344,
+"qualified_third_groups": "ABDEGHKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 345,
+"qualified_third_groups": "ABDEGHJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 346,
+"qualified_third_groups": "ABDEGHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 347,
+"qualified_third_groups": "ABDEGHIL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 348,
+"qualified_third_groups": "ABDEGHIK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 349,
+"qualified_third_groups": "ABDEGHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 350,
+"qualified_third_groups": "ABDEFJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 351,
+"qualified_third_groups": "ABDEFIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3I",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 352,
+"qualified_third_groups": "ABDEFIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 353,
+"qualified_third_groups": "ABDEFIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 354,
+"qualified_third_groups": "ABDEFHKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 355,
+"qualified_third_groups": "ABDEFHJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 356,
+"qualified_third_groups": "ABDEFHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 357,
+"qualified_third_groups": "ABDEFHIL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 358,
+"qualified_third_groups": "ABDEFHIK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 359,
+"qualified_third_groups": "ABDEFHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 360,
+"qualified_third_groups": "ABDEFGKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 361,
+"qualified_third_groups": "ABDEFGJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3J"
+}
+},
+{
+"no": 362,
+"qualified_third_groups": "ABDEFGJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3J",
+"M80_1L": "3K"
+}
+},
+{
+"no": 363,
+"qualified_third_groups": "ABDEFGIL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 364,
+"qualified_third_groups": "ABDEFGIK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 365,
+"qualified_third_groups": "ABDEFGIJ",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3J"
+}
+},
+{
+"no": 366,
+"qualified_third_groups": "ABDEFGHL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 367,
+"qualified_third_groups": "ABDEFGHK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 368,
+"qualified_third_groups": "ABDEFGHJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3J"
+}
+},
+{
+"no": 369,
+"qualified_third_groups": "ABDEFGHI",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 370,
+"qualified_third_groups": "ABCHIJKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 371,
+"qualified_third_groups": "ABCGIJKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 372,
+"qualified_third_groups": "ABCGHJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 373,
+"qualified_third_groups": "ABCGHIKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 374,
+"qualified_third_groups": "ABCGHIJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 375,
+"qualified_third_groups": "ABCGHIJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 376,
+"qualified_third_groups": "ABCFIJKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 377,
+"qualified_third_groups": "ABCFHJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 378,
+"qualified_third_groups": "ABCFHIKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3I",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 379,
+"qualified_third_groups": "ABCFHIJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 380,
+"qualified_third_groups": "ABCFHIJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 381,
+"qualified_third_groups": "ABCFGJKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 382,
+"qualified_third_groups": "ABCFGIKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 383,
+"qualified_third_groups": "ABCFGIJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 384,
+"qualified_third_groups": "ABCFGIJK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3F",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 385,
+"qualified_third_groups": "ABCFGHKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 386,
+"qualified_third_groups": "ABCFGHJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3J"
+}
+},
+{
+"no": 387,
+"qualified_third_groups": "ABCFGHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3J",
+"M80_1L": "3K"
+}
+},
+{
+"no": 388,
+"qualified_third_groups": "ABCFGHIL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 389,
+"qualified_third_groups": "ABCFGHIK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 390,
+"qualified_third_groups": "ABCFGHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3J"
+}
+},
+{
+"no": 391,
+"qualified_third_groups": "ABCEIJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3A",
+"M82_1G": "3I",
+"M77_1I": "3C",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 392,
+"qualified_third_groups": "ABCEHJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 393,
+"qualified_third_groups": "ABCEHIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3I",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 394,
+"qualified_third_groups": "ABCEHIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 395,
+"qualified_third_groups": "ABCEHIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 396,
+"qualified_third_groups": "ABCEGJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 397,
+"qualified_third_groups": "ABCEGIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3A",
+"M82_1G": "3I",
+"M77_1I": "3C",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 398,
+"qualified_third_groups": "ABCEGIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 399,
+"qualified_third_groups": "ABCEGIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 400,
+"qualified_third_groups": "ABCEGHKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 401,
+"qualified_third_groups": "ABCEGHJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 402,
+"qualified_third_groups": "ABCEGHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 403,
+"qualified_third_groups": "ABCEGHIL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 404,
+"qualified_third_groups": "ABCEGHIK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3H",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 405,
+"qualified_third_groups": "ABCEGHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 406,
+"qualified_third_groups": "ABCEFJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 407,
+"qualified_third_groups": "ABCEFIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3I",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 408,
+"qualified_third_groups": "ABCEFIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 409,
+"qualified_third_groups": "ABCEFIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 410,
+"qualified_third_groups": "ABCEFHKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 411,
+"qualified_third_groups": "ABCEFHJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 412,
+"qualified_third_groups": "ABCEFHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 413,
+"qualified_third_groups": "ABCEFHIL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 414,
+"qualified_third_groups": "ABCEFHIK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 415,
+"qualified_third_groups": "ABCEFHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 416,
+"qualified_third_groups": "ABCEFGKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 417,
+"qualified_third_groups": "ABCEFGJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3J"
+}
+},
+{
+"no": 418,
+"qualified_third_groups": "ABCEFGJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3J",
+"M80_1L": "3K"
+}
+},
+{
+"no": 419,
+"qualified_third_groups": "ABCEFGIL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 420,
+"qualified_third_groups": "ABCEFGIK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 421,
+"qualified_third_groups": "ABCEFGIJ",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3J"
+}
+},
+{
+"no": 422,
+"qualified_third_groups": "ABCEFGHL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 423,
+"qualified_third_groups": "ABCEFGHK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 424,
+"qualified_third_groups": "ABCEFGHJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3J"
+}
+},
+{
+"no": 425,
+"qualified_third_groups": "ABCEFGHI",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 426,
+"qualified_third_groups": "ABCDIJKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 427,
+"qualified_third_groups": "ABCDHJKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 428,
+"qualified_third_groups": "ABCDHIKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3I",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 429,
+"qualified_third_groups": "ABCDHIJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 430,
+"qualified_third_groups": "ABCDHIJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 431,
+"qualified_third_groups": "ABCDGJKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 432,
+"qualified_third_groups": "ABCDGIKL",
+"assign": {
+"M79_1A": "3I",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 433,
+"qualified_third_groups": "ABCDGIJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 434,
+"qualified_third_groups": "ABCDGIJK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3G",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 435,
+"qualified_third_groups": "ABCDGHKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 436,
+"qualified_third_groups": "ABCDGHJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3J"
+}
+},
+{
+"no": 437,
+"qualified_third_groups": "ABCDGHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3J",
+"M80_1L": "3K"
+}
+},
+{
+"no": 438,
+"qualified_third_groups": "ABCDGHIL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 439,
+"qualified_third_groups": "ABCDGHIK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 440,
+"qualified_third_groups": "ABCDGHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3J"
+}
+},
+{
+"no": 441,
+"qualified_third_groups": "ABCDFJKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 442,
+"qualified_third_groups": "ABCDFIKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3I",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 443,
+"qualified_third_groups": "ABCDFIJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 444,
+"qualified_third_groups": "ABCDFIJK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 445,
+"qualified_third_groups": "ABCDFHKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3F",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 446,
+"qualified_third_groups": "ABCDFHJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3H"
+}
+},
+{
+"no": 447,
+"qualified_third_groups": "ABCDFHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3K"
+}
+},
+{
+"no": 448,
+"qualified_third_groups": "ABCDFHIL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3F",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 449,
+"qualified_third_groups": "ABCDFHIK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3F",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 450,
+"qualified_third_groups": "ABCDFHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3I"
+}
+},
+{
+"no": 451,
+"qualified_third_groups": "ABCDFGKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 452,
+"qualified_third_groups": "ABCDFGJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3J"
+}
+},
+{
+"no": 453,
+"qualified_third_groups": "ABCDFGJK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3J",
+"M80_1L": "3K"
+}
+},
+{
+"no": 454,
+"qualified_third_groups": "ABCDFGIL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 455,
+"qualified_third_groups": "ABCDFGIK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 456,
+"qualified_third_groups": "ABCDFGIJ",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3J"
+}
+},
+{
+"no": 457,
+"qualified_third_groups": "ABCDFGHL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3H"
+}
+},
+{
+"no": 458,
+"qualified_third_groups": "ABCDFGHK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3K"
+}
+},
+{
+"no": 459,
+"qualified_third_groups": "ABCDFGHJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3J"
+}
+},
+{
+"no": 460,
+"qualified_third_groups": "ABCDFGHI",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3I"
+}
+},
+{
+"no": 461,
+"qualified_third_groups": "ABCDEJKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 462,
+"qualified_third_groups": "ABCDEIKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3I",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 463,
+"qualified_third_groups": "ABCDEIJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 464,
+"qualified_third_groups": "ABCDEIJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 465,
+"qualified_third_groups": "ABCDEHKL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 466,
+"qualified_third_groups": "ABCDEHJL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 467,
+"qualified_third_groups": "ABCDEHJK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 468,
+"qualified_third_groups": "ABCDEHIL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 469,
+"qualified_third_groups": "ABCDEHIK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 470,
+"qualified_third_groups": "ABCDEHIJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 471,
+"qualified_third_groups": "ABCDEGKL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 472,
+"qualified_third_groups": "ABCDEGJL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3J"
+}
+},
+{
+"no": 473,
+"qualified_third_groups": "ABCDEGJK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3J",
+"M80_1L": "3K"
+}
+},
+{
+"no": 474,
+"qualified_third_groups": "ABCDEGIL",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 475,
+"qualified_third_groups": "ABCDEGIK",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 476,
+"qualified_third_groups": "ABCDEGIJ",
+"assign": {
+"M79_1A": "3E",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3I",
+"M80_1L": "3J"
+}
+},
+{
+"no": 477,
+"qualified_third_groups": "ABCDEGHL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 478,
+"qualified_third_groups": "ABCDEGHK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 479,
+"qualified_third_groups": "ABCDEGHJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3E",
+"M80_1L": "3J"
+}
+},
+{
+"no": 480,
+"qualified_third_groups": "ABCDEGHI",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 481,
+"qualified_third_groups": "ABCDEFKL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3K"
+}
+},
+{
+"no": 482,
+"qualified_third_groups": "ABCDEFJL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 483,
+"qualified_third_groups": "ABCDEFJK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 484,
+"qualified_third_groups": "ABCDEFIL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3I"
+}
+},
+{
+"no": 485,
+"qualified_third_groups": "ABCDEFIK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3I",
+"M80_1L": "3K"
+}
+},
+{
+"no": 486,
+"qualified_third_groups": "ABCDEFIJ",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 487,
+"qualified_third_groups": "ABCDEFHL",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3F",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3D",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 488,
+"qualified_third_groups": "ABCDEFHK",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3K"
+}
+},
+{
+"no": 489,
+"qualified_third_groups": "ABCDEFHJ",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3J",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3E"
+}
+},
+{
+"no": 490,
+"qualified_third_groups": "ABCDEFHI",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3E",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3I"
+}
+},
+{
+"no": 491,
+"qualified_third_groups": "ABCDEFGL",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3L",
+"M80_1L": "3E"
+}
+},
+{
+"no": 492,
+"qualified_third_groups": "ABCDEFGK",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3K"
+}
+},
+{
+"no": 493,
+"qualified_third_groups": "ABCDEFGJ",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3J"
+}
+},
+{
+"no": 494,
+"qualified_third_groups": "ABCDEFGI",
+"assign": {
+"M79_1A": "3C",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3D",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3E",
+"M80_1L": "3I"
+}
+},
+{
+"no": 495,
+"qualified_third_groups": "ABCDEFGH",
+"assign": {
+"M79_1A": "3H",
+"M85_1B": "3G",
+"M81_1D": "3B",
+"M74_1E": "3C",
+"M82_1G": "3A",
+"M77_1I": "3F",
+"M87_1K": "3D",
+"M80_1L": "3E"
+}
+}
+]

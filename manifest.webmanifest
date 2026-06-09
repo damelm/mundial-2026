@@ -1,0 +1,18 @@
+{
+  "name": "Mundial 2026 · Fixture en vivo",
+  "short_name": "Mundial 2026",
+  "description": "Fixture del Mundial 2026 en tiempo real, temático según tu país. Partidos, grupos, posiciones y eliminatorias.",
+  "lang": "es",
+  "start_url": "/mundial-2026/",
+  "scope": "/mundial-2026/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#14110e",
+  "theme_color": "#14110e",
+  "categories": ["sports", "news"],
+  "icons": [
+    { "src": "/mundial-2026/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/mundial-2026/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/mundial-2026/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

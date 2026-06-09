@@ -269,4 +269,22 @@ main { padding: 0 16px 44px; }
   animation: shimmerBtn 4.5s ease-in-out infinite; }
 @keyframes shimmerBtn { 0%, 12% { left: -60%; } 38%, 100% { left: 130%; } }
 
+/* Skeletons de carga */
+.sk-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 15px 14px; margin-bottom: 11px; box-shadow: var(--sh-sm); }
+.sk { background: linear-gradient(100deg, var(--line-2) 30%, var(--surface-2) 50%, var(--line-2) 70%); background-size: 200% 100%; animation: skShimmer 1.3s linear infinite; border-radius: 6px; }
+.sk-head { height: 11px; width: 55%; margin: 2px auto 16px; border-radius: 999px; }
+.sk-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.sk-av { width: 46px; height: 46px; border-radius: 8px; }
+.sk-time { width: 72px; height: 28px; border-radius: 8px; }
+@keyframes skShimmer { to { background-position: -200% 0; } }
+
+/* Toast */
+.toast { position: fixed; left: 50%; bottom: calc(22px + var(--safe-bottom)); transform: translateX(-50%) translateY(20px); background: var(--ink); color: #fff; padding: 11px 18px; border-radius: 999px; font-size: 13px; font-weight: 700; box-shadow: var(--sh-lg); opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; z-index: 120; max-width: 90vw; }
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* RTL (árabe) */
+[dir="rtl"] .hero-kicker, [dir="rtl"] .fact-label, [dir="rtl"] .day-head h3 { letter-spacing: 0; }
+[dir="rtl"] .match::before { left: auto; right: 0; }
+[dir="rtl"] .sel-fact { border-left: 0; border-right: 3px solid var(--brand); }
+
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }

@@ -163,6 +163,46 @@ const I18N = {
     teamsLabel: "équipes", venuesLabel: "sites", matchesLabel: "matchs",
     language: "Langue",
   },
+  ar: {
+    code: "ar", dir: "rtl",
+    appTitle: "كأس العالم 2026",
+    chooseCountry: "اختر بلداً",
+    didYouKnow: "هل تعلم…؟",
+    nextMatch: "المباراة القادمة",
+    nextMatchOf: "المباراة القادمة لمنتخب {team}",
+    nextMatchWC: "المباراة القادمة في كأس العالم",
+    inPlay: "مباشر الآن!",
+    tabs: { fixture: "جدول المباريات", groups: "المجموعات", bracket: "الأدوار الإقصائية", team: "منتخبي" },
+    byMatchday: "حسب الجولة",
+    byGroup: "حسب المجموعة",
+    onlyTeam: "فقط {team}",
+    tzHint: "المواعيد بتوقيت {zone} ({off})",
+    status: { ns: "مجدولة", live: "مباشر", ft: "انتهت" },
+    group: "المجموعة {g}",
+    knockouts: "الأدوار الإقصائية",
+    th: { pj: "لعب", g: "ف", e: "ت", p: "خ", dif: "+/-", pts: "نقاط" },
+    groupLegend: "يتأهل أول منتخبين من كل مجموعة + أفضل 8 منتخبات حلّت ثالثة.",
+    bracketIntro: "ستُملأ جداول ثمن النهائي وربع النهائي ونصف النهائي والنهائي تلقائياً بمجرد انتهاء دور المجموعات وتحديد المواجهات.",
+    bracketSub: "يتأهل 32 منتخباً إلى الأدوار الإقصائية (أول منتخبين من كل مجموعة + أفضل 8 منتخبات ثالثة).",
+    tbd: "يُحدَّد لاحقاً",
+    vs: "ضد",
+    trivia: "معلومات طريفة",
+    matchesOf: "مباريات {team}",
+    noMatches: "لا توجد مباريات محمّلة بعد.",
+    pickToSee: "اختر منتخبك لرؤية معلوماته وطرائفه ومبارياته.",
+    chooseTeam: "اختر منتخبك",
+    searchCountry: "ابحث عن بلد…",
+    neutralMode: "الوضع المحايد (كأس العالم)",
+    loading: "جارٍ تحميل جدول مباريات كأس العالم…",
+    loadError: "تعذّر تحميل جدول المباريات. حاول مرة أخرى بعد بضع دقائق.",
+    updated: "آخر تحديث",
+    matches: "مباريات",
+    madeWith: "البيانات: TheSportsDB · يُحدَّث تلقائياً",
+    ticker: "المباريات القادمة",
+    stages: { GROUP: "دور المجموعات · الجولة {r}", R32: "دور الـ32", R16: "ثمن النهائي", QF: "ربع النهائي", SF: "نصف النهائي", TP: "مباراة المركز الثالث", F: "النهائي" },
+    teamsLabel: "منتخباً", venuesLabel: "ملاعب", matchesLabel: "مباريات",
+    language: "اللغة",
+  },
 };
 
 // País (ISO) -> idioma de interfaz
@@ -175,6 +215,9 @@ const COUNTRY_LANG = {
   BR: "pt", PT: "pt", AO: "pt", MZ: "pt", CV: "pt",
   // Francés
   FR: "fr", CI: "fr", SN: "fr", BE: "fr", CH: "fr", LU: "fr", MC: "fr", CD: "fr", CM: "fr", HT: "fr",
+  // Árabe
+  SA: "ar", EG: "ar", DZ: "ar", MA: "ar", TN: "ar", IQ: "ar", JO: "ar", QA: "ar",
+  AE: "ar", KW: "ar", BH: "ar", OM: "ar", YE: "ar", LB: "ar", SY: "ar", LY: "ar", SD: "ar", PS: "ar",
 };
 
 function langForCountry(code) {

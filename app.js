@@ -33,6 +33,15 @@ function t(path, vars) {
 }
 const pick = (o) => (o ? (o[state.lang] ?? o.en ?? o.es) : "");
 const theme = () => (state.team ? TEAMS[state.team] : NEUTRAL);
+// Contenido localizado de selección (nick/titles/facts): prioriza i18n-content.js (pt/fr/ar), cae a themes.js (es/en)
+function localTeam(name, field) {
+  const key = name || "NEUTRAL";
+  const tr = (typeof TEAM_I18N !== "undefined") && TEAM_I18N[state.lang] && TEAM_I18N[state.lang][key];
+  if (tr && tr[field] != null) return tr[field];
+  const src = name ? TEAMS[name] : NEUTRAL;
+  const o = src[field];
+  return o == null ? "" : (typeof o === "object" && !Array.isArray(o) ? (o[state.lang] ?? o.en ?? o.es) : (o.es || o.en || o));
+}
 function dispName(name) {
   if (!name) return pick({ es: NEUTRAL.es, en: NEUTRAL.en });
   const tm = TEAMS[name];
@@ -126,6 +135,7 @@ function offsetLabelFor(tz) {
 /* --------------------------- i18n estático --------------------------- */
 function applyI18n() {
   document.documentElement.lang = state.lang;
+  document.documentElement.dir = L().dir || "ltr";
   $("#lang-current").textContent = state.lang.toUpperCase();
   $("#fact-label").textContent = t("didYouKnow");
   $("#tab-fixture").textContent = t("tabs.fixture");
@@ -171,8 +181,8 @@ function applyTheme(name) {
 
   $("#hero-confed").textContent = tm.confed;
   $("#hero-title").textContent = name ? dispName(name) : t("appTitle");
-  $("#hero-nick").textContent = pick(tm.nick);
-  $("#hero-titles").textContent = pick(tm.titles);
+  $("#hero-nick").textContent = localTeam(state.team, "nick");
+  $("#hero-titles").textContent = localTeam(state.team, "titles");
 
   const cbf = $("#country-btn-flag");
   if (code) { cbf.src = FLAG(code); cbf.style.display = ""; } else { cbf.style.display = "none"; }
@@ -182,7 +192,7 @@ function applyTheme(name) {
   if (name) { wrap.hidden = false; $("#only-mine-text").textContent = t("onlyTeam", { team: dispName(name) }); }
   else { wrap.hidden = true; state.onlyMine = false; $("#only-mine").checked = false; }
 
-  startFacts(pick(tm.facts) || tm.facts.en || tm.facts.es);
+  startFacts(localTeam(state.team, "facts"));
   markActiveCountry();
   render();
 }
@@ -374,11 +384,11 @@ function renderSeleccion() {
     <div class="sel-hero">
       ${code ? `<img class="sel-flag" src="${FLAG(code)}" alt="${dispName(state.team)}">` : ""}
       <div class="sel-name">${dispName(state.team)}</div>
-      <div class="sel-nick">${pick(tm.nick)}</div>
-      <div class="sel-chips"><span class="sel-chip">${tm.confed}</span><span class="sel-chip">${pick(tm.titles)}</span></div>
+      <div class="sel-nick">${localTeam(state.team, "nick")}</div>
+      <div class="sel-chips"><span class="sel-chip">${tm.confed}</span><span class="sel-chip">${localTeam(state.team, "titles")}</span></div>
     </div>
     <div class="sel-section-title">${t("trivia")}</div>
-    <div class="sel-facts">${(pick(tm.facts) || tm.facts.en).map((f) => `<div class="sel-fact reveal">${f}</div>`).join("")}</div>
+    <div class="sel-facts">${localTeam(state.team, "facts").map((f) => `<div class="sel-fact reveal">${f}</div>`).join("")}</div>
     <div class="sel-section-title">${t("matchesOf", { team: dispName(state.team) })}</div>
     <div class="fixture-list">${mine.length ? mine.map(matchCard).join("") : `<div class="status">${t("noMatches")}</div>`}</div>`;
   scrollReveal(cont);
@@ -446,7 +456,7 @@ function buildCountryGrid() {
 }
 function markActiveCountry() { $$(".country-item").forEach((b) => b.classList.toggle("is-active", (b.dataset.team || "") === (state.team || ""))); }
 function buildLangChips() {
-  $("#lang-row").innerHTML = ["es", "en", "pt", "fr"].map((lg) => `<button class="lang-chip ${lg === state.lang ? "is-active" : ""}" data-lang="${lg}">${lg.toUpperCase()}</button>`).join("");
+  $("#lang-row").innerHTML = ["es", "en", "pt", "fr", "ar"].map((lg) => `<button class="lang-chip ${lg === state.lang ? "is-active" : ""}" data-lang="${lg}">${lg.toUpperCase()}</button>`).join("");
 }
 function openSelector() { $("#selector").hidden = false; $("#country-search").value = ""; filterCountries(""); markActiveCountry(); buildLangChips(); }
 function closeSelector() { $("#selector").hidden = true; }
@@ -464,6 +474,28 @@ function setLang(lang) {
   applyTheme(state.team); // re-render con idioma nuevo
 }
 
+/* --------------------------- compartir ------------------------------- */
+function shareApp() {
+  const url = "https://damelm.github.io/mundial-2026/";
+  const data = { title: "Mundial 2026 · Fixture en vivo", text: localTeam(state.team, "nick") ? `${dispName(state.team)} en el Mundial 2026` : t("appTitle"), url };
+  if (navigator.share) { navigator.share(data).catch(() => {}); }
+  else if (navigator.clipboard) { navigator.clipboard.writeText(url).then(() => flashToast("🔗 " + url)).catch(() => {}); }
+  else { prompt("Copiá el link:", url); }
+}
+function flashToast(msg) {
+  let el = $("#toast");
+  if (!el) { el = document.createElement("div"); el.id = "toast"; el.className = "toast"; document.body.appendChild(el); }
+  el.textContent = msg; el.classList.add("show");
+  clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove("show"), 2200);
+}
+
+/* --------------------------- skeletons ------------------------------- */
+function renderSkeletons(n = 6) {
+  const c = $("#fixture-list"); if (!c) return;
+  c.innerHTML = Array.from({ length: n }).map(() =>
+    `<div class="sk-card"><div class="sk sk-head"></div><div class="sk-row"><div class="sk sk-av"></div><div class="sk sk-time"></div><div class="sk sk-av"></div></div></div>`).join("");
+}
+
 /* --------------------------- tabs + eventos -------------------------- */
 function switchTab(tab) {
   state.tab = tab;
@@ -477,7 +509,8 @@ function wireEvents() {
   $("#fixture-view-seg").addEventListener("click", (e) => { const b = e.target.closest(".seg-btn"); if (!b) return; state.view = b.dataset.view; $$(".seg-btn", $("#fixture-view-seg")).forEach((x) => x.classList.toggle("is-active", x === b)); renderFixture(); });
   $("#only-mine").addEventListener("change", (e) => { state.onlyMine = e.target.checked; renderFixture(); });
   $("#open-selector").addEventListener("click", openSelector);
-  $("#open-lang").addEventListener("click", () => { const order = ["es", "en", "pt", "fr"]; setLang(order[(order.indexOf(state.lang) + 1) % order.length]); });
+  $("#share-btn").addEventListener("click", shareApp);
+  $("#open-lang").addEventListener("click", () => { const order = ["es", "en", "pt", "fr", "ar"]; setLang(order[(order.indexOf(state.lang) + 1) % order.length]); });
   $("#selector").addEventListener("click", (e) => { if (e.target.dataset.close !== undefined) closeSelector(); });
   $("#country-grid").addEventListener("click", (e) => { const b = e.target.closest(".country-item"); if (!b) return; chooseTeam(b.dataset.team || null); closeSelector(); });
   $("#lang-row").addEventListener("click", (e) => { const b = e.target.closest(".lang-chip"); if (b) setLang(b.dataset.lang); });
@@ -496,6 +529,7 @@ async function init() {
   buildLangChips(); wireEvents(); applyI18n();
 
   $("#status").innerHTML = `<div class="spinner"></div>${t("loading")}`;
+  renderSkeletons();
   const [data, geo] = await Promise.all([loadData().catch(() => null), detectGeo()]);
 
   if (data) {
@@ -521,7 +555,13 @@ async function init() {
   else if (storedTeam && TEAMS[storedTeam]) applyTheme(storedTeam);
   else { const team = geo && geo.code && CODE_TO_TEAM[geo.code]; applyTheme(team || null); }
 
-  setInterval(async () => {
+  scheduleRefresh();
+}
+
+function scheduleRefresh() {
+  clearTimeout(state.refreshTimer);
+  const live = state.data && state.data.matches.some((m) => classifyStatus(m) === "live");
+  state.refreshTimer = setTimeout(async () => {
     try {
       const fresh = await loadData();
       const sig = JSON.stringify(fresh.matches);
@@ -530,6 +570,7 @@ async function init() {
       $("#footer-updated").textContent = fresh.updatedAt ? `${t("updated")}: ${upd ? upd.toLocaleString(state.lang, tzOpt()) : fresh.updatedAt} · ${fresh.count} ${t("matches")}` : "";
       if (sig !== state.sig) { state.sig = sig; render(); } // solo re-render si cambiaron los partidos
     } catch {}
-  }, REFRESH_MS);
+    scheduleRefresh();
+  }, live ? 30_000 : REFRESH_MS); // más rápido si hay partidos en vivo
 }
 document.addEventListener("DOMContentLoaded", init);
