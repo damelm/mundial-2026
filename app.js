@@ -21,6 +21,15 @@ const ACC_TXT = {
   es: ["Expandir todo", "Colapsar todo"], en: ["Expand all", "Collapse all"],
   pt: ["Expandir tudo", "Recolher tudo"], fr: ["Tout déplier", "Tout replier"], ar: ["توسيع الكل", "طي الكل"],
 };
+const TX = {
+  venues: { es: "Sedes", en: "Venues", pt: "Sedes", fr: "Sites", ar: "الملاعب" },
+  squad: { es: "Plantel", en: "Squad", pt: "Elenco", fr: "Effectif", ar: "التشكيلة" },
+  capacity: { es: "Capacidad", en: "Capacity", pt: "Capacidade", fr: "Capacité", ar: "السعة" },
+  map: { es: "Ver en mapa", en: "View on map", pt: "Ver no mapa", fr: "Voir sur la carte", ar: "عرض على الخريطة" },
+  squadNote: { es: "Lista parcial (datos abiertos)", en: "Partial list (open data)", pt: "Lista parcial (dados abertos)", fr: "Liste partielle (données ouvertes)", ar: "قائمة جزئية (بيانات مفتوحة)" },
+  squadEmpty: { es: "Plantel no disponible por ahora.", en: "Squad not available yet.", pt: "Elenco indisponível por enquanto.", fr: "Effectif indisponible pour l'instant.", ar: "التشكيلة غير متاحة بعد." },
+};
+const tw = (m) => m[state.lang] || m.es;
 
 const state = {
   data: null, team: null, onlyMine: false, tab: "fixture",
@@ -147,6 +156,7 @@ function applyI18n() {
   $("#tab-grupos").textContent = t("tabs.groups");
   $("#tab-bracket").textContent = t("tabs.bracket");
   $("#tab-seleccion").textContent = t("tabs.team");
+  $("#tab-sedes").textContent = tw(TX.venues);
   updateToggleAllLabel();
   $("#selector-title").textContent = t("chooseTeam");
   $("#country-search").placeholder = t("searchCountry");
@@ -225,6 +235,7 @@ function renderActivePanel() {
   else if (state.tab === "grupos") renderGroups();
   else if (state.tab === "bracket") renderBracket();
   else if (state.tab === "seleccion") renderSeleccion();
+  else if (state.tab === "sedes") renderStadiums();
 }
 
 function teamCell(name, badge) {
@@ -471,7 +482,49 @@ function renderSeleccion() {
     <div class="sel-section-title">${t("trivia")}</div>
     <div class="sel-facts">${localTeam(state.team, "facts").map((f) => `<div class="sel-fact reveal">${f}</div>`).join("")}</div>
     <div class="sel-section-title">${t("matchesOf", { team: dispName(state.team) })}</div>
-    <div class="fixture-list">${mine.length ? mine.map(matchCard).join("") : `<div class="status">${t("noMatches")}</div>`}</div>`;
+    <div class="fixture-list">${mine.length ? mine.map(matchCard).join("") : `<div class="status">${t("noMatches")}</div>`}</div>
+    <div class="sel-section-title">${tw(TX.squad)}</div>
+    <div id="squad"><div class="status"><div class="spinner"></div></div></div>`;
+  scrollReveal(cont);
+  loadSquad(state.team);
+}
+
+/* --------------------------- plantel + sedes ------------------------- */
+const _squadCache = {};
+async function loadSquad(name) {
+  const cont = $("#squad"); if (!cont) return;
+  const id = TEAM_IDS[name];
+  if (!id) { cont.innerHTML = `<div class="status">${tw(TX.squadEmpty)}</div>`; return; }
+  if (_squadCache[id]) return renderSquad(cont, _squadCache[id]);
+  try {
+    const j = await fetch(`https://www.thesportsdb.com/api/v1/json/3/lookup_all_players.php?id=${id}`).then((r) => r.json());
+    _squadCache[id] = (j && j.player) || [];
+    if ($("#squad")) renderSquad($("#squad"), _squadCache[id]);
+  } catch { if ($("#squad")) $("#squad").innerHTML = `<div class="status">${tw(TX.squadEmpty)}</div>`; }
+}
+function renderSquad(cont, players) {
+  if (!players.length) { cont.innerHTML = `<div class="status">${tw(TX.squadEmpty)}</div>`; return; }
+  cont.innerHTML = `<div class="squad-grid">${players.map((p) => {
+    const img = p.strCutout || p.strThumb || "";
+    return `<div class="player reveal"><div class="player-photo">${img ? `<img src="${img}" alt="${p.strPlayer}" loading="lazy" onerror="this.remove()">` : "⚽"}${p.strNumber ? `<span class="player-num">${p.strNumber}</span>` : ""}</div><div class="player-name">${p.strPlayer}</div><div class="player-pos">${p.strPosition || ""}</div></div>`;
+  }).join("")}</div><p class="squad-note">${tw(TX.squadNote)}</p>`;
+  scrollReveal(cont);
+}
+
+function renderStadiums() {
+  const cont = $("#sedes-content");
+  const cflag = { "México": "mx", "Estados Unidos": "us", "Canadá": "ca" };
+  let html = `<div class="bracket-head"><div class="big">🏟️ ${tw(TX.venues)}</div><p>16 ${tw(TX.venues).toLowerCase()} · USA · Canadá · México</p></div><div class="venues-list">`;
+  STADIUMS.forEach((s) => {
+    const fc = cflag[s.country] || "";
+    const maps = `https://www.google.com/maps?q=${s.lat},${s.lon}`;
+    html += `<div class="venue reveal">${fc ? `<img class="venue-flag" src="${FLAG(fc)}" alt="${s.country}">` : ""}
+      <div class="venue-main"><div class="venue-name">${s.name}</div>
+        <div class="venue-city">${s.city} · ${s.country}</div>
+        <div class="venue-meta"><span class="venue-cap">${tw(TX.capacity)}: ${s.capacity.toLocaleString(state.lang)}</span>${s.note ? `<span class="venue-note">${s.note}</span>` : ""}</div></div>
+      <a class="venue-map" href="${maps}" target="_blank" rel="noopener" title="${tw(TX.map)}"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg></a></div>`;
+  });
+  cont.innerHTML = html + `</div>`;
   scrollReveal(cont);
 }
 
