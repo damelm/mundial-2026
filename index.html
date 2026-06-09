@@ -82,23 +82,21 @@
     <button class="tab" data-tab="bracket" id="tab-bracket">Eliminatorias</button>
     <button class="tab" data-tab="seleccion" id="tab-seleccion">Mi selección</button>
     <button class="tab" data-tab="sedes" id="tab-sedes">Sedes</button>
-    <button class="tab" data-tab="trivia" id="tab-trivia">Trivia</button>
   </nav>
 
   <main id="main">
     <div id="status" class="status"></div>
 
     <section class="panel is-active" id="panel-fixture" data-panel="fixture">
-      <div class="filter-chips" id="fixture-filters">
-        <button class="fchip is-active" data-filter="all" id="fchip-all">Todos</button>
-        <button class="fchip" data-filter="today" id="fchip-today">Hoy</button>
-        <button class="fchip" data-filter="live" id="fchip-live">En vivo</button>
-        <button class="fchip" data-filter="mine" id="fchip-mine" hidden>Mi selección</button>
-      </div>
       <div class="panel-controls">
-        <p class="tz-hint" id="tz-hint"></p>
+        <div class="seg" id="fixture-filters" role="tablist">
+          <button class="seg-btn is-active" data-filter="all" id="fchip-all">Todos</button>
+          <button class="seg-btn" data-filter="today" id="fchip-today">Hoy</button>
+          <button class="seg-btn" data-filter="live" id="fchip-live">En vivo</button>
+        </div>
         <button class="ghost-btn" id="toggle-all" type="button"><span id="toggle-all-text">Expandir todo</span></button>
       </div>
+      <p class="tz-hint" id="tz-hint"></p>
       <div id="fixture-list" class="fixture-list"></div>
     </section>
 
@@ -116,10 +114,6 @@
 
     <section class="panel" id="panel-sedes" data-panel="sedes">
       <div id="sedes-content"></div>
-    </section>
-
-    <section class="panel" id="panel-trivia" data-panel="trivia">
-      <div id="trivia-content"></div>
     </section>
   </main>
 
@@ -153,7 +147,6 @@
   <script src="data/bracket-map.js"></script>
   <script src="data/team-ids.js"></script>
   <script src="data/stadiums.js"></script>
-  <script src="data/trivia.js"></script>
   <script src="app.js"></script>
   <script>
     if ("serviceWorker" in navigator) {

@@ -79,16 +79,22 @@ function rgbToHex(r, g, b) { return "#" + [r, g, b].map((x) => Math.round(Math.m
 function lum(hex) { const a = hexToRgb(hex).map((v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); }); return 0.2126 * a[0] + 0.7152 * a[1] + 0.0722 * a[2]; }
 function mixHex(h1, h2, t) { const a = hexToRgb(h1), b = hexToRgb(h2); return rgbToHex(a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t); }
 function adjustToLum(hex, target) { let c = hex, i = 0; while (lum(c) > target + 0.03 && i++ < 12) c = mixHex(c, "#000000", 0.1); i = 0; while (lum(c) < target - 0.03 && i++ < 12) c = mixHex(c, "#ffffff", 0.09); return c; }
+function rgbToHsl([r, g, b]) { r /= 255; g /= 255; b /= 255; const mx = Math.max(r, g, b), mn = Math.min(r, g, b); let h = 0, s = 0, l = (mx + mn) / 2; if (mx !== mn) { const d = mx - mn; s = l > 0.5 ? d / (2 - mx - mn) : d / (mx + mn); h = mx === r ? (g - b) / d + (g < b ? 6 : 0) : mx === g ? (b - r) / d + 2 : (r - g) / d + 4; h /= 6; } return [h * 360, s, l]; }
+function hslToHex(h, s, l) { h = ((h % 360) + 360) % 360; s = Math.max(0, Math.min(1, s)); l = Math.max(0, Math.min(1, l)); const c = (1 - Math.abs(2 * l - 1)) * s, x = c * (1 - Math.abs(((h / 60) % 2) - 1)), m = l - c / 2; let r, g, b; if (h < 60) [r, g, b] = [c, x, 0]; else if (h < 120) [r, g, b] = [x, c, 0]; else if (h < 180) [r, g, b] = [0, c, x]; else if (h < 240) [r, g, b] = [0, x, c]; else if (h < 300) [r, g, b] = [x, 0, c]; else [r, g, b] = [c, 0, x]; return rgbToHex((r + m) * 255, (g + m) * 255, (b + m) * 255); }
 function brandColors(tm) {
   const cands = [tm.c1, tm.c2, tm.c3];
   const ideal = 0.26; // elige el color más "vibrante medio" (evita blancos/amarillos y negros)
   const usable = cands.filter((c) => lum(c) >= 0.05);
   const pool = usable.length ? usable : cands;
   const hue = pool.reduce((best, c) => (Math.abs(lum(c) - ideal) < Math.abs(lum(best) - ideal) ? c : best));
-  const brand = adjustToLum(hue, 0.2); // oscuro suficiente para texto blanco legible
-  const accent = state.dark ? adjustToLum(hue, 0.6) : brand; // en dark, acento claro legible sobre superficies oscuras
+  const brand = adjustToLum(hue, 0.2); // relleno con texto blanco (legible en claro)
+  const [h, s0] = rgbToHsl(hexToRgb(hue));
+  const s = Math.max(s0, 0.62); // mantener saturación → acento vibrante (no pastel)
+  const accent = state.dark ? hslToHex(h, s, 0.66) : hslToHex(h, s, 0.40); // texto/acento legible sobre la superficie del modo
+  const vivid = state.dark ? hslToHex(h, s, 0.60) : hslToHex(h, s, 0.50); // barra/indicador vibrante (sin texto encima)
   const soft = state.dark ? mixHex(accent, "#202127", 0.84) : mixHex(brand, "#ffffff", 0.9);
-  return { brand, accent, brand2: mixHex(brand, "#ffffff", 0.18), soft };
+  const onAccent = state.dark ? "#14130f" : "#ffffff"; // texto sobre un relleno de --brand-accent
+  return { brand, accent, vivid, onAccent, brand2: mixHex(brand, "#ffffff", 0.18), soft };
 }
 
 function parseUTC(ts) {
@@ -165,11 +171,9 @@ function applyI18n() {
   $("#tab-bracket").textContent = t("tabs.bracket");
   $("#tab-seleccion").textContent = t("tabs.team");
   $("#tab-sedes").textContent = tw(TX.venues);
-  $("#tab-trivia").textContent = "Trivia";
   $("#fchip-all").textContent = tw(TX.fAll);
   $("#fchip-today").textContent = tw(TX.fToday);
   $("#fchip-live").textContent = tw(TX.fLive);
-  $("#fchip-mine").textContent = state.team ? t("onlyTeam", { team: dispName(state.team) }) : t("tabs.team");
   updateToggleAllLabel();
   $("#selector-title").textContent = t("chooseTeam");
   $("#country-search").placeholder = t("searchCountry");
@@ -193,6 +197,8 @@ function applyTheme(name) {
   const b = brandColors(tm);
   root.style.setProperty("--brand", b.brand);
   root.style.setProperty("--brand-accent", b.accent);
+  root.style.setProperty("--brand-vivid", b.vivid);
+  root.style.setProperty("--on-accent", b.onAccent);
   root.style.setProperty("--brand-2", b.brand2);
   root.style.setProperty("--brand-soft", b.soft);
   root.style.setProperty("--on-brand", "#ffffff");
@@ -216,9 +222,6 @@ function applyTheme(name) {
   if (code) { cbf.src = FLAG(code); cbf.style.display = ""; } else { cbf.style.display = "none"; }
   $("#country-btn-text").textContent = name ? dispName(name) : t("chooseCountry");
 
-  const mineChip = $("#fchip-mine");
-  if (name) { mineChip.hidden = false; mineChip.textContent = t("onlyTeam", { team: dispName(name) }); }
-  else { mineChip.hidden = true; if (state.filter === "mine") state.filter = "all"; }
   syncFilterChips();
 
   startFacts(localTeam(state.team, "facts"));
@@ -251,7 +254,6 @@ function renderActivePanel() {
   else if (state.tab === "bracket") renderBracket();
   else if (state.tab === "seleccion") renderSeleccion();
   else if (state.tab === "sedes") renderStadiums();
-  else if (state.tab === "trivia") renderTrivia();
 }
 
 function teamCell(name, badge) {
@@ -315,8 +317,7 @@ function renderFixture() {
   const cont = $("#fixture-list");
   const todayKey = dayKey(new Date());
   let matches = [...state.data.matches];
-  if (state.filter === "mine" && state.team) matches = matches.filter((m) => m.home === state.team || m.away === state.team);
-  else if (state.filter === "today") matches = matches.filter((m) => { const d = parseUTC(m.timestamp); return d && dayKey(d) === todayKey; });
+  if (state.filter === "today") matches = matches.filter((m) => { const d = parseUTC(m.timestamp); return d && dayKey(d) === todayKey; });
   else if (state.filter === "live") matches = matches.filter((m) => classifyStatus(m) === "live");
   if (!matches.length) {
     const msg = state.filter === "today" ? tw(TX.noToday) : state.filter === "live" ? tw(TX.noLive) : t("noMatches");
@@ -707,7 +708,7 @@ function switchTab(tab) {
 
 /* --------------------------- filtros fixture ------------------------- */
 function syncFilterChips() {
-  $$("#fixture-filters .fchip").forEach((b) => b.classList.toggle("is-active", b.dataset.filter === state.filter));
+  $$("#fixture-filters .seg-btn").forEach((b) => b.classList.toggle("is-active", b.dataset.filter === state.filter));
 }
 
 /* --------------------------- calendario (.ics) ----------------------- */
@@ -741,58 +742,14 @@ function applyDark(dark) {
   applyTheme(state.team); // recalcula --brand-accent/--brand-soft según el modo
 }
 
-/* --------------------------- trivia ---------------------------------- */
-let _trivia = { order: null, idx: 0, score: 0, answered: false };
-const TRIVIA_TXT = {
-  again: { es: "Jugar de nuevo", en: "Play again", pt: "Jogar de novo", fr: "Rejouer", ar: "العب مجدداً" },
-  great: { es: "¡Crack mundialista!", en: "World Cup expert!", pt: "Craque da Copa!", fr: "Expert du Mondial !", ar: "خبير كأس العالم!" },
-  good: { es: "¡Bien jugado!", en: "Well played!", pt: "Bem jogado!", fr: "Bien joué !", ar: "أحسنت!" },
-  keep: { es: "¡Seguí practicando!", en: "Keep practicing!", pt: "Continue praticando!", fr: "Continue à t'entraîner !", ar: "واصل التدريب!" },
-};
-function startTrivia() {
-  const idxs = TRIVIA.map((_, i) => i);
-  for (let i = idxs.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [idxs[i], idxs[j]] = [idxs[j], idxs[i]]; }
-  _trivia = { order: idxs.slice(0, 10), idx: 0, score: 0, answered: false };
-}
-function renderTrivia() {
-  if (!_trivia.order) startTrivia();
-  drawTrivia();
-}
-function drawTrivia() {
-  const cont = $("#trivia-content");
-  const total = _trivia.order.length;
-  if (_trivia.idx >= total) {
-    const pct = (_trivia.score / total) * 100;
-    const msg = pct >= 80 ? tw(TRIVIA_TXT.great) : pct >= 50 ? tw(TRIVIA_TXT.good) : tw(TRIVIA_TXT.keep);
-    cont.innerHTML = `<div class="trivia-end"><div class="trivia-emoji">${pct >= 80 ? "🏆" : pct >= 50 ? "⚽" : "🎯"}</div>
-      <div class="trivia-score">${_trivia.score} / ${total}</div><p>${msg}</p>
-      <button class="trivia-btn" id="trivia-again">${tw(TRIVIA_TXT.again)}</button></div>`;
-    return;
-  }
-  const q = TRIVIA[_trivia.order[_trivia.idx]];
-  const opts = q.options[state.lang] || q.options.en;
-  cont.innerHTML = `<div class="trivia-head"><div class="trivia-progress">${_trivia.idx + 1} / ${total}</div><div class="trivia-scorechip">⭐ ${_trivia.score}</div></div>
-    <div class="trivia-q">${q.q[state.lang] || q.q.en}</div>
-    <div class="trivia-opts">${opts.map((o, i) => `<button class="trivia-opt" data-i="${i}">${o}</button>`).join("")}</div>`;
-}
-function answerTrivia(i) {
-  if (_trivia.answered) return;
-  _trivia.answered = true;
-  const correct = TRIVIA[_trivia.order[_trivia.idx]].correct;
-  $$(".trivia-opt").forEach((b, j) => { b.disabled = true; if (j === correct) b.classList.add("ok"); else if (j === i) b.classList.add("bad"); });
-  if (i === correct) _trivia.score++;
-  setTimeout(() => { _trivia.idx++; _trivia.answered = false; drawTrivia(); }, 1100);
-}
 function wireEvents() {
   $("#tabs").addEventListener("click", (e) => { const b = e.target.closest(".tab"); if (b) switchTab(b.dataset.tab); });
   $("#main").addEventListener("click", (e) => {
     const cb = e.target.closest(".cal-btn"); if (cb) { e.stopPropagation(); addToCalendar(cb.dataset.mid); return; }
-    const oo = e.target.closest(".trivia-opt"); if (oo) { answerTrivia(+oo.dataset.i); return; }
-    if (e.target.closest("#trivia-again")) { startTrivia(); drawTrivia(); return; }
     const h = e.target.closest(".acc-head"); if (h) toggleAccordion(h.parentElement);
   });
   $("#toggle-all").addEventListener("click", toggleAllAccordions);
-  $("#fixture-filters").addEventListener("click", (e) => { const b = e.target.closest(".fchip"); if (!b) return; state.filter = b.dataset.filter; syncFilterChips(); renderFixture(); });
+  $("#fixture-filters").addEventListener("click", (e) => { const b = e.target.closest(".seg-btn"); if (!b) return; state.filter = b.dataset.filter; syncFilterChips(); renderFixture(); });
   $("#dark-btn").addEventListener("click", () => applyDark(!state.dark));
   $("#open-selector").addEventListener("click", openSelector);
   $("#share-btn").addEventListener("click", shareApp);
