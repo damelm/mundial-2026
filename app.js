@@ -134,7 +134,6 @@ function applyI18n() {
   $("#tab-seleccion").textContent = t("tabs.team");
   $("#seg-fecha").textContent = t("byMatchday");
   $("#seg-grupo").textContent = t("byGroup");
-  $("#ledboard-tag").textContent = t("ticker");
   $("#selector-title").textContent = t("chooseTeam");
   $("#country-search").placeholder = t("searchCountry");
   $("#neutral-name").textContent = t("neutralMode");
@@ -184,7 +183,6 @@ function applyTheme(name) {
   else { wrap.hidden = true; state.onlyMine = false; $("#only-mine").checked = false; }
 
   startFacts(pick(tm.facts) || tm.facts.en || tm.facts.es);
-  burstConfetti(true);
   markActiveCountry();
   render();
 }
@@ -206,7 +204,6 @@ function render() {
   if (!state.data) return;
   renderActivePanel();   // solo la pestaña visible (evita cargar todas las imágenes juntas)
   renderCountdown();
-  buildMarquee();
 }
 function renderActivePanel() {
   if (!state.data) return;
@@ -238,7 +235,7 @@ function matchCard(m) {
   }
   const grp = m.group ? `<span class="match-grouptag">${t("group", { g: m.group })}</span>` : stageLabel(m);
   const venue = m.venue ? ` · ${m.venue}${m.city ? ", " + m.city.split(",")[0] : ""}` : "";
-  return `<article class="match bf ${isMine ? "mine" : ""} ${st === "live" ? "live" : ""}">
+  return `<article class="match reveal ${isMine ? "mine" : ""} ${st === "live" ? "live" : ""}">
     <div class="match-meta">${grp}${venue}</div>
     <div class="team-side home">${teamCell(m.home, m.homeBadge)}<span class="team-name">${dispName(m.home)}</span></div>
     <div class="match-center">${center}</div>
@@ -278,7 +275,7 @@ function renderFixture() {
     }
   }
   cont.innerHTML = html;
-  staggerReveal(cont);
+  scrollReveal(cont);
 }
 
 /* --------------------------- grupos ---------------------------------- */
@@ -308,7 +305,7 @@ function renderGroups() {
   let html = "";
   for (const g of keys) {
     const rows = Object.values(groups[g]).sort((a, b) => b.pts - a.pts || (b.gf - b.gc) - (a.gf - a.gc) || b.gf - a.gf || dispName(a.team).localeCompare(dispName(b.team), state.lang));
-    html += `<div class="group-card bf"><h3>${t("group", { g })}</h3><table class="table"><thead><tr>
+    html += `<div class="group-card reveal"><h3>${t("group", { g })}</h3><table class="table"><thead><tr>
       <th class="pos"></th><th class="team-cell">${state.lang === "es" ? "Equipo" : state.lang === "pt" ? "Seleção" : state.lang === "fr" ? "Équipe" : "Team"}</th>
       <th>${TH.pj}</th><th>${TH.g}</th><th>${TH.e}</th><th>${TH.p}</th><th>${TH.dif}</th><th>${TH.pts}</th></tr></thead><tbody>`;
     rows.forEach((r, i) => {
@@ -324,7 +321,7 @@ function renderGroups() {
     html += `</tbody></table><div class="group-legend">${t("groupLegend")}</div></div>`;
   }
   cont.innerHTML = html;
-  staggerReveal(cont);
+  scrollReveal(cont);
 }
 
 /* --------------------------- bracket (104) --------------------------- */
@@ -343,11 +340,11 @@ function renderBracket() {
       const m = real[i];
       if (m) {
         const sc = m.homeScore != null ? `${m.homeScore}-${m.awayScore}` : `<span class="ko-vs">${t("vs")}</span>`;
-        html += `<div class="ko-match bf"><div class="ko-team">${teamCellFlag(m.home)}<span>${dispName(m.home)}</span></div>
+        html += `<div class="ko-match reveal"><div class="ko-team">${teamCellFlag(m.home)}<span>${dispName(m.home)}</span></div>
           <div class="ko-score">${sc}</div>
           <div class="ko-team away"><span>${dispName(m.away)}</span>${teamCellFlag(m.away)}</div></div>`;
       } else {
-        html += `<div class="ko-match tbd bf"><div class="ko-team"><span class="tbd-badge">?</span><span>${t("tbd")}</span></div>
+        html += `<div class="ko-match tbd reveal"><div class="ko-team"><span class="tbd-badge">?</span><span>${t("tbd")}</span></div>
           <div class="ko-score"><span class="ko-vs">${t("vs")}</span></div>
           <div class="ko-team away"><span>${t("tbd")}</span><span class="tbd-badge">?</span></div></div>`;
       }
@@ -355,7 +352,7 @@ function renderBracket() {
     html += `</div>`;
   }
   cont.innerHTML = html;
-  staggerReveal(cont);
+  scrollReveal(cont);
 }
 function teamCellFlag(name) {
   const code = flagCodeOf(name);
@@ -381,10 +378,10 @@ function renderSeleccion() {
       <div class="sel-chips"><span class="sel-chip">${tm.confed}</span><span class="sel-chip">${pick(tm.titles)}</span></div>
     </div>
     <div class="sel-section-title">${t("trivia")}</div>
-    <div class="sel-facts">${(pick(tm.facts) || tm.facts.en).map((f) => `<div class="sel-fact bf">${f}</div>`).join("")}</div>
+    <div class="sel-facts">${(pick(tm.facts) || tm.facts.en).map((f) => `<div class="sel-fact reveal">${f}</div>`).join("")}</div>
     <div class="sel-section-title">${t("matchesOf", { team: dispName(state.team) })}</div>
     <div class="fixture-list">${mine.length ? mine.map(matchCard).join("") : `<div class="status">${t("noMatches")}</div>`}</div>`;
-  staggerReveal(cont);
+  scrollReveal(cont);
 }
 
 /* --------------------------- countdown ------------------------------- */
@@ -424,27 +421,17 @@ function renderCountdown() {
   state.countdownTimer = setInterval(tick, 1000);
 }
 
-/* --------------------------- marquee LED ----------------------------- */
-function buildMarquee() {
-  const now = Date.now();
-  const up = state.data.matches
-    .filter((m) => { const d = parseUTC(m.timestamp); return d && d.getTime() > now && classifyStatus(m) === "ns"; })
-    .sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || "")).slice(0, 12);
-  const board = $("#ledboard");
-  if (!up.length) { board.hidden = true; return; }
-  board.hidden = false;
-  const item = (m) => { const d = parseUTC(m.timestamp); return `<span class="led-item">${flagImg(m.home, "")}<b>${dispName(m.home)}</b> ${t("vs")} <b>${dispName(m.away)}</b>${flagImg(m.away, "")}<span class="led-time">${d ? fmtDayShort(d) + " " + fmtTime(d) : ""}</span></span><span class="led-dot"></span>`; };
-  const seq = up.map(item).join("");
-  $("#marquee-track").innerHTML = seq + seq; // duplicado para loop continuo
-}
-
-/* --------------------------- blur fade (Magic UI) -------------------- */
-function staggerReveal(container) {
-  // Solo los primeros ítems hacen blur-fade (liviano en gama media); el resto aparece directo.
-  $$(".bf", container).forEach((el, i) => {
-    if (i < 12) el.style.animationDelay = (i * 0.045).toFixed(3) + "s";
-    else el.style.animation = "none";
-  });
+/* --------------------------- reveal on scroll ------------------------ */
+let _revealIO = null;
+function scrollReveal(container) {
+  const items = $$(".reveal:not(.in)", container);
+  if (!("IntersectionObserver" in window)) { items.forEach((e) => e.classList.add("in")); return; }
+  if (!_revealIO) {
+    _revealIO = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); _revealIO.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -6% 0px", threshold: 0.05 });
+  }
+  items.forEach((e, i) => { e.style.transitionDelay = ((i % 6) * 0.04).toFixed(3) + "s"; _revealIO.observe(e); });
 }
 
 /* --------------------------- selector + idioma ----------------------- */
@@ -475,24 +462,6 @@ function setLang(lang) {
   applyI18n();
   buildCountryGrid();
   applyTheme(state.team); // re-render con idioma nuevo
-}
-
-/* --------------------------- confetti -------------------------------- */
-let confettiParts = [], confettiRAF = null;
-function burstConfetti(big = false) {
-  const canvas = $("#confetti"), ctx = canvas.getContext("2d");
-  const dpr = Math.min(devicePixelRatio || 1, 2);
-  canvas.width = innerWidth * dpr; canvas.height = innerHeight * dpr; ctx.scale(dpr, dpr);
-  const tm = theme(), colors = [tm.c1, tm.c2, tm.c3, "#ffffff"], n = big ? 110 : 50;
-  for (let i = 0; i < n; i++) confettiParts.push({ x: innerWidth / 2 + (Math.random() - .5) * innerWidth * .6, y: -20, vx: (Math.random() - .5) * 5, vy: Math.random() * 3 + 2, g: .12 + Math.random() * .08, size: 5 + Math.random() * 6, rot: Math.random() * Math.PI, vr: (Math.random() - .5) * .2, color: colors[(Math.random() * colors.length) | 0], life: 0, ttl: 140 + Math.random() * 60 });
-  if (!confettiRAF) animateConfetti();
-}
-function animateConfetti() {
-  const canvas = $("#confetti"), ctx = canvas.getContext("2d"), dpr = Math.min(devicePixelRatio || 1, 2);
-  ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
-  confettiParts = confettiParts.filter((p) => p.life < p.ttl && p.y < innerHeight + 30);
-  confettiParts.forEach((p) => { p.vy += p.g; p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.life++; ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.fillStyle = p.color; ctx.globalAlpha = Math.max(0, 1 - p.life / p.ttl); ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * .6); ctx.restore(); });
-  if (confettiParts.length) confettiRAF = requestAnimationFrame(animateConfetti); else { confettiRAF = null; ctx.clearRect(0, 0, canvas.width, canvas.height); }
 }
 
 /* --------------------------- tabs + eventos -------------------------- */
