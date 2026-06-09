@@ -34,6 +34,8 @@ const TX = {
   noToday: { es: "No hay partidos hoy.", en: "No matches today.", pt: "Nenhum jogo hoje.", fr: "Aucun match aujourd'hui.", ar: "لا مباريات اليوم." },
   noLive: { es: "No hay partidos en vivo ahora.", en: "No live matches right now.", pt: "Nenhum jogo ao vivo agora.", fr: "Aucun match en direct.", ar: "لا مباريات مباشرة الآن." },
   addCal: { es: "Agendar", en: "Add to calendar", pt: "Agendar", fr: "Ajouter au calendrier", ar: "أضف إلى التقويم" },
+  mascots: { es: "Mascotas oficiales", en: "Official mascots", pt: "Mascotes oficiais", fr: "Mascottes officielles", ar: "التمائم الرسمية" },
+  retry: { es: "Reintentar", en: "Retry", pt: "Tentar de novo", fr: "Réessayer", ar: "إعادة المحاولة" },
 };
 const tw = (m) => m[state.lang] || m.es;
 
@@ -121,9 +123,58 @@ function classifyStatus(m) {
 
 /* --------------------------- carga ----------------------------------- */
 async function loadData() {
-  const res = await fetch(`${DATA_URL}?t=${Math.floor(Date.now() / 60000)}`, { cache: "no-store" });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return res.json();
+  try {
+    const res = await fetch(`${DATA_URL}?t=${Math.floor(Date.now() / 60000)}`, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const j = await res.json();
+    if (j && Array.isArray(j.matches) && j.matches.length) return j;
+    throw new Error("fixture.json vacío");
+  } catch (e) {
+    return loadFromBackup(); // respaldo: TheSportsDB directo
+  }
+}
+// Fuente de respaldo: si data/fixture.json no está disponible, baja la fase de grupos en vivo.
+async function loadFromBackup() {
+  const B = "https://www.thesportsdb.com/api/v1/json/3";
+  const byId = new Map();
+  for (const r of [1, 2, 3]) {
+    const d = await fetch(`${B}/eventsround.php?id=4429&r=${r}&s=2026`).then((x) => x.json()).catch(() => null);
+    ((d && d.events) || []).forEach((ev) => { if (!ev.dateEvent || ev.dateEvent >= "2026-06-01") byId.set(ev.idEvent, normalizeBackup(ev)); });
+  }
+  const matches = [...byId.values()].sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
+  if (!matches.length) throw new Error("respaldo vacío");
+  return { updatedAt: new Date().toISOString(), source: "TheSportsDB (respaldo)", count: matches.length, matches, backup: true };
+}
+function setFooterUpdated(d) {
+  const upd = parseUTC(d.updatedAt);
+  const tag = d.backup ? " · ⚠ respaldo" : "";
+  $("#footer-updated").textContent = d && d.updatedAt ? `${t("updated")}: ${upd ? upd.toLocaleString(state.lang, tzOpt()) : d.updatedAt} · ${d.count} ${t("matches")}${tag}` : "";
+}
+function showLoadError() {
+  $("#status").innerHTML = `<div class="error">${t("loadError")}</div><button class="btn-primary" id="retry-btn" type="button">${tw(TX.retry)}</button>`;
+}
+async function retryLoad() {
+  $("#status").innerHTML = `<div class="spinner"></div>${t("loading")}`;
+  renderSkeletons();
+  try {
+    const data = await loadData();
+    state.data = data; state.sig = JSON.stringify(data.matches);
+    $("#status").innerHTML = "";
+    setFooterUpdated(data); render();
+  } catch { showLoadError(); }
+}
+function normalizeBackup(ev) {
+  const num = (v) => (v == null || v === "" ? null : Number(v));
+  return {
+    id: ev.idEvent, round: parseInt(ev.intRound, 10) || 0, stage: "GROUP", stageName: "",
+    group: ev.strGroup ? ev.strGroup.replace(/group\s*/i, "").trim() : null,
+    date: ev.dateEvent || null, time: ev.strTime || null,
+    timestamp: ev.strTimestamp || (ev.dateEvent ? `${ev.dateEvent}T${ev.strTime || "00:00:00"}` : null),
+    home: ev.strHomeTeam || "Por definir", away: ev.strAwayTeam || "Por definir",
+    homeBadge: ev.strHomeTeamBadge || null, awayBadge: ev.strAwayTeamBadge || null,
+    homeScore: num(ev.intHomeScore), awayScore: num(ev.intAwayScore),
+    status: ev.strStatus || "NS", venue: ev.strVenue || null, city: ev.strCity || null,
+  };
 }
 async function detectGeo() {
   try {
@@ -554,7 +605,19 @@ function renderSquad(cont, players, full) {
 function renderStadiums() {
   const cont = $("#sedes-content");
   const cflag = { "México": "mx", "Estados Unidos": "us", "Canadá": "ca" };
-  let html = `<div class="bracket-head"><div class="big">🏟️ ${tw(TX.venues)}</div><p>16 ${tw(TX.venues).toLowerCase()} · USA · Canadá · México</p></div><div class="venues-list">`;
+  let html = "";
+  // Mascotas oficiales (Maple/Zayu/Clutch)
+  if (typeof MASCOTS !== "undefined" && MASCOTS.length) {
+    html += `<div class="sel-section-title" style="margin-top:14px">${tw(TX.mascots)}</div><div class="mascots">`;
+    MASCOTS.forEach((m) => {
+      html += `<div class="mascot reveal" style="--mc:${m.color}">
+        <div class="mascot-top">${m.flag ? `<img class="mascot-flag" src="${FLAG(m.flag)}" alt="${m.country}" loading="lazy">` : ""}<div class="mascot-name">${m.name}</div></div>
+        <div class="mascot-meta">${m.animal} · ${m.country}${m.pos ? " · " + m.pos : ""}</div>
+        ${state.lang === "es" ? `<p class="mascot-desc">${m.desc}</p>` : ""}</div>`;
+    });
+    html += `</div>`;
+  }
+  html += `<div class="sel-section-title">🏟️ ${tw(TX.venues)}</div><div class="venues-list">`;
   STADIUMS.forEach((s) => {
     const fc = cflag[s.country] || "";
     const maps = `https://www.google.com/maps?q=${s.lat},${s.lon}`;
@@ -662,7 +725,7 @@ function shareApp() {
 }
 function flashToast(msg) {
   let el = $("#toast");
-  if (!el) { el = document.createElement("div"); el.id = "toast"; el.className = "toast"; document.body.appendChild(el); }
+  if (!el) { el = document.createElement("div"); el.id = "toast"; el.className = "toast"; el.setAttribute("role", "status"); el.setAttribute("aria-live", "polite"); document.body.appendChild(el); }
   el.textContent = msg; el.classList.add("show");
   clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove("show"), 2200);
 }
@@ -700,15 +763,22 @@ function updateToggleAllLabel() {
 /* --------------------------- tabs + eventos -------------------------- */
 function switchTab(tab) {
   state.tab = tab;
-  $$(".tab").forEach((b) => b.classList.toggle("is-active", b.dataset.tab === tab));
+  $$(".tab").forEach((b) => { const on = b.dataset.tab === tab; b.classList.toggle("is-active", on); b.setAttribute("aria-selected", on ? "true" : "false"); });
   $$(".panel").forEach((p) => p.classList.toggle("is-active", p.dataset.panel === tab));
   renderActivePanel();
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
+function setupA11y() {
+  const tabs = $("#tabs"); if (tabs) tabs.setAttribute("role", "tablist");
+  $$(".tab").forEach((b) => { b.setAttribute("role", "tab"); b.setAttribute("aria-controls", "panel-" + b.dataset.tab); b.setAttribute("aria-selected", b.classList.contains("is-active") ? "true" : "false"); });
+  $$(".panel").forEach((p) => { p.setAttribute("role", "tabpanel"); p.setAttribute("aria-labelledby", "tab-" + p.dataset.panel); p.setAttribute("tabindex", "0"); });
+  const ff = $("#fixture-filters"); if (ff) { ff.setAttribute("role", "group"); ff.setAttribute("aria-label", "Filtro de partidos"); }
+  const st = $("#status"); if (st) { st.setAttribute("role", "status"); st.setAttribute("aria-live", "polite"); }
+}
 
 /* --------------------------- filtros fixture ------------------------- */
 function syncFilterChips() {
-  $$("#fixture-filters .seg-btn").forEach((b) => b.classList.toggle("is-active", b.dataset.filter === state.filter));
+  $$("#fixture-filters .seg-btn").forEach((b) => { const on = b.dataset.filter === state.filter; b.classList.toggle("is-active", on); b.setAttribute("aria-pressed", on ? "true" : "false"); });
 }
 
 /* --------------------------- calendario (.ics) ----------------------- */
@@ -745,6 +815,7 @@ function applyDark(dark) {
 function wireEvents() {
   $("#tabs").addEventListener("click", (e) => { const b = e.target.closest(".tab"); if (b) switchTab(b.dataset.tab); });
   $("#main").addEventListener("click", (e) => {
+    if (e.target.closest("#retry-btn")) { retryLoad(); return; }
     const cb = e.target.closest(".cal-btn"); if (cb) { e.stopPropagation(); addToCalendar(cb.dataset.mid); return; }
     const h = e.target.closest(".acc-head"); if (h) toggleAccordion(h.parentElement);
   });
@@ -774,7 +845,7 @@ async function init() {
   document.documentElement.dataset.theme = state.dark ? "dark" : "light";
   const _di = $("#dark-icon"); if (_di) _di.textContent = state.dark ? "☀️" : "🌙";
   setTimezone(null); // browser por defecto hasta geo
-  buildLangChips(); wireEvents(); applyI18n();
+  buildLangChips(); wireEvents(); setupA11y(); applyI18n();
 
   $("#status").innerHTML = `<div class="spinner"></div>${t("loading")}`;
   renderSkeletons();
@@ -784,10 +855,9 @@ async function init() {
     state.data = data;
     state.sig = JSON.stringify(data.matches);
     $("#status").innerHTML = "";
-    const upd = parseUTC(data.updatedAt);
-    $("#footer-updated").textContent = data.updatedAt ? `${t("updated")}: ${upd ? upd.toLocaleString(state.lang, tzOpt()) : data.updatedAt} · ${data.count} ${t("matches")}` : "";
+    setFooterUpdated(data);
   } else {
-    $("#status").innerHTML = `<div class="error">${t("loadError")}</div>`;
+    showLoadError();
   }
 
   // zona horaria por geolocalización (no por reloj del PC)
@@ -814,8 +884,7 @@ function scheduleRefresh() {
       const fresh = await loadData();
       const sig = JSON.stringify(fresh.matches);
       state.data = fresh;
-      const upd = parseUTC(fresh.updatedAt);
-      $("#footer-updated").textContent = fresh.updatedAt ? `${t("updated")}: ${upd ? upd.toLocaleString(state.lang, tzOpt()) : fresh.updatedAt} · ${fresh.count} ${t("matches")}` : "";
+      setFooterUpdated(fresh);
       if (sig !== state.sig) { state.sig = sig; render(); } // solo re-render si cambiaron los partidos
     } catch {}
     scheduleRefresh();
