@@ -534,9 +534,22 @@ function chooseTeam(name) {
 }
 
 /* ------------------------- Inicio ------------------------------------- */
+function setTzHint() {
+  try {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "tu zona";
+    const offMin = -new Date().getTimezoneOffset();
+    const sign = offMin >= 0 ? "+" : "-";
+    const off = `UTC${sign}${String(Math.floor(Math.abs(offMin) / 60)).padStart(2, "0")}:${String(Math.abs(offMin) % 60).padStart(2, "0")}`;
+    $("#tz-hint").innerHTML = `🕒 Horarios en tu hora local (${tz}, ${off}) · preliminares hasta el inicio del torneo`;
+  } catch {
+    $("#tz-hint").textContent = "🕒 Horarios en tu hora local · preliminares";
+  }
+}
+
 async function init() {
   buildCountryGrid();
   wireEvents();
+  setTzHint();
 
   // 1) Datos del fixture
   $("#status").innerHTML = `<div class="spinner"></div>Cargando fixture del Mundial…`;
