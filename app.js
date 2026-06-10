@@ -60,6 +60,7 @@ const state = {
   data: null, team: null, filter: "all", tab: "fixture",
   lang: "es", tz: null, tzCity: "", tzOff: "", dark: false,
   factTimer: null, factIdx: 0, countdownTimer: null, allExpanded: false,
+  seenTabs: new Set(), revealInstant: false,
 };
 
 /* --------------------------- helpers --------------------------------- */
@@ -317,6 +318,10 @@ function render() {
 }
 function renderActivePanel() {
   if (!state.data) return;
+  // El reveal anima solo la PRIMERA visita a cada pestaña; después (y en
+  // re-renders del polling) el contenido aparece al instante, sin parpadeo.
+  state.revealInstant = state.seenTabs.has(state.tab);
+  state.seenTabs.add(state.tab);
   if (state.tab === "fixture") renderFixture();
   else if (state.tab === "grupos") renderGroups();
   else if (state.tab === "bracket") renderBracket();
@@ -339,7 +344,7 @@ function liveCard(m, isMine) {
   const venue = m.venue ? ` · ${m.venue}` : "";
   const raw = (m.status || "").toUpperCase();
   const phase = /^[A-Z0-9+']{1,3}$/.test(raw) ? `<span class="ltv-phase">${raw}</span>` : "";
-  return `<article class="match-live reveal ${isMine ? "mine" : ""}">
+  return `<article class="match-live reveal ${isMine ? "mine" : ""}" data-mid="${m.id}">
     <div class="ltv-top"><span class="ltv-badge"><span class="ltv-dot"></span>${t("status.live")}</span>${phase}<span class="ltv-meta">${grp}${venue}</span></div>
     <div class="ltv-row">
       <div class="ltv-team">${teamCell(m.home, m.homeBadge)}<span class="ltv-name">${dispName(m.home)}</span></div>
@@ -363,7 +368,7 @@ function matchCard(m) {
   const grp = m.group ? `<span class="match-grouptag">${t("group", { g: m.group })}</span>` : stageLabel(m);
   const venue = m.venue ? ` · ${m.venue}${m.city ? ", " + m.city.split(",")[0] : ""}` : "";
   const cal = st === "ns" ? `<button class="cal-btn" data-mid="${m.id}" aria-label="${tw(TX.addCal)}" title="${tw(TX.addCal)}"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 15H5V9h14v10zM7 11h5v5H7z"/></svg></button>` : "";
-  return `<article class="match reveal ${isMine ? "mine" : ""} ${st === "live" ? "live" : ""}">
+  return `<article class="match reveal ${isMine ? "mine" : ""} ${st === "live" ? "live" : ""}" data-mid="${m.id}">
     <div class="match-meta">${grp}${venue}${cal}</div>
     <div class="team-side home">${teamCell(m.home, m.homeBadge)}<span class="team-name">${dispName(m.home)}</span></div>
     <div class="match-center">${center}</div>
@@ -694,10 +699,13 @@ function renderCountdown() {
   $("#countdown-label").textContent = (state.team && (next.home === state.team || next.away === state.team)) ? t("nextMatchOf", { team: dispName(state.team) }) : t("nextMatchWC");
   $("#countdown-teams").innerHTML = `${flagImg(next.home, "fl")}<span>${dispName(next.home)}</span> ${t("vs")} <span>${dispName(next.away)}</span>${flagImg(next.away, "fl")}`.replace(/class="fl"/g, 'style="width:22px;height:16px;border-radius:3px;object-fit:cover"');
   let mode = null;
-  const setNum = (k, v) => {
+  const setNum = (k, v, pop) => {
     const el = $(`#cd-clock .cd-num[data-k="${k}"]`); if (!el) return;
     const s = String(v).padStart(2, "0");
-    if (el.textContent !== s) { el.textContent = s; el.classList.remove("pop"); void el.offsetWidth; el.classList.add("pop"); }
+    if (el.textContent !== s) {
+      el.textContent = s;
+      if (pop) { el.classList.remove("pop"); void el.offsetWidth; el.classList.add("pop"); }
+    }
   };
   const tick = () => {
     const diff = d.getTime() - Date.now();
@@ -710,7 +718,8 @@ function renderCountdown() {
       $("#cd-clock").innerHTML = labels.map(([k, lbl]) => `<span class="cd-seg"><span class="cd-num" data-k="${k}">00</span><small>${lbl}</small></span>`).join("");
     }
     const v = newMode === "dhm" ? [days, h, m] : [h, m, s];
-    setNum("a", v[0]); setNum("b", v[1]); setNum("c", v[2]);
+    // los segundos cambian sin pop (movimiento constante cansa la vista)
+    setNum("a", v[0], true); setNum("b", v[1], true); setNum("c", v[2], newMode === "dhm");
   };
   tick();
   state.countdownTimer = setInterval(tick, 1000);
@@ -720,7 +729,7 @@ function renderCountdown() {
 let _revealIO = null;
 function scrollReveal(container) {
   const items = $$(".reveal:not(.in)", container);
-  if (!("IntersectionObserver" in window)) { items.forEach((e) => e.classList.add("in")); return; }
+  if (state.revealInstant || !("IntersectionObserver" in window)) { items.forEach((e) => e.classList.add("in")); return; }
   if (!_revealIO) {
     _revealIO = new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); _revealIO.unobserve(e.target); } });
@@ -816,7 +825,13 @@ function switchTab(tab) {
   const act = $(".tab.is-active");
   if (act && act.scrollIntoView) act.scrollIntoView({ inline: "nearest", block: "nearest" });
   renderActivePanel();
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo(0, 0); // instantáneo: el smooth en navegación retrasa el contenido
+}
+// Las animaciones infinitas del hero (beam, shiny) se pausan fuera de pantalla
+function setupAnimPause() {
+  if (!("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle("anim-off", !e.isIntersecting)), { threshold: 0 });
+  ["#hero", "#countdown"].forEach((s) => { const el = $(s); if (el) io.observe(el); });
 }
 // Indicio visual de que la barra de tabs se puede deslizar (Sedes no entra en 375px)
 function setupTabsScroll() {
@@ -908,7 +923,7 @@ async function init() {
   state.dark = storedDark != null ? storedDark === "1" : !!(window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
   document.documentElement.dataset.theme = state.dark ? "dark" : "light";
   setTimezone(null); // browser por defecto hasta geo
-  buildLangChips(); wireEvents(); setupA11y(); setupTabsScroll(); applyI18n();
+  buildLangChips(); wireEvents(); setupA11y(); setupTabsScroll(); setupAnimPause(); applyI18n();
 
   $("#status").innerHTML = `<div class="spinner"></div>${t("loading")}`;
   renderSkeletons();
@@ -946,9 +961,20 @@ function scheduleRefresh() {
     try {
       const fresh = await loadData();
       const sig = JSON.stringify(fresh.matches);
+      // GOL: detecta cambios de marcador para animar la tarjeta tras el re-render
+      let scored = [];
+      if (state.data && sig !== state.sig) {
+        const old = new Map(state.data.matches.map((m) => [String(m.id), `${m.homeScore}-${m.awayScore}`]));
+        scored = fresh.matches
+          .filter((m) => (m.homeScore != null || m.awayScore != null) && old.has(String(m.id)) && old.get(String(m.id)) !== `${m.homeScore}-${m.awayScore}`)
+          .map((m) => String(m.id));
+      }
       state.data = fresh;
       setFooterUpdated(fresh);
-      if (sig !== state.sig) { state.sig = sig; render(); } // solo re-render si cambiaron los partidos
+      if (sig !== state.sig) {
+        state.sig = sig; render(); // solo re-render si cambiaron los partidos
+        scored.forEach((id) => { const el = document.querySelector(`[data-mid="${id}"]`); if (el) el.classList.add("goal-pop"); });
+      }
     } catch {}
     scheduleRefresh();
   }, live ? 30_000 : REFRESH_MS); // más rápido si hay partidos en vivo

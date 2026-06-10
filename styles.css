@@ -111,10 +111,10 @@ main { padding: 0 16px 44px; }
 .hero-main { position: relative; }
 .hero-kicker { text-transform: uppercase; letter-spacing: .2em; font-size: 10.5px; font-weight: 800; opacity: .82; margin-bottom: 6px; }
 .hero-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 13.5vw, 66px); line-height: .9; letter-spacing: .005em; text-transform: uppercase; word-break: break-word;
-  /* Magic UI · Animated Shiny Text (glare que recorre el texto) */
+  /* Magic UI · Animated Shiny Text — 2 pasadas al cargar y descansa (hero calmo) */
   background: linear-gradient(100deg, rgba(255,255,255,.82) 35%, #fff 50%, rgba(255,255,255,.82) 65%);
   background-size: 220% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
-  animation: shinyText 5.5s ease-in-out infinite; }
+  animation: shinyText 3.2s ease-in-out 2; }
 @keyframes shinyText { 0% { background-position: 180% 0; } 100% { background-position: -120% 0; } }
 .hero-nick { font-size: 16px; font-weight: 700; margin-top: 8px; opacity: .95; letter-spacing: 0; }
 .hero-titles { font-size: 12px; font-weight: 600; opacity: .72; margin-top: 4px; letter-spacing: .01em; }
@@ -311,12 +311,14 @@ main { padding: 0 16px 44px; }
 .cd-num.pop { animation: cdPop .32s cubic-bezier(.3,.9,.3,1); }
 @keyframes cdPop { 0% { transform: translateY(-45%); opacity: .15; } 60% { transform: translateY(8%); } 100% { transform: none; opacity: 1; } }
 
-/* Shimmer Button — destello que cruza el botón de selección de país */
-.country-btn { position: relative; overflow: hidden; }
-.country-btn::after { content: ""; position: absolute; top: 0; left: -60%; width: 45%; height: 100%;
-  background: linear-gradient(100deg, transparent, rgba(255,255,255,.45), transparent); transform: skewX(-18deg);
-  animation: shimmerBtn 4.5s ease-in-out infinite; }
-@keyframes shimmerBtn { 0%, 12% { left: -60%; } 38%, 100% { left: 130%; } }
+/* Goal pop — el marcador salta y la tarjeta destella cuando cambia el score */
+.goal-pop .ltv-score, .goal-pop .match-score { animation: goalPop .9s cubic-bezier(.2,.8,.3,1); }
+.goal-pop.match-live { animation: goalFlash 1.2s ease-out; }
+@keyframes goalPop { 0% { transform: scale(1); } 28% { transform: scale(1.45); } 58% { transform: scale(.94); } 100% { transform: scale(1); } }
+@keyframes goalFlash { 0% { box-shadow: 0 0 0 3px var(--live), var(--sh-sm); } 100% { box-shadow: var(--sh-sm); } }
+
+/* Animaciones infinitas en pausa cuando el elemento sale de pantalla */
+.anim-off, .anim-off::before, .anim-off::after, .anim-off * { animation-play-state: paused !important; }
 
 /* ============================ ACORDEONES ============================= */
 .ghost-btn { border: 1px solid var(--line); background: var(--surface); color: var(--ink-dim); font: inherit; font-weight: 700; font-size: 13px; padding: 8px 14px; border-radius: 999px; cursor: pointer; box-shadow: var(--sh-sm); }
@@ -432,7 +434,8 @@ main { padding: 0 16px 44px; }
 .match-live.mine { box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--live) 55%, transparent), var(--sh-sm); }
 
 /* ============================ BRACKET VISUAL ========================= */
-.bracket-scroll { overflow-x: auto; padding: 6px 2px 18px; -webkit-overflow-scrolling: touch; }
+.bracket-scroll { overflow-x: auto; padding: 6px 2px 18px; -webkit-overflow-scrolling: touch; scroll-snap-type: x proximity; scroll-padding-inline-start: 6px; }
+.bk-col { scroll-snap-align: start; }
 .bracket-grid { display: flex; gap: 28px; min-width: max-content; align-items: stretch; padding: 0 4px; }
 .bk-col { display: flex; flex-direction: column; }
 .bk-col h3 { font-family: var(--font-display); font-size: 14px; letter-spacing: .05em; text-align: center; margin: 8px 0 3px; color: var(--brand-accent); text-transform: uppercase; }
