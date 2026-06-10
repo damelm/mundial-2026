@@ -221,25 +221,106 @@ function readCachedGeo() {
   } catch { return null; }
 }
 
-async function fetchGeo() {
+// Proveedores de geolocalización por IP, en cascada. Todos son gratuitos y sin
+// API key. Si el primero falla o agota su cupo, se prueba el siguiente. Así no
+// dependemos de un solo servicio ni de su límite diario.
+const GEO_PROVIDERS = [
+  { // ipwho.is — sin límite declarado.
+    url: "https://ipwho.is/",
+    parse: (j) => (j && j.success !== false)
+      ? { code: j.country_code || null, tz: (j.timezone && j.timezone.id) || null, off: (j.timezone && j.timezone.utc) || null }
+      : null,
+  },
+  { // get.geojs.io — sin límite declarado.
+    url: "https://get.geojs.io/v1/ip/geo.json",
+    parse: (j) => j ? { code: j.country_code || null, tz: j.timezone || null, off: null } : null,
+  },
+  { // ipapi.co — respaldo (cupo gratis ~1000/día).
+    url: "https://ipapi.co/json/",
+    parse: (j) => j ? { code: j.country_code || null, tz: j.timezone || null, off: j.utc_offset || null } : null,
+  },
+];
+
+async function fetchGeoFrom(p) {
   try {
     const ctrl = new AbortController();
     const to = setTimeout(() => ctrl.abort(), 4500);
-    const res = await fetch("https://ipapi.co/json/", { signal: ctrl.signal });
+    const res = await fetch(p.url, { signal: ctrl.signal });
     clearTimeout(to);
     if (!res.ok) return null;
-    const j = await res.json();
-    return { code: j.country_code || null, tz: j.timezone || null, off: j.utc_offset || null };
+    const g = p.parse(await res.json());
+    return g && g.code ? g : null;
   } catch { return null; }
 }
 
-// Devuelve la geo cacheada si existe; si no, consulta ipapi y la guarda.
+async function fetchGeo() {
+  for (const p of GEO_PROVIDERS) {
+    const g = await fetchGeoFrom(p);
+    if (g) return g;
+  }
+  // Costo cero: si todos los proveedores fallan, derivamos el país de la zona
+  // horaria del navegador. Menos preciso, pero alcanza para idioma/tema y no
+  // consume ninguna API. Marcado como `local` para no cachearlo (reintenta API).
+  const code = countryFromTimezone();
+  return code ? { code, tz: state.tz || null, off: null, local: true } : null;
+}
+
+// Devuelve la geo cacheada si existe; si no, la detecta y cachea (salvo el
+// respaldo local por zona horaria, que se recalcula gratis cada vez).
 async function detectGeo() {
   const cached = readCachedGeo();
   if (cached) return cached;
   const geo = await fetchGeo();
-  if (geo) { try { localStorage.setItem(GEO_CACHE_KEY, JSON.stringify({ ts: Date.now(), geo })); } catch {} }
+  if (geo && geo.code && !geo.local) {
+    try { localStorage.setItem(GEO_CACHE_KEY, JSON.stringify({ ts: Date.now(), geo })); } catch {}
+  }
   return geo;
+}
+
+// Mapa zona horaria IANA -> código de país (ISO-2). Respaldo sin red, enfocado
+// en el público (Latinoamérica) + países anfitriones y selecciones del Mundial.
+const TZ_COUNTRY = {
+  "America/Asuncion": "PY",
+  "America/Argentina/Buenos_Aires": "AR", "America/Argentina/Cordoba": "AR", "America/Argentina/Mendoza": "AR",
+  "America/Argentina/Tucuman": "AR", "America/Argentina/Salta": "AR", "America/Argentina/Jujuy": "AR",
+  "America/Argentina/San_Juan": "AR", "America/Argentina/San_Luis": "AR", "America/Argentina/Catamarca": "AR",
+  "America/Argentina/La_Rioja": "AR", "America/Argentina/Rio_Gallegos": "AR", "America/Argentina/Ushuaia": "AR",
+  "America/Buenos_Aires": "AR",
+  "America/Sao_Paulo": "BR", "America/Bahia": "BR", "America/Fortaleza": "BR", "America/Recife": "BR",
+  "America/Manaus": "BR", "America/Belem": "BR", "America/Cuiaba": "BR", "America/Campo_Grande": "BR",
+  "America/Porto_Velho": "BR", "America/Boa_Vista": "BR", "America/Maceio": "BR", "America/Araguaina": "BR",
+  "America/Santiago": "CL", "Pacific/Easter": "CL",
+  "America/Bogota": "CO", "America/Lima": "PE", "America/Montevideo": "UY", "America/La_Paz": "BO",
+  "America/Caracas": "VE", "America/Guayaquil": "EC", "Pacific/Galapagos": "EC",
+  "America/Costa_Rica": "CR", "America/Panama": "PA", "America/Tegucigalpa": "HN", "America/El_Salvador": "SV",
+  "America/Guatemala": "GT", "America/Managua": "NI", "America/Santo_Domingo": "DO", "America/Havana": "CU",
+  "America/Port-au-Prince": "HT", "America/Puerto_Rico": "PR",
+  "America/Mexico_City": "MX", "America/Monterrey": "MX", "America/Merida": "MX", "America/Cancun": "MX",
+  "America/Tijuana": "MX", "America/Chihuahua": "MX", "America/Hermosillo": "MX", "America/Mazatlan": "MX",
+  "America/Bahia_Banderas": "MX", "America/Matamoros": "MX", "America/Ojinaga": "MX",
+  "America/New_York": "US", "America/Detroit": "US", "America/Chicago": "US", "America/Denver": "US",
+  "America/Phoenix": "US", "America/Los_Angeles": "US", "America/Anchorage": "US", "Pacific/Honolulu": "US",
+  "America/Indiana/Indianapolis": "US",
+  "America/Toronto": "CA", "America/Vancouver": "CA", "America/Edmonton": "CA", "America/Winnipeg": "CA",
+  "America/Halifax": "CA", "America/St_Johns": "CA", "America/Regina": "CA",
+  "Europe/Madrid": "ES", "Europe/London": "GB", "Europe/Paris": "FR", "Europe/Berlin": "DE", "Europe/Rome": "IT",
+  "Europe/Lisbon": "PT", "Europe/Amsterdam": "NL", "Europe/Brussels": "BE", "Europe/Zurich": "CH",
+  "Europe/Vienna": "AT", "Europe/Zagreb": "HR", "Europe/Belgrade": "RS", "Europe/Prague": "CZ",
+  "Europe/Warsaw": "PL", "Europe/Copenhagen": "DK", "Europe/Oslo": "NO", "Europe/Stockholm": "SE",
+  "Europe/Sarajevo": "BA", "Europe/Kyiv": "UA", "Europe/Kiev": "UA",
+  "Africa/Johannesburg": "ZA", "Africa/Casablanca": "MA", "Africa/Algiers": "DZ", "Africa/Tunis": "TN",
+  "Africa/Cairo": "EG", "Africa/Lagos": "NG", "Africa/Accra": "GH", "Africa/Dakar": "SN", "Africa/Abidjan": "CI",
+  "Asia/Tokyo": "JP", "Asia/Seoul": "KR", "Asia/Tehran": "IR", "Asia/Qatar": "QA", "Asia/Riyadh": "SA",
+  "Asia/Dubai": "AE", "Asia/Jakarta": "ID", "Asia/Tashkent": "UZ", "Asia/Amman": "JO",
+  "Australia/Sydney": "AU", "Australia/Melbourne": "AU", "Australia/Brisbane": "AU", "Australia/Perth": "AU",
+  "Pacific/Auckland": "NZ",
+};
+
+function countryFromTimezone() {
+  try {
+    const tz = state.tz || Intl.DateTimeFormat().resolvedOptions().timeZone;
+    return (tz && TZ_COUNTRY[tz]) || null;
+  } catch { return null; }
 }
 
 /* --------------------------- zona horaria ---------------------------- */
