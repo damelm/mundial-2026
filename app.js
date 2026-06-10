@@ -1109,7 +1109,7 @@ async function init() {
   let storedDark = null; try { storedDark = localStorage.getItem("wc26-dark"); } catch {}
   state.dark = storedDark != null ? storedDark === "1" : !!(window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
   document.documentElement.dataset.theme = state.dark ? "dark" : "light";
-  setTimezone(null); // browser por defecto hasta geo
+  setTimezone(null); // zona horaria del navegador (refleja el SO, es la fuente confiable)
   buildLangChips(); wireEvents(); setupA11y(); setupTabsScroll(); setupAnimPause(); setupWaveResize(); applyI18n();
 
   $("#status").innerHTML = `<div class="spinner"></div>${t("loading")}`;
@@ -1125,8 +1125,11 @@ async function init() {
     showLoadError();
   }
 
-  // zona horaria por geolocalización (no por reloj del PC)
-  if (geo && geo.tz) setTimezone(geo.tz, geo.off);
+  // La hora se muestra en la zona del navegador (ya seteada arriba). La
+  // geolocalización por IP NO se usa para la hora: falla con VPN, datos
+  // móviles y proxies, y haría que los horarios "no coincidan". Solo se usa
+  // como respaldo si el navegador no reporta ninguna zona (caso muy raro).
+  if (!state.tz && geo && geo.tz) setTimezone(geo.tz, geo.off);
 
   // idioma: guardado > geolocalización > navegador
   if (!storedLang) { state.lang = langForCountry(geo && geo.code); }
