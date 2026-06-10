@@ -3,7 +3,7 @@
  * con caché solo como respaldo OFFLINE. Banderas/fuentes cache-first.
  * Así el mantenimiento se ve al instante y no queda pegada una versión vieja.
  */
-const VERSION = "v9";
+const VERSION = "v10";
 const SHELL = "shell-" + VERSION;
 const RUNTIME = "runtime-" + VERSION;
 
@@ -13,7 +13,14 @@ const SHELL_ASSETS = [
 ];
 
 self.addEventListener("install", (e) => {
-  e.waitUntil(caches.open(SHELL).then((c) => c.addAll(SHELL_ASSETS)).then(() => self.skipWaiting()));
+  // cache: "reload" obliga a bajar la copia FRESCA de cada asset, saltando el
+  // caché HTTP del navegador (GitHub Pages sirve max-age=600). Así un SW nuevo
+  // nunca cachea una versión vieja del shell.
+  e.waitUntil(
+    caches.open(SHELL)
+      .then((c) => c.addAll(SHELL_ASSETS.map((u) => new Request(u, { cache: "reload" }))))
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener("activate", (e) => {
@@ -49,8 +56,12 @@ self.addEventListener("fetch", (e) => {
   // Mismo origen (HTML/CSS/JS/JSON) → NETWORK-FIRST: siempre lo último online,
   // y se actualiza la caché; si no hay red, sirve la caché (offline).
   if (url.origin === location.origin) {
+    // cache: "no-cache" revalida con el servidor (envía If-None-Match con el
+    // ETag): si no cambió, 304 barato; si cambió, baja lo nuevo al instante.
+    // Evita servir copia vieja por el max-age=600 de Pages.
+    const fresh = new Request(req, { cache: "no-cache" });
     e.respondWith(
-      fetch(req).then((res) => {
+      fetch(fresh).then((res) => {
         const copy = res.clone();
         caches.open(SHELL).then((c) => c.put(req, copy));
         return res;
