@@ -1200,9 +1200,14 @@ function addToCalendar(mid) {
   if (isIOS()) {
     downloadICS(m, d, end, title, loc, stage);
   } else {
-    // window.open en el gesto de click; si el popup queda bloqueado, .ics.
-    const w = window.open(googleCalUrl(d, end, title, loc, stage), "_blank", "noopener");
-    if (!w) downloadICS(m, d, end, title, loc, stage);
+    // Abrir Google Calendar con un <a> (no window.open): en móvil el sistema
+    // pasa el link a la app de Google y window.open devuelve null aunque haya
+    // abierto, lo que disparaba la descarga del .ics por error. El click del
+    // enlace abre el calendario sin descargar nada.
+    const a = document.createElement("a");
+    a.href = googleCalUrl(d, end, title, loc, stage);
+    a.target = "_blank"; a.rel = "noopener";
+    document.body.appendChild(a); a.click(); a.remove();
   }
   flashToast(dispName(m.home) + " vs " + dispName(m.away) + " ✓");
 }
