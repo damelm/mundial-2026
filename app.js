@@ -334,7 +334,7 @@ function renderHeroCard() {
       label.textContent = tw(TX.todayPlay);
     } else if (news && news.length) {
       mode = "news";
-      items = news.map((n) => (n.src ? `${n.t} — ${n.src}` : n.t));
+      items = news.map((n) => ({ t: n.src ? `${n.t} — ${n.src}` : n.t, url: n.u || "" }));
       label.textContent = tw(TX.headlines);
     } else {
       mode = "facts";
@@ -357,15 +357,23 @@ function loadNews() {
     .catch(() => { state.news = null; });
   return _newsPromise;
 }
+const escHtml = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+// Rota los ítems de la tarjeta del hero. Cada ítem es un string o
+// {t, url}: con url el titular se muestra como enlace (abre la nota).
 function startFacts(facts) {
   clearInterval(state.factTimer);
   const el = $("#fact-text");
-  el.textContent = facts[0];
+  const show = (i) => {
+    const f = facts[i % facts.length];
+    if (typeof f === "string") { el.textContent = f; return; }
+    el.innerHTML = f.url ? `<a href="${escHtml(f.url)}" target="_blank" rel="noopener">${escHtml(f.t)}</a>` : escHtml(f.t);
+  };
+  show(0);
   state.factIdx = 1;
   if (facts.length > 1) {
     state.factTimer = setInterval(() => {
       el.classList.add("fading");
-      setTimeout(() => { el.textContent = facts[state.factIdx % facts.length]; state.factIdx++; el.classList.remove("fading"); }, 300);
+      setTimeout(() => { show(state.factIdx % facts.length); state.factIdx++; el.classList.remove("fading"); }, 300);
     }, 5500);
   }
 }

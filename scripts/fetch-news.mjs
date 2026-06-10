@@ -30,10 +30,11 @@ async function fetchLang(lang, cfg) {
   const res = await fetch(url, { headers: { "User-Agent": "mundial-2026-app/1.0 (+https://damelm.github.io/mundial-2026)" } });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const xml = await res.text();
-  const items = [...xml.matchAll(/<item>.*?<title>(.*?)<\/title>.*?<\/item>/gs)].map((m) => decode(m[1]));
+  const items = [...xml.matchAll(/<item>.*?<title>(.*?)<\/title>.*?<link>(.*?)<\/link>.*?<\/item>/gs)]
+    .map((m) => ({ raw: decode(m[1]), u: decode(m[2]) }));
   const seen = new Set();
   const out = [];
-  for (const raw of items) {
+  for (const { raw, u } of items) {
     // Google News pone la fuente al final: "Titular - Fuente"
     const m = raw.match(/^(.*\S)\s+-\s+([^-]{2,40})$/s);
     const title = (m ? m[1] : raw).trim();
@@ -41,7 +42,7 @@ async function fetchLang(lang, cfg) {
     const key = title.toLowerCase().slice(0, 70);
     if (!title || title.length < 20 || seen.has(key)) continue;
     seen.add(key);
-    out.push({ t: title, src });
+    out.push({ t: title, src, u: /^https:\/\//.test(u) ? u : "" });
     if (out.length >= MAX) break;
   }
   return out;

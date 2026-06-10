@@ -53,3 +53,5 @@ scripts/fetch-data.mjs       → baja y normaliza los datos
 
 ---
 Datos: [TheSportsDB](https://www.thesportsdb.com) · Hecho con ⚽
+
+© 2026 damelm · **Todos los derechos reservados.** Código publicado solo por transparencia; ver [LICENSE](LICENSE).

@@ -122,6 +122,8 @@ main { padding: 0 16px 44px; }
 
 .fact-card { margin-top: 16px; background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.22); border-radius: var(--radius-sm); padding: 12px 14px; }
 .fact-card[data-mode="live"] { cursor: pointer; border-color: rgba(255,255,255,.5); }
+.fact-text a { color: inherit; font-weight: 600; text-decoration: underline; text-decoration-color: rgba(255,255,255,.55); text-underline-offset: 3px; }
+.fact-text a:hover { text-decoration-color: #fff; }
 .fact-card[data-mode="live"] .fact-label { animation: ltvPulse 1.3s ease-in-out infinite; }
 .fact-card[data-mode="live"]:active { transform: scale(.985); }
 .fact-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .16em; opacity: .85; }
