@@ -39,6 +39,23 @@ const TX = {
 };
 const tw = (m) => m[state.lang] || m.es;
 
+// Posiciones de jugador (vienen en inglés de API-Football / TheSportsDB)
+const POS_I18N = {
+  gk: { es: "Arquero", en: "Goalkeeper", pt: "Goleiro", fr: "Gardien", ar: "حارس مرمى" },
+  df: { es: "Defensor", en: "Defender", pt: "Defensor", fr: "Défenseur", ar: "مدافع" },
+  mf: { es: "Mediocampista", en: "Midfielder", pt: "Meio-campista", fr: "Milieu", ar: "لاعب وسط" },
+  fw: { es: "Delantero", en: "Forward", pt: "Atacante", fr: "Attaquant", ar: "مهاجم" },
+};
+function translatePos(pos) {
+  if (!pos) return "";
+  const p = String(pos).toLowerCase();
+  if (p.includes("keeper") || p === "gk") return tw(POS_I18N.gk);
+  if (p.includes("defen") || p.includes("back")) return tw(POS_I18N.df);
+  if (p.includes("midfield")) return tw(POS_I18N.mf);
+  if (p.includes("attack") || p.includes("forward") || p.includes("striker") || p.includes("wing")) return tw(POS_I18N.fw);
+  return pos;
+}
+
 const state = {
   data: null, team: null, filter: "all", tab: "fixture",
   lang: "es", tz: null, tzCity: "", tzOff: "", dark: false,
@@ -46,6 +63,13 @@ const state = {
 };
 
 /* --------------------------- helpers --------------------------------- */
+// Iconos SVG inline (coherentes con el estilo editorial; sin emojis en títulos)
+const IC = {
+  clock: '<svg class="ic" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm.5-13H11v6l5.2 3.1.8-1.3-4.5-2.7V7z"/></svg>',
+  trophy: '<svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M19 5h-2V3H7v2H5a2 2 0 0 0-2 2v2c0 2.6 1.9 4.7 4.4 5 .6 1.5 1.9 2.6 3.6 2.9V19H8v2h8v-2h-3v-2.1c1.7-.3 3-1.4 3.6-2.9 2.5-.3 4.4-2.4 4.4-5V7a2 2 0 0 0-2-2zM5 9V7h2v4.8C5.8 11.4 5 10.3 5 9zm14 0c0 1.3-.8 2.4-2 2.8V7h2v2z"/></svg>',
+  stadium: '<svg class="ic" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 5c-5 0-9 1.6-9 3.5v7C3 17.4 7 19 12 19s9-1.6 9-3.5v-7C21 6.6 17 5 12 5zm7 10.4c-.5 1-3.3 2.1-7 2.1s-6.5-1.1-7-2.1v-4.6C6.6 11.9 9.2 12.5 12 12.5s5.4-.6 7-1.7v4.6zM12 11C7.9 11 5 9.8 5 9s2.9-2 7-2 7 1.2 7 2-2.9 2-7 2z"/></svg>',
+  star: '<svg class="ic" viewBox="0 0 24 24" width="44" height="44" aria-hidden="true"><path fill="currentColor" d="M12 17.3l6.2 3.7-1.6-7L22 9.2l-7.2-.6L12 2 9.2 8.6 2 9.2 7.4 14l-1.6 7z"/></svg>',
+};
 const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 const L = () => I18N[state.lang] || I18N.es;
@@ -232,9 +256,10 @@ function applyI18n() {
   $("#footer-made").innerHTML = `${t("madeWith")} · <a href="https://www.thesportsdb.com" target="_blank" rel="noopener">TheSportsDB</a>`;
   setTzHint();
   buildLangChips();
+  if (state.updTabsFade) state.updTabsFade(); // las etiquetas cambian de ancho según idioma
 }
 function setTzHint() {
-  $("#tz-hint").innerHTML = `🕒 ${t("tzHint", { zone: state.tzCity || "—", off: state.tzOff || "" })}`;
+  $("#tz-hint").innerHTML = `${IC.clock} ${t("tzHint", { zone: state.tzCity || "—", off: state.tzOff || "" })}`;
 }
 
 /* --------------------------- temática -------------------------------- */
@@ -255,15 +280,7 @@ function applyTheme(name) {
   root.style.setProperty("--on-brand", "#ffffff");
   $("#meta-theme").setAttribute("content", b.brand);
 
-  // bandera del hero
   const code = name ? flagCodeOf(name) : null;
-  const hf = $("#hero-flag-img");
-  if (code) { hf.src = FLAG(code); hf.style.display = ""; }
-  else { hf.removeAttribute("src"); hf.style.display = "none"; $("#hero-badge").dataset.empty = "🏆"; }
-  $("#hero-badge").innerHTML = code
-    ? `<img id="hero-flag-img" src="${FLAG(code)}" alt="${dispName(name)}">`
-    : `<span style="font-size:32px">🏆</span>`;
-
   $("#hero-confed").textContent = tm.confed;
   $("#hero-title").textContent = name ? dispName(name) : t("appTitle");
   $("#hero-nick").textContent = localTeam(state.team, "nick");
@@ -315,10 +332,26 @@ function teamCell(name, badge) {
   if (code) return `<img class="team-flag" src="${fb}" alt="${dispName(name)}" loading="lazy">`;
   return `<span class="team-flag emoji">⚽</span>`;
 }
+// Partido EN VIVO → tarjeta "modo transmisión": grafito plano, marcador grande.
+// Siempre oscura (independiente del tema) para que lo importante grite solo.
+function liveCard(m, isMine) {
+  const grp = m.group ? t("group", { g: m.group }) : stageLabel(m);
+  const venue = m.venue ? ` · ${m.venue}` : "";
+  const raw = (m.status || "").toUpperCase();
+  const phase = /^[A-Z0-9+']{1,3}$/.test(raw) ? `<span class="ltv-phase">${raw}</span>` : "";
+  return `<article class="match-live reveal ${isMine ? "mine" : ""}">
+    <div class="ltv-top"><span class="ltv-badge"><span class="ltv-dot"></span>${t("status.live")}</span>${phase}<span class="ltv-meta">${grp}${venue}</span></div>
+    <div class="ltv-row">
+      <div class="ltv-team">${teamCell(m.home, m.homeBadge)}<span class="ltv-name">${dispName(m.home)}</span></div>
+      <div class="ltv-score">${m.homeScore ?? 0}<span class="ltv-sep">–</span>${m.awayScore ?? 0}</div>
+      <div class="ltv-team">${teamCell(m.away, m.awayBadge)}<span class="ltv-name">${dispName(m.away)}</span></div>
+    </div></article>`;
+}
 function matchCard(m) {
   const d = parseUTC(m.timestamp);
   const st = classifyStatus(m);
   const isMine = state.team && (m.home === state.team || m.away === state.team);
+  if (st === "live") return liveCard(m, isMine);
   let center;
   if (st === "ns") {
     center = `<div class="match-time">${d ? fmtTime(d) : "--:--"}</div><div class="match-date-sm">${d ? fmtDayShort(d) : ""}</div><span class="match-status st-ns">${t("status.ns")}</span>`;
@@ -487,50 +520,63 @@ function resolveSlot(slot, matchNo, proj) {
   if (tg && proj.rowsByG[tg] && proj.rowsByG[tg][2]) return { team: proj.rowsByG[tg][2].team };
   return { label: `3.º (${slot.from.join("/")})` };
 }
-function koSide(res, away) {
-  if (res.team) {
-    const f = teamCellFlag(res.team), n = `<span>${dispName(res.team)}</span>`;
-    return `<div class="ko-team ${away ? "away" : ""}">${away ? n + f : f + n}</div>`;
-  }
-  return `<div class="ko-team ${away ? "away" : ""} slot"><span class="slot-pill">${res.label}</span></div>`;
+function bkRow(res, score, win) {
+  const flag = res.team ? teamCellFlag(res.team) : '<span class="bk-flag-ph"></span>';
+  const nm = res.team ? `<span class="bk-nm">${dispName(res.team)}</span>` : `<span class="bk-nm bk-tbd">${res.label}</span>`;
+  return `<div class="bk-row ${win ? "bk-win" : ""}">${flag}${nm}<span class="bk-sc">${score ?? ""}</span></div>`;
 }
-function koCard(homeHtml, scoreHtml, awayHtml, extra = "") {
-  return `<div class="ko-match reveal ${extra}">${homeHtml}<div class="ko-score">${scoreHtml}</div>${awayHtml}</div>`;
+function bkMatch(home, away, m, cls = "") {
+  const hs = m && m.homeScore != null ? m.homeScore : null;
+  const as = m && m.awayScore != null ? m.awayScore : null;
+  const st = m ? classifyStatus(m) : "ns";
+  return `<div class="bk-match ${st === "live" ? "bk-live" : ""} ${cls}">${bkRow(home, hs, st === "ft" && hs > as)}${bkRow(away, as, st === "ft" && as > hs)}</div>`;
 }
+// Bracket visual: columnas conectadas con scroll horizontal (16avos → final).
 function renderBracket() {
   const cont = $("#bracket-content");
   loadCombosOnce();
   const proj = bracketProjection();
   const koByStage = {};
   state.data.matches.filter((m) => m.stage !== "GROUP").forEach((m) => (koByStage[m.stage] ||= []).push(m));
-  const tree = { R16: BRACKET_TREE.R16, QF: BRACKET_TREE.QF, SF: BRACKET_TREE.SF, TP: [BRACKET_TREE.TP], F: [BRACKET_TREE.F] };
+  for (const k in koByStage) koByStage[k].sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
 
-  let html = `<div class="bracket-head"><div class="big">🏆 ${t("knockouts")}</div><p>${t("bracketSub")}</p></div>`;
-  for (const r of KO_ROUNDS) {
-    const d = parseUTC(r.date + "T18:00:00");
-    html += `<div class="bracket-round"><h3>${t(`stages.${r.stage}`)}</h3><span class="ko-date">${d ? fmtDayShort(d) : ""}</span>`;
-    const real = (koByStage[r.stage] || []).sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
-    if (real.length) {
-      real.forEach((m, i) => {
-        const sc = m.homeScore != null ? `${m.homeScore}-${m.awayScore}` : `<span class="ko-vs">${t("vs")}</span>`;
-        html += koCard(koSide({ team: m.home }), sc, koSide({ team: m.away }, true), r.stage === "F" ? "beam ko-final" : "");
-      });
-    } else if (r.stage === "R32") {
-      for (const rm of R32_MATCHES) {
-        html += koCard(koSide(resolveSlot(rm.home, rm.m, proj)), `<span class="ko-vs">${t("vs")}</span>`, koSide(resolveSlot(rm.away, rm.m, proj), true));
-      }
-    } else {
-      const word = r.stage === "TP" ? (LOSER_W[state.lang] || LOSER_W.es) : (WINNER_W[state.lang] || WINNER_W.es);
-      tree[r.stage].forEach((node) => {
-        const a = `<div class="ko-team slot"><span class="slot-pill">${word} P${node.f[0]}</span></div>`;
-        const b = `<div class="ko-team away slot"><span class="slot-pill">${word} P${node.f[1]}</span></div>`;
-        html += koCard(a, `<span class="ko-vs">${t("vs")}</span>`, b, r.stage === "F" ? "beam ko-final" : "");
-      });
-    }
-    html += `</div>`;
-  }
+  // Orden visual de cada columna derivado del árbol (los pares alimentan al de la derecha)
+  const byM = {};
+  [...BRACKET_TREE.R16, ...BRACKET_TREE.QF, ...BRACKET_TREE.SF].forEach((n) => (byM[n.m] = n));
+  const sfO = BRACKET_TREE.F.f.slice();
+  const qfO = sfO.flatMap((m) => byM[m].f);
+  const r16O = qfO.flatMap((m) => byM[m].f);
+  const r32O = r16O.flatMap((m) => byM[m].f);
+  const r32ByM = {}; R32_MATCHES.forEach((x) => (r32ByM[x.m] = x));
+  const word = (st) => (st === "TP" ? (LOSER_W[state.lang] || LOSER_W.es) : (WINNER_W[state.lang] || WINNER_W.es));
+  const dateOf = (st) => { const r = KO_ROUNDS.find((x) => x.stage === st); const d = r && parseUTC(r.date + "T18:00:00"); return d ? fmtDayShort(d) : ""; };
+
+  const cellsFor = (st) => {
+    const real = koByStage[st] || [];
+    if (real.length) return real.map((m) => bkMatch({ team: m.home }, { team: m.away }, m));
+    if (st === "R32") return r32O.map((n) => { const rm = r32ByM[n]; return bkMatch(resolveSlot(rm.home, rm.m, proj), resolveSlot(rm.away, rm.m, proj), null); });
+    const order = { R16: r16O, QF: qfO, SF: sfO }[st];
+    return order.map((n) => bkMatch({ label: `${word(st)} P${byM[n].f[0]}` }, { label: `${word(st)} P${byM[n].f[1]}` }, null));
+  };
+  const colHtml = (st, cells, paired) => {
+    let body = "";
+    if (paired) for (let i = 0; i < cells.length; i += 2) body += `<div class="bk-pair">${cells[i]}${cells[i + 1] || ""}</div>`;
+    else body = cells.join("");
+    return `<div class="bk-col"><h3>${t(`stages.${st}`)}</h3><span class="ko-date">${dateOf(st)}</span><div class="bk-col-body">${body}</div></div>`;
+  };
+
+  let html = `<div class="bracket-head"><div class="big">${IC.trophy} ${t("knockouts")}</div><p>${t("bracketSub")}</p></div><div class="bracket-scroll"><div class="bracket-grid">`;
+  for (const st of ["R32", "R16", "QF", "SF"]) html += colHtml(st, cellsFor(st), true);
+  const fReal = (koByStage.F || [])[0], tpReal = (koByStage.TP || [])[0];
+  const fCell = fReal ? bkMatch({ team: fReal.home }, { team: fReal.away }, fReal, "beam bk-final")
+    : bkMatch({ label: `${word("F")} P${BRACKET_TREE.F.f[0]}` }, { label: `${word("F")} P${BRACKET_TREE.F.f[1]}` }, null, "beam bk-final");
+  const tpCell = tpReal ? bkMatch({ team: tpReal.home }, { team: tpReal.away }, tpReal)
+    : bkMatch({ label: `${word("TP")} P${BRACKET_TREE.TP.f[0]}` }, { label: `${word("TP")} P${BRACKET_TREE.TP.f[1]}` }, null);
+  html += `<div class="bk-col"><h3>${t("stages.F")}</h3><span class="ko-date">${dateOf("F")}</span>
+    <div class="bk-col-body bk-col-final"><div>${fCell}</div>
+    <div class="bk-tp"><h4>${t("stages.TP")}</h4><span class="ko-date">${dateOf("TP")}</span>${tpCell}</div></div></div>`;
+  html += `</div></div>`;
   cont.innerHTML = html;
-  scrollReveal(cont);
 }
 function teamCellFlag(name) {
   const code = flagCodeOf(name);
@@ -541,8 +587,8 @@ function teamCellFlag(name) {
 function renderSeleccion() {
   const cont = $("#seleccion-content");
   if (!state.team) {
-    cont.innerHTML = `<div class="sel-empty"><div class="big">⭐</div><p>${t("pickToSee")}</p>
-      <p style="margin-top:14px"><button class="country-btn" onclick="document.getElementById('open-selector').click()">🌍 ${t("chooseCountry")}</button></p></div>`;
+    cont.innerHTML = `<div class="sel-empty"><div class="big">${IC.star}</div><p>${t("pickToSee")}</p>
+      <p style="margin-top:14px"><button class="country-btn" onclick="document.getElementById('open-selector').click()">${t("chooseCountry")}</button></p></div>`;
     return;
   }
   const tm = TEAMS[state.team];
@@ -597,7 +643,7 @@ function renderSquad(cont, players, full) {
   const note = full ? "" : `<p class="squad-note">${tw(TX.squadNote)}</p>`;
   cont.innerHTML = `<div class="squad-grid">${players.map((p) => {
     const img = p.photo || "";
-    return `<div class="player reveal"><div class="player-photo">${img ? `<img src="${img}" alt="${p.name}" loading="lazy" onerror="this.remove()">` : "⚽"}${p.number ? `<span class="player-num">${p.number}</span>` : ""}</div><div class="player-name">${p.name}</div><div class="player-pos">${p.pos || ""}</div></div>`;
+    return `<div class="player reveal"><div class="player-photo">${img ? `<img src="${img}" alt="${p.name}" loading="lazy" onerror="this.remove()">` : "⚽"}${p.number ? `<span class="player-num">${p.number}</span>` : ""}</div><div class="player-name">${p.name}</div><div class="player-pos">${translatePos(p.pos)}</div></div>`;
   }).join("")}</div>${note}`;
   scrollReveal(cont);
 }
@@ -617,17 +663,19 @@ function renderStadiums() {
     });
     html += `</div>`;
   }
-  html += `<div class="sel-section-title">🏟️ ${tw(TX.venues)}</div><div class="venues-list">`;
+  html += `<div class="sel-section-title">${IC.stadium} ${tw(TX.venues)}</div><div class="venues-list">`;
   STADIUMS.forEach((s) => {
     const fc = cflag[s.country] || "";
     const maps = `https://www.google.com/maps?q=${s.lat},${s.lon}`;
-    html += `<div class="venue reveal">${fc ? `<img class="venue-flag" src="${FLAG(fc)}" alt="${s.country}">` : ""}
+    html += `<div class="venue reveal">
+      ${s.photo ? `<img class="venue-photo" src="${s.photo}" alt="${s.name}" loading="lazy" onerror="this.remove()">` : ""}
+      <div class="venue-body">${fc ? `<img class="venue-flag" src="${FLAG(fc)}" alt="${s.country}">` : ""}
       <div class="venue-main"><div class="venue-name">${s.name}</div>
         <div class="venue-city">${s.city} · ${s.country}</div>
         <div class="venue-meta"><span class="venue-cap">${tw(TX.capacity)}: ${s.capacity.toLocaleString(state.lang)}</span>${s.note ? `<span class="venue-note">${s.note}</span>` : ""}</div></div>
-      <a class="venue-map" href="${maps}" target="_blank" rel="noopener" title="${tw(TX.map)}"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg></a></div>`;
+      <a class="venue-map" href="${maps}" target="_blank" rel="noopener" title="${tw(TX.map)}"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg></a></div></div>`;
   });
-  cont.innerHTML = html + `</div>`;
+  cont.innerHTML = html + `</div><p class="venue-credit">Fotos: <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a></p>`;
   scrollReveal(cont);
 }
 
@@ -720,7 +768,7 @@ function shareApp() {
   const url = "https://damelm.github.io/mundial-2026/";
   const data = { title: "Mundial 2026 · Fixture en vivo", text: localTeam(state.team, "nick") ? `${dispName(state.team)} en el Mundial 2026` : t("appTitle"), url };
   if (navigator.share) { navigator.share(data).catch(() => {}); }
-  else if (navigator.clipboard) { navigator.clipboard.writeText(url).then(() => flashToast("🔗 " + url)).catch(() => {}); }
+  else if (navigator.clipboard) { navigator.clipboard.writeText(url).then(() => flashToast(url)).catch(() => {}); }
   else { prompt("Copiá el link:", url); }
 }
 function flashToast(msg) {
@@ -765,8 +813,25 @@ function switchTab(tab) {
   state.tab = tab;
   $$(".tab").forEach((b) => { const on = b.dataset.tab === tab; b.classList.toggle("is-active", on); b.setAttribute("aria-selected", on ? "true" : "false"); });
   $$(".panel").forEach((p) => p.classList.toggle("is-active", p.dataset.panel === tab));
+  const act = $(".tab.is-active");
+  if (act && act.scrollIntoView) act.scrollIntoView({ inline: "nearest", block: "nearest" });
   renderActivePanel();
   window.scrollTo({ top: 0, behavior: "smooth" });
+}
+// Indicio visual de que la barra de tabs se puede deslizar (Sedes no entra en 375px)
+function setupTabsScroll() {
+  const el = $("#tabs"), wrap = $("#tabs-wrap");
+  if (!el || !wrap) return;
+  const upd = () => {
+    const over = el.scrollWidth - el.clientWidth > 4;
+    const x = Math.abs(el.scrollLeft);
+    wrap.classList.toggle("fade-end", over && x + el.clientWidth < el.scrollWidth - 4);
+    wrap.classList.toggle("fade-start", over && x > 4);
+  };
+  el.addEventListener("scroll", upd, { passive: true });
+  window.addEventListener("resize", upd);
+  state.updTabsFade = upd;
+  upd();
 }
 function setupA11y() {
   const tabs = $("#tabs"); if (tabs) tabs.setAttribute("role", "tablist");
@@ -800,14 +865,13 @@ function addToCalendar(mid) {
   a.href = url; a.download = `mundial-${m.home}-${m.away}.ics`.replace(/[^\w.-]+/g, "_");
   document.body.appendChild(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1500);
-  flashToast("📅 " + dispName(m.home) + " vs " + dispName(m.away));
+  flashToast(dispName(m.home) + " vs " + dispName(m.away) + " ✓");
 }
 
 /* --------------------------- modo oscuro ----------------------------- */
 function applyDark(dark) {
   state.dark = dark;
   document.documentElement.dataset.theme = dark ? "dark" : "light";
-  const ic = $("#dark-icon"); if (ic) ic.textContent = dark ? "☀️" : "🌙";
   try { localStorage.setItem("wc26-dark", dark ? "1" : "0"); } catch {}
   applyTheme(state.team); // recalcula --brand-accent/--brand-soft según el modo
 }
@@ -843,9 +907,8 @@ async function init() {
   let storedDark = null; try { storedDark = localStorage.getItem("wc26-dark"); } catch {}
   state.dark = storedDark != null ? storedDark === "1" : !!(window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
   document.documentElement.dataset.theme = state.dark ? "dark" : "light";
-  const _di = $("#dark-icon"); if (_di) _di.textContent = state.dark ? "☀️" : "🌙";
   setTimezone(null); // browser por defecto hasta geo
-  buildLangChips(); wireEvents(); setupA11y(); applyI18n();
+  buildLangChips(); wireEvents(); setupA11y(); setupTabsScroll(); applyI18n();
 
   $("#status").innerHTML = `<div class="spinner"></div>${t("loading")}`;
   renderSkeletons();
