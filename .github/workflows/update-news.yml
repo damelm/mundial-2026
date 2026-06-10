@@ -1,0 +1,41 @@
+name: Actualizar titulares del Mundial
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    # Cada 6 horas (titulares de Google News RSS, sin claves)
+    - cron: "30 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-news
+  cancel-in-progress: false
+
+jobs:
+  news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Bajar titulares
+        run: node scripts/fetch-news.mjs
+
+      - name: Commit si hay cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git -c core.quotepath=off diff --numstat data/news.json | awk '$1 > 1 || $2 > 1')" ]; then
+            git add data/news.json
+            git commit -m "data: titulares ($(date -u '+%Y-%m-%d %H:%M'))"
+            git push
+          else
+            echo "Sin cambios relevantes en titulares."
+          fi

@@ -35,6 +35,9 @@ const TX = {
   noLive: { es: "No hay partidos en vivo ahora.", en: "No live matches right now.", pt: "Nenhum jogo ao vivo agora.", fr: "Aucun match en direct.", ar: "لا مباريات مباشرة الآن." },
   addCal: { es: "Agendar", en: "Add to calendar", pt: "Agendar", fr: "Ajouter au calendrier", ar: "أضف إلى التقويم" },
   mascots: { es: "Mascotas oficiales", en: "Official mascots", pt: "Mascotes oficiais", fr: "Mascottes officielles", ar: "التمائم الرسمية" },
+  todayPlay: { es: "Hoy juegan", en: "Today's matches", pt: "Jogos de hoje", fr: "Matchs du jour", ar: "مباريات اليوم" },
+  headlines: { es: "Titulares del Mundial", en: "World Cup headlines", pt: "Manchetes da Copa", fr: "Titres du Mondial", ar: "عناوين المونديال" },
+  matchOne: { es: "partido", en: "match", pt: "jogo", fr: "match", ar: "مباراة" },
   retry: { es: "Reintentar", en: "Retry", pt: "Tentar de novo", fr: "Réessayer", ar: "إعادة المحاولة" },
 };
 const tw = (m) => m[state.lang] || m.es;
@@ -293,9 +296,66 @@ function applyTheme(name) {
 
   syncFilterChips();
 
-  startFacts(localTeam(state.team, "facts"));
+  renderHeroCard();
   markActiveCountry();
   render();
+}
+
+/* Tarjeta de contexto del hero — 3 estados:
+ * 1) hay partidos EN VIVO → mini marcador rotando (tocable → Fixture/En vivo)
+ * 2) hoy hay partidos → agenda del día (la selección elegida primero)
+ * 3) si no → titulares del Mundial (data/news.json, solo texto, no clicables);
+ *    último fallback: las curiosidades de siempre. */
+function renderHeroCard() {
+  if (!state.data) return;
+  const card = $("#fact-card"), label = $("#fact-label");
+  const phase = (m) => { const s = (m.status || "").toUpperCase(); return /^[A-Z0-9+']{1,3}$/.test(s) ? ` · ${s}` : ""; };
+  const mineFirst = (arr) => !state.team ? arr
+    : [...arr.filter((m) => m.home === state.team || m.away === state.team), ...arr.filter((m) => m.home !== state.team && m.away !== state.team)];
+  const live = state.data.matches.filter((m) => classifyStatus(m) === "live");
+  let mode, items;
+  if (live.length) {
+    mode = "live";
+    items = mineFirst(live).map((m) => `${dispName(m.home)} ${m.homeScore ?? 0}–${m.awayScore ?? 0} ${dispName(m.away)}${phase(m)}`);
+    label.textContent = `● ${t("status.live")}`;
+  } else {
+    const todayK = dayKey(new Date());
+    const today = state.data.matches
+      .filter((m) => { const d = parseUTC(m.timestamp); return d && dayKey(d) === todayK; })
+      .sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
+    const news = state.news && (state.news[state.lang] || state.news.en || state.news.es);
+    if (today.length) {
+      mode = "today";
+      items = mineFirst(today).map((m) => {
+        const d = parseUTC(m.timestamp);
+        const left = classifyStatus(m) === "ft" ? `${m.homeScore}–${m.awayScore}` : (d ? fmtTime(d) : "");
+        return `${left} · ${dispName(m.home)} vs ${dispName(m.away)}`;
+      });
+      label.textContent = tw(TX.todayPlay);
+    } else if (news && news.length) {
+      mode = "news";
+      items = news.map((n) => (n.src ? `${n.t} — ${n.src}` : n.t));
+      label.textContent = tw(TX.headlines);
+    } else {
+      mode = "facts";
+      items = localTeam(state.team, "facts");
+      label.textContent = t("didYouKnow");
+    }
+  }
+  state.heroCardMode = mode;
+  card.dataset.mode = mode;
+  if (!items || !items.length) { card.hidden = true; return; }
+  card.hidden = false;
+  startFacts(items);
+}
+let _newsPromise = null;
+function loadNews() {
+  if (_newsPromise) return _newsPromise;
+  _newsPromise = fetch("data/news.json?t=" + Math.floor(Date.now() / 3600000))
+    .then((r) => (r.ok ? r.json() : null))
+    .then((j) => { state.news = j; })
+    .catch(() => { state.news = null; });
+  return _newsPromise;
 }
 function startFacts(facts) {
   clearInterval(state.factTimer);
@@ -315,6 +375,7 @@ function render() {
   if (!state.data) return;
   renderActivePanel();   // solo la pestaña visible (evita cargar todas las imágenes juntas)
   renderCountdown();
+  renderHeroCard();
 }
 function renderActivePanel() {
   if (!state.data) return;
@@ -424,7 +485,7 @@ function renderFixture() {
     const myDay = !!(state.team && day.some((m) => m.home === state.team || m.away === state.team));
     const isOpen = expandAll || k === openKey;
     const head = `<div class="acc-titles"><div class="acc-title">${s ? fmtDayLong(s) : "—"}</div>
-      <div class="acc-sub">${day.length} ${t("matchesLabel")}${myDay ? ' <span class="acc-star">★</span>' : ""} ${miniFlags(day)}</div></div>`;
+      <div class="acc-sub">${day.length} ${day.length === 1 ? tw(TX.matchOne) : t("matchesLabel")}${myDay ? ' <span class="acc-star">★</span>' : ""} ${miniFlags(day)}</div></div>`;
     html += accordionEl(k, head, day.map(matchCard).join(""), isOpen, myDay, "acc-day");
   }
   cont.innerHTML = html;
@@ -909,6 +970,10 @@ function wireEvents() {
   $("#lang-row").addEventListener("click", (e) => { const b = e.target.closest(".lang-chip"); if (b) setLang(b.dataset.lang); });
   $(".neutral-item").addEventListener("click", () => { chooseTeam(null); closeSelector(); });
   $("#country-search").addEventListener("input", (e) => filterCountries(e.target.value));
+  $("#fact-card").addEventListener("click", () => {
+    if (state.heroCardMode !== "live") return; // solo el marcador en vivo es tocable
+    state.filter = "live"; syncFilterChips(); switchTab("fixture");
+  });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSelector(); });
 }
 function chooseTeam(name) { try { localStorage.setItem(STORE_TEAM, name || "__NEUTRAL__"); } catch {} applyTheme(name); }
@@ -927,7 +992,7 @@ async function init() {
 
   $("#status").innerHTML = `<div class="spinner"></div>${t("loading")}`;
   renderSkeletons();
-  const [data, geo] = await Promise.all([loadData().catch(() => null), detectGeo()]);
+  const [data, geo] = await Promise.all([loadData().catch(() => null), detectGeo(), loadNews()]);
 
   if (data) {
     state.data = data;
