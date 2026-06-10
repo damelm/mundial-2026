@@ -31,7 +31,12 @@ self.addEventListener("activate", (e) => {
   );
 });
 
-self.addEventListener("message", (e) => { if (e.data === "skip-waiting") self.skipWaiting(); });
+self.addEventListener("message", (e) => {
+  if (e.data === "skip-waiting") self.skipWaiting();
+  // Responde su versión para mostrarla en el pie y poder verificar qué tiene
+  // cargado cada dispositivo.
+  if (e.data === "version" && e.ports && e.ports[0]) e.ports[0].postMessage(VERSION);
+});
 
 self.addEventListener("fetch", (e) => {
   const req = e.request;

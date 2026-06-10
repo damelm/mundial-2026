@@ -1142,6 +1142,22 @@ async function init() {
   else { const team = geo && geo.code && CODE_TO_TEAM[geo.code]; applyTheme(team || null); }
 
   scheduleRefresh();
+  showBuildVersion();
+}
+
+// Muestra en el pie la versión del Service Worker activo. Sirve para verificar
+// de un vistazo qué tiene cargado cada dispositivo (web o PWA): si dice la
+// versión nueva, la actualización llegó; si dice una vieja, sigue cacheado.
+function showBuildVersion() {
+  const el = $("#footer-build");
+  if (!el || !("serviceWorker" in navigator)) return;
+  navigator.serviceWorker.ready.then((reg) => {
+    const sw = navigator.serviceWorker.controller || reg.active;
+    if (!sw) return;
+    const ch = new MessageChannel();
+    ch.port1.onmessage = (ev) => { if (ev.data) el.textContent = "build " + ev.data; };
+    sw.postMessage("version", [ch.port2]);
+  }).catch(() => {});
 }
 
 function scheduleRefresh() {

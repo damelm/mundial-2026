@@ -302,6 +302,7 @@ main { padding: 0 16px 44px; }
 /* ============================ FOOTER ================================ */
 .footer { text-align: center; padding: 26px 16px calc(32px + var(--safe-bottom)); color: var(--ink-faint); font-size: 11.5px; line-height: 1.8; }
 .footer a { color: var(--ink-dim); }
+.footer-build { opacity: .55; font-size: 10.5px; letter-spacing: .03em; }
 
 /* ============================ ANIMACIONES (21st.dev · Magic UI) ====== */
 
