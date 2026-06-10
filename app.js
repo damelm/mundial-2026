@@ -1150,17 +1150,24 @@ function syncFilterChips() {
   $$("#fixture-filters .seg-btn").forEach((b) => { const on = b.dataset.filter === state.filter; b.classList.toggle("is-active", on); b.setAttribute("aria-pressed", on ? "true" : "false"); });
 }
 
-/* --------------------------- calendario (.ics) ----------------------- */
+/* --------------------------- calendario --------------------------------
+ * Estrategia híbrida para reducir fricción al agendar:
+ *  - iOS (iPhone/iPad): descarga .ics -> abre Apple Calendar directo, nativo.
+ *  - Resto (Android, escritorio): abre Google Calendar ya prellenado, sin
+ *    descargar archivo. Si el navegador bloquea la ventana, cae al .ics.
+ * Las fechas van en UTC (sufijo Z); cada calendario las muestra en la hora
+ * local del usuario.
+ */
 const pad2 = (n) => String(n).padStart(2, "0");
 const icsDate = (d) => d.getUTCFullYear() + pad2(d.getUTCMonth() + 1) + pad2(d.getUTCDate()) + "T" + pad2(d.getUTCHours()) + pad2(d.getUTCMinutes()) + "00Z";
-function addToCalendar(mid) {
-  const m = state.data.matches.find((x) => String(x.id) === String(mid));
-  if (!m) return;
-  const d = parseUTC(m.timestamp); if (!d) return;
-  const end = new Date(d.getTime() + 2 * 3600000);
-  const title = `${dispName(m.home)} vs ${dispName(m.away)} · Mundial 2026`;
-  const loc = [m.venue, m.city ? m.city.split(",")[0] : ""].filter(Boolean).join(", ");
-  const stage = m.group ? t("group", { g: m.group }) : stageLabel(m);
+
+function isIOS() {
+  const ua = navigator.userAgent || "";
+  // iPadOS 13+ se reporta como Mac, se distingue por el soporte táctil.
+  return /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+}
+
+function downloadICS(m, d, end, title, loc, stage) {
   const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Mundial2026//ES", "CALSCALE:GREGORIAN", "BEGIN:VEVENT",
     `UID:wc26-${m.id}@damelm.github.io`, `DTSTAMP:${icsDate(new Date())}`, `DTSTART:${icsDate(d)}`, `DTEND:${icsDate(end)}`,
     `SUMMARY:${title}`, `LOCATION:${loc}`, `DESCRIPTION:${stage} — Mundial 2026`, "BEGIN:VALARM", "TRIGGER:-PT30M", "ACTION:DISPLAY", `DESCRIPTION:${title}`, "END:VALARM", "END:VEVENT", "END:VCALENDAR"].join("\r\n");
@@ -1169,6 +1176,34 @@ function addToCalendar(mid) {
   a.href = url; a.download = `mundial-${m.home}-${m.away}.ics`.replace(/[^\w.-]+/g, "_");
   document.body.appendChild(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1500);
+}
+
+function googleCalUrl(d, end, title, loc, stage) {
+  const p = new URLSearchParams({
+    action: "TEMPLATE",
+    text: title,
+    dates: `${icsDate(d)}/${icsDate(end)}`,
+    location: loc,
+    details: `${stage} — Mundial 2026`,
+  });
+  return "https://calendar.google.com/calendar/render?" + p.toString();
+}
+
+function addToCalendar(mid) {
+  const m = state.data.matches.find((x) => String(x.id) === String(mid));
+  if (!m) return;
+  const d = parseUTC(m.timestamp); if (!d) return;
+  const end = new Date(d.getTime() + 2 * 3600000);
+  const title = `${dispName(m.home)} vs ${dispName(m.away)} · Mundial 2026`;
+  const loc = [m.venue, m.city ? m.city.split(",")[0] : ""].filter(Boolean).join(", ");
+  const stage = m.group ? t("group", { g: m.group }) : stageLabel(m);
+  if (isIOS()) {
+    downloadICS(m, d, end, title, loc, stage);
+  } else {
+    // window.open en el gesto de click; si el popup queda bloqueado, .ics.
+    const w = window.open(googleCalUrl(d, end, title, loc, stage), "_blank", "noopener");
+    if (!w) downloadICS(m, d, end, title, loc, stage);
+  }
   flashToast(dispName(m.home) + " vs " + dispName(m.away) + " ✓");
 }
 
