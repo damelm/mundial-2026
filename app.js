@@ -205,7 +205,23 @@ function normalizeBackup(ev) {
     status: ev.strStatus || "NS", venue: ev.strVenue || null, city: ev.strCity || null,
   };
 }
-async function detectGeo() {
+// El país/zona del usuario no cambia entre visitas, así que se cachea en el
+// dispositivo: cada celular consulta ipapi UNA sola vez (y revalida recién a
+// los 30 días). Así se reducen drásticamente las llamadas a la API gratuita.
+const GEO_CACHE_KEY = "wc26-geo";
+const GEO_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 días
+
+function readCachedGeo() {
+  try {
+    const raw = localStorage.getItem(GEO_CACHE_KEY);
+    if (!raw) return null;
+    const c = JSON.parse(raw);
+    if (!c || typeof c.ts !== "number" || Date.now() - c.ts > GEO_TTL_MS) return null;
+    return c.geo || null;
+  } catch { return null; }
+}
+
+async function fetchGeo() {
   try {
     const ctrl = new AbortController();
     const to = setTimeout(() => ctrl.abort(), 4500);
@@ -215,6 +231,15 @@ async function detectGeo() {
     const j = await res.json();
     return { code: j.country_code || null, tz: j.timezone || null, off: j.utc_offset || null };
   } catch { return null; }
+}
+
+// Devuelve la geo cacheada si existe; si no, consulta ipapi y la guarda.
+async function detectGeo() {
+  const cached = readCachedGeo();
+  if (cached) return cached;
+  const geo = await fetchGeo();
+  if (geo) { try { localStorage.setItem(GEO_CACHE_KEY, JSON.stringify({ ts: Date.now(), geo })); } catch {} }
+  return geo;
 }
 
 /* --------------------------- zona horaria ---------------------------- */
