@@ -297,8 +297,58 @@ function applyTheme(name) {
   syncFilterChips();
 
   renderHeroCard();
+  renderFlagWave();
   markActiveCountry();
   render();
+}
+
+/* Bandera "flameante" de fondo del hero — ESTÁTICA (sin animación).
+ * Se dibuja UNA vez en canvas al cambiar de país o de tamaño: onda
+ * sinusoidal + pliegues de luz/sombra. Cero costo continuo. */
+function renderFlagWave() {
+  const hero = $("#hero");
+  const code = state.team ? flagCodeOf(state.team) : null;
+  let cv = $("#hero-wave");
+  if (!code) { if (cv) cv.hidden = true; return; }
+  if (!cv) { cv = document.createElement("canvas"); cv.id = "hero-wave"; cv.setAttribute("aria-hidden", "true"); hero.prepend(cv); }
+  const load = (cors) => {
+    const img = new Image();
+    if (cors) img.crossOrigin = "anonymous";
+    img.onload = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      const w = hero.clientWidth, h = hero.clientHeight;
+      if (!w || !h) return;
+      cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+      cv.hidden = false;
+      const ctx = cv.getContext("2d");
+      ctx.scale(dpr, dpr);
+      // rasteriza el SVG una sola vez en un canvas auxiliar (cover + margen para la onda)
+      const iw = img.naturalWidth || 640, ih = img.naturalHeight || 480;
+      const s = Math.max(w / iw, h / ih) * 1.12;
+      const dw = Math.round(iw * s), dh = Math.round(ih * s);
+      const off = document.createElement("canvas");
+      off.width = dw; off.height = dh;
+      off.getContext("2d").drawImage(img, 0, 0, dw, dh);
+      const dx = (w - dw) / 2, dy = (h - dh) / 2;
+      const A = Math.max(7, h * 0.04);  // amplitud de la onda
+      const L = Math.max(220, w / 1.9); // longitud de onda
+      const step = 2;
+      for (let x = 0; x < w; x += step) {
+        const t = (x / L) * Math.PI * 2;
+        const oy = Math.sin(t) * A * (0.35 + 0.65 * (x / w)); // ondea más hacia la punta
+        ctx.drawImage(off, x - dx, 0, step, dh, x, dy + oy, step, dh);
+      }
+      // pliegues: luz/sombra según la pendiente de la onda
+      for (let x = 0; x < w; x += step) {
+        const lum = Math.cos((x / L) * Math.PI * 2);
+        ctx.fillStyle = lum > 0 ? `rgba(255,255,255,${(lum * 0.18).toFixed(3)})` : `rgba(0,0,0,${(-lum * 0.26).toFixed(3)})`;
+        ctx.fillRect(x, 0, step, h);
+      }
+    };
+    img.onerror = () => { if (cors) load(false); else cv.hidden = true; };
+    img.src = FLAG(code);
+  };
+  load(true);
 }
 
 /* Tarjeta de contexto del hero — 3 estados:
@@ -896,6 +946,19 @@ function switchTab(tab) {
   renderActivePanel();
   window.scrollTo(0, 0); // instantáneo: el smooth en navegación retrasa el contenido
 }
+// Redibuja la bandera del hero si cambia el tamaño (debounced, costo único)
+function setupWaveResize() {
+  let t = null;
+  const hero = $("#hero");
+  if (!("ResizeObserver" in window) || !hero) return;
+  let lastW = hero.clientWidth, lastH = hero.clientHeight;
+  new ResizeObserver(() => {
+    const w = hero.clientWidth, h = hero.clientHeight;
+    if (w === lastW && Math.abs(h - lastH) < 4) return;
+    lastW = w; lastH = h;
+    clearTimeout(t); t = setTimeout(renderFlagWave, 250);
+  }).observe(hero);
+}
 // Las animaciones infinitas del hero (beam, shiny) se pausan fuera de pantalla
 function setupAnimPause() {
   if (!("IntersectionObserver" in window)) return;
@@ -996,7 +1059,7 @@ async function init() {
   state.dark = storedDark != null ? storedDark === "1" : !!(window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
   document.documentElement.dataset.theme = state.dark ? "dark" : "light";
   setTimezone(null); // browser por defecto hasta geo
-  buildLangChips(); wireEvents(); setupA11y(); setupTabsScroll(); setupAnimPause(); applyI18n();
+  buildLangChips(); wireEvents(); setupA11y(); setupTabsScroll(); setupAnimPause(); setupWaveResize(); applyI18n();
 
   $("#status").innerHTML = `<div class="spinner"></div>${t("loading")}`;
   renderSkeletons();
