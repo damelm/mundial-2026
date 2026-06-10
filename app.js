@@ -38,6 +38,7 @@ const TX = {
   todayPlay: { es: "Hoy juegan", en: "Today's matches", pt: "Jogos de hoje", fr: "Matchs du jour", ar: "مباريات اليوم" },
   headlines: { es: "Titulares del Mundial", en: "World Cup headlines", pt: "Manchetes da Copa", fr: "Titres du Mondial", ar: "عناوين المونديال" },
   matchOne: { es: "partido", en: "match", pt: "jogo", fr: "match", ar: "مباراة" },
+  swipe: { es: "Deslizá para ver más →", en: "Swipe to see more →", pt: "Arraste para ver mais →", fr: "Faites glisser pour voir plus →", ar: "اسحب لرؤية المزيد ←" },
   retry: { es: "Reintentar", en: "Retry", pt: "Tentar de novo", fr: "Réessayer", ar: "إعادة المحاولة" },
 };
 const tw = (m) => m[state.lang] || m.es;
@@ -689,7 +690,7 @@ function renderBracket() {
     return `<div class="bk-col"><h3>${t(`stages.${st}`)}</h3><span class="ko-date">${dateOf(st)}</span><div class="bk-col-body">${body}</div></div>`;
   };
 
-  let html = `<div class="bracket-head"><div class="big">${IC.trophy} ${t("knockouts")}</div><p>${t("bracketSub")}</p></div><div class="bracket-scroll"><div class="bracket-grid">`;
+  let html = `<div class="bracket-head"><div class="big">${IC.trophy} ${t("knockouts")}</div><p>${t("bracketSub")}</p></div><div class="bracket-wrap"><div class="bracket-scroll"><div class="bracket-grid">`;
   for (const st of ["R32", "R16", "QF", "SF"]) html += colHtml(st, cellsFor(st), true);
   const fReal = (koByStage.F || [])[0], tpReal = (koByStage.TP || [])[0];
   const fCell = fReal ? bkMatch({ team: fReal.home }, { team: fReal.away }, fReal, "beam bk-final")
@@ -699,8 +700,44 @@ function renderBracket() {
   html += `<div class="bk-col"><h3>${t("stages.F")}</h3><span class="ko-date">${dateOf("F")}</span>
     <div class="bk-col-body bk-col-final"><div>${fCell}</div>
     <div class="bk-tp"><h4>${t("stages.TP")}</h4><span class="ko-date">${dateOf("TP")}</span>${tpCell}</div></div></div>`;
-  html += `</div></div>`;
+  html += `</div></div></div>`;
   cont.innerHTML = html;
+  setupBracketHint(cont);
+}
+// Indicio de scroll horizontal en el bracket: degradados en los bordes +
+// pastilla "Deslizá →" con un empujoncito, una vez por sesión.
+function setupBracketHint(cont) {
+  const sc = $(".bracket-scroll", cont), wrap = $(".bracket-wrap", cont);
+  if (!sc || !wrap) return;
+  let pill = null, nudging = false;
+  const upd = () => {
+    const over = sc.scrollWidth - sc.clientWidth > 8;
+    const x = Math.abs(sc.scrollLeft);
+    wrap.classList.toggle("fade-end", over && x + sc.clientWidth < sc.scrollWidth - 8);
+    wrap.classList.toggle("fade-start", over && x > 8);
+  };
+  const dismiss = () => {
+    if (!pill || nudging) return;
+    const p = pill; pill = null;
+    p.classList.add("out"); setTimeout(() => p.remove(), 450);
+    try { sessionStorage.setItem("wc26-bk-hint", "1"); } catch {}
+  };
+  sc.addEventListener("scroll", () => { upd(); dismiss(); }, { passive: true });
+  upd();
+  let seen = false; try { seen = sessionStorage.getItem("wc26-bk-hint") === "1"; } catch {}
+  if (seen || sc.scrollWidth - sc.clientWidth <= 8) return;
+  pill = document.createElement("div");
+  pill.className = "bk-hint";
+  pill.textContent = tw(TX.swipe);
+  wrap.appendChild(pill);
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    nudging = true;
+    const dx = (document.documentElement.dir === "rtl" ? -1 : 1) * 72;
+    setTimeout(() => { sc.scrollTo({ left: dx, behavior: "smooth" }); }, 450);
+    setTimeout(() => { sc.scrollTo({ left: 0, behavior: "smooth" }); }, 1100);
+    setTimeout(() => { nudging = false; }, 1800);
+  }
+  setTimeout(dismiss, 7000); // si no interactúan, se va sola
 }
 function teamCellFlag(name) {
   const code = flagCodeOf(name);
@@ -875,8 +912,22 @@ function markActiveCountry() { $$(".country-item").forEach((b) => b.classList.to
 function buildLangChips() {
   $("#lang-row").innerHTML = ["es", "en", "pt", "fr", "ar"].map((lg) => `<button class="lang-chip ${lg === state.lang ? "is-active" : ""}" data-lang="${lg}">${lg.toUpperCase()}</button>`).join("");
 }
-function openSelector() { $("#selector").hidden = false; $("#country-search").value = ""; filterCountries(""); markActiveCountry(); buildLangChips(); }
-function closeSelector() { $("#selector").hidden = true; }
+function openSelector() { $("#selector").hidden = false; $("#country-search").value = ""; filterCountries(""); markActiveCountry(); buildLangChips(); fitSheetToKeyboard(); }
+// Con el teclado abierto, el panel se achica al alto visible (los resultados
+// quedan arriba del teclado en vez de tapados). Complementa al meta
+// interactive-widget=resizes-content (Android); esto cubre iOS y casos viejos.
+function fitSheetToKeyboard() {
+  const vv = window.visualViewport;
+  const sheet = $(".modal-sheet");
+  if (!vv || !sheet) return;
+  if (!fitSheetToKeyboard._wired) {
+    fitSheetToKeyboard._wired = true;
+    vv.addEventListener("resize", fitSheetToKeyboard);
+  }
+  if ($("#selector").hidden) { sheet.style.maxHeight = ""; return; }
+  sheet.style.maxHeight = Math.round(vv.height * 0.94) + "px";
+}
+function closeSelector() { $("#selector").hidden = true; const sh = $(".modal-sheet"); if (sh) sh.style.maxHeight = ""; }
 function filterCountries(q) {
   const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
   const nq = norm(q);
