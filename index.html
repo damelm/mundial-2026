@@ -169,7 +169,8 @@
         });
       }
       window.addEventListener("load", () => {
-        navigator.serviceWorker.register("sw.js").then((reg) => {
+        navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).then((reg) => {
+          reg.update().catch(() => {}); // chequear actualización YA, no solo al volver a la pestaña
           // Busca actualizaciones del SW al volver a la pestaña.
           reg.addEventListener("updatefound", () => {
             const sw = reg.installing;
