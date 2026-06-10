@@ -1,0 +1,58 @@
+name: Versionar Service Worker
+
+# Cada vez que cambia el frontend, estampa sw.js con un hash del contenido
+# real de los assets. Eso cambia los bytes de sw.js -> el navegador instala
+# el SW nuevo -> el index.html hace skip-waiting + reload y la actualización
+# llega sola a TODOS los usuarios (web y PWA), sin forzar recarga a mano.
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "app.js"
+      - "styles.css"
+      - "themes.js"
+      - "i18n.js"
+      - "i18n-content.js"
+      - "content.js"
+      - "data/stadiums.js"
+      - "manifest.webmanifest"
+      - ".github/workflows/bump-sw.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bump-sw
+  cancel-in-progress: false
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Estampar versión por hash de contenido
+        run: |
+          # Hash del contenido real del shell (NO incluye sw.js, para no
+          # entrar en bucle: el commit del bot solo toca sw.js).
+          HASH=$(cat index.html app.js styles.css themes.js i18n.js \
+                     i18n-content.js content.js data/stadiums.js \
+                     manifest.webmanifest 2>/dev/null \
+                 | sha256sum | cut -c1-10)
+          NEW="v-$HASH"
+          CUR=$(grep -oE 'const VERSION = "[^"]+"' sw.js | sed -E 's/.*"([^"]+)".*/\1/')
+          echo "Versión actual: $CUR · nueva: $NEW"
+          if [ "$CUR" = "$NEW" ]; then
+            echo "Sin cambios en el shell. No se reescribe sw.js."
+            exit 0
+          fi
+          sed -i -E "s/const VERSION = \"[^\"]+\"/const VERSION = \"$NEW\"/" sw.js
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sw.js
+          git commit -m "sw: versionar a $NEW (auto)"
+          git push

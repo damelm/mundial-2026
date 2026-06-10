@@ -39,13 +39,30 @@ scripts/fetch-data.mjs       → baja y normaliza los datos
 - **Manual:** pestaña *Actions* → *Actualizar fixture Mundial 2026* → *Run workflow*.
 - También podés correrlo local: `node scripts/fetch-data.mjs`.
 
+## 🚀 Despliegue y propagación de cambios (PWA)
+
+El sitio es una PWA con Service Worker, así que las versiones viejas pueden quedar
+cacheadas en el dispositivo. Para que cualquier cambio de código llegue a **todos**
+los usuarios (web y PWA instalada) **sin que tengan que forzar recarga**:
+
+- El workflow **Versionar Service Worker** (`.github/workflows/bump-sw.yml`) estampa
+  `sw.js` con un hash del contenido cada vez que cambia el frontend.
+- Al cambiar `sw.js`, el navegador instala el SW nuevo y `index.html` hace
+  `skip-waiting` + un único `location.reload()` automático.
+- **No tenés que tocar la versión a mano.** Solo hacé push de tus cambios a `main`;
+  el bump y el deploy de Pages ocurren solos.
+
+> La primera apertura tras un cambio dispara la recarga automática; en una PWA
+> instalada puede requerir cerrarla y reabrirla una vez para tomar el SW nuevo.
+
 ## 📝 Notas
 
 - **104 partidos**: 72 de fase de grupos (datos en vivo) + 32 de eliminatorias
   (esqueleto que se completa solo cuando TheSportsDB define los cruces).
-- **Horarios por geolocalización**: la hora se calcula con la zona horaria de tu
-  ubicación (vía ipapi), no con el reloj del dispositivo. Los timestamps de la fuente
-  son UTC y se convierten a tu hora local.
+- **Horarios en tu zona horaria**: los timestamps de la fuente son UTC y se convierten
+  a la zona horaria de tu navegador (la del sistema operativo, que es la fuente confiable).
+  La geolocalización por IP **no** se usa para la hora —fallaba con VPN, datos móviles o
+  proxies y hacía que los horarios "no coincidieran"—; solo define país, idioma y tema.
 - **Idioma automático** (ES/EN/PT/FR) según el país detectado, con selector manual.
 - **Banderas** como imágenes vectoriales (flagcdn.com), se ven igual en todos los sistemas.
 - Identidad visual inspirada en la marca oficial "We Are 26" (negro/dorado + color por
