@@ -7288,5 +7288,491 @@
     "photo": "https://media.api-sports.io/football/players/19366.png"
    }
   ]
+ },
+ "Croatia": {
+  "updated": "2026-06-10T12:15:50.995Z",
+  "source": "API-Football",
+  "players": [
+   {
+    "name": "D. Kotarski",
+    "number": 23,
+    "pos": "Goalkeeper",
+    "photo": "https://media.api-sports.io/football/players/524.png"
+   },
+   {
+    "name": "D. Livakovic",
+    "number": 1,
+    "pos": "Goalkeeper",
+    "photo": "https://media.api-sports.io/football/players/1305.png"
+   },
+   {
+    "name": "I. Pandur",
+    "number": 12,
+    "pos": "Goalkeeper",
+    "photo": "https://media.api-sports.io/football/players/14268.png"
+   },
+   {
+    "name": "D. Caleta-Car",
+    "number": 5,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/1902.png"
+   },
+   {
+    "name": "M. Erlic",
+    "number": 25,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/30827.png"
+   },
+   {
+    "name": "J. Gvardiol",
+    "number": 4,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/129033.png"
+   },
+   {
+    "name": "M. Pongracic",
+    "number": 3,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/1084.png"
+   },
+   {
+    "name": "J. Stanisic",
+    "number": 2,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/125171.png"
+   },
+   {
+    "name": "J. Sutalo",
+    "number": 6,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/14701.png"
+   },
+   {
+    "name": "L. Vuskovic",
+    "number": 22,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/387521.png"
+   },
+   {
+    "name": "M. Baturina",
+    "number": 16,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/295026.png"
+   },
+   {
+    "name": "T. Fruk",
+    "number": 19,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/284869.png"
+   },
+   {
+    "name": "K. Jakic",
+    "number": 18,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/14395.png"
+   },
+   {
+    "name": "M. Kovacic",
+    "number": 8,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/2291.png"
+   },
+   {
+    "name": "L. Modric",
+    "number": 10,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/754.png"
+   },
+   {
+    "name": "N. Moro",
+    "number": 7,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/1322.png"
+   },
+   {
+    "name": "M. Pasalic",
+    "number": 15,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/2763.png"
+   },
+   {
+    "name": "L. Sucic",
+    "number": 21,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/7332.png"
+   },
+   {
+    "name": "P. Sucic",
+    "number": 17,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/348205.png"
+   },
+   {
+    "name": "N. Vlasic",
+    "number": 13,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/842.png"
+   },
+   {
+    "name": "A. Budimir",
+    "number": 11,
+    "pos": "Attacker",
+    "photo": "https://media.api-sports.io/football/players/46746.png"
+   },
+   {
+    "name": "A. Kramaric",
+    "number": 9,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/726.png"
+   },
+   {
+    "name": "I. Matanovic",
+    "number": 20,
+    "pos": "Attacker",
+    "photo": "https://media.api-sports.io/football/players/202696.png"
+   },
+   {
+    "name": "P. Musa",
+    "number": 26,
+    "pos": "Attacker",
+    "photo": "https://media.api-sports.io/football/players/66055.png"
+   },
+   {
+    "name": "M. Pasalic",
+    "number": 24,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/260865.png"
+   },
+   {
+    "name": "I. Perisic",
+    "number": 14,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/207.png"
+   }
+  ]
+ },
+ "Ghana": {
+  "updated": "2026-06-10T12:15:58.170Z",
+  "source": "API-Football",
+  "players": [
+   {
+    "name": "B. Asare",
+    "number": 16,
+    "pos": "Goalkeeper",
+    "photo": "https://media.api-sports.io/football/players/480108.png"
+   },
+   {
+    "name": "J. Anang",
+    "number": 12,
+    "pos": "Goalkeeper",
+    "photo": "https://media.api-sports.io/football/players/144709.png"
+   },
+   {
+    "name": "L. Zigi",
+    "number": 1,
+    "pos": "Goalkeeper",
+    "photo": "https://media.api-sports.io/football/players/3412.png"
+   },
+   {
+    "name": "J. Adjetey",
+    "number": 4,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/369425.png"
+   },
+   {
+    "name": "D. Luckassen",
+    "number": 23,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/25341.png"
+   },
+   {
+    "name": "G. Mensah",
+    "number": 14,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/7578.png"
+   },
+   {
+    "name": "A. Seidu",
+    "number": 2,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/196187.png"
+   },
+   {
+    "name": "J. Opoku",
+    "number": 18,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/137223.png"
+   },
+   {
+    "name": "K. Peprah Oppong",
+    "number": 21,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/404172.png"
+   },
+   {
+    "name": "A. Mumin",
+    "number": 6,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/15900.png"
+   },
+   {
+    "name": "M. Senaya",
+    "number": 26,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/191240.png"
+   },
+   {
+    "name": "A. Baba",
+    "number": 17,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/21996.png"
+   },
+   {
+    "name": "E. Owusu",
+    "number": 15,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/21010.png"
+   },
+   {
+    "name": "T. Partey",
+    "number": 5,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/49.png"
+   },
+   {
+    "name": "K. Sibo",
+    "number": 8,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/3608.png"
+   },
+   {
+    "name": "Caleb Marfo Yirenkyi",
+    "number": 3,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/475575.png"
+   },
+   {
+    "name": "A. Semenyo",
+    "number": 11,
+    "pos": "Attacker",
+    "photo": "https://media.api-sports.io/football/players/19281.png"
+   },
+   {
+    "name": "A. Boakye",
+    "number": 20,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/337426.png"
+   },
+   {
+    "name": "A. Fatawu",
+    "number": 7,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/303467.png"
+   },
+   {
+    "name": "P. Adu",
+    "number": 25,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/410016.png"
+   },
+   {
+    "name": "B. Thomas-Asante",
+    "number": 10,
+    "pos": "Attacker",
+    "photo": "https://media.api-sports.io/football/players/82090.png"
+   },
+   {
+    "name": "J. Ayew",
+    "number": 9,
+    "pos": "Attacker",
+    "photo": "https://media.api-sports.io/football/players/3428.png"
+   },
+   {
+    "name": "C. Bonsu Baah",
+    "number": 13,
+    "pos": "Attacker",
+    "photo": "https://media.api-sports.io/football/players/411800.png"
+   },
+   {
+    "name": "I. Williams",
+    "number": 19,
+    "pos": "Attacker",
+    "photo": "https://media.api-sports.io/football/players/47294.png"
+   },
+   {
+    "name": "E. Nuamah",
+    "number": 24,
+    "pos": "Attacker",
+    "photo": "https://media.api-sports.io/football/players/350856.png"
+   },
+   {
+    "name": "K. Sulemana",
+    "number": 22,
+    "pos": "Attacker",
+    "photo": "https://media.api-sports.io/football/players/199837.png"
+   }
+  ]
+ },
+ "Panama": {
+  "updated": "2026-06-10T12:16:05.341Z",
+  "source": "API-Football",
+  "players": [
+   {
+    "name": "L. Mejía",
+    "number": 1,
+    "pos": "Goalkeeper",
+    "photo": "https://media.api-sports.io/football/players/2967.png"
+   },
+   {
+    "name": "O. Mosquera",
+    "number": 22,
+    "pos": "Goalkeeper",
+    "photo": "https://media.api-sports.io/football/players/2968.png"
+   },
+   {
+    "name": "C. Samudio",
+    "number": 12,
+    "pos": "Goalkeeper",
+    "photo": "https://media.api-sports.io/football/players/57861.png"
+   },
+   {
+    "name": "A. Andrade",
+    "number": 16,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/7197.png"
+   },
+   {
+    "name": "C. Blackman",
+    "number": 2,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/2975.png"
+   },
+   {
+    "name": "J. Córdoba",
+    "number": 3,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/57739.png"
+   },
+   {
+    "name": "É. Davis",
+    "number": 15,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/2970.png"
+   },
+   {
+    "name": "F. Escobar",
+    "number": 4,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/2971.png"
+   },
+   {
+    "name": "E. Fariña",
+    "number": 5,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/328148.png"
+   },
+   {
+    "name": "J. Gutiérrez",
+    "number": 26,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/57803.png"
+   },
+   {
+    "name": "C. Harvey",
+    "number": 14,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/71230.png"
+   },
+   {
+    "name": "R. Miller",
+    "number": 25,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/81659.png"
+   },
+   {
+    "name": "A. Murillo",
+    "number": 23,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/2973.png"
+   },
+   {
+    "name": "J. Ramos",
+    "number": 13,
+    "pos": "Defender",
+    "photo": "https://media.api-sports.io/football/players/57667.png"
+   },
+   {
+    "name": "A. Carrasquilla",
+    "number": 8,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/57807.png"
+   },
+   {
+    "name": "A. Godoy",
+    "number": 20,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/2977.png"
+   },
+   {
+    "name": "C. Martinez",
+    "number": 6,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/554208.png"
+   },
+   {
+    "name": "J. Rodríguez",
+    "number": 7,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/2979.png"
+   },
+   {
+    "name": "Y. Bárcenas",
+    "number": 11,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/46855.png"
+   },
+   {
+    "name": "I. Díaz",
+    "number": 10,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/96615.png"
+   },
+   {
+    "name": "A. Quintero",
+    "number": 19,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/2978.png"
+   },
+   {
+    "name": "C. Yanis",
+    "number": 21,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/57875.png"
+   },
+   {
+    "name": "J. Fajardo",
+    "number": 17,
+    "pos": "Attacker",
+    "photo": "https://media.api-sports.io/football/players/2983.png"
+   },
+   {
+    "name": "A. Londoño",
+    "number": 24,
+    "pos": "Midfielder",
+    "photo": "https://media.api-sports.io/football/players/292396.png"
+   },
+   {
+    "name": "T. Rodríguez",
+    "number": 9,
+    "pos": "Attacker",
+    "photo": "https://media.api-sports.io/football/players/57910.png"
+   },
+   {
+    "name": "C. Waterman",
+    "number": 18,
+    "pos": "Attacker",
+    "photo": "https://media.api-sports.io/football/players/51648.png"
+   }
+  ]
  }
 }
