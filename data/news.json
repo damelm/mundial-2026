@@ -1,117 +1,102 @@
 {
- "updatedAt": "2026-06-11T11:08:39.923Z",
+ "updatedAt": "2026-06-11T16:35:19.989Z",
  "es": [
-  {
-   "t": "Posible ONCE del Tri para Mundial 2026: las figuras que arrancarían",
-   "src": "Mediotiempo",
-   "u": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNY2JfZUlGT1J0MGRzNS1IMS1Edm9YU3BmeHRqcG56RVdqaDV3bzEyZ3M4NlpqUzZmYXZJeXZ0bThfZjBYR2dId2c1aXROTlI2OXY1T1BfUjVKa2pleTdwczQxaDBIQTJ1WUF1d3liWmFidzhMRk4zXzNHMHk0U3UxdnZnOGlEV1d2aG9BVG94aVBDLTl3dUdjdDVKNUlTS2lOZ1gwb1Z5Yk96RXMyZUNoNnZoVnhuVC1IMnB30gG7AUFVX3lxTFBkVEJfVlRhbGdUakxBNDVac0hkWVdlWTg3R09kLW1sdFEzUWJleGhTaV9xMG9GaDhpM0ZwQ2g4XzQzbnkwa1RncElYYjcwc1FZVXQweUFPbUlVN1JiaWdMZW9xQXlVWWdoS2tCQnZxbDV2a3hjYkRTREk2dmE2RmVoUUsxSlFlMmF5R1dSd3VhSkRhX2MzN21XTWViRTg3Mm9iX0MxVWxWbDZYTzhpOWQ2Ti1mclh4ZG02MVU?oc=5"
-  },
-  {
-   "t": "¿Los restaurantes pueden transmitir partidos del Mundial 2026?",
-   "src": "El Financiero",
-   "u": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNbDJPLXpqMk11dC03RGtxaDZ0V0c3NXZWMm4zdzA3Qy1HX3dibGtUb3VQWXgycEtxOWNTaEdKZ0oxdVh4bmRyRkkyRS1QamhMNldreVlaNm8xNmxRSF8xLVI1c3pLQ1ZLSVdQU0RERHVLbGYxT2FaR0g5VEMwTi05eWl2M1hOVkpZTjRfSUwtWVMxTXVJUlVwV1l5QXY4ZGQ1MExLU3BQUlBkYVRGNkhuaEFVYWxSMTBjanBJ?oc=5"
-  },
   {
    "t": "Mundial 2026, en directo: noticias de la Copa del Mundo y última hora de las selecciones, hoy en vivo",
    "src": "Diario AS",
    "u": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxORjNDUHNHV3dBYW5jXzgtUkNfRDlzZUxtS3ROYW5Tb2dWNDRNa0wtMmdBT0hBZGNTTTF2a3dRZVNpZmJ6aEpLaGwwUFhkYjdDN0FFY0dZR3l6QngxdDJNaHUyamY2UW5kc2hocWgyR0RhZVA2TUZVRWQyZHNZc0lCal9BdG1ZcUR6TzlQMU1BQVZ1d1F0ejZnSlhsMzh4ZFNvT3pFOE5QbUZLMHNmeEtGV29xMVJoQkJRc1lEX0lMalU1bzlkYjZ2M05LRHB6VFVvSlliOVhvVUFMa0RDTHfSAfIBQVVfeXFMTjh5V25IYWhZVEVPZ09faXplN04wOWhySXRSWW5DOTVPZFF6cFMtWGtGTGQ1Yy13QWJtVkdkbjd4bUQwWFBhcWRsMUpwRFI1WGMwcXM5RVp1Vmo3Q2w0QVp1clVfV2lCTmJDaXo4MEhGMmt6SVV3bDBYUXQtTkp2QThqRG1GQVk2NUVZM2dXM2xaejZ3Qkd4bFdIT2wzZ1BfVDF4bjNVRGNQUnZxZzBZcU1US19NSzBjZTVtUEJnbzJvVmlDcFZCem9Xb3FIaTlHZjJacFV4YURQVkJhVkJvMWtUa0x1SjlPZ0pmdkpZZThWYmc?oc=5"
   },
   {
-   "t": "Grupo B del Mundial 2026: selecciones, calendario, partidos, horarios y favoritos",
-   "src": "MARCA",
-   "u": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPLVVuTWVyT2ZrUEFGV01ib2ZES3FaQXBYZFFBaTVWczNtWHoydjQxUVRkbll6TjVTdzFodUVVZU5KelFfdVpaSUpDYUpILTV6MkJ5cE9vWEs2cUd0UTJ0bGZId0dIVmloV2t2eWgzd3RYYlJ3Z0E0TjUwVGE0RGJRd2JPenc0SFV0Z2J0NXRYcWNSN1NIOEN2VDRacWRFcWtkMFB2cUtfNWFpa3ZBMkRDaVYybXd1WjJ6ZV9BMVMtcjJFd9IBwgFBVV95cUxPOFFRUnA2N3ZMOFhqLU5zX2pXaWtaaXZQLW16cnlyOWIwcTFnTkZhaWhNajRRaF9RaV9weXBmb3ViMkhRZ24zNjZyWkIzR0I4OF9WMW40cElxSFoyb1BaUmM3RVp5cDdwbUg0cGFNQ1l4WVVKM2JEN2otQ2FKMHJ0UXFubGFFNmk1QTVINW1MNEIxYlA3NV96eVFYQm8wcGItMW9YaFVkY0RNTlZQRTVDOVp4NWE2TS1ZcjlPWnNjRVRsUQ?oc=5"
+   "t": "Según la audiencia de CNN, esta selección ganará el Mundial 2026",
+   "src": "CNN en Español",
+   "u": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPZVBjTk9qWFNtb1hxN3FYb1ZWM0dFakRKR2JWcTNlSlJBRlJpcENGckpZQm1FdFVhSG9kSVZTbXd3OUYyLVEwRE9BcFgzR0ZxcmVJY0JMX3VnTWZqdWFkNmt5RGxEM0dnVlFsYVdUWGNBOTN0dUY1ZW5EUFlITVVwd0daS3QtNkRPOG5qQ2R3cFBmT1FvR1pj?oc=5"
   },
   {
-   "t": "¿Dónde ver el Mundial 2026 EN VIVO? Opciones gratis, TV abierta, de paga y streaming",
+   "t": "Inauguración Mundial 2026 EN VIVO: ¿A qué hora y dónde ver ceremonia HOY 11 de junio en México?",
+   "src": "Mediotiempo",
+   "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQmU3bFprbTNwUlpNVUxUb1VSUV9vQ2psYlZXZHBlaFZXNktpc3YyajNTZnJLcVRVRFNDd0cwamlMVVdTWnZHUTJDYTVXS19zUkdHOU42UzBzT3NMS3N3amhES2Y1SWVvM1hrbmNoNWdSbk02OXRQMUVNRXlhWld2VS1fQlI0MkhtN0VDWlBaMm04R3hpM08xbktVeUtEdkxoRlJiVHVPZURyQkRnbTlQQlB6NEM4a3FBcEpPNmhOczDSAcABQVVfeXFMTUlRUUt5ZzRMWmtwV3FhbmhiTkcxOUs4U18yT3JvTWdnTDhMVHZEdTc2d0VWSWJrVkRrekNwTDdfbGFJYVNpZjBITWtlcFVCakF0VGhNREhQN19KRDlsT3RsMnZlaHdUMWNDSlFJVXVqbXNJZVgxM2dDNy1QTGtqOVVNVHptV1puV1JNZjFINTYtRkFodW00eFVyendFdXdSY2FwRmlBSlZVMkR1UWEwU0xvdVRNSlROZGpFbXJNZXZo?oc=5"
+  },
+  {
+   "t": "La fiesta del Mundial 2026 llega a México en VIVO desde el Estadio Azteca: precios de comida en el Mundial 2026 desatan polémica",
+   "src": "Infobae",
+   "u": "https://news.google.com/rss/articles/CBMiigJBVV95cUxQOWNUMG1KYmRmLWtxU3pXQW02d29KcFBqTTc1bkVRQXAxdEhxd2ZOQkd3eHhrV2F5WHlqTGFqY2lSTEhwQ1llOVNzeVFVNGZuNTZGV3FrcEhVTHY1Y3l3YWxFZU9OUEJQWE9ZUnZEZGZFdDdoanJFYW9XclQ3MVdXbjN4a3haeVU1Mk1JTkRvNGJfMzNsNnlRUDFNTU1XNndMN2VDNjJmSjRTbE5Md3VmLWJNUlc0MVRoODdfR0xKbUIwM1JiOFVKR0pndDl1ZzdSNXhBTV9CZjAxWW5lWlFQeVJkNjJRTlZDY1plVjlBZHdOeFRkN2NwZTNOTlVPQ1A4N091OFMtWF9rZ9IBpAJBVV95cUxOY20zMmJqbWt2R2JfeW5JaEFMWGh0UXJTdUxYRXlHUnlkSWV6SXpDb1NJWTJ4VGM4RWtBUDlFMWtNeDN5Nk9SNFE3R3FhYzdaOXFFaEdUcVRPa0lhMTRCeVhrd3JjVDNhTjBXMkNFX3NFSjluaTNTXzFFLVhMQU9NclZOMjU1Vmw1aDh1WDd4Wi1YYjFSdjNDcm02LXNTWHA4WkFfMHdBc1dIc1p1d2JwLVp0U2hRMGRjU3lLQmJKZ0szSTVLSEN2dnNqNFZaaFRyX21UQU9aNmtYR05PQXpPT0V6eng1Q0w5QzZNOUxRcTZZNWwzeXdBYkxVUDlSM0xublpBdC1MQXlPTDRkTFd3TzVKTllUb3ZpcTY1bmNCYmZwcnBJ?oc=5"
+  },
+  {
+   "t": "México vs Sudáfrica EN VIVO Hoy. Inauguración y debut de Seleción de México en Mundial 2026",
+   "src": "MARCA",
+   "u": "https://news.google.com/rss/articles/CBMingFBVV95cUxOLVRKTzJqM29LbXdwTEtDQ0dmOUk5ZUNmbGxNQnctQ3lXd09ZdGpWZnJIQkZxZGRpc05GR1ZNVFhMZ2RDMldQU1cxV3ZsYndYSlNYZ3Q2TzNmU0dQYlVmWnhVeXdRcXJpNUVicHZKZWZIck1JSDJEbXZYRUtaQTFuZW1uLUFaYzhWRUJtUnBpYXlVN2ZVZjZITkhWX2YzQQ?oc=5"
+  },
+  {
+   "t": "Bloqueos, manifestaciones y accidentes EN VIVO hoy 11 de junio desde el Mundial 2026: Jueces y magistrados son encapsulados por policías antimotines en CDMX",
+   "src": "Infobae",
+   "u": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQMTlTUG9lME9ZVEw0TWVUaVA4V3ZVYVVsel84dlhIRnZ6VXpicEdObjFJb2RjY3JSNW42Q1hIR3B6RHRiaHBVWVBMc1R6bGdJMVBwQXY3MFRoR3ZVdEFPTzRQRmZPb1EtdDR4dFdBZDNySE0tSExpZ3dfR0hRNGxzVDRPbFFubXFQYnBLSGF1R0Qzam5Pa0NaT01OcGk0TzlUVkJyeVMtcWNGNUlyRWJYNVk1Q2tZT0tRakJvUDN5bXZEeFVw0gHfAUFVX3lxTE4xMV9UQ1RFeE0zZGJFODJPYXpwOXRCd2RhRVdmUjJVcHIwVHIyYjB6T3JxQndUZGdqbEUwNnhOQS1BeEV5Q1FWNFpPZmM0ellodTROM3VzYVdkcFE4TzhXWXVTc2RYSkdQcl9CR2VaVW9hcFRyTnd5MEUwdWhfaXRDd0EwQWFDQkh4RW5aMWZSRXhwNnVvOHpWMjQ3MmFvMzdmZVA4dVZPRWRmU1hMM2pPYWZtREt2d0FkUWJ5RDhnMWlCcVBEcVZOZkwwWTdiUlVjbUlYN2E5d0VYU2U2a28?oc=5"
+  },
+  {
+   "t": "Marchas en inauguración del Mundial EN VIVO: CNTE llega a Tlalpan; policía encapsula a madres buscadoras",
    "src": "El Financiero",
-   "u": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQRXVIOHhCTkdpek16V2dCTlJoYmxOc21fMWp6a3NWczI3WUNtSXZXTk52d21BemNwNm9XbXZiU2lNcVJ5STdLMXpFX0V2NXczVzlXcUgwM0NxeVRpTkNkZXlPWEkzX0Q0TXdadlFzeFdLNlYyMzN1c05BbzNOc29HVkR4b3pSWkNYUHNHSWZYeUlaQWdJOVFyNGRvLVJoMEMxVG4tN0gtVExQOXRfV2FJSTgwVFVNSmRDNmhWZThBTnhLUUxyZTFOSXBwbGRsejljQTJkaUFUeHlXUHA1c0xIajJTNjQ1OWNs?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMingFBVV95cUxQY3B3UG9MWDJlSk9ORV9MMXJkTUR2NzNOOFJsU3BGbmt5Ymh4SGlOYzJPSFJsTzJ4ZC0taFZHRGZ6eURTTWItNzZRWnVRdk5FN1lRQmxEbWMwcTlBSVRGQUMyTDJsMjExbEs0cjdRZHozaFBaSUZXVDdvNTVFM0JLcHJDQVl4X1BHNVFocjZnWWlld2dyTFpuZWRTUnRpZw?oc=5"
   },
   {
-   "t": "Copa Mundial 2026: Los partidos que podrás ver gratis en tv abierta",
-   "src": "El Economista",
-   "u": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNX3dIODdvVE5OZlVDX1hqLTZlMk9hd2Z3S1VmY25iQVE1V3dLZ2FlQkUzQWpIeW5fOFNDZTNWWndUNzVoU244ak84ek01NlA0Um5KQk1JRXJhUkdGTnE3Nlh0dXZCRG12M2pEaGU0cTEtUDdRRWZmbm9QaUZNVHRfaTEwVlZ3RDFrTV9sWlZCNDVGeEZsVzdqYTJPZE5PV0ktTGM4MUJteUI2RXRxRGRmNU5VSUdPa1lv0gG-AUFVX3lxTE9qUlVIM0lTMU12aXNfcU13bUM5VjJIV29TTFRsWTR0b2pEbGhMWjl2NUsxazR0b3dTeFZSU21zdGFZZGJLSG5tX3lnZEJLMi01V2FmSDhlMV9lU2RMb3BEczdON1QyWG1adk81by1SRXNHd1BwTnh0OTAwX21LVlhKQlNIZFFYVGN5YUJJNHpmWVB2MzJCOE8yTXhYSU41YTI2T3hrWGpWbEhBQUtzM2k0V0xqWkNTUGx2VGVZMEE?oc=5"
+   "t": "CdMx bajo cerco por marchas en la inauguración del Mundial 2026: AICM prevé protestas",
+   "src": "SinEmbargo",
+   "u": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNRUFpekYydHJHWWpTTFVPcThvTW80WWxlRFRncklWcmRRTkRGNG5yRW1pN21xZ0NCanQ5dEhrR3haUFlFX1BibUlXelRCTHVPU3VlcmdNbUlqZ0RxMWJ2MDhBc3JfbUVNbFR3M2w3ekxKeWhvQi1RWFFMSHdYUlRuMmViN0FpZE5qaGQ4SkYtYjVsMnY0dWdBLTNtX0llajd1WGhxTFh5SmJTbWM1LTJmMkMzQjdWUkxzNVRn?oc=5"
   },
   {
-   "t": "Mundial 2026 en directo | Última hora de la ceremonia inaugural y los partidos de hoy, 11 de junio",
-   "src": "MARCA",
-   "u": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPRjV6NnRTNzJIY2ZrdlNQSnZqZ0VoSTZTTXd6SEd2M1JPQjdzRWcxMmtZbzJQQm5Kd3lBSlJYTFJza0Q2a01XV3lmYXJfdjRNalZ2VkwtQWo2RVNHNGc0a0NneU1WZC1tWjQzVzhsY3YzSWJnNWdGYUlFaG5tLTB5ZlIwMm5QQWFZYW95cXdn0gGOAUFVX3lxTE01TTNBRDVMZ01WQnpKMU1KaWs0QS1CSWt6OF9sWF9Fa2w2SVlQc2w4eFBaSTdteFYyUVJMWnZKQnhSdWhzeV91bFA2OWFBOERvQVJ4UHQzQUZaYkREV0dHNUtrczhjVDlaSkdCeTM3ZE93TEs1RWRUNVBMNHIwbkEzRk1JZm1IVnk2ZzB2aUE?oc=5"
-  },
-  {
-   "t": "Marruecos anuncia dos cambios en su plantel para el Mundial 2026",
+   "t": "Mundial 2026: Estrellas a seguir en el Corea del Sur vs. Chequia",
    "src": "ESPN México",
-   "u": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPeGlMNzAtQmlIN1FJUEdIRk1SeUF5YTZFUV9vTXVtQXotMFpQU1ZzZGhzNFU1REpKMERJMDVJYnBpMmRUclZvWnRRQVBQNndHdk9QU0RfNWxrTGI0NHJmMHhfZ1VpVlR0NTJwa3pnNFZKSmxybUhwLXRfYmtuLXItWTFHejZfdmQyWlY0dGpPNjZmbGpyNko0Z255SjNtNHM2WmRZQnptQ2hQbjFy?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPYlJ1WF81MlRUcFRDcUthUWtiRzZCd2M1VEhKQUN3OUpwMmpPWEdLUjhFLUl4bERoNGpBbFV2R3JaM2p4bi1pNWNZUGUzU2J5NThhTzdBaDFwUTZsV29taTY5Rko4VHZhbldnaTNwZjBqeW14V2FaRkRfYmNFWDVBLUowS0Z1YmpGbVZUVzVWLXUtd2VPdHF2dnN1cXZoSXBnN2g5U1lmUmhUNVppdDg5dDM1cVVOcnZaQXJvblFzcGVjZG8?oc=5"
   },
   {
-   "t": "A horas del Mundial 2026, manifestantes marchan hacia el Estadio Azteca",
-   "src": "Récord",
-   "u": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOMTBOZFMzZG9iZ0pOM2hqcGNpanFRMU0xbjVQVF80NjZmLS1ISDNsU1B2VGtXaHZoQ1dOLWpCSzBWX0s2S1NyNGlGc2dBOC0xQUE0TXdFQXdhSFZ4Q2pERVo2ZGJJSTQzcEh1Zm5nTnJwdzFNMmhiX0xWWFJsU3JVeEdmNDFNV2N2ZVI1bVVEaUlGOEs2STZRRmZiWEdlVkNrVXJINlRSQmdfTnhtQkdNYzh2SlNzY3JhSW5JcVpqd3o1OTg?oc=5"
+   "t": "¿Dónde ver Corea del Sur vs. Chequia HOY? Horario y canal EN VIVO partido Jornada 1 del Mundial 2026",
+   "src": "Mediotiempo",
+   "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQQU1iTmIwTW9RZXFvb0RUUVEzakNRU3B5TnVQYjBOUDJHMTFwQjdLNGY0SE1SdXZNWEs1YVZ2WHJwRTdfMzlqWGNFQ2pVXy1DYkJMMUlsTC1VV3RSeUU1Znk5eHQ5eFBzNmdReDRQWTNoVWJ5NlZQWGNRV2UwWl9jTUlMOTRmTHZrNThWcVZ0U1gwNmpXRGs3eHBiSkFTSjBSYTU2bnVWNExGZUxFeTU4d3NLZ2NOQWxra2RKWDh30gG-AUFVX3lxTE45ck85X0hBNm5DMXZFa2FpNlptd3ZBNFdTRkdWQU4xWk1jNGgxU0ZKVTVtN29UZTlqR0tjblNldjctZEFPWFdTQ1h6VGEwN25kQ0dmTUtkLU9rVzE0eGdRQXliR1MydnQtLWhMakhCeFZwZ1hjQ1J0dmpVd2l2bk41WndiT0xvZDI5VXJkdUlucWdHWTI2THhVRVpnWThMVGlRUEhOQzlFZm85S0lwS3JnS0dQNkcyc0tMV3lLaXc?oc=5"
   },
   {
-   "t": "Mundial 2026: Horarios, dónde ver la inauguración y todo lo que debes saber del arranque en el Estadio Azteca",
+   "t": "Corea del Sur vs República Checa en VIVO: Heung-Min Son y Patrik Schick encabezan un debut clave para el Grupo A en el Mundial 2026",
+   "src": "Infobae",
+   "u": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNRjF0WkxOaUNvS3dkekhLaEl0WTRCLXFFOGpnNkNsczRzdTZyNXozMm5UZ2dYc05Zb0hFVV9WRDhGbnlieUhLUHBZN2RRVE13aFlnRnBpb0pIWmF4ek9TcFpLenktNUhmdHBaX0NmZUkwUDAybWZIbW5xaUpPTEpDWGxRTkJUbmI1NXU1OThkOGZjclN0VWJpdTVtZlM1Q0t4TFZXMnFZalNDamNsMEtuOWloRHNqZEJxSXRUZXZFUXlacWtMaWJjei1OeTlFRlhrM3RUdVkzd2JhbEps0gH3AUFVX3lxTE4tM3JXR3o0Q0VobWNGYzdwU2FwSXZnVGVaUW9aeVV0YmU1R1pBNVhWUnd6Umw5eXphZ0tFbTFVUFVsemZpZ1lXOWVwaGsyeXhBLUY5T3FVbFBMT1ZEalZ0YVhNeVRJMEJiMG5WRDVaWjhGNjV6ektJVXcxLXlwb0Q2ZWVuZDVfeWhxZ0ZHM3NSdjBHUjdNLXZDb254YzB3TXRKZnowREF5QmpfY2lNVkxuWkF4TFVGcE50QVZDNEFzMnRqUklLb0hYVDd0QkZJT0tPY05uYTZNZ1ZBVHdnMGdXaWlOLWNPOWJ2NEc5SFlmUmduNmdwdm8?oc=5"
+  },
+  {
+   "t": "Mundial 2026: Aficionados se reúnen en el FIFA Fan Festival de Guadalajara",
    "src": "El Economista",
-   "u": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPWXRFbTQ1YmxJcUplOV9wVkV4Q1JTaWF5SmFlZDM2TllTdDR3cGFJNGlyQWNiUzQxQmNxR281MU5mbHphajJjbzlkb0NrRGl3TXJRX3o3eS13cmJISWNqa1FIR3dIb29xLXlFd2VuaDBVT19GclVSSGs1SXJvQmdZYlZrTlU4cF93ZXkzT0xHNzBnNWNKSU9FZUJqaWVjNUl2TEZVNUFwM3d2dUxUeTdqZGRuVDlTdnhKeWJBdU1FN1B4ZkI1M2RwOXVR0gHPAUFVX3lxTE1TQVlIZ2NJY09pN3FXSWNfZHphNkw1NjdUR0RxUjRQR3QzcDR3THhkZ3JUUHVlMk9rRzQxZkptQlJ0Qjk3cGFYamNzdFo2dnFQZW9RejhJdWFPX2NVcFZDd2lzMmlic2hJbmlpN2twUkJjcWRvaGl1UlRpdWEzb2lqV0RwYW55eUg5dUIyRVZvM3p2ZF9ZY3VhZlVtYmZrM05PMnhOU3BwdWtJLUphV2RLMVJ6YmhSQmNJYTQyOENEbHp2T1N5M203anV0cUJWMA?oc=5"
-  },
-  {
-   "t": "Sheinbaum acude a cena de gala de la FIFA en el castillo de Chapultepec previo al Mundial 2026",
-   "src": "La Jornada",
-   "u": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxONVdQcDlSRTJKeTk0a0VHRVpCQTRsU0VGUmtraXhDWmVQR0QtVndJTEdWMk12LWNQc1o2cldvNmp2bm1IaTFRemFia282R1pEeEhJZ3EyUzFrOVVVVnFIS2tLNUN5T0wzbF9EakZFTVRkUDdUUDNnLUdmNlRiT2xUaWdGNmliRFVORVV3Qkh5d1FGSnVDRTZxTW1wNmNNbFJ0VmFiemJBR2dBYkp2TWdydmhxODc2cVVTa1JrTWxJcGpWdE81Z045am93RWk3eVJJUjNwMnQ5R1ZRZlp4c3FNNThR?oc=5"
-  },
-  {
-   "t": "El Mundial 2026, la oportunidad dorada de Israel Reyes para dar el siguiente paso al gran reto",
-   "src": "El Universal",
-   "u": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPSlBwejZTeE5BZTFTTnAydl93UDNiYkxMNm9QWnhaS1pKUHR5NmNKYVVaUFJ4OVBBSFA5aktSeVdFMGwzZHlNdWs1c3VvcTBITXNzRkRKMU9Ia2dYaTJSNFVwazFJSFE3bWdpRktkVHBNSlZtTGNscm4wdXpGZWZWN25VRmxyMlNCM3lwWVBSZHBQa3hYa29UeURUa3VhWC1uSWpxQ1ptYi02NXNkYjVwSkhiVUgtVGhlWGM1QzZxcHl4RXRfMFVqUEt2bHZGVWfSAeMBQVVfeXFMT2tjbFlmeC1ZbUU4QkdfdDM4OEh0RDJlOHJuNEF6Tk1RYnBRMnZQUHMxSHlKazhOSUM0S1BGalZHZFhGaTdLLVh3ZGNTT0lzVFNDbkhXNW5idS0wNTF0aVFhcERUMlZfTlM2SnZwRVlxZXE4S01Mb0NRdFRTZk1uYmtYc1JRLVJsSkJwWGdORmdwZlFkSVFkcEZwT3Q2Nmhxem5VT3c1RWZfajQta2Y5N2FOUHRDVHNqeWUtZnBCcVVJMTFFLVI3LVcwOE1XTWVhSXBXa2tVYlI5SDVHV01zWVhXMkE?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPaThKOERnZEdnT2w0ZXJ3T0RJTG4zd3pfUXh0c0o1dkxTZkwycTAzNFYxaEpXR2dMTVV3TjdYczZPQm84dUxNdGJPVWFJMVFDYk9EYm5pbEwxakVLdDV6elZjaWRxMk1vNWJrdkZHeUdsNVlTLXJjZ2lZZEt1eU9qTnVWcUEzQTdTQ25kdmJ1eWladXRzcnpNdEctcVJNUVJVLVZyQ05TRHRnZnVRMTUyRlpPMlpaNzVuaHB5Y0ZHR2LSAcYBQVVfeXFMTWdWLWd6cWZTMkdyLWcxNGYxa0xIRS1Fc2dBMHNmWTNwajJzTVlmVGtWUFhYTVE4aFVOMk1EcmRreGFlVXFldE1UVUUwVjVXdjU0VEFMS3NtakRBMkJzTThXNlJrWDJab3NGeHhYVUZGczJVMnVOcC1jQnNFNkpsQXpUUE1TTU52aEhmNUozcTZvVVNWVzhtdlVEZ2oxcFYxbnN0YnBQOWp6SlBMNDE0UDE1Y25ORFJkbDJLOW0xa3ZIb2hPdHhn?oc=5"
   }
  ],
  "en": [
   {
-   "t": "World Cup predictions: Champions, Golden Ball, breakout stars and more",
-   "src": "ESPN",
-   "u": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNaUkxRDFjWHh6SXNXcDFVZ2ZWR01KTmF5aHRxd1h5aXV1Sm53TmtweGFHQk5SQTVvYVNCMThHN2luQlo4Y045blBUd3FUZ0owVzZKLVI5azVpVjZtamkwZWx4aV9CTlV5MHFVUV9qRHdqMUlqa1hZNWtGMTZFU0d0VWFBbVEwanBPc0NTM0dheFhrdmxpTk8wQVhtb1JDNWtOS2o3WC14U3Y4WnBfRklKdFp1RFRPc1F4LVlLLTdlSnp5eTZkM1VpbHhFZGxrcE0?oc=5"
-  },
-  {
-   "t": "World Cup 2026: countdown to opener, NYC renames street after Thierry Henry, Infantino tells fans to ‘chill’ – live",
+   "t": "World Cup 2026: countdown to kick-off in Mexico, Somali referee to officiate Uefa Super Cup – live",
    "src": "The Guardian",
    "u": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPSGdTLVZKSjdJcjVOeV9FTzdRRzFzaVhZaDVDZDVfOW9oamhqZDNvTi10YVdJVmpuMWdWa1k2Ni1fR2MwOVRsTnBfZW02RVNzSmJGRy00cEkyRnVzQUg0TS11U251cXpWOEFHV0V3Y1lEa2o4MDdESTZFY2hsOVRPR3hVSjlkRHdGdklVVElGaXc5aThyeWw0SHVrN2hfMVVWZndiNFlzWjhBME9weFF3dFpib3NyemVaV0VzdVB4ZUhlZGlBa3FrUg?oc=5"
   },
   {
-   "t": "Mexico’s historic Azteca Stadium to kickoff World Cup opener: All to know",
-   "src": "Al Jazeera",
-   "u": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPR1l2V1hPZ2lMWmN0WWNOdkdTQVF6Mm1vMkY3T0ZiZjVZZ1oyVFhBTVl1alJZY3IxZDlkLXctX19VZ1U2R0UzZ2k3a3FSR0dGSHdWR3BwSUp5UzVqWG1jcFp1SWpfeHB5SWZ4OFF1bU9hNFFGRVJ4Uzc1X0x0UnlGdlVGS2pBSGl0QzRGZGhXS0d0YW9nR3pGZjcwckRfbFU2WHRHTDlWRnUxQzjSAbABQVVfeXFMTVRIaERnX1JWb1ZyZW1hY3lXVkR4azhxaGw5RVFlSWxzb3VNRFBGY3QzMlBvSFhmclJaMEYzbkw2Yno0ZFgtQXJCN0pPeUd1Wk5NMXBXOWdmY2ptbTE0R2NoNlMwVm5jcWxGNEk5TG4xeEotYlJoTjV6bzY4NzJQQ0FGMzQtYkgxd2dCeTd3MmtTVzNfT2o0MG1BODBKWnZhdjhycHZXZTh3NmU5aUZuSHE?oc=5"
-  },
-  {
-   "t": "FIFA World Cup 2026 schedule guide: Where to watch, time, channel, streaming and more",
-   "src": "NBC News",
-   "u": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPemFHc2w2UlFZOVFyZlhDZ01SaWRJejdPRC1wVHkyeXQ5TV9aMVdTcEpyNS1Ia2F6QnJMN2l3R2lTcmdUeGJ4dzRQOWJUV1pkcktFLVJTYUJ2VXZBREJlWTRBQXRJOUF0ejNkNUQ0UFFPWi1aX3ZkMzN4SGkyQUZHZlV2T2dMRUdYZ1FBZnZhUkw4cGpxdW9aVTg2clJBMUNnamFLb2JkYXZfWU05TFJYM0dR?oc=5"
-  },
-  {
-   "t": "The U.S. signed up for the 2026 FIFA World Cup – and its 11 host cities are paying for it",
-   "src": "The New York Times",
-   "u": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQMlJhOGt3QWJBMElNaVA1S2QxNE5xY0VxY2xYNFRxbHFaQTFoX0poc2hCZ3p6NEdwNjZzT3JBN3pyMUVmUzdaQjluR21EaEpTODZiR3EtS1hFbWFZTm50NklQTGlOUlEzWXRCdzJIcTVpM1NnenpfME5EcGI2d19kMEJReGVVejZueGpYOXpWVEYxdEZtaEhCc09fWFlRQVdDV1E?oc=5"
-  },
-  {
-   "t": "Fifa World Cup 2026: Opening ceremony information, fixtures, groups, latest",
+   "t": "Fifa World Cup 2026: Watch Scotland training before Haiti match",
    "src": "BBC",
    "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE0wbncwV2Q4dEpHYV9FZ082YkItYWpFUWhYb0xkMHh6UVFydVRlQ2xCdktWS0JBaFJTMDlWRzlDMEdQdzltOVdCUlNrdDl1UUlyOFVFSW1BN0Z6OGZSZUtnWnlR?oc=5"
   },
   {
-   "t": "2026 FIFA World Cup kicks off with Shakira at 1st of 3 opening ceremonies",
-   "src": "CBS News",
-   "u": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5teXpfNy1JRU1NbWdHb25URUhLaTBUX1B6cGFNdnFabnpQLWpuR1UzaV9mdU9KUWpjQWlkQVlYT2NGZVMxcjQ3UExLRkFhemV6Q3piS2lYVjJaTW50WkhyenJONDR2SUVMODdKS1lYRlpzbjA?oc=5"
+   "t": "Mexico vs South Africa live updates: World Cup 2026 opening fixture latest news and buildup",
+   "src": "The New York Times",
+   "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZUw3YVEzSW1nVFNLenBocXNvc0ZMVVhocnh1N2FqSVRkYzFrdUFFRGxpM3lScEZrZTM3YzBzWXRSV0h1SUdRSVhzRUZKRHZnYTRmc1JlT1lfX0NfaVhyU0lzdEotRFZMS3d0am1pcUkzMGZ4Q3QxWGJya1NjVjE1a3M1a1lWOGh1T0hZTHBISTMzd2hfbDVCalNsNXRTTmQxLUpLRTVtR2VrcmpGR0RjZlFFdVpPR1pERnNYV3Rn?oc=5"
   },
   {
-   "t": "2026 World Cup Opening Ceremonies: How to Watch, Who is Performing, Start Times",
-   "src": "FOX Sports",
-   "u": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMkxxWWg1ZEZ5WmJ2SDcyS01yYTdXM3l5REUtdktiQVRMTkRtOGtZVURZSFlCbFRJS0Y2aV95RDljRjZFaUZpS2I3dnVSeGMwaGtsQWxtMnNZbVNJZHNsRGV0c3dyR0EySW1NTEtMYk1KbFVqSXF0WDFJdmoxd3VPTTUwb2pVTkw4RmdjSG9IaVFrY2lfalhOaXBrS1RXdEJuSGdvdDhfRUoyUWw5LWJsYdIBsAFBVV95cUxOZXJvcmRCbk9VcWVLZHlwd1dqUy1VQXpzQW93end2YzR3eWRoNGdvbkNJSDdEYUVsRmE3azdLVXBzRnVaMEdKQUMyOTk0aGJyMEQyN2RjUWVQQjlXaGdXU2cyLTBKQUN6bmhSY2R1bXJXaFVySHdZb0dQWmU0eDZKUEs3RFU4cjktZ2U2VFVGNHdYQWFkOUhlTDJESmFSV3Y3ZEVxSmliTmIyNGpITk9rUw?oc=5"
+   "t": "Meet the WAGs of World Cup 2026 from USMNT and around the globe",
+   "src": "New York Post",
+   "u": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPWVZ6VmFIVy1ENXRyQVUwbVgzdDdoQWdBQTJhUTA4T202b2Z5NUJ0dUlGU3hNTTFZckpMRzN2RTdXamw0bjZGTVUtT2tpRGFPTDNKMllHVFROLWM4ZGNtX0pwQ3ZpRE1VUjYzM0xCcEl1WW1CWXM1d0tUcHRqQzJuNnRhd3IwbjI4RlRhQVEwTHRibTNU?oc=5"
   },
   {
-   "t": "World Cup 2026 visa chaos: from referee Omar Artan to Iranian officials – who is affected?",
-   "src": "The Guardian",
-   "u": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcjJWcnJZWlpVLUs1Vll2dmt4cWU5QTQzTkFPU0JRaUx5TzR2UVpPdHVlWTFkeERqTDZxSWxacW1tQmNzcDJwek5vLTNxcjhJSTRPTnRxeGdoN181Ym9qSEVETWR5aXlmckRTVHN3OWNMZnA0M21MOW44TlZKZTZiTnZHallyUTFnZ0p3RnY0UGs1R0RsS1NiWksxREp0c2xRaXFqazN4MTQ1TW5HQ3JMTEVEVkxmZw?oc=5"
+   "t": "Six World Cup complaints, and six reasons why it might be OK",
+   "src": "ESPN",
+   "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPYUk3MEJIeEJ3ZHlkYlI0Qmc4c2FSUEUtT3FkZkE0TkJ0QjNkUWRKZ00xTHlxdzNDUDktVDZMRlRDemxxcUpqd0gweGppQi03UVN1ME1nakV0ay0wYUg5R2hrenFtYm1WNWtjRVpVMnczVXA5VURDN2dQRWxQOEkybm1LRUxFWmZLSHMxYjFhZXQ1b2w4VGRONjNPeklRV1dsSUIycTZHZUlsNW9PU0ZJajhXUzRXeTlsVzlIRHlB?oc=5"
   },
   {
    "t": "What is happening with World Cup ticket prices?",
    "src": "BBC",
    "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE90SHFTVG1KSVJWNDU4VU4zc0N6WEFhSVlqLXZVZnJ2VXdDY1BSbi1uZUNKZGFRV3lSTF9JTkh6cGk1YzZVMEdrSXZSQ2pLZDNJTGJhd3hCa0FyV3BvMW5xVjhOMkVYV28?oc=5"
+  },
+  {
+   "t": "World Cup 2026: guide to all 1,248 players",
+   "src": "The Guardian",
+   "u": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNclJpaTBTTU1nZUlXRHJ4Q01RbXM2RmlqQVZBaDRrczhHeWhMVGh5bkVabUhjbDVzUS1UQXZGQUx5V2ZtQU02NXdEb1QyV0xsOVkwYXdWc3NJZkdkdnNtdVZFU0JYM3dBaEcwUEdCZW9xYUpmM1QxNVNKcUQzbTIwODRJaVotcHRGM0E5WFo3NVJMMklvTmNSUXRVc1JkSlhtMmc?oc=5"
   },
   {
    "t": "World Cup 2026: All the key facts, in one place",
@@ -122,18 +107,38 @@
    "t": "Exclusive: Iran supreme leader’s adviser says talks deadlocked over $24 billion and warns of wider war",
    "src": "CNN",
    "u": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQWnA5aVNZalFpYVdlWHJuSE41QUlIbGFrNkdiV1Q3RzdTekJqM2oza09hcWZZMFBUNVlGN3g4eVZUc3puNmZWNjJERWFNYTRZRkZRd2pIcVVEam5KSTFmcWxlZG93ejJONDdVMnhzcVdXblB1OTQ0eG84RG9pZ1lHTlJmTXQ1UWF1VnVmZEhZNG1paEc0anlDUlBYejBPWU0?oc=5"
+  },
+  {
+   "t": "\"Don't know what else we could've done:\" David Malukas' post-race interview after heartbreaking INDY 500 loss",
+   "src": "FOX Sports",
+   "u": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1aWElWZ1dHcTRlQTVGOEF1QU9UNHExV0JoQXk2bnJzcUcxbzZoQlU4UDQ5VXJsV0laNThzMnMwN2VjQXg4UlFya2hCdVdYX0JxYS1CZ3JVdEtOQ0NXQ1EyUUZPVkFPSmNlVF9HSk9B?oc=5"
+  },
+  {
+   "t": "DH Tech Randoms: Leogang World Cup 2026",
+   "src": "Pinkbike",
+   "u": "https://news.google.com/rss/articles/CBMifkFVX3lxTE04cjJkZjM2MEZRZHlCN1ZJVmkwckJmZGROdTlTVWN3cUFHdG9sekxKd2VCRHdMS3NVUHpDNDlaM2tVR044YklOb3hmdWNjZDhDb2hzekt5TTA3dGhzUG54SnNpMlRnc081Ti1sU2pJbTEyeGxua3N1SFhBandDQQ?oc=5"
+  },
+  {
+   "t": "The 2026 World Cup Is an Experiment Like No Other",
+   "src": "The Ringer",
+   "u": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPMDN2RVhLNWFoeVRIckxrSDZGbHFIQ2FBY1hSWk0xNkNQcURoTHJVQ1JhcVBEc2hNTjVqaWprbmJiSEJqNnJWWjlDdlNkd0xidW11S1ZtdmU0ZWdkQUc4WFN5SkVfOG8ySUxKcFZjLXhqdnc2dGNoTUJRZmNNSURlYVhfbW1VUG5HVGJ2MzRuNXdSSHRRMXdPOGhOTlNUTjgtZnpOeWxKYVlzN2t4RGZn?oc=5"
   }
  ],
  "pt": [
   {
-   "t": "Fifa disponibiliza ferramenta de espionagem com IA para seleções na Copa do Mundo",
-   "src": "Folha de S.Paulo",
-   "u": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNcFJYSTN3eG5kQzdlQVJ5aWh4RU9hNEJWc2czbGpGN3l6NGhtYjFnYTRfY2VTQjk2THdlcTJKMU1lS0dhVUp2T241RVJGdEJfTFNScmoxbVIxYXZXS0pBekdvZFczOUdvYWhlYllCX3VENGpOTmJEUzlfVTdfZ3QxeGQzUjNBbk5MbEFqLTBGVENsTy0xSnJTXzRIOUM4N2ZMX041WDBjd3VkVXNRS1pHQUZIVWdNdzd6WTlTTXZGNjZkUkpRcjJzeDRvNlpOdw?oc=5"
+   "t": "Só hoje: figurinha da Copa do Mundo sai a R$ 0,71 em kit com 12 pacotinhos",
+   "src": "UOL",
+   "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQaWc2R052dVdFVWxySE9yRWxnN2YtU0xZcDdaaDlveDRodmVmejg5LUxXZGNJX3QwQ3dBSGlJVTJxVVRHVy1IVEwxMEZoRGRra2dsdkE5Zjl6TjRiTnIzVVdadGw5N2hXRUVmc21qeWpyOE1kZDluSGh6alFIMDBoaGxld29FODJZWHR2amhLOERkUkw1MnZhanVjUXo0QVY2QU9kbEE1dTc4dnFXbXdiVVhOUGJPekNkLUZhRmFDcElORjl3VWo2TG04UU85dFc1ZHc2Mk1rakhkUQ?oc=5"
   },
   {
-   "t": "O que faz desta Copa a maior de todos os tempos",
-   "src": "GZH",
-   "u": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNTWZRRzM2V0Z6YzgxR05XaV9aZnRWYkFRWGg3ZFN2NDBrckd5bzRsR1Q5emNLSnJNc1ByUGlFV0lvaWJ4ZUVMcGVRWS1zLWh5UTlFcl9lNHVNbVpIeEJzOUtwY0t5UF9sR1JCUEVaaFdQUWNFMXdGQXkzeWpEcE43QzVDcGxZcmwxYlNZYzlucVltTk13YUZzcWZGUXl3Sy0yQkY0VHNuaHg1bThzcWFxYTh3X052djdQS1BNNXJ4NzA4NC1jNng3V21XUlZfWGhvaHhRRWRlems3ZUVfNDhfZC11bw?oc=5"
+   "t": "Casa CazéTV reúne entretenimento, gastronomia e paixão pelo futebol durante a Copa do Mundo 2026",
+   "src": "Terra",
+   "u": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPN3pNSE1jWkx5ejUzdmtObmNjVV9UY3oxNWJuTDlmLWRnOGxScUxwRV96QlNiUlhpS0ZNaC1iRWtjNFdBWkR6WXg0T1hRVWdtNlJjMndoMElyTlFHT21ZcklkTjJadmdZRmM5MTdxVFBRRjVXMzhvaXZVOGtQT3g5X2NhOXVGYmdEN2h6cFNwRG9nZzhlaXgwVTdRb0N1bUhLQWROODVfSC13T19WSl9TaElJMUhHZm1sU0M5REZjZUNmOUVwbXM2X1lFd05fLVcyZFZTRDFlZXJkSWtEdUVVZkxnVmVuVVZuamNEMFRGalhhUlNvRkdXNWg5WWNUYUg4U1pNbFlnVjVjZHJUczJBaQ?oc=5"
+  },
+  {
+   "t": "Copa do Mundo começa hoje: supercomputador crava favorita ao título e faz previsão 'dura' sobre o Brasil",
+   "src": "ESPN Brasil",
+   "u": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNSjZoVGRTSHVxVk9TazFENFFJbmlpNVA5UnRabV91QW5OeU9hYVg4RHdyR1BwOEphSng4OXR5MDRkQXh0YWliT0MweXBVeVZjcWt4blprLTVfVzFldjladVpBSVpxdlZuY05VMVZMMnZZWHhMamtZalBSVkhkUkNudXhxSzZRQ292T2tidE1DX0NlT2ZVOVhWSG5Pc2FJWmFPdk9FeV9pQUg4QlFKWlQxUmN4ZWRLVnVvWWdIcy1nY2xxeDN3aC1tYkt4cXYta2hvR2xWVE1lS2hqR1FRN2xBYkJibGZ5Nkd4X0hXZlEwUDJiZ0hZRlRLSjlhbGQ?oc=5"
   },
   {
    "t": "Abertura da Copa do Mundo 2026: onde assistir ao vivo e horário",
@@ -141,9 +146,29 @@
    "u": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNdGc4cmEzbDlZWC1VUTNEMzk2TVUxOTVxeU1IaDB2aW41RncyM2ZDT095enhyM2JDcDNDdlNHakp3dVhqNWJ1S3NsQ1ZqS3VnREJoZlNzVFR4dWJVdDdvaWhWNmFUbGYySy1kcHRTbU5tMWgzaU5meFR5S3VhNTdRbWxDRHZBYWtBcGJfemFNcEJqaTkzc0puc0pBNlJ2V2huWDhGcU1zaWs1X2ZWdTI4VUVSTjRQQzQ0eGQzaEJjZTdScmlZRktFcEln0gHYAUFVX3lxTE1pR0k3TnZGTDRWQlJmOVZLWnl1OUt5c1ZUenpxSWQyUEJrQmpXRXF5VFluRjlmVGZjLW03akJNUFd6TjN6YlFEX3dRSjRnenZVMW45dGNINEdyYndVaTR4dDRpV2dxWk1LSTRTTHdNanJzU1J1ZE5JNVN2eWhHbG9NZlR2TzZhZENVcnBLclBROGJYZk8tOHlFZ0J6QjB5TEM1ci1YUTNnaVB2WDFyUnRhNE95NnNOZ3FLbGJGQm54VkJfTGlpYVVxRkh0ZzlNQUdqOGJncHlPRQ?oc=5"
   },
   {
-   "t": "Copa do Mundo 2026: cerimônia de abertura do México acontece nesta quinta (11)",
-   "src": "Brasil Escola",
-   "u": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPTVN4bUxHUzZJaTl5T0ZvRTB0bEdISDQ3cXhYS1dCU0RMejk4MjRFYzY1SG01VGJveUFzZS1vQnJ1dXN5dVQzRWFOTmRXM252bXlScVRyNjdUdUttNkhXZUZEUXVYUVlOR2Mwdm03UG5RdU9UaS1PTkFra0xiUjMwajRHX1lXbjRkX0VuWmN0NXY3d29HVEtxLTJXSDBHdEXSAaQBQVVfeXFMT3dWN2dTZjdtVGpjVVJKWEQyamxsZ2NPYVV4bk9sQWNuRk1TVkZVRy1TbE9BUzdfa2xzM0EyeXM0NzNJQXM1Z1BQVFpsMnY5LU1QbkJwOFhiMTVESUVleWNPSzFkZlJvaFNzZGVuMlZvZTZ6dWF1YzlPay1CeTVlMXJPNEdSQlV3Z2tqS0VYV0NtUHlnSE9UU1ZhLVNWVUxhTW1ja24?oc=5"
+   "t": "Show de abertura da Copa do Mundo 2026: horário e onde assistir ao vivo",
+   "src": "UOL",
+   "u": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQbFpSb3FtQVRZMHlHRmFseWh6aTV2RE02cXJCcE5pZDRhTkhqd2RfbnNzWUtwVVpiUmxQT2JLZXRkb1o2MF9EamQwNlNDTmNfVDFKa2JsWGdiWUUzYVFSbmh6eW1uNlZlVC1xZmtoNVFhUWNOaF9Ma0haLXZhakZuOHJHNUtYa2V6M3pncVdLT0Z3ejdZbUtibjctQkxRZWo3Z1h5U294WVZjbUt6U21scmtRcUxFc3I5SjhrWU9hZ3hvU0lqclZ1U3BhcmxCdw?oc=5"
+  },
+  {
+   "t": "AO VIVO: Acompanhe a cerimônia de abertura da Copa do Mundo 2026 e os principais destaques",
+   "src": "Terra",
+   "u": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxQalZLa3pQUnhZX1NaZm9MSUNmZHU2emk0THVtRDhNSVlyd1VKZUdmYV9LalFlZElqX0hXNVFaY05fbWhTNnJCV0pyN2lxQUFHR1gzMk4yQXhlZE9TaFRDY2ZSc1htdm5pQzJDWUdBb000U3k3cXBRa1MwTTBESGx6ZFdrMGllVFF3dGY3Tm1fUFBJaU9iX1JLNG91QXpZQWpnZXpjcVowRXpvWlgxOFlVUnc0U09CUGd6MF9kVzZ2UWoyZEFzVzVMOU44dnJXb0dhM3BfZWJLYlVVNnZJZGNKdWJ4V0FxeEVOQ1E2Tnp3RkllVjhuYUtEQmNxZXZJQQ?oc=5"
+  },
+  {
+   "t": "Ruy Seabra, o selecionador pós-Saltillo: \"Se fosse jogador, dizia que estava indisponível para este Mundial\"",
+   "src": "Observador",
+   "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPLUktZjloeGFEMG5pZXFGT1BubEZPSm1NNDd3MGd1Q2w5OW9OMkVBRjJSRkI3cTc0M3hiR0ttcnZNVlVxSTZ5blRYRGRqTzBqUHBCMThrb0hhRUZJd2JGVWZmMkVYdmFxX3pUbVVzZmhibzUzY0V3cjM3SGI4U3Z6WVR2OEJUeklFLUpuYlJkYVBlZ09GcWFxTDhiSVJ1OVBvQWhzSF9RX3FNWEQ2a0UtMy1UbU5zaWp3cDMyS2RjX3dvanRkWEFiRWx0c1ZmYnhqNVE?oc=5"
+  },
+  {
+   "t": "Ex-subsecretária de Defesa dos EUA diz que ações de Trump contra o Brasil têm objetivo de apoiar Bolsonaro",
+   "src": "Folha de S.Paulo",
+   "u": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNVE5iS1BsWTVQMDFyQ3RhMzRDZi1wd19GYkU3Q3NNbmFXZm52QTRkVFI1QkVRUDVLZ0FKWmw1SFNLWEF4UVFoTHBveGdmT09XaVItRWJIbk12dUxxcW5GSlY0Uno3U2JkUUNpaDFJV1N6bm5UQm9iM3M2OW1uNzVQUTBhSlJOMU9iODFfZDY2WkpFcW8tdzBuSi1vV3RFMFQ5N0Q5aUU0MnFzSURoczdkRTBDZmZVNnhoSVBWTDNOemxGN0ZRMlJYNzZBRFZKOFFaNHdVcXVtdmNqVTdnTTNVOWxsSlA4TGtHS21ldQ?oc=5"
+  },
+  {
+   "t": "Copa do Mundo 2026 terá três cerimônias de abertura; veja horários e como assistir",
+   "src": "G1",
+   "u": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPdlYwYnN0azhSX0ozT3ltRjdranJvaGVuc0x2eG81eFhTbmIwczc0SXozS3pFYlM0bHA0eU9IV3JJSklWMmNuOVdVNmFrcGJPM2JrU09yYlJsUnh4SzAzd3ZZbDZIM041WVZ5dkZaMUNzenBVOTN1eTFPRmRKLW9HREMtQ09oN29TV2NQT3ZkVnp3SFpwTURUNXE1eHV2MTdZRlVsVXhDUXhTMHlSZGNaVnppTFZjZy1hUWo2X3dueVByQ0RxekVvTXZn0gHYAUFVX3lxTE1GUGtXbUxRU3FKSXlxQUY1cFFVMnZHTERCSm1yajdLVDkxaGFVbWRKdEdpZDktNDg0MXlDR2w3ZmFnOFV5Q0ZIZjRnQm05bGV5U2JmZGdoaWp2MHRqQ1IxS0NuZm91NDR3U1hpaEhaQVNTallTZThHU0plYlZTQXFkbkZMaXdfVGxULVA4LTVvVWctNk4tOUdhTnhPVGRpR1NldEdnQXpMV2FFWngwTy1BMnRLdW5rb2JvbGxLU2dUMW5HRks2N2VNQ1lud3dsaE9hWjEtY3pPNw?oc=5"
   },
   {
    "t": "Copa do Mundo 2026 começa hoje: veja a agenda do primeiro dia",
@@ -151,76 +176,51 @@
    "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOVXVmZmY0YTZIUmZBMS1odVhzcjJFTVJ5a0h0ZDhuaFJLek9OOEJhUjF0NzhYMW5fN0t1UWxFZDMwMW96bFdxN2ZmWm85ZEtpRk1WemQ5Q1hLZ2NxSTVUMjlyNkJCOUtFWjR5Y3NUWklRejNPZVBKdXJpeGlUdVhia0dnMS1WYkIzSGltMXc2MHpaejI4ZWVxUHVndWtsUkNMNTUyOHFpR0ZRdDQwQ3lwbEpldzFvSDNNMTFuZTJB?oc=5"
   },
   {
-   "t": "Copa do Mundo 2026 terá três cerimônias de abertura; veja como serão os eventos",
-   "src": "G1",
-   "u": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPdlYwYnN0azhSX0ozT3ltRjdranJvaGVuc0x2eG81eFhTbmIwczc0SXozS3pFYlM0bHA0eU9IV3JJSklWMmNuOVdVNmFrcGJPM2JrU09yYlJsUnh4SzAzd3ZZbDZIM041WVZ5dkZaMUNzenBVOTN1eTFPRmRKLW9HREMtQ09oN29TV2NQT3ZkVnp3SFpwTURUNXE1eHV2MTdZRlVsVXhDUXhTMHlSZGNaVnppTFZjZy1hUWo2X3dueVByQ0RxekVvTXZn0gHYAUFVX3lxTE1GUGtXbUxRU3FKSXlxQUY1cFFVMnZHTERCSm1yajdLVDkxaGFVbWRKdEdpZDktNDg0MXlDR2w3ZmFnOFV5Q0ZIZjRnQm05bGV5U2JmZGdoaWp2MHRqQ1IxS0NuZm91NDR3U1hpaEhaQVNTallTZThHU0plYlZTQXFkbkZMaXdfVGxULVA4LTVvVWctNk4tOUdhTnhPVGRpR1NldEdnQXpMV2FFWngwTy1BMnRLdW5rb2JvbGxLU2dUMW5HRks2N2VNQ1lud3dsaE9hWjEtY3pPNw?oc=5"
+   "t": "Quer acompanhar a Copa do Mundo de 2026? Baixe o guia completo da EXAME",
+   "src": "Exame",
+   "u": "https://news.google.com/rss/articles/CBMingFBVV95cUxPalg1X2hOenV0WEY2aFdrRXVnU0RaZjhNcDY5bFNOUXhCaUI3WndmWmlWR25wTnNva3pNQ2RsZDBrejVVcWNqbHYtUEtpZW81c3RGSTBkRWFOLXlTZmdXcUhtM3MwME9aekxzOEJvOGY4bzhqTkhJOXNteFBycnhSNE5zVS0yNzR0NlJvRFA1T2hiVHBzYkVBUjlrd3dSUQ?oc=5"
   },
   {
    "t": "Abertura da Copa do Mundo: quando serão as três cerimônias e tudo mais que você precisa saber do 1º Mundial com 48 seleções",
    "src": "BBC",
    "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5mdHNLaXhsNTZoUGNEQXlXYVJfclRucGpLNmI2bjVyTk54QjBwQzl4U25QMmpHS1BQeTR4SC1aRWZBTGlucnBzdGhrLXpGc0pDQjk1c0tBS3RaNzNZSEstVUpn0gFnQVVfeXFMT3hJYVNvbDE5V2pnakFmSkNCbmI0d0xMYjUwV3E2OTJJYzc4dWphNm4xdnFsWkJRLXBkdWVDQ2tobWF2MGlZZk1XQmc1S3lzbGNmS24xclNfOUhMVjNzcjV4T091R2lqRQ?oc=5"
-  },
-  {
-   "t": "Abertura da Copa do Mundo 2026: México X África do Sul Jogam Nesta Quinta; Veja Horário e Onde Assistir",
-   "src": "Forbes Brasil",
-   "u": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOa0xTX0tXa0ZBWVRwa3lERTZ4dG5TanpFdlBnWGNQb2dIcnZvYV9uS0gzd1RYTnRrZlJNWFZHYUt2VVAyUjhnUVpNd0pfMjZ5c3l5eWY4Yk15UHdpQl9vM3VsRW5XTVcwckxjRGNncFJyeHFudmMwS2l0TjJXNm83ZTUxX2I1cmhueUNfcGd3VTlmQTNLR2JQUkFoVjc0SDhvVVUwMExVNnhuZ19lSTgxWm5RbWdDelM0Z3FORGlMQ0c5cWFJU3JhdXFzdWpaY2FjTXY5aEZJM1FFYjJXZFJFWmV2aTFZcThBeUR4UXlB?oc=5"
-  },
-  {
-   "t": "Por que Copa do Mundo de 2026 pode ser a 'Copa dos recordes' e quais marcas devem ser batidas",
-   "src": "ESPN Brasil",
-   "u": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOY2FXanV1eTZWNDdYTnlHTXVZV0N5Rk1KalUzREtwMVVLUEFtUFctcjVHN283cE13SHZGajVSZE9WR21CVzh5eC1IRzVsOFBVZG5ROFU3N3pTLVdkaE9TNG1tejhqNkxhWnVMVk40M0tMTFhyQXhncGJseGtlT081S3l1RGtKSDlONEVFc1E3cDNfRmpEbzRKNjA2c1Z0a0IyNmxKb0MtbEZxQlA2Y0tOdjBwLWk?oc=5"
-  },
-  {
-   "t": "Copa do Mundo 2026 começa com ameaça climática e política e com sonho pelo hexa",
-   "src": "R7 Esportes",
-   "u": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQSGR6R1ZKRjVGNUxwdjdkZ2ZQeGJiUGRHdG80LTYtRlBoaUdUaVluaTlQaVlfc25CT2FZMVdrVGNxTi1ycTA5UVNBekZ4YXdBVjluTFZtbU9vbDZ2UTFUUi1VSnRQeVp5dEhrdWprdEUzaDFtbTVHRTlTa0VfbkJsVWQyeXY5dUlQVHUxUk55ZmUxWVBrOFhPZHZ0cnljVW9nakdmdXk0ZVhzT0V2RmpIUkpsQ2VCVEdHc1Ixb0ZON3MyLWN4TnV1WjlvZw?oc=5"
-  },
-  {
-   "t": "Guia Lance! Conheça as 48 seleções da Copa do Mundo 2026",
-   "src": "Lance!",
-   "u": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPX3JBd3FpaTZnV0p0US1qb0Y4WVA4aFdPMzBnSkxERUxUWDd1elpwR3U5UG9iaUR3cUx5UnpDSE9VdThGOWJFS0dFTlM0aXcyMjgwdl9EYks0N0dBSlJfZVU0ekx3Q05pQkpOVmhaelZvWll0TXRlSEZ3OWJYU1FfOV9xYzRQdS05NFV5aE9nMk54Wm80RTBzdnhJOXp3LTky?oc=5"
-  },
-  {
-   "t": "Palpitometro: Especialistas do Jogada dizem quem será o campeão e o craque da Copa do Mundo 2026",
-   "src": "Diário do Nordeste",
-   "u": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQdVJkQ1hVZEoyQnk3eFBZY243bEdWUHJTNmJGR0o5LTQwbFd5S0k5RVJfd0huMG5qcHhaelVkMWdiNzdWUFppcGJWdXNWeXk1eUpRbGpzbjkteVpSdERPY1g1anZ1MjlkdFBycEVpSldhREJtZU5CZE1TTktOYnVJUlRyVDRPbGVPM2Z1Q3pLOFNnOHl1WkdNdnB0dlAzNkZ4RU9LTzRIYlA4MnB5UkRQUU51YnRxVF9fR09MVDVtSDBaZlBXakJTU1R3SU9ERE50ejhpRHdRenNFOUVKc1pueVE1UjZ0aUszNjlUaA?oc=5"
   }
  ],
  "fr": [
   {
-   "t": "Coupe du monde 2026: double coup dur pour le Maroc avec deux joueurs forfait",
+   "t": "DIRECT. Coupe du monde 2026, toutes les infos: la sécurité se déploie à Mexico avant le match d'ouverture",
    "src": "RMC Sport",
-   "u": "https://news.google.com/rss/articles/CBMirwJBVV95cUxQclRtZ2NiNTFtZHc4VTdYT01PdV9qNUhTZndzLXFDMVYwbVFKRW9tQWs2N3Q1ZnYxME1HOFFqVnhHOVpzSFhZRnBxRGpCVndLdW5ZLUNYU1NkbXhVZ1NXM2I2emFEZURnQ25sQTlsS0M4YzlXYzVmQVhWS0JMbHVyMzdkelpMOHd2WHkxbUpDcDl5ZlJ5cmxIbHRPZ2l0a0RDVWFmWTVZTzNMMTFoZjF0UF9kSnBBY0Fmai01Wl9yd05MSzhhZVo3djVkWGk5RjdJRjdGNHltb19xQVVyOTlJTDVwdmxOSXFpSmEzNnRja09xRlN0ZVk3NXhnZkk2RmtOVDM5WHhLTWd3MnNpdi1YRURWLVpkemlETmEzZU14dTRNNUVOMnhnWmd4V1R1ZlU?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMilgJBVV95cUxQdnFTN2V5dkV5b2J4RXpjZ3Z0Z05nd3Fsa29QOF9heHNzdnZhV2w4YlRyMUtTSFlUTndDU0RZUGJVMURGZjFremFmVG5LXzhPMDJRTzhTeXhSZ2RDaFROMHFVVC1hcGp1RnJoR01OQ2RCbVo0TnkyOWh5R1dCRjRhMko2MnRzOHNmTDdaaFNpanhmZlZISmg4aEh0MjQzeW9UTHgybl9lZDdKR1VZdXpsSGhlZlR1UlBEcnhGVHo2RUM2ZDR6Z2VKcVdoaVMzeVZHbFdwS2VaVFNqeThLbk5mdXBGZV9TYjRNUVJtSXhNUVM3eHU4RUhsMTVkR01VT1FwMWZ2MHRVV3FDSzNJUDV4Y1VRZzJPZw?oc=5"
   },
   {
-   "t": "Coupe du monde 2026 : jugé «trop politique», le maillot de Haïti retoqué par la Fifa",
-   "src": "Le Figaro",
-   "u": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOLWpJOTFOdnRXRlF4R203eTg4bzBtUERBU3RLLXdJSWZUYjlCN282eFR2MnFpWHRHeHpYQTFtSm9jVHNXd2xZYlZBMUZ3MENIR21xNnUtVGpDNjdzcG1MdXA2dnMwTUtrRC1IaFV6eW1TZVYyQzlLVm5NNWlNbkZWSUdEMnZ5NF9EcUo0NFF1TFVuLXE1elluYXV4amR6WXBfWjFraDlYSGt5MkpJdGhjbTJsYWxmcFF5SFoxSjQ1SXdCaE9pNVlPczZ0TkY?oc=5"
+   "t": "Foot. Coupe du monde 2026 : à quelle heure et sur quelle chaine voir la cérémonie d’ouverture et quels artistes sont attendus",
+   "src": "Charente Libre",
+   "u": "https://news.google.com/rss/articles/CBMinwJBVV95cUxNVnRkWWNNdkhfLTc0WHI4eFRJNElpdjlxdU02TFVjVFNjYUVYOGpjYTUxREdxeS1HZHIxM3lZa09kSzAtNTRCZ1RxMEZGNTlxMTNHWURKQmtTUDZldzk5ODNaSUNkTXp0bEd0blFVVEw3ekQzbDNRN0hUYXA3M0pheUVIMktfWWFvM1NxME5Pd0JOWFpjV0NQUGJ0bTZiZWZTLWtpUEpiYi10ZzJzTHNYOG9PUWwyTFdRY05WUHRnRTB3V3BjUFl0U2ktNmJtV2FXcVNMazZTOHNEMHZSQ1p1U0d6cnVOdFFteGhLbFJDT2VmWklnbThERjh4eTlwQnk4Q3dNaUNxeWQtVWZmZ2lNUk5mYU9oNTh4YnREM0RkWQ?oc=5"
   },
   {
-   "t": "Coupe du Monde 2026, Portugal : Cristiano Ronaldo se fait déjà tailler…",
+   "t": "Coupe du Monde 2026 : l’Espagne ne sait pas quoi faire avec Lamine Yamal !",
    "src": "Foot Mercato",
-   "u": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQMkZ6MTZuU1lfSjFOSUMxMmpEWXV2VW5acjk0YnBtVTVvNmxOVGU5ay1GNGpWX1doV2ZXZEVFOFBTYi03X3ZIV2pfU2U1RVJTRVRsZThHY3BxYTJETUlQazlxd0hCVDdzTGtRWF9rQnNWQ1JZVlFwOGZGczV6TjFHckkzci1wdlhyOE1VcjJ4VXkyd1MyZndKbUhOV1lhalpBY0hJRGhpY1QwNzduRVd0OVhkVjdIckU?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOYlZpVnlRb251TU1aTzRLanN5NDFqYmphTjNLaWY1N1cwNHVsWml6V2RVbEpETHFoejQxWW9rNGo2M2NrVUpkclZuQWVjMkdzSUhCT3RFNDZTWmVrbmg0OHc1OWtXMTVNdlVZNk1vVlJhbTd0LVQ4eTZ0SWVWVk55Z2JHbnJ5TWd3RUMtM3NOclY2Y3pYeTMyR0hTbW1CWlNiQlVOeFVVOS1QelBwVWJNN0JUeVc3dmhuR3c?oc=5"
   },
   {
-   "t": "Mauvaise nouvelle pour le Maroc : Aguerd et Ezzalzouli ont déclaré forfait pour la Coupe du monde",
+   "t": "Pendant la Coupe du monde, les Allemands vont financer des navettes pour que leurs supporters viennent au stade",
    "src": "L'Équipe",
-   "u": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPbktOdXNEanJmY0ZvVlpvTlg0U1laM2xJN2pPWVgzSzNqQ19rdDZwRGtKOU5xTUJneVRCTDNEWm14bHUwS0lndlJIZTUzTnk3SFowNlY5d0tMejVOZlVoMEZGTHYtZEZaS0s3RXdaQW1yd1ltM1htXzhfZVBiTGxKRTNRM3Y2b0Q5azRFYmRTM1VhNlZBcWtzU0FfVXVJTXlweGN1SDVha1lvelJMNHlEbWdtU3lpdXFENS1XcEdRS2t0UDFQcnVQemh2MXRzZDVDS21melNsbjRNMjhfMGNoSXpibFc3LU1XMFhwTmQxOA?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMilgJBVV95cUxORERaVjM5eVB5cktLQTRxbEVZYzZDWTlxTU5DQmFmdGd2MVlXbFluX3lUVzUwekpwa1Q0U2o2Y0lXQzgzQmk5TnEzZWVwaVZYcndHS0hpMVJ2SzJQcGV5N05jNE4zZzBZd2hEaDduS2RPaWhUZlBmMGpCRmx0d2NreFRjYnJwMGNIUk1OV3l1SVNFenJvWFU2ZVlVOVBaRk43QWpzRlBvb19reGtDVThNeG1pZG1NVjJ6eGlZNm1VcEctVWZuVll3X29iQk4tUG0zTEplVGFhcHpoVXFNV285SWt5Vm96Wlh4VUJIeVpVYndUNjRJYXpaWjdBTERwMW9PUEVIVWdkZDFSaVhpRVRwN3FPbGZ3dw?oc=5"
   },
   {
-   "t": "EN DIRECT Coupe du monde 2026 : Les Bleus s'installent à Boston... Une rue …",
-   "src": "20 Minutes",
-   "u": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPODlsZm1UUF9BMmNqOGEwTmpOU1hwSFA4VGpLdDRjbDJGR2VKMXBlejBWQ2htT3E5QURJYTFldTVua2dYOV9Ja2pTOXJHdTA2UWU0V0dPanZnLWl4dHBNdFhuSmtqdjZRLWl4d0MtS2tmaGJQSzZkQlZDdUd5aEwyckZBWWdBdEZVWFdQc3U1QmNKMjZRdVc2V3ktSi11SFYwYXFMaDlZRWZTaWp6bmRhclhpYUFHazd3QTZlZmhyc3ZUenlOeG80R19pV3JZNEpOeXBabTFRQjZxYVRCVnU3VWhGQjRzQQ?oc=5"
+   "t": "Coupe du monde 2026 : les forces et faiblesses des 48 équipes en graphiques",
+   "src": "Le Monde.fr",
+   "u": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQOHhGbDczVDhOM1U4ZmtrX2ZOS0dhNW1yN3lQMWJfeU8xZUpUbkdTWlQtZ1EyV0o4eGlLTzhNZ2tTdktOYjROZVIxd1pERmxaUmY3bjdLbmxoV2FzYjlVSG5wd21YUGdmTUh3Wkc0MXpXTTFFTG5JNlg5d0tBSGg4TnBFYlB6UkJBYk00SEVOb3kwbkpycnZNOFZ1OHBRTzB6d3pIY0wxVkg4RWxyQm9Yak5DWEJRblNRMjdNTWI4U253VEcwM2txSF82OUhMU1ZIVGw0TDVOUk0wbm9BZWYtR29wcmM?oc=5"
   },
   {
-   "t": "DIRECT. Coupe du monde : Mexique en fête, coup dur pour le Maroc… Suivez la 1re journée du Mondial de football en live - Ouest-France",
-   "src": "",
-   "u": "https://news.google.com/rss/articles/CBMipwJBVV95cUxQN0szYWtkUEJPVWRzV1EwUnZBTXlpNmNxYnFTSkZnMmhSQXE3LTk4RXlCeTNHWHBHTmZSUWFQaVBhVWdZRnZuQjd1MUdGdjhZMGZ4RUV0Y0RobjRxaFA2QzVZV18tU2l1VXp1MHhPMEpxbkhXZlVkLVRndW5wRUlraFhhOEszbUVhU2ZoWmFlb0lfTjYwNGdsS0c0Q195SEh3X1FHdUhoTkNlaTh0MkNvVVM0QTBYcFVjM1g4X0hIZTFFUk93a1hPb0tPVkl5RTZiUnVXWGhhRmxYQkc4aXhYLWFrclJyUnVUbFZ3Sll3U2lUblpxbzBPengwOUN6d2ZvN2ZuUHhTd2R1MTBtOXUtcHZ3cnF1VHVzNG1YU3hZV0ZlckVLVjdF?oc=5"
+   "t": "Coupe du monde 2026 : le calendrier complet de la compétition",
+   "src": "CNews",
+   "u": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOZ1E2M2lWTExnSXZlV3ZfRmt5WmxqZnllNVl6WV9od0tTUjk2YS1ORS1Ta0tDdVBOMnNuaTN2c0F3OWhBYUN3d0Vseml0Q2tkU190dy1VczNNUHBndWZsWVNZUWdHZTMyQ1NsLWlQWk9NZlpXdmhEVWpBNG5qaGw3eWNMbWxKU01sY2wxVXI3YjFtUl9NVnNWTEk0aUwyNnVFNGk4dlEtdVDSAa4BQVVfeXFMT3VJVHRmNEREU2ZvY3kyQUp4V2xJQVJKUnU2dWxyTzNRWFVPbVpjMmk4djlBZnBrZUt3ZlBFRDVpc1duS2NGYlFxNkloRmhLbVNFTDZYd1pFRXktYmsyekZUV3Y1aUl4NFp2Um1VUUZTNGRDM212aXZZbGRNdkdLcW5PR21mRDFkNmJxVzE3VVdpcDlxV0MycGYxcWVLQl83YTN4T2ZsdVBLWHcySXhR?oc=5"
   },
   {
-   "t": "EN DIRECT - Coupe du monde 2026 : polémique autour du maillot d’Haïti, Infantino déroule le tapis rouge à Trump, une grande fête d’ouverture attendue au Mexique",
-   "src": "Le Figaro",
-   "u": "https://news.google.com/rss/articles/CBMiugJBVV95cUxNLWM4RVVYMHI5Skk1SDkyTXBqV3hKaEZCY2VjUGJqcnFjY1ZVNXFSR09kRU9SeXZXSE51N1NPSWtNTF9ka2JlODNYcWpzV1ctOTY3dktpU3JqLWhFN2VuT2xGb3lUSjhGWk5sZGZmaVpOZ21HWHhfbHlUOU03dkY4TzdSV25hbDB5aDU4dFNPamFGX2hzMU95bHlYaGtuYVoxQ3dJeDRjZU5uVF9BdlRxWUNZMWpjb3RLeE9ZSVF4azNnNWRLYUt2aUU3TWNOWTJ5MmUxaFNLWDN2SjZlYVR5T0Z3dUdwZUF4dU43Z0NCOUM1YkRDR1Fya0lWU2haQXVZRkhXQ01xeHl5ZWZZcjY2UHVRQkNGR25fVHVWYmNXWWZPUi1sVEJNY0pOZmRHemEtQ3dBWk10SVdIZw?oc=5"
+   "t": "Coupe du monde 2026 : sur quelles chaînes regarder les matchs en France ?",
+   "src": "Charente Libre",
+   "u": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPLXNDanJyRUlrMWRHUHVZcXl5cXBDWWhtekZrZFFxQjNpQl9FZlF5WGVsM0Qtc05uYzhqVXBVRV92WXJPczRLYXpsUDItVG5KNXB0bU16VkotZTZKLVRaajBmX3UtSTFJY3ItdFlETnNDeGQ4OW44d1ZnUFVnTlAtOThvemthSFE4TW1vWWRzWURQRjcwM2k1V0ZEV0tEUnE4X3pRRzU0RzJKZktoeWlsaVFfRVY0UjZQVTR5WWVVVW5FTFFvSzFFZkptYmV4R0I3UjJpdTVBMUM?oc=5"
   },
   {
    "t": "Sébastien Migné, sélectionneur d’Haïti pour le Mondial 2026: «Il ne faut surtout pas s'empêcher de rêver",
@@ -233,81 +233,81 @@
    "u": "https://news.google.com/rss/articles/CBMinwJBVV95cUxNN2lFOElBZmhwd0NHZTYtWlgwMzlCQS1GSTN3UHdzZGxocG9MbUU1alJpUENaNkk1dWVLdGxnMHotOWI3SXI1bHhINEo4Q2pZU1JreTFWbXpOcnFqUUZPd3VEMjVMenBNcUJIbzVmNURXTDU5ZFBpdWRJdm5qcE9odWd1M3R3V254R242OXltc0gxVktPM0dQZ2VOYng2dmxKekRUaVU2dFdGM0dib2hTcFZ5cXNia3YzRFMxaDR4RmZzR1hZT3dOa0lvU0ZXVWtfWXBuVjdobmwtNFJRcVVtbDNFWm1XVHk5dHBydC11aFltdjgxUkctRGpFc0VaVVFvM3NhcnY0cnhFbXl5QVRXWVNLaG9JcmdVRFhVOFRfaw?oc=5"
   },
   {
-   "t": "Coupe du monde 2026 : sur quelle chaîne TV et à quelle heure suivre la cérémonie d’ouverture ce jeudi 11 juin",
-   "src": "La République des Pyrénées",
-   "u": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPR2FpOTRoUmJEbGR3a3FhYlFTenZFUk1NcTdnQXN1dUZhR2k5UTJfWmZIZlFDbW9IRnFiUktPN3ZnNlRNdFRNbUpSbXlwNWJqaURVSFVWNkNTcEpVQ0FNSTItbUp6RVBKUGxCOUdzZ0ZMWTNaYkN6NjdSQWx1Q0huUlJuV1hMMDVxdzZtcnVWUmRwYUhFdGFTLTc5RDZ0WEJ2eS1FcGktREhkZVdDZGlVSm5PRjJYWU5NZDMtOTdyblNLUjM0RlcwQzdUWGVVVVVBaWxHU2ZGSG1JYm55anJlaklYb2liSS1EckVUZXJnVm5HQS1oV19YZGNJdUJYOUZ3MzNIbjdNZzFxTFdqTXcteVpOOXE5bmhF?oc=5"
-  },
-  {
-   "t": "Coupe du monde 2026 : la FIFA modifie ses règles pour fluidifier le jeu et accélérer le rythme des rencontres",
-   "src": "Le Monde.fr",
-   "u": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNVlhqajRXSnI3YkNJWExkb2dSMnFJWkVUekRaZU5uYlJMT2FWa2xwYzhzajRIOUQ2dmhSTmhuQ0JSM2pFSmJpQzlmLXhYUTcwTXdRWi1MdWdHTEFKY0U0VnIyanR5VHFVaGVXNDMxOHpwaE1nb0I4dDU3OEJmZHY3M19zNkR3OTZMRkVTemU3a2l2LWNqVkZZTEI4ZVJjRU9ZWEdoR2xRcUtkX1NRNkdOYXRkQmMtRndmR19zOGdvelMxU1F2U19DOUVpR3p4YzJ0US1CMWJFemJJX1VrZk1xc1hicjFReGJCUVJmTU9tVkk0OURiSzF1d2NlQVE2UWZRY3Q4?oc=5"
-  },
-  {
    "t": "Coupe du monde 2026 : sur quelle chaîne télé voir les matchs en France ?",
    "src": "Libération",
    "u": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxObEw1WkJwNU9NUVNQbzNtSklIWDIyNWttNlVUM3ZfWmxDTHlZYnkzeTcwRzVmWVBGNlR4U1NuNXV6aW9Wcm1pVWZiZWhXSzJCWTJkb0dOSHNIUE1oSjZwejk2Qy1yZk5iZnRMRlNoT09uejFlQldFWXpyUXl0VVB5TEtHdEFpc2pFMkl5M3h2VHNRZTRkTHNwT3MtX19pZXYyUE9WMXRCRXhhaDk5UVlvN2t2ZHhacmdFRWNOMTNObUZIdTlhTkhoYjdSRHRCUnV0cU8yeXVNWlpFeHpUOExUcA?oc=5"
+  },
+  {
+   "t": "Cérémonie d’ouverture du Mondial-2026 de football : diffusion, chaîne TV, horaire et invités",
+   "src": "La République des Pyrénées",
+   "u": "https://news.google.com/rss/articles/CBMijwJBVV95cUxPZDJBSVlDdEVzZnF3RlVkcVF1WVVabUQ4anR5WWMyM2ZzWi1uTWE1OGU4eElxaU5vNlhmbVJ1RGxJMEN4ZjV4cl80VlVuN3NIWUlqLXZ4SkQ4WXNTRFljazRsc2EtMW8yQk5raUVqV1dScHpUTkNhblpudHJqdWhpRi1lZUhTMTlSWHVtb28yaU05b0NFdFFRVmdqX084eC14WnhXZXA2d2dSeGc5RTRvR2dlMGtxUXVhTzJCczY4UHN3SlhkVDlMMzdjSnZuUFI5TTNHY1MtUEVBUGktRXVGTTFXY2puNnQ1WjFkYnB5ams3Tk9YaG5mRUFncjBPU241VUYyNVN2VUM5NUNmRXpn?oc=5"
+  },
+  {
+   "t": "EN DIRECT - Coupe du monde 2026 : accord trouvé avec les Bleus pour les primes, les Ivoiriens en colère, des manifestants autour du stade avant la cérémonie d’ouverture au Mexique",
+   "src": "Le Figaro",
+   "u": "https://news.google.com/rss/articles/CBMiugJBVV95cUxNLWM4RVVYMHI5Skk1SDkyTXBqV3hKaEZCY2VjUGJqcnFjY1ZVNXFSR09kRU9SeXZXSE51N1NPSWtNTF9ka2JlODNYcWpzV1ctOTY3dktpU3JqLWhFN2VuT2xGb3lUSjhGWk5sZGZmaVpOZ21HWHhfbHlUOU03dkY4TzdSV25hbDB5aDU4dFNPamFGX2hzMU95bHlYaGtuYVoxQ3dJeDRjZU5uVF9BdlRxWUNZMWpjb3RLeE9ZSVF4azNnNWRLYUt2aUU3TWNOWTJ5MmUxaFNLWDN2SjZlYVR5T0Z3dUdwZUF4dU43Z0NCOUM1YkRDR1Fya0lWU2haQXVZRkhXQ01xeHl5ZWZZcjY2UHVRQkNGR25fVHVWYmNXWWZPUi1sVEJNY0pOZmRHemEtQ3dBWk10SVdIZw?oc=5"
   }
  ],
  "ar": [
+  {
+   "t": "القنوات المجانية الناقلة لمباريات كأس العالم 2026",
+   "src": "اليوم السابع",
+   "u": "https://news.google.com/rss/articles/CBMinwNBVV95cUxPMVVDc09JMjVQMDhfZHIzeVJuZnJncXh6RDNjeFZiVnphRnNCcWZTQUxVemhxbzZTMWZQQ0ozaVNualQ3SUE0UmFSeEc1QjFWSVVyRlFLSGR1NzJvdm5DNU1BVjVSSVBOS0dSWGNXTXVhTnItbU1qSXRGcFlFOXF0cl9WTFducjhXX0FKQ2FtcDlDTEkxMzJhUmRfYlVQMWdETHJ5YWM5V2NfcVRvT3MtanJVRkpZQm9TRXBZbml6Q3dUVEdDQ2s3X0FzY2JqY3JhNXZzTTBFU2VBY0hhYlJlbnZiNk9TWURmWE5uUmw2V3o4WnlyQV8zWDZWTVd6N2xuanMtcXdUdHFrRDhveVBoQmJMN3UwLXhFMlVsWm1qMVNXQ183MU14MGgtY2lYUk5DYmcxQWtuYWQtWi1BdF9mMzgwd1MxRVN2QkFMbmdSSTl5ZXNzZHpnc1JTUTdJWVB6aDY4LTcwVTJPdjlVS3J3aUJvS0gzS1hEbkxUeFFidEpBM0laelNtN19UdkpZV2gtd2E3aXlSODNkMGRjbzVR0gGaA0FVX3lxTE4yYUZ2X0Zfb19uXzQ4SzM5NV9qNHM3SkRaSGZReFZUcEczUEpreWZjZkdWZmI2MVdxRU83UzZTRnRnbWpKUzBJM1MycV9HcDNydHJqMC1lbVpiWkw1a1JKTHYtWEJfekQ1V1JjcHhveDBNcWQwV2JLY3IzaV9BX3RabEx2dnAwVlBxY3llUFAyb3ZGbmx2ajFmbjhaNlNpajZDUDlfMGFOX24zUE41QTI0b3lIN3o4TW9nSHNwWThsWXMtZkxmbU5BUG9Tc3RKdU55dmJlT2lYQnJZXzVoU2M0X3hFLW4tbWJxOFhCTnJzSGUyb3A3M1pEUkxJSEY5TnBXdThtMHBkaXpLOXhLUEV4WWljVnNUTGRiQzc5ckk3ZzByenVld3hGVDZDSDFxTEZzQ0hodkJzQ213V2JkUFVzWGRmcUpUSDJDYWN2c1Vkb3k3YjR1eGFOUnY3V3UwMndNWjBCMjZTYmR3Z0Y1WkkxMGJLOXFLQ1hydV9za092c1B1RTJpejJxTWJURnRGcEFjT25Oa3hRWTV3?oc=5"
+  },
   {
    "t": "منافس مصر.. بعد تهديد إيران.. ماذا تقول لائحة الانسحاب من كأس العالم 2026؟",
    "src": "يلاكورة",
    "u": "https://news.google.com/rss/articles/CBMiogRBVV95cUxOSFF1VE02eFJrQ2p1bEdyOF83OTJWdW5pVEpPejV4OUEyWWdIYVpPRnUwbUNFTjVESmE2NGFCazNkaFJDY3dsd2E3UERwaG5XaUdqN1FlV3pnUlBMdm1jS0E3b2g5c0hLT1BhOHdFckJrSTNJRmRISF9iZ3BMaTh6YkpIOUNfSTRJd0xCSkNxblhrOHZLNnVNOVhHVFhKYVJmbkxhQUgxenlRM1pUbXlmbHdSTWY1a1g5Vm0zUHhvUDlfakFEWDZCdXdkX2U1SFowd1dFVzBxbmo3LXpCeFBPYzl2dkROT2VnR2lmTHplQWs3QUM4Y1VDaWhCZmNQWmoxcTlraThQMUpURDcwZUp6dmY2YTQzYlMwM1poRWVmTHNvQXZETVkyODBCeWRtMzdGaDA0OUwwcUpNTE9nQWkzVGhSSG8tNnlqSEMydTcyaHBBcGtQX1pFc2VzNVlUZ3FHRTBpb0g2bGhaQl9TOWh2XzN1NWJQRUxabWc0VGlzSTVaUTB4OUplV3NtdGd3WVZCWl8zc3VmaEFkaDF0dllQclVJMnphYVBVX0d0UUJqbGJqWEUzRFRQLXZzZ3pvUWFoNVplWE5yaVBzRk1TQUpyZzE3MWc3N2VaLTF0ZUZJblVQTGxKcHRoNW8tVFVqMnZYNHFibzZSeENMRW52T2RvS05hd2EtNl80aFJDdEctTFUybV9OaFAyVkxDdUVEdksyYkHSAacEQVVfeXFMTlRJdzVVajYzRWp3VUw1U0dHQUUtTm1pdTFrX0Q4SjFmRFVCaVBTV0IzQjVkeWNqV3RSOFdMNHo4S0JWQ2hnc1dSZjFoOWl3aDdtYmktYnhpd3ZfNXJrX2d0YnhqaG0zOXJqQ3VBT1pLV3M4VGc5MVdwOHdacHZDb1dUQzB5VTFGWEtwSjRoOG1tQTJuZzZ3aFdlSkdFOU5PbUVUWkUtaDdPaVBYQ09fUDIxU1NHaEJvajJ1ZEdHRU5XeEpNVC14ZTFnYUxHU01lR2R2ZVdGZnZPQk04bGJEc2o3VWFIMS1nVEpxWFhrTlVRRWM5ejFZV2VVa2RhOGVRc2E1eXd1bG9mc1l2ZkR3Q2xhX0tYeFFlU24xb0d3Y0N3aHhhcDRRNHZCV3cxSEVqUk1Ld0Jta0pnNDE3TmZjbU5yLUlENUFoYzcxd3pGUmNuZk5oMkRQczJkeEtQaGV2YnUxOVpoOExOMkRkWnlGMWxmUHR5aVFyckpRd0xZbjROOWM2OEhNV2YwWWdlQmxGZFROSGotQTEtOGs5OXp6UnQ2QU9BbnFIbGFzUXVMYXYzZ1F1a0k5MGcwWU9IZVFXNUxLaXlrOGpTMXVrQjNxT1lIVmlHS3U0N2VsR3JfX1lDZi16ZU13OHFWaUpXZ3ZOaDFqTzlqMk5TTHhGdWY4M1FreE9aRnRVbDV0WGhxdWtmSEREbV92SFVTcjgtYjJOQzdBbDUzZGc?oc=5"
   },
   {
-   "t": "إيران تهدد بالانسحاب من كأس العالم 2026",
-   "src": "Masrawy",
-   "u": "https://news.google.com/rss/articles/CBMigANBVV95cUxQcmhtdUpMdW54aV9YN0tldU1fRHVycDVCWjl2Q3BUN242cW9reDNsQWlfVnE4U2R0V29nTklrN2ZQTUROUUFKbV8ybnBVdnVEYWMyNEN3Mjl2TVd4VlJtcnZDRTFOT2pOcEVIRmxvQ3YwSXhhdlpkTWExc28xZEpJSjk0NktNbXFkTk5YUHJWQXFCV0lHWV9sczVmOTJUU3lrazZWa2Fhc2RrdnRGXzRybFVycmVFOWRneXVPODFQMmJxZ2dRY1JsWVRTRXpHNWN3NmxCVzlSVVRfQmJ0U3dTQXVjOFc5MDFtc01faDB4X2JyTEJFTGJtVENWT3BweFpwRzZmUUEyUlVXZDRtaWl6WXZndWtRbkswdHE3TnE0U0pqTjFsYktJUExfM2t4a0NfMklyREpoVnJQU2hGWnpPMlNFNnkxajY1a284NlZkZ1NDWTEzM0RTaUxwTHB2RTFSZDFnZmlVOXN0TUczY3ZnYmJXZDlSWW1KdURIRzVNNXLSAYYDQVVfeXFMTVpFdVBMQ2RNcDAyNGFUazZYQTZfSVRwckpudTdrQW9zQ2VNcnkxaXFrbkVabHB1TXJYTEVncnRNYWp6XzFPT1l3bldwSEU4Ul8zd1BRUFV1U1FzdEx3MVdjdzMzZVE1T0MySWdDTGpnd3FoMVY3ZmFPbE1mZ0M0SFFsVUQyMEtEb0ZpSTcxSVZHWXJUNkp3U0lPaV93V3JkXzd0Y1RVakNKRmFGaWtfN21MWE9SNk80eERaRnRDQ2NoYmMwWnZDRXRlYTBmbEdWR1pPRHhybmJwS21RXzIxeFA4allWUnVQU1E1eUVZOWJfOW9pSUQ5NVV2QzE3c0YwUlVoSmhiR2lhUUtYOTRpNXRLRG5wODlmVURZNm8xb0luTXpOaWxhMTF2WUo1R3FhNlNxNmd6TGdwOHRMcEtzRFpqVTA5RFBFdHNjTEFOX2NaVnBaaWJLbURDWF8xSUQxUmNITFYtU18wcGF4ZFl0WndzaElLTDJYUFRfTUVSSTF5aXdLVURR?oc=5"
-  },
-  {
-   "t": "موعد مباراة افتتاح كأس العالم 2026 بين المكسيك وجنوب أفريقيا والقنوات الناقلة",
-   "src": "المصري اليوم",
-   "u": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1XZVdlRVo2cHBXSXZFYVBJTl8tUkcySHRXLTRvSFRkeHNVUW5wMnR6WEx1NTRkTmxjOE5la0hjRGdBY3BIRGladEZFYUNDckVWUkY2QmxDYzdTVEpDczRn0gFjQVVfeXFMUFROWlNtYldYdl9NLU5hYmdYNXVSSHJueW5pOHpJTEhRZjkyclhNeXg2YUh1ckJieVd3LUZSM1k0QmxFeDRpZmFMcHl6LW9OYnhOWTYtMnJQVlNzQkJOejFRUXBz?oc=5"
-  },
-  {
-   "t": "ما القنوات الناقلة لمباراة قطر وسويسرا في كأس العالم 2026 .. وكيف تشاهدها عبر الإنترنت؟",
-   "src": "Kooora",
-   "u": "https://news.google.com/rss/articles/CBMi6gVBVV95cUxOTHUzOHFKa0ZvZmt0WEIwcWdtSE1ZRXM3RURqSE1leHpxeG53VWZjaGloVTZNTFRrazdHdU9ENGlDNmcyTDNxajB5ZWEtRmJ2Zmt5N3pIeGlNQkR1Sm51S1hyWWNjZW05MkFiVFpQX2pmSThXVWhTbnpaeXg2UFVoMXQ5YVc4aE05NEdVM2tfV0hXdFE3SjUtY1luNXZaejdCMmM5QVBCN093WmFjWTFHcFVuUC1EcFB1Q2dvczdqcFhDZWNvZTRHX1hCNy1IOGlnVW1FUEQ2MlJzVEZBUl9yYVJfSGE0QW5fZXhvWE1pNVpaQnVvMHN5RHN1LTgyelh5OXpGOThnNm9xRV9CVTdoa2stNFF2MkhOQzJPNy1mY3V1S3ZFbXhQajAxOHQzLVFwQ0x5THpSY2pxVUdmNTRkdExHNGs1bWxWcGdqdVJHN0tWcjJDaTN4VU9vMjFyZW5oVkRnelRaNFRkY3Ffd0N5Uzlsa1RrNkw5M29Odl95SHdPczNtUnc3WDN6TnlkMnZ3TTUzdld2MU9lR1BnQTluSkl5TkoxY2JBWGNwYzZJb25JLWx4QVhrVUFERUY1S1RJZzRMSVNqTTFoODczX0pKdnpZaENqYjRDbmNoYm5vZTR4cjdEYVhNUlpRUlFFRUV3RDZFX00tNlo3MDdmdjk0TWNnZEczZkp6dVJwWnh2N3JOT1JBMU1IT0pCUmNkUmg5WEZQVXFRNWFIVnVKaWpiMVVCZ0t3V3RSUEYwYllfMkRLdG1QZjFUaU5jVHpZS0FnQkcxWWpYTnNKUG5uamFjdW0xWjVaUWJQSmwtZ19sXzM1WkxodDkzMmQ5Y3ljWUxxUERMY1J4eTRxZmdoWnBHN0tiZ3FzRkxTWTUzM1RveVlLSXpOWnk1UHlZWk55Nk1YUnRQS1lYbVQtN1dXYUlWNEVFMVVrd3BpSWhQMlpRSlNFQmdvaXA4XzkwVHh3c1N4Mmo4YnBSdkp3dw?oc=5"
-  },
-  {
-   "t": "غائب عن كأس العالم 2026.. فيرنانديز يشعل صراع بـ80 مليون بين الريال ويونايتد",
-   "src": "اخبارك نت",
-   "u": "https://news.google.com/rss/articles/CBMiqgRBVV95cUxQbjdYTFJqbDZOV3dIZ0oyTEZhcmxQMmY5bjlhdEo3SnlKZ040Qk9CM3FRTk9ZZTliWXctWll1ZDltdi12bEh3VzFqLWdDVDA4YmJ2Z0pSbk1SMTBXa2hZMmJRcUg1d3NHb2R0Z21SOXFCLXNtTjdvVG5wb05UbDllZWVhTTNNUVJkQmNRZUhhS21BSGhpTWl5eGxMMnhZSF96U3JtaFc0SnJjaVpoREJFelVSYzlZTVZ6RjhVVXFOSnd0a2tRYVU5WFdXUGFmVTlPczZCbkZuaUtxWEtaYjV4ZlhvbkJkWlpxWm1xeFdPXzY0NzA2eV9na1JpQ2haZlVlTXFKY3lPdTlvUzFQbEtHVVZsX2RmTDVQc3dtM3BXWGYxcVZab1FzWUM3NS1NWkdEMTVWUVVKUmxDWTdXSVpoSFZuaVFqVXR1NEtZamlvcWpOb044MTJiaFdyMVlkT2pUckxrOGctbUpDTXZoeVR4NmVsb3FaOGpSUFRpOG5pY1FrcFMwWkFlNGNuZ1lxMUxhVnI1M0lBeDlNR0JmcmdMS3F5NVR3ZXVqd1BvQXVfUVZyemtjUGtDemZBbGNqVTY2RHNCVkJ4dERGaUNycHNZa1gyWm5vcG4weVlCb1B3cmdxc3BiOUhjSFBibTI0NFJVQ1ZQb0c5aDFLS1RKMExxa1RFMmxOR0JjdzREcEFwX3p5T0xmQ094S1EyaTFXMkFXYjcxZDR4SmhaZw?oc=5"
-  },
-  {
-   "t": "مونديال 2026.. بث مجاني لمباريات المنتخبات العربية عبر القنوات المفتوحة",
-   "src": "صدى البلد",
-   "u": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE5HaGltQjVrOFNNSHFfeU00NjFUX2VidEdSbi1OT1pDdkI4aGpBU0x1eHdfQmRONGJuREJBc3hOSE82SmhZX1Nn?oc=5"
-  },
-  {
-   "t": "كأس العالم 2026 يهدد الإنتاجية العالمية.. خسائر متوقعة بـ17 مليار دولار",
-   "src": "العربية",
-   "u": "https://news.google.com/rss/articles/CBMiqARBVV95cUxQbDZZcl9vRmoxQ0pfbHpXeVRlUTlIbkdUc1hXQllmX1dKNUtDbjlxdUdMNXlQQ2tsYzJsYi1pRFFyb3FCa2JWLUxvb0hBckVCcmhfVWV0UTlVX2VfRHQtSVgwOGp5NThzLVA2ZW1HSF83WGpCVkNoMV9jcXhKTnkzVUNpXzRickRkX1FBQWhjRHBncVJ0Ylo1NzROWXJDX25GRlJoT2Rfc3pvWF95THpMb2JxTHdNV1NzbzByNHdFNXEtT0k3VjBMT0tORS11VE16WV9wV3o0Y1k1SWRTX21kOGpWLUc3RU5hMGlZN0VHUzlvbUw2a2FOS0NyLTdhTnY1a19NUVlENWVYejRYa1FPb1VpRll5MGNQR0wzTUY5Y2F3X3ZEeUt1SXRMX3c3cV9UVUFjTmdSVnkxNW9lX1cyVzZocWppVkRuaExFQVFmYWN6bm56MkpSNDVpLUwzdTI1a1VSbGJLUVpYanVCZldSc3RkaEtvRnN2aTlWVC1HUExqZTF2NUlOTGhWaXJ0N1U0SVZSS3FWZGFBQjI0dFpQWnV3aFhmcktCdzRMRkdtdko4TC14TnEwaV96WjAyMFlVQTdlQ2VXZ1B3eXdvZ2Rnb2tpRzZ5Nlp5Nldsa0FfM0d2OXo0a19yYXJWcG1oVmN2VHJRLXQ5YWM2OFpiTk5LODlyTUpoRUNUNjVoNm5LQjM3VzZ6eDdlY1dZYTlmQzNPaDF0eHpSZFg?oc=5"
-  },
-  {
-   "t": "مونديال 2026.. من أبرز النجوم الغائبين؟",
-   "src": "سكاي نيوز عربية",
-   "u": "https://news.google.com/rss/articles/CBMizAJBVV95cUxQSkRaSHozWGVHaVVNbUNQZHY1dmpORHpvSTlhX2JBRDNMQzdJMkJhb3RHSjFPTWFzTHY5Q2N0OVUxT2ZaQS1BeE1xb0d2U1NGOG9zRjRYWEZCRWs1YUZjV19KOTFZRE9lR3RxLVBORzhHYlFaWFNMejVnSUpVZzZQN2dXNVlwMzE5eFJqaWpHdUR6QVJESDhidzdGbk55QzZfZG5wZFZhdllNamQ5Uzh1WEtiYlRYMzJJZUpFdGtXaUpleWZCZ0RLckJsQklmbE5aVUJUby01SVFVNjFKcDlkTmVGOUYwb2VfdGVqWkNXS1BKWFg3c1hHNC13Q2ZRbDJGYUpFdmYzVmVhU0wyV1RRa1ZJUXBpNjRnY0FiNHU2bDFaZTF0Ul96OVZFNWJib3phSk1aZWxZbTVyV2ZlZ0RuY2pxREhvODBzWkhYTNIB0gJBVV95cUxQaHVDVlJUeGhPNmJkcnFHVWhyT0kwR3BWX0Z4alVGdkduam9BZjkyT29UeDN6QTJGb216Q05PeS16NzNxbXVOWG5fUDh6dUZWYTQ1NUVpeDdDeHlBLVl3YVozZFJQLXE5N0xJa1pWRlJYazhKZWN1WFZSelJHbzdVa2dMNU9xT1BrMGtPZ1JLaUtVT1RwQmRCSGFISUQyRTRobEpwZzZPbmhxUVZBUlJFU092SVBMYkVab01BakxTVkpMMWl0Q2NsU1ZtUnJYZnRyM0NoMURhdHB1RHlRdll3cDFiSXRpQklTdTZ1VXdIZXNWUUg0eVNNR2lTV29JQlBaWGN1ZG9lVHMxalFEYkhOMUpGeXZFc0d4aWpwUUcwdG5rbzMtZzhTY19kTWxQaFVHM0tiQllpbmYyWmQxMHZiM1ZBNjI2Sl96Q050TG5EMWxqUQ?oc=5"
-  },
-  {
-   "t": "اتفرج ببلاش.. تردد القناة المجانية الناقلة لافتتاح كأس العالم 2026 على النايل سات",
-   "src": "MSN",
-   "u": "https://news.google.com/rss/articles/CBMi7gRBVV95cUxNWkhtcDVqT21GYUc3Nk5HRURidTA1Z2ZTa2ZQcE5UQTUzWVlGajA5SjZpdHQ4LXE5OVF1ODNjYUt0djgzZjBvU2NYR2ljSnRwTUQ1bjNEZG5OWERKSHd0aE55S0JlX0JiQ0Y1RVVpWFBXOENheUswZ3BidGotOVpOMll5bTNVMDNZaWRtZlFENTdXWjZTcTdIZ1ZpbUczSmNia25rSlVBazRSZVdLU2ZiTHpxNHFLTE9JbmpoUzdCTDdIZHRZRjIyek8tOWJJT3IydkFVNC1MNXpFS3pRanh1UkZjVVV5eEhTaGJ4akZmNkJOS3MzZFB0eC1pTS1IQ3hPQzhsWi1mUUdMMEY3UURCemcxM1kwd3dzdmIwZVc1NGUzMDVvLXRWRjk1eUtKUE1PZ2xDM05wU3RLTUREc0EyZVJwWHhXNHlMcUVBRUxiUXRDYy1oQnhPem14V3pSN3F3SlFzNmU5cTg1NHo3SUg2RTk5aXdfckdzUV9QUjZsakFNdXZQdFJzanJaN2JJVWtZWUI5bjB4MjNwemxHeU9ud0pjRjRNdG80VFR2Yi1SMGZxMGpYN1ZtTEc3azI1R3BBbTFfWG5iUTdnX25fTXVPMnJpU2VxdDZqbWdHTm53NzNYdDRFYmY4WG9CVnRoMDh5S0xiX1FkdXRtUVlac19WckpNcTNfUFAyTFBfT05ERWY5TFlkOWRyRW9rSTVnaDJxZHduY1pPRFc4aFdmX2h0a2R4NkNGb0xSS2gzLUl2UnUtTjdDejFfcGFJQ0xYNFZFdkZFZnpyWTJLaHNudElsX1VSVTA2M2pMREUwQ2F3?oc=5"
-  },
-  {
-   "t": "كأس العالم 2026: جدول المباريات كاملا من الافتتاح حتى النهائي والنتائج لحظة بلحظة",
-   "src": "مونت كارلو الدولية",
-   "u": "https://news.google.com/rss/articles/CBMijAVBVV95cUxQRmRFcmNrWkNZRDIxelc0YVp3bTl3UnlTTkVQZGlkei1kLVo1aWQ1ajZtTXNBMjRpRXRoX3pIQXJCd2pZWDhSeHZtX2F6aTcwdS1hTjBhaGd3WHhvWWVxMTdPY0ZmVy1teGFtVGo2eEItckxFUU5pQkJ2d3NyZXMyMFduWE9ZWVlBTjJ3eGRmOGFqMXlNZVhSeGNxaEhlamdEYzY4T0xXaV9XSFBVODBhV19OenpxQWZCV1JNb2FSc2cycXVUN0JRMDJVTnphdlQ2WHNHZ3QxNDk0VnF5dVNXSHI1TC1GaEcwZ1JPQndGOFBPSmQ3WTN3aUtzTGNwazRUSDVLNHlhbGkzMUFfbDVXV1l1NzVLRHFENVJfSW05Q0tBbWFBZERtVWpIWTFiMHZFOFMwQ3FoRWwxdHh2UkVvWVR6R0lfaXFSazIybG5MOFlRTm5WR0Z4U2lKdFJaMHYwNWtqUmlqclE0VlVRNDU1d19iLVZfU3EzYUFobF9LSlBGeFJzZktEVGFSeEpXM3EyeDZJYmpjRUZEeVFZV0R6WmxkQ2I5NTYxWTdzSlpkaFNTLWpGLWFwaXppbmJ5LXQ1VnZLcXJmQ3k4UXJsb3dXYlNvdF9vd1JmcFUzcklpRE5jYjdtV0x6NnY4ZlMzRWVnWTV5dmJGVjFqb1I1QXBrcUZEckpLOXJGOWk1aUtraUZrS0k1N1JWUHZnZDdETnU5eGxlTVgtdFg3VUtUcE4yUU4xUXZldno5cDR0TkplWmI0dUxtTlRSNkhhdGdVU0dGbGk1Z3IwMTBocVlTbFRlY0NoUzBMcjZGSG95MXJETW9aLTcwTlUwV2VSd3hnNFY2Y2FrZGNCeEtFajhl?oc=5"
-  },
-  {
-   "t": "كأس العالم 2026.. النسخة الأضخم فى تاريخ المونديال تنطلق اليوم من المكسيك.. 3 دول تستضيف الحدث العالمى لأول مرة.. 16 مدينة و16 ملعبًا تحتضن مباريات البطولة.. منتخب مصر يقود أكبر تمثيل عربى.. والمتعة مضمونة",
+   "t": "قناة مفتوحة تذيع مباراة المكسيك ضد جنوب أفريقيا فى افتتاح كأس العالم",
    "src": "اليوم السابع",
-   "u": "https://news.google.com/rss/articles/CBMi4wNBVV95cUxOeWc4SUJ3XzVLeFZwZzNqVHh2OC05UVdwWk5LTElZdExTbjdBVTVtc2UtU3Z5M05jWGlqUThkR1RhVkxTcDFnajFfN0FSTEcxUzZSSDk2cklVQ21tWWxpbFlJc1VJd2xKYkE0azRDeWdNd3NkbVkzdFZlN2dmejEydHY5ellQZW1TOVB5bVlHRHE0Zl92a1Q5Vno4TDRVZmFkRDIyanplUTd4VG1MRUs0c0h0TmtpVmp6V2VCTDhTUVNsMTlWS2R5OFJEWG01ZWdIQW5XSm1Yb1ZLUk9uTGlwQmtXYy11OVFFRU81dGktb3Jfc3pzU1FINzVZVmVCMnBydGtHN3NMMXJCU1FDTjhJLU9zSWdWQnlXeFVEQWJtM2tfSGFoM1k2WkF0aVFaTlFucDRJeHlsa2FIcW1hbnpRSW9KVmxKbS1XOWxoRXhzWFBnWEx4aUItTURlMV9LTzlvSzJEa3ZmTy1DWHNyWEhlenpveUFzbXdfNy1kYURsSzZCYlVSRWZpVjFUNkFDcjIxbE9ScGp0dG1yVGZDbDZ5SUdURktfOWxJQjJaOXBpTDVPTzlJYjI3TlAwandHaHJsbEVpVDhGYzljUEE3dWxfbmZwR0FxNjFBWWNwOUJySGl6N0nSAd4DQVVfeXFMUFVyNTJRRVlYLUMwSU1uTUNOVGlIWHFUc0ViZ29VNk5ieU94US13RlBGeTNHaVhncU1yVGtkWmdQV2sxcGhKbm9oTWVScXJXbkowaWJ5YTJvSHF5YUZHNGtrRHRqVGUtb3JQTjF1TzlKcUpzeXBnUEZqeWx3cFR1Q0Z0YVJnTU96SUlxQVJ2eUloOUxET0JaakM4MDFHSTMzcVNsYnFLSzZYR25tNG9WSGZCdVB6dnE2b28tMlVKVUx6UldqbXVrcHBWTl84WkFTQTVnOE1DcC1EVHhvb0wtLVZmaGhZTUotOXFXOG8ybkc5MzVVR21TaGdzeHdmQ3p0d3F5X2FYRlNTMGN5ZGxjZmVqSkdvNC1jWWJER0twWDBRRUt0Skl2aUNEeUVrbWFhLWxhS2d0Q1NLYjNIOGVJeFhrMmhPakpYS3pYNUZXeTVjVmdDZmo5aGM0NXdxOVJ1aVM5Ujg3ajY3WTd6ZXNNUFVnZW5TNkxHOUxvanFjWlVUaUlSZldDNWRsdWhCM3VRSmRhVVhBdTltX1RZb0g3ejN3UmdsNThmenpRNTM0cnk5NUViSElQOGJPTjFWSXFuMGk2MnZrYWpoeFNtb2thclNqVXI1bUFVa3JOSTZHUQ?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMi5gNBVV95cUxPQUxNWlE0c205ZG5HcC05eFotaGx5aTEyVExGNHZUeXFuVndmcWhVOEZuMnRNUVMtZkJkd3dtbV9YbGotQUtTWTlGMEUtQzJOeTlhX19WYnhpcDdMaEFXa2MtdUNPU3h1dHg5WUQzZG5pZ3poOEtST3JTVjRBUGhtOUZ6N2xMb3o0bUdNdEVQZXBldVB6a2E5d3RiNHl1N1JmZHJjeTgwUWVrQkNWUHMzc0t2WU03OS1uNDN3aXkwNlA1M1hVV0tGN1NnUzJnXzg1VlFfUkoxeGRVNDVQWVlmV2ZyQzE2a3F3OF8xbDhyeFU4NkhUeTNLajlsQUo4U3dYR0VWbWVpRHFDX09NTE8yWGljcVNLTjMxdC1ENXRDdkxJUUxBejF3UFh6VW92QkNocmxQenF6MVR3NUg3UEEzZFk4VkMtTS1qZ3l5eWpqQVNBM1l3Y3FwSzBQdTI1am12bFVtc1dONjhKUExIVDlCRjgybFZfLUxmeG1uT3p5S3IwS1ctNFo0UXVXU0h3eG1TOHBSRGhYSWxGMkJ1VXdDUHJKamU2SVBvZ2lmcmFSUjBrR1BrdmlXVThCRFNaY193X09jUWhWRHBlTVlnZDVTWE9YNlFYUFVlNE1lYlFvcElpMHcwenfSAeADQVVfeXFMTzliZHZwTHQ4UVE5eUVxMEcwVFA5N1A3al9jUk9wdk5SUXhFaDZKVUpsMnhwdHpTc0hzZ2h3UnBlRDZYT0k2SU9VY1B6WHc5SmhzT1lYck9NSW5RVzUwaVgyWHY3bHdldjQ4Zy0zTFpJTnBUUHhISGMtdG9sNDNEQUQ3REJaVXNaY2d4MmliNkhnbHp4b2ZiTmhjZVhDbGstTFFLckFud1l3NWNGUXlOS21xTXJpdVFhX212amFmcm04ek5yVUhMRVgwbm56ckJGVVRWa3NtTnpWTGxLc3dBTXhLdEJqdTFGU2NlV0FNMnZxTzVmQ3JRcFhwNjUzdnUyUFFQdm1NZmFralBMUEZUNHBCeVNoSm5GS051eVNSTmlwX0J5ZEUzNmZuQ29JN2lxWHNfV3UtYWV0RWE1V2hTT2pNWDRIdkVnT0tuNm4wUVItRlhnMHZWRGRBaEF0VkZteWFudHZYRDlBd3V4X1NuaFZUb0pDb19uN3VkQzNjTmUyZjJ5YXl5bko4UmZJOW1NamxHVlJMc1dIenluMG9Sa2NGaVhLTzk4OVJMN0t4djBlTjN5Z2ZHeVl5cTg0RGN1ZDMxZUloLUNobnRLUEtONF94SXczekt2RUlXai1GZkZo?oc=5"
   },
   {
-   "t": "مواعيد مباريات اليوم.. افتتاح كأس العالم 2026",
-   "src": "يلاكورة",
-   "u": "https://news.google.com/rss/articles/CBMi-AJBVV95cUxQb3hsbHFqbTItdjBrQnUyNWVzcWZJOTlhS0lidnAtbFd0M2tueEtqY3VEWXNFZk5WTGNJVUMwOHJqeC1tX2M2TXc2Slp1VGNWTTlqV1I3T3NfZHprWHN6Q0Z4OXkwUE5qcE5WM0M3OWREeE9fZUpTYnBWMkZvWVVwWnl2ZlRXOFBqNnVHc2tkYThrZGNSQWl2OUpDbVhrT1FMNFoxd092WjNyOXRucHNrOFQtTFJZU2h0NmVaUzhSRzVwbkM5eHRCbURUZUw5YUxPWmhzb1hEaXBOME83T3MzbW13SURxV203bXlDc0JZdHFoOU1qQVFpdHVpdUt1TWtlRHl4NXJSa1VUOTE4bE1lLXFXQVlOdWRKOWNtcjhPcUZWM3NnaDE1QW5LU1VNdU5zWkZXSGNUWW5ZVktsYUFYdDJEc1lzV013Z2RtT2JnQkxwLXE3RHl6SDZMZlUtckN4ZVdYMUtDTGVGRXR1X2NIMnZpSlRIb0FH0gH-AkFVX3lxTE83c3ZDbmFrMDJFZlE5YS1MNmt0eU5ENmtOWE9FcmNPRGtDYjJ1LWFneHJnYnN5Y2hBY0F2WXhEb0Mzdk8zN0VDeTlIOHVKSm8wSkgzWVc5SzFDVThjelFUTEllUVBzRTBaa2dqWWN6UjdYYUNlR3E1Q3kyTmVnaU1TMklfTmJrN1ZrMGRwZUM4YldqMDBsV0hjcDRPLTdfeVJvZ0pxOUdfM0pueWs1N3hsYU9rUUlyWTVGYWU5YzdqOFo0Nzk0d1RBQW1raEk3RUNESFlvbVcwb0tCS3hnNlNJMzlvc0Y5Q1JoSlVnamxVQ2ZNdXZWNEVVSEdJd0plc3NENC1ZNGhBUS1sRjNzVFNHR1BEbVd6aUU0NzlUUm1oN2p2bzZLN0RQT3V5Y25pV2hOOXdjelRQNHM3a3BOX3k2d3lxbjZDcVJJb2xSZExyUGU5WWhZbE9ORl80dHhHYmZJNU1HVnF1Q3hxTmZWUlZNOGhlM0FyQVQzZjhKc2c?oc=5"
+   "t": "بعد اعتراض الفيفا.. تعديل قميص في كأس العالم",
+   "src": "سكاي نيوز عربية",
+   "u": "https://news.google.com/rss/articles/CBMizgJBVV95cUxQczE3bmFlajRwVUstLXRkbUUzeTRCSC1fWFdlU3Z0eXBrVFZTTHpEa0VENm9odjVsOVpjQ0hHU215YVdpT0p4WkFRQkw0MEVIRWkzTHh5Zms5cFcyTDJMM0QteU1tb2MxNGpuQmhwRUg3QTJaclNjSHZ5TU50YVV4ZU1SdXptRDNxVExZZzRKV25lbUxHYzhYWTF1LXhwUzNLN0RCM1hoTlRTLW5XdnVhYloya1A2S3ZsR01aTnNEZGhxUWkyUXhIenhyclpudE5lRjhmTnQtd2x5UGlPNnZzUmRaZHZiTWNSM1pMdXljZFo5cm5lRUlJZ1NvcVhDdlJsT0dDdVZPaWdhRWM2RlM5ZG5weGRVWTNLY3F6YVFLNU5CQ3F1SUFzM3liYi1oMld3eUIwZU1iN1N0Z1BpbERGV1pCWnNZM244S0U3bWVn0gHTAkFVX3lxTE9uYU12Uzc4TXd1YmViZFNTNWNoQWxzUHVlVkthMEtBdjRzcXJhWHBEbl9OX0VQTGVCWDZ5VEYtVUdlem92anQtQ1lhb1ZsakJuQzhlaWJpdmQ1NzJ5djNMbV80RGFLNWhTUXlJOUFMUzdiQl9iOFMxcFBBZjJYWDVBY01JRG9rSGd2WGFZTHRKRk1tU1FXTk0yZkNobTJ4MHdMRno4SExNM1lSUUlhU3F1c0F2OXl4ZmpJZmVPUW1XSUFGYk1uall5YUhReW9SeFk1b2xjS3l6MFNmZjNEbUlzekFIaVM0TG5aS3NjVGx0dzQyRElLLXJTbE5Mb0ItWWZ1TUJveVJ3YW9zY2JNNDdOVzFKMEgwOFM3bmJtWkNpWkcyWmlaMk1pQVZnVWp2dUo3UWpTUnVraHp4WUNoM2JLc0otNGo2MDJZTkxoSmlOUnBJRQ?oc=5"
+  },
+  {
+   "t": "مشاهدة مباريات كأس العالم 2026 مجانا.. مفاجأة «يوتيوب» للجماهير فى المونديال",
+   "src": "المصري اليوم",
+   "u": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9JZVJfM3l4dUo2N2pCNXhQMVFJVnF0ekpIWlB3WEhrazZQdlJGVEk2cVktMVRIQ2lJWHhFZUlWMGdmbGJfY1hNQXhpNUdGVUNzdWFsRmtpVWlLSWVFckZZ0gFjQVVfeXFMTUdKZzNyWVZZV1lUUF9DUEg2ZkktTmRLTDBJblNjQkhIcFAyRzBSMFhNRlhqTnBaOU5VeW1aRVp2UF9XVVZzOF9xcjNzS2VRQi1LYm1uVGtTdkZlWm5JV0x1a2pN?oc=5"
+  },
+  {
+   "t": "اضبط التردد .. انطلاق قناة beIN Sports المفتوحة لنقل كأس العالم 2026",
+   "src": "صدى البلد",
+   "u": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE9RM0lpbHBhdWdkUTJRVUtLUHRqelc1SGFTQi0zZ1VzYVhSTVNqbkM5SnM3bXhLNE5idk9NT0NPYzlEQnVFRGRJ?oc=5"
+  },
+  {
+   "t": "موعد مباراة البرازيل والمغرب في كأس العالم 2026 والقنوات الناقلة",
+   "src": "MSN",
+   "u": "https://news.google.com/rss/articles/CBMiigRBVV95cUxPRXNNaTZxOG9LZ1JEXzFpY1NTYWFVWlN5TVk0ams5SUY2Nk85MV9kM2RUS1g3eGZvUERLY08zZDgxb01SWFFhVVhGZEFwR3gzMS1qeHh3dV9SaV9kaTNNVWU3S2J1ZFBWcUd6ODhkaXNkbkVFS3pLQzFFSlcwUmlJTVNCUWh4cDFuMFFxM2pzUzRlU1paVFJkY0tPd2g4dzRHVXVtVkhXbDFvTlVtd19JZXN5ZXZ0NmM0SFBtSDUxLXRHeWM3Q0p1M2xEYm01Y043Sm1oN0Jsb1ZaWk1JNDYyNk95cTk2SkE2QmJRR0N1TmEzUm5DRm5xZkpXUFlqb3ZYX25jRk5lenFFZXk2dW5FVURmdV9UR0lwbE1KTm9NSmgyUjNnQTVteWctOUk3WDM3VlZPMUtqV3R6MS1vTWlVVVlQMlkxRUVob1E0aGFFR3JyYmxKS3phX1VHY3Q3SGxWRjVJaUh5dW41XzNjLThCaWVJeW1OZTVCYldfNEhnV3BKd0VwS3owcGJYeGZRNEhOMGNSWjAxckNNTnVmWlBJdXQ5aWx6T3Z5TDZ2VFJSbkY1NzhVaF9lV2RRZXo2dkF0UGxWVGxiRlhyTWZ3SWJsUlF6UHpOSWF6XzV4emxYTHNFemZsTFozeWF2RXlzbXBjUEM0ZTdieG1oTC13T2VNaWJlWEp3VVV3YXc?oc=5"
+  },
+  {
+   "t": "محمد صلاح يطارد لقب الهداف العربي التاريخي في كأس العالم 2026 قبل مواجهة بلجيكا",
+   "src": "بوابة الأهرام",
+   "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE41RnljbmNSQ0VNWDV4SnNYOFVta2tsUVBDRUQ5N2ZpTUE4bncwYzl5MGlHSlRLYlRHNzBwNlBPeVdKTlprczdCb2pXTEJCWlluSnNvSkhR?oc=5"
+  },
+  {
+   "t": "قانون صارم يُلغي الهدف فورًا يُطبق لأول مرة في كأس العالم 2026",
+   "src": "فيتو",
+   "u": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE5nSHJDckxJX1hrcXVRUXo0VWNmR0FUdE9lMWt1N1Zha05XQ2dHaElTVExXc2k2QXdHVTBva21Cb1kycWg4NmM4?oc=5"
+  },
+  {
+   "t": "عمر مرموش: جاهزون لكأس العالم 2026 وسننافس على البطولة",
+   "src": "بوابة أخبار اليوم الإلكترونية",
+   "u": "https://news.google.com/rss/articles/CBMi3AJBVV95cUxPSDFNWXl0UXN4RmZXc0UzSnJ4YUZaSVlIYkFCRjRiYnlMY2xxbDVQWGljVWRKdXZHenNEUU9ESXFsbTBoYXk0ZVhhZnlzaDZIRzFTbUgyWXRDaVZhd2w1SGM5OXBjZlpXUzJFV1BfbGRqazdTa2NzVjBuZWlHREFwTHpueFNwZURndUViVjZJdTZNZXcySFFXVUh2SEZ4ZEROQ1FOamJremx2NU4yeFEzRTZadXhmMWZtMVFEclp6ekQtX3VaS3FfSzlqb05VaGJkVnlVSWI3ZDFKbjkwbUdmOUFyeUZncy1zb3k3RG9mQ3dkYTZ4V2lBX0dVMU9nS3ZCSEZ4QzVSX3lEWTlpbi1KU3RiWm9WbXJoUndvaGhYdVY4cXl2WUs5T0lfX3FsUmF5ckZsSTdZa0M0THoxY2wtVzgtbXpOam5mUGRLSGFVQ0NXT0hSVWhpakYzUFg?oc=5"
+  },
+  {
+   "t": "مونديال 2026.. تعرف على أطول كأس عالم في التاريخ",
+   "src": "الجزيرة نت",
+   "u": "https://news.google.com/rss/articles/CBMixAJBVV95cUxPa0ZPaURpZ012SGtFdXNhNDRIMTBKQWxJVTVwTC1SWEtfd0FwZEp3c1dhWVdER1o3bmhPbVFROFhQTkhVaW1xdU9ITHkzazU0SG9ocUI3QXAtaEg1T0dVczNYQVhpdjBaQS1lTUZHTDJkbUtKb1hCZWktUVFiVWxKVnVzMlFjdlZDY05HQzRVc3dWYkgzVC1BN004QnJDNHhTYURUc2pDMl8tblFhN0RteC1PZ1I0Q2FPWDVnOHNvQlNKQjczT3U4UUcxVHhwb2Q4UVFnemlPeDhlbGdXZEczQmxNYzJJRXZoWUtmSTZjNzlSaVAtbkNqWnl4RGhiLXN0RzdMNkdsc1Z3d2Nsck8zUnliZDNheER1ZTRIMFhlYzRUcVZyY1hCaHFxRGJtVDg3eU9WZmo3WF9kX1kxQVI0SWhEUELSAcoCQVVfeXFMUDNHYzVSY3piNWJ0dl9uOENHbUd2aXg1YUZwV20zQWprV1RqX29lMDc5WXVKRVhZN2JUdUJNNFk1RE5sLVBPd28yWl8tTXZLcDJqSm43cFV4R3BLVm1pZkJyVGdlZmZkRFZxZC1nR2RrbWM4LWRBQVdNZWFZNk1UMTUxX3JiUTlpa1BsYzcxdHpfQVRfWldLT0YyRmVlcDU2NFliX0JkNHNtRHRxMzBQNk1YVVlKd2txYW4zb2o1c1E5LVVydlNJUE40cXpnZF8wbkFvOVRlYnQtMllYMFNLbFBrMklrVkNmdXVzUC1lN2NVTWhmY1R2QUVob2lscHlfTWxRaWc4cWMyQ3JwX2lEMmg5R0ZpazlvVXp3X3JhQjkyU005ZGhBQmJDR3g1dzlFUlBQQ3o3ck9XQUp4RVBpZUlaN2dQblVBbC1R?oc=5"
+  },
+  {
+   "t": "قبل انطلاق المونديال.. كل ما تريد معرفته عن حفل افتتاح كأس العالم 2026",
+   "src": "Masrawy",
+   "u": "https://news.google.com/rss/articles/CBMiwARBVV95cUxNNzNFMUxhOHBJQnhsS1BWMEUydU1fY0Z1WUt5VllsMTZFV1dBRG5ER0wzSFQ2VEN4S2VoWk56TVkyM08xd0huODNVWjZrZ2VjenFYOHZsNFcwUzZ5cmZJemY0TjRFVENjXzJOQmhySGFqWVljMFZLRTVWU1ZGeTJxS0hVRjd6cTdCaW83Z3JzWlA5cHFmQVJJWjBFVTYtdHkyLUdKU3hnZF93R255SmRtSHRNLUpqRDdhSnRyQ3RjUkYwVllSb3FZdENrR29CNG5DamhqaDRKUkx4RUFaZkxzU0dzWTk4WEV4d3lUWlM1aGtaM2tzZlUwVVI1WVA2X2c1bGt0b0VRbjlkM0trZHQzREd6bnRobldNSDd4Skk2aEVEdGJnSnpPLXFHSl95Wk94aGNnanRieGJSTjZMR2h4bDkydnRicmp4QUFNN2FMMEh5cUxQMHJrQUM3UTYtUWU2cW5YZVg0bVAxT2NrUklLUUJ2MTQyVmVuUXVHaUlEYy1pZkRvMzc1Zlp2QUE0Nks1elZhbTdHUXFyOXNrOHVBUG93b2c4dWtXc2VqMEJEM1BFeWlTNDdtM0NxNjd5SWh4UnFFbHdzXzF3c1FMWGJ1bnpuMm5ndGw1clhlS2NOcElkOHpySTRxanEyTno1UHl2M09saGxFQV8xSy1qN3Rwdld5ajBGelpWZnBmODIzZ3ZpeGNWbUNJYjhYVERCU1ZSWEZ2dldGQXpqTWhWVFpXOFVLeHJkMjZCY21nMENwRUrSAcYEQVVfeXFMTkJYbkxEbURuTGhtY0RpVnZsMlRiOFR3bVBZRGxybm16anEzcTdjY0I3cVFOUFg1SWNzRHNRN3Y5ZmtiRG1PQXgtcjRvNnMxcTJ5YWc4SXBldzZYdk9JdklBM3NjY0Nob3hTNjNfX0tSUE1OaVh2X1p5bXlKTkJwSWxFYW14MFVlYzhjVW9kdGlIZnR3NlNvTlRBa2pWT19saG1SamoyVmxVNWczTHFHN2JwWVVoWmFaN1ZTQk55a3R0UldzaXBtOUlfSHh5VlFZS1FmNWpmenhaWlEzRVN3ZnFmMmtNNGMwcjdoUmxJUDZYTEh3RERtNmVTcTJmU3NfejlGYmxSS1Y3dFVia19iQkVweUFic0JmUFNCTTdCTjBvRlVSYWdRMnR6TUt6OFZiU2NyNTE3b2pHYlpKMmppZ3VvdFJrWXdabkExOW9CMnhNZVZhUDNCQUxVaU1iUEk5X21vV1FfbVUtNVFPcHFZcGdVVDBiZFVlUEg3eEs5RGRWQWpYNTEtR2hSajdNS1ZwcklqVWczU1JORy1YZWl4M1Q1bUU3Nl9VcXVaYzFySTdJLU1MTGdsTWhCcVpqRklXcUtlNUNjbjl6T0F6YVlWQWU4WTh0NkJPZGc2SHlBR0RVUFhfX2pRd0k2d2hRaGhFZk5MMkJSQmIzMG93WmJRRzFERXRSRGZMRkxRT2o1T3M2ZzNMZ1loc1ZLNmFBcDlVejU0SHRMZHRnS0lxdTh6aUptUm9qU0tVUVZMZzBjWnBvaDFBWk1n?oc=5"
   }
  ]
 }
