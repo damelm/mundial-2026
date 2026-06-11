@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-09T00:23:01.943Z",
+  "updatedAt": "2026-06-11T20:43:26.583Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -19,9 +19,9 @@
       "away": "South Africa",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/3rmosi1748525208.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/xjz9j91553368824.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "2H",
       "venue": "Estadio Azteca",
       "city": "Mexico City, MX"
     },
