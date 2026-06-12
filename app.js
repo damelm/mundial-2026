@@ -224,14 +224,10 @@ function readCachedGeo() {
 // Proveedores de geolocalización por IP, en cascada. Todos son gratuitos y sin
 // API key. Si el primero falla o agota su cupo, se prueba el siguiente. Así no
 // dependemos de un solo servicio ni de su límite diario.
+// (ipwho.is se quitó de la lista: ahora responde 403 "CORS is not supported
+// on the Free plan" a todo navegador, solo sumaba una llamada fallida.)
 const GEO_PROVIDERS = [
-  { // ipwho.is — sin límite declarado.
-    url: "https://ipwho.is/",
-    parse: (j) => (j && j.success !== false)
-      ? { code: j.country_code || null, tz: (j.timezone && j.timezone.id) || null, off: (j.timezone && j.timezone.utc) || null }
-      : null,
-  },
-  { // get.geojs.io — sin límite declarado.
+  { // get.geojs.io — sin límite declarado, responde en ~40ms.
     url: "https://get.geojs.io/v1/ip/geo.json",
     parse: (j) => j ? { code: j.country_code || null, tz: j.timezone || null, off: null } : null,
   },
@@ -1153,8 +1149,8 @@ function syncFilterChips() {
 /* --------------------------- calendario --------------------------------
  * Estrategia híbrida para reducir fricción al agendar:
  *  - iOS (iPhone/iPad): descarga .ics -> abre Apple Calendar directo, nativo.
- *  - Resto (Android, escritorio): abre Google Calendar ya prellenado, sin
- *    descargar archivo. Si el navegador bloquea la ventana, cae al .ics.
+ *  - Resto (Android, escritorio): abre Google Calendar ya prellenado vía
+ *    <a>.click(), sin descargar archivo.
  * Las fechas van en UTC (sufijo Z); cada calendario las muestra en la hora
  * local del usuario.
  */
