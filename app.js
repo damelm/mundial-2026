@@ -1136,7 +1136,8 @@ function adSlotHtml(s) {
     ? `<span class="ad-logo">${s.logo.svg}</span>`
     : `<img class="ad-logo-img ${s.layout === "full" ? "full" : ""}" src="${s.logo.img}" alt="${s.logo.alt || s.name}" loading="lazy">`;
   if (s.layout === "full") {
-    return `<span class="ad-kicker ad-kicker-float">${tw(AD_LABEL)}</span>${logo}<span class="ad-spacer"></span>${ico}`;
+    const tag = s.tagline ? `<span class="ad-tag ad-tag-full">${s.tagline}</span>` : "";
+    return `<span class="ad-kicker ad-kicker-float">${tw(AD_LABEL)}</span><span class="ad-full${s.tagline ? " has-tag" : ""}">${logo}${tag}</span><span class="ad-spacer"></span>${ico}`;
   }
   return `${logo}<span class="ad-text">${kicker}<span class="ad-name" style="color:${s.nameColor}">${s.name}</span>${s.tagline ? `<span class="ad-tag">${s.tagline}</span>` : ""}</span>${ico}`;
 }

@@ -40,6 +40,15 @@ const SPONSORS = [
     ico: "shop", icoColor: "#e8e8f0",
     logo: { img: "ads/nexostore.png", alt: "Nexo Store — todo en un lugar" },
   },
+  {
+    name: "Mister Cotillón",
+    tagline: "Cotillón y decoración · Fdo. de la Mora",
+    url: "https://www.instagram.com/mistercotillonnf/",
+    layout: "full",
+    bg: "linear-gradient(135deg, #FDF6F4 0%, #F6EFFB 100%)", border: "#EAD3E0",
+    ico: "ig", icoColor: "#c0608a",
+    logo: { img: "ads/mistercotillon.png", alt: "Mister Cotillón — decoraciones y accesorios para fiestas" },
+  },
 ];
 
 // Tiempo entre rotaciones (ms). 4s da para leer la frase sin marear.

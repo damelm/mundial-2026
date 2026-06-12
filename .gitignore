@@ -9,3 +9,6 @@ Thumbs.db
 *.log
 node_modules/
 _icon_options/
+
+# Material de marketing (posts de Instagram, mockups, portadas) — no es parte de la app
+ig/

@@ -229,6 +229,9 @@ main { padding: 0 16px 44px; }
 .ad-kicker { font-size: 7.5px; letter-spacing: .18em; text-transform: uppercase; color: #b0a68c; font-weight: 800; }
 .ad-name { font-family: var(--font-display); font-weight: 400; font-size: 14px; letter-spacing: .04em; line-height: 1.05; margin-top: 1px; }
 .ad-tag { font-size: 11px; color: #555; line-height: 1.2; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ad-full { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; min-width: 0; max-width: 74%; }
+.ad-full.has-tag .ad-logo-img.full { height: 34px; }
+.ad-tag-full { font-size: 10.5px; color: #6a6a72; line-height: 1.2; letter-spacing: .01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
 .ad-spacer { flex: 1; }
 .ad-ico { flex: 0 0 auto; display: flex; }
 .ad-kicker-float { position: absolute; top: 5px; inset-inline-end: 10px; color: #6f6f80; }
