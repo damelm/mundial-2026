@@ -1352,6 +1352,8 @@ async function init() {
   else if (storedTeam && TEAMS[storedTeam]) applyTheme(storedTeam);
   else { const team = geo && geo.code && CODE_TO_TEAM[geo.code]; applyTheme(team || null); }
 
+  // Marcador en vivo de una al abrir (sin esperar al primer ciclo de polling)
+  if (state.data) mergeLiveScores(state.data).then((ch) => { if (ch) { state.sig = JSON.stringify(state.data.matches); render(); } });
   scheduleRefresh();
   showBuildVersion();
 }
@@ -1371,12 +1373,53 @@ function showBuildVersion() {
   }).catch(() => {});
 }
 
+// Partidos que PODRÍAN estar jugándose ahora: empezaron hace poco y no terminaron.
+function matchesInPlayWindow(data) {
+  const src = data || state.data;
+  if (!src) return [];
+  const now = Date.now();
+  return src.matches.filter((m) => {
+    const d = parseUTC(m.timestamp); if (!d) return false;
+    const t = d.getTime();
+    return now >= t - 120000 && now <= t + 3.5 * 3600000 && classifyStatus(m) !== "ft";
+  });
+}
+
+// Marcadores EN VIVO directo de TheSportsDB. El cron de GitHub Actions corre en
+// la práctica cada 2-3 h (ignora los schedules frecuentes), así que durante un
+// partido fixture.json queda congelado. Esto trae el marcador real desde la
+// fuente y lo mergea por id sobre los datos. Solo consulta si hay partidos en
+// ventana de juego (1 fetch por fecha), así no golpea la API sin necesidad.
+async function mergeLiveScores(data) {
+  const playing = matchesInPlayWindow(data);
+  if (!playing.length) return false;
+  const dates = [...new Set(playing.map((m) => m.date).filter(Boolean))];
+  const byId = new Map(data.matches.map((m) => [String(m.id), m]));
+  const num = (v) => (v == null || v === "" ? null : Number(v));
+  let changed = false;
+  for (const date of dates) {
+    try {
+      const r = await fetch(`https://www.thesportsdb.com/api/v1/json/3/eventsday.php?d=${date}&l=4429`, { cache: "no-store" }).then((x) => x.json());
+      for (const ev of (r && r.events) || []) {
+        const m = byId.get(String(ev.idEvent));
+        if (!m) continue;
+        const hs = num(ev.intHomeScore), as = num(ev.intAwayScore), st = ev.strStatus;
+        if (hs != null && hs !== m.homeScore) { m.homeScore = hs; changed = true; }
+        if (as != null && as !== m.awayScore) { m.awayScore = as; changed = true; }
+        if (st && st !== m.status) { m.status = st; changed = true; }
+      }
+    } catch {}
+  }
+  return changed;
+}
+
 function scheduleRefresh() {
   clearTimeout(state.refreshTimer);
-  const live = state.data && state.data.matches.some((m) => classifyStatus(m) === "live");
+  const live = matchesInPlayWindow().length > 0; // hay partido en juego (aunque el cron no lo refleje)
   state.refreshTimer = setTimeout(async () => {
     try {
       const fresh = await loadData();
+      await mergeLiveScores(fresh); // marcador en vivo directo de la fuente, sin esperar al cron
       const sig = JSON.stringify(fresh.matches);
       // GOL: detecta cambios de marcador para animar la tarjeta tras el re-render
       let scored = [];
