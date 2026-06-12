@@ -1051,7 +1051,7 @@ function setLang(lang) {
 /* --------------------------- compartir ------------------------------- */
 function shareApp() {
   const url = "https://damelm.github.io/mundial-2026/";
-  const data = { title: "Mundial 2026 · Fixture en vivo", text: localTeam(state.team, "nick") ? `${dispName(state.team)} en el Mundial 2026` : t("appTitle"), url };
+  const data = { title: "Fix26 · Fixture del Mundial 2026", text: localTeam(state.team, "nick") ? `${dispName(state.team)} en el Mundial 2026 · Fix26` : "Fix26 · " + t("appTitle"), url };
   if (navigator.share) { navigator.share(data).catch(() => {}); }
   else if (navigator.clipboard) { navigator.clipboard.writeText(url).then(() => flashToast(url)).catch(() => {}); }
   else { prompt("Copiá el link:", url); }

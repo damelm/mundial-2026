@@ -1,7 +1,7 @@
 {
-  "name": "Mundial 2026 · Fixture en vivo",
-  "short_name": "Mundial 2026",
-  "description": "Fixture del Mundial 2026 en tiempo real, temático según tu país. Partidos, grupos, posiciones y eliminatorias.",
+  "name": "Fix26 · Fixture del Mundial 2026",
+  "short_name": "Fix26",
+  "description": "El fixture del Mundial 2026 en vivo: todos los partidos en tu hora local, tu selección y los goles al instante.",
   "lang": "es",
   "start_url": "/mundial-2026/",
   "scope": "/mundial-2026/",
