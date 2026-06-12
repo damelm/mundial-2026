@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-12T20:26:44.082Z",
+  "updatedAt": "2026-06-12T21:50:23.311Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -57,9 +57,9 @@
       "away": "Bosnia-Herzegovina",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/2t631f1595154867.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/wtqqst1455463120.png",
-      "homeScore": 0,
+      "homeScore": 1,
       "awayScore": 1,
-      "status": "2H",
+      "status": "FT",
       "venue": "BMO Field",
       "city": "Toronto, ON"
     },
