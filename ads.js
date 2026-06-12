@@ -21,9 +21,7 @@ const SPONSORS = [
     layout: "mark",
     bg: "#FBF8F1", border: "#EAD9A8", nameColor: "#1B2A5B",
     ico: "ig", icoColor: "#1B2A5B",
-    // Recreación vectorial (monograma NS + estrella polar). Reemplazar por el
-    // archivo oficial cuando esté disponible: logo: { img: "ads/northstar.png", alt: "NorthStar" }
-    logo: { svg: '<svg width="42" height="42" viewBox="0 0 50 50" aria-hidden="true"><path d="M10 40 Q22 24 40 14" stroke="#E3A82B" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M39 7l2.2 5.4L46.5 14l-5.3 1.8L39 21l-2.2-5.2L31.5 14l5.3-1.6z" fill="#E3A82B"/><text x="6" y="40" font-family="Georgia,serif" font-size="30" font-weight="700" fill="#1B2A5B">N</text><text x="26" y="44" font-family="Georgia,serif" font-size="30" font-weight="700" fill="#1B2A5B">S</text></svg>' },
+    logo: { img: "ads/northstar.png", alt: "NorthStar — consultoría integral" },
   },
   {
     name: "CYJ3D",
