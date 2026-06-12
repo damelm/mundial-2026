@@ -12,6 +12,7 @@ on:
     paths:
       - "index.html"
       - "app.js"
+      - "ads.js"
       - "styles.css"
       - "themes.js"
       - "i18n.js"

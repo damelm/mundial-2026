@@ -216,6 +216,25 @@ main { padding: 0 16px 44px; }
 .match-meta { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 7px; margin-bottom: 13px; padding-bottom: 12px; border-bottom: 1px solid var(--line-2); font-size: 11px; color: var(--ink-dim); flex-wrap: wrap; text-align: center; font-weight: 600; }
 .match-grouptag { font-weight: 800; color: var(--brand-accent); text-transform: uppercase; letter-spacing: .04em; font-size: 10.5px; }
 
+/* ============================ BANNER AUSPICIADO ===================== */
+/* Slot in-feed de altura FIJA (no mueve el feed al rotar). Cada marca trae
+   su propio fondo/borde. Todo el bloque es el enlace. */
+.ad-slot { position: relative; display: flex; align-items: center; gap: 11px; height: 64px; padding: 0 12px; margin-bottom: 11px; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--sh-sm); text-decoration: none; overflow: hidden; transition: opacity .38s ease; cursor: pointer; }
+.ad-slot.ad-fading { opacity: 0; }
+.ad-slot:active { transform: scale(.99); }
+.ad-logo { flex: 0 0 auto; display: flex; }
+.ad-logo-img { flex: 0 0 auto; height: 42px; width: auto; object-fit: contain; }
+.ad-logo-img.full { height: 44px; max-width: 62%; }
+.ad-text { min-width: 0; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.ad-kicker { font-size: 7.5px; letter-spacing: .18em; text-transform: uppercase; color: #b0a68c; font-weight: 800; }
+.ad-name { font-family: var(--font-display); font-weight: 400; font-size: 14px; letter-spacing: .04em; line-height: 1.05; margin-top: 1px; }
+.ad-tag { font-size: 11px; color: #555; line-height: 1.2; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ad-spacer { flex: 1; }
+.ad-ico { flex: 0 0 auto; display: flex; }
+.ad-kicker-float { position: absolute; top: 5px; inset-inline-end: 10px; color: #6f6f80; }
+[dir="rtl"] .ad-tag { white-space: normal; }
+@media (prefers-reduced-motion: reduce) { .ad-slot { transition: none; } }
+
 /* ============================ GRUPOS ================================= */
 .grupos-grid { display: grid; gap: 14px; padding-top: 14px; }
 @media (min-width: 560px) { .grupos-grid { grid-template-columns: 1fr 1fr; } }

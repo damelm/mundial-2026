@@ -639,8 +639,10 @@ function renderFixture() {
   const keys = Object.keys(byDay).sort();
   const openKey = nextOpenDayKey(keys, byDay);
   const expandAll = state.allExpanded || state.filter !== "all"; // los filtros (hoy/vivo/mi) abren todo
+  // Banner auspiciado in-feed: tras la 1.ª jornada, solo en la vista completa.
+  const adAfter = (state.filter === "all" && keys.length > 1 && typeof SPONSORS !== "undefined" && SPONSORS.length) ? 0 : -1;
   let html = "";
-  for (const k of keys) {
+  keys.forEach((k, idx) => {
     const day = byDay[k].sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
     const s = parseUTC(day[0].timestamp);
     const myDay = !!(state.team && day.some((m) => m.home === state.team || m.away === state.team));
@@ -648,9 +650,11 @@ function renderFixture() {
     const head = `<div class="acc-titles"><div class="acc-title">${s ? fmtDayLong(s) : "—"}</div>
       <div class="acc-sub">${day.length} ${day.length === 1 ? tw(TX.matchOne) : t("matchesLabel")}${myDay ? ' <span class="acc-star">★</span>' : ""} ${miniFlags(day)}</div></div>`;
     html += accordionEl(k, head, day.map(matchCard).join(""), isOpen, myDay, "acc-day");
-  }
+    if (idx === adAfter) html += `<div class="ad-host"></div>`;
+  });
   cont.innerHTML = html;
   scrollReveal(cont);
+  mountAds();
 }
 
 /* --------------------------- grupos ---------------------------------- */
@@ -1112,6 +1116,71 @@ function setupWaveResize() {
     clearTimeout(t); t = setTimeout(renderFlagWave, 250);
   }).observe(hero);
 }
+/* --------------------------- banner auspiciado ----------------------- */
+// Íconos de destino del banner (heredan el color del contenedor vía currentColor)
+const IC_AD = {
+  ig: '<svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg>',
+  shop: '<svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>',
+};
+const AD_LABEL = { es: "Auspicia", en: "Sponsored", pt: "Patrocina", fr: "Sponsorisé", ar: "إعلان" };
+let _adsPreloaded = false;
+function preloadAdLogos() {
+  if (_adsPreloaded || typeof SPONSORS === "undefined") return;
+  _adsPreloaded = true;
+  SPONSORS.forEach((s) => { if (s.logo && s.logo.img) { const i = new Image(); i.src = s.logo.img; } });
+}
+function adSlotHtml(s) {
+  const kicker = `<span class="ad-kicker">${tw(AD_LABEL)}</span>`;
+  const ico = `<span class="ad-ico" style="color:${s.icoColor}">${IC_AD[s.ico] || ""}</span>`;
+  const logo = s.logo.svg
+    ? `<span class="ad-logo">${s.logo.svg}</span>`
+    : `<img class="ad-logo-img ${s.layout === "full" ? "full" : ""}" src="${s.logo.img}" alt="${s.logo.alt || s.name}" loading="lazy">`;
+  if (s.layout === "full") {
+    return `<span class="ad-kicker ad-kicker-float">${tw(AD_LABEL)}</span>${logo}<span class="ad-spacer"></span>${ico}`;
+  }
+  return `${logo}<span class="ad-text">${kicker}<span class="ad-name" style="color:${s.nameColor}">${s.name}</span>${s.tagline ? `<span class="ad-tag">${s.tagline}</span>` : ""}</span>${ico}`;
+}
+function paintAdSlot(host, s) {
+  host.style.background = s.bg;
+  host.style.borderColor = s.border;
+  host.href = s.url;
+  host.innerHTML = adSlotHtml(s);
+}
+function mountAds() {
+  const host = $(".ad-host"); // un solo slot por feed
+  if (!host || typeof SPONSORS === "undefined" || !SPONSORS.length) return;
+  preloadAdLogos();
+  // Limpiar timer y observer de un montaje anterior (el feed se re-renderiza
+  // con el polling; sin esto quedan observers huérfanos que rotan de más).
+  clearInterval(state.adTimer);
+  if (state.adObserver) { state.adObserver.disconnect(); state.adObserver = null; }
+  // El host pasa a ser un <a> real para que TODO el banner sea el enlace.
+  const a = document.createElement("a");
+  a.className = "ad-slot";
+  a.target = "_blank"; a.rel = "noopener sponsored";
+  host.replaceWith(a);
+  let i = state.adIdx || 0;
+  if (i >= SPONSORS.length) i = 0;
+  paintAdSlot(a, SPONSORS[i]);
+  if (SPONSORS.length < 2) return; // con un solo auspiciante no rota
+  const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const advance = () => {
+    i = (i + 1) % SPONSORS.length; state.adIdx = i;
+    if (reduce) { paintAdSlot(a, SPONSORS[i]); return; }
+    a.classList.add("ad-fading");
+    setTimeout(() => { paintAdSlot(a, SPONSORS[i]); a.classList.remove("ad-fading"); }, 380);
+  };
+  const start = () => { clearInterval(state.adTimer); state.adTimer = setInterval(advance, AD_ROTATE_MS); };
+  start();
+  // Pausa la rotación cuando el banner no está en pantalla (ahorra batería).
+  if ("IntersectionObserver" in window) {
+    state.adObserver = new IntersectionObserver((es) => {
+      es.forEach((e) => { if (e.isIntersecting) start(); else clearInterval(state.adTimer); });
+    }, { threshold: 0 });
+    state.adObserver.observe(a);
+  }
+}
+
 // Las animaciones infinitas del hero (beam, shiny) se pausan fuera de pantalla
 function setupAnimPause() {
   if (!("IntersectionObserver" in window)) return;
