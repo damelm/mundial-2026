@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-11T22:30:33.778Z",
+  "updatedAt": "2026-06-12T05:03:32.706Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -38,9 +38,9 @@
       "away": "Czech Republic",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/a8nqfs1589564916.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/1o0cx31654205806.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FT",
       "venue": "Estadio Akron",
       "city": "Zapopan, JA"
     },
