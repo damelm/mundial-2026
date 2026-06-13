@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-12T21:50:23.311Z",
+  "updatedAt": "2026-06-13T03:42:06.602Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -76,9 +76,9 @@
       "away": "Paraguay",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/21f0oi1597948195.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/khgav41553419195.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 4,
+      "awayScore": 1,
+      "status": "FT",
       "venue": "SoFi Stadium",
       "city": "Inglewood, CA"
     },
