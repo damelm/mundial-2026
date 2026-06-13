@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-13T20:20:05.390Z",
+  "updatedAt": "2026-06-13T21:45:42.479Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -95,9 +95,9 @@
       "away": "Switzerland",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/rs3ir31642708685.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/mb7yqe1717365808.png",
-      "homeScore": 0,
+      "homeScore": 1,
       "awayScore": 1,
-      "status": "2H",
+      "status": "FT",
       "venue": "Levi's Stadium",
       "city": "Santa Clara, CA"
     },
