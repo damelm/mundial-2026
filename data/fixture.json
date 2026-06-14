@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-13T23:04:23.013Z",
+  "updatedAt": "2026-06-14T00:20:57.814Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -116,7 +116,7 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/hbmwkj1731791275.png",
       "homeScore": 1,
       "awayScore": 1,
-      "status": "HT",
+      "status": "FT",
       "venue": "MetLife Stadium",
       "city": "East Rutherford, NJ"
     },
