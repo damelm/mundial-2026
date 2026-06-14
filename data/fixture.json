@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-14T08:53:22.631Z",
+  "updatedAt": "2026-06-14T18:14:42.670Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -102,25 +102,6 @@
       "city": "East Rutherford, NJ"
     },
     {
-      "id": "2461105",
-      "round": 1,
-      "stage": "GROUP",
-      "stageName": "Fase de grupos · Fecha 1",
-      "group": "D",
-      "date": "2026-06-14",
-      "time": "04:00:00",
-      "timestamp": "2026-06-14T04:00:00",
-      "home": "Australia",
-      "away": "Turkey",
-      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/lark6k1661780848.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/70c4oo1591982459.png",
-      "homeScore": 2,
-      "awayScore": 0,
-      "status": "FT",
-      "venue": "BC Place",
-      "city": "Vancouver, BC"
-    },
-    {
       "id": "2391733",
       "round": 1,
       "stage": "GROUP",
@@ -133,11 +114,30 @@
       "away": "Curaçao",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/1xysi51726167152.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/itygvb1600955363.png",
+      "homeScore": 4,
+      "awayScore": 1,
+      "status": "2H",
+      "venue": "Reliant Stadium",
+      "city": "Houston, TX"
+    },
+    {
+      "id": "2391735",
+      "round": 1,
+      "stage": "GROUP",
+      "stageName": "Fase de grupos · Fecha 1",
+      "group": "F",
+      "date": "2026-06-14",
+      "time": "20:00:00",
+      "timestamp": "2026-06-14T20:00:00",
+      "home": "Netherlands",
+      "away": "Japan",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/1p0hr41593787110.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/ffsyxz1591989843.png",
       "homeScore": null,
       "awayScore": null,
       "status": "NS",
-      "venue": "Reliant Stadium",
-      "city": "Houston, TX"
+      "venue": "AT&T Stadium",
+      "city": "Arlington, TX"
     },
     {
       "id": "2461109",
