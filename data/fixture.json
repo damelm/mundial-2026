@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-14T21:39:23.826Z",
+  "updatedAt": "2026-06-14T22:50:31.568Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -115,8 +115,8 @@
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/1p0hr41593787110.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/ffsyxz1591989843.png",
       "homeScore": 2,
-      "awayScore": 1,
-      "status": "2H",
+      "awayScore": 2,
+      "status": "FT",
       "venue": "AT&T Stadium",
       "city": "Arlington, TX"
     },
