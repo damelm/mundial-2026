@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-14T20:00:47.424Z",
+  "updatedAt": "2026-06-14T21:39:23.826Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -114,9 +114,9 @@
       "away": "Japan",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/1p0hr41593787110.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/ffsyxz1591989843.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "2H",
       "venue": "AT&T Stadium",
       "city": "Arlington, TX"
     },
