@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-15T06:48:43.334Z",
+  "updatedAt": "2026-06-15T16:33:00.436Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -491,22 +491,13 @@
       "away": "Cape Verde",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/ncgqyr1726166942.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/5jn0o71593280376.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta, GA",
       "homeRank": 2,
-      "awayRank": 70,
-      "pred": {
-        "pH": 90,
-        "pD": 3,
-        "pA": 7,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 70
     },
     {
       "id": "2391736",
