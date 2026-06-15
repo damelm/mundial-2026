@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-15T20:15:58.463Z",
+  "updatedAt": "2026-06-15T22:33:49.550Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -512,11 +512,25 @@
       "away": "Egypt",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/8xlvxv1592062265.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/uheyzo1742102234.png",
-      "homeScore": 0,
+      "homeScore": 1,
       "awayScore": 1,
-      "status": "2H",
+      "status": "FT",
       "venue": "Lumen Field",
       "city": "Seattle, WA",
+      "goals": {
+        "home": [
+          {
+            "name": "Mohamed Hany",
+            "minute": "66"
+          }
+        ],
+        "away": [
+          {
+            "name": "Emam Ashour",
+            "minute": "19"
+          }
+        ]
+      },
       "homeRank": 8,
       "awayRank": 32
     },
@@ -533,44 +547,13 @@
       "away": "Uruguay",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/24xwpq1594125742.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/6vjbr11726167756.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "Hard Rock Stadium",
       "city": "Miami Gardens, FL",
       "homeRank": 58,
-      "awayRank": 15,
-      "pred": {
-        "pH": 15,
-        "pD": 14,
-        "pA": 71,
-        "h2h": {
-          "played": 3,
-          "last": [
-            {
-              "date": "2018-06-20",
-              "h": "Uruguay",
-              "a": "Saudi Arabia",
-              "hs": 1,
-              "as": 0
-            },
-            {
-              "date": "2014-10-10",
-              "h": "Saudi Arabia",
-              "a": "Uruguay",
-              "hs": 1,
-              "as": 1
-            },
-            {
-              "date": "2002-03-27",
-              "h": "Saudi Arabia",
-              "a": "Uruguay",
-              "hs": 3,
-              "as": 2
-            }
-          ]
-        }
-      }
+      "awayRank": 15
     },
     {
       "id": "2391737",
