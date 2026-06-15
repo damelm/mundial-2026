@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-15T06:17:21.507Z",
+  "updatedAt": "2026-06-15T06:44:03.978Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -23,7 +23,22 @@
       "awayScore": 0,
       "status": "FT",
       "venue": "Estadio Azteca",
-      "city": "Mexico City, MX"
+      "city": "Mexico City, MX",
+      "goals": {
+        "home": [
+          {
+            "name": "Julián Quiñones",
+            "minute": "9"
+          },
+          {
+            "name": "Raúl Jiménez",
+            "minute": "67"
+          }
+        ],
+        "away": []
+      },
+      "homeRank": 17,
+      "awayRank": 57
     },
     {
       "id": "2461103",
@@ -42,7 +57,27 @@
       "awayScore": 1,
       "status": "FT",
       "venue": "Estadio Akron",
-      "city": "Zapopan, JA"
+      "city": "Zapopan, JA",
+      "goals": {
+        "home": [
+          {
+            "name": "Hwang In-Beom",
+            "minute": "67"
+          },
+          {
+            "name": "Oh Hyeon-Gyu",
+            "minute": "80"
+          }
+        ],
+        "away": [
+          {
+            "name": "Ladislav Krejcí",
+            "minute": "59"
+          }
+        ]
+      },
+      "homeRank": 23,
+      "awayRank": 43
     },
     {
       "id": "2461104",
@@ -61,7 +96,23 @@
       "awayScore": 1,
       "status": "FT",
       "venue": "BMO Field",
-      "city": "Toronto, ON"
+      "city": "Toronto, ON",
+      "goals": {
+        "home": [
+          {
+            "name": "Cyle Larin",
+            "minute": "78"
+          }
+        ],
+        "away": [
+          {
+            "name": "Jovo Lukić",
+            "minute": "21"
+          }
+        ]
+      },
+      "homeRank": 30,
+      "awayRank": 74
     },
     {
       "id": "2391729",
@@ -80,7 +131,35 @@
       "awayScore": 1,
       "status": "FT",
       "venue": "SoFi Stadium",
-      "city": "Inglewood, CA"
+      "city": "Inglewood, CA",
+      "goals": {
+        "home": [
+          {
+            "name": "Damian Bobadilla",
+            "minute": "7"
+          },
+          {
+            "name": "Folarin Balogun",
+            "minute": "31"
+          },
+          {
+            "name": "Folarin Balogun",
+            "minute": "45+5"
+          },
+          {
+            "name": "Giovanni Reyna",
+            "minute": "90+8"
+          }
+        ],
+        "away": [
+          {
+            "name": "Mauricio",
+            "minute": "73"
+          }
+        ]
+      },
+      "homeRank": 16,
+      "awayRank": 45
     },
     {
       "id": "2391732",
@@ -99,7 +178,23 @@
       "awayScore": 1,
       "status": "FT",
       "venue": "Levi's Stadium",
-      "city": "Santa Clara, CA"
+      "city": "Santa Clara, CA",
+      "goals": {
+        "home": [
+          {
+            "name": "Boualem Khoukhi",
+            "minute": "90+4"
+          }
+        ],
+        "away": [
+          {
+            "name": "Breel Embolo",
+            "minute": "17"
+          }
+        ]
+      },
+      "homeRank": 36,
+      "awayRank": 19
     },
     {
       "id": "2391730",
@@ -118,7 +213,23 @@
       "awayScore": 1,
       "status": "FT",
       "venue": "MetLife Stadium",
-      "city": "East Rutherford, NJ"
+      "city": "East Rutherford, NJ",
+      "goals": {
+        "home": [
+          {
+            "name": "Vinícius Júnior",
+            "minute": "32"
+          }
+        ],
+        "away": [
+          {
+            "name": "Ismael Saibari",
+            "minute": "21"
+          }
+        ]
+      },
+      "homeRank": 5,
+      "awayRank": 11
     },
     {
       "id": "2391731",
@@ -137,7 +248,18 @@
       "awayScore": 1,
       "status": "FT",
       "venue": "Gillette Stadium",
-      "city": "Foxborough, MA"
+      "city": "Foxborough, MA",
+      "goals": {
+        "home": [],
+        "away": [
+          {
+            "name": "John McGinn",
+            "minute": "28"
+          }
+        ]
+      },
+      "homeRank": 86,
+      "awayRank": 39
     },
     {
       "id": "2461105",
@@ -156,7 +278,22 @@
       "awayScore": 0,
       "status": "FT",
       "venue": "BC Place",
-      "city": "Vancouver, BC"
+      "city": "Vancouver, BC",
+      "goals": {
+        "home": [
+          {
+            "name": "Nestory Irankunda",
+            "minute": "27"
+          },
+          {
+            "name": "Connor Metcalfe",
+            "minute": "75"
+          }
+        ],
+        "away": []
+      },
+      "homeRank": 24,
+      "awayRank": 26
     },
     {
       "id": "2391733",
@@ -175,7 +312,47 @@
       "awayScore": 1,
       "status": "FT",
       "venue": "NRG Stadium",
-      "city": "Houston, TX"
+      "city": "Houston, TX",
+      "goals": {
+        "home": [
+          {
+            "name": "Felix Nmecha",
+            "minute": "6"
+          },
+          {
+            "name": "Nico Schlotterbeck",
+            "minute": "38"
+          },
+          {
+            "name": "Kai Havertz",
+            "minute": "45+5"
+          },
+          {
+            "name": "Kai Havertz",
+            "minute": "88"
+          },
+          {
+            "name": "Jamal Musiala",
+            "minute": "47"
+          },
+          {
+            "name": "Nathaniel Brown",
+            "minute": "68"
+          },
+          {
+            "name": "Deniz Undav",
+            "minute": "78"
+          }
+        ],
+        "away": [
+          {
+            "name": "Livano Comenencia",
+            "minute": "21"
+          }
+        ]
+      },
+      "homeRank": 9,
+      "awayRank": 90
     },
     {
       "id": "2391735",
@@ -194,7 +371,31 @@
       "awayScore": 2,
       "status": "FT",
       "venue": "AT&T Stadium",
-      "city": "Arlington, TX"
+      "city": "Arlington, TX",
+      "goals": {
+        "home": [
+          {
+            "name": "Virgil van Dijk",
+            "minute": "51"
+          },
+          {
+            "name": "Crysencio Summerville",
+            "minute": "64"
+          }
+        ],
+        "away": [
+          {
+            "name": "Keito Nakamura",
+            "minute": "57"
+          },
+          {
+            "name": "Daichi Kamada",
+            "minute": "88"
+          }
+        ]
+      },
+      "homeRank": 7,
+      "awayRank": 17
     },
     {
       "id": "2391734",
@@ -213,7 +414,18 @@
       "awayScore": 0,
       "status": "FT",
       "venue": "Lincoln Financial Field",
-      "city": "Philadelphia, PA"
+      "city": "Philadelphia, PA",
+      "goals": {
+        "home": [
+          {
+            "name": "Amad Diallo",
+            "minute": "90"
+          }
+        ],
+        "away": []
+      },
+      "homeRank": 40,
+      "awayRank": 23
     },
     {
       "id": "2461106",
@@ -232,7 +444,38 @@
       "awayScore": 1,
       "status": "FT",
       "venue": "Estadio BBVA",
-      "city": "Guadalupe, NL"
+      "city": "Guadalupe, NL",
+      "goals": {
+        "home": [
+          {
+            "name": "Yasin Ayari",
+            "minute": "7"
+          },
+          {
+            "name": "Alexander Isak",
+            "minute": "30"
+          },
+          {
+            "name": "Viktor Gyökeres",
+            "minute": "59"
+          },
+          {
+            "name": "Mattias Svanberg",
+            "minute": "84"
+          },
+          {
+            "name": "Yasin Ayari",
+            "minute": "90+6"
+          }
+        ],
+        "away": [
+          {
+            "name": "Omar Rekik",
+            "minute": "43"
+          }
+        ]
+      },
+      "awayRank": 41
     },
     {
       "id": "2391739",
@@ -251,7 +494,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta, GA"
+      "city": "Atlanta, GA",
+      "homeRank": 2,
+      "awayRank": 70,
+      "pred": {
+        "pH": 90,
+        "pD": 3,
+        "pA": 7,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2391736",
@@ -270,7 +524,40 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Lumen Field",
-      "city": "Seattle, WA"
+      "city": "Seattle, WA",
+      "homeRank": 8,
+      "awayRank": 32,
+      "pred": {
+        "pH": 57,
+        "pD": 22,
+        "pA": 21,
+        "h2h": {
+          "played": 4,
+          "last": [
+            {
+              "date": "2022-11-18",
+              "h": "Egypt",
+              "a": "Belgium",
+              "hs": 2,
+              "as": 1
+            },
+            {
+              "date": "2018-06-06",
+              "h": "Belgium",
+              "a": "Egypt",
+              "hs": 3,
+              "as": 0
+            },
+            {
+              "date": "2005-02-09",
+              "h": "Egypt",
+              "a": "Belgium",
+              "hs": 4,
+              "as": 0
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391738",
@@ -289,7 +576,40 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Hard Rock Stadium",
-      "city": "Miami Gardens, FL"
+      "city": "Miami Gardens, FL",
+      "homeRank": 58,
+      "awayRank": 15,
+      "pred": {
+        "pH": 15,
+        "pD": 14,
+        "pA": 71,
+        "h2h": {
+          "played": 3,
+          "last": [
+            {
+              "date": "2018-06-20",
+              "h": "Uruguay",
+              "a": "Saudi Arabia",
+              "hs": 1,
+              "as": 0
+            },
+            {
+              "date": "2014-10-10",
+              "h": "Saudi Arabia",
+              "a": "Uruguay",
+              "hs": 1,
+              "as": 1
+            },
+            {
+              "date": "2002-03-27",
+              "h": "Saudi Arabia",
+              "a": "Uruguay",
+              "hs": 3,
+              "as": 2
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391737",
@@ -308,7 +628,33 @@
       "awayScore": null,
       "status": "NS",
       "venue": "SoFi Stadium",
-      "city": "Inglewood, CA"
+      "city": "Inglewood, CA",
+      "homeRank": 20,
+      "awayRank": 89,
+      "pred": {
+        "pH": 68,
+        "pD": 16,
+        "pA": 16,
+        "h2h": {
+          "played": 2,
+          "last": [
+            {
+              "date": "2003-10-12",
+              "h": "Iran",
+              "a": "New Zealand",
+              "hs": 3,
+              "as": 0
+            },
+            {
+              "date": "1973-08-12",
+              "h": "New Zealand",
+              "a": "Iran",
+              "hs": 0,
+              "as": 0
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391742",
@@ -327,7 +673,33 @@
       "awayScore": null,
       "status": "NS",
       "venue": "MetLife Stadium",
-      "city": "East Rutherford, NJ"
+      "city": "East Rutherford, NJ",
+      "homeRank": 3,
+      "awayRank": 18,
+      "pred": {
+        "pH": 61,
+        "pD": 20,
+        "pA": 19,
+        "h2h": {
+          "played": 2,
+          "last": [
+            {
+              "date": "2002-05-31",
+              "h": "France",
+              "a": "Senegal",
+              "hs": 0,
+              "as": 1
+            },
+            {
+              "date": "1963-04-18",
+              "h": "Senegal",
+              "a": "France",
+              "hs": 2,
+              "as": 0
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2461107",
@@ -346,7 +718,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Gillette Stadium",
-      "city": "Foxborough, MA"
+      "city": "Foxborough, MA",
+      "homeRank": 58,
+      "awayRank": 33,
+      "pred": {
+        "pH": 22,
+        "pD": 22,
+        "pA": 56,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2391740",
@@ -365,7 +748,26 @@
       "awayScore": null,
       "status": "NS",
       "venue": "GEHA Field at Arrowhead Stadium",
-      "city": "Kansas City, MO"
+      "city": "Kansas City, MO",
+      "homeRank": 1,
+      "awayRank": 38,
+      "pred": {
+        "pH": 72,
+        "pD": 14,
+        "pA": 14,
+        "h2h": {
+          "played": 1,
+          "last": [
+            {
+              "date": "2007-06-05",
+              "h": "Algeria",
+              "a": "Argentina",
+              "hs": 3,
+              "as": 4
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391741",
@@ -384,7 +786,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Levi's Stadium",
-      "city": "Santa Clara, CA"
+      "city": "Santa Clara, CA",
+      "homeRank": 22,
+      "awayRank": 62,
+      "pred": {
+        "pH": 59,
+        "pD": 21,
+        "pA": 20,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2461108",
@@ -403,7 +816,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Reliant Stadium",
-      "city": "Houston, TX"
+      "city": "Houston, TX",
+      "homeRank": 6,
+      "awayRank": 56,
+      "pred": {
+        "pH": 77,
+        "pD": 11,
+        "pA": 12,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2391743",
@@ -422,7 +846,40 @@
       "awayScore": null,
       "status": "NS",
       "venue": "AT&T Stadium",
-      "city": "Arlington, TX"
+      "city": "Arlington, TX",
+      "homeRank": 4,
+      "awayRank": 10,
+      "pred": {
+        "pH": 43,
+        "pD": 26,
+        "pA": 31,
+        "h2h": {
+          "played": 11,
+          "last": [
+            {
+              "date": "2021-06-13",
+              "h": "England",
+              "a": "Croatia",
+              "hs": 1,
+              "as": 0
+            },
+            {
+              "date": "2018-11-18",
+              "h": "England",
+              "a": "Croatia",
+              "hs": 2,
+              "as": 1
+            },
+            {
+              "date": "2018-10-12",
+              "h": "Croatia",
+              "a": "England",
+              "hs": 0,
+              "as": 0
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391744",
@@ -441,7 +898,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "BMO Field",
-      "city": "Toronto, ON"
+      "city": "Toronto, ON",
+      "homeRank": 73,
+      "awayRank": 31,
+      "pred": {
+        "pH": 19,
+        "pD": 19,
+        "pA": 62,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2391745",
@@ -460,7 +928,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Estadio Azteca",
-      "city": "Mexico City, MX"
+      "city": "Mexico City, MX",
+      "homeRank": 53,
+      "awayRank": 13,
+      "pred": {
+        "pH": 16,
+        "pD": 16,
+        "pA": 68,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2461109",
@@ -479,7 +958,26 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta, GA"
+      "city": "Atlanta, GA",
+      "homeRank": 43,
+      "awayRank": 57,
+      "pred": {
+        "pH": 56,
+        "pD": 22,
+        "pA": 22,
+        "h2h": {
+          "played": 1,
+          "last": [
+            {
+              "date": "1997-12-13",
+              "h": "South Africa",
+              "a": "Czech Republic",
+              "hs": 2,
+              "as": 2
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2461110",
@@ -498,7 +996,26 @@
       "awayScore": null,
       "status": "NS",
       "venue": "SoFi Stadium",
-      "city": "Inglewood, CA"
+      "city": "Inglewood, CA",
+      "homeRank": 19,
+      "awayRank": 74,
+      "pred": {
+        "pH": 68,
+        "pD": 16,
+        "pA": 16,
+        "h2h": {
+          "played": 1,
+          "last": [
+            {
+              "date": "2016-03-29",
+              "h": "Switzerland",
+              "a": "Bosnia and Herzegovina",
+              "hs": 0,
+              "as": 2
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391746",
@@ -517,7 +1034,26 @@
       "awayScore": null,
       "status": "NS",
       "venue": "BC Place",
-      "city": "Vancouver, BC"
+      "city": "Vancouver, BC",
+      "homeRank": 30,
+      "awayRank": 36,
+      "pred": {
+        "pH": 73,
+        "pD": 13,
+        "pA": 14,
+        "h2h": {
+          "played": 1,
+          "last": [
+            {
+              "date": "2022-09-23",
+              "h": "Canada",
+              "a": "Qatar",
+              "hs": 2,
+              "as": 0
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391747",
@@ -536,7 +1072,40 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Estadio Akron",
-      "city": "Zapopan, JA"
+      "city": "Zapopan, JA",
+      "homeRank": 17,
+      "awayRank": 23,
+      "pred": {
+        "pH": 45,
+        "pD": 26,
+        "pA": 29,
+        "h2h": {
+          "played": 14,
+          "last": [
+            {
+              "date": "2025-09-09",
+              "h": "Mexico",
+              "a": "South Korea",
+              "hs": 2,
+              "as": 2
+            },
+            {
+              "date": "2020-11-14",
+              "h": "Mexico",
+              "a": "South Korea",
+              "hs": 3,
+              "as": 2
+            },
+            {
+              "date": "2018-06-23",
+              "h": "South Korea",
+              "a": "Mexico",
+              "hs": 1,
+              "as": 2
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391750",
@@ -555,7 +1124,40 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Lumen Field",
-      "city": "Seattle, WA"
+      "city": "Seattle, WA",
+      "homeRank": 16,
+      "awayRank": 24,
+      "pred": {
+        "pH": 32,
+        "pD": 26,
+        "pA": 42,
+        "h2h": {
+          "played": 4,
+          "last": [
+            {
+              "date": "2025-10-14",
+              "h": "United States",
+              "a": "Australia",
+              "hs": 2,
+              "as": 1
+            },
+            {
+              "date": "2010-06-05",
+              "h": "Australia",
+              "a": "United States",
+              "hs": 1,
+              "as": 3
+            },
+            {
+              "date": "1998-11-06",
+              "h": "United States",
+              "a": "Australia",
+              "hs": 0,
+              "as": 0
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391749",
@@ -574,7 +1176,26 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Gillette Stadium",
-      "city": "Foxborough, MA"
+      "city": "Foxborough, MA",
+      "homeRank": 39,
+      "awayRank": 11,
+      "pred": {
+        "pH": 20,
+        "pD": 20,
+        "pA": 60,
+        "h2h": {
+          "played": 1,
+          "last": [
+            {
+              "date": "1998-06-23",
+              "h": "Scotland",
+              "a": "Morocco",
+              "hs": 0,
+              "as": 3
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391748",
@@ -593,7 +1214,40 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Lincoln Financial Field",
-      "city": "Philadelphia, PA"
+      "city": "Philadelphia, PA",
+      "homeRank": 5,
+      "awayRank": 86,
+      "pred": {
+        "pH": 85,
+        "pD": 6,
+        "pA": 9,
+        "h2h": {
+          "played": 3,
+          "last": [
+            {
+              "date": "2016-06-08",
+              "h": "Brazil",
+              "a": "Haiti",
+              "hs": 7,
+              "as": 1
+            },
+            {
+              "date": "2004-08-18",
+              "h": "Haiti",
+              "a": "Brazil",
+              "hs": 0,
+              "as": 6
+            },
+            {
+              "date": "1974-04-21",
+              "h": "Brazil",
+              "a": "Haiti",
+              "hs": 4,
+              "as": 0
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2461111",
@@ -612,7 +1266,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Levi's Stadium",
-      "city": "Santa Clara, CA"
+      "city": "Santa Clara, CA",
+      "homeRank": 26,
+      "awayRank": 45,
+      "pred": {
+        "pH": 44,
+        "pD": 26,
+        "pA": 30,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2461112",
@@ -631,7 +1296,39 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Reliant Stadium",
-      "city": "Houston, TX"
+      "city": "Houston, TX",
+      "homeRank": 7,
+      "pred": {
+        "pH": 61,
+        "pD": 20,
+        "pA": 19,
+        "h2h": {
+          "played": 25,
+          "last": [
+            {
+              "date": "2017-10-10",
+              "h": "Netherlands",
+              "a": "Sweden",
+              "hs": 2,
+              "as": 0
+            },
+            {
+              "date": "2016-09-06",
+              "h": "Sweden",
+              "a": "Netherlands",
+              "hs": 1,
+              "as": 1
+            },
+            {
+              "date": "2011-10-11",
+              "h": "Sweden",
+              "a": "Netherlands",
+              "hs": 3,
+              "as": 2
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391752",
@@ -650,7 +1347,26 @@
       "awayScore": null,
       "status": "NS",
       "venue": "BMO Field",
-      "city": "Toronto, ON"
+      "city": "Toronto, ON",
+      "homeRank": 9,
+      "awayRank": 40,
+      "pred": {
+        "pH": 59,
+        "pD": 21,
+        "pA": 20,
+        "h2h": {
+          "played": 1,
+          "last": [
+            {
+              "date": "2009-11-18",
+              "h": "Germany",
+              "a": "Ivory Coast",
+              "hs": 2,
+              "as": 2
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391751",
@@ -669,7 +1385,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "GEHA Field at Arrowhead Stadium",
-      "city": "Kansas City, MO"
+      "city": "Kansas City, MO",
+      "homeRank": 23,
+      "awayRank": 90,
+      "pred": {
+        "pH": 87,
+        "pD": 5,
+        "pA": 8,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2391753",
@@ -688,7 +1415,40 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Estadio BBVA",
-      "city": "Guadalupe, NL"
+      "city": "Guadalupe, NL",
+      "homeRank": 41,
+      "awayRank": 17,
+      "pred": {
+        "pH": 15,
+        "pD": 15,
+        "pA": 70,
+        "h2h": {
+          "played": 5,
+          "last": [
+            {
+              "date": "2022-06-14",
+              "h": "Japan",
+              "a": "Tunisia",
+              "hs": 0,
+              "as": 3
+            },
+            {
+              "date": "2015-03-27",
+              "h": "Japan",
+              "a": "Tunisia",
+              "hs": 2,
+              "as": 0
+            },
+            {
+              "date": "2003-10-08",
+              "h": "Tunisia",
+              "a": "Japan",
+              "hs": 0,
+              "as": 1
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391756",
@@ -707,7 +1467,40 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta, GA"
+      "city": "Atlanta, GA",
+      "homeRank": 2,
+      "awayRank": 58,
+      "pred": {
+        "pH": 88,
+        "pD": 4,
+        "pA": 8,
+        "h2h": {
+          "played": 3,
+          "last": [
+            {
+              "date": "2012-09-07",
+              "h": "Spain",
+              "a": "Saudi Arabia",
+              "hs": 5,
+              "as": 0
+            },
+            {
+              "date": "2010-05-29",
+              "h": "Spain",
+              "a": "Saudi Arabia",
+              "hs": 3,
+              "as": 2
+            },
+            {
+              "date": "2006-06-23",
+              "h": "Saudi Arabia",
+              "a": "Spain",
+              "hs": 0,
+              "as": 1
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391754",
@@ -726,7 +1519,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "SoFi Stadium",
-      "city": "Inglewood, CA"
+      "city": "Inglewood, CA",
+      "homeRank": 8,
+      "awayRank": 20,
+      "pred": {
+        "pH": 45,
+        "pD": 26,
+        "pA": 29,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2391757",
@@ -745,7 +1549,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Hard Rock Stadium",
-      "city": "Miami Gardens, FL"
+      "city": "Miami Gardens, FL",
+      "homeRank": 15,
+      "awayRank": 70,
+      "pred": {
+        "pH": 74,
+        "pD": 13,
+        "pA": 13,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2391755",
@@ -764,7 +1579,40 @@
       "awayScore": null,
       "status": "NS",
       "venue": "BC Place",
-      "city": "Vancouver, BC"
+      "city": "Vancouver, BC",
+      "homeRank": 89,
+      "awayRank": 32,
+      "pred": {
+        "pH": 22,
+        "pD": 22,
+        "pA": 56,
+        "h2h": {
+          "played": 3,
+          "last": [
+            {
+              "date": "2024-03-22",
+              "h": "Egypt",
+              "a": "New Zealand",
+              "hs": 1,
+              "as": 0
+            },
+            {
+              "date": "1999-07-15",
+              "h": "Egypt",
+              "a": "New Zealand",
+              "hs": 1,
+              "as": 0
+            },
+            {
+              "date": "1999-07-10",
+              "h": "Egypt",
+              "a": "New Zealand",
+              "hs": 1,
+              "as": 1
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391758",
@@ -783,7 +1631,33 @@
       "awayScore": null,
       "status": "NS",
       "venue": "AT&T Stadium",
-      "city": "Arlington, TX"
+      "city": "Arlington, TX",
+      "homeRank": 1,
+      "awayRank": 22,
+      "pred": {
+        "pH": 73,
+        "pD": 13,
+        "pA": 14,
+        "h2h": {
+          "played": 2,
+          "last": [
+            {
+              "date": "1990-05-03",
+              "h": "Austria",
+              "a": "Argentina",
+              "hs": 1,
+              "as": 1
+            },
+            {
+              "date": "1980-05-21",
+              "h": "Austria",
+              "a": "Argentina",
+              "hs": 1,
+              "as": 5
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2461113",
@@ -802,7 +1676,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Lincoln Financial Field",
-      "city": "Philadelphia, PA"
+      "city": "Philadelphia, PA",
+      "homeRank": 3,
+      "awayRank": 58,
+      "pred": {
+        "pH": 79,
+        "pD": 10,
+        "pA": 11,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2391760",
@@ -821,7 +1706,26 @@
       "awayScore": null,
       "status": "NS",
       "venue": "MetLife Stadium",
-      "city": "East Rutherford, NJ"
+      "city": "East Rutherford, NJ",
+      "homeRank": 33,
+      "awayRank": 18,
+      "pred": {
+        "pH": 36,
+        "pD": 27,
+        "pA": 37,
+        "h2h": {
+          "played": 1,
+          "last": [
+            {
+              "date": "2006-03-01",
+              "h": "Senegal",
+              "a": "Norway",
+              "hs": 2,
+              "as": 1
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391759",
@@ -840,7 +1744,33 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Levi's Stadium",
-      "city": "Santa Clara, CA"
+      "city": "Santa Clara, CA",
+      "homeRank": 62,
+      "awayRank": 38,
+      "pred": {
+        "pH": 19,
+        "pD": 20,
+        "pA": 61,
+        "h2h": {
+          "played": 2,
+          "last": [
+            {
+              "date": "2004-05-30",
+              "h": "Algeria",
+              "a": "Jordan",
+              "hs": 1,
+              "as": 1
+            },
+            {
+              "date": "1974-09-29",
+              "h": "Algeria",
+              "a": "Jordan",
+              "hs": 6,
+              "as": 0
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391763",
@@ -859,7 +1789,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Reliant Stadium",
-      "city": "Houston, TX"
+      "city": "Houston, TX",
+      "homeRank": 6,
+      "awayRank": 53,
+      "pred": {
+        "pH": 70,
+        "pD": 15,
+        "pA": 15,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2391761",
@@ -878,7 +1819,26 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Gillette Stadium",
-      "city": "Foxborough, MA"
+      "city": "Foxborough, MA",
+      "homeRank": 4,
+      "awayRank": 73,
+      "pred": {
+        "pH": 85,
+        "pD": 6,
+        "pA": 9,
+        "h2h": {
+          "played": 1,
+          "last": [
+            {
+              "date": "2011-03-29",
+              "h": "England",
+              "a": "Ghana",
+              "hs": 1,
+              "as": 1
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391762",
@@ -897,7 +1857,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "BMO Field",
-      "city": "Toronto, ON"
+      "city": "Toronto, ON",
+      "homeRank": 31,
+      "awayRank": 10,
+      "pred": {
+        "pH": 20,
+        "pD": 21,
+        "pA": 59,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2461114",
@@ -916,7 +1887,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Estadio Akron",
-      "city": "Zapopan, JA"
+      "city": "Zapopan, JA",
+      "homeRank": 13,
+      "awayRank": 56,
+      "pred": {
+        "pH": 76,
+        "pD": 11,
+        "pA": 13,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2391767",
@@ -935,7 +1917,26 @@
       "awayScore": null,
       "status": "NS",
       "venue": "BC Place",
-      "city": "Vancouver, BC"
+      "city": "Vancouver, BC",
+      "homeRank": 19,
+      "awayRank": 30,
+      "pred": {
+        "pH": 42,
+        "pD": 26,
+        "pA": 32,
+        "h2h": {
+          "played": 1,
+          "last": [
+            {
+              "date": "2002-05-15",
+              "h": "Switzerland",
+              "a": "Canada",
+              "hs": 1,
+              "as": 3
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2461115",
@@ -954,7 +1955,33 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Lumen Field",
-      "city": "Seattle, WA"
+      "city": "Seattle, WA",
+      "homeRank": 74,
+      "awayRank": 36,
+      "pred": {
+        "pH": 47,
+        "pD": 25,
+        "pA": 28,
+        "h2h": {
+          "played": 2,
+          "last": [
+            {
+              "date": "2010-08-10",
+              "h": "Bosnia and Herzegovina",
+              "a": "Qatar",
+              "hs": 1,
+              "as": 1
+            },
+            {
+              "date": "2000-01-24",
+              "h": "Qatar",
+              "a": "Bosnia and Herzegovina",
+              "hs": 2,
+              "as": 0
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391764",
@@ -973,7 +2000,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta, GA"
+      "city": "Atlanta, GA",
+      "homeRank": 11,
+      "awayRank": 86,
+      "pred": {
+        "pH": 78,
+        "pD": 10,
+        "pA": 12,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2391765",
@@ -992,7 +2030,40 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Hard Rock Stadium",
-      "city": "Miami Gardens, FL"
+      "city": "Miami Gardens, FL",
+      "homeRank": 39,
+      "awayRank": 5,
+      "pred": {
+        "pH": 15,
+        "pD": 15,
+        "pA": 70,
+        "h2h": {
+          "played": 10,
+          "last": [
+            {
+              "date": "2011-03-27",
+              "h": "Brazil",
+              "a": "Scotland",
+              "hs": 2,
+              "as": 0
+            },
+            {
+              "date": "1998-06-10",
+              "h": "Brazil",
+              "a": "Scotland",
+              "hs": 2,
+              "as": 1
+            },
+            {
+              "date": "1990-06-20",
+              "h": "Brazil",
+              "a": "Scotland",
+              "hs": 1,
+              "as": 0
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391766",
@@ -1011,7 +2082,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Estadio BBVA",
-      "city": "Guadalupe, NL"
+      "city": "Guadalupe, NL",
+      "homeRank": 57,
+      "awayRank": 23,
+      "pred": {
+        "pH": 16,
+        "pD": 16,
+        "pA": 68,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2461116",
@@ -1030,7 +2112,26 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Estadio Azteca",
-      "city": "Mexico City, MX"
+      "city": "Mexico City, MX",
+      "homeRank": 43,
+      "awayRank": 17,
+      "pred": {
+        "pH": 21,
+        "pD": 21,
+        "pA": 58,
+        "h2h": {
+          "played": 1,
+          "last": [
+            {
+              "date": "2000-02-08",
+              "h": "Mexico",
+              "a": "Czech Republic",
+              "hs": 1,
+              "as": 2
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391768",
@@ -1049,7 +2150,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Lincoln Financial Field",
-      "city": "Philadelphia, PA"
+      "city": "Philadelphia, PA",
+      "homeRank": 90,
+      "awayRank": 40,
+      "pred": {
+        "pH": 12,
+        "pD": 11,
+        "pA": 77,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2391769",
@@ -1068,7 +2180,33 @@
       "awayScore": null,
       "status": "NS",
       "venue": "MetLife Stadium",
-      "city": "East Rutherford, NJ"
+      "city": "East Rutherford, NJ",
+      "homeRank": 23,
+      "awayRank": 9,
+      "pred": {
+        "pH": 31,
+        "pD": 27,
+        "pA": 42,
+        "h2h": {
+          "played": 2,
+          "last": [
+            {
+              "date": "2013-05-29",
+              "h": "Ecuador",
+              "a": "Germany",
+              "hs": 2,
+              "as": 4
+            },
+            {
+              "date": "2006-06-20",
+              "h": "Germany",
+              "a": "Ecuador",
+              "hs": 3,
+              "as": 0
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391771",
@@ -1087,7 +2225,40 @@
       "awayScore": null,
       "status": "NS",
       "venue": "GEHA Field at Arrowhead Stadium",
-      "city": "Kansas City, MO"
+      "city": "Kansas City, MO",
+      "homeRank": 41,
+      "awayRank": 7,
+      "pred": {
+        "pH": 15,
+        "pD": 14,
+        "pA": 71,
+        "h2h": {
+          "played": 3,
+          "last": [
+            {
+              "date": "2009-02-11",
+              "h": "Tunisia",
+              "a": "Netherlands",
+              "hs": 1,
+              "as": 1
+            },
+            {
+              "date": "1994-01-19",
+              "h": "Tunisia",
+              "a": "Netherlands",
+              "hs": 2,
+              "as": 2
+            },
+            {
+              "date": "1978-04-05",
+              "h": "Tunisia",
+              "a": "Netherlands",
+              "hs": 0,
+              "as": 4
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2461117",
@@ -1106,7 +2277,39 @@
       "awayScore": null,
       "status": "NS",
       "venue": "AT&T Stadium",
-      "city": "Arlington, TX"
+      "city": "Arlington, TX",
+      "homeRank": 17,
+      "pred": {
+        "pH": 60,
+        "pD": 20,
+        "pA": 20,
+        "h2h": {
+          "played": 4,
+          "last": [
+            {
+              "date": "2002-05-25",
+              "h": "Japan",
+              "a": "Sweden",
+              "hs": 1,
+              "as": 1
+            },
+            {
+              "date": "1997-02-13",
+              "h": "Japan",
+              "a": "Sweden",
+              "hs": 0,
+              "as": 1
+            },
+            {
+              "date": "1996-02-22",
+              "h": "Japan",
+              "a": "Sweden",
+              "hs": 1,
+              "as": 1
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391770",
@@ -1125,7 +2328,40 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Levi's Stadium",
-      "city": "Santa Clara, CA"
+      "city": "Santa Clara, CA",
+      "homeRank": 45,
+      "awayRank": 24,
+      "pred": {
+        "pH": 34,
+        "pD": 27,
+        "pA": 39,
+        "h2h": {
+          "played": 5,
+          "last": [
+            {
+              "date": "2010-10-09",
+              "h": "Australia",
+              "a": "Paraguay",
+              "hs": 1,
+              "as": 0
+            },
+            {
+              "date": "2006-10-07",
+              "h": "Australia",
+              "a": "Paraguay",
+              "hs": 1,
+              "as": 1
+            },
+            {
+              "date": "2000-06-15",
+              "h": "Australia",
+              "a": "Paraguay",
+              "hs": 2,
+              "as": 1
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2461118",
@@ -1144,7 +2380,40 @@
       "awayScore": null,
       "status": "NS",
       "venue": "SoFi Stadium",
-      "city": "Inglewood, CA"
+      "city": "Inglewood, CA",
+      "homeRank": 26,
+      "awayRank": 16,
+      "pred": {
+        "pH": 47,
+        "pD": 25,
+        "pA": 28,
+        "h2h": {
+          "played": 5,
+          "last": [
+            {
+              "date": "2025-06-07",
+              "h": "United States",
+              "a": "Turkey",
+              "hs": 1,
+              "as": 2
+            },
+            {
+              "date": "2014-06-01",
+              "h": "United States",
+              "a": "Turkey",
+              "hs": 2,
+              "as": 1
+            },
+            {
+              "date": "2010-05-29",
+              "h": "United States",
+              "a": "Turkey",
+              "hs": 2,
+              "as": 1
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391775",
@@ -1163,7 +2432,40 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Gillette Stadium",
-      "city": "Foxborough, MA"
+      "city": "Foxborough, MA",
+      "homeRank": 33,
+      "awayRank": 3,
+      "pred": {
+        "pH": 19,
+        "pD": 19,
+        "pA": 62,
+        "h2h": {
+          "played": 16,
+          "last": [
+            {
+              "date": "2014-05-27",
+              "h": "France",
+              "a": "Norway",
+              "hs": 4,
+              "as": 0
+            },
+            {
+              "date": "2010-08-11",
+              "h": "Norway",
+              "a": "France",
+              "hs": 2,
+              "as": 1
+            },
+            {
+              "date": "1998-02-25",
+              "h": "France",
+              "a": "Norway",
+              "hs": 3,
+              "as": 3
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2461119",
@@ -1182,7 +2484,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "BMO Field",
-      "city": "Toronto, ON"
+      "city": "Toronto, ON",
+      "homeRank": 18,
+      "awayRank": 58,
+      "pred": {
+        "pH": 57,
+        "pD": 22,
+        "pA": 21,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2391772",
@@ -1201,7 +2514,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Reliant Stadium",
-      "city": "Houston, TX"
+      "city": "Houston, TX",
+      "homeRank": 70,
+      "awayRank": 58,
+      "pred": {
+        "pH": 33,
+        "pD": 27,
+        "pA": 40,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2391776",
@@ -1220,7 +2544,40 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Estadio Akron",
-      "city": "Zapopan, JA"
+      "city": "Zapopan, JA",
+      "homeRank": 15,
+      "awayRank": 2,
+      "pred": {
+        "pH": 18,
+        "pD": 19,
+        "pA": 63,
+        "h2h": {
+          "played": 10,
+          "last": [
+            {
+              "date": "2013-06-16",
+              "h": "Spain",
+              "a": "Uruguay",
+              "hs": 2,
+              "as": 1
+            },
+            {
+              "date": "2013-02-06",
+              "h": "Spain",
+              "a": "Uruguay",
+              "hs": 3,
+              "as": 1
+            },
+            {
+              "date": "2005-08-17",
+              "h": "Spain",
+              "a": "Uruguay",
+              "hs": 2,
+              "as": 0
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391773",
@@ -1239,7 +2596,26 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Lumen Field",
-      "city": "Seattle, WA"
+      "city": "Seattle, WA",
+      "homeRank": 32,
+      "awayRank": 20,
+      "pred": {
+        "pH": 27,
+        "pD": 25,
+        "pA": 48,
+        "h2h": {
+          "played": 1,
+          "last": [
+            {
+              "date": "2000-06-07",
+              "h": "Iran",
+              "a": "Egypt",
+              "hs": 1,
+              "as": 1
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391774",
@@ -1258,7 +2634,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "BC Place",
-      "city": "Vancouver, BC"
+      "city": "Vancouver, BC",
+      "homeRank": 89,
+      "awayRank": 8,
+      "pred": {
+        "pH": 13,
+        "pD": 12,
+        "pA": 75,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2391779",
@@ -1277,7 +2664,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Lincoln Financial Field",
-      "city": "Philadelphia, PA"
+      "city": "Philadelphia, PA",
+      "homeRank": 10,
+      "awayRank": 73,
+      "pred": {
+        "pH": 81,
+        "pD": 8,
+        "pA": 11,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2391781",
@@ -1296,7 +2694,26 @@
       "awayScore": null,
       "status": "NS",
       "venue": "MetLife Stadium",
-      "city": "East Rutherford, NJ"
+      "city": "East Rutherford, NJ",
+      "homeRank": 31,
+      "awayRank": 4,
+      "pred": {
+        "pH": 17,
+        "pD": 17,
+        "pA": 66,
+        "h2h": {
+          "played": 1,
+          "last": [
+            {
+              "date": "2018-06-24",
+              "h": "England",
+              "a": "Panama",
+              "hs": 6,
+              "as": 1
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391778",
@@ -1315,7 +2732,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Hard Rock Stadium",
-      "city": "Miami Gardens, FL"
+      "city": "Miami Gardens, FL",
+      "homeRank": 13,
+      "awayRank": 6,
+      "pred": {
+        "pH": 35,
+        "pD": 27,
+        "pA": 38,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2461120",
@@ -1334,7 +2762,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta, GA"
+      "city": "Atlanta, GA",
+      "homeRank": 56,
+      "awayRank": 53,
+      "pred": {
+        "pH": 28,
+        "pD": 26,
+        "pA": 46,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     },
     {
       "id": "2391777",
@@ -1353,7 +2792,26 @@
       "awayScore": null,
       "status": "NS",
       "venue": "GEHA Field at Arrowhead Stadium",
-      "city": "Kansas City, MO"
+      "city": "Kansas City, MO",
+      "homeRank": 38,
+      "awayRank": 22,
+      "pred": {
+        "pH": 38,
+        "pD": 27,
+        "pA": 35,
+        "h2h": {
+          "played": 1,
+          "last": [
+            {
+              "date": "1982-06-21",
+              "h": "Algeria",
+              "a": "Austria",
+              "hs": 0,
+              "as": 2
+            }
+          ]
+        }
+      }
     },
     {
       "id": "2391780",
@@ -1372,7 +2830,18 @@
       "awayScore": null,
       "status": "NS",
       "venue": "AT&T Stadium",
-      "city": "Arlington, TX"
+      "city": "Arlington, TX",
+      "homeRank": 62,
+      "awayRank": 1,
+      "pred": {
+        "pH": 8,
+        "pD": 4,
+        "pA": 88,
+        "h2h": {
+          "played": 0,
+          "last": []
+        }
+      }
     }
   ]
 }

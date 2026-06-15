@@ -40,6 +40,13 @@ const TX = {
   matchOne: { es: "partido", en: "match", pt: "jogo", fr: "match", ar: "مباراة" },
   swipe: { es: "Deslizá para ver más →", en: "Swipe to see more →", pt: "Arraste para ver mais →", fr: "Faites glisser pour voir plus →", ar: "اسحب لرؤية المزيد ←" },
   retry: { es: "Reintentar", en: "Retry", pt: "Tentar de novo", fr: "Réessayer", ar: "إعادة المحاولة" },
+  forecast: { es: "Pronóstico", en: "Forecast", pt: "Prognóstico", fr: "Pronostic", ar: "التوقّع" },
+  draw: { es: "Empate", en: "Draw", pt: "Empate", fr: "Nul", ar: "تعادل" },
+  scorers: { es: "Goleadores", en: "Scorers", pt: "Goleadores", fr: "Buteurs", ar: "الهدّافون" },
+  goldenBoot: { es: "Bota de oro", en: "Golden Boot", pt: "Chuteira de Ouro", fr: "Soulier d'or", ar: "الحذاء الذهبي" },
+  h2h: { es: "Historial", en: "Head-to-head", pt: "Histórico", fr: "Face à face", ar: "المواجهات" },
+  firstMeet: { es: "Primer cruce mundialista", en: "First World Cup meeting", pt: "Primeiro encontro", fr: "Première rencontre", ar: "أول لقاء" },
+  meetings: { es: "cruces", en: "meetings", pt: "encontros", fr: "rencontres", ar: "مواجهات" },
 };
 const tw = (m) => m[state.lang] || m.es;
 
@@ -590,11 +597,20 @@ function matchCard(m) {
   const grp = m.group ? `<span class="match-grouptag">${t("group", { g: m.group })}</span>` : stageLabel(m);
   const venue = m.venue ? ` · ${m.venue}${m.city ? ", " + m.city.split(",")[0] : ""}` : "";
   const cal = st === "ns" ? `<button class="cal-btn" data-mid="${m.id}" aria-label="${tw(TX.addCal)}" title="${tw(TX.addCal)}"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 15H5V9h14v10zM7 11h5v5H7z"/></svg></button>` : "";
+  const rk = (n) => (n != null ? `<span class="rk" title="Ranking FIFA">#${n}</span>` : "");
+  const scorers = (st === "ft" && m.goals && ((m.goals.home && m.goals.home.length) || (m.goals.away && m.goals.away.length))) ? scorersBlock(m) : "";
   return `<article class="match reveal ${isMine ? "mine" : ""} ${st === "live" ? "live" : ""}" data-mid="${m.id}">
     <div class="match-meta">${grp}${venue}${cal}</div>
-    <div class="team-side home">${teamCell(m.home, m.homeBadge)}<span class="team-name">${dispName(m.home)}</span></div>
+    <div class="team-side home">${teamCell(m.home, m.homeBadge)}<span class="team-name">${dispName(m.home)}${rk(m.homeRank)}</span></div>
     <div class="match-center">${center}</div>
-    <div class="team-side away">${teamCell(m.away, m.awayBadge)}<span class="team-name">${dispName(m.away)}</span></div></article>`;
+    <div class="team-side away">${teamCell(m.away, m.awayBadge)}<span class="team-name">${dispName(m.away)}${rk(m.awayRank)}</span></div>${scorers}</article>`;
+}
+// Bloque de goleadores (full-width) bajo un partido terminado.
+const BALL_IC = '<svg class="sc-ball" viewBox="0 0 24 24" width="11" height="11" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 2.2l2.4 1.7-.9 2.8h-3l-.9-2.8L12 4.2zM5.6 8.9l2.3.1.9 2.8-2 1.7-2-1.5.8-3.1zm12.8 0l.8 3.1-2 1.5-2-1.7.9-2.8 2.3-.1zM8.2 18.3l-1-2.7 1.8-1.6h4l1.8 1.6-1 2.7H8.2z"/></svg>';
+function scorersBlock(m) {
+  const fmt = (arr) => (arr || []).map((g) => `<span class="sc-item">${escHtml(g.name)}${g.minute ? ` <i>${escHtml(g.minute)}'</i>` : ""}</span>`).join("");
+  return `<div class="match-scorers"><div class="sc-label">${BALL_IC}${tw(TX.scorers)}</div>
+    <div class="sc-cols"><div class="sc-col home">${fmt(m.goals.home)}</div><div class="sc-col away">${fmt(m.goals.away)}</div></div></div>`;
 }
 function stageLabel(m) {
   if (m.stage === "GROUP") return t("stages.GROUP", { r: m.round });
@@ -708,8 +724,32 @@ function renderGroups() {
     if (gms) inner += `<div class="grp-matches">${gms}</div>`;
     html += accordionEl(g, head, inner, state.allExpanded || myGroup, myGroup, "acc-grp");
   }
+  html += botaDeOroHtml();
   cont.innerHTML = html;
   scrollReveal(cont);
+}
+// Tabla de goleadores del torneo (Bota de oro), agregada de m.goals.
+function topScorers() {
+  const map = new Map();
+  for (const m of state.data.matches) {
+    if (!m.goals) continue;
+    const add = (arr, team) => (arr || []).forEach((g) => {
+      const key = `${g.name}|${team}`;
+      const e = map.get(key) || { name: g.name, team, goals: 0 };
+      e.goals++; map.set(key, e);
+    });
+    add(m.goals.home, m.home); add(m.goals.away, m.away);
+  }
+  return [...map.values()].sort((a, b) => b.goals - a.goals || a.name.localeCompare(b.name));
+}
+function botaDeOroHtml() {
+  const list = topScorers();
+  if (!list.length) return "";
+  const rows = list.slice(0, 10).map((s, i) => `<div class="bo-row">
+    <span class="bo-pos${i === 0 ? " first" : ""}">${i + 1}</span>
+    <span class="bo-name">${escHtml(s.name)}<span class="bo-team">${dispName(s.team)}</span></span>
+    <span class="bo-g">${s.goals}</span></div>`).join("");
+  return `<section class="botaoro reveal"><div class="bo-head">${IC.trophy}<span>${tw(TX.goldenBoot)}</span></div>${rows}</section>`;
 }
 
 /* --------------------------- bracket (104) --------------------------- */
@@ -947,6 +987,22 @@ function renderStadiums() {
 }
 
 /* --------------------------- countdown ------------------------------- */
+// Barra de pronóstico (Elo) + head-to-head para el próximo partido.
+function predHtml(m) {
+  const p = m.pred, hn = dispName(m.home), an = dispName(m.away);
+  const bar = `<div class="pred-bar"><span class="pb h" style="width:${p.pH}%"></span><span class="pb d" style="width:${p.pD}%"></span><span class="pb a" style="width:${p.pA}%"></span></div>`;
+  const legend = `<div class="pred-legend"><span class="pl h">${hn} ${p.pH}%</span><span class="pl d">${tw(TX.draw)} ${p.pD}%</span><span class="pl a">${an} ${p.pA}%</span></div>`;
+  let h2h = "";
+  if (p.h2h) {
+    if (p.h2h.played === 0) h2h = `<div class="pred-h2h">${tw(TX.firstMeet)}</div>`;
+    else {
+      const lg = p.h2h.last && p.h2h.last[0];
+      const ls = lg ? ` · ${dispName(lg.h)} ${lg.hs}-${lg.as} ${dispName(lg.a)}` : "";
+      h2h = `<div class="pred-h2h">${tw(TX.h2h)}: ${p.h2h.played} ${tw(TX.meetings)}${ls}</div>`;
+    }
+  }
+  return `<div class="pred-title">${tw(TX.forecast)}</div>${bar}${legend}${h2h}`;
+}
 function renderCountdown() {
   clearInterval(state.countdownTimer);
   const box = $("#countdown");
@@ -960,6 +1016,11 @@ function renderCountdown() {
   box.hidden = false;
   $("#countdown-label").textContent = (state.team && (next.home === state.team || next.away === state.team)) ? t("nextMatchOf", { team: dispName(state.team) }) : t("nextMatchWC");
   $("#countdown-teams").innerHTML = `${flagImg(next.home, "fl")}<span>${dispName(next.home)}</span> ${t("vs")} <span>${dispName(next.away)}</span>${flagImg(next.away, "fl")}`.replace(/class="fl"/g, 'style="width:22px;height:16px;border-radius:3px;object-fit:cover"');
+  const predBox = $("#cd-pred");
+  if (predBox) {
+    if (next.pred) { predBox.hidden = false; predBox.innerHTML = predHtml(next); }
+    else { predBox.hidden = true; predBox.innerHTML = ""; }
+  }
   let mode = null;
   const setNum = (k, v, pop) => {
     const el = $(`#cd-clock .cd-num[data-k="${k}"]`); if (!el) return;
