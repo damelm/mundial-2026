@@ -32,18 +32,26 @@ const KNOCKOUT_ROUNDS = [
   { code: 125, stage: "F", name: "Final" },
 ];
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Throttle global: la key gratuita de TheSportsDB devuelve 429 si se la
+// satura. Espaciamos las llamadas y reintentamos con backoff ante 429.
 async function getJSON(url) {
-  for (let attempt = 0; attempt < 3; attempt++) {
+  for (let attempt = 0; attempt < 4; attempt++) {
     try {
       const res = await fetch(url, { headers: { "User-Agent": "mundial-2026-fixture" } });
+      if (res.status === 429) throw new Error("HTTP 429");
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      return await res.json();
+      const json = await res.json();
+      await sleep(500); // espaciado cortes entre requests OK
+      return json;
     } catch (err) {
-      if (attempt === 2) {
+      if (attempt === 3) {
         console.error(`  ! fallo ${url}: ${err.message}`);
         return null;
       }
-      await new Promise((r) => setTimeout(r, 1500));
+      // backoff mas largo ante 429
+      await sleep(err.message.includes("429") ? 4000 : 1500);
     }
   }
 }
@@ -217,16 +225,29 @@ async function main() {
   const baseDates = new Set(baseMatches.map((m) => m.date).filter(Boolean));
   const today = new Date();
   const windowDates = [];
-  for (let i = -3; i <= 1; i++) {
+  for (let i = -2; i <= 1; i++) {
     const dt = new Date(today.getTime() + i * 86400000);
     const ds = dt.toISOString().slice(0, 10);
     if (baseDates.has(ds)) windowDates.push(ds);
   }
+  // La API gratuita devuelve un subconjunto ROTATIVO por dia (a veces solo 3 de
+  // los partidos de esa fecha). Consultamos cada fecha varias veces y unimos
+  // por idEvent para juntar todos los marcadores en una sola corrida.
+  const EVENTSDAY_TRIES = 3;
   for (const ds of windowDates) {
-    const d = await getJSON(`${BASE}/eventsday.php?d=${ds}&l=${LEAGUE}`);
-    const evs = (d && d.events) || [];
-    console.log(`eventsday ${ds}: ${evs.length} partidos`);
-    for (const ev of evs) consume(ev);
+    const seenIds = new Set();
+    let withScore = 0;
+    for (let t = 0; t < EVENTSDAY_TRIES; t++) {
+      const d = await getJSON(`${BASE}/eventsday.php?d=${ds}&l=${LEAGUE}`);
+      const evs = (d && d.events) || [];
+      for (const ev of evs) {
+        if (ev.idEvent && seenIds.has(ev.idEvent)) continue;
+        if (ev.idEvent) seenIds.add(ev.idEvent);
+        if (ev.intHomeScore !== null && ev.intHomeScore !== "") withScore++;
+        consume(ev);
+      }
+    }
+    console.log(`eventsday ${ds}: ${seenIds.size} partidos unicos (${withScore} con marcador) tras ${EVENTSDAY_TRIES} intentos`);
   }
 
   console.log(`Marcadores superpuestos sobre la base: ${overlaid}`);
