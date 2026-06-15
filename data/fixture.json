@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-15T16:33:00.436Z",
+  "updatedAt": "2026-06-15T20:15:58.463Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -493,7 +493,7 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/5jn0o71593280376.png",
       "homeScore": 0,
       "awayScore": 0,
-      "status": "1H",
+      "status": "FT",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta, GA",
       "homeRank": 2,
@@ -512,44 +512,13 @@
       "away": "Egypt",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/8xlvxv1592062265.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/uheyzo1742102234.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "2H",
       "venue": "Lumen Field",
       "city": "Seattle, WA",
       "homeRank": 8,
-      "awayRank": 32,
-      "pred": {
-        "pH": 57,
-        "pD": 22,
-        "pA": 21,
-        "h2h": {
-          "played": 4,
-          "last": [
-            {
-              "date": "2022-11-18",
-              "h": "Egypt",
-              "a": "Belgium",
-              "hs": 2,
-              "as": 1
-            },
-            {
-              "date": "2018-06-06",
-              "h": "Belgium",
-              "a": "Egypt",
-              "hs": 3,
-              "as": 0
-            },
-            {
-              "date": "2005-02-09",
-              "h": "Egypt",
-              "a": "Belgium",
-              "hs": 4,
-              "as": 0
-            }
-          ]
-        }
-      }
+      "awayRank": 32
     },
     {
       "id": "2391738",
