@@ -18,6 +18,12 @@ const LEAGUE = "4429"; // FIFA World Cup
 const SEASON = "2026";
 const BASE = `https://www.thesportsdb.com/api/v1/json/${KEY}`;
 
+// openfootball: dataset comunitario de dominio publico (CC0), sin API key,
+// con los resultados curados de los 104 partidos (y goleadores). Es nuestra
+// fuente PRIMARIA de resultados finales: confiable y no se degrada como la
+// free de TheSportsDB. TheSportsDB queda solo para el marcador EN VIVO.
+const OPENFOOTBALL = "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json";
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(__dirname, "..", "data", "fixture.json");
 const BASE_FILE = resolve(__dirname, "..", "data", "fixture-base.json");
@@ -126,6 +132,35 @@ function overlay(b, m) {
   if (m.city) b.city = m.city;
 }
 
+// Superpone los resultados curados de openfootball sobre la base, emparejando
+// por equipos. Solo toca partidos con resultado final (score.ft presente), asi
+// no pisa los que estan en vivo (que vienen de TheSportsDB). Devuelve cuantos.
+async function overlayOpenFootball(baseByPair) {
+  const d = await getJSON(OPENFOOTBALL);
+  const ms = (d && d.matches) || [];
+  if (!ms.length) {
+    console.log("openfootball: sin datos (se sigue con TheSportsDB)");
+    return 0;
+  }
+  let n = 0;
+  for (const m of ms) {
+    const t1 = typeof m.team1 === "string" ? m.team1 : m.team1 && m.team1.name;
+    const t2 = typeof m.team2 === "string" ? m.team2 : m.team2 && m.team2.name;
+    if (!t1 || !t2) continue;
+    const ft = m.score && m.score.ft;
+    if (!Array.isArray(ft) || ft.length < 2) continue; // sin resultado aun
+    const b = baseByPair.get(pairKey(t1, t2));
+    if (b) {
+      b.homeScore = Number(ft[0]);
+      b.awayScore = Number(ft[1]);
+      b.status = "FT";
+      n++;
+    }
+  }
+  console.log(`openfootball: ${n} resultados finales superpuestos`);
+  return n;
+}
+
 async function main() {
   // 0) Cargar la base de 72 partidos (fase de grupos). Es la fuente de verdad
   //    del calendario; si falta, abortamos para no publicar un fixture roto.
@@ -225,15 +260,14 @@ async function main() {
   const baseDates = new Set(baseMatches.map((m) => m.date).filter(Boolean));
   const today = new Date();
   const windowDates = [];
-  for (let i = -2; i <= 1; i++) {
+  for (let i = -1; i <= 1; i++) {
     const dt = new Date(today.getTime() + i * 86400000);
     const ds = dt.toISOString().slice(0, 10);
     if (baseDates.has(ds)) windowDates.push(ds);
   }
-  // La API gratuita devuelve un subconjunto ROTATIVO por dia (a veces solo 3 de
-  // los partidos de esa fecha). Consultamos cada fecha varias veces y unimos
-  // por idEvent para juntar todos los marcadores en una sola corrida.
-  const EVENTSDAY_TRIES = 3;
+  // openfootball ya cubre los resultados finales, asi que eventsday solo aporta
+  // frescura EN VIVO de la fecha en curso. Con 2 intentos alcanza y no satura.
+  const EVENTSDAY_TRIES = 2;
   for (const ds of windowDates) {
     const seenIds = new Set();
     let withScore = 0;
@@ -251,6 +285,10 @@ async function main() {
   }
 
   console.log(`Marcadores superpuestos sobre la base: ${overlaid}`);
+
+  // 5) openfootball ULTIMO: pisa con el resultado final curado (los partidos
+  //    en vivo no tienen score.ft, asi que conservan el marcador de TheSportsDB).
+  await overlayOpenFootball(baseByPair);
 
   const matches = [...baseMatches, ...koById.values()].sort((a, b) => {
     const ta = a.timestamp || "";
