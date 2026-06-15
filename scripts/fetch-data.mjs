@@ -213,6 +213,10 @@ async function overlayOpenFootball(baseByPair) {
 
 // Trae el ranking FIFA y lo devuelve keyed por los NOMBRES de nuestra base
 // (mapeando por canon), asi el cliente busca directo por m.home.
+// Equipos que la fuente comunitaria de ranking no trae (su set de 48 no
+// coincide 100% con el cuadro real). Posicion FIFA aproximada de respaldo.
+const RANK_FALLBACK = { sweden: 24 };
+
 async function fetchRanks(baseMatches) {
   const d = await getJSON(RANKINGS_URL);
   if (!d || typeof d !== "object") { console.log("ranking FIFA: sin datos"); return {}; }
@@ -221,7 +225,7 @@ async function fetchRanks(baseMatches) {
   const names = new Set();
   for (const m of baseMatches) { names.add(m.home); names.add(m.away); }
   const ranks = {};
-  for (const name of names) { const r = byCanon[canon(name)]; if (r) ranks[name] = r; }
+  for (const name of names) { const r = byCanon[canon(name)] ?? RANK_FALLBACK[canon(name)]; if (r) ranks[name] = r; }
   console.log(`ranking FIFA: ${Object.keys(ranks).length}/${names.size} equipos`);
   return ranks;
 }

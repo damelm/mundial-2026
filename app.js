@@ -367,7 +367,7 @@ function applyI18n() {
   $("#selector-title").textContent = t("chooseTeam");
   $("#country-search").placeholder = t("searchCountry");
   $("#neutral-name").textContent = t("neutralMode");
-  $("#footer-made").innerHTML = `${t("madeWith")} · <a href="https://www.thesportsdb.com" target="_blank" rel="noopener">TheSportsDB</a>`;
+  $("#footer-made").textContent = t("madeWith");
   setTzHint();
   buildLangChips();
   if (state.updTabsFade) state.updTabsFade(); // las etiquetas cambian de ancho según idioma

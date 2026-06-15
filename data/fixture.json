@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-15T06:44:03.978Z",
+  "updatedAt": "2026-06-15T06:48:43.334Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -475,6 +475,7 @@
           }
         ]
       },
+      "homeRank": 24,
       "awayRank": 41
     },
     {
@@ -1298,6 +1299,7 @@
       "venue": "Reliant Stadium",
       "city": "Houston, TX",
       "homeRank": 7,
+      "awayRank": 24,
       "pred": {
         "pH": 61,
         "pD": 20,
@@ -2279,6 +2281,7 @@
       "venue": "AT&T Stadium",
       "city": "Arlington, TX",
       "homeRank": 17,
+      "awayRank": 24,
       "pred": {
         "pH": 60,
         "pD": 20,
