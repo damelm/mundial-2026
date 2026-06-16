@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-16T19:50:56.749Z",
+  "updatedAt": "2026-06-16T22:12:01.353Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -625,11 +625,33 @@
       "away": "Senegal",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/p3n0z51726166851.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/slayb01780546342.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "status": "1H",
+      "homeScore": 3,
+      "awayScore": 1,
+      "status": "FT",
       "venue": "MetLife Stadium",
       "city": "East Rutherford, NJ",
+      "goals": {
+        "home": [
+          {
+            "name": "Kylian Mbappé",
+            "minute": "66"
+          },
+          {
+            "name": "Bradley Barcola",
+            "minute": "82"
+          },
+          {
+            "name": "Kylian Mbappé",
+            "minute": "90+6"
+          }
+        ],
+        "away": [
+          {
+            "name": "Ibrahim Mbaye",
+            "minute": "90+5"
+          }
+        ]
+      },
       "homeRank": 3,
       "awayRank": 18
     },
@@ -646,22 +668,13 @@
       "away": "Norway",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/aqidfn1742100110.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/gyfn811591973155.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "Gillette Stadium",
       "city": "Foxborough, MA",
       "homeRank": 58,
-      "awayRank": 33,
-      "pred": {
-        "pH": 22,
-        "pD": 22,
-        "pA": 56,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 33
     },
     {
       "id": "2391740",
