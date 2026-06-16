@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-16T16:12:49.043Z",
+  "updatedAt": "2026-06-16T19:50:56.749Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -625,37 +625,13 @@
       "away": "Senegal",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/p3n0z51726166851.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/slayb01780546342.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "MetLife Stadium",
       "city": "East Rutherford, NJ",
       "homeRank": 3,
-      "awayRank": 18,
-      "pred": {
-        "pH": 61,
-        "pD": 20,
-        "pA": 19,
-        "h2h": {
-          "played": 2,
-          "last": [
-            {
-              "date": "2002-05-31",
-              "h": "France",
-              "a": "Senegal",
-              "hs": 0,
-              "as": 1
-            },
-            {
-              "date": "1963-04-18",
-              "h": "Senegal",
-              "a": "France",
-              "hs": 2,
-              "as": 0
-            }
-          ]
-        }
-      }
+      "awayRank": 18
     },
     {
       "id": "2461107",
