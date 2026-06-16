@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-15T22:33:49.550Z",
+  "updatedAt": "2026-06-16T00:17:17.188Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -311,7 +311,7 @@
       "homeScore": 7,
       "awayScore": 1,
       "status": "FT",
-      "venue": "NRG Stadium",
+      "venue": "Reliant Stadium",
       "city": "Houston, TX",
       "goals": {
         "home": [
@@ -547,11 +547,25 @@
       "away": "Uruguay",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/24xwpq1594125742.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/6vjbr11726167756.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "status": "1H",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FT",
       "venue": "Hard Rock Stadium",
       "city": "Miami Gardens, FL",
+      "goals": {
+        "home": [
+          {
+            "name": "Abdulelah Al-Amri",
+            "minute": "41"
+          }
+        ],
+        "away": [
+          {
+            "name": "Maxi Araújo",
+            "minute": "80"
+          }
+        ]
+      },
       "homeRank": 58,
       "awayRank": 15
     },
