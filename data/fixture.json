@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-16T00:17:17.188Z",
+  "updatedAt": "2026-06-16T11:34:41.722Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -582,37 +582,35 @@
       "away": "New Zealand",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/uttpvw1455465617.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/91xpk81742982935.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 2,
+      "awayScore": 2,
+      "status": "FT",
       "venue": "SoFi Stadium",
       "city": "Inglewood, CA",
+      "goals": {
+        "home": [
+          {
+            "name": "Ramin Rezaeian",
+            "minute": "32"
+          },
+          {
+            "name": "Mohammad Mohebbi",
+            "minute": "64"
+          }
+        ],
+        "away": [
+          {
+            "name": "Elijah Just",
+            "minute": "7"
+          },
+          {
+            "name": "Elijah Just",
+            "minute": "54"
+          }
+        ]
+      },
       "homeRank": 20,
-      "awayRank": 89,
-      "pred": {
-        "pH": 68,
-        "pD": 16,
-        "pA": 16,
-        "h2h": {
-          "played": 2,
-          "last": [
-            {
-              "date": "2003-10-12",
-              "h": "Iran",
-              "a": "New Zealand",
-              "hs": 3,
-              "as": 0
-            },
-            {
-              "date": "1973-08-12",
-              "h": "New Zealand",
-              "a": "Iran",
-              "hs": 0,
-              "as": 0
-            }
-          ]
-        }
-      }
+      "awayRank": 89
     },
     {
       "id": "2391742",
