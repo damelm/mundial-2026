@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-16T11:34:41.722Z",
+  "updatedAt": "2026-06-16T16:12:49.043Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1428,8 +1428,8 @@
       "homeRank": 2,
       "awayRank": 58,
       "pred": {
-        "pH": 88,
-        "pD": 4,
+        "pH": 87,
+        "pD": 5,
         "pA": 8,
         "h2h": {
           "played": 3,
@@ -1510,9 +1510,9 @@
       "homeRank": 15,
       "awayRank": 70,
       "pred": {
-        "pH": 74,
-        "pD": 13,
-        "pA": 13,
+        "pH": 71,
+        "pD": 14,
+        "pA": 15,
         "h2h": {
           "played": 0,
           "last": []
@@ -2558,9 +2558,9 @@
       "homeRank": 32,
       "awayRank": 20,
       "pred": {
-        "pH": 27,
-        "pD": 25,
-        "pA": 48,
+        "pH": 28,
+        "pD": 26,
+        "pA": 46,
         "h2h": {
           "played": 1,
           "last": [
@@ -2597,8 +2597,8 @@
       "awayRank": 8,
       "pred": {
         "pH": 13,
-        "pD": 12,
-        "pA": 75,
+        "pD": 13,
+        "pA": 74,
         "h2h": {
           "played": 0,
           "last": []
