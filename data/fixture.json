@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17T19:13:12.678Z",
+  "updatedAt": "2026-06-17T21:23:16.676Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -799,7 +799,7 @@
       "homeScore": 1,
       "awayScore": 1,
       "status": "FT",
-      "venue": "NRG Stadium",
+      "venue": "Reliant Stadium",
       "city": "Houston, TX",
       "goals": {
         "home": [
@@ -831,44 +831,13 @@
       "away": "Croatia",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/vvtsyu1455465317.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "AT&T Stadium",
       "city": "Arlington, TX",
       "homeRank": 4,
-      "awayRank": 10,
-      "pred": {
-        "pH": 43,
-        "pD": 26,
-        "pA": 31,
-        "h2h": {
-          "played": 11,
-          "last": [
-            {
-              "date": "2021-06-13",
-              "h": "England",
-              "a": "Croatia",
-              "hs": 1,
-              "as": 0
-            },
-            {
-              "date": "2018-11-18",
-              "h": "England",
-              "a": "Croatia",
-              "hs": 2,
-              "as": 1
-            },
-            {
-              "date": "2018-10-12",
-              "h": "Croatia",
-              "a": "England",
-              "hs": 0,
-              "as": 0
-            }
-          ]
-        }
-      }
+      "awayRank": 10
     },
     {
       "id": "2391744",
