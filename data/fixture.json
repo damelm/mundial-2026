@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17T09:14:05.107Z",
+  "updatedAt": "2026-06-17T19:13:12.678Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -796,22 +796,27 @@
       "away": "DR Congo",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/swqvpy1455466083.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/s85jjw1728749022.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
-      "venue": "Reliant Stadium",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FT",
+      "venue": "NRG Stadium",
       "city": "Houston, TX",
+      "goals": {
+        "home": [
+          {
+            "name": "João Neves",
+            "minute": "6"
+          }
+        ],
+        "away": [
+          {
+            "name": "Yoane Wissa",
+            "minute": "45+5"
+          }
+        ]
+      },
       "homeRank": 6,
-      "awayRank": 56,
-      "pred": {
-        "pH": 77,
-        "pD": 11,
-        "pA": 12,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 56
     },
     {
       "id": "2391743",
