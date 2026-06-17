@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17T04:06:54.280Z",
+  "updatedAt": "2026-06-17T09:14:05.107Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -753,11 +753,33 @@
       "away": "Jordan",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/874p631628721400.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/59fo2s1742100034.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "status": "1H",
+      "homeScore": 3,
+      "awayScore": 1,
+      "status": "FT",
       "venue": "Levi's Stadium",
       "city": "Santa Clara, CA",
+      "goals": {
+        "home": [
+          {
+            "name": "Romano Schmid",
+            "minute": "21"
+          },
+          {
+            "name": "Yazan Al-Arab",
+            "minute": "76"
+          },
+          {
+            "name": "Marko Arnautovic",
+            "minute": "90+12"
+          }
+        ],
+        "away": [
+          {
+            "name": "Ali Olwan",
+            "minute": "50"
+          }
+        ]
+      },
       "homeRank": 22,
       "awayRank": 62
     },
@@ -1643,8 +1665,8 @@
       "homeRank": 3,
       "awayRank": 58,
       "pred": {
-        "pH": 79,
-        "pD": 10,
+        "pH": 81,
+        "pD": 8,
         "pA": 11,
         "h2h": {
           "played": 0,
@@ -1673,9 +1695,9 @@
       "homeRank": 33,
       "awayRank": 18,
       "pred": {
-        "pH": 36,
+        "pH": 39,
         "pD": 27,
-        "pA": 37,
+        "pA": 34,
         "h2h": {
           "played": 1,
           "last": [
@@ -2401,8 +2423,8 @@
       "awayRank": 3,
       "pred": {
         "pH": 19,
-        "pD": 19,
-        "pA": 62,
+        "pD": 20,
+        "pA": 61,
         "h2h": {
           "played": 16,
           "last": [
@@ -2760,9 +2782,9 @@
       "homeRank": 38,
       "awayRank": 22,
       "pred": {
-        "pH": 38,
+        "pH": 35,
         "pD": 27,
-        "pA": 35,
+        "pA": 38,
         "h2h": {
           "played": 1,
           "last": [
@@ -2798,9 +2820,9 @@
       "homeRank": 62,
       "awayRank": 1,
       "pred": {
-        "pH": 8,
+        "pH": 7,
         "pD": 4,
-        "pA": 88,
+        "pA": 89,
         "h2h": {
           "played": 0,
           "last": []
