@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-16T23:49:31.371Z",
+  "updatedAt": "2026-06-17T04:06:54.280Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -669,10 +669,36 @@
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/aqidfn1742100110.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/gyfn811591973155.png",
       "homeScore": 1,
-      "awayScore": 3,
-      "status": "2H",
+      "awayScore": 4,
+      "status": "FT",
       "venue": "Gillette Stadium",
       "city": "Foxborough, MA",
+      "goals": {
+        "home": [
+          {
+            "name": "Aymen Hussein",
+            "minute": "39"
+          }
+        ],
+        "away": [
+          {
+            "name": "Erling Haaland",
+            "minute": "29"
+          },
+          {
+            "name": "Erling Haaland",
+            "minute": "43"
+          },
+          {
+            "name": "Leo Østigard",
+            "minute": "76"
+          },
+          {
+            "name": "Aymen Hussein",
+            "minute": "90+6"
+          }
+        ]
+      },
       "homeRank": 58,
       "awayRank": 33
     },
@@ -689,30 +715,30 @@
       "away": "Algeria",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/3zplhu1726167477.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/rrwpry1455460218.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 3,
+      "awayScore": 0,
+      "status": "FT",
       "venue": "GEHA Field at Arrowhead Stadium",
       "city": "Kansas City, MO",
+      "goals": {
+        "home": [
+          {
+            "name": "Lionel Messi",
+            "minute": "17"
+          },
+          {
+            "name": "Lionel Messi",
+            "minute": "60"
+          },
+          {
+            "name": "Lionel Messi",
+            "minute": "76"
+          }
+        ],
+        "away": []
+      },
       "homeRank": 1,
-      "awayRank": 38,
-      "pred": {
-        "pH": 72,
-        "pD": 14,
-        "pA": 14,
-        "h2h": {
-          "played": 1,
-          "last": [
-            {
-              "date": "2007-06-05",
-              "h": "Algeria",
-              "a": "Argentina",
-              "hs": 3,
-              "as": 4
-            }
-          ]
-        }
-      }
+      "awayRank": 38
     },
     {
       "id": "2391741",
@@ -727,22 +753,13 @@
       "away": "Jordan",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/874p631628721400.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/59fo2s1742100034.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "Levi's Stadium",
       "city": "Santa Clara, CA",
       "homeRank": 22,
-      "awayRank": 62,
-      "pred": {
-        "pH": 59,
-        "pD": 21,
-        "pA": 20,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 62
     },
     {
       "id": "2461108",
