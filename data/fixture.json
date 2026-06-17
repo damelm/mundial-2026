@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17T21:23:16.676Z",
+  "updatedAt": "2026-06-17T22:57:50.234Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -831,11 +831,41 @@
       "away": "Croatia",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/vvtsyu1455465317.png",
-      "homeScore": 1,
-      "awayScore": 0,
-      "status": "1H",
+      "homeScore": 4,
+      "awayScore": 2,
+      "status": "FT",
       "venue": "AT&T Stadium",
       "city": "Arlington, TX",
+      "goals": {
+        "home": [
+          {
+            "name": "Harry Kane",
+            "minute": "12"
+          },
+          {
+            "name": "Harry Kane",
+            "minute": "42"
+          },
+          {
+            "name": "Jude Bellingham",
+            "minute": "47"
+          },
+          {
+            "name": "Marcus Rashford",
+            "minute": "85"
+          }
+        ],
+        "away": [
+          {
+            "name": "Martin Baturina",
+            "minute": "36"
+          },
+          {
+            "name": "Petar Musa",
+            "minute": "45+5"
+          }
+        ]
+      },
       "homeRank": 4,
       "awayRank": 10
     },
