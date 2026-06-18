@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17T22:57:50.234Z",
+  "updatedAt": "2026-06-18T00:20:44.687Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -624,7 +624,7 @@
       "home": "France",
       "away": "Senegal",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/p3n0z51726166851.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/slayb01780546342.png",
+      "awayBadge": "https://www.thesportsdb.com/images/media/team/badge/slayb01780546342.png",
       "homeScore": 3,
       "awayScore": 1,
       "status": "FT",
@@ -882,22 +882,13 @@
       "away": "Panama",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/j589xw1751526124.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/asp2ck1715849700.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "2H",
       "venue": "BMO Field",
       "city": "Toronto, ON",
       "homeRank": 73,
-      "awayRank": 31,
-      "pred": {
-        "pH": 19,
-        "pD": 19,
-        "pA": 62,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 31
     },
     {
       "id": "2391745",
