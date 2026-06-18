@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T19:10:16.995Z",
+  "updatedAt": "2026-06-18T21:28:40.987Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -990,11 +990,37 @@
       "away": "Bosnia-Herzegovina",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/mb7yqe1717365808.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/wtqqst1455463120.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "status": "1H",
+      "homeScore": 4,
+      "awayScore": 1,
+      "status": "FT",
       "venue": "SoFi Stadium",
       "city": "Inglewood, CA",
+      "goals": {
+        "home": [
+          {
+            "name": "Johan Manzambi",
+            "minute": "74"
+          },
+          {
+            "name": "Rubén Vargas",
+            "minute": "84"
+          },
+          {
+            "name": "Johan Manzambi",
+            "minute": "90"
+          },
+          {
+            "name": "Granit Xhaka",
+            "minute": "90+7"
+          }
+        ],
+        "away": [
+          {
+            "name": "Ermin Mahmic",
+            "minute": "90+3"
+          }
+        ]
+      },
       "homeRank": 19,
       "awayRank": 74
     },
