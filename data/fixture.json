@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T12:52:43.774Z",
+  "updatedAt": "2026-06-18T16:32:07.920Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -955,30 +955,13 @@
       "away": "South Africa",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/1o0cx31654205806.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/xjz9j91553368824.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta, GA",
       "homeRank": 43,
-      "awayRank": 57,
-      "pred": {
-        "pH": 56,
-        "pD": 22,
-        "pA": 22,
-        "h2h": {
-          "played": 1,
-          "last": [
-            {
-              "date": "1997-12-13",
-              "h": "South Africa",
-              "a": "Czech Republic",
-              "hs": 2,
-              "as": 2
-            }
-          ]
-        }
-      }
+      "awayRank": 57
     },
     {
       "id": "2461110",
