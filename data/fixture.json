@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T21:28:40.987Z",
+  "updatedAt": "2026-06-18T23:20:24.633Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1037,30 +1037,13 @@
       "away": "Qatar",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/2t631f1595154867.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/rs3ir31642708685.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "BC Place",
       "city": "Vancouver, BC",
       "homeRank": 30,
-      "awayRank": 36,
-      "pred": {
-        "pH": 73,
-        "pD": 13,
-        "pA": 14,
-        "h2h": {
-          "played": 1,
-          "last": [
-            {
-              "date": "2022-09-23",
-              "h": "Canada",
-              "a": "Qatar",
-              "hs": 2,
-              "as": 0
-            }
-          ]
-        }
-      }
+      "awayRank": 36
     },
     {
       "id": "2391747",
