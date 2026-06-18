@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T00:20:44.687Z",
+  "updatedAt": "2026-06-18T05:17:10.394Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -882,11 +882,20 @@
       "away": "Panama",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/j589xw1751526124.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/asp2ck1715849700.png",
-      "homeScore": 0,
+      "homeScore": 1,
       "awayScore": 0,
-      "status": "2H",
+      "status": "FT",
       "venue": "BMO Field",
       "city": "Toronto, ON",
+      "goals": {
+        "home": [
+          {
+            "name": "Caleb Yirenkyi",
+            "minute": "90+5"
+          }
+        ],
+        "away": []
+      },
       "homeRank": 73,
       "awayRank": 31
     },
@@ -903,22 +912,35 @@
       "away": "Colombia",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/u5bgze1597943605.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/4ymyku1691180081.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 3,
+      "status": "FT",
       "venue": "Estadio Azteca",
       "city": "Mexico City, MX",
+      "goals": {
+        "home": [
+          {
+            "name": "Abbosbek Fayzullaev",
+            "minute": "60"
+          }
+        ],
+        "away": [
+          {
+            "name": "Daniel Muñoz",
+            "minute": "40"
+          },
+          {
+            "name": "Luis Díaz",
+            "minute": "65"
+          },
+          {
+            "name": "Jáminton Campaz",
+            "minute": "90+9"
+          }
+        ]
+      },
       "homeRank": 53,
-      "awayRank": 13,
-      "pred": {
-        "pH": 16,
-        "pD": 16,
-        "pA": 68,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 13
     },
     {
       "id": "2461109",
