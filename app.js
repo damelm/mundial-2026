@@ -557,6 +557,27 @@ function render() {
   renderActivePanel();   // solo la pestaña visible (evita cargar todas las imágenes juntas)
   renderCountdown();
   renderHeroCard();
+  renderLiveTicker();
+}
+// Cinta de eventos EN VIVO: marcadores + goleadores de los partidos en juego,
+// en scroll continuo (estética de transmisión). Solo visible si hay live.
+function renderLiveTicker() {
+  const el = $("#live-ticker");
+  if (!el) return;
+  const live = state.data.matches.filter((m) => classifyStatus(m) === "live");
+  if (!live.length) { el.hidden = true; el.innerHTML = ""; return; }
+  const items = [];
+  for (const m of live) {
+    const ph = (m.status || "").toUpperCase();
+    const min = /^[0-9HT'+\s]{1,7}$/.test(ph) ? ph : t("status.live");
+    items.push(`<span class="lt-score">${dispName(m.home)} <b>${m.homeScore ?? 0}–${m.awayScore ?? 0}</b> ${dispName(m.away)}</span><span class="lt-min">${escHtml(min)}</span>`);
+    const goals = m.goals ? [...(m.goals.home || []), ...(m.goals.away || [])] : [];
+    for (const g of goals) items.push(`<span class="lt-goal">⚽ ${escHtml(g.name)}${g.minute ? " " + escHtml(g.minute) + "'" : ""}</span>`);
+  }
+  if (!items.length) { el.hidden = true; el.innerHTML = ""; return; }
+  const strip = items.join('<span class="lt-sep">•</span>');
+  el.innerHTML = `<div class="lt-track">${strip}<span class="lt-sep">•</span>${strip}</div>`;
+  el.hidden = false;
 }
 function renderActivePanel() {
   if (!state.data) return;
