@@ -70,6 +70,7 @@ const TX = {
   instLater: { es: "Ahora no", en: "Not now", pt: "Agora não", fr: "Plus tard", ar: "ليس الآن" },
   instIosHint: { es: "Tocá Compartir y luego «Agregar a inicio».", en: "Tap Share, then “Add to Home Screen”.", pt: "Toque em Compartilhar e «Adicionar à Tela».", fr: "Touchez Partager puis « Sur l'écran d'accueil ».", ar: "اضغط مشاركة ثم «إضافة إلى الشاشة»." },
   instGotIt: { es: "Entendido", en: "Got it", pt: "Entendi", fr: "Compris", ar: "حسناً" },
+  instAndroidHint: { es: "Abrí el menú ⋮ del navegador y tocá «Instalar app» / «Agregar a inicio».", en: "Open the browser menu ⋮ and tap “Install app”.", pt: "Abra o menu ⋮ e toque em «Instalar app».", fr: "Ouvrez le menu ⋮ et touchez « Installer l'appli ».", ar: "افتح قائمة ⋮ في المتصفح واضغط «تثبيت التطبيق»." },
 };
 const tw = (m) => m[state.lang] || m.es;
 
@@ -1454,7 +1455,10 @@ let _installIntent = false;    // recién mostramos tras un momento de "intenci�
 function isStandalone() { try { return matchMedia("(display-mode: standalone)").matches || navigator.standalone === true; } catch { return false; } }
 const isIOSDevice = () => /iphone|ipad|ipod/i.test(navigator.userAgent);
 const isIOSSafari = () => isIOSDevice() && !/crios|fxios|edgios/i.test(navigator.userAgent);
-function installAvailable() { return !isStandalone() && (!!_deferredInstall || isIOSSafari()); }
+const isAndroidDevice = () => /android/i.test(navigator.userAgent);
+// Mostramos el aviso si: hay prompt nativo (Android/Chrome), o es iPhone Safari,
+// o es Android (aunque Chrome aún no haya disparado el evento → instrucciones).
+function installAvailable() { return !isStandalone() && (!!_deferredInstall || isIOSSafari() || isAndroidDevice()); }
 function installEligible() {
   if (!installAvailable()) return false;
   try { if (localStorage.getItem("wc26-installed") === "1") return false; } catch {}
@@ -1470,20 +1474,26 @@ function installEligible() {
 }
 function maybeShowInstall() { if (_installIntent && installEligible()) showInstallCard(); }
 const _shareSvg = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" style="vertical-align:-3px"><path fill="currentColor" d="M12 3l4 4-1.4 1.4L13 6.8V15h-2V6.8L9.4 8.4 8 7l4-4zM5 12h2v7h10v-7h2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7z"/></svg>';
+const _menuSvg = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" style="vertical-align:-3px"><path fill="currentColor" d="M12 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>';
 function installCardHtml() {
-  const ios = isIOSSafari();
-  const body = ios
-    ? `<div class="ic-ios">${_shareSvg} ${tw(TX.instIosHint)}</div><button class="ic-cta" id="ic-ok">${tw(TX.instGotIt)}</button>`
-    : `<div class="ic-benefits">${tw(TX.instBenefits)}</div><button class="ic-cta" id="ic-install">${tw(TX.instCta)}</button><div class="ic-later"><span id="ic-later">${tw(TX.instLater)}</span></div>`;
+  let title = tw(TX.instTitle), body;
+  if (isIOSSafari()) {
+    title = tw(TX.instIosTitle);
+    body = `<div class="ic-ios">${_shareSvg} ${tw(TX.instIosHint)}</div><button class="ic-cta" id="ic-ok">${tw(TX.instGotIt)}</button>`;
+  } else if (_deferredInstall) {
+    body = `<div class="ic-benefits">${tw(TX.instBenefits)}</div><button class="ic-cta" id="ic-install">${tw(TX.instCta)}</button><div class="ic-later"><span id="ic-later">${tw(TX.instLater)}</span></div>`;
+  } else {
+    body = `<div class="ic-benefits">${tw(TX.instBenefits)}</div><div class="ic-ios">${_menuSvg} ${tw(TX.instAndroidHint)}</div><button class="ic-cta" id="ic-ok">${tw(TX.instGotIt)}</button>`;
+  }
   return `<button class="ic-x" id="ic-x" aria-label="${tw(TX.close)}">✕</button>
     <div class="ic-row"><div class="ic-icon">F<span>26</span></div>
-      <div><div class="ic-title">${ios ? tw(TX.instIosTitle) : tw(TX.instTitle)}</div><div class="ic-sub">${tw(TX.instSub)}</div></div></div>${body}`;
+      <div><div class="ic-title">${title}</div><div class="ic-sub">${tw(TX.instSub)}</div></div></div>${body}`;
 }
 function showInstallCard() {
-  const el = $("#install-card"); if (!el || (!el.hidden && el.classList.contains("show"))) return;
-  el.innerHTML = installCardHtml();
-  el.hidden = false;
-  requestAnimationFrame(() => el.classList.add("show"));
+  const el = $("#install-card"); if (!el) return;
+  const wasShown = !el.hidden && el.classList.contains("show");
+  el.innerHTML = installCardHtml(); // re-render (p.ej. al llegar el prompt nativo)
+  if (!wasShown) { el.hidden = false; requestAnimationFrame(() => el.classList.add("show")); }
   const dismiss = () => { try { localStorage.setItem("wc26-inst-dismiss", String(Date.now())); } catch {} hideInstallCard(); };
   const x = $("#ic-x"), later = $("#ic-later"), ok = $("#ic-ok"), inst = $("#ic-install");
   if (x) x.onclick = dismiss;
@@ -1506,7 +1516,7 @@ function setupInstall() {
   window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); _deferredInstall = e; refreshFooter(); maybeShowInstall(); });
   window.addEventListener("appinstalled", () => { try { localStorage.setItem("wc26-installed", "1"); } catch {} hideInstallCard(); if (fb) fb.hidden = true; });
   refreshFooter();
-  setTimeout(() => { _installIntent = true; maybeShowInstall(); }, 15000); // momento de intención
+  setTimeout(() => { _installIntent = true; maybeShowInstall(); }, 10000); // momento de intención
 }
 
 /* --------------------------- init ------------------------------------ */
