@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://flagcdn.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=estadio7" />
+  <link rel="stylesheet" href="styles.css?v=estadio8" />
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.webmanifest" />
@@ -134,9 +134,13 @@
     <p id="footer-updated">—</p>
     <p id="footer-made">Datos abiertos: <a href="https://github.com/openfootball" target="_blank" rel="noopener">openfootball</a> · <a href="https://www.thesportsdb.com" target="_blank" rel="noopener">TheSportsDB</a> · <a href="https://github.com/martj42/international_results" target="_blank" rel="noopener">martj42</a></p>
     <p><a href="https://github.com/damelm/mundial-2026" target="_blank" rel="noopener">GitHub</a></p>
+    <p><button class="footer-install" id="footer-install" type="button" hidden>Instalar app</button></p>
     <p>© 2026 damelm · Todos los derechos reservados</p>
     <p id="footer-build" class="footer-build"></p>
   </footer>
+
+  <!-- Aviso de instalación (PWA). Se renderiza por JS; aparece solo si NO está instalada. -->
+  <div class="install-card" id="install-card" hidden></div>
 
   <!-- ===================== MODAL SELECTOR ============================= -->
   <div class="modal" id="selector" role="dialog" aria-modal="true" aria-labelledby="selector-title" hidden>
@@ -169,7 +173,7 @@
   <script src="data/stadiums.js"></script>
   <script src="content.js"></script>
   <script src="ads.js"></script>
-  <script src="app.js?v=estadio7"></script>
+  <script src="app.js?v=estadio8"></script>
   <script>
     if ("serviceWorker" in navigator) {
       // Si ya había un SW controlando la página, al activarse uno nuevo recargamos

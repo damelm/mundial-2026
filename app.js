@@ -62,6 +62,14 @@ const TX = {
   selUpcoming: { es: "Próximos partidos", en: "Upcoming", pt: "Próximos jogos", fr: "À venir", ar: "المباريات القادمة" },
   selPlayed: { es: "Jugados", en: "Played", pt: "Jogados", fr: "Joués", ar: "مباريات منتهية" },
   noRelato: { es: "El relato aparece cuando arranca el partido.", en: "Play-by-play appears once the match starts.", pt: "A narração aparece quando o jogo começa.", fr: "Le direct apparaît au coup d'envoi.", ar: "يظهر السرد عند بدء المباراة." },
+  instTitle: { es: "Instalá Fix26", en: "Install Fix26", pt: "Instale o Fix26", fr: "Installez Fix26", ar: "ثبّت Fix26" },
+  instIosTitle: { es: "Agregá Fix26 a tu inicio", en: "Add Fix26 to your Home Screen", pt: "Adicione o Fix26 à tela inicial", fr: "Ajoutez Fix26 à l'accueil", ar: "أضف Fix26 إلى الشاشة الرئيسية" },
+  instSub: { es: "El Mundial en tu pantalla de inicio", en: "The World Cup on your home screen", pt: "A Copa na sua tela inicial", fr: "Le Mondial sur votre écran d'accueil", ar: "كأس العالم على شاشتك الرئيسية" },
+  instBenefits: { es: "Goles al instante · Sin conexión · Abre directo", en: "Instant goals · Offline · Opens directly", pt: "Gols na hora · Offline · Abre direto", fr: "Buts en direct · Hors ligne · Accès direct", ar: "أهداف فورية · بدون اتصال · فتح مباشر" },
+  instCta: { es: "Instalar app", en: "Install app", pt: "Instalar app", fr: "Installer l'appli", ar: "تثبيت التطبيق" },
+  instLater: { es: "Ahora no", en: "Not now", pt: "Agora não", fr: "Plus tard", ar: "ليس الآن" },
+  instIosHint: { es: "Tocá Compartir y luego «Agregar a inicio».", en: "Tap Share, then “Add to Home Screen”.", pt: "Toque em Compartilhar e «Adicionar à Tela».", fr: "Touchez Partager puis « Sur l'écran d'accueil ».", ar: "اضغط مشاركة ثم «إضافة إلى الشاشة»." },
+  instGotIt: { es: "Entendido", en: "Got it", pt: "Entendi", fr: "Compris", ar: "حسناً" },
 };
 const tw = (m) => m[state.lang] || m.es;
 
@@ -1434,7 +1442,72 @@ function wireEvents() {
   });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeSelector(); closeMatchModal(); } });
 }
-function chooseTeam(name) { try { localStorage.setItem(STORE_TEAM, name || "__NEUTRAL__"); } catch {} applyTheme(name); }
+function chooseTeam(name) {
+  try { localStorage.setItem(STORE_TEAM, name || "__NEUTRAL__"); } catch {}
+  applyTheme(name);
+  _installIntent = true; maybeShowInstall(); // elegir selección = intención fuerte
+}
+
+/* --------------------------- instalar PWA ---------------------------- */
+let _deferredInstall = null;   // evento beforeinstallprompt guardado (Android)
+let _installIntent = false;    // recién mostramos tras un momento de "intención"
+function isStandalone() { try { return matchMedia("(display-mode: standalone)").matches || navigator.standalone === true; } catch { return false; } }
+const isIOSDevice = () => /iphone|ipad|ipod/i.test(navigator.userAgent);
+const isIOSSafari = () => isIOSDevice() && !/crios|fxios|edgios/i.test(navigator.userAgent);
+function installAvailable() { return !isStandalone() && (!!_deferredInstall || isIOSSafari()); }
+function installEligible() {
+  if (!installAvailable()) return false;
+  try { if (localStorage.getItem("wc26-installed") === "1") return false; } catch {}
+  try {
+    const d = Number(localStorage.getItem("wc26-inst-dismiss") || 0);
+    if (d) {
+      const days = (Date.now() - d) / 86400000;
+      const visits = Number(localStorage.getItem("wc26-visits") || 0);
+      if (days < (visits >= 3 ? 2 : 7)) return false; // visitante recurrente: vuelve antes
+    }
+  } catch {}
+  return true;
+}
+function maybeShowInstall() { if (_installIntent && installEligible()) showInstallCard(); }
+const _shareSvg = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" style="vertical-align:-3px"><path fill="currentColor" d="M12 3l4 4-1.4 1.4L13 6.8V15h-2V6.8L9.4 8.4 8 7l4-4zM5 12h2v7h10v-7h2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7z"/></svg>';
+function installCardHtml() {
+  const ios = isIOSSafari();
+  const body = ios
+    ? `<div class="ic-ios">${_shareSvg} ${tw(TX.instIosHint)}</div><button class="ic-cta" id="ic-ok">${tw(TX.instGotIt)}</button>`
+    : `<div class="ic-benefits">${tw(TX.instBenefits)}</div><button class="ic-cta" id="ic-install">${tw(TX.instCta)}</button><div class="ic-later"><span id="ic-later">${tw(TX.instLater)}</span></div>`;
+  return `<button class="ic-x" id="ic-x" aria-label="${tw(TX.close)}">✕</button>
+    <div class="ic-row"><div class="ic-icon">F<span>26</span></div>
+      <div><div class="ic-title">${ios ? tw(TX.instIosTitle) : tw(TX.instTitle)}</div><div class="ic-sub">${tw(TX.instSub)}</div></div></div>${body}`;
+}
+function showInstallCard() {
+  const el = $("#install-card"); if (!el || (!el.hidden && el.classList.contains("show"))) return;
+  el.innerHTML = installCardHtml();
+  el.hidden = false;
+  requestAnimationFrame(() => el.classList.add("show"));
+  const dismiss = () => { try { localStorage.setItem("wc26-inst-dismiss", String(Date.now())); } catch {} hideInstallCard(); };
+  const x = $("#ic-x"), later = $("#ic-later"), ok = $("#ic-ok"), inst = $("#ic-install");
+  if (x) x.onclick = dismiss;
+  if (later) later.onclick = dismiss;
+  if (ok) ok.onclick = dismiss;
+  if (inst) inst.onclick = async () => {
+    if (!_deferredInstall) return;
+    _deferredInstall.prompt();
+    try { await _deferredInstall.userChoice; } catch {}
+    _deferredInstall = null; hideInstallCard();
+  };
+}
+function hideInstallCard() { const el = $("#install-card"); if (!el) return; el.classList.remove("show"); setTimeout(() => { el.hidden = true; }, 400); }
+function setupInstall() {
+  if (isStandalone()) return;
+  try { localStorage.setItem("wc26-visits", String(Number(localStorage.getItem("wc26-visits") || 0) + 1)); } catch {}
+  const fb = $("#footer-install");
+  const refreshFooter = () => { if (fb) { fb.hidden = !installAvailable(); fb.textContent = tw(TX.instCta); } };
+  if (fb) fb.onclick = () => { _installIntent = true; if (installAvailable()) showInstallCard(); };
+  window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); _deferredInstall = e; refreshFooter(); maybeShowInstall(); });
+  window.addEventListener("appinstalled", () => { try { localStorage.setItem("wc26-installed", "1"); } catch {} hideInstallCard(); if (fb) fb.hidden = true; });
+  refreshFooter();
+  setTimeout(() => { _installIntent = true; maybeShowInstall(); }, 15000); // momento de intención
+}
 
 /* --------------------------- init ------------------------------------ */
 async function init() {
@@ -1447,7 +1520,7 @@ async function init() {
   state.dark = storedDark != null ? storedDark === "1" : true;
   document.documentElement.dataset.theme = state.dark ? "dark" : "light";
   setTimezone(null); // zona horaria del navegador (refleja el SO, es la fuente confiable)
-  buildLangChips(); wireEvents(); setupA11y(); setupTabsScroll(); setupAnimPause(); setupWaveResize(); applyI18n();
+  buildLangChips(); wireEvents(); setupA11y(); setupTabsScroll(); setupAnimPause(); setupWaveResize(); applyI18n(); setupInstall();
 
   $("#status").innerHTML = `<div class="spinner"></div>${t("loading")}`;
   renderSkeletons();
