@@ -59,6 +59,8 @@ const TX = {
   noLineups: { es: "Alineaciones no disponibles aún.", en: "Lineups not available yet.", pt: "Escalações indisponíveis.", fr: "Compositions indisponibles.", ar: "التشكيلات غير متاحة بعد." },
   noForecast: { es: "Sin pronóstico para este partido.", en: "No forecast for this match.", pt: "Sem prognóstico.", fr: "Pas de pronostic.", ar: "لا توجد توقعات." },
   relato: { es: "Relato", en: "Play-by-play", pt: "Narração", fr: "Direct", ar: "السرد" },
+  selUpcoming: { es: "Próximos partidos", en: "Upcoming", pt: "Próximos jogos", fr: "À venir", ar: "المباريات القادمة" },
+  selPlayed: { es: "Jugados", en: "Played", pt: "Jogados", fr: "Joués", ar: "مباريات منتهية" },
   noRelato: { es: "El relato aparece cuando arranca el partido.", en: "Play-by-play appears once the match starts.", pt: "A narração aparece quando o jogo começa.", fr: "Le direct apparaît au coup d'envoi.", ar: "يظهر السرد عند بدء المباراة." },
 };
 const tw = (m) => m[state.lang] || m.es;
@@ -948,7 +950,11 @@ function renderSeleccion() {
   }
   const tm = TEAMS[state.team];
   const code = flagCodeOf(state.team);
-  const mine = state.data.matches.filter((m) => m.home === state.team || m.away === state.team).sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
+  const mine = state.data.matches.filter((m) => m.home === state.team || m.away === state.team);
+  const played = mine.filter((m) => classifyStatus(m) === "ft").sort((a, b) => (b.timestamp || "").localeCompare(a.timestamp || "")); // recientes primero
+  const live = mine.filter((m) => classifyStatus(m) === "live");
+  const upcoming = mine.filter((m) => classifyStatus(m) === "ns").sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || "")); // próximos primero
+  const next = [...live, ...upcoming];
   cont.innerHTML = `
     <div class="sel-hero">
       ${code ? `<img class="sel-flag" src="${FLAG(code)}" alt="${dispName(state.team)}">` : ""}
@@ -958,8 +964,11 @@ function renderSeleccion() {
     </div>
     <div class="sel-section-title">${t("trivia")}</div>
     <div class="sel-facts">${localTeam(state.team, "facts").map((f) => `<div class="sel-fact reveal">${f}</div>`).join("")}</div>
-    <div class="sel-section-title">${t("matchesOf", { team: dispName(state.team) })}</div>
-    <div class="fixture-list">${mine.length ? mine.map(matchCard).join("") : `<div class="status">${t("noMatches")}</div>`}</div>
+    ${next.length ? `<div class="sel-section-title">${tw(TX.selUpcoming)}</div>
+      <div class="fixture-list">${next.map(matchCard).join("")}</div>` : ""}
+    ${played.length ? `<div class="sel-section-title">${tw(TX.selPlayed)}</div>
+      <div class="fixture-list">${played.map(matchCard).join("")}</div>` : ""}
+    ${(!next.length && !played.length) ? `<div class="status">${t("noMatches")}</div>` : ""}
     <div class="sel-section-title">${tw(TX.squad)}</div>
     <div id="squad"><div class="status"><div class="spinner"></div></div></div>`;
   scrollReveal(cont);
