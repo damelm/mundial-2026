@@ -47,6 +47,12 @@ const TX = {
   h2h: { es: "Historial", en: "Head-to-head", pt: "Histórico", fr: "Face à face", ar: "المواجهات" },
   firstMeet: { es: "Primer cruce mundialista", en: "First World Cup meeting", pt: "Primeiro encontro", fr: "Première rencontre", ar: "أول لقاء" },
   meetings: { es: "cruces", en: "meetings", pt: "encontros", fr: "rencontres", ar: "مواجهات" },
+  stats: { es: "Estadísticas", en: "Statistics", pt: "Estatísticas", fr: "Statistiques", ar: "إحصائيات" },
+  whereToWatch: { es: "Dónde ver", en: "Where to watch", pt: "Onde assistir", fr: "Où regarder", ar: "أين تشاهد" },
+  statsWhenStart: { es: "Las estadísticas aparecen cuando arranca el partido.", en: "Stats appear once the match kicks off.", pt: "As estatísticas aparecem quando o jogo começa.", fr: "Les stats apparaissent au coup d'envoi.", ar: "تظهر الإحصائيات عند انطلاق المباراة." },
+  noStats: { es: "Estadísticas no disponibles para este partido.", en: "Stats not available for this match.", pt: "Estatísticas indisponíveis.", fr: "Statistiques indisponibles.", ar: "الإحصائيات غير متاحة." },
+  askProvider: { es: "Consultá tu operador", en: "Check your provider", pt: "Consulte sua operadora", fr: "Voir votre opérateur", ar: "تحقّق من مزوّدك" },
+  close: { es: "Cerrar", en: "Close", pt: "Fechar", fr: "Fermer", ar: "إغلاق" },
 };
 const tw = (m) => m[state.lang] || m.es;
 
@@ -1360,7 +1366,8 @@ function wireEvents() {
   $("#main").addEventListener("click", (e) => {
     if (e.target.closest("#retry-btn")) { retryLoad(); return; }
     const cb = e.target.closest(".cal-btn"); if (cb) { e.stopPropagation(); addToCalendar(cb.dataset.mid); return; }
-    const h = e.target.closest(".acc-head"); if (h) toggleAccordion(h.parentElement);
+    const h = e.target.closest(".acc-head"); if (h) { toggleAccordion(h.parentElement); return; }
+    const mc = e.target.closest("[data-mid]"); if (mc && mc.dataset.mid) openMatchModal(mc.dataset.mid);
   });
   $("#toggle-all").addEventListener("click", toggleAllAccordions);
   $("#fixture-filters").addEventListener("click", (e) => { const b = e.target.closest(".seg-btn"); if (!b) return; state.filter = b.dataset.filter; syncFilterChips(); renderFixture(); });
@@ -1369,6 +1376,7 @@ function wireEvents() {
   $("#share-btn").addEventListener("click", shareApp);
   $("#open-lang").addEventListener("click", () => { const order = ["es", "en", "pt", "fr", "ar"]; setLang(order[(order.indexOf(state.lang) + 1) % order.length]); });
   $("#selector").addEventListener("click", (e) => { if (e.target.dataset.close !== undefined) closeSelector(); });
+  $("#match-modal").addEventListener("click", (e) => { if (e.target.dataset.close !== undefined) closeMatchModal(); });
   $("#country-grid").addEventListener("click", (e) => { const b = e.target.closest(".country-item"); if (!b) return; chooseTeam(b.dataset.team || null); closeSelector(); });
   $("#lang-row").addEventListener("click", (e) => { const b = e.target.closest(".lang-chip"); if (b) setLang(b.dataset.lang); });
   $(".neutral-item").addEventListener("click", () => { chooseTeam(null); closeSelector(); });
@@ -1377,7 +1385,7 @@ function wireEvents() {
     if (state.heroCardMode !== "live") return; // solo el marcador en vivo es tocable
     state.filter = "live"; syncFilterChips(); switchTab("fixture");
   });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSelector(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeSelector(); closeMatchModal(); } });
 }
 function chooseTeam(name) { try { localStorage.setItem(STORE_TEAM, name || "__NEUTRAL__"); } catch {} applyTheme(name); }
 
@@ -1396,6 +1404,7 @@ async function init() {
   $("#status").innerHTML = `<div class="spinner"></div>${t("loading")}`;
   renderSkeletons();
   const [data, geo] = await Promise.all([loadData().catch(() => null), detectGeo(), loadNews()]);
+  state.geoCode = (geo && geo.code) || null;
 
   if (data) {
     state.data = data;
@@ -1560,6 +1569,157 @@ async function mergeLiveScoresTSDB(data) {
     } catch {}
   }
   return changed;
+}
+
+/* ------------------- Modo Partido (detalle ESPN on-demand) ------------ */
+// Estadísticas a mostrar. bar=barra comparativa; pct: 'asis' (ya es 0-100) o
+// 'frac' (0-1 → ×100). El resto va como lista.
+const STAT_DEFS = [
+  { k: "possessionPct", bar: true, pct: "asis", es: "Posesión", en: "Possession", pt: "Posse", fr: "Possession", ar: "الاستحواذ" },
+  { k: "totalShots", bar: true, es: "Tiros", en: "Shots", pt: "Chutes", fr: "Tirs", ar: "التسديدات" },
+  { k: "shotsOnTarget", bar: true, es: "Al arco", en: "On target", pt: "No gol", fr: "Cadrés", ar: "على المرمى" },
+  { k: "wonCorners", bar: true, es: "Córners", en: "Corners", pt: "Escanteios", fr: "Corners", ar: "الركنيات" },
+  { k: "foulsCommitted", bar: true, es: "Faltas", en: "Fouls", pt: "Faltas", fr: "Fautes", ar: "الأخطاء" },
+  { k: "passPct", bar: true, pct: "frac", es: "Precisión de pase", en: "Pass accuracy", pt: "Precisão de passe", fr: "Précision passes", ar: "دقة التمرير" },
+  { k: "saves", es: "Atajadas", en: "Saves", pt: "Defesas", fr: "Arrêts", ar: "التصديات" },
+  { k: "offsides", es: "Offsides", en: "Offsides", pt: "Impedimentos", fr: "Hors-jeu", ar: "التسلل" },
+  { k: "totalTackles", es: "Entradas", en: "Tackles", pt: "Desarmes", fr: "Tacles", ar: "الالتحامات" },
+  { k: "interceptions", es: "Intercepciones", en: "Interceptions", pt: "Interceptações", fr: "Interceptions", ar: "الاعتراضات" },
+  { k: "totalClearance", es: "Despejes", en: "Clearances", pt: "Cortes", fr: "Dégagements", ar: "الإبعادات" },
+  { k: "yellowCards", es: "Amarillas", en: "Yellow cards", pt: "Amarelos", fr: "Cartons jaunes", ar: "البطاقات الصفراء" },
+];
+const statLabel = (d) => d[state.lang] || d.es;
+
+// Derechos de TV del Mundial por país (aprox). LatAm = DirecTV Sports.
+const BROADCASTERS = {
+  AR: "DSports · DGO", CL: "DSports · DGO", PE: "DSports · DGO", CO: "DSports · DGO",
+  UY: "DSports · DGO", BO: "DSports · DGO", EC: "DSports · DGO", VE: "DSports · DGO",
+  PY: "Tigo Sports · DSports", MX: "Canal 5 · TUDN · ViX", US: "FOX · Telemundo · Peacock",
+  BR: "Globo · SporTV", ES: "—", FR: "TF1 · beIN", GB: "BBC · ITV",
+};
+function broadcasterFor() {
+  return BROADCASTERS[(state.geoCode || "").toUpperCase()] || tw(TX.askProvider);
+}
+
+const _sbCache = new Map(); // ymd -> {ts, events}
+async function espnScoreboard(ymd) {
+  const c = _sbCache.get(ymd);
+  if (c && Date.now() - c.ts < 60000) return c.events;
+  try {
+    const sb = await fetch(ymd ? `${ESPN_SB}?dates=${ymd}` : ESPN_SB, { cache: "no-store" }).then((r) => r.json());
+    const events = (sb && sb.events) || [];
+    _sbCache.set(ymd, { ts: Date.now(), events });
+    return events;
+  } catch { return []; }
+}
+function findEspnEvent(events, m) {
+  const key = livePair(m.home, m.away);
+  return events.find((e) => {
+    const c = e.competitions && e.competitions[0]; if (!c) return false;
+    const H = c.competitors.find((x) => x.homeAway === "home");
+    const A = c.competitors.find((x) => x.homeAway === "away");
+    return H && A && livePair(H.team.displayName, A.team.displayName) === key;
+  });
+}
+async function resolveEspnId(m) {
+  const ymd = (m.date || "").replace(/-/g, "");
+  let ev = findEspnEvent(await espnScoreboard(ymd), m);
+  if (!ev) ev = findEspnEvent(await espnScoreboard(""), m); // slate por defecto
+  return ev ? ev.id : null;
+}
+// Convierte boxscore de ESPN en { home:{stat:val}, away:{stat:val} }.
+function parseStats(sum) {
+  const comp = sum && sum.header && sum.header.competitions && sum.header.competitions[0];
+  if (!comp) return null;
+  const hc = comp.competitors.find((c) => c.homeAway === "home");
+  const ac = comp.competitors.find((c) => c.homeAway === "away");
+  const homeId = String(hc && hc.team && hc.team.id);
+  const awayId = String(ac && ac.team && ac.team.id);
+  const teams = (sum.boxscore && sum.boxscore.teams) || [];
+  const get = (id) => teams.find((t) => String(t.team && t.team.id) === id);
+  const ht = get(homeId), at = get(awayId);
+  if (!ht || !at) return null;
+  const toMap = (t) => { const o = {}; (t.statistics || []).forEach((s) => { if (s && s.name) o[s.name] = s.displayValue; }); return o; };
+  const H = toMap(ht), A = toMap(at);
+  if (H.possessionPct == null && H.totalShots == null) return null; // sin datos aún
+  return { home: H, away: A };
+}
+const _detailCache = new Map(); // mid -> {ts, detail}
+async function fetchMatchDetail(m) {
+  const c = _detailCache.get(m.id);
+  if (c && Date.now() - c.ts < 90000) return c.detail;
+  const detail = { stats: null };
+  const id = await resolveEspnId(m);
+  if (id) {
+    try { detail.stats = parseStats(await fetch(ESPN_SUM + id, { cache: "no-store" }).then((r) => r.json())); } catch {}
+  }
+  _detailCache.set(m.id, { ts: Date.now(), detail });
+  return detail;
+}
+
+function openMatchModal(mid) {
+  const m = state.data && state.data.matches.find((x) => String(x.id) === String(mid));
+  if (!m || m.home === "Por definir" || m.away === "Por definir") return;
+  state.modalMid = mid;
+  $("#match-modal-body").innerHTML = matchModalShell(m);
+  $("#match-modal").hidden = false;
+  document.body.style.overflow = "hidden";
+  fetchMatchDetail(m).then((detail) => {
+    if (state.modalMid !== mid) return; // se cerró o cambió
+    const cont = $("#mm-stats");
+    if (cont) cont.innerHTML = matchStatsHtml(m, detail);
+  });
+}
+function closeMatchModal() { $("#match-modal").hidden = true; state.modalMid = null; document.body.style.overflow = ""; }
+
+function matchModalShell(m) {
+  const st = classifyStatus(m);
+  const d = parseUTC(m.timestamp);
+  const score = (m.homeScore != null && m.awayScore != null) ? `${m.homeScore}<span class="mm-sep">–</span>${m.awayScore}`
+    : (st === "ns" ? (d ? fmtTime(d) : "—") : "—");
+  const phase = st === "live" ? `<span class="mm-live">● ${escHtml((m.status || "").toUpperCase())}</span>`
+    : st === "ft" ? `<span class="mm-ft">${t("status.ft")}</span>` : "";
+  const grp = m.group ? t("group", { g: m.group }) : stageLabel(m);
+  const tv = '<svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M21 3H3a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h6v2h6v-2h6a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 13H3V5h18v11z"/></svg>';
+  const rk = (n) => (n != null ? `<span class="rk">#${n}</span>` : "");
+  return `<div class="mm-head"><button class="modal-close" data-close aria-label="${tw(TX.close)}">✕</button></div>
+    <div class="mm-score">
+      <div class="mm-team">${teamCell(m.home, m.homeBadge)}<span class="mm-tn">${dispName(m.home)}${rk(m.homeRank)}</span></div>
+      <div class="mm-center"><div class="mm-result">${score}</div>${phase}<div class="mm-meta">${grp}${m.venue ? " · " + escHtml(m.venue) : ""}</div></div>
+      <div class="mm-team">${teamCell(m.away, m.awayBadge)}<span class="mm-tn">${dispName(m.away)}${rk(m.awayRank)}</span></div>
+    </div>
+    <div class="mm-watch">${tv}<span>${tw(TX.whereToWatch)}</span><b>${escHtml(broadcasterFor())}</b></div>
+    <div class="mm-section-title">${tw(TX.stats)}</div>
+    <div id="mm-stats"><div class="mm-skel">${"<span></span>".repeat(6)}</div></div>`;
+}
+function matchStatsHtml(m, detail) {
+  const s = detail && detail.stats;
+  if (!s) {
+    const msg = classifyStatus(m) === "ns" ? tw(TX.statsWhenStart) : tw(TX.noStats);
+    const extra = m.pred ? `<div class="mm-pred">${predHtml(m)}</div>` : "";
+    return `<div class="mm-empty">${msg}</div>${extra}`;
+  }
+  const num = (v) => (v == null || v === "" ? null : Number(v));
+  const fmt = (d, v) => { if (v == null) return "–"; if (d.pct === "frac") return Math.round(v * 100) + "%"; if (d.pct === "asis") return Math.round(v) + "%"; return escHtml(String(v)); };
+  let bars = "", list = "";
+  for (const d of STAT_DEFS) {
+    const hv = num(s.home[d.k]), av = num(s.away[d.k]);
+    if (hv == null && av == null) continue;
+    if (d.bar) {
+      let hTxt, aTxt, hw;
+      if (d.pct === "asis") { // posesión: forzar que sumen 100
+        const hp = Math.round(hv || 0); hw = hp; hTxt = hp + "%"; aTxt = (100 - hp) + "%";
+      } else {
+        const h = hv || 0, a = av || 0, tot = h + a; hw = tot ? Math.round((h / tot) * 100) : 50;
+        hTxt = fmt(d, hv); aTxt = fmt(d, av);
+      }
+      bars += `<div class="mm-stat"><div class="mm-stat-vals"><span>${hTxt}</span><span class="mm-stat-lbl">${statLabel(d)}</span><span>${aTxt}</span></div>
+        <div class="mm-bar"><span class="mm-bar-h" style="width:${hw}%"></span><span class="mm-bar-a" style="width:${100 - hw}%"></span></div></div>`;
+    } else {
+      list += `<div class="mm-row"><span>${fmt(d, hv)}</span><span class="mm-row-lbl">${statLabel(d)}</span><span>${fmt(d, av)}</span></div>`;
+    }
+  }
+  return bars + (list ? `<div class="mm-list">${list}</div>` : "");
 }
 
 function scheduleRefresh() {

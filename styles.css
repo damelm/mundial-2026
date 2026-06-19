@@ -559,3 +559,33 @@ main { padding: 0 16px 44px; }
 .ltv-sc.away { text-align: right; }
 .ltv-sc i { color: rgba(255,255,255,.55); font-style: normal; font-weight: 700; }
 [dir="rtl"] .ltv-sc.away { text-align: left; }
+
+/* ---- Modo Partido (detalle ESPN) ---- */
+.match, .match-live { cursor: pointer; }
+.mm-head { display: flex; justify-content: flex-end; margin-bottom: 2px; }
+.mm-score { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; padding: 2px 2px 15px; border-bottom: 1px solid var(--line-2); }
+.mm-team { display: flex; flex-direction: column; align-items: center; gap: 7px; text-align: center; }
+.mm-tn { font-size: 13px; font-weight: 700; line-height: 1.2; }
+.mm-result { font-family: var(--font-display); font-size: 30px; line-height: 1; font-variant-numeric: tabular-nums; }
+.mm-result .mm-sep, .mm-sep { color: var(--ink-faint); margin: 0 5px; }
+.mm-live { display: inline-block; margin-top: 6px; font-size: 10px; font-weight: 800; letter-spacing: .05em; color: var(--live); }
+.mm-ft { display: inline-block; margin-top: 6px; font-size: 10px; font-weight: 800; color: var(--good); }
+.mm-meta { font-size: 11px; color: var(--ink-dim); margin-top: 6px; font-weight: 600; }
+.mm-watch { display: flex; align-items: center; gap: 9px; padding: 13px 2px; border-bottom: 1px solid var(--line-2); font-size: 12px; color: var(--ink-dim); font-weight: 600; }
+.mm-watch svg { color: var(--brand-accent); }
+.mm-watch b { margin-left: auto; color: var(--ink); font-weight: 800; }
+.mm-section-title { font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-dim); margin: 15px 2px 11px; }
+#mm-stats { overflow-y: auto; }
+.mm-stat { margin-bottom: 13px; }
+.mm-stat-vals { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 800; font-variant-numeric: tabular-nums; margin-bottom: 5px; }
+.mm-stat-lbl { font-size: 11px; font-weight: 600; color: var(--ink-dim); }
+.mm-bar { display: flex; height: 7px; border-radius: 4px; overflow: hidden; background: var(--surface-2); }
+.mm-bar-h { background: var(--brand-vivid); }
+.mm-bar-a { background: #c0543c; }
+.mm-list { margin-top: 8px; border-top: 1px solid var(--line-2); padding-top: 6px; }
+.mm-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-size: 12.5px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.mm-row-lbl { font-size: 11px; color: var(--ink-dim); font-weight: 600; }
+.mm-empty { padding: 16px 2px; text-align: center; color: var(--ink-dim); font-size: 13px; }
+.mm-pred { margin-top: 10px; }
+.mm-skel span { display: block; height: 7px; border-radius: 4px; background: var(--surface-2); margin: 15px 0; animation: mmpulse 1.2s ease-in-out infinite; }
+@keyframes mmpulse { 0%, 100% { opacity: .45; } 50% { opacity: .9; } }
