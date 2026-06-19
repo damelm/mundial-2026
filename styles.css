@@ -690,10 +690,19 @@ main { padding: 0 16px 44px; }
 .mm-tn { text-shadow: 0 1px 6px rgba(0,0,0,.45); }
 
 /* Pestañas internas del Modo Partido */
-.mm-tabs { display: flex; gap: 4px; margin: 14px 0 12px; border-bottom: 1px solid var(--line-2); }
-.mm-tab { flex: 1; border: 0; background: transparent; color: var(--ink-dim); font: inherit; font-weight: 800; font-size: 12px; padding: 9px 4px; cursor: pointer; position: relative; letter-spacing: -.01em; white-space: nowrap; }
+.mm-tabs { display: flex; gap: 2px; margin: 14px 0 12px; border-bottom: 1px solid var(--line-2); }
+.mm-tab { flex: 1; border: 0; background: transparent; color: var(--ink-dim); font: inherit; font-weight: 800; font-size: 11px; padding: 9px 2px; cursor: pointer; position: relative; letter-spacing: -.02em; white-space: nowrap; }
 .mm-tab.is-active { color: var(--brand-accent); }
-.mm-tab.is-active::after { content: ""; position: absolute; left: 8px; right: 8px; bottom: -1px; height: 2.5px; background: var(--brand-vivid); border-radius: 2px; }
+.mm-tab.is-active::after { content: ""; position: absolute; left: 5px; right: 5px; bottom: -1px; height: 2.5px; background: var(--brand-vivid); border-radius: 2px; }
+
+/* Relato (timeline de eventos) */
+.rel { display: flex; flex-direction: column; }
+.rel-row { display: grid; grid-template-columns: 34px 20px 1fr; align-items: start; gap: 8px; padding: 9px 2px; border-bottom: 1px solid var(--line-2); font-size: 12.5px; }
+.rel-row:last-child { border-bottom: 0; }
+.rel-min { font-family: var(--font-display); font-size: 13px; color: var(--brand-accent); text-align: right; font-variant-numeric: tabular-nums; }
+.rel-ico { text-align: center; font-size: 12px; line-height: 1.4; }
+.rel-text { color: var(--ink); line-height: 1.35; }
+.rel-row.rel-away { background: linear-gradient(90deg, transparent 60%, color-mix(in srgb, var(--line-2) 60%, transparent)); }
 .mm-sub { font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-dim); margin: 16px 2px 9px; }
 .mm-sub:first-child { margin-top: 2px; }
 #mm-tab-content { overflow-y: auto; }

@@ -58,6 +58,8 @@ const TX = {
   form: { es: "Forma · últimos 5", en: "Form · last 5", pt: "Forma · últimos 5", fr: "Forme · 5 derniers", ar: "الأداء · آخر 5" },
   noLineups: { es: "Alineaciones no disponibles aún.", en: "Lineups not available yet.", pt: "Escalações indisponíveis.", fr: "Compositions indisponibles.", ar: "التشكيلات غير متاحة بعد." },
   noForecast: { es: "Sin pronóstico para este partido.", en: "No forecast for this match.", pt: "Sem prognóstico.", fr: "Pas de pronostic.", ar: "لا توجد توقعات." },
+  relato: { es: "Relato", en: "Play-by-play", pt: "Narração", fr: "Direct", ar: "السرد" },
+  noRelato: { es: "El relato aparece cuando arranca el partido.", en: "Play-by-play appears once the match starts.", pt: "A narração aparece quando o jogo começa.", fr: "Le direct apparaît au coup d'envoi.", ar: "يظهر السرد عند بدء المباراة." },
 };
 const tw = (m) => m[state.lang] || m.es;
 
@@ -1718,7 +1720,18 @@ function parseDetail(sum) {
   };
   const form = { home: formFor(homeId), away: formFor(awayId) };
 
-  return { stats, lineups, odds, form };
+  // Relato: eventos clave (goles, tarjetas, cambios) con minuto, más reciente primero
+  const events = (sum.keyEvents || [])
+    .filter((e) => e && (e.scoringPlay || /goal|card|substitution|penalty/i.test((e.type && e.type.text) || "")))
+    .map((e) => {
+      const tt = ((e.type && e.type.text) || "").toLowerCase();
+      const kind = e.scoringPlay || /goal/.test(tt) ? "goal" : /red/.test(tt) ? "red" : /yellow|card/.test(tt) ? "yellow" : /sub/.test(tt) ? "sub" : "ev";
+      const tid = e.team && String(e.team.id);
+      return { min: (e.clock && e.clock.displayValue) || "", kind, text: e.text || e.shortText || "", side: tid === homeId ? "home" : tid === awayId ? "away" : "" };
+    })
+    .reverse();
+
+  return { stats, lineups, odds, form, events };
 }
 const _detailCache = new Map(); // mid -> {ts, detail}
 async function fetchMatchDetail(m) {
@@ -1758,6 +1771,7 @@ function renderMmTab() {
   $$(".mm-tab").forEach((b) => b.classList.toggle("is-active", b.dataset.mtab === tab));
   if (!detail) { c.innerHTML = `<div class="mm-skel">${"<span></span>".repeat(5)}</div>`; return; }
   if (tab === "line") c.innerHTML = lineupsHtml(m, detail);
+  else if (tab === "relato") c.innerHTML = relatoHtml(m, detail);
   else if (tab === "pred") c.innerHTML = predHtmlFull(m, detail);
   else c.innerHTML = matchStatsHtml(m, detail);
 }
@@ -1782,6 +1796,7 @@ function matchModalShell(m) {
     <div class="mm-tabs">
       <button class="mm-tab is-active" data-mtab="stats">${tw(TX.stats)}</button>
       <button class="mm-tab" data-mtab="line">${tw(TX.lineups)}</button>
+      <button class="mm-tab" data-mtab="relato">${tw(TX.relato)}</button>
       <button class="mm-tab" data-mtab="pred">${tw(TX.forecast)}</button>
     </div>
     <div id="mm-tab-content"><div class="mm-skel">${"<span></span>".repeat(6)}</div></div>`;
@@ -1859,6 +1874,16 @@ function predHtmlFull(m, detail) {
   const form = detail && detail.form;
   if (form && (form.home || form.away)) html += `<div class="mm-sub">${tw(TX.form)}</div>${formHtml(m, form)}`;
   return html || `<div class="mm-empty">${tw(TX.noForecast)}</div>`;
+}
+// Relato minuto a minuto (timeline de eventos clave de ESPN)
+function relatoHtml(m, detail) {
+  const evs = detail && detail.events;
+  if (!evs || !evs.length) return `<div class="mm-empty">${tw(TX.noRelato)}</div>`;
+  const ICONS = { goal: "⚽", yellow: "🟨", red: "🟥", sub: "🔁", ev: "•" };
+  return `<div class="rel">${evs.map((e) => `<div class="rel-row rel-${e.side}">
+    <span class="rel-min">${escHtml(e.min)}</span>
+    <span class="rel-ico">${ICONS[e.kind] || "•"}</span>
+    <span class="rel-text">${escHtml(e.text)}</span></div>`).join("")}</div>`;
 }
 
 function scheduleRefresh() {
