@@ -688,3 +688,34 @@ main { padding: 0 16px 44px; }
 .mm-score > * { position: relative; z-index: 1; }
 .mm-result { font-size: 34px; }
 .mm-tn { text-shadow: 0 1px 6px rgba(0,0,0,.45); }
+
+/* Pestañas internas del Modo Partido */
+.mm-tabs { display: flex; gap: 4px; margin: 14px 0 12px; border-bottom: 1px solid var(--line-2); }
+.mm-tab { flex: 1; border: 0; background: transparent; color: var(--ink-dim); font: inherit; font-weight: 800; font-size: 12px; padding: 9px 4px; cursor: pointer; position: relative; letter-spacing: -.01em; white-space: nowrap; }
+.mm-tab.is-active { color: var(--brand-accent); }
+.mm-tab.is-active::after { content: ""; position: absolute; left: 8px; right: 8px; bottom: -1px; height: 2.5px; background: var(--brand-vivid); border-radius: 2px; }
+.mm-sub { font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-dim); margin: 16px 2px 9px; }
+.mm-sub:first-child { margin-top: 2px; }
+#mm-tab-content { overflow-y: auto; }
+
+/* Formación (cancha) */
+.pf { margin-bottom: 16px; }
+.pf-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.pf-head span:first-child { font-family: var(--font-display); text-transform: uppercase; font-size: 14px; letter-spacing: .02em; }
+.pf-form { font-size: 12px; font-weight: 800; color: var(--brand-accent); font-variant-numeric: tabular-nums; }
+.pf-field { display: flex; flex-direction: column; justify-content: space-between; gap: 10px; background: #13301d; border: 1px solid #1e4a2d; border-radius: var(--radius-sm); padding: 16px 6px; min-height: 236px; position: relative; }
+.pf-field::before { content: ""; position: absolute; left: 8px; right: 8px; top: 50%; height: 1px; background: rgba(255,255,255,.09); }
+.pf-row { display: flex; justify-content: space-around; align-items: center; position: relative; z-index: 1; }
+.pf-p { display: flex; flex-direction: column; align-items: center; gap: 3px; width: 20%; }
+.pf-dot { width: 26px; height: 26px; border-radius: 50%; background: #0a0c11; border: 1.5px solid rgba(255,255,255,.6); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.pf-name { font-size: 9.5px; color: rgba(255,255,255,.92); text-align: center; line-height: 1.1; max-width: 62px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Forma (últimos 5) */
+.frm-list { display: grid; gap: 9px; }
+.frm-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.frm-team { font-size: 12.5px; font-weight: 700; }
+.frm-chips { display: flex; gap: 4px; }
+.frm-chip { width: 20px; height: 20px; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; color: #fff; }
+.frm-w { background: var(--good); }
+.frm-d { background: var(--ink-faint); }
+.frm-l { background: var(--live); }

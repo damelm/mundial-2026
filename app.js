@@ -53,6 +53,11 @@ const TX = {
   noStats: { es: "Estadísticas no disponibles para este partido.", en: "Stats not available for this match.", pt: "Estatísticas indisponíveis.", fr: "Statistiques indisponibles.", ar: "الإحصائيات غير متاحة." },
   askProvider: { es: "Consultá tu operador", en: "Check your provider", pt: "Consulte sua operadora", fr: "Voir votre opérateur", ar: "تحقّق من مزوّدك" },
   close: { es: "Cerrar", en: "Close", pt: "Fechar", fr: "Fermer", ar: "إغلاق" },
+  lineups: { es: "Formación", en: "Lineups", pt: "Escalação", fr: "Compositions", ar: "التشكيلة" },
+  market: { es: "Mercado", en: "Market", pt: "Mercado", fr: "Marché", ar: "السوق" },
+  form: { es: "Forma · últimos 5", en: "Form · last 5", pt: "Forma · últimos 5", fr: "Forme · 5 derniers", ar: "الأداء · آخر 5" },
+  noLineups: { es: "Alineaciones no disponibles aún.", en: "Lineups not available yet.", pt: "Escalações indisponíveis.", fr: "Compositions indisponibles.", ar: "التشكيلات غير متاحة بعد." },
+  noForecast: { es: "Sin pronóstico para este partido.", en: "No forecast for this match.", pt: "Sem prognóstico.", fr: "Pas de pronostic.", ar: "لا توجد توقعات." },
 };
 const tw = (m) => m[state.lang] || m.es;
 
@@ -1403,7 +1408,11 @@ function wireEvents() {
   $("#share-btn").addEventListener("click", shareApp);
   $("#open-lang").addEventListener("click", () => { const order = ["es", "en", "pt", "fr", "ar"]; setLang(order[(order.indexOf(state.lang) + 1) % order.length]); });
   $("#selector").addEventListener("click", (e) => { if (e.target.dataset.close !== undefined) closeSelector(); });
-  $("#match-modal").addEventListener("click", (e) => { if (e.target.dataset.close !== undefined) closeMatchModal(); });
+  $("#match-modal").addEventListener("click", (e) => {
+    if (e.target.dataset.close !== undefined) { closeMatchModal(); return; }
+    const tb = e.target.closest(".mm-tab");
+    if (tb && tb.dataset.mtab !== state.mmTab) { state.mmTab = tb.dataset.mtab; renderMmTab(); }
+  });
   $("#country-grid").addEventListener("click", (e) => { const b = e.target.closest(".country-item"); if (!b) return; chooseTeam(b.dataset.team || null); closeSelector(); });
   $("#lang-row").addEventListener("click", (e) => { const b = e.target.closest(".lang-chip"); if (b) setLang(b.dataset.lang); });
   $(".neutral-item").addEventListener("click", () => { chooseTeam(null); closeSelector(); });
@@ -1656,30 +1665,69 @@ async function resolveEspnId(m) {
   return ev ? ev.id : null;
 }
 // Convierte boxscore de ESPN en { home:{stat:val}, away:{stat:val} }.
-function parseStats(sum) {
+// Parsea el summary de ESPN en { stats, lineups, odds, form } (todo de una).
+function parseDetail(sum) {
   const comp = sum && sum.header && sum.header.competitions && sum.header.competitions[0];
-  if (!comp) return null;
+  if (!comp) return { stats: null };
   const hc = comp.competitors.find((c) => c.homeAway === "home");
   const ac = comp.competitors.find((c) => c.homeAway === "away");
   const homeId = String(hc && hc.team && hc.team.id);
   const awayId = String(ac && ac.team && ac.team.id);
+
+  // Estadísticas
+  let stats = null;
   const teams = (sum.boxscore && sum.boxscore.teams) || [];
-  const get = (id) => teams.find((t) => String(t.team && t.team.id) === id);
-  const ht = get(homeId), at = get(awayId);
-  if (!ht || !at) return null;
-  const toMap = (t) => { const o = {}; (t.statistics || []).forEach((s) => { if (s && s.name) o[s.name] = s.displayValue; }); return o; };
-  const H = toMap(ht), A = toMap(at);
-  if (H.possessionPct == null && H.totalShots == null) return null; // sin datos aún
-  return { home: H, away: A };
+  const getT = (id) => teams.find((t) => String(t.team && t.team.id) === id);
+  const ht = getT(homeId), at = getT(awayId);
+  if (ht && at) {
+    const toMap = (t) => { const o = {}; (t.statistics || []).forEach((s) => { if (s && s.name) o[s.name] = s.displayValue; }); return o; };
+    const H = toMap(ht), A = toMap(at);
+    if (!(H.possessionPct == null && H.totalShots == null)) stats = { home: H, away: A };
+  }
+
+  // Alineaciones (titulares ordenados por formationPlace 1..11)
+  const rosters = sum.rosters || [];
+  const lineFor = (id) => {
+    const r = rosters.find((x) => String(x.team && x.team.id) === id);
+    if (!r) return null;
+    const st = (r.roster || []).filter((p) => p.starter)
+      .sort((a, b) => (parseInt(a.formationPlace, 10) || 0) - (parseInt(b.formationPlace, 10) || 0));
+    if (!st.length) return null;
+    return { formation: r.formation || "", players: st.map((p) => ({ name: (p.athlete && p.athlete.displayName) || "", num: p.jersey || "" })) };
+  };
+  const lineups = { home: lineFor(homeId), away: lineFor(awayId) };
+
+  // Cuotas → probabilidad implícita normalizada (sin vig)
+  let odds = null;
+  const pc = (sum.pickcenter || []).find((x) => x.homeTeamOdds && x.homeTeamOdds.moneyLine != null && x.drawOdds && x.awayTeamOdds);
+  if (pc) {
+    const imp = (ml) => (ml == null ? null : ml < 0 ? -ml / (-ml + 100) : 100 / (ml + 100));
+    const h = imp(pc.homeTeamOdds.moneyLine), dd = imp(pc.drawOdds.moneyLine), a = imp(pc.awayTeamOdds.moneyLine);
+    if (h != null && dd != null && a != null) {
+      const s2 = h + dd + a;
+      odds = { h: Math.round((h / s2) * 100), d: Math.round((dd / s2) * 100), a: Math.round((a / s2) * 100), provider: (pc.provider && pc.provider.name) || "" };
+    }
+  }
+
+  // Forma (últimos 5) por equipo
+  const lf = sum.lastFiveGames || [];
+  const formFor = (id) => {
+    const t = lf.find((x) => String(x.team && x.team.id) === id);
+    if (!t) return null;
+    return (t.events || []).slice(0, 5).map((e) => ({ r: (e.gameResult || "").toUpperCase(), opp: (e.opponent && e.opponent.abbreviation) || "", score: e.score || "" }));
+  };
+  const form = { home: formFor(homeId), away: formFor(awayId) };
+
+  return { stats, lineups, odds, form };
 }
 const _detailCache = new Map(); // mid -> {ts, detail}
 async function fetchMatchDetail(m) {
   const c = _detailCache.get(m.id);
   if (c && Date.now() - c.ts < 90000) return c.detail;
-  const detail = { stats: null };
+  let detail = { stats: null };
   const id = await resolveEspnId(m);
   if (id) {
-    try { detail.stats = parseStats(await fetch(ESPN_SUM + id, { cache: "no-store" }).then((r) => r.json())); } catch {}
+    try { detail = parseDetail(await fetch(ESPN_SUM + id, { cache: "no-store" }).then((r) => r.json())); } catch {}
   }
   _detailCache.set(m.id, { ts: Date.now(), detail });
   return detail;
@@ -1689,16 +1737,30 @@ function openMatchModal(mid) {
   const m = state.data && state.data.matches.find((x) => String(x.id) === String(mid));
   if (!m || m.home === "Por definir" || m.away === "Por definir") return;
   state.modalMid = mid;
+  state.mmTab = "stats";
+  state.mmDetail = null;
+  state.mmMatch = m;
   $("#match-modal-body").innerHTML = matchModalShell(m);
   $("#match-modal").hidden = false;
   document.body.style.overflow = "hidden";
   fetchMatchDetail(m).then((detail) => {
     if (state.modalMid !== mid) return; // se cerró o cambió
-    const cont = $("#mm-stats");
-    if (cont) cont.innerHTML = matchStatsHtml(m, detail);
+    state.mmDetail = detail;
+    renderMmTab();
   });
 }
-function closeMatchModal() { $("#match-modal").hidden = true; state.modalMid = null; document.body.style.overflow = ""; }
+function closeMatchModal() { $("#match-modal").hidden = true; state.modalMid = null; state.mmDetail = null; document.body.style.overflow = ""; }
+// Renderiza el contenido de la pestaña activa del Modo Partido.
+function renderMmTab() {
+  const c = $("#mm-tab-content"); if (!c) return;
+  const m = state.mmMatch, detail = state.mmDetail;
+  const tab = state.mmTab || "stats";
+  $$(".mm-tab").forEach((b) => b.classList.toggle("is-active", b.dataset.mtab === tab));
+  if (!detail) { c.innerHTML = `<div class="mm-skel">${"<span></span>".repeat(5)}</div>`; return; }
+  if (tab === "line") c.innerHTML = lineupsHtml(m, detail);
+  else if (tab === "pred") c.innerHTML = predHtmlFull(m, detail);
+  else c.innerHTML = matchStatsHtml(m, detail);
+}
 
 function matchModalShell(m) {
   const st = classifyStatus(m);
@@ -1717,8 +1779,12 @@ function matchModalShell(m) {
       <div class="mm-team">${teamCell(m.away, m.awayBadge)}<span class="mm-tn">${dispName(m.away)}${rk(m.awayRank)}</span></div>
     </div>
     <div class="mm-watch">${tv}<span>${tw(TX.whereToWatch)}</span><b>${escHtml(broadcasterFor())}</b></div>
-    <div class="mm-section-title">${tw(TX.stats)}</div>
-    <div id="mm-stats"><div class="mm-skel">${"<span></span>".repeat(6)}</div></div>`;
+    <div class="mm-tabs">
+      <button class="mm-tab is-active" data-mtab="stats">${tw(TX.stats)}</button>
+      <button class="mm-tab" data-mtab="line">${tw(TX.lineups)}</button>
+      <button class="mm-tab" data-mtab="pred">${tw(TX.forecast)}</button>
+    </div>
+    <div id="mm-tab-content"><div class="mm-skel">${"<span></span>".repeat(6)}</div></div>`;
 }
 function matchStatsHtml(m, detail) {
   const s = detail && detail.stats;
@@ -1748,6 +1814,51 @@ function matchStatsHtml(m, detail) {
     }
   }
   return bars + (list ? `<div class="mm-list">${list}</div>` : "");
+}
+
+// --- Formación (cancha) ---
+const shortName = (n) => { const p = (n || "").trim().split(/\s+/); return p.length > 1 ? p[p.length - 1] : (n || ""); };
+// Convierte "3-5-2" + total a filas [1(GK),3,5,2]. Fallback si no cuadra.
+function formationRows(f, total) {
+  const parts = (f || "").split("-").map((n) => parseInt(n, 10)).filter((n) => n > 0);
+  if (parts.length && parts.reduce((a, b) => a + b, 0) === total - 1) return [1, ...parts];
+  return [1, Math.max(1, total - 1)];
+}
+function pitchHtml(teamName, line) {
+  if (!line || !line.players.length) return "";
+  const rows = formationRows(line.formation, line.players.length);
+  let idx = 0; const rowEls = [];
+  for (const cnt of rows) {
+    const ps = line.players.slice(idx, idx + cnt); idx += cnt;
+    rowEls.push(`<div class="pf-row">${ps.map((p) => `<span class="pf-p"><span class="pf-dot">${escHtml(p.num || "")}</span><span class="pf-name">${escHtml(shortName(p.name))}</span></span>`).join("")}</div>`);
+  }
+  rowEls.reverse(); // delanteros arriba, arquero abajo
+  return `<div class="pf"><div class="pf-head"><span>${dispName(teamName)}</span><span class="pf-form">${escHtml(line.formation || "")}</span></div>
+    <div class="pf-field">${rowEls.join("")}</div></div>`;
+}
+function lineupsHtml(m, detail) {
+  const L = detail && detail.lineups;
+  if (!L || (!L.home && !L.away)) return `<div class="mm-empty">${tw(TX.noLineups)}</div>`;
+  return pitchHtml(m.home, L.home) + pitchHtml(m.away, L.away);
+}
+
+// --- Pronóstico: Elo + mercado (odds) + forma ---
+function oddsBar(m, o) {
+  return `<div class="pred-bar"><span class="pb h" style="width:${o.h}%"></span><span class="pb d" style="width:${o.d}%"></span><span class="pb a" style="width:${o.a}%"></span></div>
+    <div class="pred-legend"><span class="pl h">${dispName(m.home)} ${o.h}%</span><span class="pl d">${tw(TX.draw)} ${o.d}%</span><span class="pl a">${dispName(m.away)} ${o.a}%</span></div>`;
+}
+function formHtml(m, form) {
+  const row = (name, arr) => (arr && arr.length) ? `<div class="frm-row"><span class="frm-team">${dispName(name)}</span><span class="frm-chips">${arr.map((g) => `<span class="frm-chip frm-${(g.r || "").toLowerCase()}" title="${escHtml(g.opp)} ${escHtml(g.score)}">${escHtml(g.r || "·")}</span>`).join("")}</span></div>` : "";
+  const h = row(m.home, form.home), a = row(m.away, form.away);
+  return (h || a) ? `<div class="frm-list">${h}${a}</div>` : "";
+}
+function predHtmlFull(m, detail) {
+  let html = "";
+  if (m.pred) html += `<div class="mm-sub">${tw(TX.forecast)} · Elo</div>${predHtml(m)}`;
+  if (detail && detail.odds) html += `<div class="mm-sub">${tw(TX.market)}${detail.odds.provider ? " · " + escHtml(detail.odds.provider) : ""}</div>${oddsBar(m, detail.odds)}`;
+  const form = detail && detail.form;
+  if (form && (form.home || form.away)) html += `<div class="mm-sub">${tw(TX.form)}</div>${formHtml(m, form)}`;
+  return html || `<div class="mm-empty">${tw(TX.noForecast)}</div>`;
 }
 
 function scheduleRefresh() {
