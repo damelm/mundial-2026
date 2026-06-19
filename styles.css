@@ -635,3 +635,22 @@ main { padding: 0 16px 44px; }
   70% { transform: scale(3); opacity: 0; }
   100% { opacity: 0; }
 }
+
+/* HERO "estadio": base casi negra + CUÑA DIAGONAL de acento temático (la firma
+   del rediseño). Reemplaza el degradado de color país por el look de transmisión.
+   Es siempre oscuro (en claro y oscuro) → header de marca tipo TV deportiva. */
+.hero { background: #0a0c11 !important; color: #fff; border-radius: 0 0 12px 12px; }
+.hero::before {
+  content: ""; position: absolute; top: -70px; right: -80px;
+  width: 78%; max-width: 380px; height: 300px; transform: rotate(-12deg);
+  background: linear-gradient(138deg, var(--brand-vivid), var(--brand-accent) 65%, var(--brand));
+  z-index: 0; pointer-events: none;
+}
+.hero::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--brand-vivid); z-index: 3;
+}
+.hero > * { position: relative; z-index: 1; }
+#hero-wave { opacity: .08 !important; }
+.hero-watermark { color: #fff; opacity: .06; }
+.hero-title { -webkit-text-fill-color: #fff; color: #fff; background: none; animation: none; }
