@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T23:20:24.633Z",
+  "updatedAt": "2026-06-19T02:17:25.862Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1037,11 +1037,40 @@
       "away": "Qatar",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/2t631f1595154867.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/rs3ir31642708685.png",
-      "homeScore": 1,
+      "homeScore": 6,
       "awayScore": 0,
-      "status": "1H",
+      "status": "FT",
       "venue": "BC Place",
       "city": "Vancouver, BC",
+      "goals": {
+        "home": [
+          {
+            "name": "Cyle Larin",
+            "minute": "16"
+          },
+          {
+            "name": "Jonathan David",
+            "minute": "29"
+          },
+          {
+            "name": "Jonathan David",
+            "minute": "45+3"
+          },
+          {
+            "name": "Nathan Saliba",
+            "minute": "64"
+          },
+          {
+            "name": "Mohamed Manai",
+            "minute": "75"
+          },
+          {
+            "name": "Jonathan David",
+            "minute": "90+2"
+          }
+        ],
+        "away": []
+      },
       "homeRank": 30,
       "awayRank": 36
     },
@@ -1058,44 +1087,13 @@
       "away": "South Korea",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/3rmosi1748525208.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/a8nqfs1589564916.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "Estadio Akron",
       "city": "Zapopan, JA",
       "homeRank": 17,
-      "awayRank": 23,
-      "pred": {
-        "pH": 45,
-        "pD": 26,
-        "pA": 29,
-        "h2h": {
-          "played": 14,
-          "last": [
-            {
-              "date": "2025-09-09",
-              "h": "Mexico",
-              "a": "South Korea",
-              "hs": 2,
-              "as": 2
-            },
-            {
-              "date": "2020-11-14",
-              "h": "Mexico",
-              "a": "South Korea",
-              "hs": 3,
-              "as": 2
-            },
-            {
-              "date": "2018-06-23",
-              "h": "South Korea",
-              "a": "Mexico",
-              "hs": 1,
-              "as": 2
-            }
-          ]
-        }
-      }
+      "awayRank": 23
     },
     {
       "id": "2391750",
