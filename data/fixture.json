@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-19T11:54:29.632Z",
+  "updatedAt": "2026-06-19T19:18:04.911Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1117,44 +1117,13 @@
       "away": "Australia",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/21f0oi1597948195.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/lark6k1661780848.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "Lumen Field",
       "city": "Seattle, WA",
       "homeRank": 16,
-      "awayRank": 24,
-      "pred": {
-        "pH": 32,
-        "pD": 26,
-        "pA": 42,
-        "h2h": {
-          "played": 4,
-          "last": [
-            {
-              "date": "2025-10-14",
-              "h": "United States",
-              "a": "Australia",
-              "hs": 2,
-              "as": 1
-            },
-            {
-              "date": "2010-06-05",
-              "h": "Australia",
-              "a": "United States",
-              "hs": 1,
-              "as": 3
-            },
-            {
-              "date": "1998-11-06",
-              "h": "United States",
-              "a": "Australia",
-              "hs": 0,
-              "as": 0
-            }
-          ]
-        }
-      }
+      "awayRank": 24
     },
     {
       "id": "2391749",
