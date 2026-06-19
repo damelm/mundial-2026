@@ -67,6 +67,7 @@ const TX = {
   evYellow: { es: "Tarjeta amarilla", en: "Yellow card", pt: "Cartão amarelo", fr: "Carton jaune", ar: "بطاقة صفراء" },
   evRed: { es: "Tarjeta roja", en: "Red card", pt: "Cartão vermelho", fr: "Carton rouge", ar: "بطاقة حمراء" },
   evSub: { es: "Cambio", en: "Substitution", pt: "Substituição", fr: "Remplacement", ar: "تبديل" },
+  fifaRank: { es: "Ranking FIFA", en: "FIFA ranking", pt: "Ranking FIFA", fr: "Classement FIFA", ar: "تصنيف الفيفا" },
   instTitle: { es: "Instalá Fix26", en: "Install Fix26", pt: "Instale o Fix26", fr: "Installez Fix26", ar: "ثبّت Fix26" },
   instIosTitle: { es: "Agregá Fix26 a tu inicio", en: "Add Fix26 to your Home Screen", pt: "Adicione o Fix26 à tela inicial", fr: "Ajoutez Fix26 à l'accueil", ar: "أضف Fix26 إلى الشاشة الرئيسية" },
   instSub: { es: "El Mundial en tu pantalla de inicio", en: "The World Cup on your home screen", pt: "A Copa na sua tela inicial", fr: "Le Mondial sur votre écran d'accueil", ar: "كأس العالم على شاشتك الرئيسية" },
@@ -98,7 +99,7 @@ function translatePos(pos) {
 
 const state = {
   data: null, team: null, filter: "all", tab: "fixture",
-  lang: "es", tz: null, tzCity: "", tzOff: "", dark: false,
+  lang: "es", tz: null, tzCity: "", tzOff: "", dark: true,
   factTimer: null, factIdx: 0, countdownTimer: null, allExpanded: false,
   seenTabs: new Set(), revealInstant: false,
 };
@@ -662,7 +663,7 @@ function matchCard(m) {
   const grp = m.group ? `<span class="match-grouptag">${t("group", { g: m.group })}</span>` : stageLabel(m);
   const venue = m.venue ? ` · ${escHtml(m.venue)}${m.city ? ", " + escHtml(m.city.split(",")[0]) : ""}` : "";
   const cal = st === "ns" ? `<button class="cal-btn" data-mid="${m.id}" aria-label="${tw(TX.addCal)}" title="${tw(TX.addCal)}"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 15H5V9h14v10zM7 11h5v5H7z"/></svg></button>` : "";
-  const rk = (n) => (n != null ? `<span class="rk" title="Ranking FIFA">#${n}</span>` : "");
+  const rk = (n) => (n != null ? `<span class="rk" title="${tw(TX.fifaRank)}">#${n}</span>` : "");
   const scorers = (st === "ft" && m.goals && ((m.goals.home && m.goals.home.length) || (m.goals.away && m.goals.away.length))) ? scorersBlock(m) : "";
   return `<article class="match reveal ${isMine ? "mine" : ""} ${st === "live" ? "live" : ""}" data-mid="${m.id}">
     <div class="match-meta">${grp}${venue}${cal}</div>
@@ -1022,7 +1023,7 @@ function renderSquad(cont, players, full) {
   const note = full ? "" : `<p class="squad-note">${tw(TX.squadNote)}</p>`;
   cont.innerHTML = `<div class="squad-grid">${players.map((p) => {
     const img = p.photo || "";
-    return `<div class="player reveal"><div class="player-photo">${img ? `<img src="${img}" alt="${p.name}" loading="lazy" onerror="this.remove()">` : "⚽"}${p.number ? `<span class="player-num">${p.number}</span>` : ""}</div><div class="player-name">${p.name}</div><div class="player-pos">${translatePos(p.pos)}</div></div>`;
+    return `<div class="player reveal"><div class="player-photo">${img ? `<img src="${escHtml(img)}" alt="${escHtml(p.name || "")}" loading="lazy" onerror="this.remove()">` : "⚽"}${p.number ? `<span class="player-num">${escHtml(String(p.number))}</span>` : ""}</div><div class="player-name">${escHtml(p.name || "")}</div><div class="player-pos">${escHtml(translatePos(p.pos))}</div></div>`;
   }).join("")}</div>${note}`;
   scrollReveal(cont);
 }
@@ -1750,7 +1751,7 @@ async function espnScoreboard(ymd) {
   try {
     const sb = await fetch(ymd ? `${ESPN_SB}?dates=${ymd}` : ESPN_SB, { cache: "no-store" }).then((r) => r.json());
     const events = (sb && sb.events) || [];
-    _sbCache.set(ymd, { ts: Date.now(), events });
+    if (events.length) _sbCache.set(ymd, { ts: Date.now(), events }); // no cachear vacío (bloquea reintentos)
     return events;
   } catch { return []; }
 }
@@ -1927,7 +1928,8 @@ function matchStatsHtml(m, detail) {
     if (d.bar) {
       let hTxt, aTxt, hw;
       if (d.pct === "asis") { // posesión: forzar que sumen 100
-        const hp = Math.round(hv || 0); hw = hp; hTxt = hp + "%"; aTxt = (100 - hp) + "%";
+        const hp = hv != null ? Math.round(hv) : av != null ? 100 - Math.round(av) : 50;
+        hw = hp; hTxt = hp + "%"; aTxt = (100 - hp) + "%";
       } else {
         const h = hv || 0, a = av || 0, tot = h + a; hw = tot ? Math.round((h / tot) * 100) : 50;
         hTxt = fmt(d, hv); aTxt = fmt(d, av);
@@ -1946,7 +1948,9 @@ const shortName = (n) => { const p = (n || "").trim().split(/\s+/); return p.len
 // Convierte "3-5-2" + total a filas [1(GK),3,5,2]. Fallback si no cuadra.
 function formationRows(f, total) {
   const parts = (f || "").split("-").map((n) => parseInt(n, 10)).filter((n) => n > 0);
-  if (parts.length && parts.reduce((a, b) => a + b, 0) === total - 1) return [1, ...parts];
+  // Solo usamos la formación si cuadra EXACTO con los jugadores cargados (GK + líneas),
+  // si no el fallback (no descartar jugadores silenciosamente).
+  if (parts.length && 1 + parts.reduce((a, b) => a + b, 0) === total) return [1, ...parts];
   return [1, Math.max(1, total - 1)];
 }
 function pitchHtml(teamName, line) {
@@ -2016,6 +2020,18 @@ function scheduleRefresh() {
     try {
       const fresh = await loadData();
       await mergeLiveScores(fresh); // marcador en vivo directo de la fuente, sin esperar al cron
+      // Conserva el overlay en vivo previo si el cron aún no tiene el resultado,
+      // así un fallo puntual de ESPN no revierte el marcador por un ciclo.
+      if (state.data) {
+        const prevById = new Map(state.data.matches.map((x) => [String(x.id), x]));
+        for (const m of fresh.matches) {
+          const o = prevById.get(String(m.id));
+          if (o && o.live === true && classifyStatus(m) === "ns") {
+            m.homeScore = o.homeScore; m.awayScore = o.awayScore; m.status = o.status; m.live = true;
+            if (o.goals && !m.goals) m.goals = o.goals;
+          }
+        }
+      }
       const sig = JSON.stringify(fresh.matches);
       // GOL: detecta cambios de marcador para animar la tarjeta tras el re-render
       let scored = [];
@@ -2026,6 +2042,16 @@ function scheduleRefresh() {
           .map((m) => String(m.id));
       }
       state.data = fresh;
+      // Si el Modo Partido está abierto, refrescar su referencia y el marcador
+      // (antes quedaba congelado en el momento de abrir, durante un partido vivo).
+      if (state.modalMid && $("#match-modal") && !$("#match-modal").hidden) {
+        const mm = fresh.matches.find((x) => String(x.id) === String(state.modalMid));
+        if (mm) {
+          state.mmMatch = mm;
+          const res = $("#match-modal-body .mm-result");
+          if (res && mm.homeScore != null && mm.awayScore != null) res.innerHTML = `${mm.homeScore}<span class="mm-sep">–</span>${mm.awayScore}`;
+        }
+      }
       setFooterUpdated(fresh);
       if (sig !== state.sig) {
         state.sig = sig; render(); // solo re-render si cambiaron los partidos

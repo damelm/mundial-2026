@@ -38,22 +38,27 @@ jobs:
 
       - name: Estampar versión por hash de contenido
         run: |
-          # Hash del contenido real del shell (NO incluye sw.js, para no
-          # entrar en bucle: el commit del bot solo toca sw.js).
+          # Hash del contenido real del shell. Se le quitan los ?v=... antes de
+          # hashear para que estampar el cache-buster NO cambie el hash (evita
+          # bucle). No incluye sw.js (solo lo reescribe el bot).
           HASH=$(cat index.html app.js styles.css themes.js i18n.js \
                      i18n-content.js content.js data/stadiums.js \
                      manifest.webmanifest 2>/dev/null \
+                 | sed -E 's/\?v=[A-Za-z0-9._-]+//g' \
                  | sha256sum | cut -c1-10)
           NEW="v-$HASH"
           CUR=$(grep -oE 'const VERSION = "[^"]+"' sw.js | sed -E 's/.*"([^"]+)".*/\1/')
           echo "Versión actual: $CUR · nueva: $NEW"
           if [ "$CUR" = "$NEW" ]; then
-            echo "Sin cambios en el shell. No se reescribe sw.js."
+            echo "Sin cambios en el shell. No se reescribe."
             exit 0
           fi
           sed -i -E "s/const VERSION = \"[^\"]+\"/const VERSION = \"$NEW\"/" sw.js
+          # Estampa el cache-buster de los assets con el mismo hash (antes era
+          # manual: ?v=estadioN). Así styles.css/app.js se refrescan en cada deploy.
+          sed -i -E "s/\?v=[A-Za-z0-9._-]+/?v=$HASH/g" index.html
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add sw.js
+          git add sw.js index.html
           git commit -m "sw: versionar a $NEW (auto)"
           git push
