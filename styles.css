@@ -25,7 +25,7 @@
   --font-display: "Anton", sans-serif;
   --font-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-  --radius: 16px; --radius-sm: 11px; --radius-xs: 8px;
+  --radius: 7px; --radius-sm: 5px; --radius-xs: 4px;
   --sh-sm: 0 1px 2px rgba(40,30,20,.05), 0 1px 1px rgba(40,30,20,.04);
   --sh: 0 1px 3px rgba(40,30,20,.06), 0 10px 24px -14px rgba(40,30,20,.20);
   --sh-lg: 0 2px 6px rgba(40,30,20,.07), 0 20px 40px -20px rgba(40,30,20,.28);
@@ -36,9 +36,9 @@
 
 /* ============================ MODO OSCURO ============================ */
 :root[data-theme="dark"] {
-  --bg: #131316; --surface: #1c1c21; --surface-2: #24242a;
-  --ink: #f3f1ec; --ink-dim: #a7a198; --ink-faint: #6f6a62;
-  --line: #2c2c33; --line-2: #232329;
+  --bg: #0a0c11; --surface: #12161d; --surface-2: #1a1f29;
+  --ink: #f3f1ec; --ink-dim: #9aa3b0; --ink-faint: #626b78;
+  --line: #262c37; --line-2: #1d222b;
   --good: #34c771; --good-soft: rgba(28,155,81,.18);
   --live: #ff5277; --live-soft: rgba(225,29,72,.2);
   --sh-sm: 0 1px 2px rgba(0,0,0,.45);
@@ -589,3 +589,48 @@ main { padding: 0 16px 44px; }
 .mm-pred { margin-top: 10px; }
 .mm-skel span { display: block; height: 7px; border-radius: 4px; background: var(--surface-2); margin: 15px 0; animation: mmpulse 1.2s ease-in-out infinite; }
 @keyframes mmpulse { 0%, 100% { opacity: .45; } 50% { opacity: .9; } }
+
+/* ======================================================================
+   REDISEÑO "ESTADIO VIVO" — identidad condensada + tarjeta en vivo viva
+   ====================================================================== */
+/* Anton (display) en los nombres de equipo → identidad de transmisión.
+   En árabe Anton no tiene glifos: cae a sans y el uppercase no aplica (ok). */
+.team-name, .ltv-name, .ko-team, .countdown-teams,
+.table .team-cell-inner span {
+  font-family: var(--font-display); font-weight: 400;
+  text-transform: uppercase; letter-spacing: .015em;
+}
+.team-name { font-size: 13.5px; line-height: 1.12; }
+.ltv-name { font-size: 14px; }
+.table .team-cell-inner span { font-size: 13px; letter-spacing: .02em; }
+.ko-team { font-size: 14px; }
+[dir="rtl"] .team-name, [dir="rtl"] .ltv-name, [dir="rtl"] .ko-team,
+[dir="rtl"] .countdown-teams, [dir="rtl"] .table .team-cell-inner span { text-transform: none; }
+
+/* Tarjeta EN VIVO "viva": reflector que respira detrás del marcador,
+   marcador encendido y el punto que late con anillo. */
+.match-live { position: relative; overflow: hidden; }
+.match-live::before {
+  content: ""; position: absolute; left: 50%; top: 56%;
+  width: 260px; height: 210px; transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(150,200,255,.20), transparent 64%);
+  filter: blur(8px); pointer-events: none; z-index: 0;
+  animation: floodBreathe 2.8s ease-in-out infinite;
+}
+.match-live > * { position: relative; z-index: 1; }
+.ltv-score { font-size: 46px; animation: scoreGlow 2.8s ease-in-out infinite; }
+.ltv-dot { position: relative; }
+.ltv-dot::after {
+  content: ""; position: absolute; inset: -1px; border-radius: 50%;
+  background: #fff; animation: ringPulse 1.6s ease-out infinite;
+}
+@keyframes floodBreathe { 0%, 100% { opacity: .25; } 50% { opacity: .6; } }
+@keyframes scoreGlow {
+  0%, 100% { text-shadow: 0 0 9px rgba(150,200,255,.18); }
+  50% { text-shadow: 0 0 20px rgba(150,200,255,.42); }
+}
+@keyframes ringPulse {
+  0% { transform: scale(.5); opacity: .7; }
+  70% { transform: scale(3); opacity: 0; }
+  100% { opacity: 0; }
+}

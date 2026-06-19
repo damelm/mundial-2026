@@ -1394,9 +1394,10 @@ async function init() {
   // idioma guardado (provisorio hasta geo)
   let storedLang = null; try { storedLang = localStorage.getItem(STORE_LANG); } catch {}
   if (storedLang && I18N[storedLang]) state.lang = storedLang;
-  // modo oscuro: preferencia guardada o del sistema
+  // Estadio Nocturno: el modo oscuro es el protagonista. Si el usuario nunca
+  // eligió, arranca oscuro (no según el sistema). El toggle sigue disponible.
   let storedDark = null; try { storedDark = localStorage.getItem("wc26-dark"); } catch {}
-  state.dark = storedDark != null ? storedDark === "1" : !!(window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
+  state.dark = storedDark != null ? storedDark === "1" : true;
   document.documentElement.dataset.theme = state.dark ? "dark" : "light";
   setTimezone(null); // zona horaria del navegador (refleja el SO, es la fuente confiable)
   buildLangChips(); wireEvents(); setupA11y(); setupTabsScroll(); setupAnimPause(); setupWaveResize(); applyI18n();
