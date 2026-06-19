@@ -109,7 +109,9 @@ function localTeam(name, field) {
 function dispName(name) {
   if (!name) return pick({ es: NEUTRAL.es, en: NEUTRAL.en });
   const tm = TEAMS[name];
-  return tm ? pick({ es: tm.es, en: tm.en }) : name;
+  // Si el nombre no está en TEAMS viene crudo de una API externa → escapar
+  // (defensa XSS; los nombres reales no tienen &<>" así que no se ve afectado).
+  return tm ? pick({ es: tm.es, en: tm.en }) : escHtml(name);
 }
 function flagImg(name, cls) {
   const code = flagCodeOf(name);
@@ -134,7 +136,9 @@ function brandColors(tm) {
   const brand = adjustToLum(hue, 0.2); // relleno con texto blanco (legible en claro)
   const [h, s0] = rgbToHsl(hexToRgb(hue));
   const s = Math.max(s0, 0.62); // mantener saturación → acento vibrante (no pastel)
-  const accent = state.dark ? hslToHex(h, s, 0.66) : hslToHex(h, s, 0.40); // texto/acento legible sobre la superficie del modo
+  // En claro, capamos la luminancia para garantizar contraste sobre blanco
+  // (verde/cian a L=0.40 no llegaban a AA como texto).
+  const accent = state.dark ? hslToHex(h, s, 0.66) : adjustToLum(hslToHex(h, s, 0.40), 0.24);
   const vivid = state.dark ? hslToHex(h, s, 0.60) : hslToHex(h, s, 0.50); // barra/indicador vibrante (sin texto encima)
   const soft = state.dark ? mixHex(accent, "#202127", 0.84) : mixHex(brand, "#ffffff", 0.9);
   const onAccent = state.dark ? "#14130f" : "#ffffff"; // texto sobre un relleno de --brand-accent
@@ -399,7 +403,9 @@ function applyTheme(name) {
   root.style.setProperty("--brand-2", b.brand2);
   root.style.setProperty("--brand-soft", b.soft);
   root.style.setProperty("--on-brand", "#ffffff");
-  $("#meta-theme").setAttribute("content", b.brand);
+  // La barra de estado del móvil acompaña la base "estadio" en oscuro (no el
+  // color de país, que chocaba con el UI casi negro); en claro sí el de marca.
+  $("#meta-theme").setAttribute("content", state.dark ? "#0a0c11" : b.brand);
 
   const code = name ? flagCodeOf(name) : null;
   $("#hero-confed").textContent = tm.confed;
@@ -569,7 +575,7 @@ function teamCell(name, badge) {
   // Prefiere el escudo de TheSportsDB; si falla, bandera.
   const code = flagCodeOf(name);
   const fb = code ? FLAG(code) : "";
-  if (badge) return `<img class="team-badge" src="${badge}" alt="${dispName(name)}" loading="lazy" onerror="this.onerror=null;this.className='team-flag';this.src='${fb}'">`;
+  if (badge) return `<img class="team-badge" src="${escHtml(badge)}" alt="${dispName(name)}" loading="lazy" onerror="this.onerror=null;this.className='team-flag';this.src='${fb}'">`;
   if (code) return `<img class="team-flag" src="${fb}" alt="${dispName(name)}" loading="lazy">`;
   return `<span class="team-flag emoji">⚽</span>`;
 }
@@ -577,7 +583,7 @@ function teamCell(name, badge) {
 // Siempre oscura (independiente del tema) para que lo importante grite solo.
 function liveCard(m, isMine) {
   const grp = m.group ? t("group", { g: m.group }) : stageLabel(m);
-  const venue = m.venue ? ` · ${m.venue}` : "";
+  const venue = m.venue ? ` · ${escHtml(m.venue)}` : "";
   const raw = (m.status || "").toUpperCase();
   const phase = /^[0-9HT'+\s]{1,7}$/.test(raw) ? `<span class="ltv-phase">${raw}</span>` : "";
   const scorers = m.goals ? liveScorersLine(m) : "";
@@ -609,7 +615,7 @@ function matchCard(m) {
     center = `<div class="match-score">${score}</div>${label}`;
   }
   const grp = m.group ? `<span class="match-grouptag">${t("group", { g: m.group })}</span>` : stageLabel(m);
-  const venue = m.venue ? ` · ${m.venue}${m.city ? ", " + m.city.split(",")[0] : ""}` : "";
+  const venue = m.venue ? ` · ${escHtml(m.venue)}${m.city ? ", " + escHtml(m.city.split(",")[0]) : ""}` : "";
   const cal = st === "ns" ? `<button class="cal-btn" data-mid="${m.id}" aria-label="${tw(TX.addCal)}" title="${tw(TX.addCal)}"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 15H5V9h14v10zM7 11h5v5H7z"/></svg></button>` : "";
   const rk = (n) => (n != null ? `<span class="rk" title="Ranking FIFA">#${n}</span>` : "");
   const scorers = (st === "ft" && m.goals && ((m.goals.home && m.goals.home.length) || (m.goals.away && m.goals.away.length))) ? scorersBlock(m) : "";
@@ -726,7 +732,7 @@ function renderGroups() {
     rows.forEach((r, i) => {
       const dif = r.gf - r.gc;
       const code = flagCodeOf(r.team);
-      const img = r.badge ? `<img src="${r.badge}" alt="" loading="lazy" onerror="this.onerror=null;this.src='${code ? FLAG(code) : ""}'">`
+      const img = r.badge ? `<img src="${escHtml(r.badge)}" alt="" loading="lazy" onerror="this.onerror=null;this.src='${code ? FLAG(code) : ""}'">`
         : (code ? `<img src="${FLAG(code)}" alt="" loading="lazy">` : `<span>⚽</span>`);
       const me = r.team === state.team ? " is-me" : "";
       inner += `<tr class="${i < 2 ? "qualify" : ""}${me}"><td class="pos">${i + 1}</td>

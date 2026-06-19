@@ -612,11 +612,12 @@ main { padding: 0 16px 44px; }
 .match-live { position: relative; overflow: hidden; }
 .match-live::before {
   content: ""; position: absolute; left: 50%; top: 56%;
-  width: 260px; height: 210px; transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(150,200,255,.20), transparent 64%);
-  filter: blur(8px); pointer-events: none; z-index: 0;
+  width: 280px; height: 220px; transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(150,200,255,.22), transparent 62%);
+  pointer-events: none; z-index: 0; will-change: opacity;
   animation: floodBreathe 2.8s ease-in-out infinite;
 }
+.ko-team { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .match-live > * { position: relative; z-index: 1; }
 .ltv-score { font-size: 46px; animation: scoreGlow 2.8s ease-in-out infinite; }
 .ltv-dot { position: relative; }
