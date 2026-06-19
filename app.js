@@ -62,6 +62,11 @@ const TX = {
   selUpcoming: { es: "Próximos partidos", en: "Upcoming", pt: "Próximos jogos", fr: "À venir", ar: "المباريات القادمة" },
   selPlayed: { es: "Jugados", en: "Played", pt: "Jogados", fr: "Joués", ar: "مباريات منتهية" },
   noRelato: { es: "El relato aparece cuando arranca el partido.", en: "Play-by-play appears once the match starts.", pt: "A narração aparece quando o jogo começa.", fr: "Le direct apparaît au coup d'envoi.", ar: "يظهر السرد عند بدء المباراة." },
+  evGoal: { es: "¡Gol!", en: "Goal!", pt: "Gol!", fr: "But !", ar: "هدف!" },
+  evOwnGoal: { es: "Gol en contra", en: "Own goal", pt: "Gol contra", fr: "But contre son camp", ar: "هدف عكسي" },
+  evYellow: { es: "Tarjeta amarilla", en: "Yellow card", pt: "Cartão amarelo", fr: "Carton jaune", ar: "بطاقة صفراء" },
+  evRed: { es: "Tarjeta roja", en: "Red card", pt: "Cartão vermelho", fr: "Carton rouge", ar: "بطاقة حمراء" },
+  evSub: { es: "Cambio", en: "Substitution", pt: "Substituição", fr: "Remplacement", ar: "تبديل" },
   instTitle: { es: "Instalá Fix26", en: "Install Fix26", pt: "Instale o Fix26", fr: "Installez Fix26", ar: "ثبّت Fix26" },
   instIosTitle: { es: "Agregá Fix26 a tu inicio", en: "Add Fix26 to your Home Screen", pt: "Adicione o Fix26 à tela inicial", fr: "Ajoutez Fix26 à l'accueil", ar: "أضف Fix26 إلى الشاشة الرئيسية" },
   instSub: { es: "El Mundial en tu pantalla de inicio", en: "The World Cup on your home screen", pt: "A Copa na sua tela inicial", fr: "Le Mondial sur votre écran d'accueil", ar: "كأس العالم على شاشتك الرئيسية" },
@@ -1817,9 +1822,16 @@ function parseDetail(sum) {
     .filter((e) => e && (e.scoringPlay || /goal|card|substitution|penalty/i.test((e.type && e.type.text) || "")))
     .map((e) => {
       const tt = ((e.type && e.type.text) || "").toLowerCase();
-      const kind = e.scoringPlay || /goal/.test(tt) ? "goal" : /red/.test(tt) ? "red" : /yellow|card/.test(tt) ? "yellow" : /sub/.test(tt) ? "sub" : "ev";
+      let kind;
+      if (/own goal/.test(tt)) kind = "og";
+      else if (e.scoringPlay || /goal/.test(tt)) kind = "goal";
+      else if (/red/.test(tt)) kind = "red";
+      else if (/yellow|card/.test(tt)) kind = "yellow";
+      else if (/sub/.test(tt)) kind = "sub";
+      else kind = "ev";
       const tid = e.team && String(e.team.id);
-      return { min: (e.clock && e.clock.displayValue) || "", kind, text: e.text || e.shortText || "", side: tid === homeId ? "home" : tid === awayId ? "away" : "" };
+      const names = (e.participants || []).map((p) => p.athlete && p.athlete.displayName).filter(Boolean);
+      return { min: (e.clock && e.clock.displayValue) || "", kind, names, text: e.text || e.shortText || "", side: tid === homeId ? "home" : tid === awayId ? "away" : "" };
     })
     .reverse();
 
@@ -1954,8 +1966,10 @@ function oddsBar(m, o) {
   return `<div class="pred-bar"><span class="pb h" style="width:${o.h}%"></span><span class="pb d" style="width:${o.d}%"></span><span class="pb a" style="width:${o.a}%"></span></div>
     <div class="pred-legend"><span class="pl h">${dispName(m.home)} ${o.h}%</span><span class="pl d">${tw(TX.draw)} ${o.d}%</span><span class="pl a">${dispName(m.away)} ${o.a}%</span></div>`;
 }
+const FORM_LETTER = { es: { W: "G", D: "E", L: "P" }, en: { W: "W", D: "D", L: "L" }, pt: { W: "V", D: "E", L: "D" }, fr: { W: "V", D: "N", L: "D" }, ar: { W: "ف", D: "ت", L: "خ" } };
+const formLetter = (r) => { const map = FORM_LETTER[state.lang] || FORM_LETTER.en; return map[r] || r; };
 function formHtml(m, form) {
-  const row = (name, arr) => (arr && arr.length) ? `<div class="frm-row"><span class="frm-team">${dispName(name)}</span><span class="frm-chips">${arr.map((g) => `<span class="frm-chip frm-${(g.r || "").toLowerCase()}" title="${escHtml(g.opp)} ${escHtml(g.score)}">${escHtml(g.r || "·")}</span>`).join("")}</span></div>` : "";
+  const row = (name, arr) => (arr && arr.length) ? `<div class="frm-row"><span class="frm-team">${dispName(name)}</span><span class="frm-chips">${arr.map((g) => `<span class="frm-chip frm-${(g.r || "").toLowerCase()}" title="${escHtml(g.opp)} ${escHtml(g.score)}">${escHtml(formLetter(g.r) || "·")}</span>`).join("")}</span></div>` : "";
   const h = row(m.home, form.home), a = row(m.away, form.away);
   return (h || a) ? `<div class="frm-list">${h}${a}</div>` : "";
 }
@@ -1967,15 +1981,26 @@ function predHtmlFull(m, detail) {
   if (form && (form.home || form.away)) html += `<div class="mm-sub">${tw(TX.form)}</div>${formHtml(m, form)}`;
   return html || `<div class="mm-empty">${tw(TX.noForecast)}</div>`;
 }
-// Relato minuto a minuto (timeline de eventos clave de ESPN)
+// Relato minuto a minuto: arma el texto LOCALIZADO desde los datos
+// estructurados de ESPN (tipo + jugadores), no del texto en inglés.
+const REL_LABEL = { goal: "evGoal", og: "evOwnGoal", yellow: "evYellow", red: "evRed", sub: "evSub" };
+function relatoDesc(m, e) {
+  const team = e.side === "home" ? dispName(m.home) : e.side === "away" ? dispName(m.away) : "";
+  const who = (e.names || []).map(escHtml);
+  let label;
+  if (e.kind === "sub") label = `${tw(TX.evSub)}${who.length ? " · " + who.join(" ↔ ") : ""}`;
+  else if (REL_LABEL[e.kind]) label = `${tw(TX[REL_LABEL[e.kind]])}${who[0] ? " · " + who[0] : ""}`;
+  else return escHtml(e.text || "");
+  return team ? `${label} <span class="rel-team">(${team})</span>` : label;
+}
 function relatoHtml(m, detail) {
   const evs = detail && detail.events;
   if (!evs || !evs.length) return `<div class="mm-empty">${tw(TX.noRelato)}</div>`;
-  const ICONS = { goal: "⚽", yellow: "🟨", red: "🟥", sub: "🔁", ev: "•" };
+  const ICONS = { goal: "⚽", og: "⚽", yellow: "🟨", red: "🟥", sub: "🔁", ev: "•" };
   return `<div class="rel">${evs.map((e) => `<div class="rel-row rel-${e.side}">
     <span class="rel-min">${escHtml(e.min)}</span>
     <span class="rel-ico">${ICONS[e.kind] || "•"}</span>
-    <span class="rel-text">${escHtml(e.text)}</span></div>`).join("")}</div>`;
+    <span class="rel-text">${relatoDesc(m, e)}</span></div>`).join("")}</div>`;
 }
 
 function scheduleRefresh() {
