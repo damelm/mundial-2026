@@ -148,6 +148,7 @@ const fmtDayShort = (d) => d.toLocaleDateString(state.lang, { day: "2-digit", mo
 const dayKey = (d) => d.toLocaleDateString("en-CA", tzOpt());
 
 function classifyStatus(m) {
+  if (m.live === true) return "live"; // marcado por la capa en vivo de ESPN
   const s = (m.status || "").toUpperCase();
   const fin = ["FT", "AET", "PEN", "MATCH FINISHED", "FINISHED", "AP"];
   const live = ["1H", "2H", "HT", "ET", "LIVE", "IN PLAY", "PLAYING", "BT"];
@@ -572,14 +573,21 @@ function liveCard(m, isMine) {
   const grp = m.group ? t("group", { g: m.group }) : stageLabel(m);
   const venue = m.venue ? ` · ${m.venue}` : "";
   const raw = (m.status || "").toUpperCase();
-  const phase = /^[A-Z0-9+']{1,3}$/.test(raw) ? `<span class="ltv-phase">${raw}</span>` : "";
+  const phase = /^[0-9HT'+\s]{1,7}$/.test(raw) ? `<span class="ltv-phase">${raw}</span>` : "";
+  const scorers = m.goals ? liveScorersLine(m) : "";
   return `<article class="match-live reveal ${isMine ? "mine" : ""}" data-mid="${m.id}">
     <div class="ltv-top"><span class="ltv-badge"><span class="ltv-dot"></span>${t("status.live")}</span>${phase}<span class="ltv-meta">${grp}${venue}</span></div>
     <div class="ltv-row">
       <div class="ltv-team">${teamCell(m.home, m.homeBadge)}<span class="ltv-name">${dispName(m.home)}</span></div>
       <div class="ltv-score">${m.homeScore ?? 0}<span class="ltv-sep">–</span>${m.awayScore ?? 0}</div>
       <div class="ltv-team">${teamCell(m.away, m.awayBadge)}<span class="ltv-name">${dispName(m.away)}</span></div>
-    </div></article>`;
+    </div>${scorers}</article>`;
+}
+function liveScorersLine(m) {
+  const fmt = (arr) => (arr || []).map((g) => `<span>${escHtml(g.name)}${g.minute ? ` <i>${escHtml(g.minute)}'</i>` : ""}</span>`).join("");
+  const h = fmt(m.goals.home), a = fmt(m.goals.away);
+  if (!h && !a) return "";
+  return `<div class="ltv-scorers"><div class="ltv-sc home">${h}</div><div class="ltv-sc away">${a}</div></div>`;
 }
 function matchCard(m) {
   const d = parseUTC(m.timestamp);
@@ -1447,12 +1455,91 @@ function matchesInPlayWindow(data) {
   });
 }
 
-// Marcadores EN VIVO directo de TheSportsDB. El cron de GitHub Actions corre en
-// la práctica cada 2-3 h (ignora los schedules frecuentes), así que durante un
-// partido fixture.json queda congelado. Esto trae el marcador real desde la
-// fuente y lo mergea por id sobre los datos. Solo consulta si hay partidos en
-// ventana de juego (1 fetch por fecha), así no golpea la API sin necesidad.
+// --- Capa EN VIVO (cliente → ESPN, gratis, sin key, CORS abierto) --------
+// El cron de GitHub Actions corre en la práctica cada 2-3 h, así que durante
+// un partido fixture.json queda congelado. Esta capa trae marcador + minuto +
+// goleadores en TIEMPO REAL desde la API pública de ESPN y los mergea sobre
+// los datos emparejando por equipos. Si ESPN falla, cae a TheSportsDB. Solo
+// consulta si hay partidos en ventana de juego.
+const ESPN_SB = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard";
+const ESPN_SUM = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=";
+const _LIVE_ALIAS = { unitedstates: "usa", us: "usa", bosniaandherzegovina: "bosniaherzegovina", czechia: "czechrepublic", turkiye: "turkey", caboverde: "capeverde", korearepublic: "southkorea", cotedivoire: "ivorycoast" };
+function canonName(n) { const k = (n || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]/g, ""); return _LIVE_ALIAS[k] || k; }
+const livePair = (h, a) => `${canonName(h)}|${canonName(a)}`;
+
+// Goleadores (nombre + minuto) del summary de ESPN, separados por equipo.
+function espnGoals(sum, homeId, awayId) {
+  const evs = (sum && sum.keyEvents) || [];
+  const home = [], away = [];
+  for (const g of evs) {
+    if (!g || !g.scoringPlay) continue;
+    let name = "";
+    if (g.participants && g.participants[0]) { const a = g.participants[0]; name = (a.athlete && a.athlete.displayName) || a.displayName || ""; }
+    if (!name) name = (g.shortText || "").replace(/\s+(Goal|Penalty).*$/i, "").trim();
+    const minute = String((g.clock && g.clock.displayValue) || "").replace(/'/g, "");
+    const tid = g.team && String(g.team.id);
+    if (tid === String(homeId)) home.push({ name, minute });
+    else if (tid === String(awayId)) away.push({ name, minute });
+  }
+  return (home.length || away.length) ? { home, away } : null;
+}
+
 async function mergeLiveScores(data) {
+  const playing = matchesInPlayWindow(data);
+  if (!playing.length) return false;
+  const byPair = new Map();
+  for (const m of data.matches) byPair.set(livePair(m.home, m.away), m);
+  // Slate por defecto + cada fecha en ventana (cubre desfases de huso horario).
+  const urls = new Set([ESPN_SB]);
+  for (const d of new Set(playing.map((m) => m.date).filter(Boolean))) urls.add(`${ESPN_SB}?dates=${d.replace(/-/g, "")}`);
+  const events = new Map();
+  let gotESPN = false;
+  for (const u of urls) {
+    try {
+      const sb = await fetch(u, { cache: "no-store" }).then((r) => r.json());
+      if (sb && sb.events) { gotESPN = true; for (const ev of sb.events) events.set(ev.id, ev); }
+    } catch {}
+  }
+  if (!gotESPN) return mergeLiveScoresTSDB(data); // respaldo si ESPN no responde
+  let changed = false;
+  for (const ev of events.values()) {
+    const c = ev.competitions && ev.competitions[0]; if (!c) continue;
+    const H = c.competitors.find((x) => x.homeAway === "home");
+    const A = c.competitors.find((x) => x.homeAway === "away");
+    if (!H || !A) continue;
+    const m = byPair.get(livePair(H.team.displayName, A.team.displayName));
+    if (!m) continue;
+    const stt = ev.status && ev.status.type;
+    const espnState = stt && stt.state; // pre | in | post
+    if (espnState === "pre") continue;
+    const hs = H.score != null && H.score !== "" ? Number(H.score) : null;
+    const as = A.score != null && A.score !== "" ? Number(A.score) : null;
+    if (hs != null && hs !== m.homeScore) { m.homeScore = hs; changed = true; }
+    if (as != null && as !== m.awayScore) { m.awayScore = as; changed = true; }
+    if (espnState === "in") {
+      const clock = String((ev.status && ev.status.displayClock) || "").trim();
+      const per = ev.status && ev.status.period;
+      const ns = clock || (per === 1 ? "1H" : per === 2 ? "2H" : "LIVE");
+      if (m.status !== ns) { m.status = ns; changed = true; }
+      if (m.live !== true) { m.live = true; changed = true; }
+    } else if (espnState === "post") {
+      if (m.live) { m.live = false; changed = true; }
+      if (m.status !== "FT") { m.status = "FT"; changed = true; }
+    }
+    // Goleadores en vivo (o de un partido recién terminado sin dato del cron).
+    if (espnState === "in" || (espnState === "post" && !m.goals)) {
+      try {
+        const sum = await fetch(ESPN_SUM + ev.id, { cache: "no-store" }).then((r) => r.json());
+        const g = espnGoals(sum, H.team.id, A.team.id);
+        if (g) { m.goals = g; changed = true; }
+      } catch {}
+    }
+  }
+  return changed;
+}
+
+// Respaldo: marcador en vivo de TheSportsDB por idEvent (si ESPN no responde).
+async function mergeLiveScoresTSDB(data) {
   const playing = matchesInPlayWindow(data);
   if (!playing.length) return false;
   const dates = [...new Set(playing.map((m) => m.date).filter(Boolean))];

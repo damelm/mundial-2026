@@ -553,3 +553,9 @@ main { padding: 0 16px 44px; }
 .bo-team { font-size: 11px; font-weight: 600; color: var(--ink-dim); }
 .bo-g { font-weight: 800; font-variant-numeric: tabular-nums; color: var(--brand-accent); font-size: 15px; }
 [dir="rtl"] .sc-col.away { text-align: left; }
+
+.ltv-scorers { margin-top: 11px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.13); display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 11px; }
+.ltv-sc { display: flex; flex-direction: column; gap: 2px; color: rgba(255,255,255,.86); font-weight: 600; }
+.ltv-sc.away { text-align: right; }
+.ltv-sc i { color: rgba(255,255,255,.55); font-style: normal; font-weight: 700; }
+[dir="rtl"] .ltv-sc.away { text-align: left; }
