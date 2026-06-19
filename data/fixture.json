@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-19T20:51:46.105Z",
+  "updatedAt": "2026-06-19T22:03:58.528Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1119,9 +1119,22 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/lark6k1661780848.png",
       "homeScore": 2,
       "awayScore": 0,
-      "status": "2H",
+      "status": "FT",
       "venue": "Lumen Field",
       "city": "Seattle, WA",
+      "goals": {
+        "home": [
+          {
+            "name": "Cameron Burgess",
+            "minute": "11"
+          },
+          {
+            "name": "Alex Freeman",
+            "minute": "43"
+          }
+        ],
+        "away": []
+      },
       "homeRank": 16,
       "awayRank": 24
     },
@@ -1138,30 +1151,13 @@
       "away": "Morocco",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/3691i11552945146.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/hbmwkj1731791275.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "1H",
       "venue": "Gillette Stadium",
       "city": "Foxborough, MA",
       "homeRank": 39,
-      "awayRank": 11,
-      "pred": {
-        "pH": 20,
-        "pD": 20,
-        "pA": 60,
-        "h2h": {
-          "played": 1,
-          "last": [
-            {
-              "date": "1998-06-23",
-              "h": "Scotland",
-              "a": "Morocco",
-              "hs": 0,
-              "as": 3
-            }
-          ]
-        }
-      }
+      "awayRank": 11
     },
     {
       "id": "2391748",
