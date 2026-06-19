@@ -676,3 +676,15 @@ main { padding: 0 16px 44px; }
 .lt-goal { color: #b3bcc8; font-weight: 600; }
 .lt-sep { color: #39404b; }
 @keyframes ltScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* Modo Partido kinético: cuña de acento en el encabezado del detalle */
+.mm-score { position: relative; overflow: hidden; }
+.mm-score::before {
+  content: ""; position: absolute; top: -56px; right: -46px;
+  width: 190px; height: 140px; transform: rotate(-14deg);
+  background: linear-gradient(138deg, var(--brand-vivid), var(--brand-accent) 82%);
+  z-index: 0; pointer-events: none;
+}
+.mm-score > * { position: relative; z-index: 1; }
+.mm-result { font-size: 34px; }
+.mm-tn { text-shadow: 0 1px 6px rgba(0,0,0,.45); }
