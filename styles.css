@@ -357,6 +357,7 @@ main { padding: 0 16px 44px; }
 
 /* Animaciones infinitas en pausa cuando el elemento sale de pantalla */
 .anim-off, .anim-off::before, .anim-off::after, .anim-off * { animation-play-state: paused !important; }
+body.anim-paused *, body.anim-paused *::before, body.anim-paused *::after { animation-play-state: paused !important; }
 
 /* ============================ ACORDEONES ============================= */
 .ghost-btn { border: 1px solid var(--line); background: var(--surface); color: var(--ink-dim); font: inherit; font-weight: 700; font-size: 13px; padding: 8px 14px; border-radius: 999px; cursor: pointer; box-shadow: var(--sh-sm); }

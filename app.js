@@ -581,6 +581,7 @@ function render() {
   renderCountdown();
   renderHeroCard();
   renderLiveTicker();
+  observeLiveAnims();
 }
 // Cinta de eventos EN VIVO: marcadores + goleadores de los partidos en juego,
 // en scroll continuo (estética de transmisión). Solo visible si hay live.
@@ -1315,11 +1316,16 @@ function mountAds() {
 }
 
 // Las animaciones infinitas del hero (beam, shiny) se pausan fuera de pantalla
+let _animIO = null;
 function setupAnimPause() {
+  // Pausa TODAS las animaciones cuando la app pasa a segundo plano (batería).
+  document.addEventListener("visibilitychange", () => document.body.classList.toggle("anim-paused", document.hidden));
   if (!("IntersectionObserver" in window)) return;
-  const io = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle("anim-off", !e.isIntersecting)), { threshold: 0 });
-  ["#hero", "#countdown"].forEach((s) => { const el = $(s); if (el) io.observe(el); });
+  _animIO = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle("anim-off", !e.isIntersecting)), { threshold: 0 });
+  ["#hero", "#countdown", "#live-ticker"].forEach((s) => { const el = $(s); if (el) _animIO.observe(el); });
 }
+// Pausa las animaciones de las tarjetas EN VIVO cuando salen de pantalla.
+function observeLiveAnims(container) { if (_animIO) $$(".match-live", container || document).forEach((el) => _animIO.observe(el)); }
 // Indicio visual de que la barra de tabs se puede deslizar (Sedes no entra en 375px)
 function setupTabsScroll() {
   const el = $("#tabs"), wrap = $("#tabs-wrap");
