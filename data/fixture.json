@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-19T22:03:58.528Z",
+  "updatedAt": "2026-06-20T01:33:06.450Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1153,9 +1153,18 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/hbmwkj1731791275.png",
       "homeScore": 0,
       "awayScore": 1,
-      "status": "1H",
+      "status": "FT",
       "venue": "Gillette Stadium",
       "city": "Foxborough, MA",
+      "goals": {
+        "home": [],
+        "away": [
+          {
+            "name": "Ismael Saibari",
+            "minute": "2"
+          }
+        ]
+      },
       "homeRank": 39,
       "awayRank": 11
     },
@@ -1172,44 +1181,13 @@
       "away": "Haiti",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/jl6dip1726167280.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/gml8wx1598135302.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 3,
+      "awayScore": 0,
+      "status": "HT",
       "venue": "Lincoln Financial Field",
       "city": "Philadelphia, PA",
       "homeRank": 5,
-      "awayRank": 86,
-      "pred": {
-        "pH": 85,
-        "pD": 6,
-        "pA": 9,
-        "h2h": {
-          "played": 3,
-          "last": [
-            {
-              "date": "2016-06-08",
-              "h": "Brazil",
-              "a": "Haiti",
-              "hs": 7,
-              "as": 1
-            },
-            {
-              "date": "2004-08-18",
-              "h": "Haiti",
-              "a": "Brazil",
-              "hs": 0,
-              "as": 6
-            },
-            {
-              "date": "1974-04-21",
-              "h": "Brazil",
-              "a": "Haiti",
-              "hs": 4,
-              "as": 0
-            }
-          ]
-        }
-      }
+      "awayRank": 86
     },
     {
       "id": "2461111",
