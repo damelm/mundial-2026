@@ -221,9 +221,13 @@ const COUNTRY_LANG = {
 };
 
 function langForCountry(code) {
+  // El idioma del dispositivo manda si lo soportamos. Así una geolocalización
+  // por IP equivocada (o un país cacheado de una visita anterior) no fuerza un
+  // idioma que el usuario no eligió —p. ej. árabe en un teléfono en español—.
+  const nav = (navigator.language || "").slice(0, 2).toLowerCase();
+  if (I18N[nav]) return nav;
   if (code && COUNTRY_LANG[code]) return COUNTRY_LANG[code];
-  const nav = (navigator.language || "en").slice(0, 2).toLowerCase();
-  return I18N[nav] ? nav : "en";
+  return "en";
 }
 
 function tmpl(str, vars) {
