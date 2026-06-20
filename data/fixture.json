@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-20T01:33:06.450Z",
+  "updatedAt": "2026-06-20T06:03:37.953Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1116,7 +1116,7 @@
       "home": "USA",
       "away": "Australia",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/21f0oi1597948195.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/lark6k1661780848.png",
+      "awayBadge": "https://www.thesportsdb.com/images/media/team/badge/eylq8x1781926138.png",
       "homeScore": 2,
       "awayScore": 0,
       "status": "FT",
@@ -1183,9 +1183,26 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/gml8wx1598135302.png",
       "homeScore": 3,
       "awayScore": 0,
-      "status": "HT",
+      "status": "FT",
       "venue": "Lincoln Financial Field",
       "city": "Philadelphia, PA",
+      "goals": {
+        "home": [
+          {
+            "name": "Matheus Cunha",
+            "minute": "23"
+          },
+          {
+            "name": "Matheus Cunha",
+            "minute": "36"
+          },
+          {
+            "name": "Vinícius Júnior",
+            "minute": "45+3"
+          }
+        ],
+        "away": []
+      },
       "homeRank": 5,
       "awayRank": 86
     },
@@ -1202,22 +1219,22 @@
       "away": "Paraguay",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/70c4oo1591982459.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/khgav41553419195.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "FT",
       "venue": "Levi's Stadium",
       "city": "Santa Clara, CA",
+      "goals": {
+        "home": [],
+        "away": [
+          {
+            "name": "Matías Galarza",
+            "minute": "2"
+          }
+        ]
+      },
       "homeRank": 26,
-      "awayRank": 45,
-      "pred": {
-        "pH": 44,
-        "pD": 26,
-        "pA": 30,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 45
     },
     {
       "id": "2461112",
