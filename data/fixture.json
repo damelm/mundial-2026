@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-20T18:45:41.486Z",
+  "updatedAt": "2026-06-20T20:14:42.915Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1249,11 +1249,41 @@
       "away": "Sweden",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/1p0hr41593787110.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/h5adzg1591981772.png",
-      "homeScore": 4,
+      "homeScore": 5,
       "awayScore": 1,
-      "status": "2H",
-      "venue": "NRG Stadium",
+      "status": "FT",
+      "venue": "Reliant Stadium",
       "city": "Houston, TX",
+      "goals": {
+        "home": [
+          {
+            "name": "Brian Brobbey",
+            "minute": "5"
+          },
+          {
+            "name": "Brian Brobbey",
+            "minute": "17"
+          },
+          {
+            "name": "Cody Gakpo",
+            "minute": "47"
+          },
+          {
+            "name": "Cody Gakpo",
+            "minute": "54"
+          },
+          {
+            "name": "Crysencio Summerville",
+            "minute": "89"
+          }
+        ],
+        "away": [
+          {
+            "name": "Anthony Elanga",
+            "minute": "59"
+          }
+        ]
+      },
       "homeRank": 7,
       "awayRank": 24
     },
@@ -1270,30 +1300,13 @@
       "away": "Ivory Coast",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/1xysi51726167152.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/rwxuuu1455465643.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "BMO Field",
       "city": "Toronto, ON",
       "homeRank": 9,
-      "awayRank": 40,
-      "pred": {
-        "pH": 59,
-        "pD": 21,
-        "pA": 20,
-        "h2h": {
-          "played": 1,
-          "last": [
-            {
-              "date": "2009-11-18",
-              "h": "Germany",
-              "a": "Ivory Coast",
-              "hs": 2,
-              "as": 2
-            }
-          ]
-        }
-      }
+      "awayRank": 40
     },
     {
       "id": "2391751",
