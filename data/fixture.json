@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-20T21:41:49.767Z",
+  "updatedAt": "2026-06-20T22:50:18.959Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1300,11 +1300,29 @@
       "away": "Ivory Coast",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/1xysi51726167152.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/rwxuuu1455465643.png",
-      "homeScore": 0,
+      "homeScore": 2,
       "awayScore": 1,
-      "status": "2H",
+      "status": "FT",
       "venue": "BMO Field",
       "city": "Toronto, ON",
+      "goals": {
+        "home": [
+          {
+            "name": "Deniz Undav",
+            "minute": "68"
+          },
+          {
+            "name": "Deniz Undav",
+            "minute": "90+4"
+          }
+        ],
+        "away": [
+          {
+            "name": "Franck Kessié",
+            "minute": "30"
+          }
+        ]
+      },
       "homeRank": 9,
       "awayRank": 40
     },
