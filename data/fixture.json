@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-20T09:42:06.597Z",
+  "updatedAt": "2026-06-20T11:34:56.341Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -182,7 +182,7 @@
       "goals": {
         "home": [
           {
-            "name": "Boualem Khoukhi",
+            "name": "Miro Muheim",
             "minute": "90+4"
           }
         ],
