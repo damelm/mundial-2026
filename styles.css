@@ -76,10 +76,11 @@ main { padding: 0 16px 44px; }
 
 /* ============================ HERO (portada matchday) ================= */
 .hero {
-  /* El safe-top se capa a 40px: algunos Android en PWA standalone reportan un
-     env(safe-area-inset-top) inflado (mucho mayor que la barra real) y dejaban
-     un hueco enorme arriba del hero. En teléfonos normales (~30px) no cambia. */
-  position: relative; padding: calc(16px + min(var(--safe-top), 40px)) 18px 22px;
+  /* El safe-top se capa: algunos Android en PWA standalone reportan un
+     env(safe-area-inset-top) inflado (la barra de estado va en una banda
+     negra aparte, así que el hero no necesita despejarla) y dejaban un hueco
+     enorme arriba. Cap a 24px: despeja barras reales y evita el vacío. */
+  position: relative; padding: calc(12px + min(var(--safe-top), 24px)) 18px 22px;
   background: linear-gradient(158deg, var(--brand) 0%, color-mix(in srgb, var(--brand) 78%, #000) 100%);
   color: var(--on-brand);
   border-radius: 0 0 22px 22px;
