@@ -1564,7 +1564,7 @@ async function init() {
   // como respaldo si el navegador no reporta ninguna zona (caso muy raro).
   if (!state.tz && geo && geo.tz) setTimezone(geo.tz, geo.off);
 
-  // idioma: guardado > geolocalización > navegador
+  // idioma: guardado > idioma del dispositivo (si lo soportamos) > geolocalización
   if (!storedLang) { state.lang = langForCountry(geo && geo.code); }
   applyI18n(); buildCountryGrid();
 
