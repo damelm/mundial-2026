@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-20T20:14:42.915Z",
+  "updatedAt": "2026-06-20T21:41:49.767Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1301,8 +1301,8 @@
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/1xysi51726167152.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/rwxuuu1455465643.png",
       "homeScore": 0,
-      "awayScore": 0,
-      "status": "1H",
+      "awayScore": 1,
+      "status": "2H",
       "venue": "BMO Field",
       "city": "Toronto, ON",
       "homeRank": 9,
