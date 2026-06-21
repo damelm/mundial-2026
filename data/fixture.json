@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21T05:18:38.652Z",
+  "updatedAt": "2026-06-21T09:08:05.907Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1361,10 +1361,31 @@
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/7r89rg1526727277.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/ffsyxz1591989843.png",
       "homeScore": 0,
-      "awayScore": 1,
-      "status": "1H",
+      "awayScore": 4,
+      "status": "FT",
       "venue": "Estadio BBVA",
       "city": "Guadalupe, NL",
+      "goals": {
+        "home": [],
+        "away": [
+          {
+            "name": "Daichi Kamada",
+            "minute": "4"
+          },
+          {
+            "name": "Ayase Ueda",
+            "minute": "31"
+          },
+          {
+            "name": "Junya Ito",
+            "minute": "69"
+          },
+          {
+            "name": "Ayase Ueda",
+            "minute": "83"
+          }
+        ]
+      },
       "homeRank": 41,
       "awayRank": 17
     },
@@ -2072,9 +2093,9 @@
       "homeRank": 90,
       "awayRank": 40,
       "pred": {
-        "pH": 12,
-        "pD": 11,
-        "pA": 77,
+        "pH": 13,
+        "pD": 13,
+        "pA": 74,
         "h2h": {
           "played": 0,
           "last": []
@@ -2102,9 +2123,9 @@
       "homeRank": 23,
       "awayRank": 9,
       "pred": {
-        "pH": 31,
-        "pD": 27,
-        "pA": 42,
+        "pH": 28,
+        "pD": 26,
+        "pA": 46,
         "h2h": {
           "played": 2,
           "last": [
@@ -2147,9 +2168,9 @@
       "homeRank": 41,
       "awayRank": 7,
       "pred": {
-        "pH": 15,
-        "pD": 14,
-        "pA": 71,
+        "pH": 14,
+        "pD": 13,
+        "pA": 73,
         "h2h": {
           "played": 3,
           "last": [
@@ -2199,9 +2220,9 @@
       "homeRank": 17,
       "awayRank": 24,
       "pred": {
-        "pH": 60,
-        "pD": 20,
-        "pA": 20,
+        "pH": 62,
+        "pD": 19,
+        "pA": 19,
         "h2h": {
           "played": 4,
           "last": [
