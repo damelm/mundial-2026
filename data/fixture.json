@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-20T22:50:18.959Z",
+  "updatedAt": "2026-06-21T00:06:04.320Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1116,7 +1116,7 @@
       "home": "USA",
       "away": "Australia",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/21f0oi1597948195.png",
-      "awayBadge": "https://www.thesportsdb.com/images/media/team/badge/eylq8x1781926138.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/lark6k1661780848.png",
       "homeScore": 2,
       "awayScore": 0,
       "status": "FT",
@@ -1339,22 +1339,13 @@
       "away": "Curaçao",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/47wv2y1591989301.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/itygvb1600955363.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "GEHA Field at Arrowhead Stadium",
       "city": "Kansas City, MO",
       "homeRank": 23,
-      "awayRank": 90,
-      "pred": {
-        "pH": 87,
-        "pD": 5,
-        "pA": 8,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 90
     },
     {
       "id": "2391753",
