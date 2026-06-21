@@ -573,6 +573,19 @@ body.anim-paused *, body.anim-paused *::before, body.anim-paused *::after { anim
 
 /* ---- Modo Partido (detalle ESPN) ---- */
 .match, .match-live { cursor: pointer; }
+.match-live { position: relative; }
+/* Afford: chevron de "abrir detalle" en la esquina de cada carta */
+.match-go { position: absolute; top: 9px; inset-inline-end: 9px; z-index: 2; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 15px; font-weight: 800; line-height: 1; color: var(--ink-dim); background: var(--surface-2); border: 1px solid var(--line); pointer-events: none; }
+.match:active .match-go, .match-live:active .match-go { background: var(--brand-vivid); color: var(--on-accent); border-color: transparent; }
+.match-live .match-go { color: rgba(255,255,255,.9); background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.22); }
+[dir="rtl"] .match-go { transform: scaleX(-1); }
+/* Aviso de una sola vez: las cartas se tocan */
+.tap-tip { display: flex; align-items: center; gap: 9px; background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 11px 12px; margin-bottom: 12px; font-size: 12.5px; font-weight: 600; color: var(--ink-dim); line-height: 1.4; transition: opacity .3s, transform .3s; }
+.tap-tip.out { opacity: 0; transform: translateY(-6px); }
+.tap-tip .tt-emoji { font-size: 16px; flex: 0 0 auto; }
+.tap-tip > span:nth-child(2) { flex: 1; }
+.tap-tip-x { flex: 0 0 auto; border: 0; background: transparent; color: var(--ink-faint); font-size: 14px; cursor: pointer; padding: 3px 5px; line-height: 1; border-radius: 6px; }
+.tap-tip-x:hover { color: var(--ink); background: var(--line-2); }
 .mm-head { display: flex; justify-content: flex-end; margin-bottom: 2px; }
 .mm-score { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; padding: 2px 2px 15px; border-bottom: 1px solid var(--line-2); }
 .mm-team { display: flex; flex-direction: column; align-items: center; gap: 7px; text-align: center; }

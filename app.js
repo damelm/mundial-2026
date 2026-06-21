@@ -69,6 +69,8 @@ const TX = {
   slDrawOk: { es: "Le alcanza el empate", en: "A draw is enough", pt: "Empate basta", fr: "Le nul suffit", ar: "التعادل يكفي" },
   slThrough: { es: "Ya clasificado", en: "Already through", pt: "Já classificado", fr: "Déjà qualifié", ar: "متأهل" },
   slOut: { es: "Eliminado", en: "Out", pt: "Eliminado", fr: "Éliminé", ar: "خارج" },
+  tapTip: { es: "Tocá cualquier partido para ver estadísticas, formación, relato y qué se juega.", en: "Tap any match to see stats, lineups, play-by-play and what's at stake.", pt: "Toque em qualquer jogo para ver estatísticas, escalação, narração e o que está em jogo.", fr: "Touchez un match pour voir stats, compositions, direct et enjeux.", ar: "اضغط على أي مباراة لعرض الإحصائيات والتشكيلة والسرد وما هو على المحك." },
+  tapTipClose: { es: "Entendido", en: "Got it", pt: "Entendi", fr: "Compris", ar: "حسناً" },
   market: { es: "Mercado", en: "Market", pt: "Mercado", fr: "Marché", ar: "السوق" },
   form: { es: "Forma · últimos 5", en: "Form · last 5", pt: "Forma · últimos 5", fr: "Forme · 5 derniers", ar: "الأداء · آخر 5" },
   noLineups: { es: "Alineaciones no disponibles aún.", en: "Lineups not available yet.", pt: "Escalações indisponíveis.", fr: "Compositions indisponibles.", ar: "التشكيلات غير متاحة بعد." },
@@ -649,6 +651,7 @@ function liveCard(m, isMine) {
   const phase = /^[0-9HT'+\s]{1,7}$/.test(raw) ? `<span class="ltv-phase">${raw}</span>` : "";
   const scorers = m.goals ? liveScorersLine(m) : "";
   return `<article class="match-live reveal ${isMine ? "mine" : ""}" data-mid="${m.id}">
+    <span class="match-go" aria-hidden="true">›</span>
     <div class="ltv-top"><span class="ltv-badge"><span class="ltv-dot"></span>${t("status.live")}</span>${phase}<span class="ltv-meta">${grp}${venue}</span></div>
     <div class="ltv-row">
       <div class="ltv-team">${teamCell(m.home, m.homeBadge)}<span class="ltv-name">${dispName(m.home)}</span></div>
@@ -681,6 +684,7 @@ function matchCard(m) {
   const rk = (n) => (n != null ? `<span class="rk" title="${tw(TX.fifaRank)}">#${n}</span>` : "");
   const scorers = (st === "ft" && m.goals && ((m.goals.home && m.goals.home.length) || (m.goals.away && m.goals.away.length))) ? scorersBlock(m) : "";
   return `<article class="match reveal ${isMine ? "mine" : ""} ${st === "live" ? "live" : ""}" data-mid="${m.id}">
+    <span class="match-go" aria-hidden="true">›</span>
     <div class="match-meta">${grp}${venue}${cal}</div>
     <div class="team-side home">${teamCell(m.home, m.homeBadge)}<span class="team-name">${dispName(m.home)}${rk(m.homeRank)}</span></div>
     <div class="match-center">${center}</div>
@@ -721,6 +725,12 @@ function nextOpenDayKey(keys, byDay) {
   return keys[keys.length - 1] || null;
 }
 
+// Aviso de una sola vez: explica que las cartas se tocan para ver el detalle.
+function tapTipHtml() {
+  let seen = false; try { seen = localStorage.getItem("wc26-tap-tip") === "1"; } catch {}
+  if (seen) return "";
+  return `<div class="tap-tip" role="note"><span class="tt-emoji" aria-hidden="true">👆</span><span>${tw(TX.tapTip)}</span><button class="tap-tip-x" type="button" aria-label="${tw(TX.tapTipClose)}">✕</button></div>`;
+}
 function renderFixture() {
   const cont = $("#fixture-list");
   const todayKey = dayKey(new Date());
@@ -749,7 +759,7 @@ function renderFixture() {
     html += accordionEl(k, head, day.map(matchCard).join(""), isOpen, myDay, "acc-day");
     if (idx === adAfter) html += `<div class="ad-host"></div>`;
   });
-  cont.innerHTML = html;
+  cont.innerHTML = tapTipHtml() + html;
   scrollReveal(cont);
   mountAds();
 }
@@ -1444,6 +1454,7 @@ function wireEvents() {
   $("#tabs").addEventListener("click", (e) => { const b = e.target.closest(".tab"); if (b) switchTab(b.dataset.tab); });
   $("#main").addEventListener("click", (e) => {
     if (e.target.closest("#retry-btn")) { retryLoad(); return; }
+    const tx = e.target.closest(".tap-tip-x"); if (tx) { try { localStorage.setItem("wc26-tap-tip", "1"); } catch {} const tt = tx.closest(".tap-tip"); if (tt) { tt.classList.add("out"); setTimeout(() => tt.remove(), 300); } return; }
     const cb = e.target.closest(".cal-btn"); if (cb) { e.stopPropagation(); addToCalendar(cb.dataset.mid); return; }
     const h = e.target.closest(".acc-head"); if (h) { toggleAccordion(h.parentElement); return; }
     const mc = e.target.closest("[data-mid]"); if (mc && mc.dataset.mid) openMatchModal(mc.dataset.mid);
