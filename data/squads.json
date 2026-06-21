@@ -7290,7 +7290,7 @@
   ]
  },
  "Croatia": {
-  "updated": "2026-06-15T14:59:29.556Z",
+  "updated": "2026-06-21T11:40:23.539Z",
   "source": "API-Football",
   "players": [
    {
@@ -7338,7 +7338,7 @@
    {
     "name": "J. Stanisic",
     "number": 2,
-    "pos": "Defender",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/125171.png"
    },
    {
@@ -7356,7 +7356,7 @@
    {
     "name": "M. Baturina",
     "number": 16,
-    "pos": "Midfielder",
+    "pos": "Attacker",
     "photo": "https://media.api-sports.io/football/players/295026.png"
    },
    {
@@ -7390,7 +7390,7 @@
     "photo": "https://media.api-sports.io/football/players/1322.png"
    },
    {
-    "name": "M. Pasalic",
+    "name": "Mario Pasalic",
     "number": 15,
     "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/2763.png"
@@ -7404,7 +7404,7 @@
    {
     "name": "P. Sucic",
     "number": 17,
-    "pos": "Midfielder",
+    "pos": "Attacker",
     "photo": "https://media.api-sports.io/football/players/348205.png"
    },
    {
@@ -7438,7 +7438,7 @@
     "photo": "https://media.api-sports.io/football/players/66055.png"
    },
    {
-    "name": "M. Pasalic",
+    "name": "Marco Pasalic",
     "number": 24,
     "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/260865.png"
@@ -7452,7 +7452,7 @@
   ]
  },
  "Ghana": {
-  "updated": "2026-06-15T14:59:36.717Z",
+  "updated": "2026-06-21T11:40:30.743Z",
   "source": "API-Football",
   "players": [
    {
@@ -7554,7 +7554,7 @@
    {
     "name": "A. Semenyo",
     "number": 11,
-    "pos": "Attacker",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/19281.png"
    },
    {
@@ -7602,7 +7602,7 @@
    {
     "name": "E. Nuamah",
     "number": 24,
-    "pos": "Attacker",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/350856.png"
    },
    {
@@ -7614,7 +7614,7 @@
   ]
  },
  "Panama": {
-  "updated": "2026-06-15T14:59:43.874Z",
+  "updated": "2026-06-21T11:40:37.941Z",
   "source": "API-Football",
   "players": [
    {
@@ -7644,7 +7644,7 @@
    {
     "name": "C. Blackman",
     "number": 2,
-    "pos": "Defender",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/2975.png"
    },
    {
@@ -7692,7 +7692,7 @@
    {
     "name": "A. Murillo",
     "number": 23,
-    "pos": "Defender",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/2973.png"
    },
    {
@@ -7722,7 +7722,7 @@
    {
     "name": "J. Rodríguez",
     "number": 7,
-    "pos": "Midfielder",
+    "pos": "Attacker",
     "photo": "https://media.api-sports.io/football/players/2979.png"
    },
    {
@@ -7734,7 +7734,7 @@
    {
     "name": "I. Díaz",
     "number": 10,
-    "pos": "Midfielder",
+    "pos": "Attacker",
     "photo": "https://media.api-sports.io/football/players/96615.png"
    },
    {
