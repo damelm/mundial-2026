@@ -12,6 +12,7 @@ on:
     paths:
       - "index.html"
       - "app.js"
+      - "scenarios.js"
       - "ads.js"
       - "styles.css"
       - "themes.js"
