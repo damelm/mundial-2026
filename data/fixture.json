@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21T09:08:05.907Z",
+  "updatedAt": "2026-06-21T16:13:08.055Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1402,44 +1402,13 @@
       "away": "Saudi Arabia",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/ncgqyr1726166942.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/24xwpq1594125742.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta, GA",
       "homeRank": 2,
-      "awayRank": 58,
-      "pred": {
-        "pH": 87,
-        "pD": 5,
-        "pA": 8,
-        "h2h": {
-          "played": 3,
-          "last": [
-            {
-              "date": "2012-09-07",
-              "h": "Spain",
-              "a": "Saudi Arabia",
-              "hs": 5,
-              "as": 0
-            },
-            {
-              "date": "2010-05-29",
-              "h": "Spain",
-              "a": "Saudi Arabia",
-              "hs": 3,
-              "as": 2
-            },
-            {
-              "date": "2006-06-23",
-              "h": "Saudi Arabia",
-              "a": "Spain",
-              "hs": 0,
-              "as": 1
-            }
-          ]
-        }
-      }
+      "awayRank": 58
     },
     {
       "id": "2391754",
