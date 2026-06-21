@@ -62,6 +62,13 @@ const TX = {
   stkThrough: { es: "Clasifica", en: "Advances", pt: "Classifica", fr: "Qualifié", ar: "يتأهل" },
   stkOut: { es: "Eliminado", en: "Out", pt: "Eliminado", fr: "Éliminé", ar: "خارج" },
   stkDepends: { es: "Depende", en: "Depends", pt: "Depende", fr: "Ça dépend", ar: "يعتمد" },
+  slMustWin: { es: "Gana o afuera", en: "Win or out", pt: "Vence ou está fora", fr: "Gagne ou éliminé", ar: "الفوز أو الخروج" },
+  slOutIfLose: { es: "Pierde y afuera", en: "Out if it loses", pt: "Perde e está fora", fr: "Éliminé s'il perd", ar: "يخرج إذا خسر" },
+  slWinPass: { es: "Gana y clasifica", en: "Win to advance", pt: "Vence e classifica", fr: "Gagne et qualifié", ar: "يفوز ويتأهل" },
+  slWinTop: { es: "Gana y es 1.º", en: "Win tops group", pt: "Vence e é 1.º", fr: "Gagne et 1er", ar: "يفوز ويتصدّر" },
+  slDrawOk: { es: "Le alcanza el empate", en: "A draw is enough", pt: "Empate basta", fr: "Le nul suffit", ar: "التعادل يكفي" },
+  slThrough: { es: "Ya clasificado", en: "Already through", pt: "Já classificado", fr: "Déjà qualifié", ar: "متأهل" },
+  slOut: { es: "Eliminado", en: "Out", pt: "Eliminado", fr: "Éliminé", ar: "خارج" },
   market: { es: "Mercado", en: "Market", pt: "Mercado", fr: "Marché", ar: "السوق" },
   form: { es: "Forma · últimos 5", en: "Form · last 5", pt: "Forma · últimos 5", fr: "Forme · 5 derniers", ar: "الأداء · آخر 5" },
   noLineups: { es: "Alineaciones no disponibles aún.", en: "Lineups not available yet.", pt: "Escalações indisponíveis.", fr: "Compositions indisponibles.", ar: "التشكيلات غير متاحة بعد." },
@@ -647,7 +654,7 @@ function liveCard(m, isMine) {
       <div class="ltv-team">${teamCell(m.home, m.homeBadge)}<span class="ltv-name">${dispName(m.home)}</span></div>
       <div class="ltv-score">${m.homeScore ?? 0}<span class="ltv-sep">–</span>${m.awayScore ?? 0}</div>
       <div class="ltv-team">${teamCell(m.away, m.awayBadge)}<span class="ltv-name">${dispName(m.away)}</span></div>
-    </div>${scorers}</article>`;
+    </div>${stakesLineHtml(m)}${scorers}</article>`;
 }
 function liveScorersLine(m) {
   const fmt = (arr) => (arr || []).map((g) => `<span>${escHtml(g.name)}${g.minute ? ` <i>${escHtml(g.minute)}'</i>` : ""}</span>`).join("");
@@ -677,7 +684,7 @@ function matchCard(m) {
     <div class="match-meta">${grp}${venue}${cal}</div>
     <div class="team-side home">${teamCell(m.home, m.homeBadge)}<span class="team-name">${dispName(m.home)}${rk(m.homeRank)}</span></div>
     <div class="match-center">${center}</div>
-    <div class="team-side away">${teamCell(m.away, m.awayBadge)}<span class="team-name">${dispName(m.away)}${rk(m.awayRank)}</span></div>${scorers}</article>`;
+    <div class="team-side away">${teamCell(m.away, m.awayBadge)}<span class="team-name">${dispName(m.away)}${rk(m.awayRank)}</span></div>${stakesLineHtml(m)}${scorers}</article>`;
 }
 // Bloque de goleadores (full-width) bajo un partido terminado.
 const BALL_IC = '<svg class="sc-ball" viewBox="0 0 24 24" width="11" height="11" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 2.2l2.4 1.7-.9 2.8h-3l-.9-2.8L12 4.2zM5.6 8.9l2.3.1.9 2.8-2 1.7-2-1.5.8-3.1zm12.8 0l.8 3.1-2 1.5-2-1.7.9-2.8 2.3-.1zM8.2 18.3l-1-2.7 1.8-1.6h4l1.8 1.6-1 2.7H8.2z"/></svg>';
@@ -1913,6 +1920,34 @@ function matchStakesHtml(m) {
     </div>`;
   return `<section class="mm-stakes"><div class="stk-head">${IC.trophy || ""}<span>${tw(TX.stakesTitle)}</span></div>
     ${row(s.home)}${row(s.away)}</section>`;
+}
+// Resumen compacto por equipo (para la fila del partido en Hoy/En vivo):
+// elige la frase más jugosa según gana/empata/pierde. null si sólo "depende".
+function stakeHighlight(o) {
+  const good = (x) => x === "through" || x === "first";
+  const bad = (x) => x === "out";
+  const W = o.win, D = o.draw, L = o.lose;
+  if (good(W) && good(D) && good(L)) return { k: "slThrough", c: "stk-go" };
+  if (bad(W) && bad(D) && bad(L)) return { k: "slOut", c: "stk-no" };
+  if (good(W) && good(D)) return { k: "slDrawOk", c: "stk-go" };
+  if (good(W)) return { k: W === "first" ? "slWinTop" : "slWinPass", c: "stk-go" };
+  if (bad(L) && bad(D) && !bad(W)) return { k: "slMustWin", c: "stk-no" };
+  if (bad(L) && !bad(D)) return { k: "slOutIfLose", c: "stk-no" };
+  return null;
+}
+// Línea "qué se juega" para la fila del partido. "" si no define nada.
+function stakesLineHtml(m) {
+  if (!m || m.stage !== "GROUP" || !m.group || typeof Scenarios === "undefined") return "";
+  let s;
+  try { s = Scenarios.matchStakes(state.data.matches, m.id, { isFinal: (mm) => classifyStatus(mm) === "ft" }); }
+  catch { return ""; }
+  if (!s || !s.matters || s.decided) return "";
+  const seg = (o) => {
+    const h = stakeHighlight(o);
+    return h ? `<span class="msl-seg"><b>${dispName(o.team)}</b><span class="stk-chip ${h.c}">${tw(TX[h.k])}</span></span>` : "";
+  };
+  const inner = seg(s.home) + seg(s.away);
+  return inner ? `<div class="match-stakes">${inner}</div>` : "";
 }
 function matchModalShell(m) {
   const st = classifyStatus(m);
