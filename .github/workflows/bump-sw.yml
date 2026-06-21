@@ -42,7 +42,7 @@ jobs:
           # Hash del contenido real del shell. Se le quitan los ?v=... antes de
           # hashear para que estampar el cache-buster NO cambie el hash (evita
           # bucle). No incluye sw.js (solo lo reescribe el bot).
-          HASH=$(cat index.html app.js styles.css themes.js i18n.js \
+          HASH=$(cat index.html app.js scenarios.js styles.css themes.js i18n.js \
                      i18n-content.js content.js data/stadiums.js \
                      manifest.webmanifest 2>/dev/null \
                  | sed -E 's/\?v=[A-Za-z0-9._-]+//g' \
