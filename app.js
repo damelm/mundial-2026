@@ -71,6 +71,14 @@ const TX = {
   slOut: { es: "Eliminado", en: "Out", pt: "Eliminado", fr: "Éliminé", ar: "خارج" },
   tapTip: { es: "Tocá cualquier partido para ver estadísticas, formación, relato y qué se juega.", en: "Tap any match to see stats, lineups, play-by-play and what's at stake.", pt: "Toque em qualquer jogo para ver estatísticas, escalação, narração e o que está em jogo.", fr: "Touchez un match pour voir stats, compositions, direct et enjeux.", ar: "اضغط على أي مباراة لعرض الإحصائيات والتشكيلة والسرد وما هو على المحك." },
   tapTipClose: { es: "Entendido", en: "Got it", pt: "Entendi", fr: "Compris", ar: "حسناً" },
+  chipFirst: { es: "1.º", en: "1st", pt: "1.º", fr: "1er", ar: "الأول" },
+  chipThrough: { es: "Clasif.", en: "Through", pt: "Classif.", fr: "Qualifié", ar: "متأهل" },
+  chipOut: { es: "Elim.", en: "Out", pt: "Elim.", fr: "Éliminé", ar: "خارج" },
+  chipDepends: { es: "Depende", en: "Depends", pt: "Depende", fr: "Ça dépend", ar: "يعتمد" },
+  tercerosTitle: { es: "Mejores terceros", en: "Best third-placed", pt: "Melhores terceiros", fr: "Meilleurs troisièmes", ar: "أفضل المنتخبات الثالثة" },
+  tercerosSub: { es: "Los 8 mejores pasan a 32avos · provisional", en: "Top 8 advance to the Round of 32 · provisional", pt: "Os 8 melhores avançam · provisório", fr: "Les 8 meilleurs se qualifient · provisoire", ar: "أفضل 8 يتأهلون · مؤقّت" },
+  tercerosCut: { es: "Línea de corte — pasan los 8 de arriba", en: "Cut line — top 8 advance", pt: "Linha de corte — passam os 8 de cima", fr: "Ligne de coupe — les 8 du haut passent", ar: "خط القطع — يتأهل الأعلى 8" },
+  thGroup: { es: "Gr.", en: "Gr.", pt: "Gr.", fr: "Gr.", ar: "مج" },
   market: { es: "Mercado", en: "Market", pt: "Mercado", fr: "Marché", ar: "السوق" },
   form: { es: "Forma · últimos 5", en: "Form · last 5", pt: "Forma · últimos 5", fr: "Forme · 5 derniers", ar: "الأداء · آخر 5" },
   noLineups: { es: "Alineaciones no disponibles aún.", en: "Lineups not available yet.", pt: "Escalações indisponíveis.", fr: "Compositions indisponibles.", ar: "التشكيلات غير متاحة بعد." },
@@ -782,6 +790,51 @@ function computeStandings() {
   }
   return groups;
 }
+// Chip de estado de un equipo (Clasif./1.º/Elim./Depende) según el motor.
+function statusChipHtml(group, team) {
+  if (typeof Scenarios === "undefined") return "";
+  let st;
+  try { st = Scenarios.teamStatus(state.data.matches, group, team, { isFinal: (mm) => classifyStatus(mm) === "ft" }); }
+  catch { return ""; }
+  if (!st) return "";
+  const map = { first: ["stk-go", tw(TX.chipFirst)], through: ["stk-go", tw(TX.chipThrough)], out: ["stk-no", tw(TX.chipOut)], alive: ["stk-dep", tw(TX.chipDepends)] };
+  const [cls, lbl] = map[st.status] || map.alive;
+  return `<span class="stk-chip ${cls}">${lbl}</span>`;
+}
+// Tabla cruzada de "Mejores terceros" con línea de corte tras el 8.º.
+function mejoresTercerosHtml() {
+  if (typeof Scenarios === "undefined" || !state.data) return "";
+  const groups = computeStandings();
+  const cmp = (a, b) => b.pts - a.pts || (b.gf - b.gc) - (a.gf - a.gc) || b.gf - a.gf || dispName(a.team).localeCompare(dispName(b.team), state.lang);
+  const thirds = [];
+  for (const g of Object.keys(groups).sort()) {
+    const rows = Object.values(groups[g]).sort(cmp);
+    if (rows[2]) thirds.push({ grp: g, ...rows[2] });
+  }
+  if (!thirds.length) return "";
+  thirds.sort((a, b) => b.pts - a.pts || (b.gf - b.gc) - (a.gf - a.gc) || b.gf - a.gf || a.grp.localeCompare(b.grp));
+  const TH = L().th;
+  let body = "";
+  thirds.forEach((r, i) => {
+    if (i === 8) body += `<tr class="terceros-cut"><td colspan="7"><span>${tw(TX.tercerosCut)}</span></td></tr>`;
+    const dif = r.gf - r.gc;
+    const code = flagCodeOf(r.team);
+    const img = r.badge ? `<img src="${escHtml(r.badge)}" alt="" loading="lazy" onerror="this.onerror=null;this.src='${code ? FLAG(code) : ""}'">`
+      : (code ? `<img src="${FLAG(code)}" alt="" loading="lazy">` : `<span>⚽</span>`);
+    const me = r.team === state.team ? " is-me" : "";
+    body += `<tr class="${i < 8 ? "qualify" : ""}${me}"><td class="pos">${i + 1}</td>
+      <td class="team-cell"><div class="team-cell-inner">${img}<span>${dispName(r.team)}</span></div></td>
+      <td class="t-grp">${r.grp}</td><td>${r.pj}</td><td>${dif > 0 ? "+" + dif : dif}</td><td class="pts">${r.pts}</td>
+      <td class="t-chip">${statusChipHtml(r.grp, r.team)}</td></tr>`;
+  });
+  const teamWord = state.lang === "es" ? "Equipo" : state.lang === "pt" ? "Seleção" : state.lang === "fr" ? "Équipe" : state.lang === "ar" ? "المنتخب" : "Team";
+  const inner = `<div class="terceros-sub">${tw(TX.tercerosSub)}</div>
+    <table class="table terceros-table"><thead><tr><th class="pos"></th><th class="team-cell">${teamWord}</th>
+    <th>${tw(TX.thGroup)}</th><th>${TH.pj}</th><th>${TH.dif}</th><th>${TH.pts}</th><th></th></tr></thead><tbody>${body}</tbody></table>`;
+  const head = `<div class="grp-head-main"><span class="grp-letter t-medal">${IC.trophy || "🥉"}</span>
+    <div class="grp-headinfo"><div class="grp-label">${tw(TX.tercerosTitle)}</div></div></div>`;
+  return accordionEl("terceros", head, inner, true, false, "acc-grp acc-terceros");
+}
 function renderGroups() {
   const cont = $("#grupos-list");
   const groups = computeStandings();
@@ -791,7 +844,7 @@ function renderGroups() {
   const teamWord = state.lang === "es" ? "Equipo" : state.lang === "pt" ? "Seleção" : state.lang === "fr" ? "Équipe" : state.lang === "ar" ? "المنتخب" : "Team";
   const matchesByGroup = {};
   state.data.matches.forEach((m) => { if (m.stage === "GROUP" && m.group) (matchesByGroup[m.group] ||= []).push(m); });
-  let html = "";
+  let html = mejoresTercerosHtml();
   for (const g of keys) {
     const rows = Object.values(groups[g]).sort((a, b) => b.pts - a.pts || (b.gf - b.gc) - (a.gf - a.gc) || b.gf - a.gf || dispName(a.team).localeCompare(dispName(b.team), state.lang));
     const myGroup = !!(state.team && rows.some((r) => r.team === state.team));
