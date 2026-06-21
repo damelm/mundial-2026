@@ -538,7 +538,7 @@ function renderHeroCard() {
   let mode, items;
   if (live.length) {
     mode = "live";
-    items = mineFirst(live).map((m) => `${dispName(m.home)} ${m.homeScore ?? 0}–${m.awayScore ?? 0} ${dispName(m.away)}${phase(m)}`);
+    items = mineFirst(live).map((m) => `${dispName(m.home)} ${m.homeScore ?? 0}–${m.awayScore ?? 0} ${dispName(m.away)}${phase(m)}${stakesTextFor(m)}`);
     label.textContent = `● ${t("status.live")}`;
   } else {
     const todayK = dayKey(new Date());
@@ -551,7 +551,7 @@ function renderHeroCard() {
       items = mineFirst(today).map((m) => {
         const d = parseUTC(m.timestamp);
         const left = classifyStatus(m) === "ft" ? `${m.homeScore}–${m.awayScore}` : (d ? fmtTime(d) : "");
-        return `${left} · ${dispName(m.home)} vs ${dispName(m.away)}`;
+        return `${left} · ${dispName(m.home)} vs ${dispName(m.away)}${stakesTextFor(m)}`;
       });
       label.textContent = tw(TX.todayPlay);
     } else if (news && news.length) {
@@ -2032,6 +2032,23 @@ function stakesLineHtml(m) {
   };
   const inner = seg(s.home) + seg(s.away);
   return inner ? `<div class="match-stakes">${inner}</div>` : "";
+}
+// Sufijo corto de "qué se juega" para el cartel rotativo del hero (texto plano).
+// Elige UN equipo (prioriza al que está en riesgo). "" si el partido no define.
+function stakesTextFor(m) {
+  if (!m || m.stage !== "GROUP" || !m.group || typeof Scenarios === "undefined") return "";
+  let s;
+  try { s = Scenarios.matchStakes(state.data.matches, m.id, { isFinal: (mm) => classifyStatus(mm) === "ft" }); }
+  catch { return ""; }
+  if (!s || !s.matters || s.decided) return "";
+  const cands = [];
+  const hh = stakeHighlight(s.home), ha = stakeHighlight(s.away);
+  if (hh) cands.push({ team: s.home.team, h: hh });
+  if (ha) cands.push({ team: s.away.team, h: ha });
+  if (!cands.length) return "";
+  cands.sort((a, b) => (a.h.c === "stk-no" ? 0 : 1) - (b.h.c === "stk-no" ? 0 : 1)); // en riesgo primero
+  const { team, h } = cands[0];
+  return ` — ${dispName(team)}: ${tw(TX[h.k]).toLowerCase()}`;
 }
 function matchModalShell(m) {
   const st = classifyStatus(m);
