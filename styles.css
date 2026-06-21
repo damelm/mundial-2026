@@ -486,7 +486,8 @@ body.anim-paused *, body.anim-paused *::before, body.anim-paused *::after { anim
 /* ============================ PARTIDO EN VIVO (modo transmisión) ===== */
 /* Tarjeta grafito plana, siempre oscura: el partido en juego "se enciende". */
 .match-live { background: #15171c; border: 1px solid #262a33; border-inline-start: 4px solid var(--live); border-radius: var(--radius); padding: 12px 14px 15px; margin-bottom: 11px; color: #fff; box-shadow: var(--sh-sm); }
-.ltv-top { display: flex; align-items: center; gap: 9px; margin-bottom: 12px; min-width: 0; }
+.ltv-top { display: flex; align-items: center; gap: 9px; margin-bottom: 12px; min-width: 0; padding-right: 22px; }
+[dir="rtl"] .ltv-top { padding-right: 0; padding-left: 22px; }
 .ltv-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--live); color: #fff; font-weight: 800; font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; padding: 3px 9px; border-radius: 5px; flex: 0 0 auto; }
 .ltv-dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: ltvPulse 1.3s ease-in-out infinite; }
 @keyframes ltvPulse { 50% { opacity: .25; } }
@@ -602,10 +603,14 @@ body.anim-paused *, body.anim-paused *::before, body.anim-paused *::after { anim
 .match, .match-live { cursor: pointer; }
 .match-live { position: relative; }
 /* Afford: chevron de "abrir detalle" en la esquina de cada carta */
-.match-go { position: absolute; top: 9px; inset-inline-end: 9px; z-index: 2; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 15px; font-weight: 800; line-height: 1; color: var(--ink-dim); background: var(--surface-2); border: 1px solid var(--line); pointer-events: none; }
+.match-go { position: absolute; top: 9px; right: 9px; left: auto; z-index: 2; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 15px; font-weight: 800; line-height: 1; color: var(--ink-dim); background: var(--surface-2); border: 1px solid var(--line); pointer-events: none; }
 .match:active .match-go, .match-live:active .match-go { background: var(--brand-vivid); color: var(--on-accent); border-color: transparent; }
-.match-live .match-go { color: rgba(255,255,255,.9); background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.22); }
-[dir="rtl"] .match-go { transform: scaleX(-1); }
+/* position:absolute explícito: `.match-live > * { position: relative }` (capa
+   de la bandera) pisaba el absolute del chevron con igual especificidad y lo
+   tiraba arriba a la izquierda sobre el badge EN VIVO. Esta regla (más
+   específica) lo restaura. */
+.match-live .match-go { position: absolute; color: rgba(255,255,255,.9); background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.22); }
+[dir="rtl"] .match-go { right: auto; left: 9px; transform: scaleX(-1); }
 /* Aviso de una sola vez: las cartas se tocan. Estilo propio (violeta + borde
    bordó) para que resalte y no se confunda con el resto del layout. */
 .tap-tip { display: flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #2f1c52, #251641); border: 1.5px solid #8a1c2e; border-radius: var(--radius-sm); padding: 12px 13px; margin-bottom: 12px; font-size: 12.5px; font-weight: 600; color: #efeafb; line-height: 1.4; box-shadow: 0 7px 20px -9px rgba(138,28,46,.65); transition: opacity .3s, transform .3s; }
