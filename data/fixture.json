@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21T20:58:38.589Z",
+  "updatedAt": "2026-06-21T22:20:36.740Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1446,7 +1446,7 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/uttpvw1455465617.png",
       "homeScore": 0,
       "awayScore": 0,
-      "status": "2H",
+      "status": "FT",
       "venue": "SoFi Stadium",
       "city": "Inglewood, CA",
       "homeRank": 8,
@@ -1465,22 +1465,13 @@
       "away": "Cape Verde",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/6vjbr11726167756.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/5jn0o71593280376.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "Hard Rock Stadium",
       "city": "Miami Gardens, FL",
       "homeRank": 15,
-      "awayRank": 70,
-      "pred": {
-        "pH": 71,
-        "pD": 14,
-        "pA": 15,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 70
     },
     {
       "id": "2391755",
