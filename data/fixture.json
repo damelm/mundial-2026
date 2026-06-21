@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21T17:54:15.487Z",
+  "updatedAt": "2026-06-21T19:40:49.380Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1404,9 +1404,30 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/24xwpq1594125742.png",
       "homeScore": 4,
       "awayScore": 0,
-      "status": "2H",
+      "status": "FT",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta, GA",
+      "goals": {
+        "home": [
+          {
+            "name": "Lamine Yamal",
+            "minute": "10"
+          },
+          {
+            "name": "Mikel Oyarzabal",
+            "minute": "21"
+          },
+          {
+            "name": "Mikel Oyarzabal",
+            "minute": "24"
+          },
+          {
+            "name": "Hassan Al-Tambakti",
+            "minute": "49"
+          }
+        ],
+        "away": []
+      },
       "homeRank": 2,
       "awayRank": 58
     },
@@ -1423,22 +1444,13 @@
       "away": "Iran",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/8xlvxv1592062265.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/uttpvw1455465617.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "1H",
       "venue": "SoFi Stadium",
       "city": "Inglewood, CA",
       "homeRank": 8,
-      "awayRank": 20,
-      "pred": {
-        "pH": 45,
-        "pD": 26,
-        "pA": 29,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 20
     },
     {
       "id": "2391757",
