@@ -860,7 +860,7 @@ function renderGroups() {
         : (code ? `<img src="${FLAG(code)}" alt="" loading="lazy">` : `<span>⚽</span>`);
       const me = r.team === state.team ? " is-me" : "";
       inner += `<tr class="${i < 2 ? "qualify" : ""}${me}"><td class="pos">${i + 1}</td>
-        <td class="team-cell"><div class="team-cell-inner">${img}<span>${dispName(r.team)}</span></div></td>
+        <td class="team-cell"><div class="team-cell-inner">${img}<div class="tc-name"><span>${dispName(r.team)}</span>${statusChipHtml(g, r.team)}</div></div></td>
         <td>${r.pj}</td><td>${r.g}</td><td>${r.e}</td><td>${r.p}</td><td>${dif > 0 ? "+" + dif : dif}</td><td class="pts">${r.pts}</td></tr>`;
     });
     inner += `</tbody></table><div class="group-legend">${t("groupLegend")}</div>`;
