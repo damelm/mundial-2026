@@ -1646,6 +1646,13 @@ function setupInstall() {
   setTimeout(() => { _installIntent = true; maybeShowInstall(); }, 10000); // momento de intención
 }
 
+function hideSplash() {
+  const el = document.getElementById("splash");
+  if (!el) return;
+  el.classList.add("done");
+  setTimeout(() => el.remove(), 480);
+}
+
 /* --------------------------- init ------------------------------------ */
 async function init() {
   // idioma guardado (provisorio hasta geo)
@@ -1688,6 +1695,8 @@ async function init() {
   if (storedTeam === "__NEUTRAL__") applyTheme(null);
   else if (storedTeam && TEAMS[storedTeam]) applyTheme(storedTeam);
   else { const team = geo && geo.code && CODE_TO_TEAM[geo.code]; applyTheme(team || null); }
+
+  hideSplash();
 
   // Marcador en vivo de una al abrir (sin esperar al primer ciclo de polling)
   if (state.data) mergeLiveScores(state.data).then((ch) => { if (ch) { state.sig = JSON.stringify(state.data.matches); render(); } });
