@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21T16:13:08.055Z",
+  "updatedAt": "2026-06-21T17:54:15.487Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1402,9 +1402,9 @@
       "away": "Saudi Arabia",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/ncgqyr1726166942.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/24xwpq1594125742.png",
-      "homeScore": 1,
+      "homeScore": 4,
       "awayScore": 0,
-      "status": "1H",
+      "status": "2H",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta, GA",
       "homeRank": 2,
