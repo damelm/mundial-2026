@@ -1630,7 +1630,7 @@ function matchesInPlayWindow(data) {
 // consulta si hay partidos en ventana de juego.
 const ESPN_SB = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard";
 const ESPN_SUM = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=";
-const _LIVE_ALIAS = { unitedstates: "usa", us: "usa", bosniaandherzegovina: "bosniaherzegovina", czechia: "czechrepublic", turkiye: "turkey", caboverde: "capeverde", korearepublic: "southkorea", cotedivoire: "ivorycoast" };
+const _LIVE_ALIAS = { unitedstates: "usa", us: "usa", bosniaandherzegovina: "bosniaherzegovina", czechia: "czechrepublic", turkiye: "turkey", caboverde: "capeverde", korearepublic: "southkorea", cotedivoire: "ivorycoast", congodr: "drcongo" };
 function canonName(n) { const k = (n || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]/g, ""); return _LIVE_ALIAS[k] || k; }
 const livePair = (h, a) => `${canonName(h)}|${canonName(a)}`;
 
@@ -1779,10 +1779,30 @@ function findEspnEvent(events, m) {
     return H && A && livePair(H.team.displayName, A.team.displayName) === key;
   });
 }
+// Desplaza una fecha "YYYY-MM-DD" en `delta` días → "YYYYMMDD".
+function shiftYmd(dateStr, delta) {
+  if (!dateStr) return "";
+  const d = new Date(dateStr + "T12:00:00Z");
+  if (isNaN(d)) return "";
+  d.setUTCDate(d.getUTCDate() + delta);
+  return d.toISOString().slice(0, 10).replace(/-/g, "");
+}
 async function resolveEspnId(m) {
-  const ymd = (m.date || "").replace(/-/g, "");
-  let ev = findEspnEvent(await espnScoreboard(ymd), m);
-  if (!ev) ev = findEspnEvent(await espnScoreboard(""), m); // slate por defecto
+  const base = m.date || "";
+  // ESPN agrupa el scoreboard por fecha de EE.UU., no por UTC: un partido de
+  // madrugada UTC (p.ej. 01:00 del 17) cae en el "día" anterior allá (16). Por
+  // eso probamos la fecha del fixture y las adyacentes; si el partido es de
+  // madrugada UTC, arrancamos por el día anterior (donde suele estar).
+  const hour = parseInt((m.time || "").slice(0, 2), 10) || 0;
+  const dates = hour < 10
+    ? [shiftYmd(base, -1), base.replace(/-/g, ""), shiftYmd(base, 1)]
+    : [base.replace(/-/g, ""), shiftYmd(base, -1), shiftYmd(base, 1)];
+  for (const dd of dates) {
+    if (!dd) continue;
+    const ev = findEspnEvent(await espnScoreboard(dd), m);
+    if (ev) return ev.id;
+  }
+  const ev = findEspnEvent(await espnScoreboard(""), m); // slate por defecto
   return ev ? ev.id : null;
 }
 // Convierte boxscore de ESPN en { home:{stat:val}, away:{stat:val} }.
