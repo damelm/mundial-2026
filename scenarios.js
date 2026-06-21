@@ -101,19 +101,24 @@
 
   // resumen de un equipo sobre un conjunto de escenarios
   function summarize(team, scen) {
-    let guaranteedTop2 = true, guaranteedFirst = true, canTop2 = false, canTop3 = false;
-    let maxThirdPts = -1; // máximos puntos con los que podría quedar 3.º
+    let guaranteedTop2 = true, guaranteedFirst = true, guaranteedTop3 = true;
+    let canTop2 = false, canTop3 = false;
+    let maxThirdPts = -1;        // máx. puntos con los que PODRÍA quedar 3.º (para descartar)
+    let minThirdPts = Infinity;  // mín. puntos en el PEOR caso (queda 3.º seguro) → para garantizar
     for (const s of scen) {
       const r = ranks(team, s);
       if (r.worst > 2) guaranteedTop2 = false;
       if (r.worst > 1) guaranteedFirst = false;
+      if (r.worst > 3) guaranteedTop3 = false;
       if (r.best <= 2) canTop2 = true;
       if (r.best <= 3) canTop3 = true;
-      // puede quedar 3.º en este escenario si no está garantizado top2 y el
-      // mejor caso lo deja 3.º o peor pero alcanzable como 3.º
+      // puede quedar 3.º en este escenario: mejor caso 3.º o mejor, peor caso 3.º o peor
       if (r.best <= 3 && r.worst >= 3) maxThirdPts = Math.max(maxThirdPts, s[team]);
+      // escenarios donde, en el PEOR caso, queda exactamente 3.º: el puntaje
+      // más bajo de éstos es la cota para garantizar el "mejor tercero".
+      if (r.worst === 3) minThirdPts = Math.min(minThirdPts, s[team]);
     }
-    return { guaranteedTop2, guaranteedFirst, canTop2, canTop3, maxThirdPts };
+    return { guaranteedTop2, guaranteedFirst, guaranteedTop3, canTop2, canTop3, maxThirdPts, minThirdPts };
   }
 
   // rango de puntos del 3.º de un grupo (sobre sus propios escenarios)
@@ -134,20 +139,22 @@
   }
 
   // ¿un equipo que queda 3.º con `pts` puntos, clasifica como mejor tercero?
-  // 'in' (seguro) / 'out' (imposible) / 'depends'. Compara contra el rango de
-  // los terceros de los OTROS grupos (cota por puntos, ignora desempate fino).
+  // 'in' (seguro) / 'out' (imposible) / 'depends'. Compara por PUNTOS contra el
+  // rango de los terceros de los OTROS grupos. Para garantizar el "in" sin
+  // mentir, un tercero que EMPATE en puntos cuenta como "podría quedar arriba"
+  // (se definiría por diferencia de gol, que acá no se modela).
   function thirdOutlook(matches, group, pts, isFinal) {
     const others = [...new Set(matches.filter((m) => m.stage === "GROUP" && m.group && m.group !== group).map((m) => m.group))];
-    let surelyAbove = 0; // grupos cuyo 3.º quedará SÍ o SÍ por encima
-    let maybeAbove = 0;  // grupos cuyo 3.º PODRÍA quedar por encima
+    let surelyAbove = 0;   // grupos cuyo 3.º quedará SÍ o SÍ por encima (puntos)
+    let maybeAtOrAbove = 0; // grupos cuyo 3.º podría quedar por encima O EMPATAR
     for (const g of others) {
       const r = thirdPtsRange(matches, g, isFinal);
       if (!r) continue;
-      if (r.min > pts) { surelyAbove++; maybeAbove++; }
-      else if (r.max > pts) { maybeAbove++; }
+      if (r.min > pts) { surelyAbove++; maybeAtOrAbove++; }
+      else if (r.max >= pts) { maybeAtOrAbove++; }
     }
-    if (surelyAbove >= QUALIFY_THIRDS) return "out";     // 8+ seguros arriba → no entra
-    if (maybeAbove < QUALIFY_THIRDS) return "in";        // ni en el peor caso lo superan 8 → entra
+    if (surelyAbove >= QUALIFY_THIRDS) return "out";        // 8+ seguros arriba → no entra
+    if (maybeAtOrAbove < QUALIFY_THIRDS) return "in";       // ni empatando lo superan 8 → entra
     return "depends";
   }
 
@@ -162,6 +169,12 @@
     const sm = summarize(team, scen);
     if (sm.guaranteedFirst) return { status: "first", note: "1.º asegurado" };
     if (sm.guaranteedTop2) return { status: "through", note: "clasificado" };
+    // Tercero ASEGURADO adentro: nunca baja del 3.º y, aun con su peor puntaje
+    // como 3.º, le alcanza para entrar entre los 8 mejores (a peor caso de los
+    // otros grupos). Es una garantía sólida, no una posibilidad.
+    if (sm.guaranteedTop3 && sm.minThirdPts < Infinity &&
+        thirdOutlook(matches, group, sm.minThirdPts, isFinal) === "in")
+      return { status: "through", note: "clasificado (mejor 3.º)" };
     if (!sm.canTop3) return { status: "out", note: "eliminado" };
     // No puede asegurar top-2. Ser 3.º nunca está garantizado (depende de
     // ganar y de otros grupos), así que el 3.º sólo sirve para DESCARTAR:
@@ -204,6 +217,8 @@
       const sm = summarize(team, scen);
       if (sm.guaranteedFirst) return "first";
       if (sm.guaranteedTop2) return "through";
+      if (sm.guaranteedTop3 && sm.minThirdPts < Infinity &&
+          thirdOutlook(matches, group, sm.minThirdPts, isFinal) === "in") return "through";
       if (!sm.canTop3) return "out";
       if (!sm.canTop2 && sm.maxThirdPts >= 0 &&
           thirdOutlook(matches, group, sm.maxThirdPts, isFinal) === "out") return "out";
