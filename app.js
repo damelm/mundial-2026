@@ -54,6 +54,14 @@ const TX = {
   askProvider: { es: "Consultá tu operador", en: "Check your provider", pt: "Consulte sua operadora", fr: "Voir votre opérateur", ar: "تحقّق من مزوّدك" },
   close: { es: "Cerrar", en: "Close", pt: "Fechar", fr: "Fermer", ar: "إغلاق" },
   lineups: { es: "Formación", en: "Lineups", pt: "Escalação", fr: "Compositions", ar: "التشكيلة" },
+  stakesTitle: { es: "Qué se juega", en: "What's at stake", pt: "O que está em jogo", fr: "Enjeux", ar: "ما هو على المحك" },
+  stkWin: { es: "Gana", en: "Win", pt: "Vence", fr: "Gagne", ar: "فوز" },
+  stkDraw: { es: "Empata", en: "Draw", pt: "Empata", fr: "Nul", ar: "تعادل" },
+  stkLose: { es: "Pierde", en: "Loses", pt: "Perde", fr: "Perd", ar: "خسارة" },
+  stkFirst: { es: "1.º del grupo", en: "Tops group", pt: "1.º do grupo", fr: "1er du groupe", ar: "متصدّر المجموعة" },
+  stkThrough: { es: "Clasifica", en: "Advances", pt: "Classifica", fr: "Qualifié", ar: "يتأهل" },
+  stkOut: { es: "Eliminado", en: "Out", pt: "Eliminado", fr: "Éliminé", ar: "خارج" },
+  stkDepends: { es: "Depende", en: "Depends", pt: "Depende", fr: "Ça dépend", ar: "يعتمد" },
   market: { es: "Mercado", en: "Market", pt: "Mercado", fr: "Marché", ar: "السوق" },
   form: { es: "Forma · últimos 5", en: "Form · last 5", pt: "Forma · últimos 5", fr: "Forme · 5 derniers", ar: "الأداء · آخر 5" },
   noLineups: { es: "Alineaciones no disponibles aún.", en: "Lineups not available yet.", pt: "Escalações indisponíveis.", fr: "Compositions indisponibles.", ar: "التشكيلات غير متاحة بعد." },
@@ -1887,6 +1895,25 @@ function renderMmTab() {
   else c.innerHTML = matchStatsHtml(m, detail);
 }
 
+// "Qué se juega": usa el motor de escenarios. Sólo aparece en partidos de
+// fase de grupos que todavía DEFINEN algo (matters). Si no, devuelve "".
+function matchStakesHtml(m) {
+  if (!m || m.stage !== "GROUP" || !m.group || typeof Scenarios === "undefined") return "";
+  let s;
+  try { s = Scenarios.matchStakes(state.data.matches, m.id, { isFinal: (mm) => classifyStatus(mm) === "ft" }); }
+  catch { return ""; }
+  if (!s || !s.matters || s.decided) return "";
+  const lbl = { first: tw(TX.stkFirst), through: tw(TX.stkThrough), out: tw(TX.stkOut), depends: tw(TX.stkDepends) };
+  const cls = { first: "stk-go", through: "stk-go", out: "stk-no", depends: "stk-dep" };
+  const chip = (b) => `<span class="stk-chip ${cls[b]}">${lbl[b]}</span>`;
+  const col = (label, b) => `<span class="stk-col"><i>${label}</i>${chip(b)}</span>`;
+  const row = (o) => `<div class="stk-team">
+      <div class="stk-name">${teamCellFlag(o.team)}<span>${dispName(o.team)}</span></div>
+      <div class="stk-outs">${col(tw(TX.stkWin), o.win)}${col(tw(TX.stkDraw), o.draw)}${col(tw(TX.stkLose), o.lose)}</div>
+    </div>`;
+  return `<section class="mm-stakes"><div class="stk-head">${IC.trophy || ""}<span>${tw(TX.stakesTitle)}</span></div>
+    ${row(s.home)}${row(s.away)}</section>`;
+}
 function matchModalShell(m) {
   const st = classifyStatus(m);
   const d = parseUTC(m.timestamp);
@@ -1904,6 +1931,7 @@ function matchModalShell(m) {
       <div class="mm-team">${teamCell(m.away, m.awayBadge)}<span class="mm-tn">${dispName(m.away)}${rk(m.awayRank)}</span></div>
     </div>
     <div class="mm-watch">${tv}<span>${tw(TX.whereToWatch)}</span><b>${escHtml(broadcasterFor())}</b></div>
+    ${matchStakesHtml(m)}
     <div class="mm-tabs">
       <button class="mm-tab is-active" data-mtab="stats">${tw(TX.stats)}</button>
       <button class="mm-tab" data-mtab="line">${tw(TX.lineups)}</button>

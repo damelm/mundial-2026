@@ -8,7 +8,7 @@ const SHELL = "shell-" + VERSION;
 const RUNTIME = "runtime-" + VERSION;
 
 const SHELL_ASSETS = [
-  "./", "index.html", "styles.css", "app.js", "ads.js", "i18n.js", "i18n-content.js", "themes.js",
+  "./", "index.html", "styles.css", "app.js", "scenarios.js", "ads.js", "i18n.js", "i18n-content.js", "themes.js",
   "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png",
   "ads/northstar.png", "ads/cyj3d.png", "ads/nexostore.png", "ads/mistercotillon.png",
 ];
