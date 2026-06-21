@@ -773,6 +773,44 @@ function renderFixture() {
 }
 
 /* --------------------------- grupos ---------------------------------- */
+// Mini-tabla head-to-head SOLO entre los equipos pasados (partidos jugados).
+function miniTable(teamNames, groupMatches) {
+  const set = new Set(teamNames);
+  const t = {}; teamNames.forEach((n) => (t[n] = { pts: 0, gf: 0, gc: 0 }));
+  for (const m of (groupMatches || [])) {
+    if (!set.has(m.home) || !set.has(m.away)) continue;
+    if (classifyStatus(m) !== "ft" || m.homeScore == null || m.awayScore == null) continue;
+    const H = t[m.home], A = t[m.away];
+    H.gf += m.homeScore; H.gc += m.awayScore; A.gf += m.awayScore; A.gc += m.homeScore;
+    if (m.homeScore > m.awayScore) H.pts += 3; else if (m.homeScore < m.awayScore) A.pts += 3; else { H.pts++; A.pts++; }
+  }
+  return t;
+}
+// Ordena las filas de un grupo con los desempates FIFA: pts → dif → gf y, entre
+// los que quedan EXACTAMENTE igualados, head-to-head (pts → dif → gf) entre ellos.
+function sortGroupRows(rows, groupMatches) {
+  const nameCmp = (a, b) => dispName(a.team).localeCompare(dispName(b.team), state.lang);
+  const base = (a, b) => b.pts - a.pts || (b.gf - b.gc) - (a.gf - a.gc) || b.gf - a.gf;
+  const sorted = [...rows].sort((a, b) => base(a, b) || nameCmp(a, b));
+  const key = (r) => `${r.pts}|${r.gf - r.gc}|${r.gf}`;
+  let i = 0;
+  while (i < sorted.length) {
+    let j = i + 1;
+    while (j < sorted.length && key(sorted[j]) === key(sorted[i])) j++;
+    if (j - i >= 2) { // empate exacto → desempatar por head-to-head
+      const cluster = sorted.slice(i, j);
+      const h = miniTable(cluster.map((r) => r.team), groupMatches);
+      cluster.sort((a, b) =>
+        (h[b.team].pts - h[a.team].pts) ||
+        ((h[b.team].gf - h[b.team].gc) - (h[a.team].gf - h[a.team].gc)) ||
+        (h[b.team].gf - h[a.team].gf) || nameCmp(a, b));
+      for (let k = i; k < j; k++) sorted[k] = cluster[k - i];
+    }
+    i = j;
+  }
+  return sorted;
+}
+const groupMatchesOf = (g) => state.data.matches.filter((m) => m.stage === "GROUP" && m.group === g);
 function computeStandings() {
   const groups = {};
   for (const m of state.data.matches) {
@@ -805,10 +843,9 @@ function statusChipHtml(group, team) {
 function mejoresTercerosHtml() {
   if (typeof Scenarios === "undefined" || !state.data) return "";
   const groups = computeStandings();
-  const cmp = (a, b) => b.pts - a.pts || (b.gf - b.gc) - (a.gf - a.gc) || b.gf - a.gf || dispName(a.team).localeCompare(dispName(b.team), state.lang);
   const thirds = [];
   for (const g of Object.keys(groups).sort()) {
-    const rows = Object.values(groups[g]).sort(cmp);
+    const rows = sortGroupRows(Object.values(groups[g]), groupMatchesOf(g));
     if (rows[2]) thirds.push({ grp: g, ...rows[2] });
   }
   if (!thirds.length) return "";
@@ -846,7 +883,7 @@ function renderGroups() {
   state.data.matches.forEach((m) => { if (m.stage === "GROUP" && m.group) (matchesByGroup[m.group] ||= []).push(m); });
   let html = mejoresTercerosHtml();
   for (const g of keys) {
-    const rows = Object.values(groups[g]).sort((a, b) => b.pts - a.pts || (b.gf - b.gc) - (a.gf - a.gc) || b.gf - a.gf || dispName(a.team).localeCompare(dispName(b.team), state.lang));
+    const rows = sortGroupRows(Object.values(groups[g]), matchesByGroup[g] || []);
     const myGroup = !!(state.team && rows.some((r) => r.team === state.team));
     const flags = rows.map((r) => { const c = flagCodeOf(r.team); return c ? `<img src="${FLAG(c)}" alt="${dispName(r.team)}" loading="lazy">` : `<span class="gf-x">⚽</span>`; }).join("");
     const head = `<div class="grp-head-main"><span class="grp-letter">${g}</span>
@@ -907,11 +944,10 @@ function loadCombosOnce() {
 }
 function bracketProjection() {
   const st = computeStandings();
-  const cmp = (a, b) => b.pts - a.pts || (b.gf - b.gc) - (a.gf - a.gc) || b.gf - a.gf || dispName(a.team).localeCompare(dispName(b.team), state.lang);
   const rowsByG = {}, done = {};
   let complete = 0;
   for (const g of Object.keys(st)) {
-    const rows = Object.values(st[g]).sort(cmp);
+    const rows = sortGroupRows(Object.values(st[g]), groupMatchesOf(g));
     rowsByG[g] = rows;
     done[g] = rows.length >= 4 && rows.every((r) => r.pj >= 3);
     if (done[g]) complete++;
