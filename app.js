@@ -75,6 +75,10 @@ const TX = {
   chipThrough: { es: "Clasif.", en: "Through", pt: "Classif.", fr: "Qualifié", ar: "متأهل" },
   chipOut: { es: "Elim.", en: "Out", pt: "Elim.", fr: "Éliminé", ar: "خارج" },
   chipDepends: { es: "Depende", en: "Depends", pt: "Depende", fr: "Ça dépend", ar: "يعتمد" },
+  clasifTitle: { es: "Clasificados a 32avos", en: "Qualified for Round of 32", pt: "Classificados", fr: "Qualifiés", ar: "المتأهلون لدور الـ32" },
+  clasifSub: { es: "ya aseguran su lugar · provisional", en: "spot secured · provisional", pt: "vaga garantida · provisório", fr: "place assurée · provisoire", ar: "تأهّلوا · مؤقّت" },
+  clasifFirst: { es: "1.º", en: "1st", pt: "1.º", fr: "1er", ar: "الأول" },
+  clasifThird: { es: "3.º", en: "3rd", pt: "3.º", fr: "3e", ar: "الثالث" },
   tercerosTitle: { es: "Mejores terceros", en: "Best third-placed", pt: "Melhores terceiros", fr: "Meilleurs troisièmes", ar: "أفضل المنتخبات الثالثة" },
   tercerosSub: { es: "Los 8 mejores pasan a 32avos · provisional", en: "Top 8 advance to the Round of 32 · provisional", pt: "Os 8 melhores avançam · provisório", fr: "Les 8 meilleurs se qualifient · provisoire", ar: "أفضل 8 يتأهلون · مؤقّت" },
   tercerosCut: { es: "Línea de corte — pasan los 8 de arriba", en: "Cut line — top 8 advance", pt: "Linha de corte — passam os 8 de cima", fr: "Ligne de coupe — les 8 du haut passent", ar: "خط القطع — يتأهل الأعلى 8" },
@@ -848,6 +852,35 @@ function statusChipHtml(group, team) {
   const [cls, lbl] = map[st.status] || map.alive;
   return `<span class="stk-chip ${cls}">${lbl}</span>`;
 }
+// Lista consolidada de selecciones ya clasificadas a 32avos (1.º, 2.º o mejor
+// 3.º matemáticamente asegurados, según el motor de escenarios).
+function clasificadosHtml() {
+  if (typeof Scenarios === "undefined" || !state.data) return "";
+  const groups = computeStandings();
+  const isFinal = (mm) => classifyStatus(mm) === "ft";
+  const qual = [];
+  for (const g of Object.keys(groups).sort()) {
+    for (const team of Object.keys(groups[g])) {
+      let st; try { st = Scenarios.teamStatus(state.data.matches, g, team, { isFinal }); } catch { st = null; }
+      if (st && (st.status === "first" || st.status === "through"))
+        qual.push({ grp: g, team, first: st.status === "first", third: /3/.test(st.note || "") });
+    }
+  }
+  if (!qual.length) return "";
+  qual.sort((a, b) => (b.first - a.first) || a.grp.localeCompare(b.grp) || dispName(a.team).localeCompare(dispName(b.team), state.lang));
+  const items = qual.map((q) => {
+    const code = flagCodeOf(q.team);
+    const fl = code ? `<img src="${FLAG(code)}" alt="" loading="lazy">` : `<span class="gf-x">⚽</span>`;
+    const me = q.team === state.team ? " is-me" : "";
+    const tag = q.first ? `${tw(TX.clasifFirst)} ${q.grp}` : q.third ? `${tw(TX.clasifThird)} ${q.grp}` : q.grp;
+    return `<div class="clasif-item${me}">${fl}<span>${dispName(q.team)}</span><b>${tag}</b></div>`;
+  }).join("");
+  const check = '<svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>';
+  const inner = `<div class="terceros-sub">${qual.length}/32 · ${tw(TX.clasifSub)}</div><div class="clasif-grid">${items}</div>`;
+  const head = `<div class="grp-head-main"><span class="grp-letter t-medal cl-check">${check}</span>
+    <div class="grp-headinfo"><div class="grp-label">${tw(TX.clasifTitle)}</div></div></div>`;
+  return accordionEl("clasificados", head, inner, true, false, "acc-grp acc-clasif");
+}
 // Tabla cruzada de "Mejores terceros" con línea de corte tras el 8.º.
 function mejoresTercerosHtml() {
   if (typeof Scenarios === "undefined" || !state.data) return "";
@@ -890,7 +923,7 @@ function renderGroups() {
   const teamWord = state.lang === "es" ? "Equipo" : state.lang === "pt" ? "Seleção" : state.lang === "fr" ? "Équipe" : state.lang === "ar" ? "المنتخب" : "Team";
   const matchesByGroup = {};
   state.data.matches.forEach((m) => { if (m.stage === "GROUP" && m.group) (matchesByGroup[m.group] ||= []).push(m); });
-  let html = mejoresTercerosHtml();
+  let html = clasificadosHtml() + mejoresTercerosHtml();
   for (const g of keys) {
     const rows = sortGroupRows(Object.values(groups[g]), matchesByGroup[g] || []);
     const myGroup = !!(state.team && rows.some((r) => r.team === state.team));
