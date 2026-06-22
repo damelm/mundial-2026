@@ -243,6 +243,8 @@ main { padding: 0 16px 44px; }
 .st-ns { background: var(--surface-2); color: var(--ink-dim); border: 1px solid var(--line); }
 .st-live { background: var(--live-soft); color: var(--live); }
 .st-ft { background: var(--good-soft); color: var(--good); }
+.st-susp { background: rgba(240,180,41,.16); color: #c98a00; border: 1px solid rgba(240,180,41,.4); }
+:root[data-theme="dark"] .st-susp { color: #f0b429; }
 .match-meta { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 7px; margin-bottom: 13px; padding-bottom: 12px; border-bottom: 1px solid var(--line-2); font-size: 11px; color: var(--ink-dim); flex-wrap: wrap; text-align: center; font-weight: 600; }
 .match-grouptag { font-weight: 800; color: var(--brand-accent); text-transform: uppercase; letter-spacing: .04em; font-size: 10.5px; }
 
