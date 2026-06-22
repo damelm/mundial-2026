@@ -213,6 +213,9 @@ const dayKey = (d) => d.toLocaleDateString("en-CA", tzOpt());
 
 function classifyStatus(m) {
   const s = (m.status || "").toUpperCase();
+  // Estado especial (suspendido/postergado/demorado/cancelado/abandonado): tiene
+  // prioridad — un partido frenado por mal tiempo no es "en vivo" ni "final".
+  if (/SUSP|POSTP|DELAY|CANC|ABAND/.test(s)) return "susp";
   const fin = ["FT", "AET", "PEN", "MATCH FINISHED", "FINISHED", "AP"];
   const live = ["1H", "2H", "HT", "ET", "LIVE", "IN PLAY", "PLAYING", "BT"];
   if (fin.some((x) => s.includes(x))) return "ft";
@@ -687,6 +690,15 @@ function liveScorersLine(m) {
   if (!h && !a) return "";
   return `<div class="ltv-scorers"><div class="ltv-sc home">${h}</div><div class="ltv-sc away">${a}</div></div>`;
 }
+// Etiqueta localizada de un partido en estado especial, según el token guardado.
+function suspLabel(m) {
+  const s = (m.status || "").toUpperCase();
+  if (/POSTP/.test(s)) return t("status.postp");
+  if (/CANC/.test(s)) return t("status.canc");
+  if (/ABAND/.test(s)) return t("status.aband");
+  if (/DELAY/.test(s)) return t("status.delayed");
+  return t("status.susp");
+}
 function matchCard(m) {
   const d = parseUTC(m.timestamp);
   const st = classifyStatus(m);
@@ -695,6 +707,12 @@ function matchCard(m) {
   let center;
   if (st === "ns") {
     center = `<div class="match-time">${d ? fmtTime(d) : "--:--"}</div><div class="match-date-sm">${d ? fmtDayShort(d) : ""}</div><span class="match-status st-ns">${t("status.ns")}</span>`;
+  } else if (st === "susp") {
+    // Suspendido/postergado/etc.: marcador parcial si lo hay, badge ámbar.
+    const hasScore = m.homeScore != null && m.awayScore != null;
+    const top = hasScore ? `<div class="match-score">${m.homeScore}<span class="sep">:</span>${m.awayScore}</div>`
+      : `<div class="match-time">${d ? fmtTime(d) : "--:--"}</div>`;
+    center = `${top}<span class="match-status st-susp">⚠ ${suspLabel(m)}</span>`;
   } else {
     const score = `${m.homeScore ?? "-"}<span class="sep">:</span>${m.awayScore ?? "-"}`;
     const label = st === "live" ? `<span class="match-status st-live">● ${t("status.live")}</span>` : `<span class="match-status st-ft">${t("status.ft")}</span>`;
@@ -1786,6 +1804,12 @@ function matchesInPlayWindow(data) {
 // consulta si hay partidos en ventana de juego.
 const ESPN_SB = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard";
 const ESPN_SUM = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=";
+// Estados especiales de ESPN (type.name) -> token corto que guardamos en m.status.
+const ESPN_SPECIAL = {
+  STATUS_POSTPONED: "POSTP", STATUS_SUSPENDED: "SUSP",
+  STATUS_DELAYED: "DELAYED", STATUS_RAIN_DELAY: "DELAYED",
+  STATUS_CANCELED: "CANC", STATUS_CANCELLED: "CANC", STATUS_ABANDONED: "ABAND",
+};
 const _LIVE_ALIAS = { unitedstates: "usa", us: "usa", bosniaandherzegovina: "bosniaherzegovina", czechia: "czechrepublic", turkiye: "turkey", caboverde: "capeverde", korearepublic: "southkorea", cotedivoire: "ivorycoast", congodr: "drcongo" };
 function canonName(n) { const k = (n || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]/g, ""); return _LIVE_ALIAS[k] || k; }
 const livePair = (h, a) => `${canonName(h)}|${canonName(a)}`;
@@ -1834,11 +1858,24 @@ async function mergeLiveScores(data) {
     if (!m) continue;
     const stt = ev.status && ev.status.type;
     const espnState = stt && stt.state; // pre | in | post
-    if (espnState === "pre") continue;
+    const special = stt && ESPN_SPECIAL[stt.name]; // suspendido/postergado/etc.
     const hs = H.score != null && H.score !== "" ? Number(H.score) : null;
     const as = A.score != null && A.score !== "" ? Number(A.score) : null;
-    if (hs != null && hs !== m.homeScore) { m.homeScore = hs; changed = true; }
-    if (as != null && as !== m.awayScore) { m.awayScore = as; changed = true; }
+    const setScore = () => {
+      if (hs != null && hs !== m.homeScore) { m.homeScore = hs; changed = true; }
+      if (as != null && as !== m.awayScore) { m.awayScore = as; changed = true; }
+    };
+    // Estado especial (mal tiempo, etc.): ESPN puede reportarlo con state "in"
+    // o "pre", pero con un type.name como STATUS_SUSPENDED/POSTPONED/DELAYED.
+    // Lo marcamos como tal (no "en vivo") y conservamos el marcador parcial.
+    if (special) {
+      setScore();
+      if (m.status !== special) { m.status = special; changed = true; }
+      if (m.live) { m.live = false; changed = true; }
+      continue;
+    }
+    if (espnState === "pre") continue;
+    setScore();
     if (espnState === "in") {
       const clock = String((ev.status && ev.status.displayClock) || "").trim();
       const per = ev.status && ev.status.period;
