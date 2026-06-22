@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T21:34:33.374Z",
+  "updatedAt": "2026-06-22T23:06:15.260Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1587,7 +1587,7 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/aqidfn1742100110.png",
       "homeScore": 1,
       "awayScore": 0,
-      "status": "1H",
+      "status": "HT",
       "venue": "Lincoln Financial Field",
       "city": "Philadelphia, PA",
       "homeRank": 3,
