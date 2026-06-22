@@ -1,0 +1,228 @@
+================================================================================
+FIX26 — FIXTURE DEL MUNDIAL 2026
+Guion de funcionalidades para review en video
+================================================================================
+App: https://damelm.github.io/mundial-2026
+Tipo: PWA (Progressive Web App) instalable · 100% gratis · sin registro · sin login
+Stack: HTML + CSS + JavaScript vanilla (sin frameworks, ultraliviana)
+Datos: openfootball · TheSportsDB · ESPN (en vivo) · martj42 (históricos)
+
+
+--------------------------------------------------------------------------------
+1. EN POCAS PALABRAS (el "qué es")
+--------------------------------------------------------------------------------
+Fix26 es el fixture completo del Mundial 2026 (USA, Canadá y México) en tiempo
+real, que se adapta a vos: muestra los horarios en TU zona horaria, en TU idioma
+y pintado con los colores de TU selección. Marcadores en vivo, qué se juega cada
+partido, grupos, eliminatorias, planteles y sedes. Funciona sin conexión y se
+instala como app en el celular.
+
+
+--------------------------------------------------------------------------------
+2. PERSONALIZACIÓN AUTOMÁTICA (lo primero que se nota)
+--------------------------------------------------------------------------------
+• Detección por ubicación (IP): al abrir, detecta tu país y propone tu selección
+  y tu idioma automáticamente. Se consulta UNA sola vez y se cachea en el equipo
+  (revalida recién a los 30 días) para no gastar datos ni la API.
+
+• Idioma según el dispositivo: prioriza el idioma de tu teléfono; si no, usa el
+  del país detectado. Soporta 5 idiomas: Español, Inglés, Portugués, Francés y
+  Árabe (con layout de derecha a izquierda / RTL completo).
+
+• Tema por selección: al elegir tu país, TODA la app se repinta con los colores
+  oficiales de esa camiseta (más de 45 selecciones con su paleta propia).
+
+• Hora local real: los horarios se muestran en la zona horaria de tu navegador
+  (la del sistema), no por IP — así no fallan con VPN, datos móviles ni proxies.
+  Un aviso aclara en qué zona estás viendo los horarios.
+
+
+--------------------------------------------------------------------------------
+3. PORTADA / HERO (la cabecera)
+--------------------------------------------------------------------------------
+• Cabecera dinámica con el nombre de tu selección, su apodo y sus títulos
+  mundiales, sobre una bandera de fondo "flameante" dibujada en canvas.
+
+• Cuenta regresiva en vivo al próximo partido (de tu selección o del próximo del
+  Mundial), con días/horas/minutos/segundos animados.
+
+• Cartel rotativo inteligente que cambia según el momento:
+    - Si hay partidos EN VIVO → mini marcador en tiempo real (tocable).
+    - Si hay partidos hoy → "Hoy juegan…".
+    - Si no → dato curioso / "¿Sabías que…?" e historia mundialista.
+
+• Cinta de eventos EN VIVO: aparece sola cuando hay partidos jugándose, con
+  marcadores y goleadores al instante.
+
+
+--------------------------------------------------------------------------------
+4. PESTAÑA "FIXTURE" (el corazón de la app)
+--------------------------------------------------------------------------------
+• Los 104 partidos del Mundial, agrupados por día, en tu hora local.
+
+• Filtros rápidos: Todos · Hoy · En vivo.
+
+• Botón "Expandir / Colapsar todo" para abrir o cerrar todos los días.
+
+• Tarjeta de partido según su estado:
+    - Por jugar: hora, fecha, ranking FIFA de cada equipo y botón "Agendar".
+    - EN VIVO: tarjeta "modo transmisión" (oscura, marcador grande), minuto de
+      juego, goleadores en tiempo real y "qué se juega".
+    - Terminado: marcador final y goleadores.
+
+• Agendar al calendario: en iPhone descarga un .ics que abre Apple Calendar; en
+  Android/escritorio abre Google Calendar ya prellenado, con alarma 30 min antes.
+
+• Cada tarjeta es tocable (un chevron › y un aviso de una sola vez lo indican)
+  y abre el detalle completo del partido.
+
+
+--------------------------------------------------------------------------------
+5. DETALLE DEL PARTIDO (modal con 4 pestañas)
+--------------------------------------------------------------------------------
+Al tocar cualquier partido se abre una ficha con:
+
+• Encabezado: escudos, marcador/hora, grupo o fase, sede y "Dónde ver" (cadena de
+  TV sugerida según tu país).
+
+• Pestaña ESTADÍSTICAS: estadísticas reales del partido en vivo (posesión, tiros,
+  córners, tarjetas, etc.) desde ESPN, una vez que arranca el juego.
+
+• Pestaña FORMACIÓN: las alineaciones titulares con dorsal y esquema táctico.
+
+• Pestaña RELATO: narración jugada a jugada (play-by-play) en vivo.
+
+• Pestaña PRONÓSTICO: probabilidades de victoria/empate/derrota (calculadas a
+  partir de cuotas reales del mercado, normalizadas y sin margen de la casa),
+  forma reciente (últimos 5 partidos) e historial de cruces mundialistas (H2H).
+
+• "Qué se juega": frase clara de lo que cada equipo necesita (gana y clasifica,
+  pierde y afuera, le alcanza el empate, etc.).
+
+
+--------------------------------------------------------------------------------
+6. "QUÉ SE JUEGA" — MOTOR DE ESCENARIOS (la joya diferencial)
+--------------------------------------------------------------------------------
+Un motor de clasificación propio que calcula, partido a partido, qué está en
+juego de verdad — sin inventar certezas:
+
+• Por fuerza bruta evalúa todos los resultados posibles que faltan en cada grupo.
+
+• Dice el estado real de cada selección: 1.º asegurado · Clasificado · Eliminado
+  · Depende.
+
+• Para cada partido define qué le pasa a cada equipo si gana, empata o pierde.
+
+• Contempla a los "mejores terceros" cruzando los 12 grupos (los 8 mejores pasan).
+
+• Respeta los desempates FIFA reales (puntos → diferencia de gol → goles →
+  enfrentamiento directo head-to-head).
+
+• Solo destaca lo que de verdad define algo (no mete ruido).
+
+
+--------------------------------------------------------------------------------
+7. PESTAÑA "GRUPOS"
+--------------------------------------------------------------------------------
+• Tablas de posiciones de los 12 grupos, en vivo, con PJ, puntos, diferencia y
+  goles, ordenadas con criterios FIFA (incluido head-to-head).
+
+• Chip de estado por equipo: Clasificado / 1.º / Depende / Eliminado.
+
+• Tabla de "Mejores terceros" que cruza los 12 grupos, los rankea y dibuja la
+  línea de corte tras el 8.º (los que avanzan a 32avos).
+
+
+--------------------------------------------------------------------------------
+8. PESTAÑA "ELIMINATORIAS"
+--------------------------------------------------------------------------------
+• Cuadro completo de la fase final (32avos, 16avos, cuartos, semis, 3.º puesto
+  y final).
+
+• Proyección automática del bracket: a medida que se definen los grupos, va
+  completando los cruces de la llave.
+
+
+--------------------------------------------------------------------------------
+9. PESTAÑA "MI SELECCIÓN"
+--------------------------------------------------------------------------------
+• Mini-portada de tu equipo: bandera, nombre, apodo y dato histórico mundialista.
+
+• Sus partidos jugados y próximos.
+
+• Plantel / lista de jugadores (datos abiertos).
+
+• Si no elegiste selección, te invita a elegir una para personalizar todo.
+
+
+--------------------------------------------------------------------------------
+10. PESTAÑA "SEDES"
+--------------------------------------------------------------------------------
+• Los estadios del Mundial con ciudad, capacidad y enlace "Ver en mapa".
+
+• Mascotas oficiales del torneo (Maple, Zayu y Clutch) con su descripción.
+
+
+--------------------------------------------------------------------------------
+11. TIEMPO REAL Y DATOS
+--------------------------------------------------------------------------------
+• Marcadores, minuto y goleadores en vivo desde la API pública de ESPN (gratis,
+  sin clave); si falla, cae automáticamente a TheSportsDB.
+
+• Actualización automática cada 60 segundos mientras la app está abierta.
+
+• Pronósticos a partir de cuotas reales del mercado.
+
+• Goleadores y "Bota de Oro" (máximos artilleros del torneo).
+
+• Titulares / noticias del Mundial.
+
+
+--------------------------------------------------------------------------------
+12. EXPERIENCIA / DISEÑO
+--------------------------------------------------------------------------------
+• Diseño "broadcast editorial": estética de transmisión de TV premium, tipografía
+  de display (Anton) y números tabulares.
+
+• Modo oscuro y claro (arranca en oscuro, "Estadio Nocturno"); se puede cambiar
+  con un toque y recuerda tu elección.
+
+• Splash screen de carga con pelota animada al abrir.
+
+• Animaciones que se pausan solas fuera de pantalla o en segundo plano (cuidan
+  la batería) y respetan "reducir movimiento".
+
+• Pantalla de carga tipo esqueleto mientras llegan los datos.
+
+• Accesibilidad: roles ARIA, navegación por teclado y foco visible.
+
+• Optimizada para gama media: liviana, rápida y fluida.
+
+
+--------------------------------------------------------------------------------
+13. PWA — APP INSTALABLE Y OFFLINE
+--------------------------------------------------------------------------------
+• Se instala como app nativa en Android (Chrome) y iPhone (Safari), con su ícono
+  e instrucciones según el dispositivo.
+
+• Funciona sin conexión gracias al Service Worker (cachea la app completa).
+
+• Se actualiza sola: cuando hay una versión nueva, llega a todos los usuarios sin
+  recargar a mano. En el pie se ve la versión instalada.
+
+• Pull-to-refresh: deslizar hacia abajo para actualizar (como las apps nativas).
+
+• Botón "Compartir" para pasarle la app a otros.
+
+
+--------------------------------------------------------------------------------
+14. RESUMEN DE LO QUE LA HACE ÚNICA (para cerrar el video)
+--------------------------------------------------------------------------------
+1) Se adapta sola: tu país, tu idioma, tu hora, tus colores.
+2) "Qué se juega" cada partido, con un motor de escenarios propio y honesto.
+3) En vivo de verdad: marcadores, goleadores, stats, relato y pronóstico.
+4) Multilenguaje (5 idiomas, incluido árabe RTL).
+5) Se instala, funciona offline y se actualiza sola.
+6) Gratis, sin registro, sin publicidad invasiva, ultraliviana.
+
+================================================================================

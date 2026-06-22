@@ -207,12 +207,21 @@ const fmtDayShort = (d) => d.toLocaleDateString(state.lang, { day: "2-digit", mo
 const dayKey = (d) => d.toLocaleDateString("en-CA", tzOpt());
 
 function classifyStatus(m) {
-  if (m.live === true) return "live"; // marcado por la capa en vivo de ESPN
   const s = (m.status || "").toUpperCase();
   const fin = ["FT", "AET", "PEN", "MATCH FINISHED", "FINISHED", "AP"];
   const live = ["1H", "2H", "HT", "ET", "LIVE", "IN PLAY", "PLAYING", "BT"];
   if (fin.some((x) => s.includes(x))) return "ft";
-  if (live.some((x) => s.includes(x))) return "live";
+  // Cota dura: ningún partido dura más de ~3.5 h desde el inicio. Pasada esa
+  // ventana NO puede seguir "en vivo", aunque el dato lo diga: evita que un
+  // fixture.json rezagado del cron (status "2H") o una bandera m.live que quedó
+  // pegada muestren el partido "en vivo" para siempre. Coincide con la ventana
+  // en la que la capa de ESPN deja de actualizarlo (matchesInPlayWindow).
+  const d = parseUTC(m.timestamp);
+  const overWindow = d && Date.now() > d.getTime() + 3.5 * 3600000;
+  if (!overWindow) {
+    if (m.live === true) return "live"; // marcado por la capa en vivo de ESPN
+    if (live.some((x) => s.includes(x))) return "live";
+  }
   if (m.homeScore != null && m.awayScore != null && s !== "NS" && s !== "") return "ft";
   return "ns";
 }
