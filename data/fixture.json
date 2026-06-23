@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T17:25:46.410Z",
+  "updatedAt": "2026-06-23T19:27:08.030Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1709,11 +1709,36 @@
       "away": "Uzbekistan",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/swqvpy1455466083.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/u5bgze1597943605.png",
-      "homeScore": 2,
+      "homeScore": 5,
       "awayScore": 0,
-      "status": "1H",
+      "status": "FT",
       "venue": "NRG Stadium",
       "city": "Houston, TX",
+      "goals": {
+        "home": [
+          {
+            "name": "Cristiano Ronaldo",
+            "minute": "6"
+          },
+          {
+            "name": "Nuno Mendes",
+            "minute": "17"
+          },
+          {
+            "name": "Cristiano Ronaldo",
+            "minute": "39"
+          },
+          {
+            "name": "Abduvohid Nematov",
+            "minute": "60"
+          },
+          {
+            "name": "Rafael Leão",
+            "minute": "87"
+          }
+        ],
+        "away": []
+      },
       "homeRank": 6,
       "awayRank": 53
     },
