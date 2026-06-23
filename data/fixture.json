@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T12:08:07.072Z",
+  "updatedAt": "2026-06-23T17:25:46.410Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1709,22 +1709,13 @@
       "away": "Uzbekistan",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/swqvpy1455466083.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/u5bgze1597943605.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "NRG Stadium",
       "city": "Houston, TX",
       "homeRank": 6,
-      "awayRank": 53,
-      "pred": {
-        "pH": 69,
-        "pD": 16,
-        "pA": 15,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 53
     },
     {
       "id": "2391761",
