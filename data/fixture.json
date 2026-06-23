@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T19:27:08.030Z",
+  "updatedAt": "2026-06-23T21:14:50.904Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1712,7 +1712,7 @@
       "homeScore": 5,
       "awayScore": 0,
       "status": "FT",
-      "venue": "NRG Stadium",
+      "venue": "Reliant Stadium",
       "city": "Houston, TX",
       "goals": {
         "home": [
@@ -1755,30 +1755,13 @@
       "away": "Ghana",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/j589xw1751526124.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "Gillette Stadium",
       "city": "Foxborough, MA",
       "homeRank": 4,
-      "awayRank": 73,
-      "pred": {
-        "pH": 85,
-        "pD": 6,
-        "pA": 9,
-        "h2h": {
-          "played": 1,
-          "last": [
-            {
-              "date": "2011-03-29",
-              "h": "England",
-              "a": "Ghana",
-              "hs": 1,
-              "as": 1
-            }
-          ]
-        }
-      }
+      "awayRank": 73
     },
     {
       "id": "2391762",
