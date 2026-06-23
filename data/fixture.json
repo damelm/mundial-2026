@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T21:14:50.904Z",
+  "updatedAt": "2026-06-23T22:40:29.660Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1757,7 +1757,7 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/j589xw1751526124.png",
       "homeScore": 0,
       "awayScore": 0,
-      "status": "1H",
+      "status": "FT",
       "venue": "Gillette Stadium",
       "city": "Foxborough, MA",
       "homeRank": 4,
