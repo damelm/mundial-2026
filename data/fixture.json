@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T01:23:28.686Z",
+  "updatedAt": "2026-06-23T05:40:59.818Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1587,9 +1587,26 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/aqidfn1742100110.png",
       "homeScore": 3,
       "awayScore": 0,
-      "status": "2H",
+      "status": "FT",
       "venue": "Lincoln Financial Field",
       "city": "Philadelphia, PA",
+      "goals": {
+        "home": [
+          {
+            "name": "Kylian Mbappé",
+            "minute": "14"
+          },
+          {
+            "name": "Kylian Mbappé",
+            "minute": "54"
+          },
+          {
+            "name": "Ousmane Dembélé",
+            "minute": "66"
+          }
+        ],
+        "away": []
+      },
       "homeRank": 3,
       "awayRank": 58
     },
@@ -1606,11 +1623,37 @@
       "away": "Senegal",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/gyfn811591973155.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/slayb01780546342.png",
-      "homeScore": 1,
-      "awayScore": 0,
-      "status": "1H",
+      "homeScore": 3,
+      "awayScore": 2,
+      "status": "FT",
       "venue": "MetLife Stadium",
       "city": "East Rutherford, NJ",
+      "goals": {
+        "home": [
+          {
+            "name": "Marcus Holmgren Pedersen",
+            "minute": "43"
+          },
+          {
+            "name": "Erling Haaland",
+            "minute": "48"
+          },
+          {
+            "name": "Erling Haaland",
+            "minute": "58"
+          }
+        ],
+        "away": [
+          {
+            "name": "Ismaïla Sarr",
+            "minute": "53"
+          },
+          {
+            "name": "Ismaïla Sarr",
+            "minute": "90+3"
+          }
+        ]
+      },
       "homeRank": 33,
       "awayRank": 18
     },
@@ -1627,37 +1670,31 @@
       "away": "Algeria",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/59fo2s1742100034.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/rrwpry1455460218.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 2,
+      "status": "FT",
       "venue": "Levi's Stadium",
       "city": "Santa Clara, CA",
+      "goals": {
+        "home": [
+          {
+            "name": "Nizar Al-Rashdan",
+            "minute": "36"
+          }
+        ],
+        "away": [
+          {
+            "name": "Nadhir Benbouali",
+            "minute": "69"
+          },
+          {
+            "name": "Amine Gouiri",
+            "minute": "82"
+          }
+        ]
+      },
       "homeRank": 62,
-      "awayRank": 38,
-      "pred": {
-        "pH": 19,
-        "pD": 20,
-        "pA": 61,
-        "h2h": {
-          "played": 2,
-          "last": [
-            {
-              "date": "2004-05-30",
-              "h": "Algeria",
-              "a": "Jordan",
-              "hs": 1,
-              "as": 1
-            },
-            {
-              "date": "1974-09-29",
-              "h": "Algeria",
-              "a": "Jordan",
-              "hs": 6,
-              "as": 0
-            }
-          ]
-        }
-      }
+      "awayRank": 38
     },
     {
       "id": "2391763",
@@ -1675,7 +1712,7 @@
       "homeScore": null,
       "awayScore": null,
       "status": "NS",
-      "venue": "Reliant Stadium",
+      "venue": "NRG Stadium",
       "city": "Houston, TX",
       "homeRank": 6,
       "awayRank": 53,
