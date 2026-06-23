@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T23:06:15.260Z",
+  "updatedAt": "2026-06-23T01:23:28.686Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1585,9 +1585,9 @@
       "away": "Iraq",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/p3n0z51726166851.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/aqidfn1742100110.png",
-      "homeScore": 1,
+      "homeScore": 3,
       "awayScore": 0,
-      "status": "HT",
+      "status": "2H",
       "venue": "Lincoln Financial Field",
       "city": "Philadelphia, PA",
       "homeRank": 3,
@@ -1606,30 +1606,13 @@
       "away": "Senegal",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/gyfn811591973155.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/slayb01780546342.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "MetLife Stadium",
       "city": "East Rutherford, NJ",
       "homeRank": 33,
-      "awayRank": 18,
-      "pred": {
-        "pH": 39,
-        "pD": 27,
-        "pA": 34,
-        "h2h": {
-          "played": 1,
-          "last": [
-            {
-              "date": "2006-03-01",
-              "h": "Senegal",
-              "a": "Norway",
-              "hs": 2,
-              "as": 1
-            }
-          ]
-        }
-      }
+      "awayRank": 18
     },
     {
       "id": "2391759",
