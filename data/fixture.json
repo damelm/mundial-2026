@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T22:40:29.660Z",
+  "updatedAt": "2026-06-23T23:41:23.582Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1776,22 +1776,13 @@
       "away": "Croatia",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/asp2ck1715849700.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/vvtsyu1455465317.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "BMO Field",
       "city": "Toronto, ON",
       "homeRank": 31,
-      "awayRank": 10,
-      "pred": {
-        "pH": 20,
-        "pD": 20,
-        "pA": 60,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 10
     },
     {
       "id": "2461114",
