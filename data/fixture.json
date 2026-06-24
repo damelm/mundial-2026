@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T01:32:19.910Z",
+  "updatedAt": "2026-06-24T05:50:02.130Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1806,22 +1806,22 @@
       "away": "DR Congo",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/4ymyku1691180081.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/s85jjw1728749022.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "FT",
       "venue": "Estadio Akron",
       "city": "Zapopan, JA",
+      "goals": {
+        "home": [
+          {
+            "name": "Daniel Muñoz",
+            "minute": "76"
+          }
+        ],
+        "away": []
+      },
       "homeRank": 13,
-      "awayRank": 56,
-      "pred": {
-        "pH": 76,
-        "pD": 11,
-        "pA": 13,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 56
     },
     {
       "id": "2391767",
