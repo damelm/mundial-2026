@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T09:29:09.762Z",
+  "updatedAt": "2026-06-24T17:18:23.842Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -452,6 +452,10 @@
             "minute": "7"
           },
           {
+            "name": "Yasin Ayari",
+            "minute": "90+6"
+          },
+          {
             "name": "Alexander Isak",
             "minute": "30"
           },
@@ -462,10 +466,6 @@
           {
             "name": "Mattias Svanberg",
             "minute": "84"
-          },
-          {
-            "name": "Yasin Ayari",
-            "minute": "90+6"
           }
         ],
         "away": [
@@ -637,12 +637,12 @@
             "minute": "66"
           },
           {
-            "name": "Bradley Barcola",
-            "minute": "82"
-          },
-          {
             "name": "Kylian Mbappé",
             "minute": "90+6"
+          },
+          {
+            "name": "Bradley Barcola",
+            "minute": "82"
           }
         ],
         "away": [
@@ -1002,12 +1002,12 @@
             "minute": "74"
           },
           {
-            "name": "Rubén Vargas",
-            "minute": "84"
-          },
-          {
             "name": "Johan Manzambi",
             "minute": "90"
+          },
+          {
+            "name": "Rubén Vargas",
+            "minute": "84"
           },
           {
             "name": "Granit Xhaka",
@@ -1377,12 +1377,12 @@
             "minute": "31"
           },
           {
-            "name": "Junya Ito",
-            "minute": "69"
-          },
-          {
             "name": "Ayase Ueda",
             "minute": "83"
+          },
+          {
+            "name": "Junya Ito",
+            "minute": "69"
           }
         ]
       },
@@ -1721,12 +1721,12 @@
             "minute": "6"
           },
           {
-            "name": "Nuno Mendes",
-            "minute": "17"
-          },
-          {
             "name": "Cristiano Ronaldo",
             "minute": "39"
+          },
+          {
+            "name": "Nuno Mendes",
+            "minute": "17"
           },
           {
             "name": "Abduvohid Nematov",
