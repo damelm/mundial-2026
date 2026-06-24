@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T20:56:35.329Z",
+  "updatedAt": "2026-06-24T22:20:15.787Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1836,11 +1836,29 @@
       "away": "Canada",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/mb7yqe1717365808.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/2t631f1595154867.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "status": "HT",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FT",
       "venue": "BC Place",
       "city": "Vancouver, BC",
+      "goals": {
+        "home": [
+          {
+            "name": "Rubén Vargas",
+            "minute": "46"
+          },
+          {
+            "name": "Johan Manzambi",
+            "minute": "57"
+          }
+        ],
+        "away": [
+          {
+            "name": "Promise David",
+            "minute": "76"
+          }
+        ]
+      },
       "homeRank": 19,
       "awayRank": 30
     },
@@ -1859,9 +1877,31 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/rs3ir31642708685.png",
       "homeScore": 3,
       "awayScore": 1,
-      "status": "2H",
+      "status": "FT",
       "venue": "Lumen Field",
       "city": "Seattle, WA",
+      "goals": {
+        "home": [
+          {
+            "name": "Kerim Alajbegovic",
+            "minute": "29"
+          },
+          {
+            "name": "Mahmoud Abunada",
+            "minute": "34"
+          },
+          {
+            "name": "Ermin Mahmic",
+            "minute": "80"
+          }
+        ],
+        "away": [
+          {
+            "name": "Hassan Al-Haydos",
+            "minute": "42"
+          }
+        ]
+      },
       "homeRank": 74,
       "awayRank": 36
     },
@@ -1878,22 +1918,13 @@
       "away": "Haiti",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/hbmwkj1731791275.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/gml8wx1598135302.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "1H",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta, GA",
       "homeRank": 11,
-      "awayRank": 86,
-      "pred": {
-        "pH": 80,
-        "pD": 9,
-        "pA": 11,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 86
     },
     {
       "id": "2391765",
@@ -1908,44 +1939,13 @@
       "away": "Brazil",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/3691i11552945146.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/jl6dip1726167280.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "1H",
       "venue": "Hard Rock Stadium",
       "city": "Miami Gardens, FL",
       "homeRank": 39,
-      "awayRank": 5,
-      "pred": {
-        "pH": 14,
-        "pD": 14,
-        "pA": 72,
-        "h2h": {
-          "played": 10,
-          "last": [
-            {
-              "date": "2011-03-27",
-              "h": "Brazil",
-              "a": "Scotland",
-              "hs": 2,
-              "as": 0
-            },
-            {
-              "date": "1998-06-10",
-              "h": "Brazil",
-              "a": "Scotland",
-              "hs": 2,
-              "as": 1
-            },
-            {
-              "date": "1990-06-20",
-              "h": "Brazil",
-              "a": "Scotland",
-              "hs": 1,
-              "as": 0
-            }
-          ]
-        }
-      }
+      "awayRank": 5
     },
     {
       "id": "2391766",
