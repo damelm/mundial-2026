@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T17:18:23.842Z",
+  "updatedAt": "2026-06-24T19:11:07.858Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1836,30 +1836,13 @@
       "away": "Canada",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/mb7yqe1717365808.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/2t631f1595154867.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "BC Place",
       "city": "Vancouver, BC",
       "homeRank": 19,
-      "awayRank": 30,
-      "pred": {
-        "pH": 42,
-        "pD": 27,
-        "pA": 31,
-        "h2h": {
-          "played": 1,
-          "last": [
-            {
-              "date": "2002-05-15",
-              "h": "Switzerland",
-              "a": "Canada",
-              "hs": 1,
-              "as": 3
-            }
-          ]
-        }
-      }
+      "awayRank": 30
     },
     {
       "id": "2461115",
@@ -1874,37 +1857,13 @@
       "away": "Qatar",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/wtqqst1455463120.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/rs3ir31642708685.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "Lumen Field",
       "city": "Seattle, WA",
       "homeRank": 74,
-      "awayRank": 36,
-      "pred": {
-        "pH": 47,
-        "pD": 25,
-        "pA": 28,
-        "h2h": {
-          "played": 2,
-          "last": [
-            {
-              "date": "2010-08-10",
-              "h": "Bosnia and Herzegovina",
-              "a": "Qatar",
-              "hs": 1,
-              "as": 1
-            },
-            {
-              "date": "2000-01-24",
-              "h": "Qatar",
-              "a": "Bosnia and Herzegovina",
-              "hs": 2,
-              "as": 0
-            }
-          ]
-        }
-      }
+      "awayRank": 36
     },
     {
       "id": "2391764",
