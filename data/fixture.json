@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T23:41:23.582Z",
+  "updatedAt": "2026-06-24T01:32:19.910Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1777,10 +1777,19 @@
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/asp2ck1715849700.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/vvtsyu1455465317.png",
       "homeScore": 0,
-      "awayScore": 0,
-      "status": "1H",
+      "awayScore": 1,
+      "status": "FT",
       "venue": "BMO Field",
       "city": "Toronto, ON",
+      "goals": {
+        "home": [],
+        "away": [
+          {
+            "name": "Ante Budimir",
+            "minute": "54"
+          }
+        ]
+      },
       "homeRank": 31,
       "awayRank": 10
     },
