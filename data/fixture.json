@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-25T01:50:07.002Z",
+  "updatedAt": "2026-06-25T06:07:21.558Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2007,11 +2007,20 @@
       "away": "South Korea",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/xjz9j91553368824.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/a8nqfs1589564916.png",
-      "homeScore": 0,
+      "homeScore": 1,
       "awayScore": 0,
-      "status": "1H",
+      "status": "FT",
       "venue": "Estadio BBVA",
       "city": "Guadalupe, NL",
+      "goals": {
+        "home": [
+          {
+            "name": "Thapelo Maseko",
+            "minute": "63"
+          }
+        ],
+        "away": []
+      },
       "homeRank": 57,
       "awayRank": 23
     },
@@ -2029,10 +2038,27 @@
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/1o0cx31654205806.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/3rmosi1748525208.png",
       "homeScore": 0,
-      "awayScore": 0,
-      "status": "1H",
-      "venue": "Estadio Azteca",
+      "awayScore": 3,
+      "status": "FT",
+      "venue": "Estadio Banorte",
       "city": "Mexico City, MX",
+      "goals": {
+        "home": [],
+        "away": [
+          {
+            "name": "Mateo Chávez",
+            "minute": "55"
+          },
+          {
+            "name": "Julián Quiñones",
+            "minute": "61"
+          },
+          {
+            "name": "Álvaro Fidalgo",
+            "minute": "90+4"
+          }
+        ]
+      },
       "homeRank": 43,
       "awayRank": 17
     },
