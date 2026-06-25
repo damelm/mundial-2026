@@ -773,6 +773,13 @@ function tapTipHtml() {
 }
 function renderFixture() {
   const cont = $("#fixture-list");
+  // Conservar la vista del usuario (qué días tiene abiertos + scroll) cuando el
+  // refresco automático re-dibuja el fixture con el MISMO filtro. Sin esto, cada
+  // update colapsaba el día que estaba mirando y lo devolvía al día por defecto.
+  // Si cambió el filtro (acción explícita) o es el primer render, no se conserva.
+  const sameView = cont.dataset.filter === state.filter && cont.querySelector(".acc-day");
+  const prevOpen = sameView ? new Set([...cont.querySelectorAll(".acc-day.open")].map((a) => a.dataset.key)) : null;
+  const keepScroll = sameView ? window.scrollY : null;
   const todayKey = dayKey(new Date());
   let matches = [...state.data.matches];
   if (state.filter === "today") matches = matches.filter((m) => { const d = parseUTC(m.timestamp); return d && dayKey(d) === todayKey; });
@@ -793,15 +800,17 @@ function renderFixture() {
     const day = byDay[k].sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
     const s = parseUTC(day[0].timestamp);
     const myDay = !!(state.team && day.some((m) => m.home === state.team || m.away === state.team));
-    const isOpen = expandAll || k === openKey;
+    const isOpen = expandAll || (prevOpen ? prevOpen.has(k) : k === openKey);
     const head = `<div class="acc-titles"><div class="acc-title">${s ? fmtDayLong(s) : "—"}</div>
       <div class="acc-sub">${day.length} ${day.length === 1 ? tw(TX.matchOne) : t("matchesLabel")}${myDay ? ' <span class="acc-star">★</span>' : ""} ${miniFlags(day)}</div></div>`;
     html += accordionEl(k, head, day.map(matchCard).join(""), isOpen, myDay, "acc-day");
     if (idx === adAfter) html += `<div class="ad-host"></div>`;
   });
+  cont.dataset.filter = state.filter;
   cont.innerHTML = tapTipHtml() + html;
   scrollReveal(cont);
   mountAds();
+  if (keepScroll != null) window.scrollTo(0, keepScroll);
 }
 
 /* --------------------------- grupos ---------------------------------- */
