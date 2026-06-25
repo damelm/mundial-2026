@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-25T06:07:21.558Z",
+  "updatedAt": "2026-06-25T21:11:25.947Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2040,7 +2040,7 @@
       "homeScore": 0,
       "awayScore": 3,
       "status": "FT",
-      "venue": "Estadio Banorte",
+      "venue": "Estadio Azteca",
       "city": "Mexico City, MX",
       "goals": {
         "home": [],
@@ -2075,22 +2075,13 @@
       "away": "Ivory Coast",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/itygvb1600955363.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/rwxuuu1455465643.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "HT",
       "venue": "Lincoln Financial Field",
       "city": "Philadelphia, PA",
       "homeRank": 90,
-      "awayRank": 40,
-      "pred": {
-        "pH": 13,
-        "pD": 13,
-        "pA": 74,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 40
     },
     {
       "id": "2391769",
@@ -2105,37 +2096,13 @@
       "away": "Germany",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/47wv2y1591989301.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/1xysi51726167152.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "HT",
       "venue": "MetLife Stadium",
       "city": "East Rutherford, NJ",
       "homeRank": 23,
-      "awayRank": 9,
-      "pred": {
-        "pH": 28,
-        "pD": 26,
-        "pA": 46,
-        "h2h": {
-          "played": 2,
-          "last": [
-            {
-              "date": "2013-05-29",
-              "h": "Ecuador",
-              "a": "Germany",
-              "hs": 2,
-              "as": 4
-            },
-            {
-              "date": "2006-06-20",
-              "h": "Germany",
-              "a": "Ecuador",
-              "hs": 3,
-              "as": 0
-            }
-          ]
-        }
-      }
+      "awayRank": 9
     },
     {
       "id": "2391771",
