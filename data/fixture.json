@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T23:42:45.413Z",
+  "updatedAt": "2026-06-25T01:50:07.002Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -1622,7 +1622,7 @@
       "home": "Norway",
       "away": "Senegal",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/gyfn811591973155.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/slayb01780546342.png",
+      "awayBadge": "https://www.thesportsdb.com/images/media/team/badge/slayb01780546342.png",
       "homeScore": 3,
       "awayScore": 2,
       "status": "FT",
@@ -1918,11 +1918,41 @@
       "away": "Haiti",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/hbmwkj1731791275.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/gml8wx1598135302.png",
-      "homeScore": 2,
+      "homeScore": 4,
       "awayScore": 2,
-      "status": "HT",
+      "status": "FT",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta, GA",
+      "goals": {
+        "home": [
+          {
+            "name": "Achraf Hakimi",
+            "minute": "39"
+          },
+          {
+            "name": "Ismael Saibari",
+            "minute": "45+1"
+          },
+          {
+            "name": "Soufiane Rahimi",
+            "minute": "78"
+          },
+          {
+            "name": "Gessime Yassine",
+            "minute": "89"
+          }
+        ],
+        "away": [
+          {
+            "name": "Yassine Bounou",
+            "minute": "10"
+          },
+          {
+            "name": "Wilson Isidor",
+            "minute": "43"
+          }
+        ]
+      },
       "homeRank": 11,
       "awayRank": 86
     },
@@ -1940,10 +1970,27 @@
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/3691i11552945146.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/jl6dip1726167280.png",
       "homeScore": 0,
-      "awayScore": 2,
-      "status": "HT",
+      "awayScore": 3,
+      "status": "FT",
       "venue": "Hard Rock Stadium",
       "city": "Miami Gardens, FL",
+      "goals": {
+        "home": [],
+        "away": [
+          {
+            "name": "Vinícius Júnior",
+            "minute": "7"
+          },
+          {
+            "name": "Vinícius Júnior",
+            "minute": "45+3"
+          },
+          {
+            "name": "Matheus Cunha",
+            "minute": "60"
+          }
+        ]
+      },
       "homeRank": 39,
       "awayRank": 5
     },
@@ -1960,22 +2007,13 @@
       "away": "South Korea",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/xjz9j91553368824.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/a8nqfs1589564916.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "Estadio BBVA",
       "city": "Guadalupe, NL",
       "homeRank": 57,
-      "awayRank": 23,
-      "pred": {
-        "pH": 17,
-        "pD": 17,
-        "pA": 66,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 23
     },
     {
       "id": "2461116",
@@ -1990,30 +2028,13 @@
       "away": "Mexico",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/1o0cx31654205806.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/3rmosi1748525208.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "Estadio Azteca",
       "city": "Mexico City, MX",
       "homeRank": 43,
-      "awayRank": 17,
-      "pred": {
-        "pH": 20,
-        "pD": 20,
-        "pA": 60,
-        "h2h": {
-          "played": 1,
-          "last": [
-            {
-              "date": "2000-02-08",
-              "h": "Mexico",
-              "a": "Czech Republic",
-              "hs": 1,
-              "as": 2
-            }
-          ]
-        }
-      }
+      "awayRank": 17
     },
     {
       "id": "2391768",
@@ -2206,7 +2227,7 @@
       "home": "Paraguay",
       "away": "Australia",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/khgav41553419195.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/lark6k1661780848.png",
+      "awayBadge": "https://www.thesportsdb.com/images/media/team/badge/eylq8x1781926138.png",
       "homeScore": null,
       "awayScore": null,
       "status": "NS",
