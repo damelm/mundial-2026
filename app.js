@@ -2150,11 +2150,14 @@ function stakeHighlight(o) {
   const bad = (x) => x === "out";
   const W = o.win, D = o.draw, L = o.lose;
   if (good(W) && good(D) && good(L)) return { k: "slThrough", c: "stk-go" };
+  // Rojo SOLO para eliminado real (afuera gane, empate o pierda). Los casos de
+  // "riesgo" (gana o afuera / pierde y afuera) son ÁMBAR: el equipo TODAVÍA tiene
+  // chance, así que no debe confundirse con un eliminado.
   if (bad(W) && bad(D) && bad(L)) return { k: "slOut", c: "stk-no" };
   if (good(W) && good(D)) return { k: "slDrawOk", c: "stk-go" };
   if (good(W)) return { k: W === "first" ? "slWinTop" : "slWinPass", c: "stk-go" };
-  if (bad(L) && bad(D) && !bad(W)) return { k: "slMustWin", c: "stk-no" };
-  if (bad(L) && !bad(D)) return { k: "slOutIfLose", c: "stk-no" };
+  if (bad(L) && bad(D) && !bad(W)) return { k: "slMustWin", c: "stk-dep" };
+  if (bad(L) && !bad(D)) return { k: "slOutIfLose", c: "stk-dep" };
   return null;
 }
 // Línea "qué se juega" para la fila del partido. "" si no define nada.
@@ -2184,7 +2187,7 @@ function stakesTextFor(m) {
   if (hh) cands.push({ team: s.home.team, h: hh });
   if (ha) cands.push({ team: s.away.team, h: ha });
   if (!cands.length) return "";
-  cands.sort((a, b) => (a.h.c === "stk-no" ? 0 : 1) - (b.h.c === "stk-no" ? 0 : 1)); // en riesgo primero
+  cands.sort((a, b) => (a.h.c === "stk-go" ? 1 : 0) - (b.h.c === "stk-go" ? 1 : 0)); // tensión (riesgo/elim.) primero
   const { team, h } = cands[0];
   return ` — ${dispName(team)}: ${tw(TX[h.k]).toLowerCase()}`;
 }
