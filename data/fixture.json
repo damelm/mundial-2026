@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-25T21:11:25.947Z",
+  "updatedAt": "2026-06-25T22:47:06.719Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2076,10 +2076,23 @@
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/itygvb1600955363.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/rwxuuu1455465643.png",
       "homeScore": 0,
-      "awayScore": 1,
-      "status": "HT",
+      "awayScore": 2,
+      "status": "FT",
       "venue": "Lincoln Financial Field",
       "city": "Philadelphia, PA",
+      "goals": {
+        "home": [],
+        "away": [
+          {
+            "name": "Nicolas Pépé",
+            "minute": "7"
+          },
+          {
+            "name": "Nicolas Pépé",
+            "minute": "64"
+          }
+        ]
+      },
       "homeRank": 90,
       "awayRank": 40
     },
@@ -2096,11 +2109,29 @@
       "away": "Germany",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/47wv2y1591989301.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/1xysi51726167152.png",
-      "homeScore": 1,
+      "homeScore": 2,
       "awayScore": 1,
-      "status": "HT",
+      "status": "FT",
       "venue": "MetLife Stadium",
       "city": "East Rutherford, NJ",
+      "goals": {
+        "home": [
+          {
+            "name": "Nilson Angulo",
+            "minute": "9"
+          },
+          {
+            "name": "Gonzalo Plata",
+            "minute": "77"
+          }
+        ],
+        "away": [
+          {
+            "name": "Leroy Sané",
+            "minute": "2"
+          }
+        ]
+      },
       "homeRank": 23,
       "awayRank": 9
     },
