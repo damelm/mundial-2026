@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-26T21:06:09.614Z",
+  "updatedAt": "2026-06-26T22:36:31.479Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2343,9 +2343,34 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/aqidfn1742100110.png",
       "homeScore": 5,
       "awayScore": 0,
-      "status": "2H",
+      "status": "FT",
       "venue": "BMO Field",
       "city": "Toronto, ON",
+      "goals": {
+        "home": [
+          {
+            "name": "Habib Diarra",
+            "minute": "4"
+          },
+          {
+            "name": "Ismaïla Sarr",
+            "minute": "56"
+          },
+          {
+            "name": "Pape Gueye",
+            "minute": "59"
+          },
+          {
+            "name": "Pape Gueye",
+            "minute": "71"
+          },
+          {
+            "name": "Iliman Ndiaye",
+            "minute": "82"
+          }
+        ],
+        "away": []
+      },
       "homeRank": 18,
       "awayRank": 58
     },
