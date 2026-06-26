@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-26T19:18:51.671Z",
+  "updatedAt": "2026-06-26T21:06:09.614Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2294,11 +2294,37 @@
       "away": "France",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/gyfn811591973155.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/p3n0z51726166851.png",
-      "homeScore": 0,
-      "awayScore": 1,
-      "status": "1H",
+      "homeScore": 1,
+      "awayScore": 4,
+      "status": "FT",
       "venue": "Gillette Stadium",
       "city": "Foxborough, MA",
+      "goals": {
+        "home": [
+          {
+            "name": "Thelo Aasgaard",
+            "minute": "21"
+          }
+        ],
+        "away": [
+          {
+            "name": "Ousmane Dembélé",
+            "minute": "7"
+          },
+          {
+            "name": "Ousmane Dembélé",
+            "minute": "20"
+          },
+          {
+            "name": "Ousmane Dembélé",
+            "minute": "32"
+          },
+          {
+            "name": "Désiré Doué",
+            "minute": "90+4"
+          }
+        ]
+      },
       "homeRank": 33,
       "awayRank": 3
     },
@@ -2315,9 +2341,9 @@
       "away": "Iraq",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/slayb01780546342.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/aqidfn1742100110.png",
-      "homeScore": 1,
+      "homeScore": 5,
       "awayScore": 0,
-      "status": "1H",
+      "status": "2H",
       "venue": "BMO Field",
       "city": "Toronto, ON",
       "homeRank": 18,
