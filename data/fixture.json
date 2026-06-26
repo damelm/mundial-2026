@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-26T00:09:11.209Z",
+  "updatedAt": "2026-06-26T04:40:00.279Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2148,44 +2148,35 @@
       "away": "Netherlands",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/7r89rg1526727277.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/1p0hr41593787110.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 3,
+      "status": "FT",
       "venue": "GEHA Field at Arrowhead Stadium",
       "city": "Kansas City, MO",
+      "goals": {
+        "home": [
+          {
+            "name": "Hazem Mastouri",
+            "minute": "54"
+          }
+        ],
+        "away": [
+          {
+            "name": "Ellyes Skhiri",
+            "minute": "3"
+          },
+          {
+            "name": "Brian Brobbey",
+            "minute": "7"
+          },
+          {
+            "name": "Jan Paul van Hecke",
+            "minute": "62"
+          }
+        ]
+      },
       "homeRank": 41,
-      "awayRank": 7,
-      "pred": {
-        "pH": 14,
-        "pD": 13,
-        "pA": 73,
-        "h2h": {
-          "played": 3,
-          "last": [
-            {
-              "date": "2009-02-11",
-              "h": "Tunisia",
-              "a": "Netherlands",
-              "hs": 1,
-              "as": 1
-            },
-            {
-              "date": "1994-01-19",
-              "h": "Tunisia",
-              "a": "Netherlands",
-              "hs": 2,
-              "as": 2
-            },
-            {
-              "date": "1978-04-05",
-              "h": "Tunisia",
-              "a": "Netherlands",
-              "hs": 0,
-              "as": 4
-            }
-          ]
-        }
-      }
+      "awayRank": 7
     },
     {
       "id": "2461117",
@@ -2200,11 +2191,25 @@
       "away": "Sweden",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/ffsyxz1591989843.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/h5adzg1591981772.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "status": "2H",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FT",
       "venue": "AT&T Stadium",
       "city": "Arlington, TX",
+      "goals": {
+        "home": [
+          {
+            "name": "Daizen Maeda",
+            "minute": "56"
+          }
+        ],
+        "away": [
+          {
+            "name": "Anthony Elanga",
+            "minute": "62"
+          }
+        ]
+      },
       "homeRank": 17,
       "awayRank": 24
     },
@@ -2221,44 +2226,13 @@
       "away": "Australia",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/khgav41553419195.png",
       "awayBadge": "https://www.thesportsdb.com/images/media/team/badge/eylq8x1781926138.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "FT",
       "venue": "Levi's Stadium",
       "city": "Santa Clara, CA",
       "homeRank": 45,
-      "awayRank": 24,
-      "pred": {
-        "pH": 39,
-        "pD": 27,
-        "pA": 34,
-        "h2h": {
-          "played": 5,
-          "last": [
-            {
-              "date": "2010-10-09",
-              "h": "Australia",
-              "a": "Paraguay",
-              "hs": 1,
-              "as": 0
-            },
-            {
-              "date": "2006-10-07",
-              "h": "Australia",
-              "a": "Paraguay",
-              "hs": 1,
-              "as": 1
-            },
-            {
-              "date": "2000-06-15",
-              "h": "Australia",
-              "a": "Paraguay",
-              "hs": 2,
-              "as": 1
-            }
-          ]
-        }
-      }
+      "awayRank": 24
     },
     {
       "id": "2461118",
@@ -2273,44 +2247,39 @@
       "away": "USA",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/70c4oo1591982459.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/21f0oi1597948195.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 3,
+      "awayScore": 2,
+      "status": "FT",
       "venue": "SoFi Stadium",
       "city": "Inglewood, CA",
+      "goals": {
+        "home": [
+          {
+            "name": "Arda Güler",
+            "minute": "10"
+          },
+          {
+            "name": "Baris Alper Yilmaz",
+            "minute": "31"
+          },
+          {
+            "name": "Kaan Ayhan",
+            "minute": "90+8"
+          }
+        ],
+        "away": [
+          {
+            "name": "Auston Trusty",
+            "minute": "3"
+          },
+          {
+            "name": "Sebastian Berhalter",
+            "minute": "49"
+          }
+        ]
+      },
       "homeRank": 26,
-      "awayRank": 16,
-      "pred": {
-        "pH": 42,
-        "pD": 27,
-        "pA": 31,
-        "h2h": {
-          "played": 5,
-          "last": [
-            {
-              "date": "2025-06-07",
-              "h": "United States",
-              "a": "Turkey",
-              "hs": 1,
-              "as": 2
-            },
-            {
-              "date": "2014-06-01",
-              "h": "United States",
-              "a": "Turkey",
-              "hs": 2,
-              "as": 1
-            },
-            {
-              "date": "2010-05-29",
-              "h": "United States",
-              "a": "Turkey",
-              "hs": 2,
-              "as": 1
-            }
-          ]
-        }
-      }
+      "awayRank": 16
     },
     {
       "id": "2391775",
