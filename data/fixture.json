@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-26T04:40:00.279Z",
+  "updatedAt": "2026-06-26T11:22:48.563Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2225,7 +2225,7 @@
       "home": "Paraguay",
       "away": "Australia",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/khgav41553419195.png",
-      "awayBadge": "https://www.thesportsdb.com/images/media/team/badge/eylq8x1781926138.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/eylq8x1781926138.png",
       "homeScore": 0,
       "awayScore": 0,
       "status": "FT",
