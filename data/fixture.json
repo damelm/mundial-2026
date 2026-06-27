@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T03:26:21.937Z",
+  "updatedAt": "2026-06-27T06:42:14.493Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2440,9 +2440,23 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/uttpvw1455465617.png",
       "homeScore": 1,
       "awayScore": 1,
-      "status": "1H",
+      "status": "FT",
       "venue": "Lumen Field",
       "city": "Seattle, WA",
+      "goals": {
+        "home": [
+          {
+            "name": "Mahmoud Saber",
+            "minute": "5"
+          }
+        ],
+        "away": [
+          {
+            "name": "Ramin Rezaeian",
+            "minute": "14"
+          }
+        ]
+      },
       "homeRank": 32,
       "awayRank": 20
     },
@@ -2459,11 +2473,41 @@
       "away": "Belgium",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/91xpk81742982935.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/8xlvxv1592062265.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "status": "1H",
+      "homeScore": 1,
+      "awayScore": 5,
+      "status": "FT",
       "venue": "BC Place",
       "city": "Vancouver, BC",
+      "goals": {
+        "home": [
+          {
+            "name": "Elijah Just",
+            "minute": "84"
+          }
+        ],
+        "away": [
+          {
+            "name": "Leandro Trossard",
+            "minute": "28"
+          },
+          {
+            "name": "Leandro Trossard",
+            "minute": "50"
+          },
+          {
+            "name": "Kevin De Bruyne",
+            "minute": "66"
+          },
+          {
+            "name": "Romelu Lukaku",
+            "minute": "86"
+          },
+          {
+            "name": "Alexis Saelemaekers",
+            "minute": "90+4"
+          }
+        ]
+      },
       "homeRank": 89,
       "awayRank": 8
     },
