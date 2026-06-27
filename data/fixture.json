@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T06:42:14.493Z",
+  "updatedAt": "2026-06-27T21:46:31.621Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2554,30 +2554,13 @@
       "away": "England",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/asp2ck1715849700.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "MetLife Stadium",
       "city": "East Rutherford, NJ",
       "homeRank": 31,
-      "awayRank": 4,
-      "pred": {
-        "pH": 15,
-        "pD": 15,
-        "pA": 70,
-        "h2h": {
-          "played": 1,
-          "last": [
-            {
-              "date": "2018-06-24",
-              "h": "England",
-              "a": "Panama",
-              "hs": 6,
-              "as": 1
-            }
-          ]
-        }
-      }
+      "awayRank": 4
     },
     {
       "id": "2391778",
