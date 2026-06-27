@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T21:46:31.621Z",
+  "updatedAt": "2026-06-27T23:02:32.990Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2555,10 +2555,23 @@
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/asp2ck1715849700.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png",
       "homeScore": 0,
-      "awayScore": 0,
-      "status": "1H",
+      "awayScore": 2,
+      "status": "FT",
       "venue": "MetLife Stadium",
       "city": "East Rutherford, NJ",
+      "goals": {
+        "home": [],
+        "away": [
+          {
+            "name": "Jude Bellingham",
+            "minute": "62"
+          },
+          {
+            "name": "Harry Kane",
+            "minute": "67"
+          }
+        ]
+      },
       "homeRank": 31,
       "awayRank": 4
     },
