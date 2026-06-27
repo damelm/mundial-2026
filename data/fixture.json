@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-06-26T22:36:31.479Z",
+  "updatedAt": "2026-06-27T03:26:21.937Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
   "season": "2026",
-  "count": 72,
+  "count": 73,
   "matches": [
     {
       "id": "2391728",
@@ -2339,7 +2339,7 @@
       "timestamp": "2026-06-26T19:00:00",
       "home": "Senegal",
       "away": "Iraq",
-      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/slayb01780546342.png",
+      "homeBadge": "https://www.thesportsdb.com/images/media/team/badge/slayb01780546342.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/aqidfn1742100110.png",
       "homeScore": 5,
       "awayScore": 0,
@@ -2387,22 +2387,13 @@
       "away": "Saudi Arabia",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/5jn0o71593280376.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/24xwpq1594125742.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "FT",
       "venue": "NRG Stadium",
       "city": "Houston, TX",
       "homeRank": 70,
-      "awayRank": 58,
-      "pred": {
-        "pH": 35,
-        "pD": 27,
-        "pA": 38,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 58
     },
     {
       "id": "2391776",
@@ -2417,44 +2408,22 @@
       "away": "Spain",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/6vjbr11726167756.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/ncgqyr1726166942.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "FT",
       "venue": "Estadio Akron",
       "city": "Zapopan, JA",
+      "goals": {
+        "home": [],
+        "away": [
+          {
+            "name": "Álex Baena",
+            "minute": "42"
+          }
+        ]
+      },
       "homeRank": 15,
-      "awayRank": 2,
-      "pred": {
-        "pH": 17,
-        "pD": 18,
-        "pA": 65,
-        "h2h": {
-          "played": 10,
-          "last": [
-            {
-              "date": "2013-06-16",
-              "h": "Spain",
-              "a": "Uruguay",
-              "hs": 2,
-              "as": 1
-            },
-            {
-              "date": "2013-02-06",
-              "h": "Spain",
-              "a": "Uruguay",
-              "hs": 3,
-              "as": 1
-            },
-            {
-              "date": "2005-08-17",
-              "h": "Spain",
-              "a": "Uruguay",
-              "hs": 2,
-              "as": 0
-            }
-          ]
-        }
-      }
+      "awayRank": 2
     },
     {
       "id": "2391773",
@@ -2469,30 +2438,13 @@
       "away": "Iran",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/uheyzo1742102234.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/uttpvw1455465617.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "1H",
       "venue": "Lumen Field",
       "city": "Seattle, WA",
       "homeRank": 32,
-      "awayRank": 20,
-      "pred": {
-        "pH": 30,
-        "pD": 26,
-        "pA": 44,
-        "h2h": {
-          "played": 1,
-          "last": [
-            {
-              "date": "2000-06-07",
-              "h": "Iran",
-              "a": "Egypt",
-              "hs": 1,
-              "as": 1
-            }
-          ]
-        }
-      }
+      "awayRank": 20
     },
     {
       "id": "2391774",
@@ -2507,22 +2459,13 @@
       "away": "Belgium",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/91xpk81742982935.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/8xlvxv1592062265.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "BC Place",
       "city": "Vancouver, BC",
       "homeRank": 89,
-      "awayRank": 8,
-      "pred": {
-        "pH": 13,
-        "pD": 12,
-        "pA": 75,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 8
     },
     {
       "id": "2391779",
@@ -2717,6 +2660,44 @@
         "h2h": {
           "played": 0,
           "last": []
+        }
+      }
+    },
+    {
+      "id": "2499618",
+      "round": 32,
+      "stage": "KO",
+      "stageName": "Eliminatorias",
+      "group": null,
+      "date": "2026-06-28",
+      "time": "19:00:00",
+      "timestamp": "2026-06-28T19:00:00",
+      "home": "South Africa",
+      "away": "Canada",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/xjz9j91553368824.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/2t631f1595154867.png",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "NS",
+      "venue": "SoFi Stadium",
+      "city": "Inglewood, CA",
+      "homeRank": 57,
+      "awayRank": 30,
+      "pred": {
+        "pH": 20,
+        "pD": 21,
+        "pA": 59,
+        "h2h": {
+          "played": 1,
+          "last": [
+            {
+              "date": "2007-11-20",
+              "h": "South Africa",
+              "a": "Canada",
+              "hs": 2,
+              "as": 0
+            }
+          ]
         }
       }
     }
