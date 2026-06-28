@@ -128,7 +128,7 @@ function translatePos(pos) {
 }
 
 const state = {
-  data: null, team: null, filter: "all", tab: "fixture",
+  data: null, team: null, filter: "all", tab: "bracket",
   lang: "es", tz: null, tzCity: "", tzOff: "", dark: true,
   factTimer: null, factIdx: 0, countdownTimer: null, allExpanded: false,
   seenTabs: new Set(), revealInstant: false,
@@ -433,7 +433,7 @@ function applyI18n() {
   $("#lang-current").textContent = state.lang.toUpperCase();
   $("#fact-label").textContent = t("didYouKnow");
   $("#tab-fixture").textContent = t("tabs.fixture");
-  $("#tab-grupos").textContent = t("tabs.groups");
+  $("#tab-grupos").textContent = groupStageOver() ? t("tabs.results") : t("tabs.groups");
   $("#tab-bracket").textContent = t("tabs.bracket");
   $("#tab-seleccion").textContent = t("tabs.team");
   $("#tab-sedes").textContent = tw(TX.venues);
@@ -852,6 +852,14 @@ function sortGroupRows(rows, groupMatches) {
   return sorted;
 }
 const groupMatchesOf = (g) => state.data.matches.filter((m) => m.stage === "GROUP" && m.group === g);
+// ¿Terminó la fase de grupos? (todos los partidos de grupo jugados). Cuando es
+// true, se "duermen" los ayudantes de grupos (Clasificados/Terceros/chips) y la
+// pestaña pasa a llamarse "Resultados". Vuelve solo el próximo Mundial.
+function groupStageOver() {
+  if (!state.data) return false;
+  const gm = state.data.matches.filter((m) => m.stage === "GROUP");
+  return gm.length > 0 && gm.every((m) => classifyStatus(m) === "ft");
+}
 function computeStandings() {
   const groups = {};
   for (const m of state.data.matches) {
@@ -955,7 +963,10 @@ function renderGroups() {
   const teamWord = state.lang === "es" ? "Equipo" : state.lang === "pt" ? "Seleção" : state.lang === "fr" ? "Équipe" : state.lang === "ar" ? "المنتخب" : "Team";
   const matchesByGroup = {};
   state.data.matches.forEach((m) => { if (m.stage === "GROUP" && m.group) (matchesByGroup[m.group] ||= []).push(m); });
-  let html = clasificadosHtml() + mejoresTercerosHtml();
+  // Ayudantes de la fase de grupos: solo mientras la fase está en curso. Cuando
+  // termina, la pestaña es "Resultados" (archivo) y estos pierden sentido.
+  const groupsLive = !groupStageOver();
+  let html = groupsLive ? (clasificadosHtml() + mejoresTercerosHtml()) : "";
   for (const g of keys) {
     const rows = sortGroupRows(Object.values(groups[g]), matchesByGroup[g] || []);
     const myGroup = !!(state.team && rows.some((r) => r.team === state.team));
@@ -971,7 +982,7 @@ function renderGroups() {
         : (code ? `<img src="${FLAG(code)}" alt="" loading="lazy">` : `<span>⚽</span>`);
       const me = r.team === state.team ? " is-me" : "";
       inner += `<tr class="${i < 2 ? "qualify" : ""}${me}"><td class="pos">${i + 1}</td>
-        <td class="team-cell"><div class="team-cell-inner">${img}<div class="tc-name"><span>${dispName(r.team)}</span>${statusChipHtml(g, r.team)}</div></div></td>
+        <td class="team-cell"><div class="team-cell-inner">${img}<div class="tc-name"><span>${dispName(r.team)}</span>${groupsLive ? statusChipHtml(g, r.team) : ""}</div></div></td>
         <td>${r.pj}</td><td>${r.g}</td><td>${r.e}</td><td>${r.p}</td><td>${dif > 0 ? "+" + dif : dif}</td><td class="pts">${r.pts}</td></tr>`;
     });
     inner += `</tbody></table><div class="group-legend">${t("groupLegend")}</div>`;
