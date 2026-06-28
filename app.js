@@ -70,6 +70,9 @@ const TX = {
   slThrough: { es: "Ya clasificado", en: "Already through", pt: "Já classificado", fr: "Déjà qualifié", ar: "متأهل" },
   slOut: { es: "Eliminado", en: "Out", pt: "Eliminado", fr: "Éliminé", ar: "خارج" },
   koDoOrDie: { es: "Mata o muere · el que pierde, afuera", en: "Win or go home", pt: "Mata-mata · quem perde, sai", fr: "Match couperet · le perdant est éliminé", ar: "مباراة حاسمة · الخاسر يودّع" },
+  caminoFinal: { es: "Camino a la final", en: "Road to the final", pt: "Caminho à final", fr: "Chemin vers la finale", ar: "الطريق إلى النهائي" },
+  orWord: { es: "o", en: "or", pt: "ou", fr: "ou", ar: "أو" },
+  koTbd: { es: "Por definir", en: "To be decided", pt: "A definir", fr: "À définir", ar: "يُحدَّد لاحقًا" },
   tapTip: { es: "Tocá cualquier partido para ver estadísticas, formación, relato y qué se juega.", en: "Tap any match to see stats, lineups, play-by-play and what's at stake.", pt: "Toque em qualquer jogo para ver estatísticas, escalação, narração e o que está em jogo.", fr: "Touchez un match pour voir stats, compositions, direct et enjeux.", ar: "اضغط على أي مباراة لعرض الإحصائيات والتشكيلة والسرد وما هو على المحك." },
   tapTipClose: { es: "Entendido", en: "Got it", pt: "Entendi", fr: "Compris", ar: "حسناً" },
   chipFirst: { es: "1.º", en: "1st", pt: "1.º", fr: "1er", ar: "الأول" },
@@ -1079,19 +1082,15 @@ function koPairIndex(kos) {
   for (const m of kos) { idx[livePair(m.home, m.away)] = m; idx[livePair(m.away, m.home)] = m; }
   return idx;
 }
-// Bracket visual: columnas conectadas con scroll horizontal (32avos → final).
-// Los partidos KO llegan con stage "KO" + round (32/16/8/4/2), NO con la fase
-// exacta. Se ubica cada partido real en su slot del árbol por la pertenencia de
-// sus equipos (la proyección de grupos, ya cerrada, da los 32 reales), y se
-// superpone el marcador. Los ganadores se resuelven hacia arriba (32avos→final).
-function renderBracket() {
-  const cont = $("#bracket-content");
-  loadCombosOnce();
+// Modelo del cuadro de eliminatorias (reutilizable: bracket + "camino a la
+// final"). Los partidos KO llegan con stage "KO" + round (32/16/8/4/2), NO con
+// la fase exacta. Se ubica cada partido real en su slot del árbol por la
+// pertenencia de sus equipos (la proyección de grupos, ya cerrada, da los 32
+// reales); los ganadores se resuelven hacia arriba (32avos→final).
+function koBracketModel() {
   const proj = bracketProjection();
   const kos = state.data.matches.filter((m) => m.stage !== "GROUP" && m.home && m.away);
   const koIdx = koPairIndex(kos);
-
-  // Árbol: orden visual de columnas + relación hijo→padre (bracket de ganadores)
   const byM = {};
   [...BRACKET_TREE.R16, ...BRACKET_TREE.QF, ...BRACKET_TREE.SF].forEach((n) => (byM[n.m] = n));
   byM[BRACKET_TREE.F.m] = BRACKET_TREE.F;
@@ -1102,10 +1101,6 @@ function renderBracket() {
   const r16O = qfO.flatMap((m) => byM[m].f);
   const r32O = r16O.flatMap((m) => byM[m].f);
   const WIN = WINNER_W[state.lang] || WINNER_W.es;
-  const word = (st) => (st === "TP" ? (LOSER_W[state.lang] || LOSER_W.es) : WIN);
-  const dateOf = (st) => { const r = KO_ROUNDS.find((x) => x.stage === st); const d = r && parseUTC(r.date + "T18:00:00"); return d ? fmtDayShort(d) : ""; };
-
-  // Equipos de cada slot R32 (proyección) y mapa equipo→slot R32.
   const r32Res = {}, teamSlot = {};
   for (const x of R32_MATCHES) {
     const home = resolveSlot(x.home, x.m, proj), away = resolveSlot(x.away, x.m, proj);
@@ -1113,7 +1108,6 @@ function renderBracket() {
     if (home.team) teamSlot[home.team] = x.m;
     if (away.team) teamSlot[away.team] = x.m;
   }
-  // Ubicar cada partido KO real en su slot, por el slot R32 de sus equipos.
   const steps = { 16: 1, 8: 2, 4: 3 }; // saltos hacia arriba desde 32avos
   const ancestor = (s, n) => { for (let i = 0; i < n && s != null; i++) s = parentOf[s]; return s; };
   const realBySlot = {}, r2 = [];
@@ -1127,8 +1121,6 @@ function renderBracket() {
   r2.sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
   const finalM = r2.length ? r2[r2.length - 1] : null;
   const tpM = r2.length >= 2 ? r2[0] : null;
-
-  // Equipos + partido real de cualquier slot, resolviendo ganadores hacia arriba.
   const cache = {};
   const winnerRes = (info) => {
     const m = info.match;
@@ -1150,19 +1142,35 @@ function renderBracket() {
     if (!match && home.team && away.team) match = koIdx[livePair(home.team, away.team)] || null;
     return (cache[no] = { home, away, match });
   }
-  const cellOf = (no, cls) => { const i = slotInfo(no); return bkMatch(i.home, i.away, i.match, cls || ""); };
+  // Slot del árbol de un partido KO concreto (por sus equipos). null = final/3.º.
+  const slotOfMatch = (m) => {
+    const R = Number(m.round) || 0;
+    const base = teamSlot[m.home] != null ? teamSlot[m.home] : teamSlot[m.away];
+    if (base == null) return null;
+    if (R === 32) return base;
+    if (steps[R]) return ancestor(base, steps[R]);
+    return null;
+  };
+  return { byM, parentOf, slotInfo, winnerRes, slotOfMatch, finalM, tpM, WIN, orders: { r32O, r16O, qfO, sfO } };
+}
+// Bracket visual: columnas conectadas con scroll horizontal (32avos → final).
+function renderBracket() {
+  const cont = $("#bracket-content");
+  loadCombosOnce();
+  const M = koBracketModel();
+  const word = (st) => (st === "TP" ? (LOSER_W[state.lang] || LOSER_W.es) : M.WIN);
+  const dateOf = (st) => { const r = KO_ROUNDS.find((x) => x.stage === st); const d = r && parseUTC(r.date + "T18:00:00"); return d ? fmtDayShort(d) : ""; };
+  const cellOf = (no, cls) => { const i = M.slotInfo(no); return bkMatch(i.home, i.away, i.match, cls || ""); };
   const colHtml = (st, order) => {
     let body = "";
     for (let i = 0; i < order.length; i += 2) body += `<div class="bk-pair">${cellOf(order[i])}${order[i + 1] != null ? cellOf(order[i + 1]) : ""}</div>`;
     return `<div class="bk-col"><h3>${t(`stages.${st}`)}</h3><span class="ko-date">${dateOf(st)}</span><div class="bk-col-body">${body}</div></div>`;
   };
-
   let html = `<div class="bracket-head"><div class="big">${IC.trophy} ${t("knockouts")}</div><p>${t("bracketSub")}</p></div><div class="bracket-wrap"><div class="bracket-scroll"><div class="bracket-grid">`;
-  html += colHtml("R32", r32O) + colHtml("R16", r16O) + colHtml("QF", qfO) + colHtml("SF", sfO);
-  // Final + 3.º puesto
-  const fInfo = finalM ? { home: { team: finalM.home }, away: { team: finalM.away }, match: finalM } : slotInfo(BRACKET_TREE.F.m);
+  html += colHtml("R32", M.orders.r32O) + colHtml("R16", M.orders.r16O) + colHtml("QF", M.orders.qfO) + colHtml("SF", M.orders.sfO);
+  const fInfo = M.finalM ? { home: { team: M.finalM.home }, away: { team: M.finalM.away }, match: M.finalM } : M.slotInfo(BRACKET_TREE.F.m);
   const fCell = bkMatch(fInfo.home, fInfo.away, fInfo.match, "beam bk-final");
-  const tpCell = tpM ? bkMatch({ team: tpM.home }, { team: tpM.away }, tpM)
+  const tpCell = M.tpM ? bkMatch({ team: M.tpM.home }, { team: M.tpM.away }, M.tpM)
     : bkMatch({ label: `${word("TP")} P${BRACKET_TREE.TP.f[0]}` }, { label: `${word("TP")} P${BRACKET_TREE.TP.f[1]}` }, null);
   html += `<div class="bk-col"><h3>${t("stages.F")}</h3><span class="ko-date">${dateOf("F")}</span>
     <div class="bk-col-body bk-col-final"><div>${fCell}</div>
@@ -1170,6 +1178,39 @@ function renderBracket() {
   html += `</div></div></div>`;
   cont.innerHTML = html;
   setupBracketHint(cont);
+}
+// Slot del árbol → fase (para etiquetar el "camino a la final").
+function stageOfSlot(no) {
+  if (no >= 73 && no <= 88) return "R32";
+  if (no >= 89 && no <= 96) return "R16";
+  if (no >= 97 && no <= 100) return "QF";
+  if (no === 101 || no === 102) return "SF";
+  if (no === 103) return "TP";
+  return "F";
+}
+// "Camino a la final": para un partido KO, las rondas que le quedan al ganador
+// y el rival (resuelto / posible / por definir) en cada una. "" para final/3.º.
+function caminoFinalHtml(m) {
+  if (!m || m.stage === "GROUP" || !m.home || !m.away) return "";
+  if (/definir|por definir/i.test(m.home) || /definir|por definir/i.test(m.away)) return "";
+  let M; try { M = koBracketModel(); } catch { return ""; }
+  const slot = M.slotOfMatch(m);
+  if (slot == null || M.parentOf[slot] == null) return "";
+  const rows = [];
+  let cur = slot;
+  while (M.parentOf[cur] != null) {
+    const parent = M.parentOf[cur];
+    const node = M.byM[parent];
+    const sib = M.slotInfo(node.f[0] === cur ? node.f[1] : node.f[0]);
+    const w = M.winnerRes(sib);
+    let rival;
+    if (w) rival = `${flagImg(w.team, "cf-fl")}<b>${dispName(w.team)}</b>`;
+    else if (sib.home.team && sib.away.team) rival = `<span class="cf-or">${dispName(sib.home.team)} <i>${tw(TX.orWord)}</i> ${dispName(sib.away.team)}</span>`;
+    else rival = `<span class="cf-tbd">${tw(TX.koTbd)}</span>`;
+    rows.push(`<div class="cf-step"><span class="cf-stage">${t(`stages.${stageOfSlot(parent)}`)}</span><span class="cf-rival">${rival}</span></div>`);
+    cur = parent;
+  }
+  return `<section class="mm-camino"><div class="stk-head">${IC.trophy || ""}<span>${tw(TX.caminoFinal)}</span></div><div class="cf-steps">${rows.join("")}</div></section>`;
 }
 // Indicio de scroll horizontal en el bracket: degradados en los bordes +
 // pastilla "Deslizá →" con un empujoncito, una vez por sesión.
@@ -2284,7 +2325,7 @@ function matchModalShell(m) {
       <div class="mm-team">${teamCell(m.away, m.awayBadge)}<span class="mm-tn">${dispName(m.away)}${rk(m.awayRank)}</span></div>
     </div>
     <div class="mm-watch">${tv}<span>${tw(TX.whereToWatch)}</span><b>${escHtml(broadcasterFor())}</b></div>
-    ${matchStakesHtml(m)}
+    ${matchStakesHtml(m)}${caminoFinalHtml(m)}
     <div class="mm-tabs">
       <button class="mm-tab is-active" data-mtab="stats">${tw(TX.stats)}</button>
       <button class="mm-tab" data-mtab="line">${tw(TX.lineups)}</button>
