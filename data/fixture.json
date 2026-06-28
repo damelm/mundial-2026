@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T00:14:37.507Z",
+  "updatedAt": "2026-06-28T04:55:00.141Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2597,22 +2597,13 @@
       "away": "Portugal",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/4ymyku1691180081.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/swqvpy1455466083.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "FT",
       "venue": "Hard Rock Stadium",
       "city": "Miami Gardens, FL",
       "homeRank": 13,
-      "awayRank": 6,
-      "pred": {
-        "pH": 38,
-        "pD": 27,
-        "pA": 35,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 6
     },
     {
       "id": "2461120",
@@ -2627,11 +2618,33 @@
       "away": "Uzbekistan",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/s85jjw1728749022.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/u5bgze1597943605.png",
-      "homeScore": 0,
+      "homeScore": 3,
       "awayScore": 1,
-      "status": "1H",
+      "status": "FT",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta, GA",
+      "goals": {
+        "home": [
+          {
+            "name": "Yoane Wissa",
+            "minute": "68"
+          },
+          {
+            "name": "Fiston Mayele",
+            "minute": "78"
+          },
+          {
+            "name": "Yoane Wissa",
+            "minute": "90+1"
+          }
+        ],
+        "away": [
+          {
+            "name": "Eldor Shomurodov",
+            "minute": "10"
+          }
+        ]
+      },
       "homeRank": 56,
       "awayRank": 53
     },
@@ -2648,30 +2661,43 @@
       "away": "Austria",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/rrwpry1455460218.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/874p631628721400.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 3,
+      "awayScore": 3,
+      "status": "FT",
       "venue": "GEHA Field at Arrowhead Stadium",
       "city": "Kansas City, MO",
+      "goals": {
+        "home": [
+          {
+            "name": "Rafik Belghali",
+            "minute": "45"
+          },
+          {
+            "name": "Riyad Mahrez",
+            "minute": "60"
+          },
+          {
+            "name": "Riyad Mahrez",
+            "minute": "90+3"
+          }
+        ],
+        "away": [
+          {
+            "name": "Marko Arnautovic",
+            "minute": "28"
+          },
+          {
+            "name": "Marcel Sabitzer",
+            "minute": "55"
+          },
+          {
+            "name": "Sasa Kalajdzic",
+            "minute": "90+6"
+          }
+        ]
+      },
       "homeRank": 38,
-      "awayRank": 22,
-      "pred": {
-        "pH": 38,
-        "pD": 27,
-        "pA": 35,
-        "h2h": {
-          "played": 1,
-          "last": [
-            {
-              "date": "1982-06-21",
-              "h": "Algeria",
-              "a": "Austria",
-              "hs": 0,
-              "as": 2
-            }
-          ]
-        }
-      }
+      "awayRank": 22
     },
     {
       "id": "2391780",
@@ -2686,22 +2712,35 @@
       "away": "Argentina",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/59fo2s1742100034.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/3zplhu1726167477.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 3,
+      "status": "FT",
       "venue": "AT&T Stadium",
       "city": "Arlington, TX",
+      "goals": {
+        "home": [
+          {
+            "name": "Mousa Al-Tamari",
+            "minute": "55"
+          }
+        ],
+        "away": [
+          {
+            "name": "Giovani Lo Celso",
+            "minute": "19"
+          },
+          {
+            "name": "Lautaro Martínez",
+            "minute": "31"
+          },
+          {
+            "name": "Lionel Messi",
+            "minute": "80"
+          }
+        ]
+      },
       "homeRank": 62,
-      "awayRank": 1,
-      "pred": {
-        "pH": 7,
-        "pD": 3,
-        "pA": 90,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 1
     },
     {
       "id": "2499618",
