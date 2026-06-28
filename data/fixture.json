@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T23:02:32.990Z",
+  "updatedAt": "2026-06-28T00:14:37.507Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2225,7 +2225,7 @@
       "home": "Paraguay",
       "away": "Australia",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/khgav41553419195.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/eylq8x1781926138.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/lark6k1661780848.png",
       "homeScore": 0,
       "awayScore": 0,
       "status": "FT",
@@ -2524,22 +2524,31 @@
       "away": "Ghana",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/vvtsyu1455465317.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/j589xw1751526124.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 2,
+      "awayScore": 1,
+      "status": "FT",
       "venue": "Lincoln Financial Field",
       "city": "Philadelphia, PA",
+      "goals": {
+        "home": [
+          {
+            "name": "Petar Sucic",
+            "minute": "31"
+          },
+          {
+            "name": "Nikola Vlasic",
+            "minute": "83"
+          }
+        ],
+        "away": [
+          {
+            "name": "Derrick Luckassen",
+            "minute": "73"
+          }
+        ]
+      },
       "homeRank": 10,
-      "awayRank": 73,
-      "pred": {
-        "pH": 77,
-        "pD": 11,
-        "pA": 12,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 73
     },
     {
       "id": "2391781",
@@ -2618,22 +2627,13 @@
       "away": "Uzbekistan",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/s85jjw1728749022.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/u5bgze1597943605.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "1H",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta, GA",
       "homeRank": 56,
-      "awayRank": 53,
-      "pred": {
-        "pH": 31,
-        "pD": 26,
-        "pA": 43,
-        "h2h": {
-          "played": 0,
-          "last": []
-        }
-      }
+      "awayRank": 53
     },
     {
       "id": "2391777",
