@@ -1056,46 +1056,96 @@ function bkMatch(home, away, m, cls = "") {
   const st = m ? classifyStatus(m) : "ns";
   return `<div class="bk-match ${st === "live" ? "bk-live" : ""} ${cls}">${bkRow(home, hs, st === "ft" && hs > as)}${bkRow(away, as, st === "ft" && as > hs)}</div>`;
 }
-// Bracket visual: columnas conectadas con scroll horizontal (16avos → final).
+// Índice de partidos KO por par de equipos (canónico, en ambos órdenes).
+function koPairIndex(kos) {
+  const idx = {};
+  for (const m of kos) { idx[livePair(m.home, m.away)] = m; idx[livePair(m.away, m.home)] = m; }
+  return idx;
+}
+// Bracket visual: columnas conectadas con scroll horizontal (32avos → final).
+// Los partidos KO llegan con stage "KO" + round (32/16/8/4/2), NO con la fase
+// exacta. Se ubica cada partido real en su slot del árbol por la pertenencia de
+// sus equipos (la proyección de grupos, ya cerrada, da los 32 reales), y se
+// superpone el marcador. Los ganadores se resuelven hacia arriba (32avos→final).
 function renderBracket() {
   const cont = $("#bracket-content");
   loadCombosOnce();
   const proj = bracketProjection();
-  const koByStage = {};
-  state.data.matches.filter((m) => m.stage !== "GROUP").forEach((m) => (koByStage[m.stage] ||= []).push(m));
-  for (const k in koByStage) koByStage[k].sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
+  const kos = state.data.matches.filter((m) => m.stage !== "GROUP" && m.home && m.away);
+  const koIdx = koPairIndex(kos);
 
-  // Orden visual de cada columna derivado del árbol (los pares alimentan al de la derecha)
+  // Árbol: orden visual de columnas + relación hijo→padre (bracket de ganadores)
   const byM = {};
   [...BRACKET_TREE.R16, ...BRACKET_TREE.QF, ...BRACKET_TREE.SF].forEach((n) => (byM[n.m] = n));
+  byM[BRACKET_TREE.F.m] = BRACKET_TREE.F;
+  const parentOf = {};
+  [...BRACKET_TREE.R16, ...BRACKET_TREE.QF, ...BRACKET_TREE.SF, BRACKET_TREE.F].forEach((n) => n.f.forEach((c) => (parentOf[c] = n.m)));
   const sfO = BRACKET_TREE.F.f.slice();
   const qfO = sfO.flatMap((m) => byM[m].f);
   const r16O = qfO.flatMap((m) => byM[m].f);
   const r32O = r16O.flatMap((m) => byM[m].f);
-  const r32ByM = {}; R32_MATCHES.forEach((x) => (r32ByM[x.m] = x));
-  const word = (st) => (st === "TP" ? (LOSER_W[state.lang] || LOSER_W.es) : (WINNER_W[state.lang] || WINNER_W.es));
+  const WIN = WINNER_W[state.lang] || WINNER_W.es;
+  const word = (st) => (st === "TP" ? (LOSER_W[state.lang] || LOSER_W.es) : WIN);
   const dateOf = (st) => { const r = KO_ROUNDS.find((x) => x.stage === st); const d = r && parseUTC(r.date + "T18:00:00"); return d ? fmtDayShort(d) : ""; };
 
-  const cellsFor = (st) => {
-    const real = koByStage[st] || [];
-    if (real.length) return real.map((m) => bkMatch({ team: m.home }, { team: m.away }, m));
-    if (st === "R32") return r32O.map((n) => { const rm = r32ByM[n]; return bkMatch(resolveSlot(rm.home, rm.m, proj), resolveSlot(rm.away, rm.m, proj), null); });
-    const order = { R16: r16O, QF: qfO, SF: sfO }[st];
-    return order.map((n) => bkMatch({ label: `${word(st)} P${byM[n].f[0]}` }, { label: `${word(st)} P${byM[n].f[1]}` }, null));
+  // Equipos de cada slot R32 (proyección) y mapa equipo→slot R32.
+  const r32Res = {}, teamSlot = {};
+  for (const x of R32_MATCHES) {
+    const home = resolveSlot(x.home, x.m, proj), away = resolveSlot(x.away, x.m, proj);
+    r32Res[x.m] = { home, away };
+    if (home.team) teamSlot[home.team] = x.m;
+    if (away.team) teamSlot[away.team] = x.m;
+  }
+  // Ubicar cada partido KO real en su slot, por el slot R32 de sus equipos.
+  const steps = { 16: 1, 8: 2, 4: 3 }; // saltos hacia arriba desde 32avos
+  const ancestor = (s, n) => { for (let i = 0; i < n && s != null; i++) s = parentOf[s]; return s; };
+  const realBySlot = {}, r2 = [];
+  for (const m of kos) {
+    const R = Number(m.round) || 0;
+    const base = teamSlot[m.home] != null ? teamSlot[m.home] : teamSlot[m.away];
+    if (R === 32) { if (base != null) realBySlot[base] = m; }
+    else if (steps[R]) { const s = base != null ? ancestor(base, steps[R]) : null; if (s != null) realBySlot[s] = m; }
+    else r2.push(m); // final / 3.º puesto (mismo "round"): se separan por fecha
+  }
+  r2.sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
+  const finalM = r2.length ? r2[r2.length - 1] : null;
+  const tpM = r2.length >= 2 ? r2[0] : null;
+
+  // Equipos + partido real de cualquier slot, resolviendo ganadores hacia arriba.
+  const cache = {};
+  const winnerRes = (info) => {
+    const m = info.match;
+    if (!m || classifyStatus(m) !== "ft" || m.homeScore == null || m.awayScore == null) return null;
+    if (m.homeScore > m.awayScore) return info.home.team ? { team: info.home.team } : null;
+    if (m.awayScore > m.homeScore) return info.away.team ? { team: info.away.team } : null;
+    return null; // empate (penales): ganador no determinable por marcador
   };
-  const colHtml = (st, cells, paired) => {
+  function slotInfo(no) {
+    if (cache[no]) return cache[no];
+    let home, away, match = realBySlot[no] || null;
+    if (match) { home = { team: match.home }; away = { team: match.away }; }
+    else if (r32Res[no]) { home = r32Res[no].home; away = r32Res[no].away; }
+    else {
+      const f = byM[no].f;
+      home = winnerRes(slotInfo(f[0])) || { label: `${WIN} P${f[0]}` };
+      away = winnerRes(slotInfo(f[1])) || { label: `${WIN} P${f[1]}` };
+    }
+    if (!match && home.team && away.team) match = koIdx[livePair(home.team, away.team)] || null;
+    return (cache[no] = { home, away, match });
+  }
+  const cellOf = (no, cls) => { const i = slotInfo(no); return bkMatch(i.home, i.away, i.match, cls || ""); };
+  const colHtml = (st, order) => {
     let body = "";
-    if (paired) for (let i = 0; i < cells.length; i += 2) body += `<div class="bk-pair">${cells[i]}${cells[i + 1] || ""}</div>`;
-    else body = cells.join("");
+    for (let i = 0; i < order.length; i += 2) body += `<div class="bk-pair">${cellOf(order[i])}${order[i + 1] != null ? cellOf(order[i + 1]) : ""}</div>`;
     return `<div class="bk-col"><h3>${t(`stages.${st}`)}</h3><span class="ko-date">${dateOf(st)}</span><div class="bk-col-body">${body}</div></div>`;
   };
 
   let html = `<div class="bracket-head"><div class="big">${IC.trophy} ${t("knockouts")}</div><p>${t("bracketSub")}</p></div><div class="bracket-wrap"><div class="bracket-scroll"><div class="bracket-grid">`;
-  for (const st of ["R32", "R16", "QF", "SF"]) html += colHtml(st, cellsFor(st), true);
-  const fReal = (koByStage.F || [])[0], tpReal = (koByStage.TP || [])[0];
-  const fCell = fReal ? bkMatch({ team: fReal.home }, { team: fReal.away }, fReal, "beam bk-final")
-    : bkMatch({ label: `${word("F")} P${BRACKET_TREE.F.f[0]}` }, { label: `${word("F")} P${BRACKET_TREE.F.f[1]}` }, null, "beam bk-final");
-  const tpCell = tpReal ? bkMatch({ team: tpReal.home }, { team: tpReal.away }, tpReal)
+  html += colHtml("R32", r32O) + colHtml("R16", r16O) + colHtml("QF", qfO) + colHtml("SF", sfO);
+  // Final + 3.º puesto
+  const fInfo = finalM ? { home: { team: finalM.home }, away: { team: finalM.away }, match: finalM } : slotInfo(BRACKET_TREE.F.m);
+  const fCell = bkMatch(fInfo.home, fInfo.away, fInfo.match, "beam bk-final");
+  const tpCell = tpM ? bkMatch({ team: tpM.home }, { team: tpM.away }, tpM)
     : bkMatch({ label: `${word("TP")} P${BRACKET_TREE.TP.f[0]}` }, { label: `${word("TP")} P${BRACKET_TREE.TP.f[1]}` }, null);
   html += `<div class="bk-col"><h3>${t("stages.F")}</h3><span class="ko-date">${dateOf("F")}</span>
     <div class="bk-col-body bk-col-final"><div>${fCell}</div>
