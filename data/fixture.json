@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T19:54:02.816Z",
+  "updatedAt": "2026-06-28T21:00:46.465Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2757,7 +2757,7 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/2t631f1595154867.png",
       "homeScore": 0,
       "awayScore": 0,
-      "status": "1H",
+      "status": "2H",
       "venue": "SoFi Stadium",
       "city": "Inglewood, CA",
       "homeRank": 57,
