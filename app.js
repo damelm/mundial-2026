@@ -69,6 +69,7 @@ const TX = {
   slDrawOk: { es: "Le alcanza el empate", en: "A draw is enough", pt: "Empate basta", fr: "Le nul suffit", ar: "التعادل يكفي" },
   slThrough: { es: "Ya clasificado", en: "Already through", pt: "Já classificado", fr: "Déjà qualifié", ar: "متأهل" },
   slOut: { es: "Eliminado", en: "Out", pt: "Eliminado", fr: "Éliminé", ar: "خارج" },
+  koDoOrDie: { es: "Mata o muere · el que pierde, afuera", en: "Win or go home", pt: "Mata-mata · quem perde, sai", fr: "Match couperet · le perdant est éliminé", ar: "مباراة حاسمة · الخاسر يودّع" },
   tapTip: { es: "Tocá cualquier partido para ver estadísticas, formación, relato y qué se juega.", en: "Tap any match to see stats, lineups, play-by-play and what's at stake.", pt: "Toque em qualquer jogo para ver estatísticas, escalação, narração e o que está em jogo.", fr: "Touchez un match pour voir stats, compositions, direct et enjeux.", ar: "اضغط على أي مباراة لعرض الإحصائيات والتشكيلة والسرد وما هو على المحك." },
   tapTipClose: { es: "Entendido", en: "Got it", pt: "Entendi", fr: "Compris", ar: "حسناً" },
   chipFirst: { es: "1.º", en: "1st", pt: "1.º", fr: "1er", ar: "الأول" },
@@ -739,7 +740,12 @@ function scorersBlock(m) {
 }
 function stageLabel(m) {
   if (m.stage === "GROUP") return t("stages.GROUP", { r: m.round });
-  return t(`stages.${m.stage}`) || m.stageName || t("knockouts");
+  // Los KO llegan con stage genérico "KO" + round; mapeamos round→fase para
+  // mostrar "Dieciseisavos/Octavos/…" en vez del genérico "Eliminatorias".
+  const byRound = { 32: "R32", 16: "R16", 8: "QF", 4: "SF" };
+  const st = m.stage && m.stage !== "KO" ? m.stage : byRound[Number(m.round)];
+  if (st) return t(`stages.${st}`) || m.stageName || t("knockouts");
+  return m.stageName || t("knockouts");
 }
 
 /* --------------------------- acordeón -------------------------------- */
@@ -2221,9 +2227,18 @@ function stakeHighlight(o) {
   if (bad(L) && !bad(D)) return { k: "slOutIfLose", c: "stk-dep" };
   return null;
 }
+// Sello "mata o muere" para un partido de eliminatoria (no jugado, con equipos
+// definidos). En KO cada partido es a eliminación directa.
+function koStakesLine(m) {
+  if (!m.home || !m.away || /definir|por definir/i.test(m.home) || /definir|por definir/i.test(m.away)) return "";
+  if (classifyStatus(m) === "ft") return ""; // ya se jugó: manda el marcador
+  return `<div class="match-stakes ko-stakes"><span class="ko-seal">⚔ ${tw(TX.koDoOrDie)}</span></div>`;
+}
 // Línea "qué se juega" para la fila del partido. "" si no define nada.
 function stakesLineHtml(m) {
-  if (!m || m.stage !== "GROUP" || !m.group || typeof Scenarios === "undefined") return "";
+  if (!m) return "";
+  if (m.stage !== "GROUP") return koStakesLine(m);
+  if (!m.group || typeof Scenarios === "undefined") return "";
   let s;
   try { s = Scenarios.matchStakes(state.data.matches, m.id, { isFinal: (mm) => classifyStatus(mm) === "ft" }); }
   catch { return ""; }
