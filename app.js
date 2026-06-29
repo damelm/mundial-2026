@@ -71,6 +71,7 @@ const TX = {
   slOut: { es: "Eliminado", en: "Out", pt: "Eliminado", fr: "Éliminé", ar: "خارج" },
   koDoOrDie: { es: "Mata o muere · el que pierde, afuera", en: "Win or go home", pt: "Mata-mata · quem perde, sai", fr: "Match couperet · le perdant est éliminé", ar: "مباراة حاسمة · الخاسر يودّع" },
   caminoFinal: { es: "Camino a la final", en: "Road to the final", pt: "Caminho à final", fr: "Chemin vers la finale", ar: "الطريق إلى النهائي" },
+  champion: { es: "Campeón del Mundo", en: "World Champion", pt: "Campeão do Mundo", fr: "Champion du monde", ar: "بطل العالم" },
   orWord: { es: "o", en: "or", pt: "ou", fr: "ou", ar: "أو" },
   koTbd: { es: "Por definir", en: "To be decided", pt: "A definir", fr: "À définir", ar: "يُحدَّد لاحقًا" },
   tapTip: { es: "Tocá cualquier partido para ver estadísticas, formación, relato y qué se juega.", en: "Tap any match to see stats, lineups, play-by-play and what's at stake.", pt: "Toque em qualquer jogo para ver estatísticas, escalação, narração e o que está em jogo.", fr: "Touchez un match pour voir stats, compositions, direct et enjeux.", ar: "اضغط على أي مباراة لعرض الإحصائيات والتشكيلة والسرد وما هو على المحك." },
@@ -1065,16 +1066,20 @@ function resolveSlot(slot, matchNo, proj) {
   if (tg && proj.rowsByG[tg] && proj.rowsByG[tg][2]) return { team: proj.rowsByG[tg][2].team };
   return { label: `3.º (${slot.from.join("/")})` };
 }
-function bkRow(res, score, win) {
+function bkRow(res, score, win, lost, champ) {
   const flag = res.team ? teamCellFlag(res.team) : '<span class="bk-flag-ph"></span>';
+  const mine = res.team && res.team === state.team ? " bk-mine" : "";
+  const crown = champ ? '<span class="bk-crown" aria-hidden="true">👑</span>' : "";
   const nm = res.team ? `<span class="bk-nm">${dispName(res.team)}</span>` : `<span class="bk-nm bk-tbd">${res.label}</span>`;
-  return `<div class="bk-row ${win ? "bk-win" : ""}">${flag}${nm}<span class="bk-sc">${score ?? ""}</span></div>`;
+  return `<div class="bk-row${win ? " bk-win" : ""}${lost ? " bk-lost" : ""}${mine}">${flag}${nm}${crown}<span class="bk-sc">${score ?? ""}</span></div>`;
 }
-function bkMatch(home, away, m, cls = "") {
+function bkMatch(home, away, m, cls = "", champTeam) {
   const hs = m && m.homeScore != null ? m.homeScore : null;
   const as = m && m.awayScore != null ? m.awayScore : null;
   const st = m ? classifyStatus(m) : "ns";
-  return `<div class="bk-match ${st === "live" ? "bk-live" : ""} ${cls}">${bkRow(home, hs, st === "ft" && hs > as)}${bkRow(away, as, st === "ft" && as > hs)}</div>`;
+  const hWin = st === "ft" && hs > as, aWin = st === "ft" && as > hs, decided = hWin || aWin;
+  const champ = (t) => champTeam && t === champTeam;
+  return `<div class="bk-match ${st === "live" ? "bk-live" : ""} ${cls}">${bkRow(home, hs, hWin, decided && !hWin, champ(home.team))}${bkRow(away, as, aWin, decided && !aWin, champ(away.team))}</div>`;
 }
 // Índice de partidos KO por par de equipos (canónico, en ambos órdenes).
 function koPairIndex(kos) {
@@ -1166,10 +1171,15 @@ function renderBracket() {
     for (let i = 0; i < order.length; i += 2) body += `<div class="bk-pair">${cellOf(order[i])}${order[i + 1] != null ? cellOf(order[i + 1]) : ""}</div>`;
     return `<div class="bk-col"><h3>${t(`stages.${st}`)}</h3><span class="ko-date">${dateOf(st)}</span><div class="bk-col-body">${body}</div></div>`;
   };
-  let html = `<div class="bracket-head"><div class="big">${IC.trophy} ${t("knockouts")}</div><p>${t("bracketSub")}</p></div><div class="bracket-wrap"><div class="bracket-scroll"><div class="bracket-grid">`;
-  html += colHtml("R32", M.orders.r32O) + colHtml("R16", M.orders.r16O) + colHtml("QF", M.orders.qfO) + colHtml("SF", M.orders.sfO);
   const fInfo = M.finalM ? { home: { team: M.finalM.home }, away: { team: M.finalM.away }, match: M.finalM } : M.slotInfo(BRACKET_TREE.F.m);
-  const fCell = bkMatch(fInfo.home, fInfo.away, fInfo.match, "beam bk-final");
+  const champ = M.winnerRes(fInfo); // campeón si la final ya se jugó
+  // Cabecera: banner de campeón (dorado) si ya hay; si no, título de la fase.
+  const head = champ
+    ? `<div class="bracket-head champ-head"><div class="champ-banner">${IC.trophy}<span class="cb-label">${tw(TX.champion)}</span><span class="cb-team">${flagImg(champ.team, "cb-fl")}<b>${dispName(champ.team)}</b></span></div></div>`
+    : `<div class="bracket-head"><div class="big">${IC.trophy} ${t("knockouts")}</div><p>${t("bracketSub")}</p></div>`;
+  let html = `${head}<div class="bracket-wrap"><div class="bracket-scroll"><div class="bracket-grid">`;
+  html += colHtml("R32", M.orders.r32O) + colHtml("R16", M.orders.r16O) + colHtml("QF", M.orders.qfO) + colHtml("SF", M.orders.sfO);
+  const fCell = bkMatch(fInfo.home, fInfo.away, fInfo.match, "beam bk-final", champ ? champ.team : null);
   const tpCell = M.tpM ? bkMatch({ team: M.tpM.home }, { team: M.tpM.away }, M.tpM)
     : bkMatch({ label: `${word("TP")} P${BRACKET_TREE.TP.f[0]}` }, { label: `${word("TP")} P${BRACKET_TREE.TP.f[1]}` }, null);
   html += `<div class="bk-col"><h3>${t("stages.F")}</h3><span class="ko-date">${dateOf("F")}</span>
