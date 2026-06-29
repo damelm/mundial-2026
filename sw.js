@@ -3,7 +3,7 @@
  * con caché solo como respaldo OFFLINE. Banderas/fuentes cache-first.
  * Así el mantenimiento se ve al instante y no queda pegada una versión vieja.
  */
-const VERSION = "v-24f568cc15";
+const VERSION = "v-44811fd15d";
 const SHELL = "shell-" + VERSION;
 const RUNTIME = "runtime-" + VERSION;
 
