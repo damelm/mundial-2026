@@ -569,7 +569,7 @@ function renderHeroCard() {
   } else {
     const todayK = dayKey(new Date());
     const today = state.data.matches
-      .filter((m) => { const d = parseUTC(m.timestamp); return d && dayKey(d) === todayK; })
+      .filter((m) => { const d = parseUTC(m.timestamp); return d && dayKey(d) === todayK && m.home && m.away; })
       .sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
     const news = state.news && (state.news[state.lang] || state.news.en || state.news.es);
     if (today.length) {
@@ -771,15 +771,23 @@ function matchCard(m) {
   }
   const grp = m.group ? `<span class="match-grouptag">${t("group", { g: m.group })}</span>` : stageLabel(m);
   const venue = m.venue ? ` · ${escHtml(m.venue)}${m.city ? ", " + escHtml(m.city.split(",")[0]) : ""}` : "";
-  const cal = st === "ns" ? `<button class="cal-btn" data-mid="${m.id}" aria-label="${tw(TX.addCal)}" title="${tw(TX.addCal)}"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 15H5V9h14v10zM7 11h5v5H7z"/></svg></button>` : "";
-  const rk = (n) => (n != null ? `<span class="rk" title="${tw(TX.fifaRank)}">#${n}</span>` : "");
+  const cal = st === "ns" && m.home && m.away ? `<button class="cal-btn" data-mid="${m.id}" aria-label="${tw(TX.addCal)}" title="${tw(TX.addCal)}"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 15H5V9h14v10zM7 11h5v5H7z"/></svg></button>` : "";
   const scorers = (st === "ft" && m.goals && ((m.goals.home && m.goals.home.length) || (m.goals.away && m.goals.away.length))) ? scorersBlock(m) : "";
-  return `<article class="match reveal ${isMine ? "mine" : ""} ${st === "live" ? "live" : ""}" data-mid="${m.id}">
-    <span class="match-go" aria-hidden="true">›</span>
+  // Tocable solo si los dos equipos están definidos (los "Por definir" no abren modal).
+  const tappable = m.home && m.away;
+  return `<article class="match reveal ${isMine ? "mine" : ""} ${st === "live" ? "live" : ""} ${tappable ? "" : "no-tap"}" ${tappable ? `data-mid="${m.id}"` : ""}>
+    ${tappable ? '<span class="match-go" aria-hidden="true">›</span>' : ""}
     <div class="match-meta">${grp}${venue}${cal}</div>
-    <div class="team-side home">${teamCell(m.home, m.homeBadge)}<span class="team-name">${dispName(m.home)}${rk(m.homeRank)}</span></div>
+    <div class="team-side home">${teamSideHtml(m.home, m.homeBadge, m.homeLabel, m.homeRank)}</div>
     <div class="match-center">${center}</div>
-    <div class="team-side away">${teamCell(m.away, m.awayBadge)}<span class="team-name">${dispName(m.away)}${rk(m.awayRank)}</span></div>${stakesLineHtml(m)}${scorers}</article>`;
+    <div class="team-side away">${teamSideHtml(m.away, m.awayBadge, m.awayLabel, m.awayRank)}</div>${stakesLineHtml(m)}${scorers}</article>`;
+}
+// Lado de un equipo en la tarjeta. Si el equipo no está definido (cruce futuro
+// del cuadro), muestra "Por definir" con un placeholder en vez de bandera.
+function teamSideHtml(name, badge, label, rank) {
+  const rk = rank != null ? `<span class="rk" title="${tw(TX.fifaRank)}">#${rank}</span>` : "";
+  if (name) return `${teamCell(name, badge)}<span class="team-name">${dispName(name)}${rk}</span>`;
+  return `<span class="team-flag emoji team-tbd-fl" aria-hidden="true">⚽</span><span class="team-name team-tbd">${escHtml(label || tw(TX.koTbd))}</span>`;
 }
 // Bloque de goleadores (full-width) bajo un partido terminado.
 const BALL_IC = '<svg class="sc-ball" viewBox="0 0 24 24" width="11" height="11" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 2.2l2.4 1.7-.9 2.8h-3l-.9-2.8L12 4.2zM5.6 8.9l2.3.1.9 2.8-2 1.7-2-1.5.8-3.1zm12.8 0l.8 3.1-2 1.5-2-1.7.9-2.8 2.3-.1zM8.2 18.3l-1-2.7 1.8-1.6h4l1.8 1.6-1 2.7H8.2z"/></svg>';
@@ -1436,7 +1444,7 @@ function renderCountdown() {
   clearInterval(state.countdownTimer);
   const box = $("#countdown");
   const now = Date.now();
-  let pool = state.data.matches.filter((m) => { const d = parseUTC(m.timestamp); return d && d.getTime() > now && classifyStatus(m) === "ns"; });
+  let pool = state.data.matches.filter((m) => { const d = parseUTC(m.timestamp); return d && d.getTime() > now && classifyStatus(m) === "ns" && m.home && m.away; });
   if (state.team) { const mn = pool.filter((m) => m.home === state.team || m.away === state.team); if (mn.length) pool = mn; }
   pool.sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
   const next = pool[0];
@@ -1944,7 +1952,7 @@ async function init() {
   hideSplash();
 
   // Marcador en vivo de una al abrir (sin esperar al primer ciclo de polling)
-  if (state.data) mergeLiveScores(state.data).then((ch) => { if (ch) { state.sig = JSON.stringify(state.data.matches); render(); } });
+  if (state.data) mergeKoSchedule(state.data).then((koCh) => mergeLiveScores(state.data).then((liveCh) => { if (koCh || liveCh) { state.sig = JSON.stringify(state.data.matches); render(); } }));
   scheduleRefresh();
   showBuildVersion();
 }
@@ -1993,6 +2001,75 @@ const ESPN_SPECIAL = {
 const _LIVE_ALIAS = { unitedstates: "usa", us: "usa", bosniaandherzegovina: "bosniaherzegovina", czechia: "czechrepublic", turkiye: "turkey", caboverde: "capeverde", korearepublic: "southkorea", cotedivoire: "ivorycoast", congodr: "drcongo" };
 function canonName(n) { const k = (n || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]/g, ""); return _LIVE_ALIAS[k] || k; }
 const livePair = (h, a) => `${canonName(h)}|${canonName(a)}`;
+
+// --- Calendario de eliminatorias desde ESPN ---------------------------------
+// El feed (cron) tarda en publicar los partidos KO. ESPN tiene el calendario
+// COMPLETO hasta la final (fechas/horas fijas) con los equipos resolviéndose
+// solos. Lo traemos para mostrar todo el cronograma en "Partidos" aunque falten
+// equipos ("Por definir"), y que se llene en tiempo real.
+const ESPN_KO_RANGE = "?dates=20260628-20260721"; // 32avos (28 jun) → final (19 jul)
+// Mapa nombre-ESPN → nuestra selección (vía canonName + alias). null si es un
+// marcador de posición ("Round of 32 3 Winner", "Semifinal 1 Loser", etc.).
+let _espnTeamMap = null;
+function espnToTeam(name) {
+  if (typeof TEAMS === "undefined") return null;
+  if (!_espnTeamMap) { _espnTeamMap = {}; for (const tn of Object.keys(TEAMS)) _espnTeamMap[canonName(tn)] = tn; }
+  if (/winner|loser|round of|quarterfinal|semifinal|to be determined|\btbd\b/i.test(name)) return null;
+  return _espnTeamMap[canonName(name)] || null;
+}
+// Ronda del partido según el texto del rival (alimentado por la ronda anterior).
+function espnKoRound(hn, an) {
+  const s = `${hn} ${an}`;
+  if (/round of 32/i.test(s)) return 16; // lo juegan ganadores de 32avos → octavos
+  if (/round of 16/i.test(s)) return 8;
+  if (/quarterfinal/i.test(s)) return 4;
+  if (/semifinal/i.test(s)) return 2;    // final o 3.º puesto
+  return 32;                              // ambos equipos reales → 32avos
+}
+async function fetchEspnKoSchedule() {
+  let sb;
+  try { sb = await fetch(ESPN_SB + ESPN_KO_RANGE, { cache: "no-store" }).then((r) => r.json()); } catch { return null; }
+  if (!sb || !sb.events) return null;
+  const num = (v) => (v != null && v !== "" ? Number(v) : null);
+  const out = [];
+  for (const ev of sb.events) {
+    const c = ev.competitions && ev.competitions[0]; if (!c) continue;
+    const H = c.competitors.find((x) => x.homeAway === "home");
+    const A = c.competitors.find((x) => x.homeAway === "away");
+    if (!H || !A) continue;
+    const hn = H.team.displayName, an = A.team.displayName;
+    const home = espnToTeam(hn), away = espnToTeam(an);
+    const round = espnKoRound(hn, an);
+    // Fase específica para la etiqueta (round 2 = Final o 3.º puesto: el 3.º
+    // trae "Loser" en el marcador de posición; se reconfirma por fecha abajo).
+    const stage = round === 2 ? (/loser/i.test(`${hn} ${an}`) ? "TP" : "F")
+      : ({ 32: "R32", 16: "R16", 8: "QF", 4: "SF" }[round] || "KO");
+    const stt = ev.status && ev.status.type, est = stt && stt.state;
+    out.push({
+      id: "ko-" + ev.id, stage, stageName: "Eliminatorias", round, group: null,
+      home, away, homeLabel: home ? null : tw(TX.koTbd), awayLabel: away ? null : tw(TX.koTbd),
+      date: (ev.date || "").slice(0, 10), time: (ev.date || "").slice(11, 16) + ":00", timestamp: ev.date || null,
+      homeScore: est === "pre" ? null : num(H.score), awayScore: est === "pre" ? null : num(A.score),
+      status: est === "post" ? "FT" : est === "in" ? String((ev.status && ev.status.displayClock) || "LIVE") : "NS",
+      venue: (c.venue && c.venue.fullName) || null,
+    });
+  }
+  // Final vs 3.º puesto (ambos round 2): el más temprano por fecha es el 3.º.
+  const r2 = out.filter((m) => m.round === 2).sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
+  if (r2.length >= 2) { r2[0].stage = "TP"; r2[r2.length - 1].stage = "F"; }
+  return out.length ? out : null;
+}
+// Reemplaza los partidos KO del feed por el calendario completo de ESPN (solo en
+// fase de eliminatorias). Devuelve true si cambió algo.
+async function mergeKoSchedule(data) {
+  if (!data || !data.matches) return false;
+  const gm = data.matches.filter((m) => m.stage === "GROUP");
+  if (!gm.length || !gm.every((m) => classifyStatus(m) === "ft")) return false; // solo si terminaron los grupos
+  const ko = await fetchEspnKoSchedule();
+  if (!ko) return false;
+  data.matches = gm.concat(ko);
+  return true;
+}
 
 // Goleadores (nombre + minuto) del summary de ESPN, separados por equipo.
 function espnGoals(sum, homeId, awayId) {
@@ -2504,6 +2581,7 @@ function scheduleRefresh() {
   state.refreshTimer = setTimeout(async () => {
     try {
       const fresh = await loadData();
+      await mergeKoSchedule(fresh); // calendario KO completo de ESPN (se va llenando solo)
       await mergeLiveScores(fresh); // marcador en vivo directo de la fuente, sin esperar al cron
       // Conserva el overlay en vivo previo si el cron aún no tiene el resultado,
       // así un fallo puntual de ESPN no revierte el marcador por un ciclo.
