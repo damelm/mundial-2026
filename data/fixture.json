@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T20:23:57.305Z",
+  "updatedAt": "2026-06-29T21:51:42.373Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2764,27 +2764,6 @@
       "awayRank": 30
     },
     {
-      "id": "2499835",
-      "round": 32,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
-      "group": null,
-      "date": "2026-06-29",
-      "time": "17:00:00",
-      "timestamp": "2026-06-29T17:00:00",
-      "home": "Brazil",
-      "away": "Japan",
-      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/jl6dip1726167280.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/ffsyxz1591989843.png",
-      "homeScore": 2,
-      "awayScore": 1,
-      "status": "FT",
-      "venue": "NRG Stadium",
-      "city": "Houston, TX",
-      "homeRank": 5,
-      "awayRank": 17
-    },
-    {
       "id": "2502846",
       "round": 32,
       "stage": "KO",
@@ -2797,33 +2776,61 @@
       "away": "Paraguay",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/1xysi51726167152.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/khgav41553419195.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "2H",
       "venue": "Gillette Stadium",
       "city": "Foxborough, MA",
       "homeRank": 9,
-      "awayRank": 45,
+      "awayRank": 45
+    },
+    {
+      "id": "2499836",
+      "round": 32,
+      "stage": "KO",
+      "stageName": "Eliminatorias",
+      "group": null,
+      "date": "2026-06-30",
+      "time": "01:00:00",
+      "timestamp": "2026-06-30T01:00:00",
+      "home": "Netherlands",
+      "away": "Morocco",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/1p0hr41593787110.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/hbmwkj1731791275.png",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "NS",
+      "venue": "Estadio BBVA Bancomer",
+      "city": "Guadalupe, NL",
+      "homeRank": 7,
+      "awayRank": 11,
       "pred": {
-        "pH": 53,
-        "pD": 23,
-        "pA": 24,
+        "pH": 38,
+        "pD": 27,
+        "pA": 35,
         "h2h": {
-          "played": 2,
+          "played": 3,
           "last": [
             {
-              "date": "2013-08-14",
-              "h": "Germany",
-              "a": "Paraguay",
-              "hs": 3,
-              "as": 3
+              "date": "2017-05-31",
+              "h": "Morocco",
+              "a": "Netherlands",
+              "hs": 1,
+              "as": 2
             },
             {
-              "date": "2002-06-15",
-              "h": "Germany",
-              "a": "Paraguay",
+              "date": "1999-04-28",
+              "h": "Netherlands",
+              "a": "Morocco",
               "hs": 1,
-              "as": 0
+              "as": 2
+            },
+            {
+              "date": "1994-06-29",
+              "h": "Morocco",
+              "a": "Netherlands",
+              "hs": 1,
+              "as": 2
             }
           ]
         }
