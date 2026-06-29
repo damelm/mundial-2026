@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T22:14:31.486Z",
+  "updatedAt": "2026-06-29T01:54:25.953Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2390,7 +2390,7 @@
       "homeScore": 0,
       "awayScore": 0,
       "status": "FT",
-      "venue": "NRG Stadium",
+      "venue": "Reliant Stadium",
       "city": "Houston, TX",
       "homeRank": 70,
       "awayRank": 58
