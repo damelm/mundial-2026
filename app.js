@@ -1126,7 +1126,10 @@ function bkMatch(home, away, m, cls = "", champTeam) {
   const st = m ? classifyStatus(m) : "ns";
   const hWin = st === "ft" && hs > as, aWin = st === "ft" && as > hs, decided = hWin || aWin;
   const champ = (t) => champTeam && t === champTeam;
-  return `<div class="bk-match ${st === "live" ? "bk-live" : ""} ${cls}">${bkRow(home, hs, hWin, decided && !hWin, champ(home.team))}${bkRow(away, as, aWin, decided && !aWin, champ(away.team))}</div>`;
+  // Horario del cruce si está agendado y no jugado (próximos partidos a la vista).
+  const d = m && st === "ns" ? parseUTC(m.timestamp) : null;
+  const when = d ? `<div class="bk-when">${fmtDayShort(d)} · ${fmtTime(d)}</div>` : "";
+  return `<div class="bk-match ${st === "live" ? "bk-live" : ""} ${cls}">${bkRow(home, hs, hWin, decided && !hWin, champ(home.team))}${bkRow(away, as, aWin, decided && !aWin, champ(away.team))}${when}</div>`;
 }
 // Índice de partidos KO por par de equipos (canónico, en ambos órdenes).
 function koPairIndex(kos) {
