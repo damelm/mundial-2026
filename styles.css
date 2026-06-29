@@ -155,6 +155,22 @@ main { padding: 0 16px 44px; }
 .hero-titles { font-size: 12px; font-weight: 600; opacity: .72; margin-top: 4px; letter-spacing: .01em; }
 .hero-rule { height: 1px; background: rgba(255,255,255,.22); margin: 16px 0 0; }
 
+/* Banda "Camino al título" (fase KO): ronda activa + estado de tu selección */
+.ko-band { margin-top: 14px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid rgba(255,255,255,.2); background: linear-gradient(100deg, rgba(0,0,0,.28), rgba(0,0,0,.1)); }
+.kb-main { display: flex; align-items: center; gap: 12px; padding: 11px 14px; }
+.kb-bolt { font-size: 20px; line-height: 1; filter: drop-shadow(0 1px 3px rgba(0,0,0,.4)); flex: 0 0 auto; }
+.kb-txt { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.kb-kicker { font-family: var(--font-display); font-size: 19px; letter-spacing: .02em; text-transform: uppercase; color: #fff; line-height: 1.04; }
+.kb-sub { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; color: rgba(255,255,255,.66); }
+.kb-road { padding: 8px 14px; font-size: 12.5px; font-weight: 700; color: #fff; border-top: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.08); }
+.kb-road b { font-weight: 800; }
+.kb-road.kb-out { background: rgba(225,29,72,.26); color: #ffd7df; }
+.kb-road.kb-champ { background: linear-gradient(90deg, rgba(227,179,65,.32), rgba(227,179,65,.12)); color: #fff; font-weight: 800; }
+/* Campeón decidido: toda la banda se vuelve dorada */
+.ko-band.kb-champ-on { border-color: rgba(227,179,65,.55); background: linear-gradient(100deg, rgba(227,179,65,.26), rgba(227,179,65,.06)); }
+.ko-band.kb-champ-on .kb-bolt { filter: none; }
+.ko-band.kb-champ-on .kb-sub { color: rgba(255,255,255,.82); }
+
 .fact-card { margin-top: 16px; background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.22); border-radius: var(--radius-sm); padding: 12px 14px; }
 .fact-card[data-mode="live"] { cursor: pointer; border-color: rgba(255,255,255,.5); }
 .fact-text a { color: inherit; font-weight: 600; text-decoration: underline; text-decoration-color: rgba(255,255,255,.55); text-underline-offset: 3px; }

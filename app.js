@@ -72,6 +72,10 @@ const TX = {
   koDoOrDie: { es: "Mata o muere · el que pierde, afuera", en: "Win or go home", pt: "Mata-mata · quem perde, sai", fr: "Match couperet · le perdant est éliminé", ar: "مباراة حاسمة · الخاسر يودّع" },
   caminoFinal: { es: "Camino a la final", en: "Road to the final", pt: "Caminho à final", fr: "Chemin vers la finale", ar: "الطريق إلى النهائي" },
   champion: { es: "Campeón del Mundo", en: "World Champion", pt: "Campeão do Mundo", fr: "Champion du monde", ar: "بطل العالم" },
+  koBandSub: { es: "Eliminación directa", en: "Single elimination", pt: "Mata-mata", fr: "Élimination directe", ar: "خروج المغلوب" },
+  koAlive: { es: "Sigue en carrera", en: "Still alive", pt: "Ainda na disputa", fr: "Toujours en lice", ar: "ما زال في السباق" },
+  koToTitle: { es: "a {n} del título", en: "{n} from the title", pt: "a {n} do título", fr: "à {n} du titre", ar: "على بُعد {n} من اللقب" },
+  koOut: { es: "Eliminado en", en: "Out in", pt: "Eliminado em", fr: "Éliminé en", ar: "خرج في" },
   orWord: { es: "o", en: "or", pt: "ou", fr: "ou", ar: "أو" },
   koTbd: { es: "Por definir", en: "To be decided", pt: "A definir", fr: "À définir", ar: "يُحدَّد لاحقًا" },
   tapTip: { es: "Tocá cualquier partido para ver estadísticas, formación, relato y qué se juega.", en: "Tap any match to see stats, lineups, play-by-play and what's at stake.", pt: "Toque em qualquer jogo para ver estatísticas, escalação, narração e o que está em jogo.", fr: "Touchez un match pour voir stats, compositions, direct et enjeux.", ar: "اضغط على أي مباراة لعرض الإحصائيات والتشكيلة والسرد وما هو على المحك." },
@@ -628,8 +632,50 @@ function render() {
   renderActivePanel();   // solo la pestaña visible (evita cargar todas las imágenes juntas)
   renderCountdown();
   renderHeroCard();
+  renderKoBand();
   renderLiveTicker();
   observeLiveAnims();
+}
+// Banda "Camino al título" en el hero (solo en fase KO): ronda activa +
+// estado de tu selección (sigue en carrera / eliminada / campeón).
+const KO_TO_TITLE = { 32: 5, 16: 4, 8: 3, 4: 2, 2: 1 };
+const KO_ROUND_STAGE = { 32: "R32", 16: "R16", 8: "QF", 4: "SF", 2: "F" };
+function koTeamRoad(team, kos, champ) {
+  if (champ && champ.team === team) return { kind: "champ", html: `🏆 ${tw(TX.champion)}` };
+  const mine = kos.filter((m) => m.home === team || m.away === team).sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
+  if (!mine.length) return null;
+  for (const m of mine) {
+    if (classifyStatus(m) === "ft" && m.homeScore != null && m.awayScore != null) {
+      const ih = m.home === team, my = ih ? m.homeScore : m.awayScore, op = ih ? m.awayScore : m.homeScore;
+      if (my < op) return { kind: "out", html: `${tw(TX.koOut)} ${t(`stages.${KO_ROUND_STAGE[Number(m.round)] || "F"}`)}` };
+    }
+  }
+  const next = mine.find((m) => classifyStatus(m) !== "ft") || mine[mine.length - 1];
+  const n = KO_TO_TITLE[Number(next.round)] || 1;
+  const mw = n === 1 ? tw(TX.matchOne) : t("matchesLabel");
+  return { kind: "alive", html: `<b>${tw(TX.koAlive)}</b> · ${tw(TX.koToTitle).replace("{n}", `${n} ${mw}`)}` };
+}
+function renderKoBand() {
+  const band = $("#ko-band");
+  if (!band) return;
+  if (!state.data || !groupStageOver()) { band.hidden = true; band.innerHTML = ""; return; }
+  const kos = state.data.matches.filter((m) => m.stage !== "GROUP" && m.home && m.away);
+  if (!kos.length) { band.hidden = true; return; }
+  let active = null;
+  const liveR = kos.filter((m) => classifyStatus(m) === "live").map((m) => Number(m.round));
+  if (liveR.length) active = Math.max(...liveR);
+  else { const ns = kos.filter((m) => classifyStatus(m) === "ns").sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || "")); if (ns.length) active = Number(ns[0].round); }
+  let M = null; try { M = koBracketModel(); } catch {}
+  const champ = M ? M.winnerRes(M.finalM ? { home: { team: M.finalM.home }, away: { team: M.finalM.away }, match: M.finalM } : M.slotInfo(BRACKET_TREE.F.m)) : null;
+  let kicker, sub;
+  if (active != null) { kicker = t(`stages.${KO_ROUND_STAGE[active] || "F"}`); sub = tw(TX.koBandSub); }
+  else if (champ) { kicker = tw(TX.champion); sub = dispName(champ.team); }
+  else { band.hidden = true; return; }
+  let road = "";
+  if (state.team) { const r = koTeamRoad(state.team, kos, champ); if (r) road = `<div class="kb-road kb-${r.kind}">${r.html}</div>`; }
+  band.hidden = false;
+  band.classList.toggle("kb-champ-on", active == null && !!champ);
+  band.innerHTML = `<div class="kb-main"><span class="kb-bolt" aria-hidden="true">⚔</span><div class="kb-txt"><span class="kb-kicker">${kicker}</span><span class="kb-sub">${sub}</span></div></div>${road}`;
 }
 // Cinta de eventos EN VIVO: marcadores + goleadores de los partidos en juego,
 // en scroll continuo (estética de transmisión). Solo visible si hay live.
