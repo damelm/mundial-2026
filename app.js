@@ -829,6 +829,7 @@ function tapTipHtml() {
 }
 function renderFixture() {
   const cont = $("#fixture-list");
+  syncFilterChips(); // los chips reflejan el filtro activo (incluido el default "Hoy")
   // Conservar la vista del usuario (qué días tiene abiertos + scroll) cuando el
   // refresco automático re-dibuja el fixture con el MISMO filtro. Sin esto, cada
   // update colapsaba el día que estaba mirando y lo devolvía al día por defecto.
@@ -1042,8 +1043,8 @@ function renderGroups() {
         <td>${r.pj}</td><td>${r.g}</td><td>${r.e}</td><td>${r.p}</td><td>${dif > 0 ? "+" + dif : dif}</td><td class="pts">${r.pts}</td></tr>`;
     });
     inner += `</tbody></table><div class="group-legend">${t("groupLegend")}</div>`;
-    const gms = (matchesByGroup[g] || []).sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || "")).map(matchCard).join("");
-    if (gms) inner += `<div class="grp-matches">${gms}</div>`;
+    // Los partidos del grupo NO se repiten aquí: viven en la pestaña "Partidos"
+    // (única fuente de la lista de partidos). Esta pestaña queda solo con tablas.
     html += accordionEl(g, head, inner, state.allExpanded || myGroup, myGroup, "acc-grp");
   }
   html += botaDeOroHtml();
@@ -1914,6 +1915,9 @@ async function init() {
     state.sig = JSON.stringify(data.matches);
     $("#status").innerHTML = "";
     setFooterUpdated(data);
+    // Foco en "hoy": al abrir, "Partidos" arranca en Hoy si hay partidos hoy.
+    const todayK = dayKey(new Date());
+    if (data.matches.some((m) => { const d = parseUTC(m.timestamp); return d && dayKey(d) === todayK; })) state.filter = "today";
   } else {
     showLoadError();
   }
