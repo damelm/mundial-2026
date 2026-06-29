@@ -529,11 +529,42 @@ body.anim-paused *, body.anim-paused *::before, body.anim-paused *::after { anim
 .bk-nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; letter-spacing: -.01em; }
 .bk-tbd { color: var(--ink-dim); font-weight: 600; font-size: 10.5px; }
 .bk-sc { font-family: var(--font-display); font-size: 14px; min-width: 12px; text-align: end; color: var(--ink); font-variant-numeric: tabular-nums; }
+/* Ganador: resaltado verde + más peso. Perdedor: atenuado (jerarquía clara). */
 .bk-row.bk-win { background: var(--good-soft); }
-.bk-live { border-color: var(--live); }
+.bk-row.bk-win .bk-nm { font-weight: 800; }
+.bk-row.bk-win .bk-sc { color: var(--good); }
+.bk-row.bk-lost { opacity: .5; }
+.bk-row.bk-lost .bk-nm { font-weight: 600; }
+/* Tu selección: borde y fondo con el color de tu equipo, para seguir su camino */
+.bk-row.bk-mine { background: var(--brand-soft); box-shadow: inset 3px 0 0 var(--brand-accent); }
+.bk-row.bk-mine.bk-win { background: color-mix(in srgb, var(--brand-soft) 60%, var(--good-soft)); }
+.bk-row.bk-mine .bk-nm { color: var(--brand-accent); font-weight: 800; }
+.bk-live { border-color: var(--live); box-shadow: 0 0 0 1px var(--live), 0 8px 22px -10px var(--live); }
 .bk-col-final { justify-content: center; gap: 26px; }
 .bk-final { width: 200px; border-color: var(--brand-accent); }
 .bk-final .bk-row { padding: 11px 12px; font-size: 13px; }
+/* Campeón: corona + tratamiento dorado en la final */
+.bk-crown { font-size: 13px; line-height: 1; margin-inline-start: 2px; filter: drop-shadow(0 1px 2px rgba(0,0,0,.3)); }
+.bk-match.bk-final:has(.bk-crown) { border-color: #e3b341; box-shadow: 0 0 0 1px #e3b341, 0 12px 34px -12px rgba(227,179,65,.7); }
+.bk-row.bk-win:has(.bk-crown) { background: linear-gradient(90deg, rgba(227,179,65,.22), rgba(227,179,65,.08)); }
+.bk-row.bk-win:has(.bk-crown) .bk-nm, .bk-row.bk-win:has(.bk-crown) .bk-sc { color: #b8860b; }
+:root[data-theme="dark"] .bk-row.bk-win:has(.bk-crown) .bk-nm, :root[data-theme="dark"] .bk-row.bk-win:has(.bk-crown) .bk-sc { color: #f0c75e; }
+/* Banner de campeón (cabecera dorada cuando la final ya se jugó) */
+.champ-head { padding: 16px 14px 8px; }
+.champ-banner { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 16px; border-radius: var(--radius); background: linear-gradient(135deg, rgba(227,179,65,.16), rgba(227,179,65,.04)); border: 1px solid rgba(227,179,65,.45); }
+.champ-banner svg { width: 30px; height: 30px; color: #e3b341; filter: drop-shadow(0 2px 6px rgba(227,179,65,.5)); }
+.cb-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .16em; color: #b8860b; }
+:root[data-theme="dark"] .cb-label { color: #f0c75e; }
+.cb-team { display: inline-flex; align-items: center; gap: 9px; font-family: var(--font-display); font-size: 26px; color: var(--ink); text-transform: uppercase; letter-spacing: .01em; }
+.cb-fl { width: 34px; height: 24px; border-radius: 3px; object-fit: cover; box-shadow: var(--sh-sm); }
+/* Entrada en cascada de las columnas del cuadro */
+.bk-col { animation: bkColIn .5s cubic-bezier(.2,.7,.3,1) both; }
+.bk-col:nth-child(2) { animation-delay: .05s; }
+.bk-col:nth-child(3) { animation-delay: .1s; }
+.bk-col:nth-child(4) { animation-delay: .15s; }
+.bk-col:nth-child(5) { animation-delay: .2s; }
+@keyframes bkColIn { from { opacity: 0; transform: translateY(10px); } }
+@media (prefers-reduced-motion: reduce) { .bk-col { animation: none; } }
 .bk-tp h4 { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-faint); text-align: center; margin-bottom: 2px; }
 
 /* ============================ SEDES CON FOTO ========================= */
