@@ -250,6 +250,11 @@ main { padding: 0 16px 44px; }
 .team-badge { width: 46px; height: 46px; object-fit: contain; }
 .team-flag { width: 40px; height: 28px; border-radius: 4px; object-fit: cover; box-shadow: 0 1px 3px rgba(0,0,0,.16); }
 .team-name { font-size: 12.5px; font-weight: 700; line-height: 1.18; letter-spacing: -.01em; }
+/* Equipo aún sin definir (cruce futuro del cuadro): placeholder atenuado */
+.team-name.team-tbd { color: var(--ink-faint); font-weight: 600; font-style: italic; }
+.team-flag.team-tbd-fl, .team-tbd-fl { opacity: .4; }
+.match.no-tap { cursor: default; }
+.match.no-tap:active { transform: none; }
 .match-center { text-align: center; min-width: 84px; display: flex; flex-direction: column; align-items: center; gap: 2px; }
 .match-score { font-family: var(--font-display); font-size: 27px; color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: .01em; }
 .match-score .sep { color: var(--ink-faint); margin: 0 4px; }
