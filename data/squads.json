@@ -1,6 +1,6 @@
 {
  "Mexico": {
-  "updated": "2026-06-25T11:34:10.605Z",
+  "updated": "2026-06-30T11:40:25.539Z",
   "source": "API-Football",
   "players": [
    {
@@ -162,7 +162,7 @@
   ]
  },
  "South Africa": {
-  "updated": "2026-06-25T11:34:17.727Z",
+  "updated": "2026-06-30T11:40:32.709Z",
   "source": "API-Football",
   "players": [
    {
@@ -276,7 +276,7 @@
    {
     "name": "O. Appollis",
     "number": 7,
-    "pos": "Attacker",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/179893.png"
    },
    {
@@ -294,13 +294,13 @@
    {
     "name": "T. Maseko",
     "number": 12,
-    "pos": "Attacker",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/354831.png"
    },
    {
     "name": "R. Mofokeng",
     "number": 10,
-    "pos": "Attacker",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/414149.png"
    },
    {
@@ -324,7 +324,7 @@
   ]
  },
  "South Korea": {
-  "updated": "2026-06-25T11:34:24.855Z",
+  "updated": "2026-06-30T11:40:39.878Z",
   "source": "API-Football",
   "players": [
    {
@@ -486,7 +486,7 @@
   ]
  },
  "Czech Republic": {
-  "updated": "2026-06-25T11:34:31.977Z",
+  "updated": "2026-06-30T11:40:47.046Z",
   "source": "API-Football",
   "players": [
    {
@@ -648,7 +648,7 @@
   ]
  },
  "Canada": {
-  "updated": "2026-06-25T11:34:39.098Z",
+  "updated": "2026-06-30T11:40:54.212Z",
   "source": "API-Football",
   "players": [
    {
@@ -810,7 +810,7 @@
   ]
  },
  "Qatar": {
-  "updated": "2026-06-25T11:34:46.224Z",
+  "updated": "2026-06-30T11:41:01.392Z",
   "source": "API-Football",
   "players": [
    {
@@ -876,7 +876,7 @@
    {
     "name": "G. Laye",
     "number": 4,
-    "pos": "Midfielder",
+    "pos": "Defender",
     "photo": "https://media.api-sports.io/football/players/366516.png"
    },
    {
@@ -972,7 +972,7 @@
   ]
  },
  "Switzerland": {
-  "updated": "2026-06-25T11:34:53.347Z",
+  "updated": "2026-06-30T11:41:08.561Z",
   "source": "API-Football",
   "players": [
    {
@@ -1134,7 +1134,7 @@
   ]
  },
  "Bosnia-Herzegovina": {
-  "updated": "2026-06-25T11:35:00.476Z",
+  "updated": "2026-06-30T11:41:15.727Z",
   "source": "API-Football",
   "players": [
    {
@@ -1296,7 +1296,7 @@
   ]
  },
  "Brazil": {
-  "updated": "2026-06-25T11:35:07.600Z",
+  "updated": "2026-06-30T11:41:22.896Z",
   "source": "API-Football",
   "players": [
    {
@@ -1458,7 +1458,7 @@
   ]
  },
  "Morocco": {
-  "updated": "2026-06-25T11:35:14.730Z",
+  "updated": "2026-06-30T11:41:30.064Z",
   "source": "API-Football",
   "players": [
    {
@@ -1620,7 +1620,7 @@
   ]
  },
  "Scotland": {
-  "updated": "2026-06-25T11:35:21.852Z",
+  "updated": "2026-06-30T11:41:37.232Z",
   "source": "API-Football",
   "players": [
    {
@@ -1782,7 +1782,7 @@
   ]
  },
  "Haiti": {
-  "updated": "2026-06-25T11:35:28.978Z",
+  "updated": "2026-06-30T11:41:44.399Z",
   "source": "API-Football",
   "players": [
    {
@@ -1944,7 +1944,7 @@
   ]
  },
  "USA": {
-  "updated": "2026-06-25T11:35:36.107Z",
+  "updated": "2026-06-30T11:41:51.569Z",
   "source": "API-Football",
   "players": [
    {
@@ -2076,7 +2076,7 @@
    {
     "name": "B. Aaronson",
     "number": 11,
-    "pos": "Midfielder",
+    "pos": "Attacker",
     "photo": "https://media.api-sports.io/football/players/50739.png"
    },
    {
@@ -2106,7 +2106,7 @@
   ]
  },
  "Paraguay": {
-  "updated": "2026-06-25T11:35:43.230Z",
+  "updated": "2026-06-30T11:41:58.734Z",
   "source": "API-Football",
   "players": [
    {
@@ -2268,7 +2268,7 @@
   ]
  },
  "Australia": {
-  "updated": "2026-06-25T11:35:50.355Z",
+  "updated": "2026-06-30T11:42:05.900Z",
   "source": "API-Football",
   "players": [
    {
@@ -2298,7 +2298,7 @@
    {
     "name": "J. Bos",
     "number": 5,
-    "pos": "Defender",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/337587.png"
    },
    {
@@ -2430,7 +2430,7 @@
   ]
  },
  "Turkey": {
-  "updated": "2026-06-25T11:35:57.484Z",
+  "updated": "2026-06-30T11:42:13.063Z",
   "source": "API-Football",
   "players": [
    {
@@ -2478,7 +2478,7 @@
    {
     "name": "E. Elmali",
     "number": 13,
-    "pos": "Defender",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/50057.png"
    },
    {
@@ -2550,7 +2550,7 @@
    {
     "name": "A. Güler",
     "number": 8,
-    "pos": "Midfielder",
+    "pos": "Attacker",
     "photo": "https://media.api-sports.io/football/players/291964.png"
    },
    {
@@ -2592,7 +2592,7 @@
   ]
  },
  "Germany": {
-  "updated": "2026-06-25T11:36:04.610Z",
+  "updated": "2026-06-30T11:42:20.229Z",
   "source": "API-Football",
   "players": [
    {
@@ -2628,7 +2628,7 @@
    {
     "name": "D. Raum",
     "number": 22,
-    "pos": "Defender",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/25158.png"
    },
    {
@@ -2694,7 +2694,7 @@
    {
     "name": "J. Musiala",
     "number": 10,
-    "pos": "Midfielder",
+    "pos": "Attacker",
     "photo": "https://media.api-sports.io/football/players/181812.png"
    },
    {
@@ -2724,7 +2724,7 @@
    {
     "name": "F. Wirtz",
     "number": 17,
-    "pos": "Midfielder",
+    "pos": "Attacker",
     "photo": "https://media.api-sports.io/football/players/203224.png"
    },
    {
@@ -2754,7 +2754,7 @@
   ]
  },
  "Ecuador": {
-  "updated": "2026-06-25T11:36:11.741Z",
+  "updated": "2026-06-30T11:42:27.393Z",
   "source": "API-Football",
   "players": [
    {
@@ -2886,7 +2886,7 @@
    {
     "name": "N. Angulo",
     "number": 20,
-    "pos": "Attacker",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/311543.png"
    },
    {
@@ -2916,7 +2916,7 @@
   ]
  },
  "Ivory Coast": {
-  "updated": "2026-06-25T11:36:18.868Z",
+  "updated": "2026-06-30T11:42:34.557Z",
   "source": "API-Football",
   "players": [
    {
@@ -3066,7 +3066,7 @@
    {
     "name": "N. Pépé",
     "number": 19,
-    "pos": "Attacker",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/3246.png"
    },
    {
@@ -3078,7 +3078,7 @@
   ]
  },
  "Curaçao": {
-  "updated": "2026-06-25T11:36:25.991Z",
+  "updated": "2026-06-30T11:42:41.725Z",
   "source": "API-Football",
   "players": [
    {
@@ -3240,7 +3240,7 @@
   ]
  },
  "Netherlands": {
-  "updated": "2026-06-25T11:36:33.118Z",
+  "updated": "2026-06-30T11:42:48.890Z",
   "source": "API-Football",
   "players": [
    {
@@ -3270,7 +3270,7 @@
    {
     "name": "D. Dumfries",
     "number": 22,
-    "pos": "Defender",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/226.png"
    },
    {
@@ -3300,7 +3300,7 @@
    {
     "name": "M. van de Ven",
     "number": 15,
-    "pos": "Defender",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/152849.png"
    },
    {
@@ -3402,7 +3402,7 @@
   ]
  },
  "Japan": {
-  "updated": "2026-06-25T11:36:40.242Z",
+  "updated": "2026-06-30T11:42:56.060Z",
   "source": "API-Football",
   "players": [
    {
@@ -3450,7 +3450,7 @@
    {
     "name": "Y. Sugawara",
     "number": 2,
-    "pos": "Defender",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/32887.png"
    },
    {
@@ -3480,7 +3480,7 @@
    {
     "name": "R. Doan",
     "number": 10,
-    "pos": "Midfielder",
+    "pos": "Attacker",
     "photo": "https://media.api-sports.io/football/players/2598.png"
    },
    {
@@ -3564,7 +3564,7 @@
   ]
  },
  "Tunisia": {
-  "updated": "2026-06-25T11:36:47.366Z",
+  "updated": "2026-06-30T11:43:03.225Z",
   "source": "API-Football",
   "players": [
    {
@@ -3672,7 +3672,7 @@
    {
     "name": "E. Skhiri",
     "number": 17,
-    "pos": "Midfielder",
+    "pos": "Defender",
     "photo": "https://media.api-sports.io/football/players/21587.png"
    },
    {
@@ -3726,7 +3726,7 @@
   ]
  },
  "Sweden": {
-  "updated": "2026-06-25T11:36:54.490Z",
+  "updated": "2026-06-30T11:43:10.396Z",
   "source": "API-Football",
   "players": [
    {
@@ -3774,7 +3774,7 @@
    {
     "name": "V. Lindelöf",
     "number": 3,
-    "pos": "Defender",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/889.png"
    },
    {
@@ -3786,7 +3786,7 @@
    {
     "name": "H. Johansson",
     "number": 6,
-    "pos": "Midfielder",
+    "pos": "Defender",
     "photo": "https://media.api-sports.io/football/players/161504.png"
    },
    {
@@ -3798,7 +3798,7 @@
    {
     "name": "E. Stroud",
     "number": 24,
-    "pos": "Midfielder",
+    "pos": "Defender",
     "photo": "https://media.api-sports.io/football/players/226765.png"
    },
    {
@@ -3888,7 +3888,7 @@
   ]
  },
  "Belgium": {
-  "updated": "2026-06-25T11:37:01.613Z",
+  "updated": "2026-06-30T11:43:17.565Z",
   "source": "API-Football",
   "players": [
    {
@@ -4050,7 +4050,7 @@
   ]
  },
  "Egypt": {
-  "updated": "2026-06-25T11:37:08.732Z",
+  "updated": "2026-06-30T11:43:24.736Z",
   "source": "API-Football",
   "players": [
    {
@@ -4212,7 +4212,7 @@
   ]
  },
  "Iran": {
-  "updated": "2026-06-25T11:37:15.856Z",
+  "updated": "2026-06-30T11:43:31.898Z",
   "source": "API-Football",
   "players": [
    {
@@ -4374,7 +4374,7 @@
   ]
  },
  "New Zealand": {
-  "updated": "2026-06-25T11:37:22.980Z",
+  "updated": "2026-06-30T11:43:39.065Z",
   "source": "API-Football",
   "players": [
    {
@@ -4536,7 +4536,7 @@
   ]
  },
  "Spain": {
-  "updated": "2026-06-25T11:37:30.101Z",
+  "updated": "2026-06-30T11:43:46.230Z",
   "source": "API-Football",
   "players": [
    {
@@ -4644,7 +4644,7 @@
    {
     "name": "Álex Baena",
     "number": 15,
-    "pos": "Attacker",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/182219.png"
    },
    {
@@ -4662,7 +4662,7 @@
    {
     "name": "Lamine Yamal",
     "number": 19,
-    "pos": "Attacker",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/386828.png"
    },
    {
@@ -4698,7 +4698,7 @@
   ]
  },
  "Uruguay": {
-  "updated": "2026-06-25T11:37:37.226Z",
+  "updated": "2026-06-30T11:43:53.398Z",
   "source": "API-Football",
   "players": [
    {
@@ -4860,7 +4860,7 @@
   ]
  },
  "Saudi Arabia": {
-  "updated": "2026-06-25T11:37:44.350Z",
+  "updated": "2026-06-30T11:44:00.568Z",
   "source": "API-Football",
   "players": [
    {
@@ -4950,7 +4950,7 @@
    {
     "name": "Mohamed Kanno",
     "number": 23,
-    "pos": "Midfielder",
+    "pos": "Attacker",
     "photo": "https://media.api-sports.io/football/players/44349.png"
    },
    {
@@ -4986,7 +4986,7 @@
    {
     "name": "Sultan Mandash",
     "number": 20,
-    "pos": "Attacker",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/2639.png"
    },
    {
@@ -5022,7 +5022,7 @@
   ]
  },
  "Cape Verde": {
-  "updated": "2026-06-25T11:37:51.469Z",
+  "updated": "2026-06-30T11:44:07.735Z",
   "source": "API-Football",
   "players": [
    {
@@ -5112,7 +5112,7 @@
    {
     "name": "João Paulo",
     "number": 8,
-    "pos": "Midfielder",
+    "pos": "Defender",
     "photo": "https://media.api-sports.io/football/players/142016.png"
    },
    {
@@ -5184,7 +5184,7 @@
   ]
  },
  "France": {
-  "updated": "2026-06-25T11:37:58.593Z",
+  "updated": "2026-06-30T11:44:14.902Z",
   "source": "API-Football",
   "players": [
    {
@@ -5346,7 +5346,7 @@
   ]
  },
  "Senegal": {
-  "updated": "2026-06-25T11:38:05.722Z",
+  "updated": "2026-06-30T11:44:22.067Z",
   "source": "API-Football",
   "players": [
    {
@@ -5508,7 +5508,7 @@
   ]
  },
  "Norway": {
-  "updated": "2026-06-25T11:38:12.847Z",
+  "updated": "2026-06-30T11:44:29.231Z",
   "source": "API-Football",
   "players": [
    {
@@ -5586,7 +5586,7 @@
    {
     "name": "F. Aursnes",
     "number": 14,
-    "pos": "Midfielder",
+    "pos": "Defender",
     "photo": "https://media.api-sports.io/football/players/39043.png"
    },
    {
@@ -5604,7 +5604,7 @@
    {
     "name": "Oscar Bobb",
     "number": 22,
-    "pos": "Midfielder",
+    "pos": "Attacker",
     "photo": "https://media.api-sports.io/football/players/278133.png"
    },
    {
@@ -5670,7 +5670,7 @@
   ]
  },
  "Iraq": {
-  "updated": "2026-06-25T11:38:19.973Z",
+  "updated": "2026-06-30T11:44:36.396Z",
   "source": "API-Football",
   "players": [
    {
@@ -5832,7 +5832,7 @@
   ]
  },
  "Argentina": {
-  "updated": "2026-06-25T11:38:27.096Z",
+  "updated": "2026-06-30T11:44:43.564Z",
   "source": "API-Football",
   "players": [
    {
@@ -5922,7 +5922,7 @@
    {
     "name": "E. Palacios",
     "number": 14,
-    "pos": "Midfielder",
+    "pos": "Defender",
     "photo": "https://media.api-sports.io/football/players/6002.png"
    },
    {
@@ -5994,7 +5994,7 @@
   ]
  },
  "Algeria": {
-  "updated": "2026-06-25T11:38:34.223Z",
+  "updated": "2026-06-30T11:44:50.729Z",
   "source": "API-Football",
   "players": [
    {
@@ -6156,7 +6156,7 @@
   ]
  },
  "Austria": {
-  "updated": "2026-06-25T11:38:41.347Z",
+  "updated": "2026-06-30T11:44:57.897Z",
   "source": "API-Football",
   "players": [
    {
@@ -6318,7 +6318,7 @@
   ]
  },
  "Jordan": {
-  "updated": "2026-06-25T11:38:48.469Z",
+  "updated": "2026-06-30T11:45:05.066Z",
   "source": "API-Football",
   "players": [
    {
@@ -6480,7 +6480,7 @@
   ]
  },
  "Portugal": {
-  "updated": "2026-06-25T11:38:55.588Z",
+  "updated": "2026-06-30T11:45:12.244Z",
   "source": "API-Football",
   "players": [
    {
@@ -6606,7 +6606,7 @@
    {
     "name": "João Félix",
     "number": 11,
-    "pos": "Attacker",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/583.png"
    },
    {
@@ -6642,7 +6642,7 @@
   ]
  },
  "Colombia": {
-  "updated": "2026-06-25T11:39:02.709Z",
+  "updated": "2026-06-30T11:45:19.408Z",
   "source": "API-Football",
   "players": [
    {
@@ -6804,7 +6804,7 @@
   ]
  },
  "Uzbekistan": {
-  "updated": "2026-06-25T11:39:09.848Z",
+  "updated": "2026-06-30T11:45:26.589Z",
   "source": "API-Football",
   "players": [
    {
@@ -6828,7 +6828,7 @@
    {
     "name": "K. Alijonov",
     "number": 3,
-    "pos": "Defender",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/72122.png"
    },
    {
@@ -6936,7 +6936,7 @@
    {
     "name": "O. Orunov",
     "number": 11,
-    "pos": "Attacker",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/72127.png"
    },
    {
@@ -6966,7 +6966,7 @@
   ]
  },
  "DR Congo": {
-  "updated": "2026-06-25T11:39:17.002Z",
+  "updated": "2026-06-30T11:45:33.756Z",
   "source": "API-Football",
   "players": [
    {
@@ -7128,7 +7128,7 @@
   ]
  },
  "England": {
-  "updated": "2026-06-25T11:39:24.123Z",
+  "updated": "2026-06-30T11:45:40.922Z",
   "source": "API-Football",
   "players": [
    {
@@ -7272,7 +7272,7 @@
    {
     "name": "B. Saka",
     "number": 7,
-    "pos": "Attacker",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/1460.png"
    },
    {
