@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T20:22:08.178Z",
+  "updatedAt": "2026-06-30T21:55:31.621Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2743,27 +2743,6 @@
       "awayRank": 1
     },
     {
-      "id": "2502605",
-      "round": 32,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
-      "group": null,
-      "date": "2026-06-30",
-      "time": "17:00:00",
-      "timestamp": "2026-06-30T17:00:00",
-      "home": "Ivory Coast",
-      "away": "Norway",
-      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/rwxuuu1455465643.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/gyfn811591973155.png",
-      "homeScore": 1,
-      "awayScore": 2,
-      "status": "FT",
-      "venue": "AT&T Stadium",
-      "city": "Arlington, TX",
-      "homeRank": 40,
-      "awayRank": 33
-    },
-    {
       "id": "2502847",
       "round": 32,
       "stage": "KO",
@@ -2776,40 +2755,61 @@
       "away": "Sweden",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/p3n0z51726166851.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/h5adzg1591981772.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "HT",
       "venue": "MetLife Stadium",
       "city": "East Rutherford, NJ",
       "homeRank": 3,
-      "awayRank": 24,
+      "awayRank": 24
+    },
+    {
+      "id": "2503390",
+      "round": 32,
+      "stage": "KO",
+      "stageName": "Eliminatorias",
+      "group": null,
+      "date": "2026-07-01",
+      "time": "01:00:00",
+      "timestamp": "2026-07-01T01:00:00",
+      "home": "Mexico",
+      "away": "Ecuador",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/3rmosi1748525208.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/47wv2y1591989301.png",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "NS",
+      "venue": "Estadio Banorte",
+      "city": "Mexico City, MX",
+      "homeRank": 17,
+      "awayRank": 23,
       "pred": {
-        "pH": 76,
-        "pD": 11,
-        "pA": 13,
+        "pH": 37,
+        "pD": 27,
+        "pA": 36,
         "h2h": {
-          "played": 23,
+          "played": 26,
           "last": [
             {
-              "date": "2020-11-17",
-              "h": "France",
-              "a": "Sweden",
-              "hs": 4,
-              "as": 2
+              "date": "2025-10-14",
+              "h": "Mexico",
+              "a": "Ecuador",
+              "hs": 1,
+              "as": 1
             },
             {
-              "date": "2020-09-05",
-              "h": "Sweden",
-              "a": "France",
+              "date": "2024-06-30",
+              "h": "Mexico",
+              "a": "Ecuador",
               "hs": 0,
-              "as": 1
+              "as": 0
             },
             {
-              "date": "2017-06-09",
-              "h": "Sweden",
-              "a": "France",
-              "hs": 2,
-              "as": 1
+              "date": "2022-06-05",
+              "h": "Mexico",
+              "a": "Ecuador",
+              "hs": 0,
+              "as": 0
             }
           ]
         }
