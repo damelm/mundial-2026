@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T11:27:12.443Z",
+  "updatedAt": "2026-06-30T18:14:42.243Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2743,27 +2743,6 @@
       "awayRank": 1
     },
     {
-      "id": "2499836",
-      "round": 32,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
-      "group": null,
-      "date": "2026-06-30",
-      "time": "01:00:00",
-      "timestamp": "2026-06-30T01:00:00",
-      "home": "Netherlands",
-      "away": "Morocco",
-      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/1p0hr41593787110.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/hbmwkj1731791275.png",
-      "homeScore": 1,
-      "awayScore": 1,
-      "status": "AP",
-      "venue": "Estadio BBVA",
-      "city": "Guadalupe, NL",
-      "homeRank": 7,
-      "awayRank": 11
-    },
-    {
       "id": "2502605",
       "round": 32,
       "stage": "KO",
@@ -2776,20 +2755,63 @@
       "away": "Norway",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/rwxuuu1455465643.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/gyfn811591973155.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 1,
+      "status": "2H",
       "venue": "AT&T Stadium",
       "city": "Arlington, TX",
       "homeRank": 40,
-      "awayRank": 33,
+      "awayRank": 33
+    },
+    {
+      "id": "2502847",
+      "round": 32,
+      "stage": "KO",
+      "stageName": "Eliminatorias",
+      "group": null,
+      "date": "2026-06-30",
+      "time": "21:00:00",
+      "timestamp": "2026-06-30T21:00:00",
+      "home": "France",
+      "away": "Sweden",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/p3n0z51726166851.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/h5adzg1591981772.png",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "NS",
+      "venue": "MetLife Stadium",
+      "city": "East Rutherford, NJ",
+      "homeRank": 3,
+      "awayRank": 24,
       "pred": {
-        "pH": 29,
-        "pD": 26,
-        "pA": 45,
+        "pH": 76,
+        "pD": 11,
+        "pA": 13,
         "h2h": {
-          "played": 0,
-          "last": []
+          "played": 23,
+          "last": [
+            {
+              "date": "2020-11-17",
+              "h": "France",
+              "a": "Sweden",
+              "hs": 4,
+              "as": 2
+            },
+            {
+              "date": "2020-09-05",
+              "h": "Sweden",
+              "a": "France",
+              "hs": 0,
+              "as": 1
+            },
+            {
+              "date": "2017-06-09",
+              "h": "Sweden",
+              "a": "France",
+              "hs": 2,
+              "as": 1
+            }
+          ]
         }
       }
     }
