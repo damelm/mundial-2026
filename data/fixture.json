@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-06-29T22:57:28.742Z",
+  "updatedAt": "2026-06-30T00:11:12.555Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
   "season": "2026",
-  "count": 75,
+  "count": 74,
   "matches": [
     {
       "id": "2391728",
@@ -2743,27 +2743,6 @@
       "awayRank": 1
     },
     {
-      "id": "2499618",
-      "round": 32,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
-      "group": null,
-      "date": "2026-06-28",
-      "time": "19:00:00",
-      "timestamp": "2026-06-28T19:00:00",
-      "home": "South Africa",
-      "away": "Canada",
-      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/xjz9j91553368824.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/2t631f1595154867.png",
-      "homeScore": 0,
-      "awayScore": 1,
-      "status": "FT",
-      "venue": "SoFi Stadium",
-      "city": "Inglewood, CA",
-      "homeRank": 57,
-      "awayRank": 30
-    },
-    {
       "id": "2502846",
       "round": 32,
       "stage": "KO",
@@ -2778,7 +2757,7 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/khgav41553419195.png",
       "homeScore": 1,
       "awayScore": 1,
-      "status": "ET",
+      "status": "AP",
       "venue": "Gillette Stadium",
       "city": "Foxborough, MA",
       "homeRank": 9,
