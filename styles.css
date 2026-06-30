@@ -258,6 +258,7 @@ main { padding: 0 16px 44px; }
 .match-center { text-align: center; min-width: 84px; display: flex; flex-direction: column; align-items: center; gap: 2px; }
 .match-score { font-family: var(--font-display); font-size: 27px; color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: .01em; }
 .match-score .sep { color: var(--ink-faint); margin: 0 4px; }
+.match-pens { font-size: 10px; font-weight: 800; color: var(--ink-dim); text-transform: uppercase; letter-spacing: .03em; margin-top: 2px; white-space: nowrap; }
 .match-time { font-family: var(--font-display); font-size: 21px; font-weight: 400; color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: .02em; }
 .match-date-sm { font-size: 10.5px; color: var(--ink-faint); margin-top: 3px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
 .match-status { display: inline-block; margin-top: 7px; font-size: 9.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; padding: 3px 9px; border-radius: 999px; }
@@ -551,6 +552,7 @@ body.anim-paused *, body.anim-paused *::before, body.anim-paused *::after { anim
 .bk-nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; letter-spacing: -.01em; }
 .bk-tbd { color: var(--ink-dim); font-weight: 600; font-size: 10.5px; }
 .bk-sc { font-family: var(--font-display); font-size: 14px; min-width: 12px; text-align: end; color: var(--ink); font-variant-numeric: tabular-nums; }
+.bk-pen { font-family: var(--font-body); font-size: 9px; font-weight: 800; color: var(--ink-dim); margin-inline-start: 2px; vertical-align: 1px; }
 /* Ganador: resaltado verde + más peso. Perdedor: atenuado (jerarquía clara). */
 .bk-row.bk-win { background: var(--good-soft); }
 .bk-row.bk-win .bk-nm { font-weight: 800; }
