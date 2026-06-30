@@ -78,6 +78,7 @@ const TX = {
   koOut: { es: "Eliminado en", en: "Out in", pt: "Eliminado em", fr: "Éliminé en", ar: "خرج في" },
   orWord: { es: "o", en: "or", pt: "ou", fr: "ou", ar: "أو" },
   koTbd: { es: "Por definir", en: "To be decided", pt: "A definir", fr: "À définir", ar: "يُحدَّد لاحقًا" },
+  pens: { es: "Penales", en: "Penalties", pt: "Pênaltis", fr: "Tirs au but", ar: "ركلات الترجيح" },
   tapTip: { es: "Tocá cualquier partido para ver estadísticas, formación, relato y qué se juega.", en: "Tap any match to see stats, lineups, play-by-play and what's at stake.", pt: "Toque em qualquer jogo para ver estatísticas, escalação, narração e o que está em jogo.", fr: "Touchez un match pour voir stats, compositions, direct et enjeux.", ar: "اضغط على أي مباراة لعرض الإحصائيات والتشكيلة والسرد وما هو على المحك." },
   tapTipClose: { es: "Entendido", en: "Got it", pt: "Entendi", fr: "Compris", ar: "حسناً" },
   chipFirst: { es: "1.º", en: "1st", pt: "1.º", fr: "1er", ar: "الأول" },
@@ -750,6 +751,14 @@ function suspLabel(m) {
   if (/DELAY/.test(s)) return t("status.delayed");
   return t("status.susp");
 }
+// Línea de penales bajo el marcador (cuando un KO se define por tanda).
+function penLineHtml(m) {
+  if (m.homePens == null || m.awayPens == null) return "";
+  const homeWon = m.won === "home" || (m.won == null && m.homePens > m.awayPens);
+  const winName = dispName(homeWon ? m.home : m.away);
+  const hi = Math.max(m.homePens, m.awayPens), lo = Math.min(m.homePens, m.awayPens);
+  return `<div class="match-pens">${tw(TX.pens)}: ${escHtml(winName)} ${hi}–${lo}</div>`;
+}
 function matchCard(m) {
   const d = parseUTC(m.timestamp);
   const st = classifyStatus(m);
@@ -767,7 +776,8 @@ function matchCard(m) {
   } else {
     const score = `${m.homeScore ?? "-"}<span class="sep">:</span>${m.awayScore ?? "-"}`;
     const label = st === "live" ? `<span class="match-status st-live">● ${t("status.live")}</span>` : `<span class="match-status st-ft">${t("status.ft")}</span>`;
-    center = `<div class="match-score">${score}</div>${label}`;
+    const pens = penLineHtml(m);
+    center = `<div class="match-score">${score}</div>${pens}${label}`;
   }
   const grp = m.group ? `<span class="match-grouptag">${t("group", { g: m.group })}</span>` : stageLabel(m);
   const venue = m.venue ? ` · ${escHtml(m.venue)}${m.city ? ", " + escHtml(m.city.split(",")[0]) : ""}` : "";
@@ -1132,12 +1142,17 @@ function bkMatch(home, away, m, cls = "", champTeam) {
   const hs = m && m.homeScore != null ? m.homeScore : null;
   const as = m && m.awayScore != null ? m.awayScore : null;
   const st = m ? classifyStatus(m) : "ns";
-  const hWin = st === "ft" && hs > as, aWin = st === "ft" && as > hs, decided = hWin || aWin;
+  const pen = !!(m && m.homePens != null && m.awayPens != null);
+  // Ganador: explícito de ESPN (penales/prórroga) o por marcador.
+  let winSide = null;
+  if (m && st === "ft") winSide = m.won || (hs != null && as != null ? (hs > as ? "home" : as > hs ? "away" : (pen ? (m.homePens > m.awayPens ? "home" : "away") : null)) : null);
+  const hWin = winSide === "home", aWin = winSide === "away", decided = !!winSide;
   const champ = (t) => champTeam && t === champTeam;
+  const sd = (s, p) => (s == null ? null : (pen ? `${s}<span class="bk-pen">(${p})</span>` : s)); // marcador + penales
   // Horario del cruce si está agendado y no jugado (próximos partidos a la vista).
   const d = m && st === "ns" ? parseUTC(m.timestamp) : null;
   const when = d ? `<div class="bk-when">${fmtDayShort(d)} · ${fmtTime(d)}</div>` : "";
-  return `<div class="bk-match ${st === "live" ? "bk-live" : ""} ${cls}">${bkRow(home, hs, hWin, decided && !hWin, champ(home.team))}${bkRow(away, as, aWin, decided && !aWin, champ(away.team))}${when}</div>`;
+  return `<div class="bk-match ${st === "live" ? "bk-live" : ""} ${cls}">${bkRow(home, sd(hs, m && m.homePens), hWin, decided && !hWin, champ(home.team))}${bkRow(away, sd(as, m && m.awayPens), aWin, decided && !aWin, champ(away.team))}${when}</div>`;
 }
 // Índice de partidos KO por par de equipos (canónico, en ambos órdenes).
 function koPairIndex(kos) {
@@ -1187,10 +1202,16 @@ function koBracketModel() {
   const cache = {};
   const winnerRes = (info) => {
     const m = info.match;
-    if (!m || classifyStatus(m) !== "ft" || m.homeScore == null || m.awayScore == null) return null;
+    if (!m || classifyStatus(m) !== "ft") return null;
+    // Ganador explícito de ESPN (cubre penales y prórroga). Si no, por marcador.
+    if (m.won === "home") return info.home.team ? { team: info.home.team } : null;
+    if (m.won === "away") return info.away.team ? { team: info.away.team } : null;
+    if (m.homeScore == null || m.awayScore == null) return null;
     if (m.homeScore > m.awayScore) return info.home.team ? { team: info.home.team } : null;
     if (m.awayScore > m.homeScore) return info.away.team ? { team: info.away.team } : null;
-    return null; // empate (penales): ganador no determinable por marcador
+    if (m.homePens != null && m.awayPens != null && m.homePens !== m.awayPens)
+      return (m.homePens > m.awayPens ? info.home : info.away).team ? { team: (m.homePens > m.awayPens ? info.home : info.away).team } : null;
+    return null;
   };
   function slotInfo(no) {
     if (cache[no]) return cache[no];
@@ -2045,11 +2066,17 @@ async function fetchEspnKoSchedule() {
     const stage = round === 2 ? (/loser/i.test(`${hn} ${an}`) ? "TP" : "F")
       : ({ 32: "R32", 16: "R16", 8: "QF", 4: "SF" }[round] || "KO");
     const stt = ev.status && ev.status.type, est = stt && stt.state;
+    // Ganador por marcador O por penales (ESPN marca `winner` en el competidor
+    // ganador, y `shootoutScore` con los penales). Imprescindible para que el
+    // equipo avance en el cuadro cuando el partido se define por penales.
+    const won = H.winner === true ? "home" : A.winner === true ? "away" : null;
     out.push({
       id: "ko-" + ev.id, stage, stageName: "Eliminatorias", round, group: null,
       home, away, homeLabel: home ? null : tw(TX.koTbd), awayLabel: away ? null : tw(TX.koTbd),
       date: (ev.date || "").slice(0, 10), time: (ev.date || "").slice(11, 16) + ":00", timestamp: ev.date || null,
       homeScore: est === "pre" ? null : num(H.score), awayScore: est === "pre" ? null : num(A.score),
+      homePens: num(H.shootoutScore), awayPens: num(A.shootoutScore), won,
+      live: est === "in", // en juego: clave para no mostrarlo como "Final"
       status: est === "post" ? "FT" : est === "in" ? String((ev.status && ev.status.displayClock) || "LIVE") : "NS",
       venue: (c.venue && c.venue.fullName) || null,
     });
