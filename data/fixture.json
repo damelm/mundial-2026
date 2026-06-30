@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T08:20:26.797Z",
+  "updatedAt": "2026-06-30T11:27:12.443Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2757,8 +2757,8 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/hbmwkj1731791275.png",
       "homeScore": 1,
       "awayScore": 1,
-      "status": "PEN",
-      "venue": "Estadio BBVA Bancomer",
+      "status": "AP",
+      "venue": "Estadio BBVA",
       "city": "Guadalupe, NL",
       "homeRank": 7,
       "awayRank": 11
