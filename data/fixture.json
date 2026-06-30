@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T00:11:12.555Z",
+  "updatedAt": "2026-06-30T04:34:42.768Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2743,27 +2743,6 @@
       "awayRank": 1
     },
     {
-      "id": "2502846",
-      "round": 32,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
-      "group": null,
-      "date": "2026-06-29",
-      "time": "20:30:00",
-      "timestamp": "2026-06-29T20:30:00",
-      "home": "Germany",
-      "away": "Paraguay",
-      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/1xysi51726167152.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/khgav41553419195.png",
-      "homeScore": 1,
-      "awayScore": 1,
-      "status": "AP",
-      "venue": "Gillette Stadium",
-      "city": "Foxborough, MA",
-      "homeRank": 9,
-      "awayRank": 45
-    },
-    {
       "id": "2499836",
       "round": 32,
       "stage": "KO",
@@ -2776,42 +2755,41 @@
       "away": "Morocco",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/1p0hr41593787110.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/hbmwkj1731791275.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "FT",
       "venue": "Estadio BBVA Bancomer",
       "city": "Guadalupe, NL",
       "homeRank": 7,
-      "awayRank": 11,
+      "awayRank": 11
+    },
+    {
+      "id": "2502605",
+      "round": 32,
+      "stage": "KO",
+      "stageName": "Eliminatorias",
+      "group": null,
+      "date": "2026-06-30",
+      "time": "17:00:00",
+      "timestamp": "2026-06-30T17:00:00",
+      "home": "Ivory Coast",
+      "away": "Norway",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/rwxuuu1455465643.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/gyfn811591973155.png",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "NS",
+      "venue": "AT&T Stadium",
+      "city": "Arlington, TX",
+      "homeRank": 40,
+      "awayRank": 33,
       "pred": {
-        "pH": 38,
-        "pD": 27,
-        "pA": 35,
+        "pH": 29,
+        "pD": 26,
+        "pA": 45,
         "h2h": {
-          "played": 3,
-          "last": [
-            {
-              "date": "2017-05-31",
-              "h": "Morocco",
-              "a": "Netherlands",
-              "hs": 1,
-              "as": 2
-            },
-            {
-              "date": "1999-04-28",
-              "h": "Netherlands",
-              "a": "Morocco",
-              "hs": 1,
-              "as": 2
-            },
-            {
-              "date": "1994-06-29",
-              "h": "Morocco",
-              "a": "Netherlands",
-              "hs": 1,
-              "as": 2
-            }
-          ]
+          "played": 0,
+          "last": []
         }
       }
     }
