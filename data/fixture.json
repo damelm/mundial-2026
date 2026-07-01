@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T21:39:28.036Z",
+  "updatedAt": "2026-07-01T22:52:07.763Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2755,9 +2755,9 @@
       "away": "Senegal",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/8xlvxv1592062265.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/slayb01780546342.png",
-      "homeScore": 0,
+      "homeScore": 3,
       "awayScore": 2,
-      "status": "2H",
+      "status": "AET",
       "venue": "Lumen Field",
       "city": "Seattle, WA",
       "homeRank": 8,
