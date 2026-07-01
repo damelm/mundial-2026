@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T19:56:11.478Z",
+  "updatedAt": "2026-07-01T21:39:28.036Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2743,27 +2743,6 @@
       "awayRank": 1
     },
     {
-      "id": "2503391",
-      "round": 32,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
-      "group": null,
-      "date": "2026-07-01",
-      "time": "16:00:00",
-      "timestamp": "2026-07-01T16:00:00",
-      "home": "England",
-      "away": "DR Congo",
-      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/s85jjw1728749022.png",
-      "homeScore": 2,
-      "awayScore": 1,
-      "status": "FT",
-      "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta, GA",
-      "homeRank": 4,
-      "awayRank": 56
-    },
-    {
       "id": "2503392",
       "round": 32,
       "stage": "KO",
@@ -2776,20 +2755,63 @@
       "away": "Senegal",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/8xlvxv1592062265.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/slayb01780546342.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 2,
+      "status": "2H",
       "venue": "Lumen Field",
       "city": "Seattle, WA",
       "homeRank": 8,
-      "awayRank": 18,
+      "awayRank": 18
+    },
+    {
+      "id": "2499837",
+      "round": 32,
+      "stage": "KO",
+      "stageName": "Eliminatorias",
+      "group": null,
+      "date": "2026-07-02",
+      "time": "00:00:00",
+      "timestamp": "2026-07-02T00:00:00",
+      "home": "USA",
+      "away": "Bosnia-Herzegovina",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/21f0oi1597948195.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/wtqqst1455463120.png",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "NS",
+      "venue": "Levi's Stadium",
+      "city": "Santa Clara, CA",
+      "homeRank": 16,
+      "awayRank": 74,
       "pred": {
-        "pH": 47,
-        "pD": 25,
-        "pA": 28,
+        "pH": 58,
+        "pD": 21,
+        "pA": 21,
         "h2h": {
-          "played": 0,
-          "last": []
+          "played": 3,
+          "last": [
+            {
+              "date": "2021-12-18",
+              "h": "United States",
+              "a": "Bosnia and Herzegovina",
+              "hs": 1,
+              "as": 0
+            },
+            {
+              "date": "2018-01-28",
+              "h": "United States",
+              "a": "Bosnia and Herzegovina",
+              "hs": 0,
+              "as": 0
+            },
+            {
+              "date": "2013-08-14",
+              "h": "Bosnia and Herzegovina",
+              "a": "United States",
+              "hs": 3,
+              "as": 4
+            }
+          ]
         }
       }
     }
