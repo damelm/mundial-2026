@@ -7290,7 +7290,7 @@
   ]
  },
  "Croatia": {
-  "updated": "2026-06-26T11:40:25.071Z",
+  "updated": "2026-07-01T11:54:46.970Z",
   "source": "API-Football",
   "players": [
    {
@@ -7446,13 +7446,13 @@
    {
     "name": "I. Perisic",
     "number": 14,
-    "pos": "Midfielder",
+    "pos": "Defender",
     "photo": "https://media.api-sports.io/football/players/207.png"
    }
   ]
  },
  "Ghana": {
-  "updated": "2026-06-26T11:40:32.188Z",
+  "updated": "2026-07-01T11:54:54.137Z",
   "source": "API-Football",
   "players": [
    {
@@ -7608,13 +7608,13 @@
    {
     "name": "K. Sulemana",
     "number": 22,
-    "pos": "Attacker",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/199837.png"
    }
   ]
  },
  "Panama": {
-  "updated": "2026-06-26T11:40:39.302Z",
+  "updated": "2026-07-01T11:55:01.313Z",
   "source": "API-Football",
   "players": [
    {
