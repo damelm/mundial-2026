@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T23:13:31.677Z",
+  "updatedAt": "2026-07-01T01:33:48.746Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2743,27 +2743,6 @@
       "awayRank": 1
     },
     {
-      "id": "2502847",
-      "round": 32,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
-      "group": null,
-      "date": "2026-06-30",
-      "time": "21:00:00",
-      "timestamp": "2026-06-30T21:00:00",
-      "home": "France",
-      "away": "Sweden",
-      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/p3n0z51726166851.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/h5adzg1591981772.png",
-      "homeScore": 3,
-      "awayScore": 0,
-      "status": "FT",
-      "venue": "MetLife Stadium",
-      "city": "East Rutherford, NJ",
-      "homeRank": 3,
-      "awayRank": 24
-    },
-    {
       "id": "2503390",
       "round": 32,
       "stage": "KO",
@@ -2812,6 +2791,36 @@
               "as": 0
             }
           ]
+        }
+      }
+    },
+    {
+      "id": "2503391",
+      "round": 32,
+      "stage": "KO",
+      "stageName": "Eliminatorias",
+      "group": null,
+      "date": "2026-07-01",
+      "time": "16:00:00",
+      "timestamp": "2026-07-01T16:00:00",
+      "home": "England",
+      "away": "DR Congo",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/s85jjw1728749022.png",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "NS",
+      "venue": "Mercedez-Benz Stadium",
+      "city": "Atlanta, GA",
+      "homeRank": 4,
+      "awayRank": 56,
+      "pred": {
+        "pH": 73,
+        "pD": 13,
+        "pA": 14,
+        "h2h": {
+          "played": 0,
+          "last": []
         }
       }
     }
