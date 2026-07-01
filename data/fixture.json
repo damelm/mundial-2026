@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T01:33:48.746Z",
+  "updatedAt": "2026-07-01T06:10:42.109Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2755,44 +2755,13 @@
       "away": "Ecuador",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/3rmosi1748525208.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/47wv2y1591989301.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "FT",
       "venue": "Estadio Banorte",
       "city": "Mexico City, MX",
       "homeRank": 17,
-      "awayRank": 23,
-      "pred": {
-        "pH": 37,
-        "pD": 27,
-        "pA": 36,
-        "h2h": {
-          "played": 26,
-          "last": [
-            {
-              "date": "2025-10-14",
-              "h": "Mexico",
-              "a": "Ecuador",
-              "hs": 1,
-              "as": 1
-            },
-            {
-              "date": "2024-06-30",
-              "h": "Mexico",
-              "a": "Ecuador",
-              "hs": 0,
-              "as": 0
-            },
-            {
-              "date": "2022-06-05",
-              "h": "Mexico",
-              "a": "Ecuador",
-              "hs": 0,
-              "as": 0
-            }
-          ]
-        }
-      }
+      "awayRank": 23
     },
     {
       "id": "2503391",
