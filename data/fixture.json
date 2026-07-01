@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T17:55:32.880Z",
+  "updatedAt": "2026-07-01T19:56:11.478Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2757,8 +2757,8 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/s85jjw1728749022.png",
       "homeScore": 2,
       "awayScore": 1,
-      "status": "2H",
-      "venue": "Mercedez-Benz Stadium",
+      "status": "FT",
+      "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta, GA",
       "homeRank": 4,
       "awayRank": 56
