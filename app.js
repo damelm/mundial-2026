@@ -2081,6 +2081,14 @@ async function fetchEspnKoSchedule() {
       venue: (c.venue && c.venue.fullName) || null,
     });
   }
+  // Ronda por POSICIÓN cronológica (robusto). El texto del rival ("Ganador de
+  // 32avos") solo sirve mientras el equipo no está definido; cuando AMBOS se
+  // resuelven no se puede saber la ronda por el nombre y caían todos en 32avos,
+  // duplicando a los que ya avanzaron. Los 32 KO van 16+8+4+2+2 en orden de fecha.
+  out.sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
+  if (out.length === 32) out.forEach((m, i) => { m.round = i < 16 ? 32 : i < 24 ? 16 : i < 28 ? 8 : i < 30 ? 4 : 2; });
+  const roundStage = { 32: "R32", 16: "R16", 8: "QF", 4: "SF" };
+  for (const m of out) m.stage = roundStage[m.round] || "F";
   // Final vs 3.º puesto (ambos round 2): el más temprano por fecha es el 3.º.
   const r2 = out.filter((m) => m.round === 2).sort((a, b) => (a.timestamp || "").localeCompare(b.timestamp || ""));
   if (r2.length >= 2) { r2[0].stage = "TP"; r2[r2.length - 1].stage = "F"; }
