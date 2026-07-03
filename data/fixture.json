@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T00:05:02.498Z",
+  "updatedAt": "2026-07-03T04:08:18.349Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2743,27 +2743,6 @@
       "awayRank": 1
     },
     {
-      "id": "2503393",
-      "round": 32,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
-      "group": null,
-      "date": "2026-07-02",
-      "time": "23:00:00",
-      "timestamp": "2026-07-02T23:00:00",
-      "home": "Portugal",
-      "away": "Croatia",
-      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/swqvpy1455466083.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/vvtsyu1455465317.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "status": "HT",
-      "venue": "BMO Field",
-      "city": "Toronto, ON",
-      "homeRank": 6,
-      "awayRank": 10
-    },
-    {
       "id": "2503635",
       "round": 32,
       "stage": "KO",
@@ -2776,33 +2755,54 @@
       "away": "Algeria",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/mb7yqe1717365808.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/rrwpry1455460218.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 2,
+      "awayScore": 0,
+      "status": "2H",
       "venue": "BC Place",
       "city": "Vancouver, BC",
       "homeRank": 19,
-      "awayRank": 38,
+      "awayRank": 38
+    },
+    {
+      "id": "2502848",
+      "round": 32,
+      "stage": "KO",
+      "stageName": "Eliminatorias",
+      "group": null,
+      "date": "2026-07-03",
+      "time": "18:00:00",
+      "timestamp": "2026-07-03T18:00:00",
+      "home": "Australia",
+      "away": "Egypt",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/eylq8x1781926138.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/uheyzo1742102234.png",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "NS",
+      "venue": "AT&T Stadium",
+      "city": "Arlington, TX",
+      "homeRank": 24,
+      "awayRank": 32,
       "pred": {
-        "pH": 40,
+        "pH": 41,
         "pD": 27,
-        "pA": 33,
+        "pA": 32,
         "h2h": {
           "played": 2,
           "last": [
             {
-              "date": "1986-05-06",
-              "h": "Switzerland",
-              "a": "Algeria",
-              "hs": 2,
+              "date": "2010-11-17",
+              "h": "Egypt",
+              "a": "Australia",
+              "hs": 3,
               "as": 0
             },
             {
-              "date": "1983-11-30",
-              "h": "Algeria",
-              "a": "Switzerland",
-              "hs": 1,
-              "as": 2
+              "date": "1987-06-19",
+              "h": "Australia",
+              "a": "Egypt",
+              "hs": 0,
+              "as": 0
             }
           ]
         }
