@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T04:08:18.349Z",
+  "updatedAt": "2026-07-03T07:35:51.016Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2757,7 +2757,7 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/rrwpry1455460218.png",
       "homeScore": 2,
       "awayScore": 0,
-      "status": "2H",
+      "status": "FT",
       "venue": "BC Place",
       "city": "Vancouver, BC",
       "homeRank": 19,
