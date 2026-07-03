@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T19:21:48.711Z",
+  "updatedAt": "2026-07-03T20:38:35.761Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2757,7 +2757,7 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/uheyzo1742102234.png",
       "homeScore": 1,
       "awayScore": 1,
-      "status": "2H",
+      "status": "ET",
       "venue": "AT&T Stadium",
       "city": "Arlington, TX",
       "homeRank": 24,
