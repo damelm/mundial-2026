@@ -1,25 +1,55 @@
 {
- "updatedAt": "2026-07-03T14:40:32.686Z",
+ "updatedAt": "2026-07-03T19:56:58.783Z",
  "es": [
   {
-   "t": "Mundial 2026, en directo: noticias de la Copa del Mundo y última hora de las selecciones, hoy 3 de julio",
+   "t": "El México vs Inglaterra cambia de hora por cuestiones climáticas",
+   "src": "Claro Sports",
+   "u": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNVEZUeHREYXVGRWt6dFlIYTZRY0Rtajl5NmZIQTJYbF92ZkxhOXR3ZmoxLWZNckpicDJNS1dSZEZjVFBWUGUtOWFOYUhsa3gxcFFvODY1SEE5TGhQUGdKZS1wb242VkZRSzRfMVpHT0xWTVpPQ0xXR0EzbWlLcGxRbDhMeTF3U3dqRmZiUkp4UHI?oc=5"
+  },
+  {
+   "t": "Mundial 2026: México vs Inglaterra cambia de horario por amenaza de tormenta eléctrica",
+   "src": "El Universal",
+   "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQT2xxRVd0LTUxVVE2M0tUSEFaSVRtUFlBcGttUmwtbDZXMFRoajNqTW8xZE5zMzR1d3o1ekd3WFpFaGkxSjVDa0JkVlE5c1RBSlpCc3J0QkMtME9ZLWRyblExaVpsdDNQTzk4c0NRT1RvTGp1WWN4TzIzUGFENDVXY081ZzBqTWlsTHRiWlpkdFpyYmpTZFp5Yl9sX1R2QllKTFlOcFg0QnEwZDJtLXBzcS1JaWRFdkFOVG1oRWUwOUd3ZE5rYlQ3NE5nVzN1NFdDdlBSSjBiODUzZ9IB7gFBVV95cUxPLTZ0Z0p6ejlHdlFPTjFySDlMbUtzWGZNZEpGLU9lV3hndXdzLVJNZm5sb1ZaRXJzUmNZeVBqYWFQSDRIdG5vVkI4NzZNbWg4M051elpyN01XVEZoWkpVOGhUczJhMmd0MFk1VmNxWUQzNmZhX3g1bWdtUllRR05FeGJrTFZzSzdzdkVucFNyamZsRjdadTVmZkpkQ0RvaUtzSGRFZkpoWjFhUkdHdFRPWU9rZHNNZTZybDRNbFI4Yzg1X2xsXy1ScXNRcDB1OWtWdzhsT1pHVHhOMkwtV2tPRWhjeWNDNXdoUnBMRy1R?oc=5"
+  },
+  {
+   "t": "México vs Inglaterra cambiaría de horario en Mundial 2026: Esto es lo que se sabe",
+   "src": "MARCA",
+   "u": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPQmRqUko4N1B0ZFpqTU95aERWNnhaOWpUekI3YVNzR3czR1hCTEdSYi1weFRGQTU3T3ZXbnB5ZlRHbnVtSzRYZkctX0lPalVMQ0xhdFRlVXVWU3ZzMmgzQUYycjYxdldobFRLYV9QVzI3VVdUOTFiZnpiRXozMWVsVm1GdjZqQlMwMWtfQU9n0gGOAUFVX3lxTE1xdzlhMjVrdEpsVlBjcElqa2lJTmRuS2REUTZJSlJkSlJjYThQbE9DYmZ4Yk9OdTVmeEh1THgxWmpPalFHRnd2ZGw2bWRHUEN5cGM1ODNJbHg4bEhwNFZSRHM2ZjlTY0lxa2JpdF9FZEcyV05GbjFpV1MzNXJmdV9qam5FR2NNTk5lWWpwVlE?oc=5"
+  },
+  {
+   "t": "Australia - Egipto en directo: dieciseisavos del Mundial 2026 hoy, en vivo",
    "src": "Diario AS",
-   "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNOVNnVWVfSWk2ZzdCTmt5Z1A0YjBCZ1dyVWJJVEJxekc4SWdWRmZFbkZaZGNBenZlQm1mQlBFbU5MZHlJbm9aSDVOd0p6aW8tblFwMkNSczAtS3ZDU0J5Y3l0LV9CQ05FamlWVHg5ejFqWjhienBuOVM4aUZqZ0RLcWZmWFlvc3QwYUktVFU0NGZiTzRHUkFYWkZpUTkwb3gyZkdWUFRTMl9uOUZsRTB4N3dteHFCdkRPbmNqT1J1bUtPNnJXTl9xNFJGT19QWjdiYmdaT081ZllQd9IB7gFBVV95cUxQQVczRlhjVVdhd0tVVVVnRm9CVEY1WHNFZTI1VDVJWm4wNmhvdnBTZjJmUS0tWUl1M182bUoxUHpmVHBYMkJuckpEcmJNTnM3VjZYVnkwR2l3cW5wdGYtRng2SUxqblZlM3RjMWFkYTFDQzNIem4zeE5fYlItaWw5OHJhSjhqZno5aEhLcHh5WUhqZ0w5bGJaTUlmSGU1aU5jeTJzX1RGYmdNWGxPaXlPMnZaMk1UdWFESFZoY05xSDMxSTEzaHB5bXVQRzloeDFFZFhTZXZoY19qVkZ5YTNwOEFKU2sybV81TDRrNXpR?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeVpFdDRERlBBVXplMUg3YkplNnNrRTVBdHdlcDlnMFhtX3RBWlo2LU1EOUNKSmhTOFVQR29DRGU1WGZRNUZ3ZjJiTy11eTFGM09LNzFJTGxGcXVZTW5WWmhEbmdnYUtjTGszdWFUejUzNkJjLVdLOFNVUVJPRW5nazZ0WUppQ2I5di1Xa0gyMUZtLXJ0UFpUcE9mWnZxRzZTUHoyVWc4cEJzZENjb1dfRtIBxAFBVV95cUxPdjh1TEhIMmZFamZQdjYta2FWRTFjVFYtZVdtcUZYTGxHNEQwWUZYSk1CSnhuOFRLLXg0dERxVTRjcElyM1dEZURWTGtWSjUzUUJIRHNqdHpqNFdzRWJKYzFYZHVFU25Qc3ptU0wzQjlLb1A0YnNEaWF3WDFnWlZVemR3ZzY0ZU5YcHZMM1U5LTV5TzlwN1hQYV9GVWZCdEFUM1VnRW5zV3B1MDhNMnd5ZXpVMVByNzFOYXg0aFRRYnRJaUNV?oc=5"
   },
   {
-   "t": "Gracias a la tecnología, el nuevo balón del Mundial fue clave en la eliminación de Croacia",
-   "src": "CNN en Español",
-   "u": "https://news.google.com/rss/articles/CBMingFBVV95cUxPcXhHSnJzbmMwdzFPNmh3dlNpdEE3ZmF0OWl5LUl0ci1MT0NqaFlESGFYOUFMSUlyMDlhOHVraTA3Vy1BYTh4aEhRX250S1hDV1N6OTZBVDhzNXVqc3VjSFdfN093ZXpBbndvMVNZVzQxNmtZdlZsQ3pZZ1JjV01IYW94SEg5TVJ6dlNDNmJ2Q01tWGFOcHRVblJHMXQ3UQ?oc=5"
+   "t": "Australia vs. Egipto EN VIVO. Partido 16vos de Final del Mundial 2026",
+   "src": "Mediotiempo",
+   "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNa1Q5cjRXNy14NENiX1lsU1JmQ0RPUWJfc2J1b2xXQjVGMHNlV2Nuc0JPM3FpX3VUU0RJUEppM2l1UVFPbE82OFBhWk1pN0hZWHZhRzJmeTBheHRETWwwMXVsbTBObzlJaloyQjNlSVRIdjFOT05RbWd3WDRuTnF2S2tWS0lpWjV2MFdQd240emNLZHYxbk14ZDZlaDdOQkRTUjJfNjJRODBLaFpVY1RtdE1panVVNGNRT0RVemlB0gG-AUFVX3lxTE9QV21naDdmR2lJZDlkOWJ1SGNnMDNzM0RNem9SWVBCcWthaHNrWkpuRWtmcklTTzVZVmhBRDBrcnZBLXhDTlpacm1HYWxLa1lOWktCOFFZcVFfa21iNlp1SGNSSWlXOEU3NWdVZGVIUWo3MjFJaEMzZXlKZDBRNUtlOTBOMW84bTBnU21XUHo4Q25qUHROT0QtOG9tTGlkU3N2bmZYeVlhLTBxRVNqalZtQ1dGSHZoQ2Z1dkdCNVE?oc=5"
   },
   {
-   "t": "Mundial 2026, últimas noticias en directo | Argentina y Colombia buscan sus lugares en octavos",
-   "src": "EL PAÍS",
-   "u": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPWXBlOEhtWUQ2Z0ZFS3E5SG9TdW1uc3BRRVR0eWF5ZDhaR2lDdFFCVDR5bGlvTmpmT0FkZV9sYUI2UFhuOWxMY0lPb2MzcUpDbnF3M1U1aEJ6R01sLW5CR2dObmpBV2ZMbzdKeW5CWkh5cFE1ZzNPZHoyX2FPUXYwQ2dTQ01zTHYza3Fqb1NRVWc1LXFrbGloSkF6TkhyczhVTVZOMmRGSG56eDRKMndMUVR2a0XSAcgBQVVfeXFMTkZBSXhvcUYwTlBiWFltRExLaERKcUZmUjZmQkd3NEVDbW1mVmQ2VDBKdmd5R2wxREtGOVRad2l2SWlQMmJDNWpiV3ZTaXhxSUJPU2xYZmo0X3NxRVpaQWdub1ZwUGZ2NUgzRjFuTVE5eDRSRnVjWV9hUkE2UTZzOHF0VGF5S2R6VDlNSWtfTE1KcEpGYmZLaGFnYnhBNFdaRVpGaTBDbVdObjRzc18yZV9VbkJvZGRYMzZPS1JWNHVzbFpvWXpMRUs?oc=5"
-  },
-  {
-   "t": "Portugal y Cristiano Ronaldo remontan a Croacia 2-1 en partido de los 16avos de Final del Mundial 2026; resume",
+   "t": "Australia vs Egipto EN VIVO: Ver GRATIS y ONLINE el resultado de la transmisión de HOY viernes 3 de julio, par",
    "src": "TV Azteca",
-   "u": "https://news.google.com/rss/articles/CBMi3AJBVV95cUxOd2JGdzZfcUloUWpQeERlc2k1TzlVZG4yQlZYLVhHeGlOdHdLcld1TGw3YUFsRnpmejJZRzFzLVVhYjBFQVpEblFrWkxhWjZmT0RtVTdXXzUxeXM1dWk2MkRwTXFCdkVZbnEtS3pNWVd5NFBuWlNJaXVNa0x4UHd6US1fOWkxTERNSFdmMzBDUmg0VG1ucWk0ck5rLWpoa0w2SEpYc3E3WEFNcmVUS3NPSGJWQWNaR1lqZUdZeHAwc2lkN2wxTi1pTDJEXy1uSmFzRko4Si1Ncml4MVBhZ1NkYm9Td1VhRnUzaU84Z1JCOS1qWVFYSGNZMUMwSmFfOGdKdTZjOXpZZGUzQjRHemxSczZyMGVFblhCLVVBdkNxSzdCM3B6UGFXRmRsempRekFFMHBSR3ZMTmhzM1ZhRFZoN016V05wNGZ6SDZoOTNHbGVCemFEYWhwU2tzamLSAeoCQVVfeXFMTmNtelFRNmJqNEpZMldjcHRGVi1STzZFVktWSW5Ramk0TDlLOVFXbm15TENVRnZxRjVvOHI5MjVjRWdITm50ODg5aWtfM25ZOTVUWHQ3S0lzeERfVno5bkpXams4dDBRZ3AtU2N1Q0xuRjdmUDJGVnJ0RlFlaEJjaS1GbXB3eTVxd3piREVCem1NdWR5a1UydVRRVlJnbnhNZTA4ZERGQ3JQdXA0dEI2YVJjSG5aaVNwTW40eG1kNlZjTlRtcHMybnhpdkVzV3B4eWJEXzZoM255clhUSmZKd0F2MDB0NHFIYzdUdUY3bnlQSlVMVTg0M2ZyYmVPanRzUmF6UHg3dXBORHpibFUxZGtLZzhKTTc3NlNNUXpTdzFoSlEzNjV4aUMwUDlINFhTMjZfLVFaZW04TzVnSnZ1eHR3S181bThtQnN5bGN1ckNRN3B2OFZfdnZKODdTbW45MnVPSXZSM1V6R3c?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNR1RWaE5xRnhDanBQTm9GR2x6dDBhUjZrQ1RCeWVKRHB1dkZwbk1KcDNDaGg4Rk5Mb29aYXhGWnNPdjdzZE5xZWk5enhUR29Zd1hRb1VUOUJvUDE3VkhfbTBfLVlhalQ2SFA0LV9xcHhiQUpmRXo4cE15bGFVZDByd3RWdzFtaW5IU1Fmc3Y4bzRBZE1wbTcxRk02LWplSkdKenZQZWVfa1J5eDJtSm5GSGExSHFRYTlPN05KYnNCUldyZ3U0YjA2TzI5akd5LUtDVzhVbW83OFfSAeYBQVVfeXFMT0lwUURlTlk3LVJJY3N5QlVObEtVTDF1LXdZTFFRejZoVXJldU82X00wV2J2elVyS2NMLUcxRUVCQU5LMnJKRXdZSk41eVE0TjFtNy1QX01zZUZTd1ZiLWQ4c1QxVzloWFNfeVJfZ0l3MDhrN0ttWHh5QUcwX1B0RWl6S3J1ai13dGJWRzhNbmhVZk9Kc04zQkhwNlNlbjM4UzlZSWtWbUl3SzRCaXRGa1BGNTdhcnFpTFZEaWxXWm10TjhVWTRlengtNlF0UGtZS1JqTXNqS2xYOVVGNk5fSTdxd0lfR1E?oc=5"
+  },
+  {
+   "t": "TV Azteca tendrá la transmisión del Argentina vs Cabo Verde, partido de Lionel Messi en los 16vos de Final del",
+   "src": "TV Azteca",
+   "u": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOLTIzZVBhNFI5cWlMcEgwV0YxOWNoZ0xFX2tjNjBsLVppOGYzbnpURW1lT1RhM1B6Q1l4bVZZRzQ0bUpMOFdTMk5HMVJ1cUNRdWEzRUFLanEtU0JWcHJVWDJMTW5ZUmtaSFFRMEM0YXpnOFFtNV91SzVKdWtiU2pqQXFZUVEydjlNMVRWbWZnQnZrZDV4Yy1mTEJpYkRCOHgzaHlKYzA0OFg4YzBRTDdYdjVMNy1MVGVhNm56UkthUzN0RVFvMFdka2xRWUtYWkpkbDJSak530gHjAUFVX3lxTE1BNnQ1b1FNSG4tXzE3UG9ISlgxc0ZuRWlUdWQ0V253OC1CWVhJZHhSTDA4eUlUTVZDRHAtM3RibFRVa3pRbXNoQnNxR3hZMktKdks1QUtZczBsUHRNZ0Z1V3A0T09EVy00QkJOMGlfTzdOVkZiWU9hWS1ETlgtR05jTTFiYmszekVTOGpIRXk2OFhSdTVNcGFQSzZIUW5VVWxuV3FyaGM0VDlKd21OcnBEWmxTcjFKSUFWY1pPal9PSGMxRlk4cjd2UVhMVlJwTjZSellHbHNsM3lrbm9aZjVzaWFn?oc=5"
+  },
+  {
+   "t": "Argentina-Cabo Verde, EN VIVO, por los 16avos de final del Mundial 2026: hora, TV, formaciones y todo lo que hay que saber",
+   "src": "Infobae",
+   "u": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPdFh1N2pERXF1NWpsVUVaUWpmUW1JS1JCbGsxNERmU0xPWG1QeE5qMFBLWDB3UVVlckVmUFFJN0gxNXg3dGhCb1Q4bkZSM3Q2NUFKZEtHXzNXX3ZzMjNkVGUtbEp2TG41NGJsUk0zRjdrUVZlME1PNV9pc29VN3NfVmJiQURNRWZObXFDSUtfbEtWZU5SUHc4ZUxxTW1uQVo5cEhkZGs1MjZ1eDczR2hXT2V5bnFyYlJpN2R0M01EZmUzSlczelNFZTlBbGZoMXFOOXFkRGFWczRyMHFMSXR6Tm9tVkVWTDlna1NJc3ZUTUl6cWFr0gGPAkFVX3lxTE9EcjhxdGlQMFd2d21DV3h5RXJTWGNpUnRWUjRQcU1Ubm9TSXNXV1hGbjdlZGZRblZadTRidzVKVHdMamU5eFNsenlBQjFvRG8waldybnhYNnZGR1hzR2o3MHl5VDdzWXhFQ3h3Skw2SS0xWUFZQ0huYVVNWTZZWkdaaXBNQ2dvdUo2Z2tTVk4yOVd5SEpKeGI3NmwxTDlJT2tSZFVPZmt3MmV4RHNtdTZ2NlFnMnpZcVpfSlhrVFBZZUxXaHNrODh2bVI2X2V6Z3pCajFkY1N3Vnh0S29raFo1TmpWaURWOERhRFI4Q0xKQ3VJek5FN25hSU9CS1pzemJaU2Y4SHV6eWNKLVFILWs?oc=5"
+  },
+  {
+   "t": "Argentina - Cabo Verde, en directo: dieciseisavos de final del Mundial 2026 hoy, resultado en vivo",
+   "src": "Diario AS",
+   "u": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNNzIySUxUclpZdTd0RGJTRUxCVW1lakk1dWhjdmZxdzJwYUpYNUxjVkZGMEdFR0NTY3FUUDAtdzczN01sdkVoRS12WFhDR2ZYeWZBLUk1aG9PSVlweHJQdXpteGlJY0QtejRicUhQMGNiLXdZcjVhMjlRRDFzbVBTSXB4cE1yUjQ2R2tZQkpjZnItN1A1a2NqWVFhQVl1eF9vR1FjRmJoM3hfSlRKeEdRWjNuWEJGNjM1X1lOci1vRzExWFdYNlQ5c244TUZ4LU3SAeMBQVVfeXFMTTNKVmxfX3dzbXhZblFJdTFOdEpIT1RVQ2NtUnhWaDVCVDg1dXl6dHltblJxWWlTZFd5aGxGdTNvaEFzRTNDNVUtR2tpVXZzTEgxRkRWLUUwZ3UtOVJGeUZnRFozM0JSMFdkcmljSU1DNzFZMlJEWlVROVBmQUVCUmRKSXh1dF9jaVRITTlCbXM1eVU0MDNLTm9XTy1WWE1CRXhDeWM4YWNZNkJRcXVuSlAzWGljSmxpVW5sdXJ0STFTRk1SclctNThxNXRGelgzOFVEaVVZNTJmTXVDWTRFOUtRcFU?oc=5"
+  },
+  {
+   "t": "EN VIVO | Portugal vs. Croacia partido HOY Mundial 2026: ¡Cristiano Ronaldo a 8vos de final!",
+   "src": "TUDN",
+   "u": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQX09ERENvYmFBemcyMGt1LTBWOG0zWmdvdzl5RGtVaVFSd183YmhrYzd5UVYxb250WUxicl9oV2FSSncyaEg2MlE5MlBiel9YMEVtRGt2TkxwR1M2M1R2dGpfRXZoNXpiV3g2RXpiNUR4amZhM1hXUTR5VFlLbng1Z0ljUTJiUHZ2ZGthWU5xQ2wzb3ZpRjdNVGltUjBQNHBzMmZSbjhGYlByVENJSFhNM1hTLUM4MUt0Y0FreklPdw?oc=5"
   },
   {
    "t": "Con un VAR polémico, Portugal eliminó a Croacia y está en octavos de final del Mundial 2026",
@@ -27,118 +57,118 @@
    "u": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNNW1MU3V6MEFBYjBpbnlWQnlMMHM3UTZWdUxpdlJKZTczZi1xcWhQcmltbk5LX0NKUm40VTUxalNGZkNJSkZYb2ZJM2lab0YtcXdtM2MwVF82ZkZ3dmI3MlVIaHNDMUNUMlhkcWlpQTFWUFd0a1pfTWlUZFVhLS1yenBUUEF1S1F0RWNib2xWX292Z0R3QUZjcTA2V3JQQXBPVWV4SWVIVTUyZk0?oc=5"
   },
   {
-   "t": "Mundial 2026: Cómo funciona la tecnología microscópica detrás del gol anulado a Croacia que detectó lo que nadie vio y clasificó a Portugal",
-   "src": "BBC",
-   "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5iNlRmdDVhWlZzMjRrRTRtd0lMc19IejdCYjJobV9tdF9RNmZGQjN1QW43MnhjdmIxdkVUZ0pSc2llQm1EZWxJdUJKbmtpaXBxS09iSzhKNmNMYUHSAWBBVV95cUxPX2E5TDZ5MGJPdDdRemtNbnpwbmxtUHFlMUVGV1gydzhoYzVsRHdNRUFQRV9pdEdRcUY1RVRzeWlkai1KNnZrQnBQQXlFYVFQYXBTbnVPY0NjdlZDbXhMV0E?oc=5"
-  },
-  {
-   "t": "¡Confirmado! Selección Mexicana saldrá con este uniforme para el juego vs. Inglaterra",
-   "src": "Mediotiempo",
-   "u": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNNFdRcG5XNDJMajBwSG8xcmFOekkxemlRR1JxTUVJU2ZuZkpWUnNBLXFQWjF5S2JvMmU3dXRXcmc4RVRfVW9vV0JiZmRiM1Z3SW9FMzJTRkN6Q2g1NnRhcFhjOWszVFpzbTU5WHVmNUV6VTAzQUxsbFN0YmhRU2JEVE93OHk4UDJNNHQ0RzZpNlcxYnU3QkpYZ0Ixd2NUckJrbGYwM3NsMXVUTm5UTnJwNGkycWhMUlZuZ0VZdHdMdjVtMkFMSTdV0gHHAUFVX3lxTE00cC16ZXJ6VjRsVnhMZGNHcEpLTVo2cW9raFVOUmE4WXBIUFRKTFQwMl81TXhsWFhNWHUza2JfOWtMTi12VW5kdkJvd0E1bHZQbEJGdkd1b2s1RmgtRW80dTZGTG1LZmxjcFp4eXNHbnJRWDdrMzBGNzdDZDVXUGJQMC1oSlNNNFBsYUJVNHFnVWFMZmxvY3ZLcTc3QnlNajZsWkNFTE1XYmtUN1Vfa21EVU9SLXZtemQxbUxPYUJKbXB4cTRYYlU?oc=5"
-  },
-  {
-   "t": "CONFIRMADO: México CAE en el Ranking FIFA previo al juego contra Inglaterra en 8vos de Final del Mundial 2026",
-   "src": "TV Azteca",
-   "u": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNUjAxcEhOQUNCRGdyaXlMbmVaNm9kSF9nRWhUMjlVQ3NxcTY0VWNhRDIybkdNN1RnM3JnUGtHa2d1aENISjZ1cHQybU5Kd1ZWTkdqN3dEVG1pSkZESUNLY3pVUnh1ZEF4bXRFc0Q0dFN5bjhjTG4wNllWX3FwXzRtSjJOcExFbk5QS2ZjVk1vaGJSSGRyT1UwcTVnMUo4b2c3VUdVdldCdFNEWVg0MFhzbUZBMHMyd9IBwwFBVV95cUxOSHFCWEVHWjRFUEZTQmx1cC1qVFFxY3JCSTNjcGtUeHdJWjFHVG1pcnZsR3lVQlotQTMtNU5qYXhLc0JrbFNfZ1U1emdqZFdlYkJvVkxPZFVKeFM1by1nQkwxSTRLdEYtTVJFdk9BZk9rN0FVbEp2Rm9qdjlFNGlZVERZaHNacHNiNloyVlZqc0NMMTFxeWtyU045VnhCUUVZODRMRkVwX21yMjRpNXhwSFFoLUdreTFORG5ERmU5dHhTOUE?oc=5"
-  },
-  {
-   "t": "Claves de Inglaterra que México debe cuidar en Octavos de Final",
-   "src": "ESPN México",
-   "u": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOOUhUcHhqcWhYTUdnbVl0NS0tcUJfcUY3czhFOE1XSElfcnpDS3R0MFB6WXpNOHhqSk41X1hLZUZ0dFJsaFdNMHJ4NTIwS2lEZ0ExbFY4UG5JeEkxQjgxbzItMVU0b2hwM2lYam9oZzRpeWpQWFR5cl9KdHVuUFQwZjFNcDlyeTgyd1VqeC1fX0x5cm5GdDRJNkRuNlFjaXRuaVlDc2lRUS1TRS0zS0ZYRGdiQ3dkdHJN?oc=5"
-  },
-  {
-   "t": "Suiza derrota a Argelia y se clasifica a Octavos del Mundial 2026",
-   "src": "El Informador",
-   "u": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNU1drempfOG5Ua2hmQlUybmVqWVVuSERWVE9NWl8xNVpsbFpzOFU0SHd3bWVUajdwU0FnOFUtZ2F1RkpONkJfNGVmTVAtdW5mQ0gwenBtanJzal9CWDN5RzRndmNpbGlWMzhmcXNfR3A3VU1ZdWkzbUtiSjJKVnBxZFoybVZmeE9WTVNnbDFkaGpUQWVjcGcxY0ZMQWRjUGtGTXRyOUFCVXNhbWZvOFZlZU1uR0pQWWhMdTdmRDZjbWsyUdIBxwFBVV95cUxOMTBSTkJOTFlnOGxVcXM0aV92a2d4dWtKUGhVNXYwOHhRM01DUUxYeTJRVlUyNGJoU3doTjVTTHV0ejlaVnhFQUxiOXNkbldON21GTXRqUTREQkpwVjVEV3dRckVlbUh0TDNBOUxSTUFLWVZlUGlaN1J5OUxTV29zTmNDaWxwUEZIeXJad3lJcE9lZjhkaVpPUnVsM0UycVlzdmtNaFprNUJmTnJOUjJ1NmRIdHpOb2MwUHM5NlV6TVdYd2t2QnNV?oc=5"
-  },
-  {
-   "t": "Suiza vence a Argelia y avanza a 8vos de Final del Mundial 2026",
-   "src": "TV Azteca",
-   "u": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNNHhGYXFWRWcyTXJ3b2hYVUc5QnpydFlCVmV3bmJ1WTJMdE01Mml0RER4OTJSWUMzWjZEUXRuZzhPSTBuUmY2WUdMSUJmdDVuZ2tTV0hBY1czRmRwYlplZ2tzNE5FcnROUUFqTzF0UDJ3OTR3cmRKdlRTTGVTYzRXMGp2STZJVHlfWFpQMDdWYXlGSWc4eXBLVTZBeW1TaDB3U0pRQUtLOGJMNnA4eWt2dmVhLWZjcms3bU1oS2dyOHh1Vkh6Qi1QdTR3RzRyVk1faWlVU19GWHU5Rm9DQVh6ZNIB7gFBVV95cUxOUUlJLUNuTjBUVktuTlcyOTh1ZFlTWG80VjdOeU90eFBSM2ZzaERQeV9uNlhTMzRCa1RvVDczZHJaVDZDWDNTcHI3Vk1qX0ZWN2FFaGZCazN6MU4zWEZzeXNISEN3ZDJYU1lBOFk1VERiSExHWEhJVy02dVZkNXRoa2lvZjU3ZmVyYzVnc0loZW1Rc0Fmc0I1YzF3enNiR1h0ZEwzbV9tbmxiRkRjcl9BX1E2TG5oTlI0RkdjM2ZQNFQ2VjVpdGNma3hZSDJ5TXl5bHU3NjNhelUxbUdNenBWVmZlOUl4SnQ0RjZxenRn?oc=5"
-  },
-  {
-   "t": "Suiza vs. Argelia EN VIVO. Partido 16avos de Final Mundial 2026 HOY ONLINE",
-   "src": "Mediotiempo",
-   "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQXzBieC13Q0hWUUtuVTc3elB1bWRkVVY2UlFtdkFLdHZiSGlTN0taS3RnLUFXZjhUWEtWelZzYUlpanF2Q2dzS3pVbWNQRTNUc3BVZDRCWG93bW9RTG5EVzRXcF81a0xQLUFOQUY5WjFRLUlaLTBLTUNjWWE1alktc0V2VDVFUzlXbFpFSWtOaW1ILVdWdmNWZTMwck9ka1p1WFlnMkNzUXdTV0swQWl4dE9OOHpFX1BzbFZGNEJqTFfSAcABQVVfeXFMTjhmSWFSWUFkMmhOUkF5SUIzdFNvWU1heHNEaDR6eFZJRHlFcEZ3VlRYcFlmUE4yRTIzWHJhQnl4TTBFR3lNV2dlZVVDcmp0TFM5UVptSTJKZE9DUV9jeDd2Wk5iYmVweS16cFRhTE5FX2JpNmNEb2FhRnlaT29NVEk0QkVnVzlMRFNnbzdhYm5FS0VBZWtmN2cwdGMzZ2tVTG1nRFhSU1lBWWl1NnJ5MTY0UWh1S2dpUXNKU0VIU2RJ?oc=5"
+   "t": "Mundial 2026, en directo: noticias de la Copa del Mundo y última hora de las selecciones, hoy 3 de julio",
+   "src": "Diario AS",
+   "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNOVNnVWVfSWk2ZzdCTmt5Z1A0YjBCZ1dyVWJJVEJxekc4SWdWRmZFbkZaZGNBenZlQm1mQlBFbU5MZHlJbm9aSDVOd0p6aW8tblFwMkNSczAtS3ZDU0J5Y3l0LV9CQ05FamlWVHg5ejFqWjhienBuOVM4aUZqZ0RLcWZmWFlvc3QwYUktVFU0NGZiTzRHUkFYWkZpUTkwb3gyZkdWUFRTMl9uOUZsRTB4N3dteHFCdkRPbmNqT1J1bUtPNnJXTl9xNFJGT19QWjdiYmdaT081ZllQd9IB7gFBVV95cUxQQVczRlhjVVdhd0tVVVVnRm9CVEY1WHNFZTI1VDVJWm4wNmhvdnBTZjJmUS0tWUl1M182bUoxUHpmVHBYMkJuckpEcmJNTnM3VjZYVnkwR2l3cW5wdGYtRng2SUxqblZlM3RjMWFkYTFDQzNIem4zeE5fYlItaWw5OHJhSjhqZno5aEhLcHh5WUhqZ0w5bGJaTUlmSGU1aU5jeTJzX1RGYmdNWGxPaXlPMnZaMk1UdWFESFZoY05xSDMxSTEzaHB5bXVQRzloeDFFZFhTZXZoY19qVkZ5YTNwOEFKU2sybV81TDRrNXpR?oc=5"
   }
  ],
  "en": [
+  {
+   "t": "World Cup 2026: Germany hold Klopp talks after Nagelsmann quits; Neymar unhappy with Brazil role – as it happened",
+   "src": "The Guardian",
+   "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQWUw4VTBPdWxZVkxnekZsa19peHB2VDIwM0dVRm1tNzJuSmdNZ0F1RjB2cVpCSkVJdFAzUmh5cnRhZVdKc3dkdC1LSGl4S3lhRHNaSDR5S1VLZG04VW93ZlgzWTRjLUFYbE5xc1dBWEZYVkdLMUg4bWZmN3BBYVlNWnNrTHVfbGp3Mnl4TGxkQ2xaa0U0Zm50NGw2c2RVUUluV1ZWRWRwdWI3SFU4b2JKYjhVVkZIdTh0ODlxTThNdk5uQVRfV1l4emFraGZJMXAtR3p1RDl3RGFjX1RreWlUUzk0dE9OOGc?oc=5"
+  },
+  {
+   "t": "Spain turned up. Should they be favourites? Re-ranking the 48 World Cup teams after day 22 - The Athletic",
+   "src": "The New York Times",
+   "u": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNaXNnLU5NT1o0Mk40TE9PRWFNZXlYZzFiUzVfTmo3SXdUM01KdWhmNjlUXzBNX0VaZ3VsVzd2elZfSTkzRWdXZWhqeWxKd3RBOGZnODg5MFdvcHgtYW9pc1Z5U1kyU3FQSkVfVGUzTnhkbW5MODAzVjAxWGNMSEU0NXgzcXBTcFE?oc=5"
+  },
+  {
+   "t": "Australia equalizes through Egypt own goal | 2026 FIFA World Cup™",
+   "src": "FOX Sports",
+   "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE51ZzZ4TjM4YTZPZEtIS1RvMlNzVlplZTBZWnl3OUxaNXV3TzNUOFExUm9MazJMUGhOU2ctQjRMTzhrM1doSHVwRzVUdU5qX3JGMUxqWTNXYl9qbzRLMFRsdGxn?oc=5"
+  },
+  {
+   "t": "World Cup 2026: England v Mexico could move because of storm threat",
+   "src": "BBC",
+   "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE0yX0UwMUJFcms5R01qTjV1eGFyTTRXdGVicldQLVR6YTZLWFdsWXBRNHQ3R3hfeDR4cUVWaTRWNDdMNGJPTEhIZV82ay1ob3RaSmhuSURmT2xQQlRXOTR5cEluOHFGVms?oc=5"
+  },
+  {
+   "t": "England’s game against Mexico could be moved to noon local time, 7pm UK time Sunday",
+   "src": "The Guardian",
+   "u": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNRHptY2lkSmdWQzhzRGloeGRMSzktR0U3Zy1XcTJzRzVDNHlWVTVkb3BYREQ1NUFZekp4QVZYUV9fWHcyTnhqa196VDh2R2laTWs5aGhwVTdFckFNUTJ2aDlHNHFTcWJ5UDFFbTdrZXo4UHBuUEhBWC1seVVYUHRFTFR3?oc=5"
+  },
+  {
+   "t": "FIFA considering moving kick-off time of Mexico-England in World Cup round of 16",
+   "src": "The New York Times",
+   "u": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNWjBLUUtkQ0dnQnUyOEdMLUNVUXVnMFBBNVVXbDJ6QWs2TldxUkNpUUFJMzlaVnBWbE1idGtSZklOckpNWVZGSXJ4bGFDSWV5WXJhdUZ5bkdsZGljNlc5Sk95ZzEwVWlqWE10UU11dG4xYUJMSS1hY3FGOUxLZTJUZVRMQ1B5UDJmQUdjcGhyclJoQWF6MFE?oc=5"
+  },
   {
    "t": "Portugal vs Croatia Highlights 🌎🏆 2026 FIFA World Cup™ | Round of 32",
    "src": "FOX Sports",
    "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1iWWp1c1lFTjA4SjlEZ05rRnJNaHVrN3RMcTBxUWFDUG5zWUlVeUg4Q2RHVk1MZ2Q2WERnVkNTb0t1VDBsNUkxRHppUExsSVA4RkNLSUo5ZkJSZnQ0T1RscTlB?oc=5"
   },
   {
-   "t": "World Cup live updates, latest bracket: Lionel Messi, Argentina headline Friday's final Round of 32 slate",
-   "src": "Yahoo Sports",
-   "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNU3ZQRGlqS1RQUzhwcGpBMndUSzdidUExVy1tNHBCRjBWZUVtQjBVUnhMU3ZndzVCcXJ5My1SNENUQmlPN3M0SHVMa1p5YnJnZUVodUNDcnY0ODQ2aUQzQVJ3YjZHaDZBZi1CUl93QWJqa2FKTXdhanh3ay03NXlQUWFNekFFZHdFLWlBbXVpYW9zUVB4NGxEZVNOLWR0aTJOdHJzcmJTRzZfNUdPZ1R5dHpfaTFVM3ZURlNSallNUjQ?oc=5"
+   "t": "How the new World Cup ball helped knock Croatia out with use of technology",
+   "src": "CNN",
+   "u": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOcWk5Szh6TEJ1TDYtUnAyMTdZMVdoYkVlR0ZpN2ZlemZaWEpfS0l2blcwbEdvVk0zOEVMX2lGRnNSTW5GSVd1Z1ZJRjlqQk9UVzhOSEhqdTJPV1IwdVZRQjBocEVIekYwc1k3NVh1ZGZPdHVmdmM2SXZJSzEwNS1OYTY5dXk0cTlWNUZmQ2tR?oc=5"
   },
   {
-   "t": "Argentina v Cape Verde: Breaking down biggest World Cup knockout mismatch",
+   "t": "FIFA World Cup 2026 stats: Ronaldo's first ever and all-time record 25; Yamal's perfect 100; Manzambi youngest with 5",
+   "src": "ESPN",
+   "u": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOY1ZxNlpVMHJqc3Jub0NyZUhqcVpsZm1BQmhEM1cyNDFMdkhLSmJERHI1alFEdWRPVHNJcWVfT2RwNjNiYWhudXRKb3hfVFYwTnlENlQtd0hidWV0THM2WnB3NFpPd1pfaXJybkVPUTVwOTdxaE5mVE1TU0NFTGlpSmlnbWJaRjhrZjVGLWFWenZMYVU4ZHZhRVhaREFsb2hyM2s2aTNIa291OHA2ZHhwcGlVb0dVZ2F0WWhVNERqd3hPOWh2SDNBVldELWN4QVlZVURDNG5vMGlYUWVFaTJ3?oc=5"
+  },
+  {
+   "t": "LIVE: Argentina vs Cape Verde – FIFA World Cup 2026",
+   "src": "Al Jazeera",
+   "u": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNQ1NxYkdrdy01M1Nmd0RRdDRHbGVmVUdWYjNkSDgyRC1Wd1loNHQ1aXIycmVyZFNKOXB4aEdsc1hmVnlqVW1ucWQ0Q1FTc0VBaGMtYy1GUlNyMmZaRkZ2bEpENlJCTVNOLXRUNWI0TkJpaTJVeURtdHFoRkF4VTZVNW9vMktnck5BY0hUR1c3ZFJfS2JZY0g0UU5QMFU1aUxU0gGmAUFVX3lxTE1Pc1U3Z1BNYl9NcnRaRUtkeGZ3eW85MmYtbTEwYmZCM05ySmlLbG9zaENxWU9lTW9helNlZENyYjJaYmJKeUdGWURQX0RpOUVSNVJFb3dSX3psa2tHMTRDSEtsZXVNaERsTTQybThtREx2YVhyeENXMS0tZnhHMXlUbW9BZVpXdHZ4UHZrNkdjNDM0NDlPYmhHWm93dmFlT3czSVhMaFE?oc=5"
+  },
+  {
+   "t": "World Cup 2026: Are Cape Verde v Argentina and Messi v Vozinha the biggest ever mismatches?",
    "src": "BBC",
    "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE51NTY2c0xEbHJnWThTNDZIcDUxQXpNVml1a1dDNmx3TE13VGRZSUhjZ3B2aWw2YVJyRFZFeUEyN25DOHBYVFVrTTd4MU9uOWlMVU1jRlhnR3dZTUpoLW8zd3NaSjF2ejQ?oc=5"
   },
   {
-   "t": "Argentina over 2.5 goals and the draw in Australia vs Egypt are the top World Cup 2026 Round of 16 bets",
-   "src": "Fox News",
-   "u": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOLTZqcHRqMXlOa24xU2t6MUVKdTd3QXFvRGNuc01fd3J3T2RVM2VwdW0yalRXcE1hNDAwc0hYOXVDU014UzdUck5Hd2FHR1FkSjdSUjdQQTVFeENOamlnY0F6RHlTVkw2MlNLTzZjaTdGY3hiYzg3SkRBVk9wSXRUX1ZISWd4YldHdWJXUGlmQXNZeEZUU0RLVHpqU0FPRGVFN1BISmhyTmwtWnRQY3E4TlN4Tjd0YXQ2SnRfMQ?oc=5"
-  },
-  {
-   "t": "World Cup 2026: BBC launches 'Stay Up or Catch Up' offer for England v Mexico",
+   "t": "World Cup 2026: Lionel Messi's Argentina v Cape Verde - how to watch & follow, buildup",
    "src": "BBC",
-   "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB3YzZ1ZGRDV2d1Ukx4OTVyMjNXLVlDTWN4azJuZllLVGY0Y1h5MUdNc0pIbmIyV0lCbWdmX2lkVTFIZ1BsR2twOW9vYXlMcHZ1TGVCZ3FFSTRfbnFNaUQyTnF3REExR1k?oc=5"
-  },
-  {
-   "t": "World Cup 2026: England keep Mexico venue quiet to avoid noisy locals",
-   "src": "BBC",
-   "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE43dU5xTmpDb014ZHJnVl9vUXJIbjREcFZWREg4RnJFTXBzb25acjRJX2UyeFBlNWtiTVAybG9LWVlHYVpHd281WFlPUzNnN1ExSTJucGhYVm91MEpVeFJhLTUyMDVJVWs?oc=5"
-  },
-  {
-   "t": "World Cup news latest: Germany coach quits with Klopp 'ready' to replace him - as pubs push back on England plans",
-   "src": "Sky News",
-   "u": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNQlhjb09UOHVFZEptU1c2ZENjeTBmTkV5dko3UjVXRjdsRXdfQVJvY18zNnl5QzdCcDE1QVV3U3dVMlU5R1hqUGRQblE3QzU0Zzd5bEMycGViV1pDb1RSSkVBMXFCT3k1X3Z3dm1ZWFR1Y0ZGdFR2VzdZcmozajlXN19JYXQ5bEczVmFhTQ?oc=5"
-  },
-  {
-   "t": "Switzerland 2-0 Algeria: World Cup 2026 last 32 – as it happened",
-   "src": "The Guardian",
-   "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPSm1VYjdCdFF5WU9saVh0VEtSYUtZdkhQQ2xqYWpoSWpEM3dXcXdfU0Y1MXEtbHk0WUtqR3AxTnRCVVppdy1DZmREUXZHT2VaOWRCNWJ1OGFTMlk4bHNhczNPWW10ZVJVY1NEbWxCSnN1U2VUN1V1TDVvWV9uNi0wU0VsXy1rY0FfSUlTOGJFVm5XbXpNVzVaQ3NqZHRKWWNNZkx5Sk1GUEZvbnJNd2NBSnkzWFNGQld6SFpRd1JyV3hjSlI3VHRoWEw5d2JqS2xhOHZJNVk1d1RWVUFoOGdtZGVXWHNuT0k?oc=5"
-  },
-  {
-   "t": "Switzerland vs Algeria Highlights 🌎🏆 2026 FIFA World Cup™ | Round of 32",
-   "src": "FOX Sports",
-   "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9PSkVRU3I1VHhVemVWRHpCaDhCYzNDYWp0TXRJTnY1OV96c2p2ME1sT0lCNHpZb1NNZlNrNGZ0ZjJTUC1qc1I5U2YyakJFUjJlZ3NVeHI4SW5vangzeDduZUZR?oc=5"
-  },
-  {
-   "t": "Dan Ndoye scores goal to extend Switzerland’s lead vs Algeria | 2026 FIFA World Cup™",
-   "src": "FOX Sports",
-   "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9sUUtXOUVrc21qT2pLbkpScHBncVBLczdlVkJSbmVIYW1NYlI1MnVsYnFJaVZQcy1ucmRpdVloLUVHLW5vdmVtMDNqVGgwU2lidHZ4SmZlSGxSX1ZVYmdCb3hn?oc=5"
-  },
-  {
-   "t": "World Cup 2026 today: Live updates, news as Julian Nagelsmann dismissed from Germany job, Jurgen Klopp set to replace him - July 3",
-   "src": "ESPN",
-   "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNS0xZMy1UVnhYZmw4YjJ6QWJPYXBESW5vcWlpT2wwcmE0QTZpcHZXcTE4amRJeVNlN2luWjNqTkVkSWNnQWRpVi0xQWpPSXptbTQ5MDE0aFFlOFZ2ZTJIaWFBU0JBemlOemZTa0JtN0E2eFljM2JXaHhFdzV5eVluZVUtOElGMzVFU2F3c1JJREs4ZUlTM2prYkFKNXBUNWp2MzlCcktlVTZUb0tvLTNIVWRNdzAtWEo2eGZ1UW85UV9KRktDbGkwTDZRRU5hSGExNU9RMHJLZEVZLUNYaEZ0cW1KNUE5SW8?oc=5"
-  },
-  {
-   "t": "World Cup 2026: Germany hold Klopp talks after Nagelsmann quits; Portugal to face Spain after VAR drama – live",
-   "src": "The Guardian",
-   "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQWUw4VTBPdWxZVkxnekZsa19peHB2VDIwM0dVRm1tNzJuSmdNZ0F1RjB2cVpCSkVJdFAzUmh5cnRhZVdKc3dkdC1LSGl4S3lhRHNaSDR5S1VLZG04VW93ZlgzWTRjLUFYbE5xc1dBWEZYVkdLMUg4bWZmN3BBYVlNWnNrTHVfbGp3Mnl4TGxkQ2xaa0U0Zm50NGw2c2RVUUluV1ZWRWRwdWI3SFU4b2JKYjhVVkZIdTh0ODlxTThNdk5uQVRfV1l4emFraGZJMXAtR3p1RDl3RGFjX1RreWlUUzk0dE9OOGc?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5ScTNjbTNXMzhvX3dzZVJ4R2JIZkRHZzRiMDlncnh6N0ZvckEyQ25aWG1ucHlkaVd2ZFUwVWhxVDk1aW5PZzZrcVNhNFQwTDhtQndqamZXZG9VN3YtclhLaEJR?oc=5"
   }
  ],
  "pt": [
   {
-   "t": "Neymar, Endrick e mais: álbum da Copa ganha 120 novas figurinhas; veja lista de jogadores",
-   "src": "ge",
-   "u": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPMEFTTzJEWG9NN3B1ZlZPWU1lYmt4NkZzWDEwUXVsU0pSM1V6ZzIxYjZGUERjWWg4b0hKRjZ1VC1TaUFSTFhYTkFhT3NuYlFQUWg4eFZOdXhJSTdfSThJY0ZhTWQ5MGUwczl5TDJmdUY2aDhsZGJNTS1BazMzeTN5UXdKeXJlaTZXNVN0Qks2RXFEVVlnek5ReFN0aVdZNm1EYnlIUFl2eS1kN09hNVphUzE4TE5fOWdGSFFodjJLc1JRRnNrOHlqV3FnbVYwdW93S21IdHpTLWh3ZzJmQ0VSc1I2b21CTmVfV2JJYzFJTFFZOWVN0gGDAkFVX3lxTE5nMnYtVXZDZUROalNGcFZla05LcjJfTmEyZ016TGtrRmNOZUlvd3I2ZGJIQjVyR3BkcGhQQWhKcnQ3UXZfWDBZUGEwNTNfeGw2WjhkMkg5cXU2S2c3UXRUOXVxbzJMTVdYX0VGTEpLNXN3bHdMbTRIZktIdk0xWF90MGwtanB1ME1Yd0JfTklTRlc1MnVWNjlTQ2x4WGVtT3I3dmhEYXpmOS1XRlJ3N2dlb3RDdEpDWnJxYWRzS2NKNS1mN25WYVYwWXhQdkpacVEzRW93NVB6OGFBZ1dBNXFJZU9YOW5QMVF3dFZHMGdhaXZIbk11S2R4TEttcnlLUFd2RzQ?oc=5"
+   "t": "Jogos de Hoje (2) da Copa do Mundo 2026: Veja Horários de Espanha, Portugal e Argélia",
+   "src": "Forbes Brasil",
+   "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOUVFjY181YWZWV0tYenA4TVlhMWpXSzdHMVJNY251UFJmaW9OWFhWRnJOY3laN3RfUVpWUE1jbks1Qm56MG1ROGpsYnZpaXExanMzOVE5U0dlZkE0Qy0wcFlMb0xwRE1BVGJyVzNFZmhtcTZCaEJISjJ1QzVNSGtsLTZRakNjOFJ0Tm9UNmN4dV9oX2tjU2lBUG1TLXkyMXg2Q3UwRVFqcVY2QVB3TlpTZjJsQ2hwTU1pV2d0bjhZbXpsYzJ3Tnd1QjR5VmlGLWZEX05J?oc=5"
   },
   {
-   "t": "Copa do Mundo 2026: 19 petiscos saudáveis para curtir os jogos com a família e os amigos",
-   "src": "Terra",
-   "u": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQM1gyUk81QzdJQVR5OVRvVE14enZZLWJmbzF5dDgxZW5PR2pBbzUtYlUxSXUxTnJzc1NaMkdpaW9DRU9fZi1QSGpfaUhoTW8zT3o3NmtuRjJOMTV6dWhFWW1jM3c3eW15TzhOTkFSY3RybmNoWndUV1E5Mjh5cklKRHRWbjBMWTJjR3FuUTA3dDZuWFdoRUdNdHRmNlVwVG5TOE9mQ1luaDZJbmQ3czBFQjRINFdndmlNYWZaX1FqUFJMSjVaYTNZWnU2R0lMV180Yl9MUFAwc1N2OTJ1eDVkaHZWeW9MMXhvNU8yQUJYR1RUaDczUVhCZjhkbGZ2Yk1CUUdQX2lhYktoTEw3?oc=5"
+   "t": "Copa 2026: Fifa aplica lei Vini Jr. para expulsar jogadores; entenda regra",
+   "src": "Migalhas",
+   "u": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPbm00andWdzZscWNmT3E3bG9qaW5IekI2OVpQemY1TU5JQWlxdW5NYm1lV1hxbk9oQmxwaUVodzFvQkF1dWh1eGxoX0dseGFZd3VFWjdkSHl3WDl3YVQwYnN1NE9yN2xRNlR5QTJhc19xS3UycWF6dW04c0JQczlfbWZwSkR2RDQzQ19hZjlYTmRIYzdhMlFjZUoyTU5yaEk3cFdpSjhYSUdWWXdK?oc=5"
   },
   {
-   "t": "Cristiano Ronaldo veste camisa de Diogo Jota após vitória contra Croácia na Copa",
+   "t": "Palpites e dicas para Austrália x Egito pela Copa do Mundo",
+   "src": "GE",
+   "u": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPRWNqZzU2X1VfcWxwWDZrNXpqcC05SVBFTE9uRnEyMkNhLWp2dVJQMUpqdVR3dHEtdl82VVQ4VkdZM3kyNFFMamI1Qk5PMmhEWEFkajRFQWM5UE1MRndjdkRlLTM5NVBTMml6MVZfYUFDQ3pybWZKTmExLUVOcEtoYTY3VEM4aEo2WDZPWEwwZTNDQU9aOHhjal9jVldTT21Ha0NibXVnTzlDNU16Z3YwZ2EwSW1BMnMydndHRU44UlhwbzJx0gHTAUFVX3lxTE1KZVVIZlcza0ZIcWVwZEUyUEVWRTJZcXUwMTJvOUdZbDVQSVdJbkNLcU5nZDBhTE5YNUFKajd1dXphNzVxZWxaa3NVSU5YWkhncmhtaWVtaUVXYUVPRy1JSGlNOHBkXzZ2SjgtTWdHazBqazc4VWFuNm05SUV4NGRPV01wWUQ1T3A4Q2dzZzdzejhuZ0ZSc2ZWM1FIOGpjandKTkdjcUVmTHJ2a0lmLThTalliR1pVT0szRnNXaUVhai1Qd01KY2FoUXo0UGFoZTJfOE0?oc=5"
+  },
+  {
+   "t": "Transmissão ao vivo de Austrália x Egito pela Copa do Mundo: veja onde assistir",
+   "src": "BOL",
+   "u": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPX25Xc3Z1LVZveTVVWEQyQzI1WWNPZ1NjTXJDTllfMktpeklBY0lwTmFyR0lhUHBfeTRac2pCZkdTWURZTDl2TFlndDdxcVFRX1h5RDJyTm9FbVVxa0dmVzJPX21ObEVFQ3JzOGNwWlV1VE0xQVo4Vk9pYWpMU2Y1NUtDN2ZVYnN6QVNBOEpsdURlM0tsaF9yeTUwQkVVNno1MjZSV3dqVWdaQzdGQmQ2Zm9CdU5ZX0xoYTRCSjRTYXFObFNzY0RqetIBzAFBVV95cUxNTjhralFkc195dHU2dHktdlhMVHJrVkZHNkZTVjF1LXJ4WGZHel9XMEQ0bTFYaGRFZEVzcFRPWmtQX1FUTmFHcUY2U1R2d0o1MWhHMUlfWnpTY3ptYk5CbmFOdklHRFFmSjI4dXZIVVBobll0anE1U2dRNmV3eDNWcmhyVUtqVjVqZndwRzI5a2RZVXhraGdoamVfV0YtLWt4WUVhMFVMODdUUXVHVURlRVVlZE1JSTRieW9ka0g1SGFmcENZc2tvbnVkbWg?oc=5"
+  },
+  {
+   "t": "Copa do Mundo: Seleção do Egito se envolve em confusão com polícia; veja",
+   "src": "LANCE!",
+   "u": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNRGpUbzJ0bWRvZlo1S1IzLUpxYWRXblM4aGQ0cnkwdDJIMFB5VVdIM216M2JUVHNNZXNNVG1FR2tzX0FjWjlsZzdfbXJvTFNucDZBZ3VYam1vMng1TmFndGdVVFVRaThvczZTNGg0VWxBNEpDN2JKenZ0WVZXblM2TDJNSlVvNG9SSmdhZEVQNGVUcEpvTEE5SjdHQ0ZhZVBPREZSNEU3MGtpdWdIWm1hVDV4NEU?oc=5"
+  },
+  {
+   "t": "Ingressos chegam a US$ 36 mil para jogo entre México e Inglaterra na Copa",
    "src": "Folha de S.Paulo",
-   "u": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPMjVGSlpFRjk5TzFNcThRR1NHVGEwM0NqLXI0VEVWZF9uYnJrbHE1SDA1bFhxRk1iRUl4N016R1Jtc3Z2b0J4UGZaSFJjSUVIUlVrSUZmVGU0cHFCY3dHUk5jc0pwNkUyUUtkNndIQmhtTXo4b1lzVDZ2UDk3QkNoNXpBZ2o0MGlMSjVkYnROUGd3NmFTcDdtcms3Q1Rkd0I1QkFDS2o0RW9KZk1ES1llNVdLWW1rTmgxMVdKanFvWXdfU2pqRVotTGJrQTM?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOTWhVbnQ5aDN5bU5MMUoxUW03cV9lOGRicW1UdHJIZ3R1aURrNk41dFNOWlhtbXk4LXFHd2ZqQ05GLXhUa3h6VE1tVUFLRnFITWZ2UWFHdFViZVRQd0dwREpZQzZJREVUa0Y3S2gySGRxNDVHd3JucjJRSG12bWc5ZlNubExNQXdraExqYXB1SGh1YTZ1RklSbUNDMi1ZdTQwVFBFU3JqSzJyTkxCX21PODZYOXN3YVkzbkpvb2NXaTZ1Zw?oc=5"
+  },
+  {
+   "t": "Fifa confirma mudança de horário e adianta México x Inglaterra em seis horas por risco de tempestade, diz jornal",
+   "src": "O GLOBO",
+   "u": "https://news.google.com/rss/articles/CBMimAJBVV95cUxNM2VwVjZmX1V5ZVBiY0wzNDVINlBaRjlzV19oMW85MlhETGllcWlNTWwzQ1FGUmdtRG9rOGxWTTktSUxkM1FON0dGNHU1dVQxZV9EY1F5QlNYeWF5bzhvUFl3OHFsQTlYZFoxbmRBSTk4dFd0RHBZQzBIWGpsNnNzM2x2SFIzX3hQV29uaGxlY3l6OEtPTHl0VU1qTFh6dlk0NkhtTUtEUVpyVXJ1S2hUWjBSOUZpVTlVYkNnRGNKb2Fmd2RCbWtGTEFpbE01U1k5UXJ6MXAtamZ5cTVkVWp0elh5TTF5aXFadkhibzJucEhhNndyalg3dWl5R280eTluNTltTklJQWFUSWR5cVdmSnNxNE1ubEVw0gGnAkFVX3lxTFByYmhFTHREOGJJeE1QV0lHWmhPVkRPN3NrTnNmZU83SFNhUVpMSllWcEt4ZTJ0aHhPZ2pCZWMxSWtQN1lwUm54VGp0d2RwQUpoQVhacHpaUVZVNzd3YUY2VndrMUlsMXhSZGxnNE9sSXZsM2NLYmkxQTBqVFFmdTBfRzN6VGJFWnNlVXhXaUFMMTd1U3FnZ1BENDFJSFJuVkxnNWI1YVU5UWxxMl96QUwyYkN4X2hlNk1DMzVDLWwxZTk0LUVCUVgySHNvU2JnMTl4bVg5TjM2MzJNYnlpY0FvN1hWcVYwQk9TSFhHZFY5bkZKS3FoM2VXNDNENFpIZjRSRXZWcU5nbGIzamEyY3dlUE5aRElaSUZ3SFN3akhxaTNmUzVNNWM?oc=5"
+  },
+  {
+   "t": "México x Inglaterra deve mudar de horário e alterar também Brasil x Noruega na Copa do Mundo",
+   "src": "ESPN Brasil",
+   "u": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNTnBGNWxzazhuSE5jbnhFWlZwdmdjRU52LUxsSmpaUzBMOU0ydzZmdXBKdTlQbjd2b1dWcjlncnkwZ2lFSm9jU2ZWVEJlQVJGNXlzMmcySVo0elR3VWhCWDdzbDlUa0FESkRFczdVNHJPeE9xU3V2bGc2R0lPSm8tMFBIZGNobnV2bGpmNFJOY2h2N0RBRWpWVjJnY2xoVjVHYzlOZTNDRFZaZGVUVmJQQnZ5VUFrMTNEWjR4SnVkRVk4WkJnRWdjYUhjRkJOX0pfMm1nN1VESXZxbUJt?oc=5"
+  },
+  {
+   "t": "Jogos da Copa do Mundo hoje: horários e onde assistir ao vivo às partidas desta sexta",
+   "src": "ESPN Brasil",
+   "u": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNRGp0aUV0TG9VZ0Z0MDhULVNmbkNtMGlLb19SaG13QnJDSFlfR0R0UnA0QlRJd04wbS1mdDNwQXJCbEp0bDJISDRUWXZrUENEREZQQTR3NVh3RVg2NGNzYWdjcWFoQ0tBOWZuZngwVWp1V3pnNmk1TmQ3dndLazdlWWVkbE5WQ1ZrXzc2MXNJWEcybGMxYXlvUl8wNWM2QlVabXBteGhDSzdvR3VFa2Z2NlBFTmVuTTRuWTNaN3lTaWZHTk80aElWeXNNWkN5azU0S0dWbjRtdlgxYjUwbjJ1emVjNTRRQQ?oc=5"
   },
   {
    "t": "Argentina e Colômbia entram em campo nesta sexta-feira pela Copa do Mundo; veja horários e onde assistir",
@@ -146,61 +176,61 @@
    "u": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQTy1hMnYxMjlmOHJ5MzJxVVdLU0RKU2V6NnpwTG9BbFlveXRobWh3TWR0MU1fN2Z3V0hJeGl6aFdDTG9NdE90MExERmRTT29BcnRkS1dSeTZKVUlEWnF4U2lfUFZrVFpNZTlXRWZyTUZ5V2lVYVJRR3F0clF6ZlVtUGtKX2k1SENHeTdJT0tIaHRPQVU4eGp1bGRma0hIREpjLS1SSl9kbEc4bDZ0ZmJkM3lVWjVrd0kzbGNPdVg4Z0plemY0TG5ydkVmbXJpTENRY0dOU2FuNDNZYmJ0MlhBRWZSdzBwVGlZdURj0gH6AUFVX3lxTE50dkMzQkY2RjNVRkdxYnNTQmlXN2MzUVJhUWlRb0VNNERNX1NmOVhWbkRTVzRCZEtiQ19xbWVveWp3b0FITUhhQmo0UTd0NlpualJELWNYN2ZUUGZoV21nUkQtYVY0NXdTOU1zQ2FoRGlJbjM3aF9YYXpPLVRmT3ItUFJncDdyNTZheUtiV1FFemd0S1NWTGN1MldZRElSZUhhaGhyeWs0SlhidlU5WnZKcHhKR0JLckljQjNhNl8wZDdWc2tMVnVVZy05YU5qSzVtUWhLYnY4YkRSbTFodjg3U0VIdEFjLUM0X0lZOUQySjA4bHY3NFV3NEE?oc=5"
   },
   {
-   "t": "Jogos da Copa do Mundo 2026 nesta sexta-feira (03/07): onde assistir e horário",
-   "src": "Diário do Nordeste",
-   "u": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQb21zaDAyTVdlak1yMWI0TDNkTGE0RVFoa280WTdZRk92QXlybDllVFpJbmg5a1YxNEV2djNfZXJZRlZmUFpUMloyemphWTA3QzlzLXFnN1ZPV3RJbEJUUDUtM1E3WDV0OVktODdvd0YzQUFUWTlqSTl4MFotRkYxekc0ZTdPeXpwVjRqUU5Td3htMkhQczl4R09uWUdheUtkT3hmdGJFcXYtT2d2ejBSQklvd1FoNE9rQXZvcWlNUVZaZTVqOTdyaVRLYjRqRGtN?oc=5"
+   "t": "Argentina x Cabo Verde: onde assistir ao vivo, horário e escalações",
+   "src": "GE",
+   "u": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPYmRfUUFSNnc5ZWV3WXRZSFNmS3ozQnRGRHo0Ml9ST0p4WWdVX0c5TFV6OGNHTTNyWDBvQk9YQmxOTHRaeWo3VWdfTWhwVUFVYW1aQlIzdUhVaml1WEpuU1dsNmxwMnJMdFlWTUdpSUhlZkhJZzFkUi1aczg3SWtIeTR3X0xTYkluZlNMTWdXdjJDem1hdFVXTkdrNjJOX2NLQW1iTXNZMksyZUhfVl9fVHFtRWNHajNDdDRUWVZFRDFCNml4OTM3Q1lVQTltZ9IB3AFBVV95cUxOZmlQT0RYRzhTWGVnWENoeHpaV2t4TERsajd2NlJRSXlvdGhKOUZEQUY5LXRwU1A5eFYwa3pqdkFPSHhYS0hpRGFDOGx5VncyR2FZcGNqR0R6aENXRTJWUnRROXJwcDlJajVYTEhmVWFrclljQmdQZ1VXY2xPTWRQTWUxb29JeTd1amJZTUhoTEU5cExncFRGek00OVgzNy1yZUJFTFZNb2V0M1ZUQmVWTzQwbjAzLW9BSmx4aDBGRUdDQUg3SUZXMmtJeHktRE1hWVBwRWo4NkdlRm5t?oc=5"
   },
   {
-   "t": "Jogo de Cabo Verde hoje pela Copa do Mundo: que horas começa e onde assistir",
-   "src": "UOL",
-   "u": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQcGdVUW90U3NiRG1DT00zTmNGYkVXaWliSzhuWFJhdXZtVDY1RnpYVFZ6cWZ3YmU1VFpabk9HejV1cmFsclNqS3VWQlV0Rm40OFkxUGxNLUxuc0Vqb2xPTEY1Y3J1NWFRdWI0a1I5dzNpOGpzcmdDYVRpN3hxU2VqWGFPQld1Y2s4X21VRjhwWXo4SkNhYXROY0E5RVNsbWNnS01MZVdSb0RXS29NNk1vWnpXSFFTbEJOcHdtb093ZDVwakNZOVdhYy0xRWFZam5GeDd3RTYyQXFJS1MyZjJBS1piNFdaWHRoVEI1VFo5NThTaW5tTUtMNm1vbjU?oc=5"
-  },
-  {
-   "t": "Tabela da Copa: veja os classificados e eliminados do dia",
-   "src": "LANCE!",
-   "u": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOM25PR1FMNFdlNUdPVHdoYkVvbTJPZkVBQ2NxYmNVUHdZN2RtVXFWOEdZdzN4SFFtNXJBbHpuNzEzWEY2UTVwMlNNTzk1ZXJ4eUx0azRZbnUwelRBYXQ3TVBjdTBxTWVWZmlEYUVLMlRIM1BIUjVyUDdSc1BfN0lXQmdvS3A3dmlmOEZzZW5hME1aelFmVDJSdzhNaW9kTnZQZkN3Qg?oc=5"
-  },
-  {
-   "t": "Copa do Mundo 2026: por que apenas 2 dos 10 países mais populosos do mundo se classificaram para o torneio",
-   "src": "BBC",
-   "u": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1yZF80bXFVZ3RwenlXR2I5R1NRU2JBSzVvdWRhT0l6d05lOTZHT2IyNzBxRHFEZDRrQ3pCWURrUTJLU1hBcEprYXNfVVgwOC1wb2RKbFVTVXdlZEhOblJkbUlB0gFnQVVfeXFMT3p0cU1zY1RwXzhfQU5TMUNEQlhRTkF1LVA5bVNSQ1lvTDhwSGlqdTNWZHJ3aEJlamhPSWRaVVJVYjg5QTlEUjZkVTJDSlBCc2VyV3VwTnBLT2FKRzNNOFdVTFlnZVI3WQ?oc=5"
-  },
-  {
-   "t": "Jogos de hoje, sexta, 3 de julho: onde assistir futebol ao vivo e horários",
-   "src": "VEJA",
-   "u": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPbVJtREtzTVFUUzNHUHZqa1ZTaDF0Ymd5dWlZRm1CUGxCdFFXWFFRbVBvQU5vdHhJTTdfamRvWlNCQjBaV0hQZm02amRZbEVZVWhVUHpmVVFWQ0dzOXU1TFJCdHcwVzliUDNZcEk5cnVEMTU3R1JneDh6b1VSQzBldXJCajVSdi0zZ0RkSHZPUUhZNmNfRVJoZW1PWW1CUjI0X0RYb0daeVZsZw?oc=5"
-  },
-  {
-   "t": "Portugal x Croácia: escalações e onde assistir à Copa do Mundo 2026",
+   "t": "Kit atualização álbum Copa do Mundo 2026: preço, lançamento e figurinhas",
    "src": "CNN Brasil",
-   "u": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOV0dTd2VqQlYwWFNrek5KQy1XalhiMDRHX2JuM3NURV91cGdDZ2p1cnluaHJWWUdMS1dhU0M0eF9DckhuR0NhNHRiWXNDZlhsX1dzSlRZbUVlRDJSNndVcG5UZEJjbVozdDk4dE5wTGppY1ZNVV9xbnJXVURDZjJDcEVUeUlFdFNKeWpoZGRONFBHWjc2WWt4T2JveE1jeWdkMUYyZWRNWkhXckZIMlg5bXJxUElpUFJZYV9JQkphT1dLdmJIbnc?oc=5"
-  },
-  {
-   "t": "Copa do Mundo: Fifa é processada e pode pagar R$ 5,2 bilhões por eliminação do Irã; entenda",
-   "src": "O TEMPO",
-   "u": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNMi0yY3hoU3JhY2k2NkFkR2NRY0dZZkpSLXc4NnduOVI5MHk4TFF2VHcwVmtMOXVkUG1XaWJuY1JOZlZINHRyVEZjWU9JVnA4ZmU3RjQ4dEVMazhwUWRyQV9taERlWE1EZW9oMDcwN3VnWkF5Z2VKNGFFcERqaTdwS2xvMGxvRnpxcVlmT21yRGZvamRGdV9tWTN1anV3QkFBQTZka2M5QW9RcVM1Wmw3SEF5WjNkdEZaRU5zY2NjeFN3U3cwRWNJSEswYUZoZ0NoejdzQzREeGZ2ZFBvbzZXYnZqONIB6AFBVV95cUxNbGNabERUbWxKNnpHT3BPVDVENmljX2pHWnFGWjc4TGtkNExCZXJrWEtwZDNodENNWHpVcENkTFBhVnRya1JWbW9QNlBKNTZGQlJvaVFvTGNfNWZ3V080Y3N6bVJSbHl3WC11akdOTVpLWUxzMTZveldydWlmMlhCbnp6SzlibXdrSXJXQTdud3lKbHNTcjVra0pWemdJOURmc290OWdGZUg1OXBabEZLU2ZVN2dueUl5OTJ2Ui1pcGczWnBlbWFtV0MxbXFGRGFLYlNCTmFOaWxkNFc5VTd3TWI4YkRhT2NX?oc=5"
-  },
-  {
-   "t": "Oitavas da Copa 2026: jogos, datas e chaveamento até a final",
-   "src": "SBT News",
-   "u": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQd09vXzZqa01nLXNJYkdxLUxtMTQxV3o3NDJmc1hPWjd4MTdyYlBRaExCXzdsOU1tZ19aVDN3ZmQzYUU3d3dWTDAzQVg1alFRcmRSYXJxZnBDSVV3SndoOG80N2ZlMUt2M1h3M2lhZGR0d2NDekV4eVQ1bnpZcmRiWERRakNOYW53emxJLWVBWVoyWXh1VG9nOWkyd3dTeXdx?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNVmxKdnluaTR0Q0dub1UxWF9lenJFVkdzUVFaZ2ttdFFpWFN2ZTByVFhrUEFwQmZzdmR5R2p3MlBmS1ZlNU1Nb3JhRkFTeDVPeEY1VXZKSlBHbC1Dc2lGXy1yQWRIMERSeFpGaldsREU1Y1RQcEExaGZGSXR1SkJhQmhiRFRiV2lGMzE5LTJPbU1EX1A4RExJdW9ZNlFabGNTOG45X3ZfM2NBdGt0TWJEb3loSUtTOGptOVcyRm50aXp0NUhIRFZ1Y1pEcw?oc=5"
   }
  ],
  "fr": [
   {
-   "t": "Tableau de la phase finale de la Coupe du monde 2026 : toutes les affiches des 8es, les équipes qualifiées et le calendrier",
-   "src": "Linternaute.com",
-   "u": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNVkdXSjZfMnVGUEUzVmZJenZDNDFXa01xeDlCc3lJUFRxMXVoSjRDdUNrNEtCLXdjWWNwenhoVmtKWjVIOGdRekRhNEJPREJ1NlBjS0tKclFEckxhd090N2FSS1ZXOVhxRUNONkUxbWEtYjkxclNJaHVUYTRTUVRqQWM4YjlrMjVmRlBhTXhfQi1JT01lTWxINm9qdmtwUlZZWWVRU18wSVV0RWhpY000NGRMRnYyV3JWdlMtakFuU3dyMURpZWtyQVByalUweERhTjI2blRMUWV1dWNsWkhBTzJDbDV1cnVMSzBScUVuYlZMdkhsRE1VRHlwYkNNZllidUQyUFR2eG8ybEJlUTJtTkw5VQ?oc=5"
+   "t": "DIRECT. Coupe du monde 2026 : l'Egypte de Mohamed Salah prend l'avantage sur l'Australie (1-0)... Suivez le seizième de finale avec nous",
+   "src": "franceinfo",
+   "u": "https://news.google.com/rss/articles/CBMiqgJBVV95cUxNVnFIU2NVU3BHQ2JqdlNHdVMxcXFjbFVpYlNWU1FSc0RJc3ZEbUVBblVOdnlPNnpPQkdjQ1VWcUJKS1VkNkpvU0RMZW5MREVySXRwMGszdDg5SDh2bXNxVXQ3M3B0bUliSU1DZkV2TWVZN1NiSzNCWmg5ZnlrZUpEYmJhT0tRZllyczl3dzRiZ2QzTmo4MDFaaFRuZk9oRFFxeGJmN0c1UXlGdUJDVFQxMFVjb0Jua055bG1VVmI4VmpZSFZPaU1sOGlDY2E1SDNIMTIzUGN0RUNZaVBNVkJrbHRvQVVrYjNmYVpBdmJzdWdCdXRpMXdjS1JrZTZiWTFFTl9nSDlGQ1ExQnFHZVlsa2llLWV5YlBSWWtlWG9pendlVWhHdW9tdTZ3?oc=5"
   },
   {
-   "t": "Coupe du monde 2026 : Encore un record pour le PSG : Sports - Orange - Sports",
-   "src": "Orange",
-   "u": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNM0VRaGNONV8tR1B0QUViWnM5WG9LOU5MblNpbUZjTmtzcDl2RzNwbHhfaDNwNC04cV9ETnJOVzhlMXlpVzhjdzkzUmlxZVROLUE5YWFzM2I4aUpMYmh0RU9oZzJwMkxBUHBvWmVtc05GMExZQy05ZWN4blJqWWxObHlUQ25yMXdVODVaUk5uSGpNSjFoUnNscm9Ba005cmJ0Rjh3a2lUU3I4TWhkTGF1YTB6c1FNRERfTm85X0RMbmo1eDlNbF9kWlBtd9IBygFBVV95cUxNWDdsN0tBcUFUMDNTUUNQY29kektIZW84NWRJSG51TE5kWjlUUHc0QVoyS1RNaHhHeV8yRE12clRPYlYwZkpxazJ3d29LMjR3YjItMEE4THRmdUV2ZnFFaERtZnhGLXVFcFhGbHpvVXhPVHhOWEJZa3dranVQSldQMDExbmRYc2gzTDcxd2lzWWoyNUZNaWlZekx0SWhEVGRNbmF6cWVIa1Z6S1lhVGpRWnlKY2JtemdENlBySU5fbkVqZlQxanVNY0pR?oc=5"
+   "t": "Coupe du Monde 2026, Sénégal : Pape Gueye a failli en venir aux mains avec un dirigeant de la fédération",
+   "src": "Foot Mercato",
+   "u": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQTHdjc0dpWlhVUm02NkJoOFV5bThXUWItaTVmYWltUjNJUXpqQ1dNSFdjSnA2UlROWk8xd0JhSWljd0JWUXhmSzhmd0h2TkdKRnlnbVZodlJ6a3dGTUl6cGt2NlVyWGprdXlsWnlPOHdIQndjMU54amQtOXVWOElfY21WSTVMa2VXSzFsemRkTXEwWTVBRTBFSTFyU25VYWJLT0VpdElLRGZlampnWDR0TDNFOFRCR3RGMC00UFRnSU5XbXFqeWNBZ3pvM280WWs2bFRTaVZlSjFldWtVMG1pTFotMk0?oc=5"
   },
   {
-   "t": "Coupe du monde 2026 : les influenceurs d’extrême droite sont si racistes qu’ils ne supportent pas l’équipe de France",
-   "src": "Libération",
-   "u": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNX1FkbEVSdDdiOXJ6dmNoOEllNldaUVRyWjloU2xoOG51VFlUWG1QSjlUNjA1R2xEY05wSmU5TFFMRGJTWXFweEI3WmNOMnBJbWZLX19NMEQ2RTFPNnNFX21sUWhVM2V2UWhSX3pnbEtUWk5BT0lSMDVwVmJ4QmRXcnpleEdOTHpZcWhueWVDNHZXOVk1Z1BlZkFHNjlzNG9KZlduanoya3VMdkExVVNNc3Z6cXdkbG1GQ193WG9vcldvWVBSeXRmczJ3bnkzX2Q3YkdNZTE2N0Rra2JWWHhxdE1OTl9xNmVvSW9pS3dkdUw5SE8ySTA4SEZTS25KRTN2MDJESlNSWUFqSzRHNU1DVVlB?oc=5"
+   "t": "Pustules de Mbappé, faux joueur iranien, Hitler en tribunes... Les fake news générées par l'IA parasitent la Coupe du monde 2026",
+   "src": "L'Équipe",
+   "u": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNNGRmZ2paZlV4cmwxZXU2Mkh1Um5KNC0zakhhdlhsTUxRbzgxXzZPTlpmOXROblN3bFFyVGZDNm5ZdU9JU3BpbV9LR3E4WkJ5RXd2Q2hoTnk3OU8wVGgySngzVFoyZFBtanRaYWQyWXdlcXpPYURVOU5Ya2p1U2VqNnBhaWVka3AtQmlqX1VnUnVRQWJmcDZnT0xvc3dBSTBFQ2dwZ0RpanI2WVVmbXRYeFJOYk5ITXV5X0hsYm51bXotTktRQ1BxQnRHU1R1TnhkOTZmajRlem5STmxSelpaWlZSc0NSUm9DLWxFUVgyQ2kxUGtqdHR4Q3NZNmdwQQ?oc=5"
+  },
+  {
+   "t": "EN DIRECT - Coupe du monde 2026: l'Égypte ouvre le score d'entrée de jeu face à l'Australie",
+   "src": "RFI",
+   "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQVTByYlBVdmV1c3dIUTgzMkJQMHBkcXhvSUxrUTdmcERwcXNJZDB1TjkzTS10MWc5eVByMG15bmFxNWQ5VkFack14UG9Pb3BIRElGM1lZWlE4UUdkdHZBZVU4WFRqUDItcmVlLXZNUW8yM0NXdDlOWnBhOUh1SDhZeGVhWlpJTENpenp3RWo3cWxyRjJ6RmozRWl3dmRpSkRLT3lCa185SFpTTVNlRFVFZ09Ja3ViRVJCZU9sdm1jUHNTQkMyajhzS2JSQmMwSFlVRkJsYmN2YTR1dw?oc=5"
+  },
+  {
+   "t": "Australie – Égypte | Pronostics, conseils et cotes | Coupe du Monde 2026",
+   "src": "Eurosport",
+   "u": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQN01IejAyQzFpN1dYWnFZZEFadFZLVWdXRm4zUDB5TTBFOVlYbU5JZ3Y3cjhWX3VWeUJ0V050MEJoZVdXRkxJUXR3UXh2eDFiM1hoU3Z0RUxEaXVqUWZWOGIyV2Fzem5QZDhSS1YwZVUzbDUxMlc3azRzQ1hNV2tVR2stYVBYTTZfOGdYTVpSbW9sMnJHT0VCenVPc09SaEYxTUpzZHBBc0RCWXBvVFBwMXFLYTJNRmI0?oc=5"
+  },
+  {
+   "t": "DIRECT. Australie-Egypte: les Socceroos relancent tout",
+   "src": "RMC Sport",
+   "u": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNbHprUktTeTNBUUFrZXRUZ2tLYzJiOXU1UFpIMTcxYkVyTS03RjRmTnppQTlWY2dEVEY0bkJBV2NXdlpONFJuelhncGs4ZDdINnFVQk1EZHU5QVlmRVZZYXpJZGRXeUNDejNZTUZ0M09lNGpMMnlqbmkwMFRHS0piczd5VkJmTnZVdDFkdW5XYzBLLWRxbE5PNzA0VUo3OFZfWnJUUmVyVGxDUVZEQnVreFFDRTRqWDV5UThIR0NiLU9lRHFDbEtYa0hjRndHdDk0alNwV0x0WEI0RDk4RTBWYm1LZTBna2hhbG5fX0c2QXdiM25zZERF?oc=5"
+  },
+  {
+   "t": "DIRECT. France-Paraguay: suivez la conf de presse de Doué et Deschamps en live avant le 8e de finale de Coupe du monde",
+   "src": "RMC Sport",
+   "u": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxPOHZIVXYyb2pzWmZlckRqcGViOG10Wks0QjdGdXRZMlF0MF9iemh4d1B4UFJJZGFzNWtXNDl5X0V5TlFER0gzT01xTnVQRWw5RDlaVWd4WngtWVlFblFZaWdIbkJwdFVXQXBNOVcwS3p3VlBfTkJwWlZHQUY4OUl1eUVmZFJlcjVpS0pFOGZsSjN1SngzWXhMc0tMb3hzeER2bDFIOXo0TUsxWXdabnVZNHFYWVFOZEpSRG50V0pmRGhiQkhGT3E5Z3NiZlE0eHVWYmQtdjZYVzZ2eGxWYlFGUGJ6eTlGdnRRS2lPQUZiNTczX3hmVnpiTlo5VGVReGVXZWFsVGhfbTVvVjhfY1lhRDNKbFRoS1h5TjBfYnJWZjJpckNqaVJuS3hhX2pYUjlzaWdjbHlXNkR5TFRhYmFpWQ?oc=5"
+  },
+  {
+   "t": "Coupe du monde 2026: Paraguay-France, mauvaise nouvelle confirmée pour les Bleus !",
+   "src": "Sports.fr",
+   "u": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQWG9vd3dCOExPelo3dTBIcElnUGdTZGt6azZUbHB0dW1FVWx4NE1BTjluaERtRWpWRGNQendvbGJmV25Bek93U0o2RnVJNHVXT1NiZE8tMVR4VURqbC10Q2dDUExyMnpuelc5OGNGT212ZWEtU2xtRHFHVXlHUzN4WmlMUk5McHE5Y2NZUWZIQTl1ck1fOS1GbUFVT1d4VV9VSWgwT1ZzZnpvTld0WVNzWnZEbkhIc1piaEY0?oc=5"
+  },
+  {
+   "t": "EN DIRECT Coupe du monde 2026 : Les orages menacent... Mexique-Angleterre pourrait être avancé de six heures...",
+   "src": "20 Minutes",
+   "u": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOLUpaOUpCRDBZbzl5S2w4NDRoT1RBckJkRHBpYWctQ1pycTU2eDZNbmFHNkgxVlFveUpaWlVTWTdNNFVEcUxaVE1JY190cHltWnVCakVwb2RuX1pUMTFBS0hiMU5jMlZWT3o2ZndvMjhtN1ZqSzNOY2wtSEhTU0xMT1pzamZScXNKbDNndUoxNy1NaEVGZ3lqLW45d3IyZjBLc0xxR1BCelNBa2ptY1JQQnJJX2VIU1M1Y3hKRzA4SS1lUENBN1VaTk5iZ0k3dU5SVnh6RU1FQUtFeWc?oc=5"
   },
   {
    "t": "Coupe du Monde 2026 : le titre de MVP de Cristiano Ronaldo fait polémique",
@@ -213,56 +243,46 @@
    "u": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPMUhQOWtRYlZCNUlWdWVJSFp5Q2xjV3VPZDFWZzRhbGRXcGFONkF6enNaN0hMeGxNQkhHYmVsWkxGR2pkYkZSdWRSclpaYWRHUGplNE1fcHZRQUlQbjU2anJkTi1FVko3bjA2SWJrc1NmQWFYVDhqdVRNeFhkQVZzT0toc2FmXzhHRTJuQW5fTTdnOUdYaUEtYXNkUndpMFpqTGFlcFd1eXdlZGFhY0lNdldnX24tRjFJbVJYbWJvbkJtZzkwX0syMlQzTU5BS2RyZnpyZzR1Yl9SZ1doMnhNX1ZoWGYtNU5yV3Y0RFVVenc2ajRUZm1KZGZMeUphS0dDdC1MeA?oc=5"
   },
   {
-   "t": "Coupe du monde 2026 : il aurait effleuré le ballon d’un cheveu, un capteur trop sensible a-t-il mis fin au rêve croate",
-   "src": "Midi Libre",
-   "u": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQRWhaWFR1M2RjbzZoMzM0bUFES0VGUjlWUlk0Mk9FQTh6OXlfWmNqbkFEcUtvLVFMSFZ3ZktGUG5vV0EwY3YzMFhDWEpJanV4azcwTHBJZk5nNTktSzNSMms5WjBEN09vZUtCU0dkTm43WVRMNmlueEFDR2ZHMUJvZHQ0MjVvZE1BXzh3ZlBfbkVRamdFUzNGTmRQU0oxNGJKeGtqb0JSWnkwQlJid3cxQlJGWVB0SXNTZGVsYmhoeUFHV2dBTWpCbFJja2NiR3V5YWVzYS1oRFpCVTFnWktSckgxMGdUVGtMWFZCSHdtT3U3TktzVGc?oc=5"
-  },
-  {
-   "t": "Coupe du monde 2026: Paraguay-France, mauvaise nouvelle confirmée pour les Bleus !",
-   "src": "Sports.fr",
-   "u": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQWG9vd3dCOExPelo3dTBIcElnUGdTZGt6azZUbHB0dW1FVWx4NE1BTjluaERtRWpWRGNQendvbGJmV25Bek93U0o2RnVJNHVXT1NiZE8tMVR4VURqbC10Q2dDUExyMnpuelc5OGNGT212ZWEtU2xtRHFHVXlHUzN4WmlMUk5McHE5Y2NZUWZIQTl1ck1fOS1GbUFVT1d4VV9VSWgwT1ZzZnpvTld0WVNzWnZEbkhIc1piaEY0?oc=5"
-  },
-  {
-   "t": "Paraguay – France | Pronostics, conseils et cotes | Coupe du Monde 2026",
+   "t": "Coupe du monde I Croatie - Portugal (1-2) I Ballon connecté, capteur : la FIFA justifie l'annulation du but croate",
    "src": "Eurosport",
-   "u": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPUUx3LWxGMi1zU091X1ZKc2NvSF9zN0RoM2MzZ0k0MG1TMnk2WWVURHBod3lzTzJkVVBTZVNVX2w3cVM4MEtYQ2VydE1IYWp5RlRhWXdVVmFPQWpHZ2VQU2Y3UDVxRXdvMExyVm1FcGFOOElmWnhsOEtzQ2RQZEd5UkxKdmVBOU1rM3lKN3VLSlZNaHR6R1BCSHVjQWMtQjBpb0xVR2FoZ2F6cDNoVjZCTzlIWlkzejA?oc=5"
-  },
-  {
-   "t": "EN DIRECT Coupe du monde 2026 : Alerte canicule et orages avant France-Paraguay... La DFB discute avec Klopp...",
-   "src": "20 Minutes",
-   "u": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOLUpaOUpCRDBZbzl5S2w4NDRoT1RBckJkRHBpYWctQ1pycTU2eDZNbmFHNkgxVlFveUpaWlVTWTdNNFVEcUxaVE1JY190cHltWnVCakVwb2RuX1pUMTFBS0hiMU5jMlZWT3o2ZndvMjhtN1ZqSzNOY2wtSEhTU0xMT1pzamZScXNKbDNndUoxNy1NaEVGZ3lqLW45d3IyZjBLc0xxR1BCelNBa2ptY1JQQnJJX2VIU1M1Y3hKRzA4SS1lUENBN1VaTk5iZ0k3dU5SVnh6RU1FQUtFeWc?oc=5"
-  },
-  {
-   "t": "Algérie - Suisse (0-1) : Manzambi régale, Breel Embolo ouvre le score !",
-   "src": "beIN SPORTS",
-   "u": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxQNXpzNWd1MU1qQy04d256N0R1cTlUdHFZUHZwN1dJdE9ZdlBYM1RpMFNicHdxaks5akVkcG1RYW5ndVdLcXAxT3RZcm9BQkZ0emlRYW04MUM5T3lJVXllM2NtN0dKU2xvUkNSQzlJX09hcFhselNxQjNXRXVzSlg2cDdHNkpFdm1vaVN2MW1fbWYzbERfYlZybVdfRUF0eUVUU1RJT2NRWlBWRDk4TmhNSXlkNWRQM0xOdEZIcllfQUNVc09BYXMxR0VRcmxqUlg5OFBac2N4TXNoS1hkWVY4NU8wa3IzOWJQMDlPekVKSHJqdDhnMF9rNmRDazR3UFdDQlg3RV9WX2E2VmRScC1VQTNVR0w0ckVlQzNwU3JKeTA5eUFCYkpIOGs2UjNIUlo4ekFfUHVFT1dGY1A0TGxPcQ?oc=5"
-  },
-  {
-   "t": "Coupe du Monde 2026 : la presse algérienne désigne les coupables de l’échec face à la Suisse",
-   "src": "Foot Mercato",
-   "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNZGVBZ0U2TjZoeFVSYzN1bGdhQU4yMDRoQjMzRTBGZEJaVGxiaWFHNFQtbHA3MWM0U3JsazVFY2hDbGpKUkEtbEVzRkk1WlZuQzV3M0JDVElGVGFYRHc0RlF2Y0hvcWtNTThUbTFmTTBEUktIcFN2NkhWYk1qellCTEhMTjVXdkUwdkExU3pqMWdwXzlUaEFpSlZUWXRUZXdabG0zSHlOTU9zTmE3Q0J2WGVlSFNxOU9kZnBXWTJR?oc=5"
-  },
-  {
-   "t": "Suisse-Algérie: la Nati surclasse les Fennecs, et valide son ticket pour les huitièmes de finale",
-   "src": "RMC Sport",
-   "u": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOM2hoNE9VcS1pVDNJZ0NpVmt5R05taHd3MWxOMUUzLWhLVXR0elFMR1VhY2hGdFVtalNXb0oxT2VDWTZWZjJJZnQ1VHZGeExSNFdqbWw5WXRMT3BuVmU0T25mcTNmQnJKZlh4cVBjR3VCWlFub1FpQ05SNTAwd1hONVZfanBOQU1NT3p0SGUycTlPZjNEQkJlTkc5aC1fUnBxS3g2cnpoS2cxZVhNaEM1YlJjYXo3ZFZ1LU5rUkpKWC1EUWRyVmtGVHEyOVRSM3hQbVhPU0FDWTk1c1dSYlYtUVg2TE1NSDdFQ2JzTG5GbXVDbm5R?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMikgJBVV95cUxPc1N3VXJxWDF1RkVBUlNTUEh2ZF9DcWxKNW1VazVpN3lDaEpCMVpENXJ2S1d3UnRCbnNNSWh5LUEtNUQxck9zOWFOYllicHpLUlVvWWQtRWg3aTQtSWFBQkNWcmdmSkQ0Q1d0QTJqeDhkcHRsRFFtZWsxTU9QWU9sVV91WDhTbThndkpGRVJVcFMxTGVpODZWcUs3YlQ0bmh6ZHZGMlJaM3RZai1yUjVYd0t0MGtDWU1HbGlBX0U5SENOU0hLV2g4WUF5Y1RBbEtFSDBxa0luNGcyaGFIbnFuRk14eU9BZGZ5bDlNbm9Ed0pVSDBnZGJ2aXNaeUExYjFUdFR6RWJtTXRudnhRcllJVFF3?oc=5"
   }
  ],
  "ar": [
   {
-   "t": "القنوات الناقلة لمباراة مصر وأستراليا في كأس العالم 2026",
-   "src": "المصري اليوم",
-   "u": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9iVnQyLUZCZURmMS02UGY4Vko3M0d6eDdyM2lqWEVYYXhOSElidS1RZ3lDelBNVHdYS2MxQTlFaFl3dVlocE9mUFpkdjRMVzI0VFcyUE5EcnVHTDF0Q3Jr0gFjQVVfeXFMTkkwdG5RYXhHejlkZ1F4Zk0xQnFMQi1oRXpYdXlRTldES0ZCVy1xQmZRMGthRlpiODlSVDJFcXlhMzEzR1laMHdJUVdTSndvRU8yRnpBVG5lWFd2Rk5VaDJKR1JF?oc=5"
-  },
-  {
-   "t": "عصابة مخدرات وتوديع المونديال.. ما حقيقة تهديد لاعبي الإكوادور قبل لقاء المكسيك؟",
+   "t": "لحظة بلحظة.. مصر 0 -0 أستراليا.. كأس العالم 2026",
    "src": "Masrawy",
-   "u": "https://news.google.com/rss/articles/CBMiqgVBVV95cUxPYTNITFc3dDBncDJEdmtDNGNVRHNWdnlyNGVTNzg4XzJYdWhHb1hCSWN4bFYwU0lTdGR4dmdWamUyQlZTRDlpaWJSOWphazFzcWVOd3YxUTVFb2dUQ0VIYUxkai1RQmtya0J4YWZTd0FBVkFKSWtFTWJEbThkOGpYTEZ3ei16d1dTVFN2dEtfZ0xDMWw5Sl9ZWXBkbjdScFV1cTNITlhXbmhsWll1SE5zcmVKY05SNHBsTjJORWVyV1FwMnNqcjl2Ym1BUGlpVFdJb3h4bldEWWYzbG1tdUJ5WFBOamdrZnBvT2FmOWNBam1GaEZhRlhJVC1kVHRqZ200cS1UR1BnTXZmVDRkejh3cnJNXzZnSUhnOWhFNmJmc3UtSWRJVHZobHhzVXE5YlNOa1JZdXZnbTdLNkVaWHZ3MHVzY05TeHlDNk94YWRMX05kNFZfT1R2djZTQ2tzLXBKMXpBVWtpWnU5WUtuTGdRSzhhbnl3SkZhV1BaVmQ2RFV2Tm5aR3BjN3hRckk5cHFSdUFnZjhoR0hBUGhCNkpXUkR6Q2pNc2hSbXB4NmpNRjBQanA0X0VjckdzWHI1T3ZBSWpBTHlHRDQyWUgzYTliT05TVzdCMi02aDZrNzU4RWhYZmRScVpyZ0dpS21lQzE0N1JGTzVzUVp1VVF2d3VGdGcwSW16YXFiUjJyWEwzX2JCYVVnbzNDY183Zm4tSWRJRTZrMHpnZnVLTkhWVHlBRkJjbG0wdU45VlFFX0hlSVpOeVhWR0tEcjh2Sm4tYnVsdkdONkM2empGRlFIQkFST25DRElSZjh0U2xlV2FWMHZTaEZSaW9oN3hYeGtWT1lUQWYwS3BpTm84UjhnbkFna1h5QXlJS2trN1ZTZUdCU1FudHlkMHQ3bkVR0gGvBUFVX3lxTE5URlh2SHc0bzZTbmZBdkxMck01cjJxdjdtbGU4TUxsQ0tEUTl2c25MZnJLTk1NaWZkbWNUZGF5bVFBSmVQVkdoTTZIZjNFd083aThqVUJKZENrMFRReGF5ZEtvQmZYNEpOVjJSX0d4ak90SElnUmIzc3FmV0FiaV84amF4dGUtc2MwRW5PYld6ekk2MjJxdkY3bmZSWS1BMmVFUnI1dXlrOHF2SnF5Y2dVQlQ0c3N3c1pBQXBiTHhMQWR4ejB3R3ZrN0hwUjV2X2tPclZPZmVZSk5qTTVfTTY5aXJQZUFZWkpZSG90YkIzWkMwWnlyZ3QzZFZCZk9qeVNuMzIzN2dvRjRFa1FTOGtIMG9nZ0FzUEpzZlpXY2dNR1ptQ1hTS3BsU2JGVi13ZC1PSVJtRkxXQjJLRE0wV2ZQQmJqV2o0ZG9SeGljU1VyR1Y0cVhwVzA2alV6bmdqTVdLamV2SXIzVTBqM19FUFQ4SFpzWGhDaUZBN1UxcnFXdWZmY3NjVTBrQ091VDJ5dVJxLTFsYWpJSHZuSVNkZ051WmFtY0lyaE12aFRzZ1Z3UDZYWHl2S25OU0pObjI3bGN6MWd2NDBUWVk3MnlmVldZNTJ4Q29neFdvLUk0VXROUU43cVhfa2RGN0Z0dW11V193Zzh6OS1mYjFxWVJDajhfQ0xJVUlxb3QxWDZFNEhpR2o4YjhDM2xwcmdtel9LQlJVMm9VRkNwLVJ5SFY5cnhmT0VUYTkyY0lBVVB4VlliUVhwQzFlSTc1cC00UkF3eEdwTVpPaUhmbVJROEFOdngyU005VUFUQ3BwSmlybFlPWmdJYW9HdFNOMnZ6VjlOSnlPOTRnaVVjT2tjaEJoeDQ0Y0t4WWkyRmg1a1oybzA1Z3ZSZGxrMmF0THBWamJ1dw?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMi8gJBVV95cUxPeHhZVmRRanpmR1d0dERQQTEtU3JvRnJEY2wxVWE4V1UwXzlFaXMtM2RTVzJkMUlZQ2V1aVI3aWFzNmV2UG82UE9ycm5OS0Rtd1RQUHBHMTRfT0thaExyeDhjSWlKOFQxb3g1a0dxRng3OWxYNmtoV0V1OVFwaUJwYnZkblBLY04zNk1TY2NsSGtDZnIzV3NjT3lXazFBNkRhOE1VQjVMaE1oZ2ItVkdXUHlZYXJ2dkJxVnlHbERHendnQTJfUUFtQkd3SFp5QTdnZjlVWHNuZG5qVGRWeG52d2phdzRDbW5DamlNUkpNU1k1eGk2NldnTVhxb1RrVU13WS0xOVN6SGhJTG9nVnZfUkF3bV9SaXZYeTZyczlzQ2ZOT2pkM2ExWGhITW1RdE5JLVpxQUlEaUZWSVFraXJDZURlT0RKWjZlcERqN2RJa1lJZ0U4VGtfejk3RmVsdjBFd01iaXZKZUl3WUp4azdFZGFR0gH3AkFVX3lxTE5JX0hwMjFEam44Zk9RTmZnRkdmTkxSZTY2bUJvUi1tZDFSaVRhVDctMnBWWlJ2U3hlelE1WVB4S182bzV3bWJCZjJMUjJrUTluMUhCV0NranhXcUJXN3BVWldydWtNbGRkbHFkU3RnaFFDS3dHQ05DRTZNTkhEQWZtbVpkTmthTkczZWRRVzVvM1pFNmc1RXlIOVJLR3JMZnRSX3RCcENxVjlrZjJUNFpOSnZkOGNlejBNUkdsNUJVbW1hc01SVjVPVXU5aEhTa0VUSGNiY3l2Rm5NSHB4QzFTZFZWR1N3b0ZsSWs2aUdZRjlVOHNSS21MZENIRVd0a2VROGcxRzVSSnFYYXM5TjNUVjNmM3JFSEhTQzZkSG9GWWlySjNUdlNLN1V2QUFHM1AyNDdaZFhLZmdPMWo0TzhtWXRMb1FfR3dFLUZMbDFsN01scnp4M0lmRDVqNTY0enU3NkxZWUh2c0JsU1BPVkc2Uk1reWJldw?oc=5"
   },
   {
-   "t": "ملخص وأهداف مباراة سويسرا ضد الجزائر فى كأس العالم 2026",
+   "t": "إيجابية تحليل منشطات 8 لاعبين من منتخب عربي في كأس العالم 2026",
+   "src": "بطولات",
+   "u": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9aN0pDcVJlVFNmcjNnei1pWjVwYU9WeUpGTHdqZFJmTzBzVDdDVFhjS3lYVi1LaDdWTkxsem9kUXdaZUhWZVh1V0ZR0gFPQVVfeXFMTTVJYnFROVlrd3JIOUwwOXRuZzBRQnA5d1FwRVNnc19xQjFZT2ZHVTJCZE4tTW53YlNoM0w1VmxTQlptMHQ1UEN3ZjJ6Y2lYWQ?oc=5"
+  },
+  {
+   "t": "كأس العالم - محرز: مونديال 2026 هو الأخير في مسيرتي",
+   "src": "filgoal.com",
+   "u": "https://news.google.com/rss/articles/CBMiggNBVV95cUxPMWZvODJDV0lYZzFfU0luenZDeUVDYUNXZDk3R0xtdnY3d2NzLUgwVFZycDNjcnhxLV9zdmJfX3RkMmstRTdpcTd5bXpQM1pKeGZxQlo4aDVsTDdiR3V5cURlcjZpYjFlT2o0WUVVZ0sxb2Z0ekVONC0tOU04MjhRS3FjLXJIU3pPajZKclAtOUFveWRSUGtEa21WbzdLazd3cDJfeXUxbkEzZ0Jjai1pclV5MU5PWk9YQ29qYVQwWV85Vzh4M0lWOUloN1I4eUFydE1CZUN5SV9Ldk04UDlmNGhXN0Joam5YZ2ViQUVDRUN0OV9XZ1g1bmk4VWtVUEU2dHhGYVZXTXk2bXlCSUl2Qjl3TS1oaVRhN2gyOVZkRmxhLXV0S1hndGZFMVN2X3dHVGZ2Wm5YN05xX3Y4SHJ1X0J1SklXWXRtX0Q4ZVVYdXVQVjUyZ2pLYjlKckxhX0xnOUxOVFlQMWl2alJ0VDVQU2NpblJwcWxuNnFkRTJQQlZWZ9IBhwNBVV95cUxPM0JKRnZrLVB0OXhqcnVHU3NSZm1Qc3VQUWZBbVZBdXVScG5XbUhlQWJ2aUVrZHB4TzNRY1lYQXA5a2ZnSjd1YU5SVXVreHNRSzBLMTZTTmc4MEVWMUcwVFFHVlNyX3BQQWFrYVhDb2QxQW4tM3l0STk3MGR4b2N2alFpa1RRTnBnY3AwV1VWVENZR3Z5b3dNem9Pd1BsWTJISGdoZEdQSk5WQmo1a1R6OS05QmZJLVI5eTJqTHlsdzdUeEcyY0lVVlJNMV9sMlFMcGIxT05wZm05cVpfQ3ZJQlFabFdkZnhtZnlpQmRxMS15cjA4ZllyZ2NnWFhvNUVuTEticmJ5MmhUMG5TRHdNczFueW44UkhVNjNKNVRIZnY3NEJDU0lYVHVBWERXVnk4TEpCWnFQVnhfWVJJR1ZqdE85TkFNeWhyc1hFeENEMDVaazRjS1lXSXhsMGVtRUplWDRyNFlCdnFkb0dQUzRlOWxwaDA5WEp3Vy1ib0N6ZTFjbktOb1o0?oc=5"
+  },
+  {
+   "t": "منعطف تاريخي في مونديال 2026.. كيف تبدو حظوظ مصر أمام أستراليا؟ | التلفزيون العربي",
+   "src": "التلفزيون العربي",
+   "u": "https://news.google.com/rss/articles/CBMixgNBVV95cUxQQW9fMW41ZTFzZmo0UHlqMFYySXFSYmYtNU9rQ1ZrQjhGWHJWY3BmQkxuZWplakJoazVLZXdYR3ltbGtyYnhubURBWUdLZWN1QmhVLXF2c3BMQXR0d3IyRUwwSFNEUm5pT1lQRUJ0VGpYNmFIcjBJN2hYMWJHVmtmdzFCUmFoNFJFM2ZPN3VnNlNkbmpSRlJ4Z3NNbVZjdkFhNng3S2J0UENUOHZwRmN4LVFhMWViOVViT1dFaWZ3eElxcmRrbk5GN1hKZ05fMFNZOXlNaHFiTVZGTjhGN0Zubk5McjMwV1VOYVc4Z1dEcTI5bHZDaXFobnhRcm05YnlCYWtYVzZCZlFyeHU4N3VMMDJRekdCMW1XSkloejQ2YzA3MVpzaFlMaWJxcDBPN3ljREFEY3dhUFBKTnlvdkFDVFc3STNfTXphNW5FV1NCaDdWVHcyNmNnRGJDWUlReS1qZW1BaGxrdl9zc1BrcU5GWGg4QlFFd2Mtek5rOUxMbnltTm5LcnNSMTZXSWtLelVkeVB3UVhKM2hzRTZDbWdEaWRlRU0xc19rbDhOS0lvMlE5QUxfZ1IzSE1TZ3E1RlRoV1RRUk930gHLA0FVX3lxTFBxV2REeDBQa2dDaWNEY1hTTnV2Z3psZDVEb3dKY3gtM2FOV1l5MVdrM18xUGZIc3hCbUQ5bUZIR3FOSkV0LUZQUTdSSWkzclBwbEl4clJBYjZHLWFhRjNycVRmMjBEaVVtZ2tidFI1VGtLVXJRWVBOVEVjSjVOUDhaQ0FRNXdyT0JqcGU1blhXVTQ5bzdWWkVmd1d1UnBjUktvVEZZYndTVktfVFpWcFRCVC1VSXpoUXlrLTRwbEpqZ0RDRS1jeU9OWlo4REd4YTl2Z3l2TF94M0t2TmgwMDdqUVB6SWdpd2E4M2t3cVYzbFZkTkZTSHpZbjlWQkN3aE4yNlVFQmNrUGRfWUc4MmpNNWFRTEtwVkZXRFFEZndEa3NzYWVHLXc5cGZWV1pCUzB1bk1UbzFxaE91V0hZUk9HMVVwSXgwanpVdVdPbFBqOGs5eUo3WW16SVRYc1RDSzlCUHRwU1lWejZTdmhacHZhWXlZVTcwOGtTT0ctT3lYLXhKY3lRVGtDMnRBRGh6QTE4dF94UFZmUV9kNlluWmdwb0lsU3pOdERjSEVzSjRQMjJMcWZqdkRLU2M3TGZXcG1hWkdLTlBVZUhyRQ?oc=5"
+  },
+  {
+   "t": "تردد قناة بي إن سبورت الجديد المفتوحة الناقلة لمباريات كأس العالم 2026",
+   "src": "المصري اليوم",
+   "u": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9IRzVScmtGZWlXNlhpSVVSNU9BT0tmYkZTRDlKczBnaVV6OE4ycU5HclNXZXZHTTR1RkhLN1lGd2pmdHRwUlliNG1hb1NzSVljVk9QUG1Xb1NudW0yeHRN0gFjQVVfeXFMTUItZ1Q1T2pwQ1VsVG1hQlpoZmQzTWNEdTdLdEtjWU9LX1NGSzJaZFdQWHp5YklCMVZ4cl9rUmNVS21CQU9kdGRhUkRkalR3c1RRUVBpcTR4NVd1MkhIc1ZCR3p3?oc=5"
+  },
+  {
+   "t": "جدول مباريات دور الـ 16 في كأس العالم 2026 .. والقنوات الناقلة",
+   "src": "Goal.com",
+   "u": "https://news.google.com/rss/articles/CBMiigRBVV95cUxQMGc4RC12Q0xFSVRBNVdkcHNyRUM5SVFVYnZ2Zi1qY01DWW9YWVlSYXB5TXR6Ykcwb2EtNkVGSVFiZmM2NllUZXN1MFUzOFctTzlpSDFpWk40QUpjUV9RQmxldFVxOTNkZU5yZjA3UUVVRzBvUGQtS2VqdDF4aGhlLXNMc1FMa21iZEZkOFBOZDJxR0dkRkdfdFloSER3WkE5TlBRMDRTcWZsX1YwUTZQd0dBWWw0Q2dRQ2syaUdNN0xKcFNYa01nalhtVkhjbFV3R0R2dTVLOWJBeG0ycWE0a25QNFBNMnQzcTVpdi1OT2FydjJ5bkw3azZ5dW1BTUxuSXZRSFp3Qnp4LTBUNkJTVm5uVGo4N1h1VnYxcVFxQzNxc3FGWkVsRllIaTBtQmd4bmgzeXgzaWVyRHhxTC12a1Q5WU1OTWdfOXoxbEVMaDdhRlJ2ZDN6R2pqb1pMSlpwV29rZXFfN0hvNndsVzdXcUUzMTRMbl9BQTF5ckVFc2w0YUlhUW54elhsRHhTLW9VekhDbHRhS1lDanVDTE1BT2FhdVZQdHJkNG1EYVRkNXRaSHdRbXNnMHMyMUhoaGszaUVVd3otMDRjOWVKamlnWkxWWGF4WjJISDdJaG1SN0JMSC16M29CNzRqcVpneXZSZ0F2SGdjMTBJWXF5WU5FdkxoSGlmRnFMQXc?oc=5"
+  },
+  {
+   "t": "6 منتخبات أفريقية تودع كأس العالم",
    "src": "اليوم السابع",
-   "u": "https://news.google.com/rss/articles/CBMiugNBVV95cUxNZU9UcGFmeGN4YzZoRU9BaG42R3VKaFlvQXVWU1hHbEpCUWpsOTIzZ0lHUlNUWTl5SjFaMkJMS29Meks5R0FvM2s1U1BTSDVub1g3Q3B6YUtYemlrbmVUaWNFOEJfc0cxcnhOcFNnWHIwMVlKQ0NBT2VOaUdzOTBlNjByVkI4SFc5aDd1Z05XSS0wZEx6UFJCMWh4QjJVX2ItVER2VllsamEwQ1luQkdoVVV1ZXNiVk9SR19KOEcwbDA1OU5keGlOWTFDOXNXTi1zRG82cVZ1bjExY1ZKRDZadkh3ZDJYOGl3bGxrV3hodHBaTjBOaFFKbjJZSXVlQmhZR1VEMERybDJRLW5pNVNKM1VaR1FVRk45WUNCZ0NHVzZScjZGNHVxYlBUR0s3X0FuM29fUmlfbjVOc0dMLW5haktmV08yN1hjMGZTajdUYWJGOUlHZ1lxM0pBTjVKNjJUY1N1UTVyWG5sQjkzbXZpTjJOUU5GM2xaVV9ER2JkZFdEaEV6MXZ6LUx0Q1puMXlBT2g1QThCTUplWkI1elVsMUllemZIZ1FpMnBBWnpVZFVsRTdaMGh6d2dR0gG0A0FVX3lxTFBWZ0RtVVRrZGhoY0M0OXBEUHFRRU1BeHdqWVlNbV9pWjRXR01iOUYxdU81RWt3Mjd4S0FDVHA5Y001U1NObVJKNXB0LURtZlpDUGdqMHZOa3NKSVlkREtfYnoxbFhURWRpZE55cGxYYTdKczhnbGgtZDI0M0R2TTFKck52aHk0YU1aR0M2SWJiM1AwUm5jZ1RpbnUyemxiNzF1Tmc0VGpCUkdubGVWSU5aZUtKVzFrWkdoLWllWXA5ZDg0MFFGWUM3Y2s3UnNrS3ZuRlh4VEFjbnVpb1ZCM2s3RmM0aXVtS04tWFpudkZkSjMyeTlMQ3BPbnNQX29XcVc2LXItQUZzUXVSVzFnWEZBOGNiVHlqeTRBWjlUY0pFNGdLNDZyQ3VJRF9PUzJFZUFhLTZfTkJpNUVHaGVEQnZBMXdmeXZXb1pKMGZWdTR5VmNlcDJqeFcyaGpsSk5JdlE5UlBLdEtoTjFVaXNFVWhGMEZUdlRpSW90cGJMS0tBYmNLQ0w5TkI3d21kcXlpWEZjX3NyTmlqUGttVGVNRUxXZFA0UWRocTd0OVBOdlZzMDhaTGY?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMiuAJBVV95cUxOeTc4Z2xJcmZEYzdHOThRQl80cm1wQXlSS0JJb3ZCRl9hVF9XN3dkWUY0RHY3eFNYS2pPbFJFUXpFRjVqdVU1YjlhZFlHVUFtQks5LWdnZzFISHllcEs5ZjBrbFB2TnIyd09EZ2Vla0Nud2JZT1FJbVJTNkR0VlJiU3NXWE5fVHp2TjlzY0IyRmMxR0ZSOUM4d3JWdDVPOGtfZDV3SVcwb0F4azhpbFNMMzY4c1RSaXFhYnNLY3V1MG5YZG9ma2NMRmpYWmt1WHVKV3lCVnp1YzR2azdZTVBzOV92ZEtkcG5oaFc3bm5pUFpYX3JWVFpmRlp2MU9pR05TVWg4dmtjQ2hOc1lscl9oQUw5aTlQaVpiYjZtQWRkbElVanF6QlR2eUtsYS1hY3g2WHpnZUNpckfSAbMCQVVfeXFMTmpsWldBYVNEOUMtRkExRE5Db1pMUWoxcVgwVExWS2llTV9JVkQ5RVd2QWRKYTBPeGl4NERUUmc2bUNxVkl3RG5jdm53Y24yeGVFejdNMjRaSmQxangtOC1aaFd0eXh5Vkp2SmVrREhFeEdtaklBM0ZGR2FpYWdzaVROV2lWZUFFbnhoak1pNHJCdlQwTTFGczQzSWYzTnluTG9LRFhlVlN4WXhxbnlLX0I2eDRFNHUyWUY3cGlnbTBKVzVFazlmQXZ3bjM2S3BpcnRfWVNDOHFLVWkwdXMwTXpVNjhzTDZENHZHa2JTaEJLZGFnRzNXbllfSTBsV05vdmx4cFhzaGlmTUl5SndvUy1SbzBBd1htNXRraVluQU42bVp0eWxqUlN5NTUzRXpDTHFQMA?oc=5"
   },
   {
    "t": "ملخص ونتيجة مباراة الجزائر وسويسرا في كأس العالم 2026",
@@ -270,19 +290,14 @@
    "u": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB0WHdiTkhmVUZTcUdWSGEzRkxIRF9vUTZHSlBOVnVYSmw1cm1lYi1JazdRMzZFOVFhcTBseko2aFhUWUtKZlpiaUFONUlnLXlCN09SejJoc2ZIdjF1OTQ40gFjQVVfeXFMUHRqVU91a0tUaUlUM3k0TTFNNWxSdFRTT0s2T0E4OURMY0c3SlpPSzdoQmJtUU1tazRMZW80WS1qck1jZWNfQkVLZjRNNVVwd0szdkpYSXc5WGhuYzVoTFZnSDBr?oc=5"
   },
   {
-   "t": "رياض محرز: قائد منتخب الجزائر يعلن نهاية مسيرته الدولية بعد الخروج من المونديال",
-   "src": "BBC",
-   "u": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8zaTVmYTJ5eWxrUnpVTlVaMF9XVTJ4UnpzRU5oTko4OG80allQVUVvMjhJNzFaS0M1ZTJQemVMMWl2UkdYbEtQNTZEdTdDbFluUTFrbmtNb1hROUZG0gFiQVVfeXFMT1lVMDkwVHE1bVI4OUNLQklnd1VFdE5jaDJWXzdIX2JkT0I3ejBQSE00NWhPQTdFMWVVSVhBYXlUSWtZUzljQzlYdmRnR1NwQW5YblZEcXV0aW1wc1dRLXQwZHc?oc=5"
+   "t": "منتخب سويسرا ينتظر الفائز من كولومبيا وغانا فى ثمن نهائى كأس العالم",
+   "src": "اليوم السابع",
+   "u": "https://news.google.com/rss/articles/CBMi3ANBVV95cUxNX0N4YUZQM1VZN0NCd1puVGJmbDUxdl9XSWlwUUJTdzFDUHJXOGp4RFF3dU9zSXFxa2N2THhUQlBydHlNcE1QdWpQQk83R2syMzVObEdLZmxPclJSdHFrdHJGZERsOUpCSDVfc01iSHJJZXZJNElNTGRTOW9MSkZlZUxlZXdhcGtJX1VMa0owQ2lGZTRCck9BVDFKS2RTYmp5MkUzT0tLc0hkaC1Ea3duUlA0N2NQY2hGVkRfOXoxSko0eU16R3FOR19mamVDWlJrVlJONDhIaWxTSU9nOUE1aGlZY0wydGtMWldBTHY4bTBMMWIyaWRhalltLVNKdmhlcUNDcUpxQS1PY25WaXY2ZGItSXg1VDlGcENDSVZrSDY4eXRSR3Fkc0RrazFlODBZbjlfX3hHcl9hbFdlY2ZkS2RodFI3UVlnR3NxdGFycm56LWF5ZnNyQUpYYXR4eWVFNjRUVEJ3Z3ljbVNfZjV3TzZjbi00ZmtCWG42bjdxdlctT2xTSVRBTk5uSV9kNUVtOGVieWs1c2pYa25icldpbTdaczYxbHlkem4yamEyNklldTdybDF0Ry0tc0Y5WFZoUjlWR2ItZU4wS0w0eDJhNENZVGJFbFpmWFh6V9IB1wNBVV95cUxPZjFHNjRNakkyamZPbW5WYzhCTjQ3Z1FNd3VJQW1nZGJsTFlfYnBhMThxd01PRzZFU0cwd3JJVnlYREZ6cm42NUZpTnZfUUhBMFE4WGhJUUFRNWZVejRjMlQ0aDNmdTJMMUdWX0JJMzhaQWMwQm9PZXAyUTZ1aDNZVVloMFBPMG95aHBRc1V0dFBSd0Jia25IZmVUUU9xbFNjWkNPXy1nb1ExRy04clkybU5OV3B4R3B0eGFKZXBVUVJqT254YmJ1UEhLUjFwVlhLTFhIUVBrcXllQXhHLXVhZEdVSUY1S1FsLW9TemYwVVRBWEFhMDJnNXZUSnNiMGFaSVZhLVJIZks1YURQanFCRzZoelZvZ2VUNWg4a3Z5RVlVeE0yWFJKM3ljT3VicjluNzg2aDczczRaMWVJTTR1QTJEblVvZG1TdzA5NmZKZWdQSWxEUU5hdXlHX05TVFlDUXlQS3dib2JCaXI1VWRCdmM2OUlHWUJTSUxyV2ktakQtMURFbnVwUnlYR1ZCUnJ6VC0teXlLM2hGU25DUXBhaE1OWnlvUEFTQkpFa1MwV2Yza1RBOURVbE1kUkt6TlF2VTJKRDdWWmpMTzI1TEFtWlhWSGhyV0E?oc=5"
   },
   {
-   "t": "\"فيفا\": منتخب مصر بطلا لظاهرة إقليمية في مونديال 2026",
-   "src": "Kooora",
-   "u": "https://news.google.com/rss/articles/CBMi-wNBVV95cUxNeUNoNFhRTnpjVkZhMVZ3TEZzZDFKNV9qTzhKY01BNXFqUVRlRm9FdlFxZVV5b1FxUWdGR0dCa3A1Y3ctS1J0cG91VjBOMkdVNXI3Y01MRnZ6ZE5NT0E3LW9tM0FoTXhZYXdHZ3NsWFFLV0FtNURzSjVDVVpFbDJBTHRRTm1YTTFFV2Vxc3VrRGtLeEt0MHJsVXZoTWItRS13VjdUdWtnakhWRV9CNVRsaWgwcGdsNHF1YVZ5VnplT0hnWVVZSFB6bFprdXBxZUZGWkI0enFGbzFIQm1ZVGc3VUVkeTBKRmZOamVyYTNEa0s4bHRtdEN3S0VsVFFPekdPQnZQeXdJbmxNOWRxbHBIUTVEVzg2QlZuVzJfXzExaWpHVkJUczNhQUFVa09ic3lNZTNmcmdMT2Z6bjdiRU1Hakgxbk5QVGp6b21PRXM1OGFsQklFSnZBQmJZNDd5WVJHMWtXLUdjVDhjOERCTkMzcWlOOWRFUVFfSmZ5YU1zbmVSQzRkNTdmNnllN1lJZ1NTVDZBNWNlQks5YTBKV3o1RVdEQW01RnR6TTlfWnpoXzhrX18zd2FzV29Ka1J4UWJUa0dQdnA0TnpSQVVXZWFWMkU0SUlNQ18xUTlDdHB6Zi1BN2tKTFVKREF6UWJXZVM0TVhPTzRCanJGaFk?oc=5"
-  },
-  {
-   "t": "لحظة بلحظة.. البرتغال 0 -0 كرواتيا.. كأس العالم 2026",
-   "src": "Masrawy",
-   "u": "https://news.google.com/rss/articles/CBMipANBVV95cUxOTHpaMlIzaGR6TE41VUJDbWpWNk1JcENyb2sxUDVQdEg0bm5xWm80emplaEI4WW8zQkk5bUV6YzdFRFNQVkI2Z3V5ajJkR2M4dWxFWk93aEZQeVI4X0V0ZDNlUXVKemdTRXh3R2ZkdnVOdWE1UUlQdHQyamFUZnFKWEFodktNMXZNYVp6RTMyY0htcExrQ1pDSUhWLXBSclZQNEJzNnI4eWczSXFfX0dDelZVaXMzZDEwUzVnTkRmZ0RaeDNYbVRmUzI1UGF0MW96em1VcEMxc3hZUi11RUVRdUdvVzJzanlvcUZzOXZhY1pselA2ajktQmlYOFIwTHg5UTZVdF9lNEVtMi1nRUVKMS1XRkNqWjhSTGc2bGpYMlZ0NTd5amY4MDAzUU1nNzdQOWNVZXBRWlQwRGJLb2lCRVM5bWl4aFlUMEVyc1hkemtsUVprcm1oRDlhbVVlalYtUjJodFczVWRwQ2J2MXdMZ1VOT0s2UkpuODBQUS1LUGQxY2lUblE4eXMzcTRNVUhzSTNuNlJ1cXU1YjloUzJFUHpmdTXSAaoDQVVfeXFMT3FLa0VrRENET2FRLS1VSmhCRFFCOVZZSHN4RG9HdGEtSFV4UXNyWjRwNFBuemN3T0lHemVVb242dHd3akNJZmhJVU9KVHhGMHRrRTlhdDJhQmhoaWxHVFFPaFpGM1V3UlpGMTQxM0phVEUxeU5reVBoXzQ5Mkg5blM0c3NxX1lfc3JyU2d5d3JKTkxUYXNHN09vZ2dqTzBlUDlqVXFieUdzOVZ3dXhFREFWQUtvUTAxZktOUDlVTmhvLWk3VEhtYkJmaXRDTlZieHJGS2ZDaER1dDlLUVkwai10RFZCXzI5Nmp4YXdHVEpFZzd4TUk5R1RxeXQwREN3TGZ0Z0M4UjktRTVHbXQ1dk9xTUloNHVCaHRTUjBqRC0xbGc2cEpuQTFmTFRUenVIb19HWnM1azJVSzBGYUlnOG5LZEVjbUxRX0FqMmVRdDN0SVg5d0xKQXFoMlVpSzl4a2tqOENRUnhBbWo5T2Z5THQ0MUJkSU9YeUZKV21mbnJLci0waF9iamlERVJNQ3gtdGZfZExaS3JMUHg1MFgwaHNObzJJbUhDeHFn?oc=5"
+   "t": "ماذا فعل لاعبو منتخب الجزائر بعد إقصائهم من مونديال 2026؟",
+   "src": "CNN Arabic",
+   "u": "https://news.google.com/rss/articles/CBMifkFVX3lxTE43bS1odXVRRkp1NjB6WWJ4ZlBtOHJFWnluNzF5N0g5UVE2UTZXRW9fTmZXVFVEbzdyeEpxWnYwZkVvSDA5NFA0cHNhcHhTSDJoeXBQOUZPd3RYaXJ6V3hWQjRudGpjalZia1YzWHRRamktOWlOQWJnd04tRzQ3d9IBiAFBVV95cUxNNHNPQzNpejdpTmk4OElGMm9qM2JTbmxiTngtTjhaS3VWOEVHc2UxaWdNYVFtUXFCNUREUWNyRXpOM2F1T1M1MVo5X0I0RzU3NVN6cHZ0OGNnOVNjR3czSGt4c21MR1M0cjlzVC10V0xlSlRCYWNyTGhrZm9Dc2dNWkFwUmV3RUZQ?oc=5"
   },
   {
    "t": "بث مباشر.. مشاهدة مباراة البرتغال وكرواتيا الآن في كأس العالم 2026",
@@ -290,24 +305,9 @@
    "u": "https://news.google.com/rss/articles/CBMikwJBVV95cUxPZHhoNXVuZ08wTUQ5a3ItZDhaaUF1d1MyaTVqYkVsU2kyNndXS1dOeDRlaDFsaTFyVXI2cXlpaFF4MjFoTS00cFItbS0ySkdEOXZvSGc0bE53RGoxcjRqUUhnbWJvYjdWSlNDR1c3WmVBRmFnVW9PWXozbWdsRlg0SkpWNXZJVzRRNTl5aHplS0JTUGM2ZmlIR25MOWVteUNhN2Fqd2kyLWxrajk5NjFzWGFKRlcyQ0NhaVluTnQweERGMXpsV2NrdHZTd3IzbEVNbXYycWR1a19leUdZOVl5Y2lna19ZMVFLNFFxVHY5b2piWTI1cEpLT2s5MUJicjFVSkJjcnRnWTdVakhJWUFaYVpuUQ?oc=5"
   },
   {
-   "t": "هل ردد رونالدو «بسم الله» قبل ركلة الجزاء في مباراة كرواتيا؟.. فيديو",
-   "src": "اليوم السابع",
-   "u": "https://news.google.com/rss/articles/CBMitANBVV95cUxQcksxUjlOczlyZXRWT05tTkhrblB3SWl3clJwYUQ4LXVVcVQ5MThZbnRkckRDUGxGQmJCYWJkWmZ1TWhjMVRKS3VxRU9ZZDVTSW1Ja1hrWTBBcHJaNmFVa3FhdnhrcWJIOTVucEFXaElGQlZEWVhiUi05cHFJdXZrM0sxYnNXcFJ4Q2pjZzAzMW5ZXzM1OHJzZ0p4N2ZraDYxUjJ0a2RmVEtIUlc1X2pJc2lUVllyR19nR0l5d0NfU0dtZHNLdV8wREVkcE4xRXVVZFIwMFVJbS1zTGIza1N5d2w2UkktRElyUnFLcERoR2Nvc0FJVlNjOE90MlBpdUgwOGlnRzFDTXNycVpRc29rX216Wmd1d3ZDaHplWFVCU2pZc3BObktuQ1UwcmRJemVvV3FXUDI4ZDUzeTF3SUFfcWRwOUc3VG9SRU9KOUpuRHVyWjNpVjVFd0E0RTNGdGs3TUpJcjdjMXZ5Rk5DOWNfQVNkOVVFQTh5MHJRZTZpcnY4TDNVNGk3ZXpabHBfTGlGa3pmcDRqVU93U293M1g0ZjFQUFdpWm40VDFoY3NMeDZsdjdo0gGvA0FVX3lxTE9uakwwZjVvOVF4dEQ5ZGNXcm5ZOXVOVDYxbzVidHNBU1FORzR3WDBmV2xrZWFBMU1qUEJ6REVLVTVKTjVDczhXckNVcVNUemVJT3JmSTNWblFhbEU5WnVQQ3Y0Nm9nUVIzQjdsRnpmTm56akdxVlJjeDF4c2tIUDNQV2F3YVBlMkItLURhUk5LVkxJQWtsNU10bjZ2dDVfXy1JUkJLcFdrdnB4VFd6Q3MyTnhmdG9haTNHVUhySFZqZzF0QkcyX01yemhETFRfVkRRNnBDT0tHVzk3bmxRMDVVOTdySjVzNml5dTBYTkwtV2FxZjB1VG9vektHU0ZJMjRUbXFBTkd4ODVxWVN3c0pmRDZIWTJHTC1zTVB2MkkwbUUxeUo0YWJjekFmQW1tLU5QSjVuSUwwTW1mN21BZ2hnTm82eVc3Zmp4bHZndHByN3ZRSDVYeE5nakZwVDlYei1oZk1RUUVHS25RZGdJenVJUDVKZ2w4UHFvRzZJdFhIbDFMcnE4TS1saEQwU0ZBWEtheXU2a3h4ajVOTmc5RWpTNHZrQmJHLUQyRHlXUXRN?oc=5"
-  },
-  {
-   "t": "كأس العالم 2026 يقترب من تحطيم الرقم القياسي لمتوسط الأهداف في العصر الحديث",
-   "src": "مباشر بلس",
-   "u": "https://news.google.com/rss/articles/CBMixwRBVV95cUxNV0k5WU1uX3dMci1zYWNrX21OM2Rteko5NE5IMWJQcVpBTlNVR25hOTFTNHo0TEw0TnJmbDVQWUtiWTBjTDN0NHpiZ19IZHZDOGZSY3BHZUZ4VlRhUldMR2pVbTdSVlRJZW94WnBILWFRQjFSalplT3duV1FmdnhBWGJTMGRPaWlaQ0J6SzdtUWhiQ2ZGUXNWaHdJRFdrcUwweUZrUGRlR0MyM0pWTzVGdW5Qa25mQ2NKMUp2VVRvX3RSb2pjQ3MyUjlyeWlmTjBQc1pCdE1Rb2ZIYUU1a0pjNXBJeHBGWW1QQm9EN0RSZk9lNXNHbWwwZVhNUHJDVVBrRUZIY3pIQVlyYlpaWFhYQlMtMWdISDU3VDE0U2ZDNGIzUjN1clhDeHBfbWF2SXo5RVpjbERXZE1KekViYl9Lb0ZvTnJOZVpjNXN0eGVJREJ6X2RSakUteUNsdU1GWHZaWHNtUjBudUNqUzFBR0t0RzYteUZmUXRIWEV3dHZySFI4eEZ3SU44MHVRRE1qMWhEbGF0dnVfZHE3NWU2YnB5Z1lMSVhPNmVDM0lSbFVFV1gxUTVaSFRSejJsaW0zSmlHWmtaTFdpeXFEUWdrbE40Nk5Pb0NmbnM1aE0waE5ZWjcyZWdxQ3R1QlFHX0ExajRtSGQ4RnZxM0pTemV0djBESzJZaF9LRmVXUXFRei1ZVVhyZWxvR0w0RkM5LWxEYnZNNGNtWm5QVzFLVldkUnJSNVZpdVlYRFNRRWdTX0lkLVp4RWV3ZGpF?oc=5"
-  },
-  {
-   "t": "كأس العالم - محرز: مونديال 2026 هو الأخير في مسيرتي",
-   "src": "filgoal.com",
-   "u": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9DRjNxM0FfZmM0VktQTGNaTTRIaHF5SGdVTWRRLTZQZW4yYWFtaS1SazZkOVQyWkpyLW15QXVsWkczaGM5Y3dySTliOGZDSDF60gGHA0FVX3lxTE8zQkpGdmstUHQ5eGpydUdTc1JmbVBzdVBRZkFtVkF1dVJwbldtSGVBYnZpRWtkcHhPM1FjWVhBcDlrZmdKN3VhTlJVdWt4c1FLMEsxNlNOZzgwRVYxRzBUUUdWU3JfcFBBYWthWENvZDFBbi0zeXRJOTcwZHhvY3ZqUWlrVFFOcGdjcDBXVVZUQ1lHdnlvd016b093UGxZMkhIZ2hkR1BKTlZCajVrVHo5LTlCZkktUjl5MmpMeWx3N1R4RzJjSVVWUk0xX2wyUUxwYjFPTnBmbTlxWl9DdklCUVpsV2RmeG1meWlCZHExLXlyMDhmWXJnY2dYWG81RW5MS2JyYnkyaFQwblNEd01zMW55bjhSSFU2M0o1VEhmdjc0QkNTSVhUdUFYRFdWeThMSkJacVBWeF9ZUklHVmp0TzlOQU15aHJzWEV4Q0QwNVprNGNLWVdJeGwwZW1FSmVYNHI0WUJ2cWRvR1BTNGU5bHBoMDlYSndXLWJvQ3plMWNuS05vWjQ?oc=5"
-  },
-  {
-   "t": "ملامح دور الـ16 تكتمل.. 3 مباريات تحسم آخر المتأهلين في كأس العالم 2026",
-   "src": "صدى البلد",
-   "u": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE4yemhuMlk5ak5WeHJ3VzZsZ1lzeG1zUF9ZQm5Jejd6aTh5cFhHZVdZR2NvME1neFNjTmJLRG8yWGxhamxlTTNR?oc=5"
+   "t": "لحظة بلحظة.. البرتغال 0 -0 كرواتيا.. كأس العالم 2026",
+   "src": "Masrawy",
+   "u": "https://news.google.com/rss/articles/CBMipANBVV95cUxOTHpaMlIzaGR6TE41VUJDbWpWNk1JcENyb2sxUDVQdEg0bm5xWm80emplaEI4WW8zQkk5bUV6YzdFRFNQVkI2Z3V5ajJkR2M4dWxFWk93aEZQeVI4X0V0ZDNlUXVKemdTRXh3R2ZkdnVOdWE1UUlQdHQyamFUZnFKWEFodktNMXZNYVp6RTMyY0htcExrQ1pDSUhWLXBSclZQNEJzNnI4eWczSXFfX0dDelZVaXMzZDEwUzVnTkRmZ0RaeDNYbVRmUzI1UGF0MW96em1VcEMxc3hZUi11RUVRdUdvVzJzanlvcUZzOXZhY1pselA2ajktQmlYOFIwTHg5UTZVdF9lNEVtMi1nRUVKMS1XRkNqWjhSTGc2bGpYMlZ0NTd5amY4MDAzUU1nNzdQOWNVZXBRWlQwRGJLb2lCRVM5bWl4aFlUMEVyc1hkemtsUVprcm1oRDlhbVVlalYtUjJodFczVWRwQ2J2MXdMZ1VOT0s2UkpuODBQUS1LUGQxY2lUblE4eXMzcTRNVUhzSTNuNlJ1cXU1YjloUzJFUHpmdTXSAaoDQVVfeXFMT3FLa0VrRENET2FRLS1VSmhCRFFCOVZZSHN4RG9HdGEtSFV4UXNyWjRwNFBuemN3T0lHemVVb242dHd3akNJZmhJVU9KVHhGMHRrRTlhdDJhQmhoaWxHVFFPaFpGM1V3UlpGMTQxM0phVEUxeU5reVBoXzQ5Mkg5blM0c3NxX1lfc3JyU2d5d3JKTkxUYXNHN09vZ2dqTzBlUDlqVXFieUdzOVZ3dXhFREFWQUtvUTAxZktOUDlVTmhvLWk3VEhtYkJmaXRDTlZieHJGS2ZDaER1dDlLUVkwai10RFZCXzI5Nmp4YXdHVEpFZzd4TUk5R1RxeXQwREN3TGZ0Z0M4UjktRTVHbXQ1dk9xTUloNHVCaHRTUjBqRC0xbGc2cEpuQTFmTFRUenVIb19HWnM1azJVSzBGYUlnOG5LZEVjbUxRX0FqMmVRdDN0SVg5d0xKQXFoMlVpSzl4a2tqOENRUnhBbWo5T2Z5THQ0MUJkSU9YeUZKV21mbnJLci0waF9iamlERVJNQ3gtdGZfZExaS3JMUHg1MFgwaHNObzJJbUhDeHFn?oc=5"
   }
  ]
 }
