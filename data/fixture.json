@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T07:35:51.016Z",
+  "updatedAt": "2026-07-03T19:21:48.711Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2743,27 +2743,6 @@
       "awayRank": 1
     },
     {
-      "id": "2503635",
-      "round": 32,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
-      "group": null,
-      "date": "2026-07-03",
-      "time": "03:00:00",
-      "timestamp": "2026-07-03T03:00:00",
-      "home": "Switzerland",
-      "away": "Algeria",
-      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/mb7yqe1717365808.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/rrwpry1455460218.png",
-      "homeScore": 2,
-      "awayScore": 0,
-      "status": "FT",
-      "venue": "BC Place",
-      "city": "Vancouver, BC",
-      "homeRank": 19,
-      "awayRank": 38
-    },
-    {
       "id": "2502848",
       "round": 32,
       "stage": "KO",
@@ -2776,35 +2755,41 @@
       "away": "Egypt",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/eylq8x1781926138.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/uheyzo1742102234.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 1,
+      "status": "2H",
       "venue": "AT&T Stadium",
       "city": "Arlington, TX",
       "homeRank": 24,
-      "awayRank": 32,
+      "awayRank": 32
+    },
+    {
+      "id": "2502849",
+      "round": 32,
+      "stage": "KO",
+      "stageName": "Eliminatorias",
+      "group": null,
+      "date": "2026-07-03",
+      "time": "22:00:00",
+      "timestamp": "2026-07-03T22:00:00",
+      "home": "Argentina",
+      "away": "Cape Verde",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/3zplhu1726167477.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/5jn0o71593280376.png",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "NS",
+      "venue": "Hard Rock Stadium",
+      "city": "Miami Gardens, FL",
+      "homeRank": 1,
+      "awayRank": 70,
       "pred": {
-        "pH": 41,
-        "pD": 27,
-        "pA": 32,
+        "pH": 91,
+        "pD": 3,
+        "pA": 6,
         "h2h": {
-          "played": 2,
-          "last": [
-            {
-              "date": "2010-11-17",
-              "h": "Egypt",
-              "a": "Australia",
-              "hs": 3,
-              "as": 0
-            },
-            {
-              "date": "1987-06-19",
-              "h": "Australia",
-              "a": "Egypt",
-              "hs": 0,
-              "as": 0
-            }
-          ]
+          "played": 0,
+          "last": []
         }
       }
     }
