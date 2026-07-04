@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T17:45:48.226Z",
+  "updatedAt": "2026-07-04T19:12:24.252Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2756,8 +2756,8 @@
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/2t631f1595154867.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/hbmwkj1731791275.png",
       "homeScore": 0,
-      "awayScore": 0,
-      "status": "1H",
+      "awayScore": 3,
+      "status": "FT",
       "venue": "NRG Stadium",
       "city": "Houston, TX",
       "homeRank": 30,
