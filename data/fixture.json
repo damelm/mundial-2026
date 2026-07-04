@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T00:16:37.250Z",
+  "updatedAt": "2026-07-04T07:15:00.890Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2743,27 +2743,6 @@
       "awayRank": 1
     },
     {
-      "id": "2502849",
-      "round": 32,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
-      "group": null,
-      "date": "2026-07-03",
-      "time": "22:00:00",
-      "timestamp": "2026-07-03T22:00:00",
-      "home": "Argentina",
-      "away": "Cape Verde",
-      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/3zplhu1726167477.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/5jn0o71593280376.png",
-      "homeScore": 2,
-      "awayScore": 1,
-      "status": "ET",
-      "venue": "Hard Rock Stadium",
-      "city": "Miami Gardens, FL",
-      "homeRank": 1,
-      "awayRank": 70
-    },
-    {
       "id": "2503394",
       "round": 32,
       "stage": "KO",
@@ -2776,20 +2755,63 @@
       "away": "Ghana",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/4ymyku1691180081.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/j589xw1751526124.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 0,
+      "status": "FT",
       "venue": "GEHA Field at Arrowhead Stadium",
       "city": "Kansas City, MO",
       "homeRank": 13,
-      "awayRank": 73,
+      "awayRank": 73
+    },
+    {
+      "id": "2505183",
+      "round": 16,
+      "stage": "KO",
+      "stageName": "Eliminatorias",
+      "group": null,
+      "date": "2026-07-04",
+      "time": "17:00:00",
+      "timestamp": "2026-07-04T17:00:00",
+      "home": "Canada",
+      "away": "Morocco",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/2t631f1595154867.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/hbmwkj1731791275.png",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "NS",
+      "venue": "NRG Stadium",
+      "city": "Houston, TX",
+      "homeRank": 30,
+      "awayRank": 11,
       "pred": {
-        "pH": 85,
-        "pD": 6,
-        "pA": 9,
+        "pH": 23,
+        "pD": 23,
+        "pA": 54,
         "h2h": {
-          "played": 0,
-          "last": []
+          "played": 4,
+          "last": [
+            {
+              "date": "2022-12-01",
+              "h": "Canada",
+              "a": "Morocco",
+              "hs": 1,
+              "as": 2
+            },
+            {
+              "date": "2016-10-11",
+              "h": "Morocco",
+              "a": "Canada",
+              "hs": 4,
+              "as": 0
+            },
+            {
+              "date": "1994-06-01",
+              "h": "Canada",
+              "a": "Morocco",
+              "hs": 1,
+              "as": 1
+            }
+          ]
         }
       }
     }
