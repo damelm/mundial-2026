@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-07-04T23:43:24.683Z",
+  "updatedAt": "2026-07-05T08:30:47.447Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
   "season": "2026",
-  "count": 74,
+  "count": 75,
   "matches": [
     {
       "id": "2391728",
@@ -2810,6 +2810,58 @@
               "a": "Brazil",
               "hs": 4,
               "as": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2515305",
+      "round": 125,
+      "stage": "F",
+      "stageName": "Final",
+      "group": null,
+      "date": "2026-07-09",
+      "time": "20:00:00",
+      "timestamp": "2026-07-09T20:00:00",
+      "home": "France",
+      "away": "Morocco",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/p3n0z51726166851.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/hbmwkj1731791275.png",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "NS",
+      "venue": "Gillette Stadium",
+      "city": "Foxborough, MA",
+      "homeRank": 3,
+      "awayRank": 11,
+      "pred": {
+        "pH": 52,
+        "pD": 24,
+        "pA": 24,
+        "h2h": {
+          "played": 6,
+          "last": [
+            {
+              "date": "2022-12-14",
+              "h": "France",
+              "a": "Morocco",
+              "hs": 2,
+              "as": 0
+            },
+            {
+              "date": "2007-11-16",
+              "h": "France",
+              "a": "Morocco",
+              "hs": 2,
+              "as": 2
+            },
+            {
+              "date": "2000-06-06",
+              "h": "Morocco",
+              "a": "France",
+              "hs": 1,
+              "as": 5
             }
           ]
         }
