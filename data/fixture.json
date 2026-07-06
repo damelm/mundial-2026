@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T10:26:26.524Z",
+  "updatedAt": "2026-07-06T19:16:06.514Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2743,27 +2743,6 @@
       "awayRank": 1
     },
     {
-      "id": "2507706",
-      "round": 16,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
-      "group": null,
-      "date": "2026-07-06",
-      "time": "02:00:00",
-      "timestamp": "2026-07-06T02:00:00",
-      "home": "Mexico",
-      "away": "England",
-      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/3rmosi1748525208.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png",
-      "homeScore": 2,
-      "awayScore": 3,
-      "status": "FT",
-      "venue": "Estadio Banorte",
-      "city": "Mexico City, MX",
-      "homeRank": 17,
-      "awayRank": 4
-    },
-    {
       "id": "2511721",
       "round": 16,
       "stage": "KO",
@@ -2776,40 +2755,61 @@
       "away": "Spain",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/swqvpy1455466083.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/ncgqyr1726166942.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "AT&T Stadium",
       "city": "Arlington, TX",
       "homeRank": 6,
-      "awayRank": 2,
+      "awayRank": 2
+    },
+    {
+      "id": "2507707",
+      "round": 16,
+      "stage": "KO",
+      "stageName": "Eliminatorias",
+      "group": null,
+      "date": "2026-07-07",
+      "time": "00:00:00",
+      "timestamp": "2026-07-07T00:00:00",
+      "home": "USA",
+      "away": "Belgium",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/21f0oi1597948195.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/8xlvxv1592062265.png",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "NS",
+      "venue": "Lumen Field",
+      "city": "Seattle, WA",
+      "homeRank": 16,
+      "awayRank": 8,
       "pred": {
-        "pH": 26,
-        "pD": 24,
-        "pA": 50,
+        "pH": 23,
+        "pD": 23,
+        "pA": 54,
         "h2h": {
-          "played": 42,
+          "played": 8,
           "last": [
             {
-              "date": "2025-06-08",
-              "h": "Portugal",
-              "a": "Spain",
+              "date": "2026-03-28",
+              "h": "United States",
+              "a": "Belgium",
               "hs": 2,
-              "as": 2
+              "as": 5
             },
             {
-              "date": "2022-09-27",
-              "h": "Portugal",
-              "a": "Spain",
-              "hs": 0,
+              "date": "2014-07-01",
+              "h": "Belgium",
+              "a": "United States",
+              "hs": 2,
               "as": 1
             },
             {
-              "date": "2022-06-02",
-              "h": "Spain",
-              "a": "Portugal",
-              "hs": 1,
-              "as": 1
+              "date": "2013-05-29",
+              "h": "United States",
+              "a": "Belgium",
+              "hs": 2,
+              "as": 4
             }
           ]
         }
