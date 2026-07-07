@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T21:10:14.322Z",
+  "updatedAt": "2026-07-07T03:20:41.118Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2743,27 +2743,6 @@
       "awayRank": 1
     },
     {
-      "id": "2511721",
-      "round": 16,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
-      "group": null,
-      "date": "2026-07-06",
-      "time": "19:00:00",
-      "timestamp": "2026-07-06T19:00:00",
-      "home": "Portugal",
-      "away": "Spain",
-      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/swqvpy1455466083.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/ncgqyr1726166942.png",
-      "homeScore": 0,
-      "awayScore": 1,
-      "status": "FT",
-      "venue": "AT&T Stadium",
-      "city": "Arlington, TX",
-      "homeRank": 6,
-      "awayRank": 2
-    },
-    {
       "id": "2507707",
       "round": 16,
       "stage": "KO",
@@ -2776,40 +2755,54 @@
       "away": "Belgium",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/21f0oi1597948195.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/8xlvxv1592062265.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 1,
+      "awayScore": 4,
+      "status": "FT",
       "venue": "Lumen Field",
       "city": "Seattle, WA",
       "homeRank": 16,
-      "awayRank": 8,
+      "awayRank": 8
+    },
+    {
+      "id": "2513670",
+      "round": 16,
+      "stage": "KO",
+      "stageName": "Eliminatorias",
+      "group": null,
+      "date": "2026-07-07",
+      "time": "16:00:00",
+      "timestamp": "2026-07-07T16:00:00",
+      "home": "Argentina",
+      "away": "Egypt",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/3zplhu1726167477.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/uheyzo1742102234.png",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "NS",
+      "venue": "Mercedes-Benz Stadium",
+      "city": "Atlanta, GE",
+      "homeRank": 1,
+      "awayRank": 32,
       "pred": {
-        "pH": 23,
-        "pD": 23,
-        "pA": 54,
+        "pH": 81,
+        "pD": 8,
+        "pA": 11,
         "h2h": {
-          "played": 8,
+          "played": 2,
           "last": [
             {
-              "date": "2026-03-28",
-              "h": "United States",
-              "a": "Belgium",
-              "hs": 2,
-              "as": 5
+              "date": "2008-03-26",
+              "h": "Egypt",
+              "a": "Argentina",
+              "hs": 0,
+              "as": 2
             },
             {
-              "date": "2014-07-01",
-              "h": "Belgium",
-              "a": "United States",
-              "hs": 2,
-              "as": 1
-            },
-            {
-              "date": "2013-05-29",
-              "h": "United States",
-              "a": "Belgium",
-              "hs": 2,
-              "as": 4
+              "date": "1928-06-06",
+              "h": "Argentina",
+              "a": "Egypt",
+              "hs": 6,
+              "as": 0
             }
           ]
         }
