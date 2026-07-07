@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-07-07T03:20:41.118Z",
+  "updatedAt": "2026-07-07T07:00:49.399Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
   "season": "2026",
-  "count": 76,
+  "count": 77,
   "matches": [
     {
       "id": "2391728",
@@ -2855,6 +2855,58 @@
               "a": "France",
               "hs": 1,
               "as": 5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2519345",
+      "round": 125,
+      "stage": "F",
+      "stageName": "Final",
+      "group": null,
+      "date": "2026-07-10",
+      "time": "19:00:00",
+      "timestamp": "2026-07-10T19:00:00",
+      "home": "Spain",
+      "away": "Belgium",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/ncgqyr1726166942.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/8xlvxv1592062265.png",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "NS",
+      "venue": "SoFi Stadium",
+      "city": "Inglewood, CA",
+      "homeRank": 2,
+      "awayRank": 8,
+      "pred": {
+        "pH": 61,
+        "pD": 20,
+        "pA": 19,
+        "h2h": {
+          "played": 22,
+          "last": [
+            {
+              "date": "2016-09-01",
+              "h": "Belgium",
+              "a": "Spain",
+              "hs": 0,
+              "as": 2
+            },
+            {
+              "date": "2009-09-05",
+              "h": "Spain",
+              "a": "Belgium",
+              "hs": 5,
+              "as": 0
+            },
+            {
+              "date": "2008-10-15",
+              "h": "Belgium",
+              "a": "Spain",
+              "hs": 1,
+              "as": 2
             }
           ]
         }
