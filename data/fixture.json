@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-07-07T17:58:47.574Z",
+  "updatedAt": "2026-07-07T20:07:47.844Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
   "season": "2026",
-  "count": 77,
+  "count": 76,
   "matches": [
     {
       "id": "2391728",
@@ -2743,27 +2743,6 @@
       "awayRank": 1
     },
     {
-      "id": "2513670",
-      "round": 16,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
-      "group": null,
-      "date": "2026-07-07",
-      "time": "16:00:00",
-      "timestamp": "2026-07-07T16:00:00",
-      "home": "Argentina",
-      "away": "Egypt",
-      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/3zplhu1726167477.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/uheyzo1742102234.png",
-      "homeScore": 3,
-      "awayScore": 2,
-      "status": "2H",
-      "venue": "Mercedes-Benz Stadium",
-      "city": "Atlanta, GE",
-      "homeRank": 1,
-      "awayRank": 32
-    },
-    {
       "id": "2513671",
       "round": 16,
       "stage": "KO",
@@ -2776,50 +2755,19 @@
       "away": "Colombia",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/mb7yqe1717365808.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/4ymyku1691180081.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "BC Place",
       "city": "Vancouver, BC",
       "homeRank": 19,
-      "awayRank": 13,
-      "pred": {
-        "pH": 25,
-        "pD": 25,
-        "pA": 50,
-        "h2h": {
-          "played": 4,
-          "last": [
-            {
-              "date": "2007-03-25",
-              "h": "Colombia",
-              "a": "Switzerland",
-              "hs": 3,
-              "as": 1
-            },
-            {
-              "date": "1994-06-26",
-              "h": "Switzerland",
-              "a": "Colombia",
-              "hs": 0,
-              "as": 2
-            },
-            {
-              "date": "1991-02-03",
-              "h": "Colombia",
-              "a": "Switzerland",
-              "hs": 2,
-              "as": 3
-            }
-          ]
-        }
-      }
+      "awayRank": 13
     },
     {
       "id": "2515305",
       "round": 125,
-      "stage": "F",
-      "stageName": "Final",
+      "stage": "KO",
+      "stageName": "Eliminatorias",
       "group": null,
       "date": "2026-07-09",
       "time": "20:00:00",
