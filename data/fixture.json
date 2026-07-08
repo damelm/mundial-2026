@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T23:39:56.350Z",
+  "updatedAt": "2026-07-08T01:11:35.432Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2757,7 +2757,7 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/4ymyku1691180081.png",
       "homeScore": 0,
       "awayScore": 0,
-      "status": "AP",
+      "status": "FT",
       "venue": "BC Place",
       "city": "Vancouver, BC",
       "homeRank": 19,
