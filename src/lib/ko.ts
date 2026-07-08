@@ -155,6 +155,61 @@ export async function fetchKoSchedule(): Promise<KoMatch[] | null> {
   return out.length ? out : null;
 }
 
+/* ===== Goleadores (summary por partido, bajo demanda) ===== */
+
+const ESPN_SUM =
+  "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=";
+
+export interface GoalEvent {
+  name: string;
+  minute: string;
+  side: "home" | "away";
+}
+
+interface EspnKeyEvent {
+  scoringPlay?: boolean;
+  shortText?: string;
+  clock?: { displayValue?: string };
+  team?: { id?: number | string };
+  participants?: { athlete?: { displayName?: string }; displayName?: string }[];
+}
+
+const _goalsCache = new Map<string, GoalEvent[]>();
+
+export async function fetchGoals(matchId: string): Promise<GoalEvent[] | null> {
+  const hit = _goalsCache.get(matchId);
+  if (hit) return hit;
+  const evId = matchId.replace(/^ko-/, "");
+  try {
+    const sum = await fetch(ESPN_SUM + evId, { cache: "no-store" }).then((r) =>
+      r.json(),
+    );
+    const comps = sum?.header?.competitions?.[0]?.competitors as
+      | { homeAway?: string; team?: { id?: number | string } }[]
+      | undefined;
+    const homeId = String(
+      comps?.find((c) => c.homeAway === "home")?.team?.id ?? "",
+    );
+    const out: GoalEvent[] = [];
+    for (const g of (sum?.keyEvents ?? []) as EspnKeyEvent[]) {
+      if (!g?.scoringPlay) continue;
+      let name = "";
+      const a = g.participants?.[0];
+      if (a) name = a.athlete?.displayName || a.displayName || "";
+      if (!name)
+        name = (g.shortText || "").replace(/\s+(Goal|Penalty).*$/i, "").trim();
+      const minute = String(g.clock?.displayValue || "").replace(/'/g, "");
+      const side: "home" | "away" =
+        g.team && String(g.team.id) === homeId ? "home" : "away";
+      if (name) out.push({ name, minute, side });
+    }
+    _goalsCache.set(matchId, out);
+    return out;
+  } catch {
+    return null;
+  }
+}
+
 /* ===== Árbol del cuadro ===== */
 
 export function winnerOf(m: KoMatch): string | null {
@@ -291,6 +346,20 @@ export function fmtTime(iso: string): string {
     hour: "2-digit",
     minute: "2-digit",
   }).format(new Date(iso));
+}
+
+/** Traduce placeholders de ESPN ("Quarterfinal 1 Winner" → "Ganador cuartos 1"). */
+export function rawEs(raw: string): string {
+  const m = /(quarterfinal|semifinal|round of (\d+))\s*(\d+)\s+(winner|loser)/i.exec(raw);
+  if (!m) return raw;
+  const ronda = /quarterfinal/i.test(m[1])
+    ? "cuartos"
+    : /semifinal/i.test(m[1])
+      ? "semi"
+      : m[2] === "32"
+        ? "32avos"
+        : "octavos";
+  return `${/loser/i.test(m[4]) ? "Perdedor" : "Ganador"} ${ronda} ${m[3]}`;
 }
 
 export function fmtDay(iso: string): string {
