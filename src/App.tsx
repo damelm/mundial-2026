@@ -1,12 +1,26 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { useKo } from "./lib/useKo";
-import { STAGE_ES, aliveTeams, currentStage, type KoMatch } from "./lib/ko";
-import { Cuadro, CuadroExtras } from "./components/Cuadro";
+import { STAGE_ES, currentStage, type KoMatch } from "./lib/ko";
 import { AhoraPanel } from "./components/Ahora";
-import { SeleccionesPanel } from "./components/Selecciones";
-import { MatchRow, SectionTitle } from "./components/rows";
 import { BracketIcon, RadioIcon, ShieldIcon, TrophyIcon } from "./components/icons";
+
+const CuadroPanel = lazy(() =>
+  import("./components/CuadroPanel").then((m) => ({ default: m.CuadroPanel })),
+);
+const SeleccionesPanel = lazy(() =>
+  import("./components/Selecciones").then((m) => ({
+    default: m.SeleccionesPanel,
+  })),
+);
+
+function PanelFallback() {
+  return (
+    <div className="grid min-h-[50dvh] place-items-center">
+      <span className="font-mono text-xs text-muted">Cargando…</span>
+    </div>
+  );
+}
 
 type TabId = "ahora" | "cuadro" | "selecciones";
 
@@ -18,9 +32,9 @@ const TABS: { id: TabId; label: string; Icon: typeof RadioIcon }[] = [
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-export default function App() {
+export default function App({ initialData = null }: { initialData?: KoMatch[] | null }) {
   const [tab, setTab] = useState<TabId>("ahora");
-  const ko = useKo();
+  const ko = useKo(initialData);
 
   return (
     <MotionConfig reducedMotion="user">
@@ -28,7 +42,7 @@ export default function App() {
         <Header matches={ko.matches} />
 
         <main className="flex-1 overflow-y-auto px-4 pb-28 pt-1">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" initial={false}>
             <motion.section
               key={tab}
               initial={{ opacity: 0, y: 14 }}
@@ -42,10 +56,14 @@ export default function App() {
                   loading={ko.loading}
                   error={ko.error}
                 />
-              ) : tab === "cuadro" ? (
-                <CuadroPanel matches={ko.matches} />
               ) : (
-                <SeleccionesPanel matches={ko.matches} />
+                <Suspense fallback={<PanelFallback />}>
+                  {tab === "cuadro" ? (
+                    <CuadroPanel matches={ko.matches} />
+                  ) : (
+                    <SeleccionesPanel matches={ko.matches} />
+                  )}
+                </Suspense>
               )}
             </motion.section>
           </AnimatePresence>
@@ -77,46 +95,6 @@ function Header({ matches }: { matches: KoMatch[] | null }) {
         {stage}
       </span>
     </header>
-  );
-}
-
-function CuadroPanel({ matches }: { matches: KoMatch[] | null }) {
-  if (!matches) {
-    return (
-      <div className="grid min-h-[50dvh] place-items-center">
-        <span className="font-mono text-xs text-muted">Armando el cuadro…</span>
-      </div>
-    );
-  }
-  const alive = aliveTeams(matches).size;
-  const next = matches.find((m) => !m.finished && !m.live);
-  return (
-    <div>
-      <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-cyan">
-        La Firma · Cuadro
-      </p>
-      <h1
-        className="mt-1 text-[34px] leading-[1.02] text-ink"
-        style={{ fontFamily: "var(--font-display)" }}
-      >
-        EL CAMINO
-        <br />A <span className="text-gold">LA FINAL</span>
-      </h1>
-      <p className="mt-2 max-w-[40ch] text-[13.5px] leading-normal text-muted">
-        La senda dorada se enciende con cada equipo que avanza.{" "}
-        {alive > 0 && `${alive} selecciones siguen con vida.`}
-      </p>
-
-      <Cuadro matches={matches} />
-      <CuadroExtras matches={matches} />
-
-      {next && (
-        <>
-          <SectionTitle title="Próximo paso" tag={STAGE_ES[next.stage]} />
-          <MatchRow m={next} matches={matches} />
-        </>
-      )}
-    </div>
   );
 }
 

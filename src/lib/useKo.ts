@@ -13,9 +13,9 @@ export interface KoState {
   refresh: () => void;
 }
 
-export function useKo(): KoState {
-  const [matches, setMatches] = useState<KoMatch[] | null>(null);
-  const [loading, setLoading] = useState(true);
+export function useKo(initial: KoMatch[] | null = null): KoState {
+  const [matches, setMatches] = useState<KoMatch[] | null>(initial);
+  const [loading, setLoading] = useState(initial === null);
   const [error, setError] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const alive = useRef(true);
@@ -37,16 +37,22 @@ export function useKo(): KoState {
 
   useEffect(() => {
     alive.current = true;
-    load();
+    // Con datos prerenderizados, el primer refresh espera a que la página
+    // asiente (no compite con el primer render en el hilo principal).
+    let boot: ReturnType<typeof setTimeout> | null = null;
+    if (initial) boot = setTimeout(load, 2500);
+    else load();
     const onVisible = () => {
       if (document.visibilityState === "visible") load();
     };
     document.addEventListener("visibilitychange", onVisible);
     return () => {
       alive.current = false;
+      if (boot) clearTimeout(boot);
       if (timer.current) clearTimeout(timer.current);
       document.removeEventListener("visibilitychange", onVisible);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [load]);
 
   return { matches, loading, error, refresh: load };

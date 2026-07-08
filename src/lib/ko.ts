@@ -40,8 +40,11 @@ export interface KoMatch {
   venue: string | null;
 }
 
-const ESPN_SB =
-  "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard";
+// Base sobreescribible en build (VITE_ESPN_BASE) para auditorías locales.
+const ESPN_BASE =
+  import.meta.env.VITE_ESPN_BASE ??
+  "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world";
+const ESPN_SB = `${ESPN_BASE}/scoreboard`;
 // 32avos (28 jun) → final (19 jul)
 const ESPN_KO_RANGE = "?dates=20260628-20260721";
 
@@ -157,8 +160,7 @@ export async function fetchKoSchedule(): Promise<KoMatch[] | null> {
 
 /* ===== Goleadores (summary por partido, bajo demanda) ===== */
 
-const ESPN_SUM =
-  "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=";
+const ESPN_SUM = `${ESPN_BASE}/summary?event=`;
 
 export interface GoalEvent {
   name: string;

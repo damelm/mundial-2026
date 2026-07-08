@@ -23,6 +23,14 @@
   src: url("/mundial-2026/fonts/jbmono.woff2") format("woff2");
 }
 
+/* Fallback con size-adjust: el texto de reserva ocupa ≥ que Hanken para que
+   el swap de fuente nunca agrande la caja (estabilidad de LCP/CLS). */
+@font-face {
+  font-family: "Hanken Fallback";
+  src: local("Arial"), local("Liberation Sans"), local("Roboto"), local("Helvetica Neue");
+  size-adjust: 112%;
+}
+
 /* ===== Fix26 · tokens "estadio de noche" ===== */
 @theme {
   --color-bg: #0a0e1a;
@@ -37,7 +45,7 @@
   --color-live: #ff5a5f;
 
   --font-display: "Anton", "Arial Narrow", system-ui, sans-serif;
-  --font-sans: "Hanken Grotesk", system-ui, sans-serif;
+  --font-sans: "Hanken Grotesk", "Hanken Fallback", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 

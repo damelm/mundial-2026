@@ -179,6 +179,11 @@ export function AhoraPanel({
       >
         AHORA
       </h1>
+      <p className="mt-2 max-w-[352px] text-[13.5px] leading-normal text-muted">
+        Marcadores en tiempo real, el cuadro que se enciende con cada ganador y
+        las selecciones que siguen con vida, camino a la final del 19 de julio
+        en Nueva York.
+      </p>
 
       {error && (
         <p className="mt-3 rounded-xl border border-line bg-panel/50 px-3 py-2 text-xs text-muted">

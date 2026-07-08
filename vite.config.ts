@@ -11,6 +11,7 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: "autoUpdate",
+      injectRegister: "inline",
       includeAssets: ["favicon.ico", "icons/*.png", "og-image.jpg"],
       manifest: {
         name: "Fix26 · Mundial 2026",

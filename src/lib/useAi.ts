@@ -11,6 +11,7 @@ export interface AiText {
 }
 
 const AI_URL =
+  import.meta.env.VITE_AI_URL ??
   "https://raw.githubusercontent.com/damelm/mundial-2026/main/data/ai.json";
 
 export function useAi(): Record<string, AiText> | null {
