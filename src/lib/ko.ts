@@ -155,6 +155,103 @@ export async function fetchKoSchedule(): Promise<KoMatch[] | null> {
   return out.length ? out : null;
 }
 
+/* ===== Árbol del cuadro ===== */
+
+export function winnerOf(m: KoMatch): string | null {
+  if (!m.finished || !m.won) return null;
+  return m.won === "home" ? m.home : m.away;
+}
+
+export function loserOf(m: KoMatch): string | null {
+  if (!m.finished || !m.won) return null;
+  return m.won === "home" ? m.away : m.home;
+}
+
+export interface BracketNode {
+  match: KoMatch;
+  /** Partidos de la ronda anterior que alimentan cada lado [home, away]. */
+  feeders: (KoMatch | null)[];
+}
+
+export interface Bracket {
+  r32: KoMatch[];
+  r16: BracketNode[];
+  qf: BracketNode[];
+  sf: BracketNode[];
+  tp: BracketNode | null;
+  f: BracketNode | null;
+}
+
+/** Encuentra el partido de `prev` que alimenta un lado: por equipo si ya se
+ * resolvió, o parseando el placeholder de ESPN ("Quarterfinal 3 Winner"). */
+function feederFor(
+  team: string | null,
+  raw: string,
+  prev: KoMatch[],
+  kind: "winner" | "loser",
+): KoMatch | null {
+  if (team) {
+    const pick = kind === "winner" ? winnerOf : loserOf;
+    return prev.find((p) => pick(p) === team) ?? null;
+  }
+  const m = /(\d+)\s+(winner|loser)/i.exec(raw);
+  if (!m) return null;
+  const idx = Number(m[1]) - 1;
+  return prev[idx] ?? null;
+}
+
+export function buildBracket(matches: KoMatch[]): Bracket {
+  const of = (s: Stage) => matches.filter((m) => m.stage === s);
+  const r32 = of("R32");
+  const link = (m: KoMatch, prev: KoMatch[], kind: "winner" | "loser" = "winner"): BracketNode => ({
+    match: m,
+    feeders: [
+      feederFor(m.home, m.homeRaw, prev, kind),
+      feederFor(m.away, m.awayRaw, prev, kind),
+    ],
+  });
+  const r16m = of("R16");
+  const qfm = of("QF");
+  const sfm = of("SF");
+  const tpm = of("TP")[0] ?? null;
+  const fm = of("F")[0] ?? null;
+  return {
+    r32,
+    r16: r16m.map((m) => link(m, r32)),
+    qf: qfm.map((m) => link(m, r16m)),
+    sf: sfm.map((m) => link(m, qfm)),
+    tp: tpm ? link(tpm, sfm, "loser") : null,
+    f: fm ? link(fm, sfm) : null,
+  };
+}
+
+/** "Qué se juega": el rival (o partido de origen del rival) en la próxima
+ * ronda para el ganador de `m`. */
+export function nextStepText(m: KoMatch, matches: KoMatch[]): string | null {
+  if (m.stage === "F" || m.stage === "TP") return null;
+  const order: Stage[] = ["R32", "R16", "QF", "SF", "F"];
+  const next = order[order.indexOf(m.stage) + 1];
+  const b = buildBracket(matches);
+  const pool: BracketNode[] =
+    next === "R16" ? b.r16 : next === "QF" ? b.qf : next === "SF" ? b.sf : b.f ? [b.f] : [];
+  const parent = pool.find((n) =>
+    n.feeders.some((f) => f?.id === m.id),
+  );
+  if (!parent) return null;
+  const side = parent.feeders[0]?.id === m.id ? 1 : 0;
+  const rivalTeam = side === 1 ? parent.match.home : parent.match.away;
+  const rivalFeeder = parent.feeders[side];
+  const where = STAGE_ES[parent.match.stage].toLowerCase();
+  if (rivalTeam) return `El ganador enfrenta a ${nameEsLocal(rivalTeam)} en ${where}`;
+  if (rivalFeeder && rivalFeeder.home && rivalFeeder.away)
+    return `El ganador cruza con ${nameEsLocal(rivalFeeder.home)}–${nameEsLocal(rivalFeeder.away)} en ${where}`;
+  return `El ganador avanza a ${where}`;
+}
+
+function nameEsLocal(key: string): string {
+  return TEAMS[key]?.es ?? key;
+}
+
 /* ===== Derivados ===== */
 
 /** Selecciones que siguen con vida: aparecen en un partido sin terminar, o

@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { Icon } from "@iconify/react";
+import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { useKo } from "./lib/useKo";
 import {
   STAGE_ES,
@@ -11,14 +10,22 @@ import {
   isToday,
   type KoMatch,
 } from "./lib/ko";
-import { flagUrl, nameEs } from "./data/teams";
+import { nameEs } from "./data/teams";
+import { Flag } from "./components/Flag";
+import { Cuadro, CuadroExtras } from "./components/Cuadro";
+import {
+  BracketIcon,
+  RadioIcon,
+  ShieldIcon,
+  TrophyIcon,
+} from "./components/icons";
 
 type TabId = "ahora" | "cuadro" | "selecciones";
 
-const TABS: { id: TabId; label: string; icon: string }[] = [
-  { id: "ahora", label: "Ahora", icon: "lucide:radio" },
-  { id: "cuadro", label: "Cuadro", icon: "lucide:git-fork" },
-  { id: "selecciones", label: "Selecciones", icon: "lucide:shield-half" },
+const TABS: { id: TabId; label: string; Icon: typeof RadioIcon }[] = [
+  { id: "ahora", label: "Ahora", Icon: RadioIcon },
+  { id: "cuadro", label: "Cuadro", Icon: BracketIcon },
+  { id: "selecciones", label: "Selecciones", Icon: ShieldIcon },
 ];
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -28,6 +35,7 @@ export default function App() {
   const ko = useKo();
 
   return (
+    <MotionConfig reducedMotion="user">
     <div className="mx-auto flex min-h-dvh max-w-[560px] flex-col">
       <Header matches={ko.matches} />
 
@@ -42,6 +50,8 @@ export default function App() {
           >
             {tab === "ahora" ? (
               <AhoraPanel matches={ko.matches} loading={ko.loading} error={ko.error} />
+            ) : tab === "cuadro" ? (
+              <CuadroPanel matches={ko.matches} />
             ) : (
               <Placeholder tab={tab} matches={ko.matches} />
             )}
@@ -51,6 +61,7 @@ export default function App() {
 
       <TabBar tab={tab} onChange={setTab} />
     </div>
+    </MotionConfig>
   );
 }
 
@@ -70,36 +81,13 @@ function Header({ matches }: { matches: KoMatch[] | null }) {
         </span>
       </div>
       <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-panel/60 px-2.5 py-1 font-mono text-[11px] font-medium text-cyan">
-        <Icon icon="lucide:trophy" width={13} />
+        <TrophyIcon size={13} />
         {stage}
       </span>
     </header>
   );
 }
 
-function Flag({ team, size = 22 }: { team: string | null; size?: number }) {
-  const url = team ? flagUrl(team) : null;
-  const h = Math.round(size * 0.68);
-  if (!url) {
-    return (
-      <span
-        className="inline-block flex-none rounded-[3px] border border-line bg-panel"
-        style={{ width: size, height: h }}
-      />
-    );
-  }
-  return (
-    <img
-      src={url}
-      alt=""
-      width={size}
-      height={h}
-      loading="lazy"
-      className="flex-none rounded-[3px] object-cover shadow-[inset_0_0_0_1px_rgba(234,240,255,0.14)]"
-      style={{ width: size, height: h }}
-    />
-  );
-}
 
 function TeamLine({
   team,
@@ -300,6 +288,46 @@ function AhoraPanel({
   );
 }
 
+function CuadroPanel({ matches }: { matches: KoMatch[] | null }) {
+  if (!matches) {
+    return (
+      <div className="grid min-h-[50dvh] place-items-center">
+        <span className="font-mono text-xs text-muted">Armando el cuadro…</span>
+      </div>
+    );
+  }
+  const alive = aliveTeams(matches).size;
+  const next = matches.find((m) => !m.finished && !m.live);
+  return (
+    <div>
+      <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-cyan">
+        La Firma · Cuadro
+      </p>
+      <h1
+        className="mt-1 text-[34px] leading-[1.02] text-ink"
+        style={{ fontFamily: "var(--font-display)" }}
+      >
+        EL CAMINO
+        <br />A <span className="text-gold">LA FINAL</span>
+      </h1>
+      <p className="mt-2 max-w-[40ch] text-[13.5px] leading-normal text-muted">
+        La senda dorada se enciende con cada equipo que avanza.{" "}
+        {alive > 0 && `${alive} selecciones siguen con vida.`}
+      </p>
+
+      <Cuadro matches={matches} />
+      <CuadroExtras matches={matches} />
+
+      {next && (
+        <>
+          <SectionTitle title="Próximo paso" tag={STAGE_ES[next.stage]} />
+          <MatchRow m={next} />
+        </>
+      )}
+    </div>
+  );
+}
+
 function Placeholder({ tab, matches }: { tab: TabId; matches: KoMatch[] | null }) {
   const alive = matches ? aliveTeams(matches).size : null;
   const copy: Record<string, { title: string; sub: string; icon: string; fase: string }> = {
@@ -325,7 +353,7 @@ function Placeholder({ tab, matches }: { tab: TabId; matches: KoMatch[] | null }
     <div className="grid min-h-[60dvh] place-items-center rounded-3xl border border-line bg-panel/40 px-6 py-16 text-center">
       <div className="flex flex-col items-center gap-3">
         <span className="grid size-14 place-items-center rounded-2xl border border-line bg-panel text-gold">
-          <Icon icon={c.icon} width={26} />
+          <ShieldIcon size={26} />
         </span>
         <h1
           className="text-balance text-2xl leading-tight text-ink"
@@ -370,7 +398,7 @@ function TabBar({
                   transition={{ type: "spring", stiffness: 380, damping: 32 }}
                 />
               )}
-              <Icon icon={t.icon} width={20} />
+              <t.Icon size={20} />
               {t.label}
             </button>
           );

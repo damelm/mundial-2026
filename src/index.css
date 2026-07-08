@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
+/* ===== Fuentes autoalojadas (subset latin, sirven offline) ===== */
+@font-face {
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/mundial-2026/fonts/anton.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/mundial-2026/fonts/hanken.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url("/mundial-2026/fonts/jbmono.woff2") format("woff2");
+}
+
 /* ===== Fix26 · tokens "estadio de noche" ===== */
 @theme {
   --color-bg: #0a0e1a;
@@ -13,7 +36,7 @@
   --color-muted: #8a96b0;
   --color-live: #ff5a5f;
 
-  --font-display: "Anton", system-ui, sans-serif;
+  --font-display: "Anton", "Arial Narrow", system-ui, sans-serif;
   --font-sans: "Hanken Grotesk", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
@@ -35,7 +58,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Fondo atmosférico: resplandor de reflectores (se reemplazará por SVG fffuel en Fase 2) */
+/* Fondo atmosférico: resplandor de reflectores del estadio */
 body::before {
   content: "";
   position: fixed;
@@ -53,6 +76,40 @@ body::before {
   outline: 2px solid var(--color-cyan);
   outline-offset: 2px;
   border-radius: 6px;
+}
+
+/* Senda dorada del Cuadro */
+.edge-gold {
+  filter: drop-shadow(0 0 3px rgba(231, 184, 75, 0.65));
+}
+.edge-live {
+  filter: drop-shadow(0 0 3px rgba(79, 209, 224, 0.65));
+  animation: marcha 1.4s linear infinite;
+}
+@keyframes marcha {
+  to {
+    stroke-dashoffset: -13;
+  }
+}
+.cup-halo {
+  animation: halo 3.2s ease-in-out infinite;
+}
+@keyframes halo {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(231, 184, 75, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(231, 184, 75, 0.5);
+  }
+}
+.dot-live {
+  animation: blink 1.4s ease-in-out infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0.25;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

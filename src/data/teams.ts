@@ -77,5 +77,6 @@ export function flagUrl(key: string): string | null {
   const t = TEAMS[key];
   if (!t) return null;
   const fc = t.fc || t.code.toLowerCase();
-  return `https://flagcdn.com/${fc}.svg`;
+  // Banderas locales (w160 de flagcdn vendorizadas): sirven offline y sin CDN.
+  return `${import.meta.env.BASE_URL}flags/${fc}.png`;
 }
