@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-07-08T01:11:35.432Z",
+  "updatedAt": "2026-07-08T07:14:54.462Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
   "season": "2026",
-  "count": 76,
+  "count": 77,
   "matches": [
     {
       "id": "2391728",
@@ -2757,7 +2757,7 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/4ymyku1691180081.png",
       "homeScore": 0,
       "awayScore": 0,
-      "status": "FT",
+      "status": "AP",
       "venue": "BC Place",
       "city": "Vancouver, BC",
       "homeRank": 19,
@@ -2914,6 +2914,58 @@
               "a": "England",
               "hs": 0,
               "as": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2520608",
+      "round": 125,
+      "stage": "F",
+      "stageName": "Final",
+      "group": null,
+      "date": "2026-07-12",
+      "time": "01:00:00",
+      "timestamp": "2026-07-12T01:00:00",
+      "home": "Argentina",
+      "away": "Switzerland",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/3zplhu1726167477.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/mb7yqe1717365808.png",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "NS",
+      "venue": "GEHA Field at Arrowhead Stadium",
+      "city": "Kansas City, MO",
+      "homeRank": 1,
+      "awayRank": 19,
+      "pred": {
+        "pH": 69,
+        "pD": 16,
+        "pA": 15,
+        "h2h": {
+          "played": 7,
+          "last": [
+            {
+              "date": "2014-07-01",
+              "h": "Argentina",
+              "a": "Switzerland",
+              "hs": 1,
+              "as": 0
+            },
+            {
+              "date": "2012-02-29",
+              "h": "Switzerland",
+              "a": "Argentina",
+              "hs": 1,
+              "as": 3
+            },
+            {
+              "date": "2007-06-02",
+              "h": "Switzerland",
+              "a": "Argentina",
+              "hs": 1,
+              "as": 1
             }
           ]
         }
