@@ -16,7 +16,7 @@ import {
 } from "../lib/ko";
 import { nameEs } from "../data/teams";
 import { Flag } from "./Flag";
-import { BallIcon, ChevronDownIcon, TrophyIcon } from "./icons";
+import { BallIcon, ChevronDownIcon, SparklesIcon, TrophyIcon } from "./icons";
 
 export function SectionTitle({ title, tag }: { title: string; tag?: string }) {
   return (
@@ -102,10 +102,13 @@ function GoalsList({ goals, m }: { goals: GoalEvent[]; m: KoMatch }) {
 export function MatchRow({
   m,
   matches,
+  ai,
 }: {
   m: KoMatch;
   /** Con la lista completa la fila se puede expandir (goles + qué se juega). */
   matches?: KoMatch[];
+  /** Previa/resumen generado por IA para este partido, si existe. */
+  ai?: { kind: "previa" | "resumen"; es: string } | null;
 }) {
   const [open, setOpen] = useState(false);
   const [goals, setGoals] = useState<GoalEvent[] | null>(null);
@@ -207,6 +210,17 @@ export function MatchRow({
                 ) : (
                   <GoalsList goals={goals} m={m} />
                 ))}
+              {ai && (
+                <p className="flex gap-1.5 text-[12px] leading-relaxed text-ink/85">
+                  <SparklesIcon size={12} className="mt-0.5 flex-none text-cyan" />
+                  <span>
+                    {ai.es}
+                    <span className="ml-1.5 font-mono text-[8.5px] uppercase tracking-[0.14em] text-muted">
+                      {ai.kind} · IA
+                    </span>
+                  </span>
+                </p>
+              )}
               {stakes && (
                 <p className="flex items-center gap-1.5 text-[12px] text-muted">
                   <TrophyIcon size={12} className="flex-none text-gold" />

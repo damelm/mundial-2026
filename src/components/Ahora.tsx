@@ -5,6 +5,8 @@ import { isToday, nextStepText, rawEs, STAGE_ES, fmtDay, fmtTime, type KoMatch }
 import { nameEs } from "../data/teams";
 import { Flag } from "./Flag";
 import { MatchRow, SectionTitle } from "./rows";
+import { useAi } from "../lib/useAi";
+import { SparklesIcon } from "./icons";
 import { TrophyIcon } from "./icons";
 
 function clockMinutes(clock: string | null): number | null {
@@ -13,7 +15,15 @@ function clockMinutes(clock: string | null): number | null {
   return m ? Number(m[1]) : null;
 }
 
-function HeroCard({ m, matches }: { m: KoMatch; matches: KoMatch[] }) {
+function HeroCard({
+  m,
+  matches,
+  ai,
+}: {
+  m: KoMatch;
+  matches: KoMatch[];
+  ai?: { kind: "previa" | "resumen"; es: string } | null;
+}) {
   const stakes = !m.finished ? nextStepText(m, matches) : null;
   const mins = clockMinutes(m.clock);
   const venueCity = m.venue?.split(",")[0] ?? "";
@@ -84,6 +94,18 @@ function HeroCard({ m, matches }: { m: KoMatch; matches: KoMatch[] }) {
           {stakes}.
         </p>
       )}
+
+      {ai && (
+        <p className="relative mt-3 flex gap-2 text-[12.5px] leading-relaxed text-ink/85">
+          <SparklesIcon size={13} className="mt-0.5 flex-none text-cyan" />
+          <span>
+            {ai.es}
+            <span className="ml-1.5 font-mono text-[9px] uppercase tracking-[0.14em] text-muted">
+              {ai.kind} · IA
+            </span>
+          </span>
+        </p>
+      )}
     </div>
   );
 }
@@ -111,6 +133,7 @@ export function AhoraPanel({
   loading: boolean;
   error: boolean;
 }) {
+  const ai = useAi();
   if (loading && !matches) {
     return (
       <div className="grid min-h-[50dvh] place-items-center">
@@ -163,14 +186,14 @@ export function AhoraPanel({
         </p>
       )}
 
-      {hero && <HeroCard m={hero} matches={matches} />}
+      {hero && <HeroCard m={hero} matches={matches} ai={ai?.[hero.id]} />}
 
       {live.length > 0 && (
         <>
           <SectionTitle title="También en juego" tag={STAGE_ES[live[0].stage]} />
           <div className="flex flex-col gap-2">
             {live.map((m) => (
-              <MatchRow key={m.id} m={m} matches={matches} />
+              <MatchRow key={m.id} m={m} matches={matches} ai={ai?.[m.id]} />
             ))}
           </div>
         </>
@@ -181,7 +204,7 @@ export function AhoraPanel({
           <SectionTitle title="Hoy" tag={STAGE_ES[today[0].stage]} />
           <div className="flex flex-col gap-2">
             {today.map((m) => (
-              <MatchRow key={m.id} m={m} matches={matches} />
+              <MatchRow key={m.id} m={m} matches={matches} ai={ai?.[m.id]} />
             ))}
           </div>
         </>
@@ -192,7 +215,7 @@ export function AhoraPanel({
           <SectionTitle title="Próximos" tag={STAGE_ES[upcoming[0].stage]} />
           <div className="flex flex-col gap-2">
             {upcoming.map((m) => (
-              <MatchRow key={m.id} m={m} matches={matches} />
+              <MatchRow key={m.id} m={m} matches={matches} ai={ai?.[m.id]} />
             ))}
           </div>
         </>
@@ -203,7 +226,7 @@ export function AhoraPanel({
           <SectionTitle title="Últimos resultados" />
           <div className="flex flex-col gap-2">
             {recent.map((m) => (
-              <MatchRow key={m.id} m={m} matches={matches} />
+              <MatchRow key={m.id} m={m} matches={matches} ai={ai?.[m.id]} />
             ))}
           </div>
         </>

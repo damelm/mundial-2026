@@ -1,0 +1,43 @@
+name: Previas y resúmenes con IA
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    # Cada 6 horas: cubre previas del día y resúmenes post-partido.
+    - cron: "15 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ai-previews
+  cancel-in-progress: false
+
+jobs:
+  ai:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generar textos (Haiku, económico)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/ai-previews.mjs
+
+      - name: Commit si hay cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain data/ai.json)" ]; then
+            git add data/ai.json
+            git commit -m "IA: previas y resúmenes actualizados"
+            git push
+          else
+            echo "Sin cambios."
+          fi
