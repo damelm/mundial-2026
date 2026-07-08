@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* ===== Fix26 · tokens "estadio de noche" ===== */
+@theme {
+  --color-bg: #0a0e1a;
+  --color-panel: #121a2e;
+  --color-panel-2: #0f1729;
+  --color-line: #1d2740;
+  --color-gold: #e7b84b;
+  --color-gold-dim: #b58f34;
+  --color-cyan: #4fd1e0;
+  --color-ink: #eaf0ff;
+  --color-muted: #8a96b0;
+  --color-live: #ff5a5f;
+
+  --font-display: "Anton", system-ui, sans-serif;
+  --font-sans: "Hanken Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: var(--color-bg);
+}
+
+body {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Fondo atmosférico: resplandor de reflectores (se reemplazará por SVG fffuel en Fase 2) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 60% at 50% -8%, rgba(231, 184, 75, 0.1), transparent 60%),
+    radial-gradient(90% 50% at 100% 0%, rgba(79, 209, 224, 0.06), transparent 55%),
+    var(--color-bg);
+}
+
+/* Foco de teclado visible (piso de calidad del taller) */
+:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
