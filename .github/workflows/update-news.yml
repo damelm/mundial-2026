@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: update-news
@@ -29,6 +30,7 @@ jobs:
         run: node scripts/fetch-news.mjs
 
       - name: Commit si hay cambios
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -36,6 +38,16 @@ jobs:
             git add data/news.json
             git commit -m "data: titulares ($(date -u '+%Y-%m-%d %H:%M'))"
             git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           else
             echo "Sin cambios relevantes en titulares."
           fi
+      - name: Disparar deploy del sitio
+        # Un push hecho con el GITHUB_TOKEN automático no dispara el
+        # workflow "push" de deploy.yml (GitHub evita loops de workflows
+        # encadenados). Sin este paso, el sitio queda desactualizado y el
+        # publicador legacy de Pages termina sirviendo un estado viejo.
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
