@@ -1,12 +1,23 @@
 /* Panel "Ahora": hero del partido protagonista (en vivo > hoy > próximo)
  * con marcador grande, reloj y "qué se juega"; debajo, el resto del día. */
 
-import { isToday, nextStepText, rawEs, STAGE_ES, fmtDay, fmtTime, type KoMatch } from "../lib/ko";
+import { useEffect, useState } from "react";
+import {
+  fetchDetail,
+  fmtDay,
+  fmtTime,
+  isToday,
+  nextStepText,
+  rawEs,
+  STAGE_ES,
+  type KoMatch,
+  type MatchDetail,
+} from "../lib/ko";
 import { nameEs } from "../data/teams";
 import { factFor, headlinesFor } from "../lib/ficha";
 import { useNews, type Headline, type News } from "../lib/useNews";
 import { Flag } from "./Flag";
-import { MatchRow, SectionTitle } from "./rows";
+import { MatchRow, OddsBar, SectionTitle, StatsTable } from "./rows";
 import { NewspaperIcon, SparklesIcon, TrophyIcon } from "./icons";
 
 function clockMinutes(clock: string | null): number | null {
@@ -27,6 +38,18 @@ function HeroCard({
   const stakes = !m.finished ? nextStepText(m, matches) : null;
   const mins = clockMinutes(m.clock);
   const venueCity = m.venue?.split(",")[0] ?? "";
+  const [detail, setDetail] = useState<MatchDetail | null>(null);
+
+  useEffect(() => {
+    let alive = true;
+    if (m.home && m.away)
+      fetchDetail(m.id).then((d) => {
+        if (alive && d) setDetail(d);
+      });
+    return () => {
+      alive = false;
+    };
+  }, [m.id, m.home, m.away, m.homeScore, m.awayScore]);
 
   return (
     <div className="relative mt-4 overflow-hidden rounded-3xl border border-line bg-panel/60 p-[18px]">
@@ -85,6 +108,18 @@ function HeroCard({
             />
           </span>
           <span className="text-muted">90'</span>
+        </div>
+      )}
+
+      {detail && detail.stats.length > 0 && (m.live || m.finished) && (
+        <div className="relative mt-3.5">
+          <StatsTable stats={detail.stats} />
+        </div>
+      )}
+
+      {detail?.odds && !m.finished && (
+        <div className="relative mt-3.5">
+          <OddsBar m={m} odds={detail.odds} />
         </div>
       )}
 
