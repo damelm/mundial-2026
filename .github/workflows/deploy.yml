@@ -36,25 +36,6 @@ jobs:
       - name: Build (con prerender y CSS inline)
         run: npm run build:site
 
-      - name: Forzar Pages a modo "GitHub Actions"
-        # El sitio quedó en modo legacy ("deploy from branch"): cada push
-        # publica también el root crudo y pisa el artefacto (carrera).
-        # Este PUT cambia el build_type; si el token no alcanza, solo avisa
-        # (queda el paso manual en Settings → Pages → Source).
-        uses: actions/github-script@v7
-        with:
-          script: |
-            try {
-              await github.request('PUT /repos/{owner}/{repo}/pages', {
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                build_type: 'workflow',
-              });
-              core.info('Pages en modo workflow ✔');
-            } catch (e) {
-              core.warning('No se pudo cambiar build_type: ' + e.message);
-            }
-
       - name: Configurar Pages
         uses: actions/configure-pages@v5
         with:
@@ -73,14 +54,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Esperar al build legacy de Pages
-        # Mientras el sitio siga en modo "deploy from branch", cada push
-        # también dispara el build legacy (root crudo) y el ÚLTIMO en
-        # publicar gana. Esta espera garantiza que nuestro artefacto se
-        # publique después (el legacy tarda ~40 s). Se puede borrar cuando
-        # Settings → Pages → Source pase a "GitHub Actions".
-        run: sleep 75
-
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
