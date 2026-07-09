@@ -36,10 +36,29 @@ jobs:
       - name: Build (con prerender y CSS inline)
         run: npm run build:site
 
+      - name: Forzar Pages a modo "GitHub Actions"
+        # El sitio quedó en modo legacy ("deploy from branch"): cada push
+        # publica también el root crudo y pisa el artefacto (carrera).
+        # Este PUT cambia el build_type; si el token no alcanza, solo avisa
+        # (queda el paso manual en Settings → Pages → Source).
+        uses: actions/github-script@v7
+        with:
+          script: |
+            try {
+              await github.request('PUT /repos/{owner}/{repo}/pages', {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                build_type: 'workflow',
+              });
+              core.info('Pages en modo workflow ✔');
+            } catch (e) {
+              core.warning('No se pudo cambiar build_type: ' + e.message);
+            }
+
       - name: Configurar Pages
         uses: actions/configure-pages@v5
         with:
-          # Activa (o cambia a) el modo "GitHub Actions" automáticamente.
+          # Activa Pages si no existiera aún.
           enablement: true
 
       - name: Subir artefacto
