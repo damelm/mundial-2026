@@ -123,6 +123,20 @@ body::after {
   }
 }
 
+/* Modo gama baja (detectado por el sondeo de GPU en index.html): las GPUs
+   débiles renderizan mal el backdrop-filter y dejan estelas al scrollear.
+   Cambiamos el vidrio por un panel sólido translúcido —mismo color, borde y
+   brillo especular— y congelamos el fondo animado que había detrás del blur.
+   El diseño se conserva; solo desaparece el desenfoque real. */
+.low-gpu .glass {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  background: rgba(18, 26, 46, 0.94);
+}
+.low-gpu body::after {
+  animation: none;
+}
+
 /* Variante sin blur para tarjetas (barata en GPU) */
 .glass-soft {
   background: linear-gradient(180deg, rgba(28, 39, 66, 0.5), rgba(15, 23, 41, 0.4));
