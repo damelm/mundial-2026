@@ -17,7 +17,7 @@ export function CuadroPanel({ matches }: { matches: KoMatch[] | null }) {
   return (
     <div>
       <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-cyan">
-        La Firma · Cuadro
+        Eliminatorias
       </p>
       <h1
         className="mt-1 text-[34px] leading-[1.02] text-ink"
