@@ -3,11 +3,11 @@
 
 import { isToday, nextStepText, rawEs, STAGE_ES, fmtDay, fmtTime, type KoMatch } from "../lib/ko";
 import { nameEs } from "../data/teams";
+import { factFor, headlinesFor } from "../lib/ficha";
+import { useNews, type Headline, type News } from "../lib/useNews";
 import { Flag } from "./Flag";
 import { MatchRow, SectionTitle } from "./rows";
-import { useAi } from "../lib/useAi";
-import { SparklesIcon } from "./icons";
-import { TrophyIcon } from "./icons";
+import { NewspaperIcon, SparklesIcon, TrophyIcon } from "./icons";
 
 function clockMinutes(clock: string | null): number | null {
   if (!clock) return null;
@@ -18,11 +18,11 @@ function clockMinutes(clock: string | null): number | null {
 function HeroCard({
   m,
   matches,
-  ai,
+  news,
 }: {
   m: KoMatch;
   matches: KoMatch[];
-  ai?: { kind: "previa" | "resumen"; es: string } | null;
+  news?: Headline[];
 }) {
   const stakes = !m.finished ? nextStepText(m, matches) : null;
   const mins = clockMinutes(m.clock);
@@ -95,20 +95,35 @@ function HeroCard({
         </p>
       )}
 
-      {ai && (
-        <p className="relative mt-3 flex gap-2 text-[12.5px] leading-relaxed text-ink/85">
-          <SparklesIcon size={13} className="mt-0.5 flex-none text-cyan" />
-          <span>
-            {ai.es}
-            <span className="ml-1.5 font-mono text-[9px] uppercase tracking-[0.14em] text-muted">
-              {ai.kind} · IA
-            </span>
-          </span>
-        </p>
-      )}
+      {news && news.length > 0
+        ? news.map((h) => (
+            <a
+              key={h.u}
+              href={h.u}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative mt-3 flex gap-2 text-[12.5px] leading-relaxed text-ink/85 hover:text-cyan"
+            >
+              <NewspaperIcon size={13} className="mt-0.5 flex-none text-cyan" />
+              <span>
+                {h.t}
+                <span className="ml-1.5 font-mono text-[9px] uppercase tracking-[0.14em] text-muted">
+                  {h.src}
+                </span>
+              </span>
+            </a>
+          ))
+        : !m.finished &&
+          factFor(m) && (
+            <p className="relative mt-3 flex gap-2 text-[12.5px] leading-relaxed text-ink/85">
+              <SparklesIcon size={13} className="mt-0.5 flex-none text-cyan" />
+              <span>{factFor(m)}</span>
+            </p>
+          )}
     </div>
   );
 }
+
 
 function HeroTeam({ team, raw }: { team: string | null; raw: string }) {
   return (
@@ -124,6 +139,7 @@ function HeroTeam({ team, raw }: { team: string | null; raw: string }) {
   );
 }
 
+
 export function AhoraPanel({
   matches,
   loading,
@@ -133,7 +149,7 @@ export function AhoraPanel({
   loading: boolean;
   error: boolean;
 }) {
-  const ai = useAi();
+  const news = useNews();
   if (loading && !matches) {
     return (
       <div className="grid min-h-[50dvh] place-items-center">
@@ -191,14 +207,19 @@ export function AhoraPanel({
         </p>
       )}
 
-      {hero && <HeroCard m={hero} matches={matches} ai={ai?.[hero.id]} />}
+      {hero && <HeroCard m={hero} matches={matches} news={news ? headlinesFor(hero, news.items) : undefined} />}
 
       {live.length > 0 && (
         <>
           <SectionTitle title="También en juego" tag={STAGE_ES[live[0].stage]} />
           <div className="flex flex-col gap-2">
             {live.map((m) => (
-              <MatchRow key={m.id} m={m} matches={matches} ai={ai?.[m.id]} />
+              <MatchRow
+                key={m.id}
+                m={m}
+                matches={matches}
+                news={news ? headlinesFor(m, news.items) : undefined}
+              />
             ))}
           </div>
         </>
@@ -209,7 +230,12 @@ export function AhoraPanel({
           <SectionTitle title="Hoy" tag={STAGE_ES[today[0].stage]} />
           <div className="flex flex-col gap-2">
             {today.map((m) => (
-              <MatchRow key={m.id} m={m} matches={matches} ai={ai?.[m.id]} />
+              <MatchRow
+                key={m.id}
+                m={m}
+                matches={matches}
+                news={news ? headlinesFor(m, news.items) : undefined}
+              />
             ))}
           </div>
         </>
@@ -220,7 +246,12 @@ export function AhoraPanel({
           <SectionTitle title="Próximos" tag={STAGE_ES[upcoming[0].stage]} />
           <div className="flex flex-col gap-2">
             {upcoming.map((m) => (
-              <MatchRow key={m.id} m={m} matches={matches} ai={ai?.[m.id]} />
+              <MatchRow
+                key={m.id}
+                m={m}
+                matches={matches}
+                news={news ? headlinesFor(m, news.items) : undefined}
+              />
             ))}
           </div>
         </>
@@ -231,11 +262,53 @@ export function AhoraPanel({
           <SectionTitle title="Últimos resultados" />
           <div className="flex flex-col gap-2">
             {recent.map((m) => (
-              <MatchRow key={m.id} m={m} matches={matches} ai={ai?.[m.id]} />
+              <MatchRow
+                key={m.id}
+                m={m}
+                matches={matches}
+                news={news ? headlinesFor(m, news.items) : undefined}
+              />
             ))}
           </div>
         </>
       )}
+
+      {news && <Titulares news={news} />}
     </div>
+  );
+}
+
+function Titulares({ news }: { news: News }) {
+  const dt = news.updatedAt ? new Date(news.updatedAt) : null;
+  return (
+    <>
+      <SectionTitle
+        title="Titulares"
+        tag={
+          dt
+            ? `ACT. ${new Intl.DateTimeFormat("es", { hour: "2-digit", minute: "2-digit" }).format(dt)}`
+            : undefined
+        }
+      />
+      <div className="flex flex-col gap-1.5 rounded-2xl border border-line bg-panel/40 px-3.5 py-2">
+        {news.items.slice(0, 5).map((h) => (
+          <a
+            key={h.u}
+            href={h.u}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex gap-2 border-b border-line/60 py-2 text-[12.5px] leading-snug text-ink/90 last:border-b-0 hover:text-cyan"
+          >
+            <NewspaperIcon size={13} className="mt-0.5 flex-none text-cyan" />
+            <span>
+              {h.t}
+              <span className="ml-1.5 font-mono text-[9px] uppercase tracking-[0.12em] text-muted">
+                {h.src}
+              </span>
+            </span>
+          </a>
+        ))}
+      </div>
+    </>
   );
 }

@@ -83,6 +83,17 @@ export function SparklesIcon(p: IconProps) {
   );
 }
 
+export function NewspaperIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M15 18h-5" />
+      <path d="M18 14h-8" />
+      <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0V5a1 1 0 0 1 1-1h3" />
+      <rect width="8" height="4" x="10" y="6" rx="1" />
+    </Svg>
+  );
+}
+
 export function ChevronDownIcon(p: IconProps) {
   return (
     <Svg {...p}>
