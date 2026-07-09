@@ -1,9 +1,12 @@
 /* Panel "Selecciones": los que siguen con vida, con su camino recorrido,
  * y los que se despidieron, ordenados por qué tan lejos llegaron. */
 
+import { useState } from "react";
 import { aliveTeams, STAGE_ES, winnerOf, type KoMatch, type Stage } from "../lib/ko";
 import { nameEs } from "../data/teams";
+import { useNews } from "../lib/useNews";
 import { Flag } from "./Flag";
+import { TeamSheetHost } from "./TeamSheet";
 
 const STAGE_SHORT: Record<Stage, string> = {
   R32: "32avos",
@@ -61,6 +64,8 @@ function rivalOf(m: KoMatch, team: string): string | null {
 }
 
 export function SeleccionesPanel({ matches }: { matches: KoMatch[] | null }) {
+  const [selected, setSelected] = useState<string | null>(null);
+  const news = useNews();
   if (!matches) {
     return (
       <div className="grid min-h-[50dvh] place-items-center">
@@ -97,12 +102,14 @@ export function SeleccionesPanel({ matches }: { matches: KoMatch[] | null }) {
 
       <div className="mt-4 grid grid-cols-2 gap-2.5">
         {vivos.map((p) => (
-          <div
+          <button
             key={p.team}
-            className="flex flex-col gap-2 rounded-2xl border border-gold/35 p-3.5"
+            onClick={() => setSelected(p.team)}
+            className="flex flex-col gap-2 rounded-2xl border border-gold/35 p-3.5 text-left transition-transform active:scale-[0.98]"
             style={{
               background:
-                "radial-gradient(120% 90% at 50% -20%, rgba(231,184,75,0.1), transparent 60%), rgba(18,26,46,0.75)",
+                "radial-gradient(120% 90% at 50% -20%, rgba(231,184,75,0.12), transparent 60%), linear-gradient(180deg, rgba(28,39,66,0.5), rgba(15,23,41,0.4))",
+              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)",
             }}
           >
             <Flag team={p.team} size={34} />
@@ -120,7 +127,7 @@ export function SeleccionesPanel({ matches }: { matches: KoMatch[] | null }) {
                 .map((m) => `${STAGE_SHORT[m.stage]} ${ownScore(m, p.team)}`)
                 .join(" · ") || "Debuta en esta ronda"}
             </span>
-          </div>
+          </button>
         ))}
       </div>
 
@@ -136,15 +143,16 @@ export function SeleccionesPanel({ matches }: { matches: KoMatch[] | null }) {
         </span>
       </div>
 
-      <div className="rounded-2xl border border-line bg-panel/40 px-3.5 py-1">
+      <div className="glass-soft rounded-2xl px-3.5 py-1">
         {idos.map((p) => {
           const last = p.played[p.played.length - 1];
           const rival = last ? rivalOf(last, p.team) : null;
           const winner = last ? winnerOf(last) : null;
           return (
-            <div
+            <button
               key={p.team}
-              className="flex items-center gap-2.5 border-b border-line/60 py-2.5 text-[12.5px] font-medium text-muted last:border-b-0"
+              onClick={() => setSelected(p.team)}
+              className="flex w-full items-center gap-2.5 border-b border-line/60 py-2.5 text-left text-[12.5px] font-medium text-muted last:border-b-0"
             >
               <Flag team={p.team} size={20} dim />
               <span className="min-w-0 flex-1 truncate">{nameEs(p.team)}</span>
@@ -156,10 +164,17 @@ export function SeleccionesPanel({ matches }: { matches: KoMatch[] | null }) {
               <span className="flex-none font-mono text-[9.5px] uppercase tracking-[0.1em]">
                 {STAGE_SHORT[p.lastStage]}
               </span>
-            </div>
+            </button>
           );
         })}
       </div>
+
+      <TeamSheetHost
+        team={selected}
+        matches={matches}
+        news={news}
+        onClose={() => setSelected(null)}
+      />
     </div>
   );
 }

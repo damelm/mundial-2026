@@ -182,7 +182,7 @@ export function MatchRow({
     </>
   );
 
-  const frame = `rounded-2xl border bg-panel/50 ${m.live ? "border-cyan/50" : "border-line"}`;
+  const frame = `glass-soft rounded-2xl ${m.live ? "!border-cyan/50" : ""}`;
 
   if (!canExpand) {
     return <div className={`flex items-center gap-3 px-3.5 py-3 ${frame}`}>{inner}</div>;

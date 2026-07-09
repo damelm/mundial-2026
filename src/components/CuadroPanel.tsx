@@ -26,7 +26,7 @@ export function CuadroPanel({ matches }: { matches: KoMatch[] | null }) {
         EL CAMINO
         <br />A <span className="text-gold">LA FINAL</span>
       </h1>
-      <p className="mt-2 max-w-[40ch] text-[13.5px] leading-normal text-muted">
+      <p className="mt-2 max-w-[352px] text-[13.5px] leading-normal text-muted">
         La senda dorada se enciende con cada equipo que avanza.{" "}
         {alive > 0 && `${alive} selecciones siguen con vida.`}
       </p>
