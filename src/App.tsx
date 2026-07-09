@@ -64,11 +64,30 @@ export default function App({ initialData = null }: { initialData?: KoMatch[] | 
               )}
             </motion.section>
           </AnimatePresence>
+          <Footer />
         </main>
 
         <TabBar tab={tab} onChange={setTab} />
       </div>
     </MotionConfig>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="mt-10 flex flex-col items-center gap-1 pb-2 text-center">
+      <a
+        href="https://zeeben.pages.dev"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-mono text-[10px] tracking-[0.14em] text-muted transition-colors hover:text-cyan"
+      >
+        Hecho por <span className="font-semibold text-ink/80">Zeeben Labs</span>
+      </a>
+      <span className="font-mono text-[9px] tracking-[0.1em] text-muted">
+        Automatización e IA · zeeben.pages.dev
+      </span>
+    </footer>
   );
 }
 
