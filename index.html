@@ -8,6 +8,38 @@
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
     <meta name="theme-color" content="#0A0E1A" />
+    <script>
+      /* Sondeo de GPU (antes del primer pintado): en equipos de gama muy baja
+         el backdrop-filter del "liquid glass" deja estelas al scrollear. Si la
+         GPU es débil —o su nombre viene oculto en un táctil— activamos el modo
+         sólido (sin blur, fondo estático) marcando <html class="low-gpu">. */
+      (function () {
+        var root = document.documentElement;
+        try {
+          var gl =
+            document.createElement("canvas").getContext("webgl") ||
+            document.createElement("canvas").getContext("experimental-webgl");
+          if (!gl) return root.classList.add("low-gpu");
+          var ext = gl.getExtension("WEBGL_debug_renderer_info");
+          var r = (
+            ext ? "" + gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) : ""
+          ).toLowerCase();
+          var coarse =
+            window.matchMedia && matchMedia("(pointer: coarse)").matches;
+          var weak =
+            /swiftshader|llvmpipe|software|microsoft basic/.test(r) ||
+            /mali-t/.test(r) ||
+            /mali-4\d\d/.test(r) ||
+            /mali-g(31|51|52|57)\b/.test(r) ||
+            /adreno \(tm\) [2-5]\d\d\b/.test(r) ||
+            /adreno \(tm\) 6[01]\d\b/.test(r) ||
+            /powervr/.test(r);
+          if (weak || (coarse && !r)) root.classList.add("low-gpu");
+        } catch (e) {
+          root.classList.add("low-gpu");
+        }
+      })();
+    </script>
     <meta
       name="description"
       content="Las eliminatorias del Mundial 2026 en vivo: el camino a la final, marcadores en tiempo real y las selecciones que siguen con vida."
