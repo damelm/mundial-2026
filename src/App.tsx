@@ -53,14 +53,25 @@ export default function App({ initialData = null }: { initialData?: KoMatch[] | 
       <div className="mx-auto flex min-h-dvh max-w-[560px] flex-col">
         <Header matches={ko.matches} />
 
+        {/* El gesto vive en <main>, que SIEMPRE ocupa toda la pantalla, así el
+            swipe se reconoce en cualquier parte (aunque el contenido sea corto).
+            drag="x" hace que Framer ponga touch-action:pan-y: el navegador enruta
+            vertical → scroll nativo y horizontal → cambio de pestaña, sin pelearse.
+            La animación de deslizado queda en la sección interior. */}
         <motion.main
           className="flex-1 overflow-y-auto px-4 pb-28 pt-1"
-          onPanEnd={(_, info) => {
-            // Solo swipes claramente horizontales (no confundir con scroll).
+          drag="x"
+          dragDirectionLock
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.16}
+          dragMomentum={false}
+          onDragEnd={(_, info) => {
+            // dragDirectionLock ya garantiza que esto solo corre en gestos
+            // horizontales, así que los umbrales pueden ser generosos: basta un
+            // deslizamiento corto (40px) o un flick suave (velocidad 250).
             const { offset, velocity } = info;
-            if (Math.abs(offset.x) < Math.abs(offset.y)) return;
-            if (offset.x < -70 || velocity.x < -450) step(1);
-            else if (offset.x > 70 || velocity.x > 450) step(-1);
+            if (offset.x < -40 || velocity.x < -250) step(1);
+            else if (offset.x > 40 || velocity.x > 250) step(-1);
           }}
         >
           <AnimatePresence mode="wait" initial={false} custom={dir}>
