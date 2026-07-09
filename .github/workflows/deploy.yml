@@ -38,6 +38,9 @@ jobs:
 
       - name: Configurar Pages
         uses: actions/configure-pages@v5
+        with:
+          # Activa (o cambia a) el modo "GitHub Actions" automáticamente.
+          enablement: true
 
       - name: Subir artefacto
         uses: actions/upload-pages-artifact@v3
