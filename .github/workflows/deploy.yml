@@ -73,6 +73,14 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Esperar al build legacy de Pages
+        # Mientras el sitio siga en modo "deploy from branch", cada push
+        # también dispara el build legacy (root crudo) y el ÚLTIMO en
+        # publicar gana. Esta espera garantiza que nuestro artefacto se
+        # publique después (el legacy tarda ~40 s). Se puede borrar cuando
+        # Settings → Pages → Source pase a "GitHub Actions".
+        run: sleep 75
+
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
