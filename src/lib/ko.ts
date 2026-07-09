@@ -168,6 +168,27 @@ export interface GoalEvent {
   side: "home" | "away";
 }
 
+/** Una línea de estadística comparada (posesión, remates, etc.). */
+export interface StatLine {
+  label: string;
+  home: string;
+  away: string;
+}
+
+/** Probabilidades implícitas del mercado, normalizadas (sin margen). */
+export interface MarketOdds {
+  h: number;
+  d: number;
+  a: number;
+  provider: string;
+}
+
+export interface MatchDetail {
+  goals: GoalEvent[];
+  stats: StatLine[];
+  odds: MarketOdds | null;
+}
+
 interface EspnKeyEvent {
   scoringPlay?: boolean;
   shortText?: string;
@@ -176,10 +197,26 @@ interface EspnKeyEvent {
   participants?: { athlete?: { displayName?: string }; displayName?: string }[];
 }
 
-const _goalsCache = new Map<string, GoalEvent[]>();
+const STAT_ES: [string, string][] = [
+  ["possessionPct", "Posesión %"],
+  ["totalShots", "Remates"],
+  ["shotsOnTarget", "Al arco"],
+  ["wonCorners", "Córners"],
+  ["saves", "Atajadas"],
+  ["foulsCommitted", "Faltas"],
+  ["yellowCards", "Amarillas"],
+  ["redCards", "Rojas"],
+];
 
-export async function fetchGoals(matchId: string): Promise<GoalEvent[] | null> {
-  const hit = _goalsCache.get(matchId);
+/** Cuota americana → probabilidad implícita. */
+function implied(ml: number): number {
+  return ml < 0 ? -ml / (-ml + 100) : 100 / (ml + 100);
+}
+
+const _detailCache = new Map<string, MatchDetail>();
+
+export async function fetchDetail(matchId: string): Promise<MatchDetail | null> {
+  const hit = _detailCache.get(matchId);
   if (hit) return hit;
   const evId = matchId.replace(/^ko-/, "");
   try {
@@ -192,7 +229,9 @@ export async function fetchGoals(matchId: string): Promise<GoalEvent[] | null> {
     const homeId = String(
       comps?.find((c) => c.homeAway === "home")?.team?.id ?? "",
     );
-    const out: GoalEvent[] = [];
+
+    // Goleadores
+    const goals: GoalEvent[] = [];
     for (const g of (sum?.keyEvents ?? []) as EspnKeyEvent[]) {
       if (!g?.scoringPlay) continue;
       let name = "";
@@ -203,10 +242,60 @@ export async function fetchGoals(matchId: string): Promise<GoalEvent[] | null> {
       const minute = String(g.clock?.displayValue || "").replace(/'/g, "");
       const side: "home" | "away" =
         g.team && String(g.team.id) === homeId ? "home" : "away";
-      if (name) out.push({ name, minute, side });
+      if (name) goals.push({ name, minute, side });
     }
-    _goalsCache.set(matchId, out);
-    return out;
+
+    // Estadísticas comparadas (cuando el partido arrancó)
+    interface BoxTeam {
+      homeAway?: string;
+      statistics?: { name?: string; displayValue?: string }[];
+    }
+    const box = (sum?.boxscore?.teams ?? []) as BoxTeam[];
+    const byName = (t: BoxTeam | undefined) => {
+      const map: Record<string, string> = {};
+      for (const s of t?.statistics ?? [])
+        if (s.name && s.displayValue != null) map[s.name] = s.displayValue;
+      return map;
+    };
+    const hs = byName(box.find((t) => t.homeAway === "home") ?? box[0]);
+    const as = byName(box.find((t) => t.homeAway === "away") ?? box[1]);
+    const stats: StatLine[] = [];
+    for (const [key, label] of STAT_ES) {
+      if (hs[key] != null && as[key] != null)
+        stats.push({ label, home: hs[key], away: as[key] });
+    }
+
+    // Pronóstico del mercado (cuotas normalizadas, sin margen de la casa)
+    interface PickCenter {
+      provider?: { name?: string };
+      homeTeamOdds?: { moneyLine?: number };
+      awayTeamOdds?: { moneyLine?: number };
+      drawOdds?: { moneyLine?: number };
+    }
+    let odds: MarketOdds | null = null;
+    const pc = ((sum?.pickcenter ?? []) as PickCenter[]).find(
+      (x) =>
+        x.homeTeamOdds?.moneyLine != null &&
+        x.drawOdds?.moneyLine != null &&
+        x.awayTeamOdds?.moneyLine != null,
+    );
+    if (pc) {
+      const h = implied(pc.homeTeamOdds!.moneyLine!);
+      const d = implied(pc.drawOdds!.moneyLine!);
+      const a = implied(pc.awayTeamOdds!.moneyLine!);
+      const s = h + d + a;
+      odds = {
+        h: Math.round((h / s) * 100),
+        d: Math.round((d / s) * 100),
+        a: Math.round((a / s) * 100),
+        provider: pc.provider?.name ?? "",
+      };
+    }
+
+    const detail: MatchDetail = { goals, stats, odds };
+    // No cachear partidos en curso (stats y goles cambian).
+    if (sum?.header?.competitions?.[0]) _detailCache.set(matchId, detail);
+    return detail;
   } catch {
     return null;
   }

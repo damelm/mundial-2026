@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  fetchGoals,
+  fetchDetail,
   fmtDay,
   fmtTime,
   isToday,
@@ -13,6 +13,9 @@ import {
   STAGE_ES,
   type GoalEvent,
   type KoMatch,
+  type MarketOdds,
+  type MatchDetail,
+  type StatLine,
 } from "../lib/ko";
 import { nameEs } from "../data/teams";
 import { factFor } from "../lib/ficha";
@@ -113,15 +116,15 @@ export function MatchRow({
   news?: Headline[];
 }) {
   const [open, setOpen] = useState(false);
-  const [goals, setGoals] = useState<GoalEvent[] | null>(null);
-  const canExpand = !!matches && (m.live || m.finished || !!m.venue);
+  const [detail, setDetail] = useState<MatchDetail | null>(null);
+  const canExpand = !!matches && !!(m.home || m.away);
   const showGoals = m.live || m.finished;
 
   useEffect(() => {
-    if (open && showGoals && !goals) {
-      fetchGoals(m.id).then((g) => setGoals(g ?? []));
+    if (open && !detail) {
+      fetchDetail(m.id).then((d) => setDetail(d ?? { goals: [], stats: [], odds: null }));
     }
-  }, [open, showGoals, goals, m.id]);
+  }, [open, detail, m.id]);
 
   const when = m.live ? (
     <span className="font-mono text-[11px] font-bold text-live">
@@ -204,14 +207,21 @@ export function MatchRow({
             className="overflow-hidden"
           >
             <div className="flex flex-col gap-2.5 border-t border-line px-3.5 py-3">
-              {showGoals &&
-                (goals === null ? (
-                  <span className="font-mono text-[10px] text-muted">
-                    Buscando goles…
-                  </span>
-                ) : (
-                  <GoalsList goals={goals} m={m} />
-                ))}
+              {detail === null ? (
+                <span className="font-mono text-[10px] text-muted">
+                  Buscando datos del partido…
+                </span>
+              ) : (
+                <>
+                  {showGoals && <GoalsList goals={detail.goals} m={m} />}
+                  {detail.stats.length > 0 && showGoals && (
+                    <StatsTable stats={detail.stats} />
+                  )}
+                  {detail.odds && !m.finished && (
+                    <OddsBar m={m} odds={detail.odds} />
+                  )}
+                </>
+              )}
               {news && news.length > 0
                 ? news.map((h) => (
                     <a
@@ -251,6 +261,52 @@ export function MatchRow({
           </motion.div>
         )}
       </AnimatePresence>
+    </div>
+  );
+}
+
+/** Tabla comparada de estadísticas del partido (ESPN, en vivo o final). */
+export function StatsTable({ stats }: { stats: StatLine[] }) {
+  return (
+    <div className="flex flex-col gap-1 border-t border-line/60 pt-2.5">
+      {stats.map((s) => (
+        <div
+          key={s.label}
+          className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 font-mono text-[11px]"
+        >
+          <span className="text-left text-ink">{s.home}</span>
+          <span className="text-center text-[9.5px] uppercase tracking-[0.1em] text-muted">
+            {s.label}
+          </span>
+          <span className="text-right text-ink">{s.away}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/** Pronóstico del mercado: barra tricolor con probabilidades sin margen. */
+export function OddsBar({ m, odds }: { m: KoMatch; odds: MarketOdds }) {
+  return (
+    <div className="flex flex-col gap-1.5 border-t border-line/60 pt-2.5">
+      <div className="flex items-baseline justify-between font-mono text-[9.5px] uppercase tracking-[0.1em] text-muted">
+        <span>Pronóstico del mercado</span>
+        {odds.provider && <span>{odds.provider}</span>}
+      </div>
+      <div className="flex h-[6px] overflow-hidden rounded-full">
+        <span className="bg-gold" style={{ width: `${odds.h}%` }} />
+        <span className="bg-muted/40" style={{ width: `${odds.d}%` }} />
+        <span className="bg-cyan" style={{ width: `${odds.a}%` }} />
+      </div>
+      <div className="grid grid-cols-3 font-mono text-[10.5px]">
+        <span className="text-gold">
+          {nameEs(m.home)} {odds.h}%
+        </span>
+        <span className="text-center text-muted">Empate {odds.d}%</span>
+        <span className="text-right text-cyan">
+          {nameEs(m.away)} {odds.a}%
+        </span>
+      </div>
     </div>
   );
 }
