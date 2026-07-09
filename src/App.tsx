@@ -30,24 +30,52 @@ const TABS: { id: TabId; label: string; Icon: typeof RadioIcon }[] = [
 ];
 
 const EASE = [0.22, 1, 0.36, 1] as const;
+const ORDER: TabId[] = ["ahora", "cuadro", "selecciones"];
 
 export default function App({ initialData = null }: { initialData?: KoMatch[] | null }) {
   const [tab, setTab] = useState<TabId>("cuadro");
+  // Dirección del cambio (1 = hacia la derecha, -1 = izquierda) para que la
+  // transición acompañe el sentido del swipe / del tap.
+  const [dir, setDir] = useState(0);
   const ko = useKo(initialData);
+
+  const goTo = (next: TabId) => {
+    setDir(ORDER.indexOf(next) > ORDER.indexOf(tab) ? 1 : -1);
+    setTab(next);
+  };
+  const step = (delta: number) => {
+    const i = ORDER.indexOf(tab) + delta;
+    if (i >= 0 && i < ORDER.length) goTo(ORDER[i]);
+  };
 
   return (
     <MotionConfig reducedMotion="user">
       <div className="mx-auto flex min-h-dvh max-w-[560px] flex-col">
         <Header matches={ko.matches} />
 
-        <main className="flex-1 overflow-y-auto px-4 pb-28 pt-1">
-          <AnimatePresence mode="wait" initial={false}>
+        <motion.main
+          className="flex-1 overflow-y-auto px-4 pb-28 pt-1"
+          onPanEnd={(_, info) => {
+            // Solo swipes claramente horizontales (no confundir con scroll).
+            const { offset, velocity } = info;
+            if (Math.abs(offset.x) < Math.abs(offset.y)) return;
+            if (offset.x < -70 || velocity.x < -450) step(1);
+            else if (offset.x > 70 || velocity.x > 450) step(-1);
+          }}
+        >
+          <AnimatePresence mode="wait" initial={false} custom={dir}>
             <motion.section
               key={tab}
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.28, ease: EASE }}
+              custom={dir}
+              variants={{
+                enter: (d: number) => ({ opacity: 0, x: d * 48 }),
+                center: { opacity: 1, x: 0 },
+                exit: (d: number) => ({ opacity: 0, x: d * -48 }),
+              }}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.26, ease: EASE }}
             >
               {tab === "ahora" ? (
                 <AhoraPanel
@@ -65,9 +93,9 @@ export default function App({ initialData = null }: { initialData?: KoMatch[] | 
             </motion.section>
           </AnimatePresence>
           <Footer />
-        </main>
+        </motion.main>
 
-        <TabBar tab={tab} onChange={setTab} />
+        <TabBar tab={tab} onChange={goTo} />
       </div>
     </MotionConfig>
   );
