@@ -123,17 +123,31 @@ body::after {
   }
 }
 
-/* Modo gama baja (detectado por el sondeo de GPU en index.html): las GPUs
-   débiles renderizan mal el backdrop-filter y dejan estelas al scrollear.
-   Cambiamos el vidrio por un panel sólido translúcido —mismo color, borde y
-   brillo especular— y congelamos el fondo animado que había detrás del blur.
-   El diseño se conserva; solo desaparece el desenfoque real. */
+/* Modo gama baja (detectado por el sondeo de GPU en index.html): estas GPUs
+   dejan estelas/fantasmas al scrollear. La causa principal son las CAPAS FIJAS
+   a pantalla completa detrás del contenido (body::before/::after): al scrollear
+   por encima, la GPU débil no re-rasteriza y arrastra los frames. También pesan
+   el backdrop-filter y los filtros animados. En este modo neutralizamos todo:
+   fondo sólido plano, vidrio sólido y sin filtros. El diseño se conserva; solo
+   se pierden los brillos difuminados. */
+.low-gpu body::before,
+.low-gpu body::after {
+  display: none;
+}
 .low-gpu .glass {
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
   background: rgba(18, 26, 46, 0.94);
 }
-.low-gpu body::after {
+/* Los filtros drop-shadow (animados o no) crean capas costosas que también
+   arrastran; se quitan y se congelan sus animaciones. */
+.low-gpu .edge-gold,
+.low-gpu .edge-live {
+  filter: none;
+  animation: none;
+}
+.low-gpu .cup-halo,
+.low-gpu .dot-live {
   animation: none;
 }
 
