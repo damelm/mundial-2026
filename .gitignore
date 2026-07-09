@@ -10,5 +10,12 @@ Thumbs.db
 node_modules/
 _icon_options/
 
+# Build de Vite
+dist/
+dist-ssr/
+dist-audit/
+.vite/
+*.local
+
 # Material de marketing (posts de Instagram, mockups, portadas) — no es parte de la app
 ig/
