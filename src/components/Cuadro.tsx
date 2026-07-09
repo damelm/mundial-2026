@@ -130,7 +130,11 @@ function scoreText(m: KoMatch): string {
 
 export function Cuadro({ matches }: { matches: KoMatch[] }) {
   const wrap = useRef<HTMLDivElement>(null);
-  const [w, setW] = useState(0);
+  // Ancho inicial calculado (app max-w 560, padding 16+16): evita el doble
+  // render síncrono de la medición; ResizeObserver corrige si difiere.
+  const [w, setW] = useState(() =>
+    typeof window === "undefined" ? 0 : Math.min(window.innerWidth, 560) - 32,
+  );
   const reduced = useReducedMotion();
 
   useLayoutEffect(() => {
@@ -141,17 +145,22 @@ export function Cuadro({ matches }: { matches: KoMatch[] }) {
     setW(el.clientWidth);
     return () => ro.disconnect();
   }, []);
+  // Ancho del prerender: mobile típico (el cliente lo recalcula al montar).
+  const wEff = typeof window === "undefined" && w === 0 ? 361 : w;
 
   const b = orderBracket(buildBracket(matches));
-  const ready = w > 0 && b.r32.length === 16;
+  const ready = wEff > 0 && b.r32.length === 16;
+  // En el prerender (SSR) el cuadro sale en estado final: visible al primer
+  // paint. Al montar React, la senda se vuelve a encender (la Firma).
+  const isSsr = typeof window === "undefined";
 
   // Posiciones por ronda.
   const pos = {
-    r32: b.r32.map((_, i) => ({ x: xAt(i, 16, w), y: ROW_Y.r32 })) as NodePos[],
-    r16: b.r16.map((_, i) => ({ x: xAt(i, 8, w), y: ROW_Y.r16 })) as NodePos[],
-    qf: b.qf.map((_, i) => ({ x: xAt(i, 4, w), y: ROW_Y.qf })) as NodePos[],
-    sf: b.sf.map((_, i) => ({ x: xAt(i, 2, w), y: ROW_Y.sf })) as NodePos[],
-    f: { x: w / 2, y: ROW_Y.f } as NodePos,
+    r32: b.r32.map((_, i) => ({ x: xAt(i, 16, wEff), y: ROW_Y.r32 })) as NodePos[],
+    r16: b.r16.map((_, i) => ({ x: xAt(i, 8, wEff), y: ROW_Y.r16 })) as NodePos[],
+    qf: b.qf.map((_, i) => ({ x: xAt(i, 4, wEff), y: ROW_Y.qf })) as NodePos[],
+    sf: b.sf.map((_, i) => ({ x: xAt(i, 2, wEff), y: ROW_Y.sf })) as NodePos[],
+    f: { x: wEff / 2, y: ROW_Y.f } as NodePos,
   };
 
   // Aristas: de cada partido alimentador a su partido padre.
@@ -198,7 +207,7 @@ export function Cuadro({ matches }: { matches: KoMatch[] }) {
     );
   }
 
-  const anim = !reduced;
+  const anim = !reduced && !isSsr;
 
   return (
     <div
@@ -212,7 +221,7 @@ export function Cuadro({ matches }: { matches: KoMatch[] }) {
     >
       <svg
         className="absolute inset-0 h-full w-full"
-        viewBox={`0 0 ${w} ${H}`}
+        viewBox={`0 0 ${wEff} ${H}`}
         aria-hidden="true"
       >
         {edges.map((e, i) =>

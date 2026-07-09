@@ -39,6 +39,19 @@ export function headlinesFor(
     .slice(0, max);
 }
 
+/** Titulares que mencionan a UNA selección. */
+export function headlinesForTeam(
+  team: string,
+  items: Headline[],
+  max = 3,
+): Headline[] {
+  const names = aliases(team);
+  return items.filter((h) => {
+    const t = norm(h.t);
+    return names.some((n) => t.includes(n));
+  }).slice(0, max);
+}
+
 /** Dato curioso estable para el partido (respaldo sin titulares): alterna
  * equipo y dato según el id del partido, así no cambia entre visitas. */
 export function factFor(m: KoMatch): string | null {

@@ -5,9 +5,8 @@ import { STAGE_ES, currentStage, type KoMatch } from "./lib/ko";
 import { AhoraPanel } from "./components/Ahora";
 import { BracketIcon, RadioIcon, ShieldIcon, TrophyIcon } from "./components/icons";
 
-const CuadroPanel = lazy(() =>
-  import("./components/CuadroPanel").then((m) => ({ default: m.CuadroPanel })),
-);
+import { CuadroPanel } from "./components/CuadroPanel";
+
 const SeleccionesPanel = lazy(() =>
   import("./components/Selecciones").then((m) => ({
     default: m.SeleccionesPanel,
@@ -33,7 +32,7 @@ const TABS: { id: TabId; label: string; Icon: typeof RadioIcon }[] = [
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 export default function App({ initialData = null }: { initialData?: KoMatch[] | null }) {
-  const [tab, setTab] = useState<TabId>("ahora");
+  const [tab, setTab] = useState<TabId>("cuadro");
   const ko = useKo(initialData);
 
   return (
@@ -56,13 +55,11 @@ export default function App({ initialData = null }: { initialData?: KoMatch[] | 
                   loading={ko.loading}
                   error={ko.error}
                 />
+              ) : tab === "cuadro" ? (
+                <CuadroPanel matches={ko.matches} />
               ) : (
                 <Suspense fallback={<PanelFallback />}>
-                  {tab === "cuadro" ? (
-                    <CuadroPanel matches={ko.matches} />
-                  ) : (
-                    <SeleccionesPanel matches={ko.matches} />
-                  )}
+                  <SeleccionesPanel matches={ko.matches} />
                 </Suspense>
               )}
             </motion.section>
@@ -78,7 +75,7 @@ export default function App({ initialData = null }: { initialData?: KoMatch[] | 
 function Header({ matches }: { matches: KoMatch[] | null }) {
   const stage = matches ? STAGE_ES[currentStage(matches)] : "Mundial 2026";
   return (
-    <header className="flex items-center justify-between px-4 pb-1 pt-[calc(env(safe-area-inset-top)+14px)]">
+    <header className="glass sticky top-0 z-30 flex items-center justify-between rounded-b-2xl px-4 pb-2 pt-[calc(env(safe-area-inset-top)+12px)]">
       <div className="flex items-baseline gap-2">
         <span
           className="text-[26px] leading-none tracking-tight text-gold"
@@ -107,7 +104,7 @@ function TabBar({
 }) {
   return (
     <nav className="fixed inset-x-0 bottom-0 z-20 mx-auto max-w-[560px] px-4 pb-[calc(env(safe-area-inset-bottom)+10px)] pt-2">
-      <div className="flex items-stretch gap-1 rounded-2xl border border-line bg-panel/80 p-1.5 backdrop-blur-xl">
+      <div className="glass relative flex items-stretch gap-1 rounded-2xl p-1.5">
         {TABS.map((t) => {
           const active = t.id === tab;
           return (

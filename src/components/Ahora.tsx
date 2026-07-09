@@ -52,7 +52,7 @@ function HeroCard({
   }, [m.id, m.home, m.away, m.homeScore, m.awayScore]);
 
   return (
-    <div className="relative mt-4 overflow-hidden rounded-3xl border border-line bg-panel/60 p-[18px]">
+    <div className="glass-soft relative mt-4 overflow-hidden rounded-3xl p-[18px]">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -325,7 +325,7 @@ function Titulares({ news }: { news: News }) {
             : undefined
         }
       />
-      <div className="flex flex-col gap-1.5 rounded-2xl border border-line bg-panel/40 px-3.5 py-2">
+      <div className="glass-soft flex flex-col gap-1.5 rounded-2xl px-3.5 py-2">
         {news.items.slice(0, 5).map((h) => (
           <a
             key={h.u}
