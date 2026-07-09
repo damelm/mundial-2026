@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-07-08T07:14:54.462Z",
+  "updatedAt": "2026-07-09T20:04:39.598Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
   "season": "2026",
-  "count": 77,
+  "count": 76,
   "matches": [
     {
       "id": "2391728",
@@ -2743,27 +2743,6 @@
       "awayRank": 1
     },
     {
-      "id": "2513671",
-      "round": 16,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
-      "group": null,
-      "date": "2026-07-07",
-      "time": "20:00:00",
-      "timestamp": "2026-07-07T20:00:00",
-      "home": "Switzerland",
-      "away": "Colombia",
-      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/mb7yqe1717365808.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/4ymyku1691180081.png",
-      "homeScore": 0,
-      "awayScore": 0,
-      "status": "AP",
-      "venue": "BC Place",
-      "city": "Vancouver, BC",
-      "homeRank": 19,
-      "awayRank": 13
-    },
-    {
       "id": "2515305",
       "round": 125,
       "stage": "KO",
@@ -2776,50 +2755,19 @@
       "away": "Morocco",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/p3n0z51726166851.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/hbmwkj1731791275.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "Gillette Stadium",
       "city": "Foxborough, MA",
       "homeRank": 3,
-      "awayRank": 11,
-      "pred": {
-        "pH": 52,
-        "pD": 24,
-        "pA": 24,
-        "h2h": {
-          "played": 6,
-          "last": [
-            {
-              "date": "2022-12-14",
-              "h": "France",
-              "a": "Morocco",
-              "hs": 2,
-              "as": 0
-            },
-            {
-              "date": "2007-11-16",
-              "h": "France",
-              "a": "Morocco",
-              "hs": 2,
-              "as": 2
-            },
-            {
-              "date": "2000-06-06",
-              "h": "Morocco",
-              "a": "France",
-              "hs": 1,
-              "as": 5
-            }
-          ]
-        }
-      }
+      "awayRank": 11
     },
     {
       "id": "2519345",
       "round": 125,
-      "stage": "F",
-      "stageName": "Final",
+      "stage": "KO",
+      "stageName": "Eliminatorias",
       "group": null,
       "date": "2026-07-10",
       "time": "19:00:00",
