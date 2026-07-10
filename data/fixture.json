@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-09T22:57:33.222Z",
+  "updatedAt": "2026-07-10T19:04:26.805Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2745,8 +2745,8 @@
     {
       "id": "2515305",
       "round": 125,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
+      "stage": "F",
+      "stageName": "Final",
       "group": null,
       "date": "2026-07-09",
       "time": "20:00:00",
@@ -2776,50 +2776,19 @@
       "away": "Belgium",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/ncgqyr1726166942.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/8xlvxv1592062265.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "SoFi Stadium",
       "city": "Inglewood, CA",
       "homeRank": 2,
-      "awayRank": 8,
-      "pred": {
-        "pH": 61,
-        "pD": 20,
-        "pA": 19,
-        "h2h": {
-          "played": 22,
-          "last": [
-            {
-              "date": "2016-09-01",
-              "h": "Belgium",
-              "a": "Spain",
-              "hs": 0,
-              "as": 2
-            },
-            {
-              "date": "2009-09-05",
-              "h": "Spain",
-              "a": "Belgium",
-              "hs": 5,
-              "as": 0
-            },
-            {
-              "date": "2008-10-15",
-              "h": "Belgium",
-              "a": "Spain",
-              "hs": 1,
-              "as": 2
-            }
-          ]
-        }
-      }
+      "awayRank": 8
     },
     {
       "id": "2517651",
       "round": 125,
-      "stage": "F",
-      "stageName": "Final",
+      "stage": "KO",
+      "stageName": "Eliminatorias",
       "group": null,
       "date": "2026-07-11",
       "time": "21:00:00",
