@@ -115,3 +115,31 @@ export function BallIcon(p: IconProps) {
     </Svg>
   );
 }
+
+export function InstagramIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <rect x="2" y="2" width="20" height="20" rx="5.5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none" />
+    </Svg>
+  );
+}
+
+export function StoreIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M5 8h14l-1 12H6z" />
+      <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+    </Svg>
+  );
+}
+
+export function ArrowUpRightIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M7 17 17 7" />
+      <path d="M8 7h9v9" />
+    </Svg>
+  );
+}
