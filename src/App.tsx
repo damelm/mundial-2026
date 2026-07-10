@@ -6,6 +6,7 @@ import { AhoraPanel } from "./components/Ahora";
 import { BracketIcon, RadioIcon, ShieldIcon, TrophyIcon } from "./components/icons";
 
 import { CuadroPanel } from "./components/CuadroPanel";
+import { SponsorSlot } from "./components/Sponsors";
 
 const SeleccionesPanel = lazy(() =>
   import("./components/Selecciones").then((m) => ({
@@ -103,6 +104,7 @@ export default function App({ initialData = null }: { initialData?: KoMatch[] | 
               )}
             </motion.section>
           </AnimatePresence>
+          <SponsorSlot />
           <Footer />
         </motion.main>
 
