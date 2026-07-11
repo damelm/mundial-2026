@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-11T10:02:24.549Z",
+  "updatedAt": "2026-07-11T21:25:54.084Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2766,8 +2766,8 @@
     {
       "id": "2519345",
       "round": 125,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
+      "stage": "F",
+      "stageName": "Final",
       "group": null,
       "date": "2026-07-10",
       "time": "19:00:00",
@@ -2797,50 +2797,19 @@
       "away": "England",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/gyfn811591973155.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "Hard Rock Stadium",
       "city": "Miami Gardens, FL",
       "homeRank": 33,
-      "awayRank": 4,
-      "pred": {
-        "pH": 26,
-        "pD": 24,
-        "pA": 50,
-        "h2h": {
-          "played": 12,
-          "last": [
-            {
-              "date": "2014-09-03",
-              "h": "England",
-              "a": "Norway",
-              "hs": 1,
-              "as": 0
-            },
-            {
-              "date": "2012-05-26",
-              "h": "Norway",
-              "a": "England",
-              "hs": 0,
-              "as": 1
-            },
-            {
-              "date": "1995-10-11",
-              "h": "Norway",
-              "a": "England",
-              "hs": 0,
-              "as": 0
-            }
-          ]
-        }
-      }
+      "awayRank": 4
     },
     {
       "id": "2520608",
       "round": 125,
-      "stage": "F",
-      "stageName": "Final",
+      "stage": "KO",
+      "stageName": "Eliminatorias",
       "group": null,
       "date": "2026-07-12",
       "time": "01:00:00",
