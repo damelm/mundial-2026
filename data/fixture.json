@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-07-10T21:43:34.281Z",
+  "updatedAt": "2026-07-11T06:37:32.498Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
   "season": "2026",
-  "count": 76,
+  "count": 77,
   "matches": [
     {
       "id": "2391728",
@@ -2883,6 +2883,58 @@
               "a": "Argentina",
               "hs": 1,
               "as": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2528031",
+      "round": 150,
+      "stage": "SF",
+      "stageName": "Semifinales",
+      "group": null,
+      "date": "2026-07-14",
+      "time": "19:00:00",
+      "timestamp": "2026-07-14T19:00:00",
+      "home": "France",
+      "away": "Spain",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/p3n0z51726166851.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/ncgqyr1726166942.png",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "NS",
+      "venue": "AT&T Stadium",
+      "city": "Arlington, TX",
+      "homeRank": 3,
+      "awayRank": 2,
+      "pred": {
+        "pH": 32,
+        "pD": 27,
+        "pA": 41,
+        "h2h": {
+          "played": 38,
+          "last": [
+            {
+              "date": "2025-06-05",
+              "h": "Spain",
+              "a": "France",
+              "hs": 5,
+              "as": 4
+            },
+            {
+              "date": "2024-07-09",
+              "h": "Spain",
+              "a": "France",
+              "hs": 2,
+              "as": 1
+            },
+            {
+              "date": "2021-10-10",
+              "h": "Spain",
+              "a": "France",
+              "hs": 1,
+              "as": 2
             }
           ]
         }
