@@ -143,3 +143,12 @@ export function ArrowUpRightIcon(p: IconProps) {
     </Svg>
   );
 }
+
+export function CloseIcon(p: IconProps) {
+  return (
+    <Svg {...p}>
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
+    </Svg>
+  );
+}
