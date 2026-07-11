@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-11T22:22:55.018Z",
+  "updatedAt": "2026-07-11T23:26:45.395Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2798,8 +2798,8 @@
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/gyfn811591973155.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png",
       "homeScore": 1,
-      "awayScore": 1,
-      "status": "2H",
+      "awayScore": 2,
+      "status": "ET",
       "venue": "Hard Rock Stadium",
       "city": "Miami Gardens, FL",
       "homeRank": 33,
