@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { useKo } from "./lib/useKo";
 import { STAGE_ES, currentStage, type KoMatch } from "./lib/ko";
@@ -6,7 +6,9 @@ import { AhoraPanel } from "./components/Ahora";
 import { BracketIcon, RadioIcon, ShieldIcon, TrophyIcon } from "./components/icons";
 
 import { CuadroPanel } from "./components/CuadroPanel";
-import { SponsorSlot } from "./components/Sponsors";
+import { SponsorBar } from "./components/Sponsors";
+
+const AD_DISMISS_KEY = "fix26.ad.dismissed";
 
 const SeleccionesPanel = lazy(() =>
   import("./components/Selecciones").then((m) => ({
@@ -38,7 +40,26 @@ export default function App({ initialData = null }: { initialData?: KoMatch[] | 
   // Dirección del cambio (1 = hacia la derecha, -1 = izquierda) para que la
   // transición acompañe el sentido del swipe / del tap.
   const [dir, setDir] = useState(0);
+  // Barra de publicidad: visible por defecto; si el usuario la cerró antes en
+  // esta sesión, se mantiene oculta (vuelve en la próxima visita).
+  const [adOpen, setAdOpen] = useState(true);
   const ko = useKo(initialData);
+
+  useEffect(() => {
+    try {
+      if (sessionStorage.getItem(AD_DISMISS_KEY) === "1") setAdOpen(false);
+    } catch {
+      /* sessionStorage no disponible: se muestra igual */
+    }
+  }, []);
+  const closeAd = () => {
+    setAdOpen(false);
+    try {
+      sessionStorage.setItem(AD_DISMISS_KEY, "1");
+    } catch {
+      /* no-op */
+    }
+  };
 
   const goTo = (next: TabId) => {
     setDir(ORDER.indexOf(next) > ORDER.indexOf(tab) ? 1 : -1);
@@ -60,7 +81,7 @@ export default function App({ initialData = null }: { initialData?: KoMatch[] | 
             vertical → scroll nativo y horizontal → cambio de pestaña, sin pelearse.
             La animación de deslizado queda en la sección interior. */}
         <motion.main
-          className="flex-1 overflow-y-auto px-4 pb-28 pt-1"
+          className={`flex-1 overflow-y-auto px-4 pt-1 ${adOpen ? "pb-44" : "pb-28"}`}
           drag="x"
           dragDirectionLock
           dragConstraints={{ left: 0, right: 0 }}
@@ -104,11 +125,15 @@ export default function App({ initialData = null }: { initialData?: KoMatch[] | 
               )}
             </motion.section>
           </AnimatePresence>
-          <SponsorSlot />
           <Footer />
         </motion.main>
 
-        <TabBar tab={tab} onChange={goTo} />
+        {/* Chrome inferior fijo: la barra de publicidad (descartable) apilada
+            encima de la barra de pestañas. */}
+        <div className="fixed inset-x-0 bottom-0 z-30 mx-auto max-w-[560px]">
+          {adOpen && <SponsorBar onClose={closeAd} />}
+          <TabBar tab={tab} onChange={goTo} />
+        </div>
       </div>
     </MotionConfig>
   );
@@ -163,7 +188,7 @@ function TabBar({
   onChange: (t: TabId) => void;
 }) {
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-20 mx-auto max-w-[560px] px-4 pb-[calc(env(safe-area-inset-bottom)+10px)] pt-2">
+    <nav className="px-4 pb-[calc(env(safe-area-inset-bottom)+10px)] pt-2">
       <div className="glass relative flex items-stretch gap-1 rounded-2xl p-1.5">
         {TABS.map((t) => {
           const active = t.id === tab;
