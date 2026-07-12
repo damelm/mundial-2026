@@ -1,6 +1,6 @@
 {
  "Mexico": {
-  "updated": "2026-07-06T12:39:31.155Z",
+  "updated": "2026-07-12T10:20:11.267Z",
   "source": "API-Football",
   "players": [
    {
@@ -162,7 +162,7 @@
   ]
  },
  "South Africa": {
-  "updated": "2026-07-06T12:39:38.279Z",
+  "updated": "2026-07-12T10:20:18.415Z",
   "source": "API-Football",
   "players": [
    {
@@ -324,7 +324,7 @@
   ]
  },
  "South Korea": {
-  "updated": "2026-07-06T12:39:45.406Z",
+  "updated": "2026-07-12T10:20:25.575Z",
   "source": "API-Football",
   "players": [
    {
@@ -486,7 +486,7 @@
   ]
  },
  "Czech Republic": {
-  "updated": "2026-07-06T12:39:52.531Z",
+  "updated": "2026-07-12T10:20:32.721Z",
   "source": "API-Football",
   "players": [
    {
@@ -648,7 +648,7 @@
   ]
  },
  "Canada": {
-  "updated": "2026-07-06T12:39:59.655Z",
+  "updated": "2026-07-12T10:20:39.880Z",
   "source": "API-Football",
   "players": [
    {
@@ -810,7 +810,7 @@
   ]
  },
  "Qatar": {
-  "updated": "2026-07-06T12:40:06.778Z",
+  "updated": "2026-07-12T10:20:47.029Z",
   "source": "API-Football",
   "players": [
    {
@@ -972,7 +972,7 @@
   ]
  },
  "Switzerland": {
-  "updated": "2026-07-06T12:40:13.902Z",
+  "updated": "2026-07-12T10:20:54.180Z",
   "source": "API-Football",
   "players": [
    {
@@ -1134,7 +1134,7 @@
   ]
  },
  "Bosnia-Herzegovina": {
-  "updated": "2026-07-06T12:40:21.026Z",
+  "updated": "2026-07-12T10:21:01.336Z",
   "source": "API-Football",
   "players": [
    {
@@ -1296,7 +1296,7 @@
   ]
  },
  "Brazil": {
-  "updated": "2026-07-06T12:40:28.157Z",
+  "updated": "2026-07-12T10:21:08.494Z",
   "source": "API-Football",
   "players": [
    {
@@ -1422,7 +1422,7 @@
    {
     "name": "Gabriel Martinelli",
     "number": 22,
-    "pos": "Attacker",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/127769.png"
    },
    {
@@ -1440,7 +1440,7 @@
    {
     "name": "Rayan",
     "number": 26,
-    "pos": "Attacker",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/407806.png"
    },
    {
@@ -1458,7 +1458,7 @@
   ]
  },
  "Morocco": {
-  "updated": "2026-07-06T12:40:35.285Z",
+  "updated": "2026-07-12T10:21:15.655Z",
   "source": "API-Football",
   "players": [
    {
@@ -1554,7 +1554,7 @@
    {
     "name": "B. El Khannouss",
     "number": 23,
-    "pos": "Midfielder",
+    "pos": "Attacker",
     "photo": "https://media.api-sports.io/football/players/340573.png"
    },
    {
@@ -1620,7 +1620,7 @@
   ]
  },
  "Scotland": {
-  "updated": "2026-07-06T12:40:42.408Z",
+  "updated": "2026-07-12T10:21:22.800Z",
   "source": "API-Football",
   "players": [
    {
@@ -1782,7 +1782,7 @@
   ]
  },
  "Haiti": {
-  "updated": "2026-07-06T12:40:49.533Z",
+  "updated": "2026-07-12T10:21:29.950Z",
   "source": "API-Football",
   "players": [
    {
@@ -1944,7 +1944,7 @@
   ]
  },
  "USA": {
-  "updated": "2026-07-06T12:40:56.655Z",
+  "updated": "2026-07-12T10:21:37.103Z",
   "source": "API-Football",
   "players": [
    {
@@ -2106,7 +2106,7 @@
   ]
  },
  "Paraguay": {
-  "updated": "2026-07-06T12:41:03.781Z",
+  "updated": "2026-07-12T10:21:44.254Z",
   "source": "API-Football",
   "players": [
    {
@@ -2268,7 +2268,7 @@
   ]
  },
  "Australia": {
-  "updated": "2026-07-06T12:41:10.906Z",
+  "updated": "2026-07-12T10:21:51.408Z",
   "source": "API-Football",
   "players": [
    {
@@ -2430,7 +2430,7 @@
   ]
  },
  "Turkey": {
-  "updated": "2026-07-06T12:41:18.030Z",
+  "updated": "2026-07-12T10:21:58.558Z",
   "source": "API-Football",
   "players": [
    {
@@ -2592,7 +2592,7 @@
   ]
  },
  "Germany": {
-  "updated": "2026-07-06T12:41:25.151Z",
+  "updated": "2026-07-12T10:22:05.714Z",
   "source": "API-Football",
   "players": [
    {
@@ -2754,7 +2754,7 @@
   ]
  },
  "Ecuador": {
-  "updated": "2026-07-06T12:41:32.274Z",
+  "updated": "2026-07-12T10:22:12.869Z",
   "source": "API-Football",
   "players": [
    {
@@ -2916,7 +2916,7 @@
   ]
  },
  "Ivory Coast": {
-  "updated": "2026-07-06T12:41:39.400Z",
+  "updated": "2026-07-12T10:22:20.017Z",
   "source": "API-Football",
   "players": [
    {
@@ -3078,7 +3078,7 @@
   ]
  },
  "Curaçao": {
-  "updated": "2026-07-06T12:41:46.519Z",
+  "updated": "2026-07-12T10:22:27.176Z",
   "source": "API-Football",
   "players": [
    {
@@ -3240,7 +3240,7 @@
   ]
  },
  "Netherlands": {
-  "updated": "2026-07-06T12:41:53.647Z",
+  "updated": "2026-07-12T10:22:34.327Z",
   "source": "API-Football",
   "players": [
    {
@@ -3402,7 +3402,7 @@
   ]
  },
  "Japan": {
-  "updated": "2026-07-06T12:42:00.773Z",
+  "updated": "2026-07-12T10:22:41.476Z",
   "source": "API-Football",
   "players": [
    {
@@ -3564,7 +3564,7 @@
   ]
  },
  "Tunisia": {
-  "updated": "2026-07-06T12:42:07.893Z",
+  "updated": "2026-07-12T10:22:48.632Z",
   "source": "API-Football",
   "players": [
    {
@@ -3726,7 +3726,7 @@
   ]
  },
  "Sweden": {
-  "updated": "2026-07-06T12:42:15.016Z",
+  "updated": "2026-07-12T10:22:55.796Z",
   "source": "API-Football",
   "players": [
    {
@@ -3888,7 +3888,7 @@
   ]
  },
  "Belgium": {
-  "updated": "2026-07-06T12:42:22.140Z",
+  "updated": "2026-07-12T10:23:02.966Z",
   "source": "API-Football",
   "players": [
    {
@@ -4032,7 +4032,7 @@
    {
     "name": "D. Lukebakio",
     "number": 14,
-    "pos": "Attacker",
+    "pos": "Midfielder",
     "photo": "https://media.api-sports.io/football/players/25458.png"
    },
    {
@@ -4050,7 +4050,7 @@
   ]
  },
  "Egypt": {
-  "updated": "2026-07-06T12:42:29.265Z",
+  "updated": "2026-07-12T10:23:10.113Z",
   "source": "API-Football",
   "players": [
    {
@@ -4212,7 +4212,7 @@
   ]
  },
  "Iran": {
-  "updated": "2026-07-06T12:42:36.382Z",
+  "updated": "2026-07-12T10:23:17.257Z",
   "source": "API-Football",
   "players": [
    {
@@ -4374,7 +4374,7 @@
   ]
  },
  "New Zealand": {
-  "updated": "2026-07-06T12:42:43.539Z",
+  "updated": "2026-07-12T10:23:24.405Z",
   "source": "API-Football",
   "players": [
    {
@@ -4536,7 +4536,7 @@
   ]
  },
  "Spain": {
-  "updated": "2026-07-06T12:42:50.661Z",
+  "updated": "2026-07-12T10:23:31.555Z",
   "source": "API-Football",
   "players": [
    {
@@ -4698,7 +4698,7 @@
   ]
  },
  "Uruguay": {
-  "updated": "2026-07-06T12:42:57.781Z",
+  "updated": "2026-07-12T10:23:38.703Z",
   "source": "API-Football",
   "players": [
    {
@@ -4860,7 +4860,7 @@
   ]
  },
  "Saudi Arabia": {
-  "updated": "2026-07-06T12:43:04.908Z",
+  "updated": "2026-07-12T10:23:45.860Z",
   "source": "API-Football",
   "players": [
    {
@@ -5022,7 +5022,7 @@
   ]
  },
  "Cape Verde": {
-  "updated": "2026-07-06T12:43:12.034Z",
+  "updated": "2026-07-12T10:23:53.008Z",
   "source": "API-Football",
   "players": [
    {
@@ -5184,7 +5184,7 @@
   ]
  },
  "France": {
-  "updated": "2026-07-06T12:43:19.165Z",
+  "updated": "2026-07-12T10:24:00.157Z",
   "source": "API-Football",
   "players": [
    {
@@ -5346,7 +5346,7 @@
   ]
  },
  "Senegal": {
-  "updated": "2026-07-06T12:43:26.294Z",
+  "updated": "2026-07-12T10:24:07.308Z",
   "source": "API-Football",
   "players": [
    {
@@ -5508,7 +5508,7 @@
   ]
  },
  "Norway": {
-  "updated": "2026-07-06T12:43:33.413Z",
+  "updated": "2026-07-12T10:24:14.456Z",
   "source": "API-Football",
   "players": [
    {
@@ -5670,7 +5670,7 @@
   ]
  },
  "Iraq": {
-  "updated": "2026-07-06T12:43:40.538Z",
+  "updated": "2026-07-12T10:24:21.601Z",
   "source": "API-Football",
   "players": [
    {
@@ -5832,7 +5832,7 @@
   ]
  },
  "Argentina": {
-  "updated": "2026-07-06T12:43:47.659Z",
+  "updated": "2026-07-12T10:24:28.756Z",
   "source": "API-Football",
   "players": [
    {
@@ -5994,7 +5994,7 @@
   ]
  },
  "Algeria": {
-  "updated": "2026-07-06T12:43:54.782Z",
+  "updated": "2026-07-12T10:24:35.906Z",
   "source": "API-Football",
   "players": [
    {
@@ -6156,7 +6156,7 @@
   ]
  },
  "Austria": {
-  "updated": "2026-07-06T12:44:01.915Z",
+  "updated": "2026-07-12T10:24:43.065Z",
   "source": "API-Football",
   "players": [
    {
@@ -6318,7 +6318,7 @@
   ]
  },
  "Jordan": {
-  "updated": "2026-07-06T12:44:09.040Z",
+  "updated": "2026-07-12T10:24:50.222Z",
   "source": "API-Football",
   "players": [
    {
@@ -6480,7 +6480,7 @@
   ]
  },
  "Portugal": {
-  "updated": "2026-07-06T12:44:16.167Z",
+  "updated": "2026-07-12T10:24:57.376Z",
   "source": "API-Football",
   "players": [
    {
@@ -6642,7 +6642,7 @@
   ]
  },
  "Colombia": {
-  "updated": "2026-07-06T12:44:23.288Z",
+  "updated": "2026-07-12T10:25:04.522Z",
   "source": "API-Football",
   "players": [
    {
@@ -6804,7 +6804,7 @@
   ]
  },
  "Uzbekistan": {
-  "updated": "2026-07-06T12:44:30.413Z",
+  "updated": "2026-07-12T10:25:11.793Z",
   "source": "API-Football",
   "players": [
    {
@@ -6966,7 +6966,7 @@
   ]
  },
  "DR Congo": {
-  "updated": "2026-07-06T12:44:37.547Z",
+  "updated": "2026-07-12T10:25:18.938Z",
   "source": "API-Football",
   "players": [
    {
@@ -7128,7 +7128,7 @@
   ]
  },
  "England": {
-  "updated": "2026-07-06T12:44:44.668Z",
+  "updated": "2026-07-12T10:25:26.090Z",
   "source": "API-Football",
   "players": [
    {
@@ -7266,7 +7266,7 @@
    {
     "name": "M. Rashford",
     "number": 11,
-    "pos": "Midfielder",
+    "pos": "Attacker",
     "photo": "https://media.api-sports.io/football/players/909.png"
    },
    {
@@ -7290,7 +7290,7 @@
   ]
  },
  "Croatia": {
-  "updated": "2026-07-06T12:44:51.800Z",
+  "updated": "2026-07-12T10:25:33.249Z",
   "source": "API-Football",
   "players": [
    {
@@ -7452,7 +7452,7 @@
   ]
  },
  "Ghana": {
-  "updated": "2026-07-06T12:44:58.921Z",
+  "updated": "2026-07-12T10:25:40.400Z",
   "source": "API-Football",
   "players": [
    {
@@ -7614,7 +7614,7 @@
   ]
  },
  "Panama": {
-  "updated": "2026-07-06T12:45:06.040Z",
+  "updated": "2026-07-12T10:25:47.555Z",
   "source": "API-Football",
   "players": [
    {
