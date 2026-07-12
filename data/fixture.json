@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-07-12T04:39:04.556Z",
+  "updatedAt": "2026-07-12T10:53:47.564Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
   "season": "2026",
-  "count": 77,
+  "count": 78,
   "matches": [
     {
       "id": "2391728",
@@ -2873,6 +2873,58 @@
               "a": "France",
               "hs": 1,
               "as": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2528727",
+      "round": 150,
+      "stage": "SF",
+      "stageName": "Semifinales",
+      "group": null,
+      "date": "2026-07-15",
+      "time": "19:00:00",
+      "timestamp": "2026-07-15T19:00:00",
+      "home": "England",
+      "away": "Argentina",
+      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png",
+      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/3zplhu1726167477.png",
+      "homeScore": null,
+      "awayScore": null,
+      "status": "NS",
+      "venue": "Mercedes-Benz Stadium",
+      "city": "Atlanta, GA",
+      "homeRank": 4,
+      "awayRank": 1,
+      "pred": {
+        "pH": 22,
+        "pD": 22,
+        "pA": 56,
+        "h2h": {
+          "played": 15,
+          "last": [
+            {
+              "date": "2005-11-12",
+              "h": "England",
+              "a": "Argentina",
+              "hs": 3,
+              "as": 2
+            },
+            {
+              "date": "2002-06-07",
+              "h": "Argentina",
+              "a": "England",
+              "hs": 0,
+              "as": 1
+            },
+            {
+              "date": "2000-02-23",
+              "h": "England",
+              "a": "Argentina",
+              "hs": 0,
+              "as": 0
             }
           ]
         }
