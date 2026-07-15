@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-14T21:15:42.803Z",
+  "updatedAt": "2026-07-15T19:51:20.810Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2829,8 +2829,8 @@
     {
       "id": "2528031",
       "round": 150,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
+      "stage": "SF",
+      "stageName": "Semifinales",
       "group": null,
       "date": "2026-07-14",
       "time": "19:00:00",
@@ -2860,44 +2860,13 @@
       "away": "Argentina",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/3zplhu1726167477.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "HT",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta, GA",
       "homeRank": 4,
-      "awayRank": 1,
-      "pred": {
-        "pH": 22,
-        "pD": 22,
-        "pA": 56,
-        "h2h": {
-          "played": 15,
-          "last": [
-            {
-              "date": "2005-11-12",
-              "h": "England",
-              "a": "Argentina",
-              "hs": 3,
-              "as": 2
-            },
-            {
-              "date": "2002-06-07",
-              "h": "Argentina",
-              "a": "England",
-              "hs": 0,
-              "as": 1
-            },
-            {
-              "date": "2000-02-23",
-              "h": "England",
-              "a": "Argentina",
-              "hs": 0,
-              "as": 0
-            }
-          ]
-        }
-      }
+      "awayRank": 1
     }
   ]
 }
