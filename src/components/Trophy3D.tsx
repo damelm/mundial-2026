@@ -4,7 +4,55 @@
  * ícono plano). Respeta prefers-reduced-motion (no gira). */
 
 import { useEffect, useRef } from "react";
-import type { Mesh } from "three";
+import type { Mesh, Vector2 } from "three";
+
+type ThreeNS = typeof import("three");
+
+/* Revoluciona un perfil (radio, altura) alrededor del eje Y, pero girando y
+ * ondulando cada anillo un poco más a medida que sube: da la torsión en
+ * espiral del trofeo. La base arranca lisa (ease) y no gira. */
+function twistedRevolve(
+  THREE: ThreeNS,
+  profile: Vector2[],
+  opts: { segments: number; lobes: number; lobeAmp: number; twist: number },
+) {
+  const { segments, lobes, lobeAmp, twist } = opts;
+  const rings = profile.length;
+  const yMin = profile[0].y;
+  const yMax = profile[rings - 1].y;
+  const span = yMax - yMin || 1;
+  const per = segments + 1;
+  const pos: number[] = [];
+  for (let i = 0; i < rings; i++) {
+    const r = profile[i].x;
+    const y = profile[i].y;
+    const f = (y - yMin) / span; // 0 abajo → 1 arriba
+    const ease = f * f * (3 - 2 * f); // smoothstep: liso en la base
+    const tw = twist * f;
+    const amp = lobeAmp * ease;
+    for (let s = 0; s <= segments; s++) {
+      const th = (s / segments) * Math.PI * 2;
+      const rr = r * (1 + amp * Math.cos(lobes * th));
+      const a = th + tw;
+      pos.push(rr * Math.cos(a), y, rr * Math.sin(a));
+    }
+  }
+  const idx: number[] = [];
+  for (let i = 0; i < rings - 1; i++) {
+    for (let s = 0; s < segments; s++) {
+      const a = i * per + s;
+      const b = a + 1;
+      const c = a + per;
+      const d = c + 1;
+      idx.push(a, c, b, b, c, d);
+    }
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
+  g.setIndex(idx);
+  g.computeVertexNormals();
+  return g;
+}
 
 export default function Trophy3D({ size = 150 }: { size?: number }) {
   const host = useRef<HTMLDivElement>(null);
@@ -53,12 +101,23 @@ export default function Trophy3D({ size = 150 }: { size?: number }) {
       // meridianos. Revuelve bien al girar.
       const p = (r: number, y: number) => new THREE.Vector2(r, y);
       const profile = [
-        p(0.0, -2.05), p(0.9, -2.05), p(0.92, -1.86), p(0.58, -1.76),
-        p(0.30, -1.58), p(0.235, -1.15), p(0.22, -0.6), p(0.235, -0.05),
-        p(0.30, 0.45), p(0.42, 0.9), p(0.57, 1.28), p(0.71, 1.62),
-        p(0.75, 1.86), p(0.63, 2.05), p(0.47, 2.16), p(0.0, 2.2),
+        p(0.0, -2.1), p(0.92, -2.05), p(0.94, -1.85), p(0.5, -1.7),
+        p(0.28, -1.5), p(0.24, -1.0), p(0.24, -0.4), p(0.3, 0.1),
+        p(0.42, 0.6), p(0.58, 1.05), p(0.72, 1.5), p(0.76, 1.8),
+        p(0.6, 2.0), p(0.44, 2.12), p(0.0, 2.18),
       ];
-      const body = new THREE.Mesh(new THREE.LatheGeometry(profile, 96), gold);
+      // Cuerpo con torsión en espiral y estrías (las figuras estilizadas que
+      // suben sosteniendo el mundo). Se revoluciona el perfil pero cada anillo
+      // se gira y se ondula más a medida que sube; la base queda lisa.
+      const body = new THREE.Mesh(
+        twistedRevolve(THREE, profile, {
+          segments: 140,
+          lobes: 3,
+          lobeAmp: 0.09,
+          twist: Math.PI * 1.15,
+        }),
+        gold,
+      );
 
       const globe = new THREE.Group();
       const ball = new THREE.Mesh(new THREE.SphereGeometry(0.72, 48, 32), gold);
