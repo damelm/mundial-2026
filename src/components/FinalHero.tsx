@@ -10,12 +10,38 @@
  * Se enciende solo cuando hay un finalista resuelto o ya hay campeón; en el
  * resto del torneo no aparece. Animaciones sobrias y aptas para low-gpu. */
 
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { fmtDay, fmtTime, rawEs, winnerOf, type KoMatch } from "../lib/ko";
 import { TEAMS, nameEs } from "../data/teams";
 import { Flag } from "./Flag";
 import { TrophyIcon } from "./icons";
+
+const Trophy3D = lazy(() => import("./Trophy3D"));
+
+/* Copa 3D girando cuando la GPU da; en gama baja (o antes de montar) cae al
+ * ícono plano. El import de Three.js queda en un chunk aparte. */
+function BigTrophy({
+  size,
+  fallbackSize,
+  className,
+}: {
+  size: number;
+  fallbackSize: number;
+  className?: string;
+}) {
+  const [webgl, setWebgl] = useState(false);
+  useEffect(() => {
+    if (!document.documentElement.classList.contains("low-gpu")) setWebgl(true);
+  }, []);
+  const fallback = <TrophyIcon size={fallbackSize} className={className} />;
+  if (!webgl) return fallback;
+  return (
+    <Suspense fallback={fallback}>
+      <Trophy3D size={size} />
+    </Suspense>
+  );
+}
 
 function colorsOf(key: string | null) {
   const t = key ? TEAMS[key] : null;
@@ -68,14 +94,17 @@ function FinalStage({ final }: { final: KoMatch }) {
       className="final-stage relative mb-6 overflow-hidden rounded-3xl border border-gold/30 p-5 pt-4"
     >
       <div className="relative z-10">
-        <div className="flex items-center justify-center gap-2">
-          <TrophyIcon size={15} className="text-gold" />
+        <div className="flex items-center justify-center">
           <span className="font-mono text-[11px] uppercase tracking-[0.34em] text-gold">
             La Gran Final
           </span>
         </div>
 
-        <div className="mt-4 grid grid-cols-[1fr_auto_1fr] items-center gap-2">
+        <div className="mt-1 grid place-items-center">
+          <BigTrophy size={104} fallbackSize={34} className="text-gold" />
+        </div>
+
+        <div className="mt-2 grid grid-cols-[1fr_auto_1fr] items-center gap-2">
           <Finalist team={final.home} raw={final.homeRaw} />
           <div className="flex flex-col items-center gap-1 px-1">
             <span
@@ -207,8 +236,8 @@ function ChampionHero({ final, champ }: { final: KoMatch; champ: string }) {
         <span className="font-mono text-[11px] uppercase tracking-[0.4em] text-gold">
           Campeón del mundo
         </span>
-        <div className="my-3 grid place-items-center">
-          <TrophyIcon size={40} className="champion-trophy text-gold" />
+        <div className="my-1 grid place-items-center">
+          <BigTrophy size={156} fallbackSize={44} className="champion-trophy text-gold" />
         </div>
         <span className="rounded-lg p-[3px] shadow-[0_0_30px_rgba(231,184,75,0.5)] ring-2 ring-gold/70">
           <Flag team={champ} size={92} />
