@@ -2,6 +2,7 @@
 
 import { STAGE_ES, aliveTeams, type KoMatch } from "../lib/ko";
 import { Cuadro, CuadroExtras } from "./Cuadro";
+import { FinalHero } from "./FinalHero";
 import { MatchRow, SectionTitle } from "./rows";
 
 export function CuadroPanel({ matches }: { matches: KoMatch[] | null }) {
@@ -16,6 +17,7 @@ export function CuadroPanel({ matches }: { matches: KoMatch[] | null }) {
   const next = matches.find((m) => !m.finished && !m.live);
   return (
     <div>
+      <FinalHero matches={matches} />
       <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-cyan">
         Eliminatorias
       </p>
