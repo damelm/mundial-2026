@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-16T00:10:44.942Z",
+  "updatedAt": "2026-07-18T21:28:22.906Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2850,8 +2850,8 @@
     {
       "id": "2528727",
       "round": 150,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
+      "stage": "SF",
+      "stageName": "Semifinales",
       "group": null,
       "date": "2026-07-15",
       "time": "19:00:00",
@@ -2881,50 +2881,19 @@
       "away": "England",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/p3n0z51726166851.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 2,
+      "status": "1H",
       "venue": "Hard Rock Stadium",
       "city": "Miami Gardens, FL",
       "homeRank": 3,
-      "awayRank": 4,
-      "pred": {
-        "pH": 45,
-        "pD": 26,
-        "pA": 29,
-        "h2h": {
-          "played": 34,
-          "last": [
-            {
-              "date": "2022-12-10",
-              "h": "England",
-              "a": "France",
-              "hs": 1,
-              "as": 2
-            },
-            {
-              "date": "2017-06-13",
-              "h": "France",
-              "a": "England",
-              "hs": 3,
-              "as": 2
-            },
-            {
-              "date": "2015-11-17",
-              "h": "England",
-              "a": "France",
-              "hs": 2,
-              "as": 0
-            }
-          ]
-        }
-      }
+      "awayRank": 4
     },
     {
       "id": "2533361",
       "round": 200,
-      "stage": "R32",
-      "stageName": "Dieciseisavos",
+      "stage": "KO",
+      "stageName": "Eliminatorias",
       "group": null,
       "date": "2026-07-19",
       "time": "19:00:00",
