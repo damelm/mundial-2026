@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-19T19:54:09.905Z",
+  "updatedAt": "2026-07-19T20:47:11.500Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2904,7 +2904,7 @@
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/3zplhu1726167477.png",
       "homeScore": 0,
       "awayScore": 0,
-      "status": "1H",
+      "status": "2H",
       "venue": "MetLife Stadium",
       "city": "East Rutherford, NJ",
       "homeRank": 2,
