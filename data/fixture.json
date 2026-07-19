@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-18T23:27:21.793Z",
+  "updatedAt": "2026-07-19T19:54:09.905Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
@@ -2871,8 +2871,8 @@
     {
       "id": "2533360",
       "round": 160,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
+      "stage": "QF",
+      "stageName": "Cuartos de final",
       "group": null,
       "date": "2026-07-18",
       "time": "21:00:00",
@@ -2902,44 +2902,13 @@
       "away": "Argentina",
       "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/ncgqyr1726166942.png",
       "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/3zplhu1726167477.png",
-      "homeScore": null,
-      "awayScore": null,
-      "status": "NS",
+      "homeScore": 0,
+      "awayScore": 0,
+      "status": "1H",
       "venue": "MetLife Stadium",
       "city": "East Rutherford, NJ",
       "homeRank": 2,
-      "awayRank": 1,
-      "pred": {
-        "pH": 34,
-        "pD": 27,
-        "pA": 39,
-        "h2h": {
-          "played": 14,
-          "last": [
-            {
-              "date": "2018-03-27",
-              "h": "Spain",
-              "a": "Argentina",
-              "hs": 6,
-              "as": 1
-            },
-            {
-              "date": "2010-09-07",
-              "h": "Argentina",
-              "a": "Spain",
-              "hs": 4,
-              "as": 1
-            },
-            {
-              "date": "2009-11-14",
-              "h": "Spain",
-              "a": "Argentina",
-              "hs": 2,
-              "as": 1
-            }
-          ]
-        }
-      }
+      "awayRank": 1
     }
   ]
 }
