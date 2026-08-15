@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-08-11T11:04:27.086Z",
+  "updatedAt": "2026-08-15T16:35:19.473Z",
   "source": "TheSportsDB",
   "league": "FIFA World Cup 2026",
   "leagueId": "4429",
   "season": "2026",
-  "count": 80,
+  "count": 79,
   "matches": [
     {
       "id": "2391728",
@@ -2888,27 +2888,6 @@
       "city": "Miami Gardens, FL",
       "homeRank": 3,
       "awayRank": 4
-    },
-    {
-      "id": "2533361",
-      "round": 200,
-      "stage": "KO",
-      "stageName": "Eliminatorias",
-      "group": null,
-      "date": "2026-07-19",
-      "time": "19:00:00",
-      "timestamp": "2026-07-19T19:00:00",
-      "home": "Spain",
-      "away": "Argentina",
-      "homeBadge": "https://r2.thesportsdb.com/images/media/team/badge/ncgqyr1726166942.png",
-      "awayBadge": "https://r2.thesportsdb.com/images/media/team/badge/3zplhu1726167477.png",
-      "homeScore": 1,
-      "awayScore": 0,
-      "status": "AET",
-      "venue": "MetLife Stadium",
-      "city": "East Rutherford, NJ",
-      "homeRank": 2,
-      "awayRank": 1
     }
   ]
 }
