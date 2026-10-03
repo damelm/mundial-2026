@@ -1,10 +1,15 @@
 {
- "updatedAt": "2026-10-03T11:53:05.995Z",
+ "updatedAt": "2026-10-03T16:34:29.816Z",
  "es": [
   {
    "t": "La noticia que nadie quería saber sobre Cristiano Ronaldo",
    "src": "TUDN",
    "u": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOSFk4WkdFQ3N5OTBmWWZndW9yZDM1eFdKSVd5dm9KWFFBbTJzb0QydFN1WV9mdXlxVkMxdUcwN25sTHNpTVFtVDVOMVBWNWZBVXdhT2lCN0dMaEx2c1A4Z0lGa2Q3U3RmQjJSQm5yeWQ2RmxNaGN2YzdvRU9aanhCTEhSN3BMU1lyQUVuNmpTdzQwNFZVLU5jaUJubWlVNUw5MHVxQzd3NXNtcmhwMGlWUGI4UEhfajM2?oc=5"
+  },
+  {
+   "t": "Edson Álvarez deja de lado la polémica y reaparece con el West Ham",
+   "src": "MARCA",
+   "u": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcExTQkhGUnd3b2FZeHdpeHlJNXJfX0xOM3NOS1M4UkVyYi01OUR3T0I3WmNNRFZyM1MyYzVOTDBYeWVZU0duaUFsRFh4eWJoZFFVeXFHbW9NX2FnbVVjdGZPT2UzekIxWjVfR2xhbHF3eDlhYkZmYmMxdkFSZ2Y0cWxWYjRvaERWVGhkYTZ1c2dIQWdoYWRaYWl2ekczZ09wal9LRWJrZXRfelY5QmhpZW5hQ2hpd9IBtgFBVV95cUxPd3VGRnBrdFA0RlhsYTV1d0w1QS1nTkJNM2QyeHVNX2Zqa2ZtWUNuZExkWFpmT1U4ZGx0SHYzLXZpcV9IZV81SjI0Tnp1WVpDdmVOUFc0RVJKMXhrVnBRQWw0a1oySXpoNXN3RV95TTRkWUQ3QUpaaUlMWkdSa3hfQmhWS1hHUGJ5R3Zzc1Nsckt5WTkyQkVEQjA1ZWlrWk0tVm9VaWVJZUdseFRneC1nVXpPWTZEZw?oc=5"
   },
   {
    "t": "España dominó el Mundial 2026 con posesión y presión tras pérdida",
@@ -37,40 +42,30 @@
    "u": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQV21WcDh4V2NsNnNrQU56RVplaXJNQ3d2bkhwUFQ4SHkxeVJoTkxHUy1PSWRfQmNtSXd4NTByOXBkTmdzY2FxT2dJekRFdWc3aHplN1RIQkRUNVBuX0lyeE5PaUJxS3IwTnlTeWplMkxqZjdNVTRVQzBlUUNhQkRGdnVoR1MtNUx1eEtWWWszUkpCNFNjWWdQRENWamhuVkRBV1NzczFDT1BVYVlsTDF5MWtETzNyZw?oc=5"
   },
   {
+   "t": "Alineaciones de Perú vs Canadá HOY: posibles titulares para duelo amistoso por fecha FIFA 2026",
+   "src": "Infobae",
+   "u": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQQXlXOGNERnZDbGJVUjBQUUhHbFJTMGZMM21YQzctczdDLXh0UXBObXZ0S3JMUllHcVRaM1hXOWpvTklJd0hvdHkwcGVIWU05UFpmVTBxYUVyT0s2ejhCeGRyM2R1Z3RaOER3dVN5bmlYNjdwMlNoSWktX1J2bUNjMFlITk1BNnFOdjE4NnlYT2VNdzdfTUF1eWpTTFFyOWVlYm00VERkX0w1Ni1iZkFTTDRmc2tfd092dlNsU1gzWEswLTEyRXJoZ3BrVk_SAecBQVVfeXFMTW1ZekdVQVU1Q1BpWWg0WnBJT2NmZEE2YUhqdXpzMUI1cDBETHF3NUZzQUQ0MkRhc3VwdmRtSXByODZxaWtucmlFb3NzM2Q0d0E3WGdYRjNhbjY2YXUyclpDVU5jQnI1dzZtR2tUWTVob29rM0xlU1ZNZ1pOcFpCaTI2dFVJN1ZEUDRydHdvNjd6YXNSY19xWHpRc28wTG1fdUZiX0xiTnBxRXBCQ01ubnBlSkpCVERjUnYxemYybHoxZ2YwWERkNDlDemM1eG05SER3QXpCRmRmemVkMVJOVDAwWWZubnpJ?oc=5"
+  },
+  {
+   "t": "Hormiga González creyó que México podía DAR EL SALTO en el Mundial 2026: ‘Estamos para MUCHO MÁS’",
+   "src": "foxsports.com.mx",
+   "u": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPUHFlMGwtYnJiYXl6SHlOemNRdEM5N1dBcGRSbHdHdG1mdlFfR1BCZ3pHVF9QRzZxNG40cTJvTlF6TFNGUG1ZN2RPOWpDMkhzOG4xRWdFaTRtempEX0UwZWdWWDlrUmJHLUpRSHpVNnl5cWNYSHpWcVM2SjNPRGV4WVpRN1Z0ODZ1bFRaVGdQTWwzMElYVjdWb0h5VjEtUllRb1RPMGVyMUtobnpSdHE5ZGN0cGJiWDdaOXg1ck50YTJaM3M?oc=5"
+  },
+  {
    "t": "Así se jugará la Ronda Divisional de la MLB 2026 rumbo a la Serie Mundial: cruces, días y horarios",
    "src": "CNN en Español",
    "u": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOTk5oU3dJU1ZuR0xxaWN3dEZGV1BnM0tOeUZmcnhfY25JVmNwZ0ZzcGVjLXhQOE9VYVF4RERwV2pJTGZWemcycE5MSXJlaUlaX3NpVF9ZN0Nzd254eU5MVkg0ME80ZXI3YlQ5YjNOMjdnQjhJSWhFRHB4cTdZT19kMUljOGd6Y3JGUHlkZk9GZlVtZw?oc=5"
   },
   {
-   "t": "Del miedo a no volver a caminar al sueño frustrado del Mundial 2026: la historia de Luis Ángel Malagón tras su lesión",
-   "src": "Infobae",
-   "u": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPSFMzYzBCZXFlclp5THNveEVrdTVVQXJUUk5mNmY0M0xlN1BBTFlPS2dWdXcyREZ6WVJ2UFUxd09zZGdHN0NWeFZHR3ZCVUswRlUyUzJxRE5GZ3B3eVhSMVV4UkI2N1FYb3paN19VTTVTZUg1VWxHeFRHS0o0aWNIdjZ1YnJ2ZjlFbFFwV29COHRwc1l1c1lETDlmMGNIWVlOTWd1ZlFWVWQ2TkUxal9UWjFTamZ6Wml6LXFtYnp2dFdSeVA2bWRkU09CQ251dnRjYmdTV0ZITjNULUN4V3RBOVZVREJWbUVJZUFQRm9iM3Z5c3c2dTlTaWsyc3bSAZcCQVVfeXFMTU9hUXh4WjI3OUMxN0piaVdqcnJZak8tLW45YUhNS3h5RFJZZDg3Y1JyTG1BWlpuNGpfVUVUQVEyV2p0YkN2WHV5OEw4cGVMM2xWQmtSVXk0aVFmOUlpWWR0SkxVWkNBcDVCaHAySnZCbFBmWTRzd3N4Q3Y0VEpOcTFqWWhtdE9IUHZYeXc4Qnc4dzFFVGlVRkNfSzFrV0VZcVJlM1FJZ2JQQVZ0NUtWZlQ3eGY1NnhQRGlGMWtER29qYTY1blVGTGwzOEtWaWhMLUd0UDJ6NEkzRTdYdzZCMWhqSW0tZ29uYXR6M0NrMzdFOFREb0FuME93ZmpRaHRKSFdSdWJGQXMyN3BnWjFoOTFiUHhMWDRj?oc=5"
-  },
-  {
-   "t": "Los jugadores a los que el Mundial 2026 les cambió la vida",
-   "src": "Diario AS",
-   "u": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPQlFpRmlHb1Njb2haX0t4QVhkTDNzUi1ZNVRKMkNrVlhxTWw0Rm1uTG8xRzJWaG4wWnhUd1VDU2hMZU9xTnJVNWlvMjhrZzEzaG9TazZVMmhSbXkyT3RlV2JpMmxuWnh5WnM5eGRNZEh4RVBjZ3JKempVSE5FV2NEdnRFc2FDcUlucTl2MmZGSnRucmFZUEtHUWZRYVpqMDVC0gG0AUFVX3lxTFBsLW9CbjV4QW1HWWptMDVTcE81bUhXODRIZTZKTS11WjdndDVkXy04eGlMMHprT3BscDgzMHhaM3hyMVV2eGpzdjNtcmROa3VJNmtGd0dpTjVzbEg5Qnh1LTZ0VHJHUFFKcjY0bEVfTDR4NEJQT1NSRFl5ZGtJNFBIdFl6X1ZmNmQ2UnB6Vzg0UnNxX08xTEtDLUlhYkpyeDZiaWRIUWc1bzBidmhKWHVLU3djMg?oc=5"
-  },
-  {
-   "t": "Paraguay vence a Colombia en amistoso internacional",
-   "src": "Yahoo",
-   "u": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNemxya0dqLUhfelg0UlVwZ0t1cmNNRXZDbXo5dmxDZDFwUi1LRUZVNVA5UUZRS0tXQVNaRDk4V1p6cjU4ZXdIRF9fR25Ebk1GM2tWb2EzVWJUbU1pdWVoc0E0dTdPY1A5RWhRS0Yzck9yRTNJUXhoOGt4eVJ3ZV93R1BXd3lzeVluUVpuX2VGYVZsVUw4Ni00OC03aThGQ3BvUC0wS09R?oc=5"
-  },
-  {
-   "t": "Mbappé presume los trofeos de la Bota de Oro y el Balón de Bronce que ganó en el Mundial 2026",
-   "src": "El Diario NY",
-   "u": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOeUsyU0EtOTFZc0NCcDRpZkFBNGNpUG1ReUZIdVh2RDJsUUVoY1IweFduSzhiNHhOQS1GTFk5Y3JETTR0YjJBc19IZnh4anlRaHZpTXN6eW1LQzVOSzB3QXk2ZlNSV0JUOVUtU2E2T2t0LVlkTG5HVzVaTlFJMUY0M19oZEZuLWV5cnZQN3RIbDQ1M1pyak5HV29MM3dzRVRCZUZINWgyMVlfLXJqc1JfZTFTUFlXUktyZjN6UVo3R2FvdXVTYVBn?oc=5"
+   "t": "FIFA desglosa análisis táctico de la Selección Mexicana en el Mundial 2026 y explica quiénes fueron los jugadores clave del ‘Tricolor’",
+   "src": "La Crónica de Hoy",
+   "u": "https://news.google.com/rss/articles/CBMijAJBVV95cUxPemROZ3RRYWc0R3F4UGFaY2poaWtvUnltRkp2enFHMDdFNlgyY2N1VG95eEFVZDk1WERuc3F2US12U3NLLWFLd3E1SGE1UDBvLUtNU3JHWjJzZ2FFWk4wYXRtb2gwRGwxdVAzLWhRcmFzNlFialdIRllSUUtuLVVkbW1JSnY4OHR5R2lhZElqYTVGemFfWmtvR29HQy1SaGpaOHdJdkh5TW5OckFjOVJ5VTVxMzNTdjF6VHpPdjZUa0d5VnJWZWZ5X2FKaXd6VHgtLTVLckJ6cW56N2o2LS1BaVk4MFpvWVZSdkRVaGlGZEMyUllqbVVVVHJoWUZDM013elN1YzFsV3NkenNE?oc=5"
   }
  ],
  "en": [
   {
-   "t": "2026 World Cup – Baku: Day 2 Finals Live Recap",
-   "src": "swimswam.com",
-   "u": "https://news.google.com/rss/articles/CBMic0FVX3lxTE8xcUN2Y1BaaEJHWDVrTEszdVFnZ0ctQVRHNU1tTXR0alNqR2lyaUktSzFoYmdLMkZ2amRzYWhTQ3VXREV6bDRlcVc2TGFib3FmbmRZbk1SNEZIcXN6bkJyYVhGeE9IS1RDXzRwVTJxUWpyb00?oc=5"
-  },
-  {
    "t": "What World Cup’s main characters did next: Red card after 40 seconds, ‘losing peace’, scoring spree",
-   "src": "nytimes.com",
+   "src": "The New York Times",
    "u": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNSnMyMUFuX1hEUXpGQWZJYTZESERuR0xaSzgwMWtacHcwbWhVLVhMdnExaDhGaHljaE1MY29mSDB0Tmw2V25hLXNKcTJ5WGJmM2pZLVhxTklMS25oSkZiNUtsY0VTeURiUEgwN0lSY1c0NlJRSzV5S2RHWGdKeFVUSHAtQ0VIaEE?oc=5"
   },
   {
@@ -79,13 +74,23 @@
    "u": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQYXMtWWVjUzlCZnJ4TEdva2VSd3dSMmpFdkhJb1ZOVlN1NDdydEtOa1kxLTdTSldvTGZ1S3FGak1WaXNpb3hZNDdIRzNzUm1IaG1ua211SHdDaDhxTlpQMmpDZHl4WTZzby1YX3RCZ0haUFVraTd1OTJETVhuSEV6Rm5FYThzZlhwX21vMDRCaXVqMDBWUmh5aDZBRG5YWG5NcWxz?oc=5"
   },
   {
+   "t": "2026 World Cup – Baku: Day Three Finals Live Recap",
+   "src": "SwimSwam",
+   "u": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1TSVBFTTVwVndqRWRJNkozNEFPWWNWdkIzeUVJcjhOVTVtZC1JcF9pRjN4T3F2dVpIdVl1VEJlT1VhVEdNZEZnNWtxc3h5ZndLbUlGOG1Kd1R2WEYyS2JFM0xoaXZLNlZOdXliVHNxUEQ3WHBOdldHMw?oc=5"
+  },
+  {
    "t": "Sources: FIFAe World Cup 2026 in jeopardy as teams consider withdrawal over safety concerns",
    "src": "Sheep Esports",
    "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNRDh0WVFWN29CX1ZEY3d1Wm1lNFNJVzJ1UkdIaW84bDFRU3k0ZHA0WTY1YzNZTlV4eWVuUU84VDBwc3pQSWQyTzZMTnBoQ1FtMndJTmpzUTREejlja251Ql95WGZlclJlWWV5RFlvY3FDZm5sUmFwajJ6UEthNmJCZWRoT084eVJMN1pCNXBRTXlGLS14Ym1TTG0xMVFQaHdiaE94WERZSzg1QkVJVmFoLTdHT1JvLVhaTVpUdlZB?oc=5"
   },
   {
-   "t": "After hosting 2026 World Cup, does USMNT, Mexico or Canada have highest 2030 upside?",
-   "src": "nytimes.com",
+   "t": "WATCH LIVE NOW: Rome World Cup 2026 as Yee and Spivey top fields - Elite News",
+   "src": "TRI247",
+   "u": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQOTlXN2EyR0dfMlFKb2dSaU5HVHZJdnZLVzdCajhXczdPZmFXWk9rOXdnVXdrdFZiclc2NUlOVXFmblFIcWlPU1k1SWVHd2VaMkZHOHdEVmNxZ0ZoOWZfV0dHeENtdTZlc1BvbnpxYVdfNjRCYjZPa2VWYjEweEpfYk1GbkQyYzVGcEk0UjgxQWEySUhlaVROVA?oc=5"
+  },
+  {
+   "t": "After hosting 2026 World Cup, does USMNT, Mexico or Canada have highest 2030 upside? - The Athletic",
+   "src": "The New York Times",
    "u": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNeW5VMEtoZGotZlFGQW0tZU9ibGZlZHkyYmZEb29lR0p1QkhHRE9XSWdRclJ0QWlhcTBDMUR3Tm85djlRNjJoTm11Y0gxYmRqY2liak1KaUYyT3FPczV3cGRGcXUxYWJSZm9oRzlWT0dJejQ0TDJ1bTBGTGdJbHZQaERDOHRoM2s0VENjWl9tVnM?oc=5"
   },
   {
@@ -105,13 +110,8 @@
   },
   {
    "t": "World Cup 2026 fixture schedule and all the results",
-   "src": "Sky Sports",
+   "src": "skysports.com",
    "u": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNbWpUR0R6UUVoVml2TEN1QjFULUZnX0FPWC1ESUhLcFFjeFF2TE12XzJJSl9yRnJWdFR3d2hXWDNpU21KbHltREJkNzZKT0dGWEJxNkYwSzBELS1ZalZpSGVKYU1IS0VEdWFWeXFISUF2UElmM3Z3aF9GVTFwTThCcUh5Uk8temI5WnNLNHQ2SnhnZFUtZ1hpeDkzS01Ca2hybGdDTmNhbkdZUjFJUlRtM2RfeFJrQlFlTkRZSzNmQm5PZVd4V0JGdTZHenFqaDVhYWNCQzExTXNvR3dhektFTlpxMTVvaXhDMVRSTzRqaWlCZw?oc=5"
-  },
-  {
-   "t": "England's World Cup 2026 fixtures, schedule and tournament route to final - how Three Lions could lift trophy on July 19",
-   "src": "Sky Sports",
-   "u": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQZVJObXZ2RDg1RTB4UWlGRXZ2T2txQVRUQ2VoQXdBZ05XUVNGQUZVZm1lYkMxSkw0UkVKck1TNGIyZ2hFZFJ1eWo0TXB6ZDl3VnpqUEpwSWxDWFNxZTFlS2xRNG1obzVLVEw0WENTMXdTX0J0SHpNOTBMRzhmUTVpb1ExNURHb1dneU5wMXFUZC1fWVdOSXhDS1dibER0R3pBam53TWtmTF9JUXdOY0trYkNicUVwLVE2UFYzcXlkV3hoX1Nnb25qQmhMQXRCN2hQWTJNUUhuMllwcmVFUEgyRUZFVndyOVEtaFIzQzFNQ3dEc2VLemJnRg?oc=5"
   },
   {
    "t": "Tyler Adams selected captain of USMNT for new World Cup cycle",
@@ -119,26 +119,21 @@
    "u": "https://news.google.com/rss/articles/CBMirgFBVV95cUxON3ZmZzVIMU9NUDNSMml6OEFnTnhnOWNxNmNyQUdHOTRINjNYVGlPeXEwV0pVV2pTZkp2RTdFbkhSaU5OOHZaQ3ZJLXZmN2tJZ0RBQXlTNklMVEFudDFDVHprZEk4V3liNFZNX1lfbVk4MjlhSXpJRmctaEZxNXNxYkItN1Vqa2UxZGtXY21uYmZjY0R0dU85U3dTSTN3eU9aVFZjNkNmd1huSTBsVVE?oc=5"
   },
   {
-   "t": "U15 Baseball World Cup 2026 - Day 7 - Kukulkan",
-   "src": "DAZN",
-   "u": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPV09wWkh3aU9KZEE0VERiQWlHbmZEdllRblZWMmcxaDRCX0wzSm40NU5UQ0hMaGUxNGxpZk1wSzFGUkpQdEhxeUFERE8zcjFsYTZQRWZVdWVzMWt2VlJBUFE4b3BDdVl2SXAtanNEYzJ2dVY3a3BIOUY1WGstUk9IYjEwbmlVV2NsWmJQaQ?oc=5"
+   "t": "Video: WynTV Track Walk - Lake Placid World Cup DH 2026",
+   "src": "Pinkbike",
+   "u": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOY2Z6b1R1UHBYYWZJbFpwMjVySXc0U1pwM0NfTVp1SUlfTmpGZVJVbGFSZXFRVFBQZ1VIS3pxT2d2NmZ4ckRaYXJrM1AyTXh5WmhDWk9zWmdwbVdNQmRJeWVYWlhJT21QM2RxUXZJOUVVVnFtbVFUXzVIa3pDOWszb0FPY25mejZTNXMwc283LVBjRHpM?oc=5"
   }
  ],
  "pt": [
   {
-   "t": "Haaland processa companhia aérea norueguesa por usar sua imagem em campanha durante Copa do Mundo; entenda",
-   "src": "O GLOBO",
-   "u": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQQVlDajRwZXBpQnZGMWZIUWtua2dqY0Q3ck1fdWNCVkNYZEM1OVd2d2c1b0t2dVVzOWNSTi1lX29Sd1UyS0lHR3d6U1EwaWJPQ3MzcjlFUGR2Wnc1ZW82QzRFMjQzT3ZxQkNYeW9PN2FkNGlzNVlieDNhS0ZtRkxQc1B4YU9aR2hVRXc4VDlZQlVyd0RFUm5kTWdFbDJINVd6QzlhZGJiNTJkbEgzd2FZdkstZ2M3UzhrYkRTQ29LcjhQbDBOdjdtaVZReTdad0w5Z05WWXVoUE1pS0F3N1kteEhiak1Dd1BlWUUyM09QT0_SAf8BQVVfeXFMT2dsVGppUnZqd3ZIWlFjdF80WmhvUVJmUVJRd29GUHZKQ2t3QllEdWVzdDVSWTFaWm1GZGhENUFVU09yMWpQZWg1Z2QzSm02bFVXZkI2bFN6Mzk5b2xIc3p0Tm5IX0cwSExUaGxibHAxM3Bsald0cFVpcVI4QTM2UzdoMk80U0FsLXJNXzJOX01xNGwyYlF3djNKSmxReGNXUGNCdkZzSTZrdndfekdJMFI3Ujk5cjAwaVg2Sldwdk1WRi0wRHJCcFFTTksxTTdkUmQtWHVYRS1EX2pLelk2d3VJUVNRazBrcTlVakJBMkRPMTVrNV9HS0phYkgwcXVR?oc=5"
+   "t": "Vini Jr é destaque em relatório da Fifa sobre a Copa do Mundo 2026",
+   "src": "ge",
+   "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQZ2dkck9lWHBSd1VrT0gwYkhPSE16YXNRWHNKTGR6djgyVElYcnExdk5lRmpyNnFLQm5HLUtma1RjdG9jNUxjZ3JTWmVTWEdPdTBqaThPYjhzeGxKeTg0WmtJNkVtaHN0Z1dLbGxHWTFZY3lWTkhZNDFhcVFYc2FZcEhScHQ5ckJZcGRkY0ItZUJNNE9ncDVGNDN1aTF0dVlVWVpxQ19uTDlvdDZRTnF3MFVEYnpfd3l2cXlPVHMzWFJ5aURoMDcxZG5GTDhZTU5qSXNIdGFsTU9qQdIB6AFBVV95cUxQTU82OW4xMU1Rcmk0Y2ExeUNJOHpvYjJNVldIMVZZR2gzR0pzaDEtZHdHajdWX1V5UVRVV001MG13LUh6V2NBT2JNenprNDlEVDhDNzc0TXRUMGQzOUpDZ0JlSVhQRm9ERjhfeGg1aFNTZ3JSdXZhT0tJaWNSZWhfSHVVend5YzY3ckNJdWJ4QzhtY1pTTE94SXVQZHFqalFjZ2VwaWozcUwtaDY0Q0tZU2Z3VmxjdHY4UEVKd1FtcW1PT2IxazNaZWtXQndnaUpkUWw4VV8yLThkT0NyRjk2MlRBQUhOWXl3?oc=5"
   },
   {
-   "t": "Fifa cita Vini Jr. como destaque ofensivo da Copa do Mundo de 2026",
-   "src": "Metrópoles",
-   "u": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPUlYxVFB1OWgwWUI1YWV3M3BDUW5NUV9FWE1PRTVYekhmZmp1NGYwUDhBcmFZMkkzSU83YWFhaHZPd1NvXzBxYW1GYVoxZHYzTG1GQkxmYlZ5bHdBeTBvZGZLVUNuZE4wZG5jN25fWFJFR3VOaUdQSl9NMlg1RVdfUjZhSVozalBuMC1ZSWlkcGdKNjVrWGQxU3otc3A4aUVIQUdV?oc=5"
-  },
-  {
-   "t": "Após dificuldades contra a Austrália, Brasil enfrenta a frágil Índia",
+   "t": "Brasil vence a Índia em ritmo de treino e com falhas do goleiro",
    "src": "Folha de S.Paulo",
-   "u": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOWkVBenhqREtsWThWR0llcHQxS3M5LWF4SEhRM1p4TzhOSzZyZEQwV2hmZlBzYUtPTkYzVHRPS2FRdVZuQjd0S1R1SmZjRnVKUjV5ckVIMU1mckdUTXMwc0QzRDhLcUp3aHNNamNQR2JrOS13SGdJYnJsTU1kbGVENEtiQWFiMk05TkRvTDJZRmVqQmVndUY3WERmV2ZOektzNTNwVU9ucmZEREFJLW5JbERMTEJONVB3TkRz?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQT1hCRUJ0QUVRczlVZlNIMjNjRWFVZ2taMko3V0hJV1Bod0RQb041QmpQbVRmTGV3WlpzdFhVUW1raE12NEFvb3JUaDNZRXRxbFFDV0xSUjdMS0poYUxROWhYbHhiNmhaU3hvbWlvTnJOUnBXbnloalozeWplaGN5dUlnLVNxOHZkcGVyT1FHTDhGa2l3RnVYeGdhbWVkekZjSVRIcTk5SUhQSS1ndWJaakRza3RCdw?oc=5"
   },
   {
    "t": "Eliminatórias da Copa de 2030 teriam menos vagas na América do Sul; entenda",
@@ -146,29 +141,19 @@
    "u": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNYzVGcndYS1dUU3l4UWZjVThKV0lxNVVPSHdFbXpPclphbDU0VUhBZ0lscXM4Z09LOXBZaV9DRWRiYUozd2p3dDRSajQ4NUlLMEwxc0dLSGhNak5Yd1ZtRWlqRlVaVzAzbEtNOUZieUFua2I4eWVYVV9hdHdPX0diMF9rVUFDanhjU1h2cFhWeGJJc1Z6SHRIdGlhUmxac3IzZDlyNHlXSk1KUGJBZzhPNVpWTlU4SlVfLWNDRFA2d3Rxd1g2TF84?oc=5"
   },
   {
-   "t": "Os destaques do relatório da Fifa sobre a Copa 2026",
-   "src": "Revista PLACAR",
-   "u": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQZGRRUnAtMkpvWDhCekJMNG45SVU5WVE0TzNGZzVLN3FxTE1rSWZSZHktMjQ4LUQyV1gxbGI1Rko1STlzU0lwa1hLZXJDeUhUWkYwRVhuUGtWblYyM0NKQkZ4cm5ubGZUQjF0cF9DTjkwUFc1ZWtGamFhQlZ1OF9STGZBbjc5VlQwSkF2Tnp5dDBSUQ?oc=5"
-  },
-  {
    "t": "FPF considerou despedida de CR7 da seleção após a Copa do Mundo, diz jornal",
    "src": "CartaCapital",
    "u": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNU3dBQTNfckthZDVaeTBoTElzYU1kVy1GS1RwbFBnSHp0SjNaTEhMSnlBLXZ3UnVOTEhvMER3RVBxU0N2ZDlYYmZpcnZncERGUW9ydjRRa3JoOG1CT1pKdFNzTXRwZDF1ZlpBYXN5cWxhcnk1YWJTeDgxUEJUdlZkbXVSc0VxY1RPSDdjODFrSmhQQkhLWU5yZ3JtV20wejBMRUtTQkRvYzlISG1Pak0tb19VcWJFUQ?oc=5"
   },
   {
-   "t": "Fifa publica estudo da Copa e destaca os papéis táticos de Vini Jr. e Messi",
-   "src": "Notícias ao Minuto Brasil",
-   "u": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQMkk5Sy1zRUpQSW1iRUVJd1JDMWpGM29HMmNWMmI4VHFXQUItSGY0T05SeVZkY2l3eENrYjFFODdvU3pfcWVSX3lBNDNJdFZFTWlnUlJNNnRfNFBuT2QwdXQzWXAybGlpV2o4YkdNUVVlZ3dzT2tweloyVWV4Nkxwa2k5Z0hIMzVGTlRNbGl1UjJkU0k1U2lmZ2FCU2h1ZlRaQ3N1bjZkelN6QlF0Sk5LMDVjaUZCR3YwaVBVU1hMb3B4ZHhW?oc=5"
+   "t": "Fifa cita Vini Jr. como destaque ofensivo da Copa do Mundo de 2026",
+   "src": "Metrópoles",
+   "u": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPUlYxVFB1OWgwWUI1YWV3M3BDUW5NUV9FWE1PRTVYekhmZmp1NGYwUDhBcmFZMkkzSU83YWFhaHZPd1NvXzBxYW1GYVoxZHYzTG1GQkxmYlZ5bHdBeTBvZGZLVUNuZE4wZG5jN25fWFJFR3VOaUdQSl9NMlg1RVdfUjZhSVozalBuMC1ZSWlkcGdKNjVrWGQxU3otc3A4aUVIQUdV?oc=5"
   },
   {
-   "t": "Vini Jr é destaque em relatório da Fifa sobre a Copa do Mundo 2026",
-   "src": "ge",
-   "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQZ2dkck9lWHBSd1VrT0gwYkhPSE16YXNRWHNKTGR6djgyVElYcnExdk5lRmpyNnFLQm5HLUtma1RjdG9jNUxjZ3JTWmVTWEdPdTBqaThPYjhzeGxKeTg0WmtJNkVtaHN0Z1dLbGxHWTFZY3lWTkhZNDFhcVFYc2FZcEhScHQ5ckJZcGRkY0ItZUJNNE9ncDVGNDN1aTF0dVlVWVpxQ19uTDlvdDZRTnF3MFVEYnpfd3l2cXlPVHMzWFJ5aURoMDcxZG5GTDhZTU5qSXNIdGFsTU9qQdIB6AFBVV95cUxQTU82OW4xMU1Rcmk0Y2ExeUNJOHpvYjJNVldIMVZZR2gzR0pzaDEtZHdHajdWX1V5UVRVV001MG13LUh6V2NBT2JNenprNDlEVDhDNzc0TXRUMGQzOUpDZ0JlSVhQRm9ERjhfeGg1aFNTZ3JSdXZhT0tJaWNSZWhfSHVVend5YzY3ckNJdWJ4QzhtY1pTTE94SXVQZHFqalFjZ2VwaWozcUwtaDY0Q0tZU2Z3VmxjdHY4UEVKd1FtcW1PT2IxazNaZWtXQndnaUpkUWw4VV8yLThkT0NyRjk2MlRBQUhOWXl3?oc=5"
-  },
-  {
-   "t": "Por que Calcutá ama o Brasil: um caso de amor de sete décadas com o futebol",
-   "src": "avozdocampo.com",
-   "u": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZjdua19SQWtZZW1UZFZwNWRrSXJsUkdZeGpBb3o5YXhaNE5lbzZHSFFKRWxBS0xlSFRDYV9PWElaa1VtenJpeXdGVHJZc1BkMnF2cDRMcklFeXhFVGdjVGU1dDhhbHBkVDNXdGJfZDVxT1l4VktkZF8xc1hnc3JEQnlrYzNXLTJ4VHNDay1YMzBndlUyWkVpeHlyX1pnMnZZM3ZwY2JjQW5FS2g0aFllX1lEUQ?oc=5"
+   "t": "Os destaques do relatório da Fifa sobre a Copa 2026",
+   "src": "Revista PLACAR",
+   "u": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQZGRRUnAtMkpvWDhCekJMNG45SVU5WVE0TzNGZzVLN3FxTE1rSWZSZHktMjQ4LUQyV1gxbGI1Rko1STlzU0lwa1hLZXJDeUhUWkYwRVhuUGtWblYyM0NKQkZ4cm5ubGZUQjF0cF9DTjkwUFc1ZWtGamFhQlZ1OF9STGZBbjc5VlQwSkF2Tnp5dDBSUQ?oc=5"
   },
   {
    "t": "Copa do Mundo 2026: confira as estatísticas gerais da competição",
@@ -176,41 +161,61 @@
    "u": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQYWk1TjlDdEtsVEtzRlJaU2lDb2FsNENjd2VPSTNESUNacW5tX1c0cW9TazdsQl9ndHMwU2dvMFl1R3hkNDROMFFOa01tWnlkWTdOS1ZKMXJTVURaSzl3MDE3YWdBTmFOSHFNNDVCS2Q0M0Q3TFhMQV93OTNmelBRZw?oc=5"
   },
   {
-   "t": "Espanha chega a 40 jogos invicta e estabelece maior sequência da história entre seleções masculinas",
-   "src": "Jornal Grande Bahia",
-   "u": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNTzhQeGstTnZveE9SUm9PX3NtbWZ5UGF6dF81bkV6TkMyamNzNG9UbUphbHZMNWtlV1ktcktUalN2VEpfcG1fb2liM2FCZ3BBb3Z5QklxMDJhZVZjcE5yOTNWVi1QSWZObWYtamtQTzZlOC1sUXJFUnprX3hoRC1sTEI4WVYzYmh4T1pZSE5UUUlCSmdfLUNuWFNuMUtjUmpfcGc5cF93RTJXSGNZR2dZTE1STUVvNnlScU1rT0xpalduS0lNa0Fvc3pvQzhTWTRrdWpMTjZNZTA?oc=5"
+   "t": "Haaland processa companhia aérea norueguesa por usar sua imagem em campanha durante Copa do Mundo; entenda",
+   "src": "O GLOBO",
+   "u": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQQVlDajRwZXBpQnZGMWZIUWtua2dqY0Q3ck1fdWNCVkNYZEM1OVd2d2c1b0t2dVVzOWNSTi1lX29Sd1UyS0lHR3d6U1EwaWJPQ3MzcjlFUGR2Wnc1ZW82QzRFMjQzT3ZxQkNYeW9PN2FkNGlzNVlieDNhS0ZtRkxQc1B4YU9aR2hVRXc4VDlZQlVyd0RFUm5kTWdFbDJINVd6QzlhZGJiNTJkbEgzd2FZdkstZ2M3UzhrYkRTQ29LcjhQbDBOdjdtaVZReTdad0w5Z05WWXVoUE1pS0F3N1kteEhiak1Dd1BlWUUyM09QT0_SAf8BQVVfeXFMT2dsVGppUnZqd3ZIWlFjdF80WmhvUVJmUVJRd29GUHZKQ2t3QllEdWVzdDVSWTFaWm1GZGhENUFVU09yMWpQZWg1Z2QzSm02bFVXZkI2bFN6Mzk5b2xIc3p0Tm5IX0cwSExUaGxibHAxM3Bsald0cFVpcVI4QTM2UzdoMk80U0FsLXJNXzJOX01xNGwyYlF3djNKSmxReGNXUGNCdkZzSTZrdndfekdJMFI3Ujk5cjAwaVg2Sldwdk1WRi0wRHJCcFFTTksxTTdkUmQtWHVYRS1EX2pLelk2d3VJUVNRazBrcTlVakJBMkRPMTVrNV9HS0phYkgwcXVR?oc=5"
   },
   {
-   "t": "Ancelotti é treinador mais bem pago de seleções nacionais, aponta jornal alemão",
+   "t": "Fifa publica estudo da Copa e destaca os papéis táticos de Vini Jr. e Messi",
+   "src": "Notícias ao Minuto Brasil",
+   "u": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQMkk5Sy1zRUpQSW1iRUVJd1JDMWpGM29HMmNWMmI4VHFXQUItSGY0T05SeVZkY2l3eENrYjFFODdvU3pfcWVSX3lBNDNJdFZFTWlnUlJNNnRfNFBuT2QwdXQzWXAybGlpV2o4YkdNUVVlZ3dzT2tweloyVWV4Nkxwa2k5Z0hIMzVGTlRNbGl1UjJkU0k1U2lmZ2FCU2h1ZlRaQ3N1bjZkelN6QlF0Sk5LMDVjaUZCR3YwaVBVU1hMb3B4ZHhW?oc=5"
+  },
+  {
+   "t": "Por que Calcutá ama o Brasil: um caso de amor de sete décadas com o futebol",
+   "src": "avozdocampo.com",
+   "u": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZjdua19SQWtZZW1UZFZwNWRrSXJsUkdZeGpBb3o5YXhaNE5lbzZHSFFKRWxBS0xlSFRDYV9PWElaa1VtenJpeXdGVHJZc1BkMnF2cDRMcklFeXhFVGdjVGU1dDhhbHBkVDNXdGJfZDVxT1l4VktkZF8xc1hnc3JEQnlrYzNXLTJ4VHNDay1YMzBndlUyWkVpeHlyX1pnMnZZM3ZwY2JjQW5FS2g0aFllX1lEUQ?oc=5"
+  },
+  {
+   "t": "Final do Brasileiro Feminino deve ter recorde de público no Morumbis",
    "src": "Folha de S.Paulo",
-   "u": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNUF9ManZ1dGJtZG9WZm1jQnZjLWxvdkpQTnRwXzEwZUdYaVVhNWhwN2puVDJTVjNTV0NnUGRZY0xZQ1A5QlFrQ19HRmRrZEJWZjlIR3Q5Z3B6eWhpX0hSNEY0TVllVEpqeDJiWlJRUDRKNWtXbTN5QkFzQmJkaVl6MUtGbk1UUE9PZHpPVWVMalVJcUdEWHFJVlBuSGlmeDc0bmo3NngxNVlTNFZkaG9YazktdDg3Ums0SUpEbEF4bEIyRWVBRUU0dVV3?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxObmlrTzExMTFlNjZLblluR3Q0TWFZWTFNb1h2dWw4Vm5mcXNWcnlkSlNtLTZMdUxiSkhrTjJFVVF3cFNzYk52RGlGN3F6Tmc4bzBYb0Z6MEJLU0syWk0xWWVNRHZNc1BOT2tmVXc2aW5hMzh3cm9XNi14bldsbWdaQ2N6MFpPbl9SZWhFS0t4cUVqWW4yZ1A1OVRKMXQ3VkV1UEk0RF9ROGgyX0ZnbzdYOXNXX201c2pWV0Zz?oc=5"
+  },
+  {
+   "t": "Classificação final da Copa do Mundo 2026: Brasil é 11º; veja a tabela completa",
+   "src": "olympics.com",
+   "u": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPelQ5VlUzc1pNZGtnXzZ1NzNfZXV0TFZjZVFTVVZLeEJPbGxINmxRdW1NMjU4MC1wMFNCRm9JVUVMZ2R4Y0hnbG00QlhWV1c5TFF0d1drQW1fRGtRb0FqVWd5ODNDbjJqWXJ3WkJVSU9KTWRRY3pTZjNaM19wWUc0d1QtNWpicXhPb012THVFNm43Q0djQ2c?oc=5"
   }
  ],
  "fr": [
+  {
+   "t": "\"Pas assez blanche !\" L'équipe d'Allemagne violemment ciblée par des commentaires racistes après les débuts manqués par la Mannschaft",
+   "src": "ladepeche.fr",
+   "u": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNWWZkV0RwV3JkZEVGMVVFRFN2MUhHZkYxY0hiVkRPalZIUlhDYkVES3RodnoweUZiN2tFVlV2a1I5bFcxbUZqVUlQM0l6X2NLZGFtTEpRdGtEVTljcEtqemp0RmQ4UWIxendpejlaNTkxU2V2dUM3SzNnTkpDZjRYNnFZTk5CVF94dDFfQjBxTzhTLXpnc2F1bzg4M2xaa1NYSV94SG5qMUY2a2w2YzlONm53dG5XVEJYZTNhMlBnei1FbkhyMVJJRDVjZnBVSnVxVGVjY3piNm1xQWh6UFVndUp6c0Q1UGo3M01MV3g5aHdrU1R4LXN2SHZsbWVjaFlINEFBcHZlOA?oc=5"
+  },
   {
    "t": "France-Italie : le résumé du premier accroc rencontré par les Bleus de Zinédine Zidane, repris par les Azzurri en Ligue des nations",
    "src": "Le Monde.fr",
    "u": "https://news.google.com/rss/articles/CBMinwJBVV95cUxPSXBPZmZGcHBzdVhMbFpNUkI5VVJGNkhIYlVrZFdWdFdCbzJpVU5uSjllcTBNcGRhUmYtbHFMaG8zZnQxR09YYnl3aGF3T2NBM1VwTlAzVHhTc0Vtbk1rUWowZGhJb05GOENOV2Y5OWZSb0lPbGpHUXZxcDNDd1FBSURyWUh1V0dxRXFLTVhwOG5zZUM0OC1aZ3YxM2dVOUFMNXRWd1BNSjBJRlFtRDRnOVJITW1kY0ItM0Q4T3ZYTzA1ZVFMdTRKOC0yU1k4b1o4d1lLQ1l2R1VQSk1Ma3A3RHVidkhXYlFpY3FVMkVHSHpRT085d2prNEpOSGdoZ0o4MnRlWUNFTURuMHdzNzJUazZLbEx5TkRxUFJCWUxGMA?oc=5"
   },
   {
-   "t": "Première Ligue. Ancienne malouine, Romane Enguehard, une nouvelle vie aux bords des terrains - Ouest-France",
+   "t": "Ski de fond - Le calendrier et le programme de la coupe du monde 2026/2027 - ski-nordique.net",
    "src": "",
-   "u": "https://news.google.com/rss/articles/CBMikAJBVV95cUxQYjVYLXd4WEZmckxyaklaS0d4Tjdlalo1UVVSVnZUdU8xbVppajFaQkY1SzZyNVduY1BuSTlCQ3ZkaUh6a01EUUZxWWpvR0g1V0h0a3dmTlZacl9tWFlXQlQwbk1DcWxXYVh4M0FqTXA2NmpLVzBsd0VJQmVPRm1RaEU1aHAzQk9pRE9ja2txZkRzWFAzNzhCSGt5Qk1KMEVndWhMVFV5VE93TVUtc1psVDdaelVldlpONnU5Qk15RVR5SFlJaGlmcWMxY2pBdGRBdHlXQlRudG1hN2RPZFdYb0dkNUZtU1QtMjRHS3FYdkJoLUZGclJEN1Y2Ymhuai1RemduLURQbTVwZGRJbVlzNA?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxONTJXdWFlWHppcHRzYWxoUzQxeWVjMXYwa2o3TWNCd2NaYVNnaGVUN2RWbnducXhIXzFkY2hHdURaZUFzWU8xaDBmVWhZa1d4cmZNY2RjRHJJTWFRZ093d05hVkhIOGsyVjVBVmhOWHJRczlJYU9LVnFTeGx1MGN1dkVjbjFWbnRkLTFmY2lkWmZ5N1lBTEdXRkRuaGJTNkNyUHRQWGZPWWVKZ2E4ZjMwWGJpbmF3bTNZUHlJ?oc=5"
   },
   {
-   "t": "« Tout le monde me parle du retour de ce derby », Pedro Soto, l'ouvreur argentin de Lourdes se réjouit de découvrir les derbys bigourdans",
-   "src": "ladepeche.fr",
-   "u": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPOWIyWlluU21MVGUzS1Y0Z3FDbm1iMEhBZnEyQlpkRVMxT3JyY19Kb1hNMmpqRF9mRUVuRU90R2l3QXdvNlZmRms3cDFybHJDWVRMa0RBQTVhYlFlcDNqejN3aXVHWVNkbFE3TUtsXzdnNU82bzdOTG5mdVdQWVJwQ1Z3dmZtQWIwYk50bHU2dF9fNlhjM1V3bXVLQjF0bEVtR1AzU0RWOTFUTFZfRVFPcHZ2YlRlODUwOHI0VUdLWTJ3ZUZPcHhjM3NqNTBvdHR3XzhFenVJZVJTM0p0NFhpekJXQ1ZOZTgzd1Fnd3hDeDRrUXlvSWlQNUFkQTVJR0pGMVlQWFpFbUVmeE0?oc=5"
+   "t": "« Parfois, il y aura des bagarres » : la rivalité entre les États-Unis et le Mexique entre dans une nouvelle ère, mais l’hostilité ne va nulle part",
+   "src": "Goal.com",
+   "u": "https://news.google.com/rss/articles/CBMingJBVV95cUxOVWNWclpyZW1laHFYN2pCY1VSNlFGWUY4dVlyM1ZPLXA1WmtielU2UFUyZkZSb3A5R2lIeGVDYkJxRDJsVjl6ZkFWNHgxN1BhaTZHR2dNdFo1d2N2X1g5Y3ktVVp4NlJBMTRmdWpPbUVXM0hTVlNYUEsxa1ZyVUFMOWVFQ2NoNmYxZzlkSGlMSzZ6cW5ncUoxYW1kTk8tX2pQOXRiNTFsZUpuTXRFbTJvZnA5Um04aDNoX2xTXzhQODB3MGVDTU5nY2huRUNhNjY3Y2J2RERIQjBSOGRZazRRSU1TNjBiZ3pNaGhZTzlTTHR6eExLU2dVT29MQlZrQkRBSUVrcVhNR0VfUUlDUVMzYThJQzIweVhHanEtRXFB?oc=5"
   },
   {
-   "t": "CDM DH & XC // Lake Placid 2026 – Programme & dernières infos de la saison !",
-   "src": "FullAttack",
-   "u": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBkaGE3VnIyUUU2M0xXNzQ4cF9lLXZyQVBVc3R5a2dEMmtWNnpXTjJDdkVkUzI1bTRXbmJBU0xCX3YtaEhUaUMyaUxvcXN2bFJiN0tSSFNORkxfalQwSURZSTFwaDI3Y0ZZUGJJV2pLQUwzWlk?oc=5"
+   "t": "Grand Smash de Chine : à seulement 20 ans, le crack Félix Lebrun peut faire tomber la domination chinoise et devenir numéro 1 mondial",
+   "src": "Midi Libre",
+   "u": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPekFyeXlUa2M3WmtmM25yeXlsMklKajEtLUxTSmZCdlhBZnZIOHF2NkJYZzR5MGFPQXR5enFyWDkycjdEOUx0U19vV2F4MXp6cHo0ekh6OFZENlJhWE9pX2xaeW90aHVEd1JHZjI0eS0yb0xnUUhqaXZmdUVNSlVCdDUyUjdTSFVyYkhaSkZyWDZQRHdCd3l6ZXU0Xzg3eGpnTUFfSjlxLUR1RWpINU9kUl9QMThxbFRkYnVBaE5ieGttYmtnV1ZSRnc0TTZfNWxJNEo4NnE3TEhZNEotUURnVXpSVy1iWWZBZTVkN2JKcnJFdWhIYnVBZ0MyWjl3TWZPdW1MVl9NR0xqbzg?oc=5"
   },
   {
-   "t": "EXCLUSIF - Coupe du monde de rugby à XIII : la liste des 23 joueurs du XIII de France dévoilée",
-   "src": "L'Indépendant",
-   "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQNUZBc1RMTGtGZzlOdFBYS2RDTXJoRzhNRzRUaXQ5V3lXMUs1YjRyR0dRR3J4N0p6X0ZSWk9ZVzBjR28yLUU0VmU5T2pqRHdCYi0tVFBYS1FTR0Y0Z0xhZzZ6bmNsRzZyUEYtUWd1dkZUdTlLY1M1T1V6VS1VX2RaaEV6U1BXbkVmQWkxdUtFTDZtUW5ENXBKUjJDcWozRDBZZVB3TTZOYUNDRlNBUGlWN0kwOFMzNG1DMUxVa3RHV1pINzNCUkc3S2NvTlYxcUhCNWlRc1Y3dHRKUQ?oc=5"
+   "t": "Pourquoi la République dominicaine a interdit à la sélection haïtienne de football de jouer sur son territoire",
+   "src": "RFI",
+   "u": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNWUxrUWVnUHh3blZPc3RHRXpaNmdfZ29DSXpYQWxDRjZVVnhuYVFQUFF0c0EwUl9JNktHZ2dYWHdqQW9oOW4teUlybFRfbWREel9OQjdObUMyQ3R3aWw0TlJMLVhralFRWmg4MjRsZVJjcG1LZnI2TlRiU25PWE9RNUgwa1NybGdJNXV1RDc0MVJ1NE9YS2F5SXlyVzhjMEc2dF94cHRvYTFUYUd1andES3ktUkE0ZUFndk1LWjJwU1cwOGVHQWx2MC01RmR6V2U0VzBkVFdWbGx3OHVDZ2czWG9WeURiVXlfVjBCQ2duU0NZVWFWRFBFM0FwRHA4ZDFQY1Z0eUZFQQ?oc=5"
   },
   {
    "t": "Jérémy Rencurel sur le podium élites, doublé chez les U23 : résumé, résultat et classements de la 6e manche de la Coupe du monde de BMX Racing 2026",
@@ -218,34 +223,29 @@
    "u": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQMlFQRTIxMUMybEJUeHUydTFWZEFqWGcxMnNxRnYtckVLUUtzX3YzUHcyTlNhcUFzR0xaT1hCZGNvUDRFQ0ZXaDVYbGc1VHRDUjBnNEs5TmJfUWkydWhaZmpmLXB1VUlSdS1ZbkFVQ0dfVXBmQnZsdHZaTTFIUTJ6YkRsYzJRWm85ZmJMb216cF9HWTdJYk8tM1NfdnhadktZN1RadkNXVnhVcW9tSXEtaDZnWWdwVnkyekNJMi10cjFCblFRMGVOMWd1clR1MGpoOFY1STM4VlhtSmhGZEFaX043WTBzcG92LTdNeTU1a0lEdHZlZmJtMlRyR1JmbkgyRkE?oc=5"
   },
   {
-   "t": "Handball : un match déjà capital pour les garçons du Mende Gévaudan Club",
-   "src": "Midi Libre",
-   "u": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOeE4xN29XaUd5NTVsXzRxbzgyYUJWUWxHNUxQM3JkWWhZbF83NmxsSGNWRldhQkd6TVk1R1F4cHdQbURfTGxnRExQSUhiTkZqUkJ4NWp3eGRpLVV1TzlyVlYxUWRFclV6TFBjZWxEWlFES0ZwNVhiamQ2ZENmRjBhR1g5YTkxbzctNTV4NTV4RHpPTzBncnBWd3hDNHJGSWxCblBuSHZadVBxWGllUzdGWVRCUkx0emhyTnNz?oc=5"
+   "t": "Moto : fin de la première journée de l’Aveyronnaise classic, Jérémy Tarroux vire en tête avec plus de trois secondes d’avance sur son dauphin",
+   "src": "Centre Presse Aveyron",
+   "u": "https://news.google.com/rss/articles/CBMioAJBVV95cUxQUjdQa3g4T05oYWJ5b3kwNExJV01INHVDeE1nOVlrbE52UzFyc29Ccmxibk5femc5d1h0eUxkMW5lRjNFX1lEYmdCN0x1ZGlMVHRGb05HUmxOanJCR1l5MDRmTHpGTGNZMEdMRzhFX0ptX0dBZTZFU1pSRWNGVlFKTG9JVHI1V1FNQ3JpN3Z6Wkpvd1VUMERvd25qMU9ZVHViVEk1YmlXR0JTYmZLTGRnZ3BtbjM4MW9PbTg3eUw1Y2ZKWlh0YWN2U3Y3VEFsSF9jZzNiRG5MTUZKTWQ3QktZbk1PancyekVEMUVhYXdUc0lIc3pDT3dIaVh4WkcyTmcxN3JPd2RhVk52b1JkTG56aWEwUGh4ajFFalFvaU9QbzY?oc=5"
   },
   {
-   "t": "Marquinhos qualifie le match contre l’Inde d’« opportunité en or » alors que le Brésil cherche à se reconstruire après la déception de la Coupe du monde",
-   "src": "Goal.com",
-   "u": "https://news.google.com/rss/articles/CBMipgJBVV95cUxQcFlHS0VqNjlwVzBJS09zMHJIX1B6N2NLT3BXd0NINC1peG8wakFWVjRPTGRnaE4zX2JrNnlXanBHbm1KQWVLN3ZMTWUtMExTUG00a2dMcmprSXZxTzVXTGp0WlJ4NkxSb3ZPUW96amF0TkRZaWF1QnRkV2VFRkZCSkZmd0FVbHBmRnJVYlJUZWNxWW56YnZSUGhPaHVxUjJMLUstejJQeG1JQzdwa0laVl9zNkROcUp2aFBSa3hSY1REOXNGelZJa2tJOU9GRjBXTWVlaG03SUVyOFhaZmtLOUxJSUIwVThyZGFSMlVjbklJNG9kWm9TSkVvZVBuSk1hZ3FtY3kyZEdEWVNMdUdqLXNNS3dSMExnSkhXVmpKMGlDTWxXaGc?oc=5"
+   "t": "Quel sera le prochain job de Didier Deschamps selon les bookmakers ?",
+   "src": "Sportune",
+   "u": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOMTZZbEJjbVFuQWQ5MXBHYXpodmhyU2JXNXZIaEVfcUdTbXpXYlZfVmxYeDQ5dVI3dUJ2Z0RsNUNBNEJNOW9mUkRwUmg3Q1JsVVJzMHJ6NWNIRGZxZ0JOX2dlQlpWdzNhMGlkam5yZzA5LXVkNXJpUk9QLUVwdko0T3JOOFhyZE00MmsyYTkyVnRXSENwMHNaNHlMa2dPRXJyQVJMWVU2bXFTUQ?oc=5"
   },
   {
-   "t": "Coupe du Monde 2026 : boom du tourisme français en Pennsylvanie",
-   "src": "Presse Agence",
-   "u": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPbnJaYS1waW5nWXhMaVhiNW1DUkpIVHh4U042N1U3V2hHNmxsNVFBRlM4alhSejFwbFdDcl9OamNfUW5QRlJKZkZjNktIc0hmUUVydXltNkI4Skh3NHoxazd1NmRWa0hhY2EwWGZ3Y3NGeDMwU0ZFUlRNQjBRa3g1eXUyMEFLRzNUbzF3WGdXd09mdHduMzI2WTRza0RqVTd5OF9MOGlDUllJQm9SaS1ZSDNuczg3ZjJR?oc=5"
-  },
-  {
-   "t": "France - Italie : à quelle heure et sur quelle chaîne suivre le match des Bleus de Zinédine Zidane ce vendredi soir",
-   "src": "La République des Pyrénées",
-   "u": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPMnYxMWlYU3RYSVhYaUdQdHVyQi1GLXRxTWJoc3c5RExpTDlHMnNhU0s5dy1HRGx3ai1xeEZVaTBfemQ3LU40YnRRcWNDN2ppTTFZZWNtMEZ2Tl8wOWM0YUpDTE1SLUhxSmtGTjA0MnoxcVZJN0tEc0JyMXZhOUlqUXh3Nkg5U1JjUUlKQ0hCaVZTVkhpRlE4ekpDV3V4OHNTal9CdUhLUTdfMHp0M3Iwc1liQ1NOc1hWMlcyVE1VbnJhcnIzWGJKSjJwWmhXVWx4ZjhGRE9vZVdWYThPc0oyUFl3ZXZnRjk4YWtsNTRiTks5THI3NnEyZDhFYUx5Zk9CR0VuWg?oc=5"
-  },
-  {
-   "t": "Audiences : Quel score pour France-Italie, 20 ans après le coup de boule de Zinédine Zidane ? - programme-tv.net",
-   "src": "",
-   "u": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPdU5HTDVEd1k0UEQtdjlEX0c5cm1YbjVnZjhBVVZOMzlqelZXWFVYVjE3ZHJzMmFZTFI5YkRDR2FEaFFfbGIyZVRlcUxaQnhXakFaZHR2UDFZdkZzR1VpaHo3QkZYemF1WV92SDZsWjdKWGI3Ql90enlibXlGS1dPeWl4QkliNnJSXzlBS2dhUExpaGd4SFUyZzliM0E1TXprTHRGYm1xdldJQmZYZ0xWR3h2R0tDbnBMSXROblFrUXhJaUlKMUY4NmxNTGpXdw?oc=5"
-  },
-  {
-   "t": "Une figure du CO face à Mazamet ! Pourquoi les joueurs tarnais vont-ils croiser un joueur qui les a fait rêver",
+   "t": "« Tout le monde me parle du retour de ce derby », Pedro Soto, l'ouvreur argentin de Lourdes se réjouit de découvrir les derbys bigourdans",
    "src": "ladepeche.fr",
-   "u": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNQkxhT1VRcVh1OFE2SEV5TjVsZmZzWUJRQ1MyT3h3YUlvbGF4TTZlRnFReWxVWGlsUVBpY0dKZnJRQmtTSGx5NDFBd0VjajM4YjJ1akJPUWpCYkZLdHR1d08xYWNoemlUbFJQbXhac0lhWGJ5OHFRTlZGa0dnajAwdFRKT1ZVVlpXS2ZpV1J4MmxZVi00UFdsNVYxXzdQRnhzTEJrTVhfeEtCY3FPT0FCNzlvY2l1NFNBUGs2NGZVS0NZaG9pM2dXSUZjRTU5QWtCeGt1Wk11SFc0N3lkMFNfLWZDdTVWNTdKNDBkSHJR?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPOWIyWlluU21MVGUzS1Y0Z3FDbm1iMEhBZnEyQlpkRVMxT3JyY19Kb1hNMmpqRF9mRUVuRU90R2l3QXdvNlZmRms3cDFybHJDWVRMa0RBQTVhYlFlcDNqejN3aXVHWVNkbFE3TUtsXzdnNU82bzdOTG5mdVdQWVJwQ1Z3dmZtQWIwYk50bHU2dF9fNlhjM1V3bXVLQjF0bEVtR1AzU0RWOTFUTFZfRVFPcHZ2YlRlODUwOHI0VUdLWTJ3ZUZPcHhjM3NqNTBvdHR3XzhFenVJZVJTM0p0NFhpekJXQ1ZOZTgzd1Fnd3hDeDRrUXlvSWlQNUFkQTVJR0pGMVlQWFpFbUVmeE0?oc=5"
+  },
+  {
+   "t": "Sponsors maillot, augmentation du capital, déficit, DNCG : Nîmes Olympique, le point sur les finances",
+   "src": "Midi Libre",
+   "u": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNMU16OTVYeVBKd1ZidnVLYWZ1ZkdKdE1OZ0tKZlFUajRTQXE5WXRncDN0UTlvNDNuZkk3RHY0aktYM3VkdWgzR2dUTVNFdmx0SkIxd2RjTE1KM05YQ2puQVA5NnUxcWJNbmRpcDh5SWQyQ3RMeWR0QlFFSXJWRnZQYTcxVGRid0NhRDhDa2QwcUtPemJQaFN0Y0d5RjNpYnpSaDgzVnVGbG96WG42QTFxSVd3SUVvRXlPMS1JMXF5UWF0XzAtYnQ4c19TYXBEQ2hkLXBKUFZuNERmX0VK?oc=5"
+  },
+  {
+   "t": "France-Italie : face aux Bleus, une Nazionale en quête d’identité, qui aspire à séduire de nouveau ses tifosi",
+   "src": "Le Monde.fr",
+   "u": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQSDBhS2djSU5wTHhMYklyN2phQ2hkcEloYjJaWDFkZVpTRkV6a3Q5dDVjdG1aME9pUVBCU0NtQUg5RnhKelc0T0N6UzlNYTlDRE1pSktGQXlqTVAwOW1oVHJNSHVoTFFwVmNoZ3dFa1ZST0F3WnVXVWRvOENrSTFEa19ZNGVDZ0VxUGZxUFNEVl9WeS0zOFB2TDgxQUk3dlh0M2NGMkotLThsZjR3bEQtUEpseVkybW1mZEhnN0R3ZmhvRzR4X1E5SzZna1NqNDBRU1BfOW9BSG1vdEhxRG1BMjB2aGE4RVZSSWxHNWJsMzl6cDl3TXpqdXBFcDcweTJu?oc=5"
   }
  ],
  "ar": [
@@ -255,14 +255,14 @@
    "u": "https://news.google.com/rss/articles/CBMi4wNBVV95cUxOQWVYVzEtTjNLSERWNXhfeGVSMkRkY0FnTmZleFJtdGdxeVB6U3M5VlJKbzNMajN6cUphVk5ZMG5yaVNzYklnYmc0RTBrMjBBRVZfTjlxTW85dFRKblhNWVc5TzNqMWRERzZqQzRiTFRhQ015T2RUcmQ3MkhRMTI0RmcxZ19EZmNSM05jUm8zRXpIYnU3YWUtZ1phdG94c1pSVGI4MW5DN1JnaDZRSXFTUjBXOXlKeWZ4N1J1QzdfaDZjZkVvYnJzMEFqQi04RUJfUTc0TVY2UHY5bVB1ampQQjljZEhLemN6V1RaWW5NX3hsQ3F0MEgtUWFYVFI4bzRTYVh4V21lclNMQVlfNW5hakhkRkYtMVl4REF5a2ZMQzFpdDRLOHg1dXZUVm53OFlUaGlCZzlQa2cyaXplODN6eGw2Y1ZXbEVjLUJrY3ZDTkJBaVA3VnowZEZ0eTJnYk1LSXZJT1p5M0ppcVRvb1RJYUJYcFZGSEVEWjRJNi1ibmVIR3FmN2JpdjBKanI3blAxMzNpZTFoNkJuaUxMZkFWdkxZUFVJNS1wU2o3ME5fbXRzNkhoaVJpdDJmT3prNHJsR2t6M1ZRbnNEandHQkZhWE9NOWF6ZW9TWUY0WDFYVEN2eGs?oc=5"
   },
   {
-   "t": "كيف تغير تكتيك كرة القدم بعد مونديال 2026؟",
-   "src": "الجزيرة نت",
-   "u": "https://news.google.com/rss/articles/CBMi0wJBVV95cUxPNjZlQ1N5dzE2WmI2S1Jva3M4S082ZmJ2MGpCcGpLeXFoMXR6MGtSc25MenBpYks1Q09wY05YOFJUM0JyMFE0VVNJSXU1ZndpR2Q5cGd6TDg1Y25nSGpuUXNhOW8yOHdFcGpwZFVwaXNGTVRHR1BraXVUVVp2UVVqSDlLbHl5N3NmSzlMcGtuamFDcFhmRERsc1pvd01mZzBIY0ZhSWtxOXEyTHQ2OWNsNldIZHZ6a1c4dV9kaFJVMjYwVFpsYk1DUzJFNUE1dG9oNDV4V2puc2M2YTl6SGRQVkNZMUJZQUNvSWpiMkFLNnBUM0plV05waC1UUzg0QnlUVVJ6NS1aSDlRMEJ2ZWpXTmlzeVA3X1lqUURRYV82N05lNU41a3V5WHJjTkZZWUZ4S2FzVk44T2xldDF3ZG9NQWdaMDhtN2dxeGdfd244aWlJc2fSAdgCQVVfeXFMTllzQzA5ZjJlR1lDSjJXalJQU1BkUGNiZXdZY0M4ZEdTbXZ1ai1yaDJzV2RXd1FIeTRNbXdEcE8zNmt4b040WXBnZk0ySWZuWnJwdkhzaE1zVUJTRGRiTk9pYlgyZi1ZR3BzV1lETERDRFJ2ZFhOb1lBaENCVUZHbXZUN25BNGY0VUhRcjhPbW5MTjM5bEV0WlEzZEdFRE41SldEdWVTNzhBbUlDUGk4dUFQUlppVk9GRldiM2xSa28ycHRSVHVFRk51Y2NJRVAzaklnSXZuWFlfWE1ZN3M5cnlzN2dSS3VOdmJHV2RwbUJ6LU5rQXE3TkVYRUZUX0xfV3VwbTkwZEZxN1V6Y01sNXdIOUw0aEN0VHMyTS1mWnZKS3lIczhlbmFwMDRZTTR2ZEhBWUx0UjZMc3FZd1pOaWhOYnNtQkFEaVVoVGhZdUJXX1YzT0VnVF8?oc=5"
-  },
-  {
    "t": "هالاند وفوزينيا الأكثر حصدًا للمتابعين على إنستجرام بعد كأس العالم 2026",
    "src": "اليوم السابع",
    "u": "https://news.google.com/rss/articles/CBMirgRBVV95cUxOc3h4RENkLTJhc1lHekRPQ0RxTkROeExCTkk2dU5RMzltX3VkWlZKNjBwQThyQzRwdzA1VUVyQ3FHS1hRWm5VeTRNTGFQRE94b1BoZVZqcWVNU0FMVHJoTjJlcTNyc3UwQU12Y0hQZmFrZVBaMVk4elJMbzM3UWJsXzRnTUZMV0VWTmg5ek82cnpPM19JdTFFU2ZCcndsanNiRlo4bWlUZzhkZnp3NDlnUzV2dHQ4QmFyeHpUMHlHUEQ3Yk83NGR6cGJNenVJSEJRSnNqT3Y4UGdySHNnbEFQR1pkaWFnUGtReGQtZlhPQW5lbGNtdEx4bFFHaVhZbmhXQ1Y0MVVhLWllMHRZTVlmeTJCRDdodDZGQjd4REpBbi0xd1dPZ1NmLVh3SWY4ZzVWbjlUcTg2X01TWGVPdUxFUE9uaGpVTHBBMk9obWNrck9WMW1rNXZseV9NR0lWcEpUak83alk0dmQ2dkZ5emotaHluX3NrTUk0ekJoNDY0RXAwSmdQYW1NQkdvNTNpdTR1NE1vZXdoeVl5dVIzVHdVSnJuRU9uUjFkNTNEaGlacW9LVmg3YUEzZWVlazlLZjVoZ2NRbkU3SjRtZnBvREFyUmdPSmZCOHRDZjhqQkJsVHRwZEF0cTZZVlNwb3FIRXJmRVNlWnNTS2YzbUNUbDNLYi1DZkowQjRaVVpJYjBvTE5TV0UtV0JGMWlsUW9aTnJkY1BkdHpXT3A3OGlhTlHSAagEQVVfeXFMTkY4VnBENGVJQnQteXF6SEt5VDZWVkRTcmVBXzV6dF9BdFoyNUdrcUV3WXdaWmpGTXB5c3EtYWNPa3BhdUx2dnB3YVpJRHpVZ3d3c0NvanEzV25mVkRQSHBsQmFWM2hPNm1MSDVJOXJxa3J5VzAwRHZyZ0pHdmZHNTZGQnVqdDA5QTRVN1Q2NU5JSEpKVnhmUmEwZmxJcVRBaDBhMFJWSUJTdGFZbE5KWmg0c3lDRmxRVGowYy1sRDlZbWFldC0xT3h5R19LbENTQ3kzU3c2RG9tOF9zY1RTVWtCYjJVQXdRYmNPOXEtblF2VlFmVWloVGZRMGlneUc4V0NRSEdWNmtWLWVvQWh0b2U5ZXNrVU42WVB1UUZhSURlYWVQUEJwbld6Y2tqdHZOaVpvV1A2dGVUV0FxV1VrdDdYajFPSnNpOE0zTTQwaWVmcHV1ZFpYSHU3Y0hjVWIzZG5hanI2dnEyNVliaW9qcE1qVElQZjNqLWx1ZS1ETHJhaVEyWW9naU85a3lubXE0T1E0TUNYWEQzdnRXVk40TEJMazZGelcybWhqZWhxOG5fTEozSTVSR2J5Q3hhVkszREhqOWhCVG9HWW54WnVkVEhUSExMSzBHY1o4VmxRZ2VNM1JrZnZ3TEtNelZ4RmN2ejFFM18zV0xXVGRmOVFQaDc4ckxuYUdEem1SS0tQNk5JLXQ1SWh3M3lETnNEN0JrUDhIRU1hSlJn?oc=5"
+  },
+  {
+   "t": "كيف تغير تكتيك كرة القدم بعد مونديال 2026؟",
+   "src": "الجزيرة نت",
+   "u": "https://news.google.com/rss/articles/CBMi0wJBVV95cUxPNjZlQ1N5dzE2WmI2S1Jva3M4S082ZmJ2MGpCcGpLeXFoMXR6MGtSc25MenBpYks1Q09wY05YOFJUM0JyMFE0VVNJSXU1ZndpR2Q5cGd6TDg1Y25nSGpuUXNhOW8yOHdFcGpwZFVwaXNGTVRHR1BraXVUVVp2UVVqSDlLbHl5N3NmSzlMcGtuamFDcFhmRERsc1pvd01mZzBIY0ZhSWtxOXEyTHQ2OWNsNldIZHZ6a1c4dV9kaFJVMjYwVFpsYk1DUzJFNUE1dG9oNDV4V2puc2M2YTl6SGRQVkNZMUJZQUNvSWpiMkFLNnBUM0plV05waC1UUzg0QnlUVVJ6NS1aSDlRMEJ2ZWpXTmlzeVA3X1lqUURRYV82N05lNU41a3V5WHJjTkZZWUZ4S2FzVk44T2xldDF3ZG9NQWdaMDhtN2dxeGdfd244aWlJc2fSAdgCQVVfeXFMTllzQzA5ZjJlR1lDSjJXalJQU1BkUGNiZXdZY0M4ZEdTbXZ1ai1yaDJzV2RXd1FIeTRNbXdEcE8zNmt4b040WXBnZk0ySWZuWnJwdkhzaE1zVUJTRGRiTk9pYlgyZi1ZR3BzV1lETERDRFJ2ZFhOb1lBaENCVUZHbXZUN25BNGY0VUhRcjhPbW5MTjM5bEV0WlEzZEdFRE41SldEdWVTNzhBbUlDUGk4dUFQUlppVk9GRldiM2xSa28ycHRSVHVFRk51Y2NJRVAzaklnSXZuWFlfWE1ZN3M5cnlzN2dSS3VOdmJHV2RwbUJ6LU5rQXE3TkVYRUZUX0xfV3VwbTkwZEZxN1V6Y01sNXdIOUw0aEN0VHMyTS1mWnZKS3lIczhlbmFwMDRZTTR2ZEhBWUx0UjZMc3FZd1pOaWhOYnNtQkFEaVVoVGhZdUJXX1YzT0VnVF8?oc=5"
   },
   {
    "t": "فيفا يكشف أبرز الاتجاهات التكتيكية التي ظهرت في كأس العالم 2026",
@@ -273,6 +273,16 @@
    "t": "القنوات الناقلة لمباراة إنجلترا وكرواتيا في دوري الأمم الأوروبية 2026-2027.. والمعلق",
    "src": "المصري اليوم",
    "u": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBBbURtV0NtNmFJNzJ1TXdNQ0E3RU5mblc4SDQwemhwb1NUTFRtU0FwRVd0a2NGVk1sdGxPaEw3NTFwbnhuTWRvMWNXX3c1MEg2OWhDcXQ3dERaSjBBZW93?oc=5"
+  },
+  {
+   "t": "\"الكثيرون حاولوا استغلالي\".. فوزينيا يدفع ضريبة شهرته السريعة بعد كأس العالم",
+   "src": "يلاكورة",
+   "u": "https://news.google.com/rss/articles/CBMi9gRBVV95cUxOVFhZbGVwWnNHb3J0ajJTVVFaN0RFTV9xS0QwMjM4ZzgtMlR2ekxyNWtDTFc3cmdWQXY4eldkOHBuQTJyT1pVWXgxOXVxTEllZ0dSZ0ptV255V2N1d2N5REsySmNKd3BBNDR0Z09GSklxU19BSEZFdzYzRXNwMnViMWdibTVVTmFXZjVEcjVKNjVpZ1FHOGVfZmFrd0ZqZ2dZb0taM0NKaDJMNXVVMGtBM0pySXgyR0RLNHBRN3lKYnltMWNLcFZfUDdxcTZEdm5vd3g5cUhvX092YWJzNGxXUUp6enIwM1BYSEpYUTNQTlJIenRFMFlBSG54X29oMkRZT3lmZTRQcEV2T0c2VHNrWkVYbHRuMjhZQjk0bUV1SWFOcDBxZm9pX3RSZGVVVXRhd3VleWM0elJzbGx3REEtWTZUeFg4Q0hZRVJPTzVtUEVkUnM4RXFkeVVMLU84c0RDRjNtVjAzVC05dXRsOVpfWFlKR3k2bHk4T1BvYXo1RjFBM0lzaXZmVUVjakk1bmR1WUZXNWdRd0FMWU9LU3lsVUd5THRCQXVUdnRSVXNleF9NQ21paTZPNm1rcUVjY2Jod1pjRTYtMHdQX2MyWXlzTUpMN1M2Mlc2aGFTRGZpU3ZEREtMNnhob2cyOE9TQ0pUQV92OU00elFPTlA3cXBNbDZYY1BGQ3BCUDYxUDRLeXhiSzl4N0o2VkJFaER5a25KWjItSHpURXd3Q3NON1AyM3hmTThNT1cxbUstdzVkclJ3MWZZeldvaFJpTUNZWlBwb05jUTByQS1VWHF0V09hSGJOZGZPS3htemY0S3hOMUdHSzhuUGfSAfsEQVVfeXFMUHlqSDRhcF8zbGg4MW9hd0pIQmdpOEYtaHY3dVdMazJmR1ZPQ0E4a1pFN054Z2x1MUpzdFBHdENKZjJhaWhpZzJ5c203by1rRHBHWDJpUDI0NF9JQmg5T2ZkaVhzQVF2ZDg1bUxEMFFjZTNmSTNEQzN0bjB3WUZWRW1CUWwxVzkwd2pQSEI2TWE5RXN4cWJ4NjJBWkltZVJrcW1iRF9aX0hOc2tUdGN0NEl3S2xONmJ4QWozQmdqRzdDRTNFSFE2aVVGa0Z2amoxWjVkMWY3Rlh2STN5NFpQOEdYekdCMC1DWG0yTUxFYVlxMThMY3FMdElkc2RZUjRkc2lLRzVBZmVMR0txZTFyRXg4WThxWG1pczZMOTRBTk5uUUNOWXlrX0hkY3JRREJoNExwUGZ2QVgzdldNSmhITjJnRHB4ekswbWJVMXR3VEQzcHZEeFk1bVpYNzBlY3NxU0lPd3BCZFhZb2cySUtGeFJja3UzRldvYXg1azMwOVBwMDNkeDdpN0N3S0d3SVRGMFJVQ1FjNks4ajdYeWFQdkFUZWZrTDQzdTlYU3Q0VVdlLUJxNksxLWlKTmNBTjJvTXc4UTBjc1lIdm90VnREWU51Q0ZORzZnTlUxTkZNVUFIakpnLVJBTmVlcngxd2lPWmRwejN2aFhmMVhkbWNldnBPUl83bnAzdTRUMWFuSDFKaWdrLU9PQl9vdTB6T1gwSnAyQzNWUnVKR1Y2blIwT21Zek1MOW1rbFJIODdnVGdkVERqM2N2MUJ5RnRJYl9tV1Z4MnNJRHBNZlhvY0tSQ0FDdmRDdWxtZ0FtQ1hkUEo5SXVDOVhnc2hUNTg?oc=5"
+  },
+  {
+   "t": "ترقب عربي.. موعد قرعة التصفيات الآسيوية المؤهلة لكأس العالم 2030",
+   "src": "365Scores",
+   "u": "https://news.google.com/rss/articles/CBMi3gJBVV95cUxQWFFpbmhhOXpLUktHYTNWbWpvU09uekdGeEhPalpVMVliUXpsYk9LZng1Uk1NdjIyTkJqVUZPU0EwNDFnck9qdElIX3ByYno0OGd2dFhMMnVFZzZFZlV2SVJlNHRQZnJzclZFSXpPRWRyYmFKOXlnZ0Y1ZTljYkxzUFk3RUYzeDJFdmFyR2xSVlZadFVjM2ZiSEtpR3N0blliMy1nNXN4ZDJLQlFBa1ZuVWFnbTZkVl8wOUp6bExQMXRnN2liN0VOQmlxWGVuR2hicWhkWnVpa1Q3U1ZiZDhyaUpwemxVdlV1NDNVVzd4OHhfekhuTTl4cWRkYXN4RUUzR3AybFJ4SmprT3ZsWW1tSWhVVEdiXy1BWERYSnZWeV94Ql9RUGNnc0hCLUFYY190M1gtTTcxaWxRSEdyOFI4Ry1BeHdTLS1CR3BQenZNZ1M0U1d3WHlnbzZGZVpNUQ?oc=5"
   },
   {
    "t": "بعد كأس العالم.. أبرز لاعبي اليابان يخوضون تجارب جديدة مع أندية أوروبية",
@@ -286,7 +296,7 @@
   },
   {
    "t": "كيف تقيّمون كأس العالم 2026؟ ما له وما عليه؟",
-   "src": "BBC",
+   "src": "bbc.com",
    "u": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1yTWdzZmNUckMxcFZ0TDRpSUZxWG1YN3dmMU96LVlTZGloZkh3WUhpRkt1ZHluMHQ0cUFuYW9zQk13ZEFjVGFKdVh1aUJsLXBEcHNvdHdWY3VFTkNC0gFiQVVfeXFMTU5GU2JvUnYzRllpWUE1RThDbVU1NkdhYjkxWElUUVZSckN5cGtaYVR3RzF5WFBjRGVldzBmQ09uNnFGbG1tYWdMNTd3NmtyQjhubXYwUXhjRHRNZUUxUVExbmc?oc=5"
   },
   {
@@ -295,19 +305,9 @@
    "u": "https://news.google.com/rss/articles/CBMitgNBVV95cUxOdC1POUZQdzdJeWJUX3dtckVxbHQyOEg5R0RUWm9Fa1pVNUptVWJjc19leUt3Mm1tejFNVzkzNGFyRHhWc2pZanNHSzJSSGhMeTY4R2tNX2dCQ0lOMmFNMERpbWM3cVNWMzZJSjFidjc0YThDS0hBMGRUdGxfeWFnQWZFb3haZGh0NFlKS09HNWIxQXhRcjBlcjVQdHVpZHdIWlRCY0otYTQyQ3lJckF0Q1FyU3h4QTFUZ1RNUUl4SjlmbG5VdWdqV2NfNjVDMzhXOHlVdk1yYnN0b2dCUjVlMmhOZDM2c3RXSzA5RHl6QUlQTVBRQkxkV2dUTUhEQnh3dkNONHh0NmRJWjFFX1N3Q0pHWnkybVc2SXFoeHdSVWxmYUR1Z2MyanpfMU1hbTdyeDl3MXNXRDE4dHhVdEdxdG5XTmI1eTRpZVNDX0MzUGVzdUFOZVdxNjBGdXc4UENSRlh6WjIwSzlkUjFOa0p3VVNYUXItYXJBZ0tweUZycVI0WXJuZ25sdWYxSkZVVy1fRm0xOW1leGxOVE91N1lNN00ydHJYcmlPMmxqZUdTWFNSRmk3RGfSAbsDQVVfeXFMT2llSDg5bTJVbG5ocVVvYjFrNjI1RklDZzVmdUx0QnJRak4zeFJvbEU3M3dDY3pKWXhpUE5xT0Y2UEFmM0p2RGV4WjlVWXJIVlhyNEtsSEZzYXpEcnctb1FiQXVwUmFySFV2NURUQlp1YXZsbzBkMGZtY1pfQi13ZU1MbldOR3ZLRS1lX2N6MzlhamtiSjNjQmtPNEk3ZGdXdGRSMzVZRy1MVzBBTTVUN212VzZSc09tM243VlBnY3hPbVdvUU9BU2ZaZ2RkcDIzRk01ZU1aTjdrelpTY05GekFUUE1LOTZNT2NmTVFyR0NiLURLejhrUWVzYXFMTjhkcUVHZGJPR0MtZ2pZRktPWmdpT0pWeEdUUWlyT01wOXFGQjJvazdSelI5dWFwaTJQeGQ1Mkc5cjU0VFRqZmdPemUtZkgwdjViZ1NsZzRfR2JXU1p4bFYtVTR3RHRjSjdXN0xGbURSRmN0VG1nR2E1QjVDaWlnd3dKRV9hM1RpZl82dzBPLUEtSFRldDBRZXB2YWxkcDRjMGhKck5SV1NyQzd5dmZ2TTN4UEhPcW12VTFXdHM0ekluUmE3Sjg?oc=5"
   },
   {
-   "t": "آس: كأس العالم 2026 قد يكون الأول والأخير بمشاركة 48 منتخبًا",
-   "src": "يلاكورة",
-   "u": "https://news.google.com/rss/articles/CBMiygNBVV95cUxOX1NLZkFQUjdaRmJpUXk0ZTI3eU1mcnc5N0VBRnNKZ19nV3A4QW9jaUdoTm5VU0VWU2wxZHNwanloQlp1dlF3YWNONm1YX0tlZEh1OUhwcHRsUFVoNjFmQkliYmdVNWpSeklrb05nU3V0Zk9kdHZIdHdoUEh3ejVfODA0blYxa1hGcmZTRWswX3BudFJKemp1dnBjXzB4TG1TWTR4X0tEdENaSmV3M3d0emFldm5ibmZ2SVFVUHhlR09uWDBVV3lPSG1nWWM2Zmt6Sm13NFd3MktQQ0syZHNuc250YmROUm9hb2I5YjR5bVY0UXpLRGJEQzA0elJUaERFaTliLTBlVmU3Q2VCSXNZUW5lSmhwWngtSXJOWmtxUXdMaFhQVkppUnoxWll1dXJHZzhIcHN0YnRYMnRiYklJdmZqSjZGNUk1NmswWV9wQUxLeVZVT3MyYkZzRWd3QlNVSEhwenhDMFpjNmoxRUd5MEhaX3VYYXlmcVJGMDZ2LXVza19kTm8wR3Z0bjl1czBzLWpoSzJHSmV2YkFDUk10Tm5PTWRVbEZFWnM4MlVnckxDYTBWUXNZQlE1T2hJcW5vcnpBMXpJN21iQdIBzwNBVV95cUxPbUo5enQ5ekg5MXZlbTI2d0I1UnVQMndnVm9zQ0lTQkk5SnZybFUxeVp0MF9XbVNZa05HTndJTmVlOXYtZmEzTXRXR3cxaGRaRWkycXpXNjQtclAxWVdMazNodUtWSmlNUmw0blozdGRDT2pVdW01SDUzQ3VORFVpWUVQdWpySWJWOHlCdkxqTVJSNkJpX0RabmpCcUd5X2cyNG9pSHdnVVk3TUVnT0FCT0xsbGNfMlBqWjdWU1VKZ3VCZmdBOWU3aXNUMlhrdlgzWHV0WDJUNjdqOGhkeTllSm1YdERiMHpoYU4wdC13VzdfM1E0LVVkYWVvbnNlYURZVENrR1cyZTI4Y0xkQ1FyZzQxZDBTZDFOSVc2Ti1ORVhkLUkxeDVXSDBoWTlFTnhFNXFYell0TU5XNm9zMEhTaXlHaVJOMDNKOFk5T1h4NzNsTHBZb292NGtGN2hEY0g4YmZqVWtxNGVUMC0yZl9iNGxnRXV3a0EzaXFhR2tuaWJWZDNZUkkydXVGNHcxSk5Fc1ppX2RRNDk2M0dnWVFTMmZRbHZkd1dMVXJoY3JDNnJhMzRGS21FSElXU2hBRGFrSFNKcTNOSFpHN21uYTZr?oc=5"
-  },
-  {
-   "t": "بطل للعالم في الـ19.. كوبارسي يكشف لجوءه إلى العلاج النفسي",
-   "src": "الجزيرة نت",
-   "u": "https://news.google.com/rss/articles/CBMi1AJBVV95cUxNOUhfNHMwcGJvUmJ0OUhyVVRYejR2MGVCdGJnY3dJeU9hMzJVNFR1LTJlMWhiWHpZcEJpb3hUTXdqcUkxYkxHdWRubzJUN0g5QWxjU1lURV9TVmhTczdyZm1kX3o4cktsempVMWlVMlRVUENlUW1EQkJtTElUWU1zWTdTVUMwZTdxdW5CYmk5Vm5nN2lVU3dCVXVtUGVIMTZyN0RrSzVOX1V3YzdNQjZmTzZDQ1RnTnJtdXJpekpQT2RXYWNaZEZDOXVfUFZGNlMwNnFqRjlsTHpONTJxNko4SElSbVFXYjJ2Vm1zYkN4bm9fQWFFY2Z3NnJpd18wV0tvVmZCaExScDRhMUtNc0Rzd0JrRnF5NldZelhkQ1djTlFuWTBMTVdiandwV1djME9tMmdCVTJzYVlpMmFmeEVKNmQwYTFrNXVJUDdaSjR5N1lSY3R60gHaAkFVX3lxTE1aMjE5ZmliZC1ZeWRMTzZXVmFMN2hCOUJzQ3R2b3plME5PMy1jaGNyN1lyMXRUMEltbkM3Ynh5cVFyYjlueFlhOVN0MWJLcFNhc0M0MTZ6UGd0RnNVeGJyOWQ2WnRvWWNnVXJWWEtaNG92TldJRFhkUjZBSlpFUUt5RWRSMGRhT2daMVRTTVcwR05QazdVUnIwbkwtd0tWMlc0c2VRcnQwVVgtNlBoT05mQ280Ymc4QWtfYUVQY24xRDBLQ0RlalNtS3VVUEJXNTM0ZXpOcXJBWXZKb2FyeDN4SzcwMFVqTFFINWFuamwxaWFKMEFQOXNPYnlVc2xsRk1qczVycUk4YjhONmNXZk1fT0RGV2pRVFlTSWJCRW1kOEZwMHZiaGFhZjhwaVI3bURiOVNQaGpKN2kxekczRGZZRm9LQno2a0N5MFlXMnUybzVfeloteDl6Z0E?oc=5"
-  },
-  {
-   "t": "بحضور فينجر وحسام حسن.. الاتحاد الأفريقى ينظم «مؤتمر استراتيجية كاف»",
-   "src": "اليوم السابع",
-   "u": "https://news.google.com/rss/articles/CBMirgRBVV95cUxNUnRGNjNLem9QSFlobWIwaS02bjhGOW1BbWJzQUlkVkVfRF9uZ2txTUs4MjlOSWxjSEhmdnVuajhHbGpQSHFkeGROME5EMzBKOFZUMnVFNTh0VkpqTXpWWDZSUThkc2Nza0F3RHlOV0hUN29PWk1WcW5ORXk5UEl0SG1uWXlEQWx5UDNpYnNJQlgzWF91TzBaZkZMdzA3R2pfQUI0U3ZQaTdhd1NURFVaWl9tOEM5ZUE5eVdCUkFhcFZwX1E0U2dvRlJzd19haGJkLUVVbGpLNWdNRFBaRkhGSmpKY2VJb0RaQzdDdnZZcTFrVW5YbWxIVk1tMGtLdEpiRFJmbUFBRWVOVGdpblA5SGNNMWxqM3BrYzg4UmIySWVVRkFnbnJfT1lUWXdhc2FBT1ZUVmpHVjdGa3NCb1pYUHhNZDdHeVFrU3RjZGE4WFk5SVpKT3NhVjNzMlFwMV8wck1tM3hsOFRINTNCNUdTZkVzb1hRVGM5WVNudDhocHEtSnItRUlmZ2NfOXpab0piVjktNUhBVnAwb0FpUVZBQUhydEJaRlFDWXhHSVQtU0pva3lEUzR2MFJMUzBiVjJvX01kS0dlZk1UYUlYbFQ0QlE3d1dSOVVwaFJXM18zbExwdlBuck5LNWpRWEtSSGloblgtUmRhMTB1SGtiQzlGekpXVy1NZ25oY09XR2s1cnA1enRJWFZScFRxOUU0V3NoWDhNdUdfdEtIVWtvclHSAagEQVVfeXFMUHhKNmg1OUR3aHA5c0pqSTJfQUIxQVYwTnhUckNHbzZiWnk3NVZEUDFNZTMwWkVER2RYOURzSFc1TV9jRGNoZXVjdFFpUVN3MlFBbnEyVFExT0hNQi1HaVU4NG9ybEd4WHFHdnN3YUlkWHZZQ0lKUFpTTXZoU0dEWmNHY0F1U0xFeUV6X0hTeDBIalNESW5tYmxzaW56MVBvTlJGTnJoYVNtem9hMUtDWTI2QnNjdzRGYjlvNld3ZkxQM0pqNjZZSHROOHJUbWkxRERnbFdsdXIzUGlBdEd4N3dfd2ZpUlFSNkhEZEFyMHlTZGM2VlNGQkVPMFc2bHR5bVIyOFBHa2huaFJ2eEpOY1JTeHE4QWx2TkU0eTVVOF8teVQxb3ZxN253bV9rdUxlSnN1dU5SM3BVaUExVi10SVZmbFhsZmpBdGpuYmxTVGxkR29FUDB2WEFjdGxlU3hHNUNVMVdwV1RDSUJSbEFHMV9vVTNkTFZHbUdOVkwtVTRoTzI2M240SFhmZ2g0ckRpRVdpbTI4Y2RVTmNMeHdaYVpwbmNZNWhpYmZqa1JyVllUMGFMTGxWNXZjTFhhTDZKQTVyNVByVFNTdDl1a1ZaY2NnWGZMZjBzOXlNcVRLMlpnS3Zzci1HbE9VM2xxTGJmd2NvcGtVWmZkQnU3Rlh2TjRVMUN0WWtPUnRTb2pWQVRob2ZNTGhJMzBKaDlEUURQYldIR2UxTU9O?oc=5"
+   "t": "كأس العالم 2026 الموسع.. بين الانتصار التنظيمي والجدل؟",
+   "src": "DW.com",
+   "u": "https://news.google.com/rss/articles/CBMilwNBVV95cUxOU1l2RGxNZFVCYzM4TGhhOXdFVUtlZGh0S05QRHBtVktaeEEwSHJlZ25xcF91SEVSTVdpRlpWbFQzU0FPNXp0cllHSDBZQUV3UTBWUjYwelR2Y2w0d2dhZTZsalRIWGtxazNLenBfRWJILUpEeHdkSUJ2alJEZzdGMW40dEdCODVWaVpiN1BWX2ZORjFPbVJIYy0xc2h6S0M1RG9sMW5hSFJzV210T1pvTVkzclhLblRVN1BFUWYzV1dWTUlpZk12SGlvZHdZa0g5aUg5NDVnSjZySF85NUdzRUthemRKMHlxMllEMGRfNVF2ZUttVVYyTHlMYXl1TmNIdU85Z2V4Nkk1a2tFN01zNzIyVHFSbHZ3WE95dW1nMTRaWERWLVQ2SEhKc1EwTGJuaUpRUjQzeWFqeWtyU1dTelpaYWEzYkhrNVE2QVBHaTU3TUc2RkZOQzEyZUtKbGtnX19KZmZ2T0VmU1RkckMzam12OUs3SmY0VFk1Q0I1OXFrRzRBaGI2Qy00b1BEVmxDam9tanJRRdIBlwNBVV95cUxPaVJfNC0td05MYXlEakNUWE1fZ05rdDYydU1tZmxJbnEzNFhjYmdia1A4OE1xSXN4TTRnb1FfSmVIejdfSUUxc0VobEFFbmtwNjZSeVg4M2E2QnY4YzV5UVhpQnR3Rms2aGozSmxCX2hpN2ktRDQ1Zzl2cHVTZWZDdkJ6S05pOTB2N0dJMDh4emphdlVlanZUNWdxbzZQdHF2UlN3RDZWblk1STNSbDVfWXh6eTNqaW9jUV9IaFB5SXNOSjV1MXV3LTVLWHd1TG5Db3Z1YXMzTnVqc1hYRTQ5aUxyOXNDUnBKY2tIUTBzQjlXRHlDaHNVa3ZUWjFHMzc1NmZVdl9mVHhMVkZrZDdmWFB5MU9zZnU1cDR3SG5uaTFEbDRmeFZIdDhjdVE5ekRySjdGcUFlN0NDZXpzZ1FrckUxMWljTDJHVUJIa2NUaWM2TG41bUUtQnFZbWdFdHk2Ykx5c0JydW1qbVlNMUVEaDJKZHp0WnV4YTAzYURrNThFODVLYmtuc2o2b0hNbFY5VGZBeUxxSQ?oc=5"
   }
  ]
 }
