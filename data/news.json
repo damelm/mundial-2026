@@ -1,10 +1,25 @@
 {
- "updatedAt": "2026-10-19T22:32:32.898Z",
+ "updatedAt": "2026-10-20T05:05:49.928Z",
  "es": [
+  {
+   "t": "Tampa Bay Rays y Milwaukee Brewers jugarán la Serie Mundial 2026: ¿cuándo es el Clásico de Otoño?",
+   "src": "Milenio",
+   "u": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOOURqM1MxUkl0XzBpNzlfUTdkQjFxZmlzeTFBR1hac0JjaTNncENMdmMwT21tWlh2b3lGTHJUUFdVY3IzWWlRRFNQMDkzSW52M2V0LVNNQXp2VWFtV09fQVhONC1zVVRwY2J5Z0I2TjNhN1hMU0JDMkc1Sk9kZFZaanFnVXFNSlFTU1d1X2VxUlVETngyMjF30gGXAUFVX3lxTE9wMHpiaGMzWEt1OHZjR0xlWVpkZzEyb1ZRb3hkLTJGcnN6QkIxZE15LS04Y2ctUXg2c05RcXhqN0x2cDc0eHl6c0dIa3NtQTZHR0h5YVBnWXlrb1NSTFZKZUVyYS14V29pdHUxWmVzS2RPRXlBZktSeVFQcVJIbEVTYXhQUURnT1preVJFWm1xNy1JM0dHT2M?oc=5"
+  },
+  {
+   "t": "Selección Mexicana Femenil Sub 17: ¿Cuándo y a qué hora vuelve a jugar en el Mundial 2026?",
+   "src": "Debate",
+   "u": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNTXFGWVFfSkZZR2ZieVFKLWFjRGtWbEdSdFF1bDBIODY4Ykp4TXJtTXotbFFqZWlRdmJHektYZmNTLVFnZDdjSUN2aC1rM2tHbjRaQW5rOENKZFV6YktxdjkxNWJhbXd5VGQxSFQ1MUk3cVNJX3VfWUoyLXp0XzJTUHFxdzZkLUxWdmdaR19TbWNINVc1dG5xZUN0N0ZYdjBDTkpjM1h0alpCLTlYcE5wY2xwV3JINlczSjgtbUFXaloxYXZSZ1p1TmttbGY2TU02dWF2RENBZk0?oc=5"
+  },
   {
    "t": "Día Mundial contra el Cáncer de Mama 2026: ¿por qué se conmemora el 19 de octubre y cuál es su importancia?",
    "src": "El Economista",
    "u": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNd1Rhc0hfeXBzN1ktZWQ5VTdJeEp3d0hkVzN1N1RaaHpLUlZtMnFWZzFkVFRpTVVrV19ZQUNybEp2YlkzX09yMjNuTmJJNXZsaWtQWHU1RzdnNmJtdi12cWJDNFdVMFJJZldCSkpEb29HWnA3VTFtTHpQVTBUSFV6TTkxTmR6SUJxdkJxRlZCM2hKTWNpeFNMQjBsMFk0NF9fZlJOOXNJZEtTUU0xMlJIVXdpTGRzVVlIVHJVeXliY9IBxAFBVV95cUxQbkVQYzI2RGZfUUQ2MXAwVkZUUFBhWkpQVnZoT2VtdHB2dWVtSzNEQXdqaW9RR1pFVWlWdE54RHZpNW1tdVR3VHRCWTMyRXU2cUpabE1ScDdUeU13ci1FWXZpS3BNczFhUzNUamk4dVl2YWxyTE9wNzhBQXQxWmtJWExXazlwNmlubVpMa19JMTYza25hV0UxbmhXOW1CWFBEM0FhTUtxbVUwaEdfTlJ3aXJIdFpDMXlMbFRHaC16S3k5TFNf?oc=5"
+  },
+  {
+   "t": "Balón de Oro 2026: ¿quién lidera el ranking a una semana de la ceremonia?",
+   "src": "Independent en Español",
+   "u": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQdUE1MlBDd0RiMjk5RXdpSUg1dk5sRjV2UC04SWdiSTM5eTFuc3RyaFpkMGk2Q3ZZZlAtVnhnbEdPLTFDWDlGeE5HN0RQUGhuaDF6UWNHWkJCLV9mdm9NVTFuUWlIeEIwaWFOVFVnX2FEU3RyalNDMEFPaFRST1lBejBqQXJHMXNrQWg3U09uaXBiUUlZdUhXeXdVM0s4NXdVZzZ0dDcyajBoSWM?oc=5"
   },
   {
    "t": "¿Qué ha sido del Pato Merlín tras el Mundial 2026? Su dueña nos cuenta",
@@ -17,29 +32,9 @@
    "u": "https://news.google.com/rss/articles/CBMitgJBVV95cUxPVTJJdkVjS1o4Vnk1TjdxVFhYZTRTTlZKdENObkhYVmI2T01Nci11SWxSS2tVSTJCOExPWVFKOVJOTDRpdTNUcEF5eElWVDBlRERxYjl0VnpQS0NseF9GaDF3RXB0emEwS1pIR3dTcUotX1VTUmdlT1hCU2ZtRWVCbmtjNDNXRjlTV1NRc1ZkbVh2WDdzWEJzeWVYSGhod1dWaVRtanJpSzV1Z2dybVM5Zld4ZkM4N2t3LXZkMndyVTFMWDhlR1lnNk9jZDFCTG9ZS2VGN215OHhocTlrRVJCOXdpcjBtUEx5NU1wRnc0QzNCalctWlJIS1pNOFF4WU9NMklyS3VIUXMtVkpZS3prNTlYZlhMSVBiRDNTZmluSF9SNlVHOEtNdl9Ed2R5VXBZTlFWLVh3?oc=5"
   },
   {
-   "t": "Playoffs MLB: ¡Calendario oficial de la Serie Mundial 2026! Fechas, horarios y dónde ver los juegos",
-   "src": "Al Bat",
-   "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOeDRMMnNRZXlZOVRoUXBNc3ZVeEZhLXhsaU8wbXBYYng4ZXhhWnpYdEowaElCQkRHUzk2VXFvdjNQOEV4ZU1BUFN2ajgzYjh0QTVDcngwVV9jYk5qMElUUURkaDMxSEJXWFN3Z05SWC1ycTZOeHluTDBueW5JcmNGN0JlV0lzNXROcWNZa0h3RHRJRTFsWTlNUFFTRC1nUVhOc00tRzREQ0ZySlU2SlRWM1dXa2NPV2szV1lwWGk2Q3p6XzlabDhmZ2FBRGd2cVdVVjdxREN5c9IB3AFBVV95cUxOUmlJd1VJTFhSaDBPdWxQMUtuMUJEakpnTkFoby02OHdPT3hrYVBoanVDNTZFckpJSldtVTJnOG44bWR4VTRQUHhlUzhHTDNVV0h0UFowMWRQajExTkc2b3l0OThjeDFCUGJ6VnVRVUxya1lEU3FtSWRWeUFTWG5Ba2t2dm9BanIyUFdOX1VOUzEtMGI1amhqeWtYWDk3T012dHBlRUFQSE5EQmx0V09LTm1LSUl3XzRId2pQamVSdjhJSkx0Q0ROd25ZdzhaWk1VY1FhSUdvMDZ6dWN2?oc=5"
-  },
-  {
-   "t": "¡Dos mexicanos jugarán la Serie Mundial 2026 con Brewers! Y podrían ser tres",
-   "src": "Sopitas.com",
-   "u": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQWE04U3RFbjlscWRWbGtvNXdUaGlmLTZBZ2lSNnMtRDl0dlF3VUh0YWZZM0tUY0t5T2k5MVpUNlNybmc2VWNLQTN5Q25CTXFKVUxYNV9yLXBmRlA1UHlCWmhWMlY4WmpVS1FFa0xpY0xoaGlndURnZU1tU1F4a2tFcE05eU0tU0pDR3N3ck5CRlU?oc=5"
-  },
-  {
-   "t": "Mundial de Gimnasia Artística 2026: Resultados, medallas y ganadores",
-   "src": "Olympics",
-   "u": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPYW1IZ1VsYU1LMjhQbXgtbXFkZXpZUmdLVDNxTjVpTTdJNnczY1VJZ085NVRmbzVjdjZ1S1RmanFMY0txUHIzX2d6SVRLR0puc0NDYTRsOGd3OHhHUko4SjNqZlkxTVFZNzM5WDZqWE1ZZ0g0T3V4dGN6WFhoUFB2WHNFZFNFNjlhZmJsaEdFejlod000aUVJcFpyXzNKdFd4ZlE?oc=5"
-  },
-  {
-   "t": "El fandom del fútbol en Estados Unidos creció casi 10 millones de personas tras el Mundial 2026",
-   "src": "Diario AS",
-   "u": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPaGxIWmZoQjZwM05wWE00emRQV3Z4Y3RQTHNPOEhZODlraXVXRnloYmNEUEhGYWxqdDlieU5oZnpad0tDUHFUZXZ5UXRxS0lacXZsOUZ0NmdyQlc4YlZfM0J6ZDE0ZXlWRUhWRXFvZkdWclBzRmZybGVFQkttOG9uQTB2X0xFY3Q2SGRtUlZScWxZR2Q0UEkyTFpRR01GT0xneDg5UW1LOU10SFlGRTd0YWVGdHFvdFQtY1N4ZmV6cHM5bEJfbEg3ZklFSdIB3wFBVV95cUxPQ0N3UlhWNG5XXzhRX3FwTWgwcE1RUHczX3pVSXlxTExRVWtLQkJpYWFGeWdnVTZZZzVqZ3pTUHZROFc5VDFkMEI5enV2b2xWeWllYWdnZWtYaWNDRlF1dFpobHNmMC1aMkQ2akJ4ZGJGNld1U25SZ1ZzODFZbFYxZGpGck1LcmZ4TlcwNjZPNXF3ZjZJZExDTFB1RUlfQnZrYUZKUzlzRFl1YkFQWmtXeHVYM0I1Vl9SOVdCN1F3RnhFTXp5bm5KNUhNWFJ4SnRXOHJzc3ZCandQQjkyeklZ?oc=5"
-  },
-  {
-   "t": "Netflix adquiere los derechos exclusivos para España y Andorra del Mundial de fútbol 2030",
-   "src": "EL PAÍS",
-   "u": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNYVV5VFc4VUlYYUU0dVZpbjVucWdvazhpY3hlNk9vVnlPWTZUcEFUcnNNbmg4OXM3Y3J2VXRvM0FBLUZRb3hOVFdPdGViazNBOGJMQmcteW5DbUYySHFTbVczdTJjeXFIbm1WODlUX3c2SXBYY2w1WVdOU0k3dHJySng2cmJTUm9iZ19KUE1Wa3o1YmpVaXNYaTZYaFljWU9uWFlDZ2lGRWF6QzRtXzhWeVE5VlFKNlFORThNR3REV2wwTDA3YmE4OHNYNG9jTVda0gHkAUFVX3lxTE0yOEJ2OVpRZEZKUVlHUDJlSVFQLVR2UDFpMEg4Z054VlFhQXRRc3J6OGEwNjJyWl9LenRUeG44d21RY2JpWFVVRnJobnEtaW1ua3ZjeVFUMGw2SG5TeWVUOWg0dEdZQkRXMEpIY3BCVzJaRFlWcnp1R0FXOWV4OXFVd19pbk9fTnY1Z2xEcnUta0hCemJ1UXp5aFppcldldnpJcXJrN3dTSmhxNmFZVG1Ob2VoZ24yRmU4aFdWZW03bS1sTkpzdi1OOEJlTnlOSTg5UlBhNGVuME8xYlVyYTZsWTFiZg?oc=5"
+   "t": "México 0-2 España RESUMEN Y GOLES: Jornada 1, Mundial sub 17 femenil, 2026",
+   "src": "Excélsior",
+   "u": "https://news.google.com/rss/articles/CBMingFBVV95cUxQTV9XOWdVcnNING1rYmFoemtwRS1wNXg3Q1RGclkzR1JYeTNGRG5pUFdaRzVqdUlhcU5mVzNGdGtZajJqd3FqMUhLc0hRSEgyVnFPM3BYMU5NVVAwSTVRS25senQzcFAzNkZlaG44cXd5X01PUnJ0V2x0Q2QwQzhnZGIzX19jeG1NN0FXWHFITkZEdl9KM3UxTXVwLTA1UQ?oc=5"
   },
   {
    "t": "UEFA fija fecha límite para que FIFA entregue documentos sobre plan de inversión de Infantino",
@@ -47,19 +42,24 @@
    "u": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPc0xZUXFpVWZlVEY4QUlqalY1cXVPcndjQWp4RlAwSDlnWWpQSjVvRVEtVnZwTS1SSXRGRlRVVFp0ei0yWnM5OFI1b2M2SXRwVmJBdVJCRXZTMlgtRHZiSlM2cTQ2ckZXUWZLbEtMZE9Wekk4RTRQNXhrYXU2SnFpQmNrNzMzNU0yb2pjVWhTbFJNUFlsSTEzNmRiWkJZaHgzRjAwRWZPSU5iWnNKbWRwcXR3aVVnbTBTb3RyX3NvbndRWUlWV1Bkb3lOVHhzb05vSkQ5T0h2V0xsRU96eklyTUxR?oc=5"
   },
   {
-   "t": "¿Cuándo es el siguiente partido de México tras perder ante España en su debut del Mundial Femenil Sub 17?",
-   "src": "Infobae",
-   "u": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQR2F4VlYxUGVmTS05dVBDc2w2eHQyYVdteDJjNWh3cnkxWjQtWFgzNXllLUhsbmYyVjNFSmZCS3ZWN2tYWFdDM29NTjVUczd1djNVMTRLU21VMXczZGNWS0ZMcGx6UlhIeVBBTE01Q0Y3VVZMZzh4YW51UFZjZ0xkUnY4SXZWUklKOFJBMmdyLWZWb250VWlwQ1hjYlVHaUJCOGtTalhMTk1RRzJFWC1BZHJZUE5DeERXcUZjZlU0a3NnbjVaaHRGSlpDVlJBMWREZXpJNE1CYkp5UFlPT1duZHB5US1Id29hbUFpVy1zay1Xa0hTX0tDcFBYa2d0Ync2TzhQOHhn0gGgAkFVX3lxTE5CNTZRcEFGY3liS3MwN1V0QnpzczRZUThuVnc4X2lHUUpTOHZxLV9BSDBOTHpIZWhhR1BEVVZZeVFIWU1WcDFuVGxEc2Z3d3d5R0xoTF95d3Z6YjF0T05ROEhFSWlsUlNoMURxTjVGYjhUVzFUUjNtaEEtcnYxbXJIUVJudndkdUdwM0hyZ282Skd1MjFTWk1QMDA0U3RLN2dPM0hVQUlYdkNhRFQ1VVdDYWJPcGdEakxvN1hyanVZMWJ2bkVKZmVpLXVEQTQ5RjF0M1JVQVM4VjR5N0tiekYxVG9xd2hfbnVQX2dRTlVPeEFkc3gtZGdCVWtjdVItZVVvdlgxU2syV2s5em5rMGJqWGxIUkdwZXpZci1QMXVrMA?oc=5"
+   "t": "¡Dos mexicanos jugarán la Serie Mundial 2026 con Brewers! Y podrían ser tres",
+   "src": "Sopitas.com",
+   "u": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQWE04U3RFbjlscWRWbGtvNXdUaGlmLTZBZ2lSNnMtRDl0dlF3VUh0YWZZM0tUY0t5T2k5MVpUNlNybmc2VWNLQTN5Q25CTXFKVUxYNV9yLXBmRlA1UHlCWmhWMlY4WmpVS1FFa0xpY0xoaGlndURnZU1tU1F4a2tFcE05eU0tU0pDR3N3ck5CRlU?oc=5"
   },
   {
-   "t": "España vs México en la Copa Mundial Femenina Sub-17 FIFA 2026: horario y dónde ver hoy por TV y online el partido de la fase de grupos",
-   "src": "DAZN",
-   "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQVVB4NnBudVJTUUlJMktDYllUaldKNnFXT0R0cUVxNGg1N1o2MFBKcF8zWWg5MV9WRHlqNHluOVg0RjIxLUJVYmo1dEt4UnFKVVZyZmc1X0wyOEpVMHpJU0Y5dzUySjJBb0phNzU2Qk5kVXY1dU5JNHYtNzlSRW5fYXdsT2lQVTNmdW0tN3ZOOTR5YklCeWpXRHlaYTJNeWxqRmhkRUVsbG12TlItR1cwcUg2MEd0cW9lUjRvbEtnX19PaGlJb19iODk0c3lZckxEQlNST0xZcw?oc=5"
+   "t": "España vs México: Dónde ver GRATIS el debut de la Selección Mexicana en el Mundial Sub-17 Femenil 2026",
+   "src": "Juanfutbol",
+   "u": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNbU0wbnE0clZqVVM3NjEwREh1dzNwNE4tdXAyNFpVZGVzcWZYcHRNSUowS21ORlNIa3VnRHc3VVR6YzV1MWxZSUpsYVRxZVJpZ21mcUlMZFVVN0VlN0lFTWVtRHhPU09MNjdqenFQaWw3UFJlQzI1ZEZNTjJucHRiNUtpaXFRUlplRVNGSlAwWTlVMldIN2E0WjNQb3o4V0JGeW1qZUtzSHRPNWtVSnlCeDhwR3lyb01hUzU1QXplZFktX29jcjhuMnNONWdsZUJLSjJRTGthQVdmeEU?oc=5"
   },
   {
-   "t": "Partidos, Fechas y Horarios de la Jornada 13 en el Apertura 2026 de la Liga MX",
-   "src": "N+",
-   "u": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOSjRzb3hkblRtdGM0bzdqSnZJa0VaOFVBRGptVGx3XzgxbXBxNmNQYWV1OHR1c2ZUeklqZkQwbFNSYjZCVXZqa1J2VTdkTDRqcE00S3BJWEdwaktia21QN0xEQm9KLV9MZmVnTDh1Z1p3QlJKNElQa1FldmdTdUMyYWt4RXBxUUpZZXRFVkxwMEhEa0lwRGNhczdmaEh0SzVLRnJQTUZiWXR1RHVh?oc=5"
+   "t": "Serie Mundial 2026: fechas y dónde ver en vivo los juegos de Rays vs Brewers",
+   "src": "Claro Sports",
+   "u": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQY3BUaEVIQXJYZjhTVWVBNDJNRE0weWFqWkkwSEtzb043WG1FVXFRc0hKSk5yNDhYWHVYMktuS3lMaUszVjNyWWw5ZXJjRjkwWmk4MmEzQkVhN1RBZk1LUEVQLS1BcFFNVVlEaU1jajdKMlNhRDllNUpzcU96cEhHaE5mb08tQTZRSjdoa0k4c1Z2VXhab3BWVUw3Q0U1bnQyd0p6SXAxN3BTN1pfVFI3eWdlR3U2aU0?oc=5"
+  },
+  {
+   "t": "Se define la Serie Mundial con triunfo de Rays",
+   "src": "TUDN",
+   "u": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOT28zRUFfeHJvOVI2SThPU3ZoSWRiQVJkQXlqWDJOM0NIRDVIcGxNRXlhak9jd0d2OU1kSmpKZkRRbjY0OHNIQU1tT0F3MlZlNWEyc3ZRa1R2S1cyUy0yWFVFM1hOZ0ktMFRUZU9kWmRoZzR4bFN1eHJac0hiLXRkdlVzRDRueXJVUkJPRWNQb3ZsZlZnQlNabjQtNA?oc=5"
   }
  ],
  "en": [
@@ -69,13 +69,13 @@
    "u": "https://news.google.com/rss/articles/CBMibkFVX3lxTE16TWgxZm9tX0tYV3k3aVZTcnowZ0RiWlBtVkoxaWMwM2RKMnN4Y3ZKT3FoWU50a3hBb1FVOVI5MThoaGlISWRWRGxBR0MxWGN0VXB0WWxCTW0xeFI4OWFOZFN6c2ZURXFwaTBSbkdB?oc=5"
   },
   {
-   "t": "Spain beat Argentina 1-0 after extra time to win the 2026 World Cup – as it happened",
-   "src": "The Guardian",
-   "u": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPRjFVNnlGOEhKQ054eEY4WThsZjNIX196Mk1xalNQMTZDb1lFSGZFbWFwa09ieWw4elhDbjV4aElDTWRFM3ZORDlFcFRKNW8tTnRTS096WjFxRzdaTEI0WWtQUHBsanpITDVhZGlMRkJFZmpYR1gxb1R2d3ZJRUpKTHNTVHFhdzZWS2xwa3NndFBBSjZMekMyTndmV3lwNXZHSGFfZFZ3MnE?oc=5"
+   "t": "FOUR debutants loom in Kangaroos shake-up; Kiwis’ big judiciary boost: Team Tips",
+   "src": "Fox Sports",
+   "u": "https://news.google.com/rss/articles/CBMi9AJBVV95cUxPY1lEbTJVQ1ZlSW04RkcwcDZLOENLaTY4bnF6U2d4QWJxcUhWbHA3M0pja2xsaHA3eEJHZENRc1p2U0VONVBMUWVXUkk2TURFRkVHVVhvdU5ueFphX3U0WENMZlREOGtxNkxnRGJxLUJEY3dyYmNHUUZMd1hpT2RLWHpsSjV4RTFEQzg3Um05b19xSWJGTGVLcnk2Wlh2UTlGVDJsRmZYRWdqSDlBV1dzdmt1U2g3RngxLXBnU2w1X2M5XzRPM3JjZUlHWGExM1dVYUl3dllWTkdFMElSQVhZUE1OOWlmVUdEeTI5OFI2UTRJdE4xcFczdUllbDljME14clliUld6T1FLWjIwcl9wTWpnQ0JfeTByTUxzR1BkM3puQnVxRFZsODZJMnEtRHNkamFPUDdRdDdwTTliUWxUbkdhd2x2SXdtZExXRjhmd0dNRnRoZkV5bUpCV3VfSDBZZFR6Qkphd3RrUU00SDZxcHBVTXfSAfQCQVVfeXFMT2NZRG0yVUNWZUltOEZHMHA2SzhDS2k2OG5xelNneEFicXFIVmxwNzNKY2tsbGhwN3hCR2RDUXNadlNFTjVQTFFlV1JJNk1ERUZFR1VYb3VObnhaYV91NFhDTGZURDhrcTZMZ0RicS1CRGN3cmJjR1FGTHdYaU9kS1h6bEo1eEUxREM4N1JtOW9fcUliRkxlS3J5NlpYdlE5RlQybEZmWEVnakg5QVdXc3ZrdVNoN0Z4MS1wZ1NsNV9jOV80TzNyY2VJR1hhMTNXVWFJd3ZZVk5HRTBJUkFYWVBNTjlpZlVHRHkyOThSNlE0SXROMXBXM3VJZWw5YzBNeHJZYlJXek9RS1oyMHJfcE1qZ0NCX3kwck1Mc0dQZDN6bkJ1cURWbDg2STJxLURzZGphT1A3UXQ3cE05YlFsVG5HYXdsdkl3bWRMV0Y4ZndHTUZ0aGZFeW1KQld1X0gwWWRUekJKYXd0a1FNNEg2cXBwVU13?oc=5"
   },
   {
    "t": "'We know what's in front of us now': McDermott",
-   "src": "Rugby League World Cup 2026",
+   "src": "Rugby League World Cup",
    "u": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPcHdCdlhVSG1aMUo4NEZWd0xkbGtBTjhsRm5oakZOX2dJR1VoTDVMc0s4MUJpdjRwcHdNeDRNOThtOEVLc0U3dWdhTUxaeTdYYmh5WjZKaUFYa1gwR1Z2SHhSem1ZbEppRW5IWmltNkw4X0JKaUttM3prZjVxaUdlUA?oc=5"
   },
   {
@@ -94,6 +94,11 @@
    "u": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNQ2VBRnNlNWtlYXplQ1pST3JROGJ1cGN4ejdGV0g4WFVmS3lWSDhzVDk0U2Yya21FSnRGZGpCR1p1UDBlNmdWamJfTVZNS2p6bkdiSnJYNXRscXlpd3FqWFJMWEFUSUlXeExFcEQ5clY4YzNuSDJmVkxrSUY5NDEzTWI3TTltRVl3bk9fQmhob0RnWXVoLTRxRmk5ODZHQ1hNMVlVS3FZX3Q?oc=5"
   },
   {
+   "t": "World Cup wishlists, early movers, big clearouts: 2026 summer transfer window trends",
+   "src": "The Guardian",
+   "u": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNN2ZXbGc3WU93a1I0VkJtQURUdlhlcFA4TUFFY0tpbDJzd2I3MWRZMjZwRjJOWmRRekZxLXhaYWxsaEpHNW9zSVp4ZWs3Znc1WmZQdzZlUTI5MnA5RVNGRF82blhBLTJabWtMT2xRT19pLWJpM194d3hsUUVZeEw5NXZWenBqTXMxYnBERFBRYWFadTlRQUpWc3NlVnk4SE1ZTXh4aENZZmFmdzBRQjJiTHZsalc5VndZN0QtNXFmQUhGOGRyTzVkUEd4Tzk4Zw?oc=5"
+  },
+  {
    "t": "Rugby League World Cup 2026: Reports, news, scores, fixtures from across the men's, women's, and wheelchair tournaments",
    "src": "Sky Sports",
    "u": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNM051Nndid0h4YVNCci1ENmlTTUdOMjBidkJscDFQc3VUVURMVXVJcVFpWDBJS2VGYXpwMzJpR2ZWQ2l2b1R1X2d4dHVCMEluWDYtdWZWSTBfTUpsTG9FSDI5YXVNNFpFMlkxQ1kwbW9BdnNsdHF0aHd1bnFOMVIwdE52Y2pYWVNDQW9ZT25VNWxIdGx1aWw5MWttUThWZGRzT2JuVzRJZGw1M2VydVhseFgxWGFzS3pOX0EwLTAyRFJpYjFzckFXMW5ZazRST3NMVWN6b0xSTlp0LUIwREItR1ZZdzduTlhaT0loNTM4bGhlcHZIZ0tfZ2hFX1dPQQ?oc=5"
@@ -104,14 +109,9 @@
    "u": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPaGNfc2JlTHRWVElhUnd1dlZHNGxIbHUwUHFFMDVUX3ZCZHpnOGgwTTNQTVlpbFhidFMyUlQ4dlBZSXNRUm9DQmJveDF4dFBuNTNzQmhlY01JNEkxemFZUUx5eFQzTzh6RU5keVd6Q2JXVjBqd2NNTWJ5RUpjMnFsMQ?oc=5"
   },
   {
-   "t": "World Cup wishlists, early movers, big clearouts: 2026 summer transfer window trends",
+   "t": "Men’s Rugby League World Cup 2026: group-by-group preview",
    "src": "The Guardian",
-   "u": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNN2ZXbGc3WU93a1I0VkJtQURUdlhlcFA4TUFFY0tpbDJzd2I3MWRZMjZwRjJOWmRRekZxLXhaYWxsaEpHNW9zSVp4ZWs3Znc1WmZQdzZlUTI5MnA5RVNGRF82blhBLTJabWtMT2xRT19pLWJpM194d3hsUUVZeEw5NXZWenBqTXMxYnBERFBRYWFadTlRQUpWc3NlVnk4SE1ZTXh4aENZZmFmdzBRQjJiTHZsalc5VndZN0QtNXFmQUhGOGRyTzVkUEd4Tzk4Zw?oc=5"
-  },
-  {
-   "t": "Australia edge New Zealand in epic World Cup opener",
-   "src": "BBC",
-   "u": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9OaHFDSWhHTFczejFVcXBxcWVjd2oyN3YxSHRQY2R0QkktRFJaTDF2MTBpUFpIRjhnUmFyWmR4eGNoSWVjNWx6bGwyYUhXOTlrNzJKb21WRWJpVEJDdVlPYTA1Y25Qc3N5STMtLWpB?oc=5"
+   "u": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPZTF3UGxpaDlJMldBMzNZbUsxek5wdDBUaHkzWWpob19zX2xlYTdDb1ZmLUdINERrX25SRTh2LWhlYnNsYmE3WkUwQmpXMDJyT0xkQXZoODNoYnBWT2VtQVpYblgwTXY3WFFrV0RFWFNYOElQUFJfRzVNREVENThiZnJCZjhwdFE1R1Rab0NYMzJidzEtcFcxNGx4VlpMam1NZktB?oc=5"
   },
   {
    "t": "Inside the World Cup",
@@ -119,9 +119,9 @@
    "u": "https://news.google.com/rss/articles/CBMickFVX3lxTE9GUEdLUEQ3YTI1WGUxdEkxcll0Y1pydFYzWmk5SXNDbTIxZ3FmcTRDOHlQT2VqS0p3UmctS3Nnc2xvVXVfWmI3WEJXVDBSWWM5NzhHdVhGbmdvSV9XSzBQTUphNmZhTVROX1J3SzlNY2xsUQ?oc=5"
   },
   {
-   "t": "Shiny Scores: Panini Prizm FIFA World Cup 2026TM Official Sticker Collection",
-   "src": "Panini America",
-   "u": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQWHJLRHpsanJBUkR6dUkwUHJnd2dYOV9JZDNMbmlpbGVUdXhkVG16SW5jbGJsRk5IUnd2cXVrb1lXRGxFOXB6ZlIxMldkTE9wVzNibTZtckc2TTU2MEgyWWwtcVR4MkljaDA3eGNVVVpNSGk3Qnp3OHJWQWhON1VjN0dNbXl0c2NFQzd0d2pKR2ZXbkZUelpPN2JzZ29XVW16MW9raFpFdzltR3c?oc=5"
+   "t": "Display your soccer pride with LEGO's FIFA World Cup trophy down at a new $160 Amazon low ($40 off)",
+   "src": "9to5Toys",
+   "u": "https://news.google.com/rss/articles/CBMid0FVX3lxTE95Uk1fVzIwNHEyM2Jfc1BONVF3WHliRS1uREdtUWpIbGZ5RDd0UGRXUGtLTnN3b0paQkpMaTNwd3VrQmZhZldyWEtiZ0UwemNMSXgtRlpTaXYtSnhIVnhvVUo1SGZ2M3FiRm9GdUFsWGtKV1NwZGRF?oc=5"
   }
  ],
  "pt": [
@@ -156,11 +156,6 @@
    "u": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOT3E4UEhSUjVfbjZQMTBNUHhGaUlDU0VMamF4anZGM3Yza0ZxMzZtZEE2UVIwVVZEaWFQbGkxQ09wWjhwQ2R3dG56VXU2bXJaX3QxSG5KcDh0clN0SHFJNzdndE9kUHp0Q3NkQU5kUHJNVERHYVJRN25FMWpzZW5FSERpTmRsVWp1cVFfeHJ2Vk5HcnZGZUpXcjJjYWhhVDc0YlNOWWhWT2lXbWFEV0Nn0gG-AUFVX3lxTFBqR05LdlJLeXY2REhHdUlkaUYwdGlvVnZpNk9BOUlJZXJmampmaWRvQVF0OGhxcVhYbG9RM3NwVVJIbmtxbkhyQi1yQWlZSHdhaXNqTmlacGtHbzU1eVFtNHZLUTZfSFRhcTQ3NzhQeFVXem1EMFZRV09kX01sWDI3bFVtXzl6bTdWWWdGWGdvSk1uMW8yazBTV1FWUEQyTlljSDNmQndhSWQ5bG9yaGllb3A1T0tZYm44QjFZeGc?oc=5"
   },
   {
-   "t": "Matthäus: ‘Para mim, só há dois candidatos à Bola de Ouro e eles jogam no mesmo time’",
-   "src": "Trivela",
-   "u": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPRFV6Y1RlelVnN0ZjNGxhSVlwWGc3UlAyZlpncWJjcEItNTNycUFMaml4LW1yaDRrZGhOX3RYZmQwSGhKMFh6eHFHcTlud0NwNFpqcnJRaDY2NFFrWEJNdUo2bkZEUnZOTHEwS3hOcDEwTTl4SjBfZ3dxSFZ2eTExTm5ldHN2bHZLcVNteA?oc=5"
-  },
-  {
    "t": "Copa do Mundo 2026: confira as estatísticas gerais da competição",
    "src": "Olympics",
    "u": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQYWk1TjlDdEtsVEtzRlJaU2lDb2FsNENjd2VPSTNESUNacW5tX1c0cW9TazdsQl9ndHMwU2dvMFl1R3hkNDROMFFOa01tWnlkWTdOS1ZKMXJTVURaSzl3MDE3YWdBTmFOSHFNNDVCS2Q0M0Q3TFhMQV93OTNmelBRZw?oc=5"
@@ -181,21 +176,26 @@
    "u": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNZHNrQlFDSlgzU0NpMEhqVDBXR21mMW5lNTRtYlUzWEljbEZlZUtUeG1Ed0FjLTMwZ0tNTnNqR09namh0ZEh4dDRJV0ZBYlFBVXZCVnVqdjFYcExraDViS2NSUHVWTzZpT3lEZF92VHJ1UGxWMV81dkx6cHpIeVpLR1JKbG1JMlBaQ1JVVnNGalMwckFUZ2loaFRmMWxrU1FZX01aczluZw?oc=5"
   },
   {
-   "t": "Marrit Steenberg a maior premiada da temporada da Copa do Mundo",
-   "src": "Best Swimming",
-   "u": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNSFlZVWFQRDNLMkk3UDFGeWNDZWdpemkzM1hUcGgxenNWOFJpWHVQZkduWno3MHpva3R5YnQ5dDhlVXVFbUFnSFlidnJmWGM3UkRvdFE2VkZVOUVueVJIVVEyaDNvVXk1NC1GYzFkb2llejZNT09kSEJhdDI3RFRGMmpsbXV0OVFrXzliNFNsNVJYZTAxMG1Ibk5QNWFPWUh0Z2NsY01XbEEtN0xuMk9IaWJR?oc=5"
+   "t": "Calendário das Quartas de Final da Copa do Mundo 2026: Veja Datas e Horários dos Jogos",
+   "src": "Forbes Brasil",
+   "u": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQRmtaS1pQbVNSbGJGeUh3VWY3Q1BxNFRIU2RpRlFTRGRpNDBGcVBvekZFT002TFZ0dDloMXBleWFqUnl6RUpIRzl3NW52dlhDWU42MTBuV1RBQVQ4bWw3Mk5pb1g4ZTVPMXFGYkFWWmYwV1E3N1BhVkxhQ19ZeTdPdVNhbkpZUlVpa19HaGw3bUlWbFRla09xcHl4Uy1zX2Z3UmlnRHlGNmI2RVI1ZnFOM0ZCcGNSeDhzZ3o3TmZzc2d2UHNwWmlseEpSb1EwLWpjOGxzZmlicDk?oc=5"
+  },
+  {
+   "t": "Quando será a final da Copa do Mundo 2026?",
+   "src": "Valor Econômico",
+   "u": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPaFlZb1NzNmNla0w1bG9OMnI3aFNtczdRUVRTNzBwbVdUd0VlV0xOdjg3LU5rV0h2bi1lbFdUaTN4aG41SHpEdWJwNXZjUGd1VGF6MnZZeTktelppVkVYM01tWERLbmtsMjNLSW0zcXdXRXF6LWdDSnUzU2xfcjNDOThuTEhmWGlnVTlzMWgyTDZIOXFZWDNpZl9mUUhWR2ZZ0gGvAUFVX3lxTE5XTGdtS0s0eUxmU01MNFpDS1BkZlBFTlI4QjVXc3NhNkJvU1RzNVV4aGNNS2lfWl8tb2J1amJtc2E4bDlIQy11Y3R0VXhPelB3dlN4RXpyNERvTUVHZWNCX0hWSjNJcEFISnVBNFNPZnV6a3VJNkFsbHVFTDd5dDE5eWtpTjhaUmgxWU5nZUdfVVJneWpJazcydzdaRjJLRC1PeG92aE9BQUQ1YlFSc28?oc=5"
   }
  ],
  "fr": [
   {
-   "t": "Coupe du monde 2026 : les Bleus et les Bleues, unis dans l’adversité",
-   "src": "Fédération Française de Rugby à XIII",
-   "u": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNUC1ldHRPQi1iS1k0ckY4Z2tzX3RobWVwaWxIS2N2dER6WE41YWJzUlBibUNkVjBGZXh1NlRDejF2S1ZZM1p3ZTRPc0dEU0U0TERES3h0blVSZGhXY0dqd0lZX2E2WmhhbFVZYkMzamtsSGlrYjFtWkNKQzRvWDdXU1U2dEM4azloOXpWb3o1UQ?oc=5"
+   "t": "Coupe du Monde 2026 : un sélectionneur suspendu par la FIFA",
+   "src": "Foot Mercato",
+   "u": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOMmpxeUpzNEFzT3o5Y0ZSam5uOURzOU4xN2hNN3dKcktETnc3ZXh0NFM2dUhmWEVoZEpaS3pqNm5sVnRDQnI0djB1Y1ZvdmVFV0g5QVRoMi1SZVBvdjJSelp0SF90d2hEb3doRlZVQTdjcTNtbHNHcTV4ZVZnWGM2eUNRbVVvTXZqTGpaY0lFaVR5UFVMMkRqSFNSZ1F5SUE5ZDZiUEpNUlVadw?oc=5"
   },
   {
-   "t": "Comment obtenir des billets pour la Coupe du monde U17 de la FIFA 2026 : dates, calendrier, prix des billets, informations sur le lieu de la compétition au Qatar et plus encore",
-   "src": "Goal.com",
-   "u": "https://news.google.com/rss/articles/CBMi6gJBVV95cUxPRjZ4eWdpWjlDR2duTXNCanFZaldIUWMzOWsybVFJSEdjSndsLWV2T1E1STRYRHhvYzdoWmoxWVBIa3djSFVMZXhwNER6VEppNWphdFowQ1htYTJQQ1ZZbVFUdkFIY0g1S01kamVaS1UzV18wd2ZmV3dObEZYSDBrbHpCSnc0OGQ4NmJTcUkxN3dUd3ZCWnMtRElxQ0ppa01mVE5zdWhMZG9jUm5qQ092cl9PYkhoZy1wNG1lRjBVa1B1X2xseGpwX0QyaWtQTkxkZEFpYThhYkNtMlE5d3VRODRoTkhFTE12eHozdUxvTHdudjNrWE1JeVpKU05UZGFpdVd0MkF3RU5CVU8tYWxZR3poOGVGOVB4RmpTSmY0Y0FFUlVSb1UxYk9kMzFUendUeHdNZlhfendXSFFMdVhWR1lqQV9HTEoxeEpPa1NtQWZRN0NWZWpvX1BDSDNRTmYyRUw3S2pSUGF3dw?oc=5"
+   "t": "Rugby à XIII : la Coupe du monde 2026 frappe fort en Australie",
+   "src": "L'Indépendant",
+   "u": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPZTlRdkw5WUEwY29ITEFrajBiS3AtZkcwS09LSnpBNVA2QTk0OFowSnpMRkVXeC1qc1lxN0dHLWFTNDZhaVJPUG41d09BMzJwWHF6S0NHN0JJOFVYSWZqOGJoa1R0a2pjNmw5ckQtZ2c1UjA0ZDhaeEtyUkx0TWVVXzJicTBFMG9zaTdOSV9ZQnp1QkVpMFMwVnlfOXZaWldOMGJZOXFVM25POHpMRWFWM2J5c1lIZHZ2elljWnpvZ21NTmZPNkpaMDhR?oc=5"
   },
   {
    "t": "Ski alpin. Le calendrier complet de la Coupe du monde 2026-2027 - Ouest-France",
@@ -203,9 +203,34 @@
    "u": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQbmFYTzRXUTBqZjZfR1ZlTGJMcGl3cjBHWVpqWVhMcHVyOUdLQ3c2bUdZV0hPS29RaXBmQWtXclBZVnMwVVNCOEd4R0NTekF4MG5JMVVVWjRNZDNSMjBSWkd5ZDVZV01oSm5iUW9CbkVDeDFxaHNEUkxuRUFMQ2tpaHJhNld0NGQya3dxWGFuSEVaOEJtUVBCMDJPMXRXc0Y2TW84eVY2NVJTZ2F1UDlaaUVEcmtyZ2VVVE5mV0t5YmtaSkMtc1NpQlkwUFlqYUJOSVU5X002dVBkWXc?oc=5"
   },
   {
-   "t": "Rugby à XIII : la Coupe du monde 2026 frappe fort en Australie",
-   "src": "L'Indépendant",
-   "u": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPZTlRdkw5WUEwY29ITEFrajBiS3AtZkcwS09LSnpBNVA2QTk0OFowSnpMRkVXeC1qc1lxN0dHLWFTNDZhaVJPUG41d09BMzJwWHF6S0NHN0JJOFVYSWZqOGJoa1R0a2pjNmw5ckQtZ2c1UjA0ZDhaeEtyUkx0TWVVXzJicTBFMG9zaTdOSV9ZQnp1QkVpMFMwVnlfOXZaWldOMGJZOXFVM25POHpMRWFWM2J5c1lIZHZ2elljWnpvZ21NTmZPNkpaMDhR?oc=5"
+   "t": "Comment obtenir des billets pour la Coupe du monde U17 de la FIFA 2026 : dates, calendrier, prix des billets, informations sur le lieu de la compétition au Qatar et plus encore",
+   "src": "Goal.com",
+   "u": "https://news.google.com/rss/articles/CBMi6gJBVV95cUxPRjZ4eWdpWjlDR2duTXNCanFZaldIUWMzOWsybVFJSEdjSndsLWV2T1E1STRYRHhvYzdoWmoxWVBIa3djSFVMZXhwNER6VEppNWphdFowQ1htYTJQQ1ZZbVFUdkFIY0g1S01kamVaS1UzV18wd2ZmV3dObEZYSDBrbHpCSnc0OGQ4NmJTcUkxN3dUd3ZCWnMtRElxQ0ppa01mVE5zdWhMZG9jUm5qQ092cl9PYkhoZy1wNG1lRjBVa1B1X2xseGpwX0QyaWtQTkxkZEFpYThhYkNtMlE5d3VRODRoTkhFTE12eHozdUxvTHdudjNrWE1JeVpKU05UZGFpdVd0MkF3RU5CVU8tYWxZR3poOGVGOVB4RmpTSmY0Y0FFUlVSb1UxYk9kMzFUendUeHdNZlhfendXSFFMdVhWR1lqQV9HTEoxeEpPa1NtQWZRN0NWZWpvX1BDSDNRTmYyRUw3S2pSUGF3dw?oc=5"
+  },
+  {
+   "t": "Un sélectionneur et un joueur de la Coupe du monde suspendus trois mois plus tard pour avoir critiqué l’arbitrage",
+   "src": "SO FOOT.com",
+   "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOYVRqdExtaWtXaFhEMjViUFpYV0xoamJIeTJ6U3U2eFY1bnZSVUY1VTc5Z256TXpMbWRnNVFWX2RNYUJzWXhsUkVBTkdiYUVMSzN0cDE4Sl8zcWlEQ01FYldhT1pyTWg5QmxUZFF4Z1pucGVDRHByOHc1VTNVaVk3YXNoY3drMzd2ZmxxQWduQ2VKOGxBY1JxUHlOdG1ZZFo2NzNOXzRjWlVOMTVIbEJmdURValI3cTFiUFloYWVxYTh5Y1NYSG5ZclFubERRS2s4VmE0dTNOODMtZw?oc=5"
+  },
+  {
+   "t": "Coupe du monde 2026 : la FIFA inflige de lourdes sanctions à l’Égypte",
+   "src": "Seneweb",
+   "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOd0M0X0hxMFpmVnBoRW9lRXVpRXhqcm9Sb3JtYnIxZDZ3SEFCTXhnY2pab1RDRjA2aW9hajZjTnFKd1Q5V21MdXJkZkFIU1R2bzNJbDAxaFFMTDZ6bkxMSlBJdm9DbWFydk1NeEJoZktaTVFYNzJhOVZ5YU1Xcnp4OEROMDZuVjYxb1V6UDBReUNrZC1tc25IY01ILUZrLU9DU2ZXMUFNVm9KZWZlT2wweVQ0WjFkeGg3VlRBRjhB?oc=5"
+  },
+  {
+   "t": "Coupe du monde 2026 - Les Tonga un ton au dessus de l'Angleterre - Rugby à XIII",
+   "src": "Treize Mondial",
+   "u": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9fNF8zV1c5UnI4YXZMS1E1MXVzOEcwRjNVMUd2TGNfV0VrVXpWdE96LTVaSkF6WFZfQ3lOXzJQQWoySW5wa1pZZXhoTENpRW9OYjBwNnp1di1fa0hjc3laaUxXNDAyTHBRdEdoSHU1M2xtdU5GY0E?oc=5"
+  },
+  {
+   "t": "Coupe du monde féminine U17 2026 : chaîne TV des matchs du Maroc et classement - Afrik-Foot",
+   "src": "",
+   "u": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPQkw3WlB5eFJUcEpNVWZ1dVFLSUc2SS1rVmZGdXVYZWlldGEyRFhlYXRPWFBNdXNWV192eWhiUUszT3U4UWdXLU1GR19mMlM2MnUwOElVOEJKTGVIVG5kR0tFd0RiaU9WV3Z1bDhwenpyejc3TlBmUWd0X3hQNmlvRk1qSzlqSnAwU2VpTA?oc=5"
+  },
+  {
+   "t": "Coupe du monde 2026 : les Bleus et les Bleues, unis dans l’adversité",
+   "src": "Fédération Française de Rugby à XIII",
+   "u": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNUC1ldHRPQi1iS1k0ckY4Z2tzX3RobWVwaWxIS2N2dER6WE41YWJzUlBibUNkVjBGZXh1NlRDejF2S1ZZM1p3ZTRPc0dEU0U0TERES3h0blVSZGhXY0dqd0lZX2E2WmhhbFVZYkMzamtsSGlrYjFtWkNKQzRvWDdXU1U2dEM4azloOXpWb3o1UQ?oc=5"
   },
   {
    "t": "Ski alpin. Le calendrier complet de la Coupe du monde 2026-2027 . Sport",
@@ -221,48 +246,28 @@
    "t": "Favoris pour le Ballon d’Or 2026 : Kane et Yamal en tête",
    "src": "Eurosport",
    "u": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUk9hZnlFQi1MRW9WdzdYRTQ0N0ZSbUl6MlFCcl9jS1M1Q2xMeWVrU2Y0RVRhOFZ5SmRBY1RJLTJjVDJtdS1udnBzdmV1Z3VNYmd1Y1UxdV9ZMkI4dENRUXF0NFdsOS1WS2RCT1Zpc05MZHJ5VmV4aXhrVTBQZEt4VDl2MHhfRGU4bHF0cUo4U3RYb2ZidWZLOEdjUmZONlZEQ1BfYmlVNXo?oc=5"
-  },
-  {
-   "t": "Un sélectionneur et un joueur de la Coupe du monde suspendus trois mois plus tard pour avoir critiqué l’arbitrage",
-   "src": "SO FOOT.com",
-   "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOYVRqdExtaWtXaFhEMjViUFpYV0xoamJIeTJ6U3U2eFY1bnZSVUY1VTc5Z256TXpMbWRnNVFWX2RNYUJzWXhsUkVBTkdiYUVMSzN0cDE4Sl8zcWlEQ01FYldhT1pyTWg5QmxUZFF4Z1pucGVDRHByOHc1VTNVaVk3YXNoY3drMzd2ZmxxQWduQ2VKOGxBY1JxUHlOdG1ZZFo2NzNOXzRjWlVOMTVIbEJmdURValI3cTFiUFloYWVxYTh5Y1NYSG5ZclFubERRS2s4VmE0dTNOODMtZw?oc=5"
-  },
-  {
-   "t": "Calendrier de la Coupe du Monde de cyclo-cross 2026-2027 : toutes les dates - TotalVelo",
-   "src": "Toute l'actualité cyclisme",
-   "u": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1LMkdodnU3ZE52c3dSLXJnS1NGYll5SGo4SkVlVDY4eFU4OUF3RzZNWmlSSUJVV3Q1WXo1aTRLcGllVnpUQ3dPdUlOOFNvZkJVcE95NFNacGgxSDFERFZyZWx0YTBnTFBlbUhCQW5JWFlVUkZhVVROdjhoSEQ?oc=5"
-  },
-  {
-   "t": "*@![EN DIRECT] Lorient Monaco match Coupe du monde 2026 en direct Live 28 Juillet 2026",
-   "src": "Universidad de Córdoba (UCO)",
-   "u": "https://news.google.com/rss/articles/CBMizAJBVV95cUxNc2o3VDFqb2hQNVVKZGRzdDNWdDA5bnVFcmJ3cUlUM04teXFHSk5OQXViZS1xOW9sWG4yQnlFdUtlcllIZjNkc1hyX09WM0hDdEcyT3NPRjUyU3lqelowS3BYM3dXSHpqUHNRWUNGZTV3SDVyVmxTaGtORG5pYVBwNjVWX1FwX1V4ZzBTWEpPVGJ6TUVLc3BIcDJQMVBHemlfTEZqb19rY250SnJyT0FYTmQySmJYWkFtYms1dUhUTUk2UmkxVVpJYXhnYlNlcUlQVlpPbVR1ZjNLMmw4dFZGS3RPUTBQNHVSWk9pSG9udTl4ZHJCd3F0Nm1PeHM0VGlNei0yLXZnd2ZBVXZ2eVZxd0M5bHFpMkotUFg2MzJud2hvWDFUc2M3WC1uc0J4aTFRTjRCaFBLdTM5WnViU0pKZjFJaDNqZjF3ZDY1eA?oc=5"
-  },
-  {
-   "t": "Ski alpin – Coupe du monde. « Je suis dévastée » : Valérie Grenier s'est blessée au genou à Sölden",
-   "src": "Le Dauphiné Libéré",
-   "u": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOd2h0TS0xdjFWZTBRcDBIVkZTWEFCbTRkZEFvSXZDaUI1U3ZnbUc1QmxOaml5YUNzR1VXZEpCY1JQd1VSWjRDcGZvYVpsRldNbEduOTJsX19zY05uMm92MG0tQ0tuMDFoSExpWnRRN0F6dTEwbmpjNGw1eVNSemF5Y0pPR0lHM0ZlUlB4eTIwREFqVEc3bXFrdXJZR2xyNG9UY1l6ZTNMMjFXSVRRcWFJcDNR?oc=5"
-  },
-  {
-   "t": "EN U15: 14 joueurs retenus pour la Coupe du monde 2026",
-   "src": "www.horizons.dz",
-   "u": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNTDJMdGd6WXc0RDhORkd5Mk9tX0VzdTczei1waDdRWTR4a2lLRXZVSHg0SzNoNk5tZlk5MW5MZ1hkWmIxQko1bkxwcXkxXzNHT19IVzA1TDdINXBpMWY0OEZWQXVQOG1OOFRMemNGZXFtdHowZXNfUFBNdnBPNWdtZnBVaDVDdG9hTjN4YmZqcw?oc=5"
   }
  ],
  "ar": [
+  {
+   "t": "نهائي كأس العالم 2026... صراع كروي بنكهة التاريخ والاستقلال بين الأرجنتين وإسبانيا",
+   "src": "الشرق الأوسط",
+   "u": "https://news.google.com/rss/articles/CBMijgVBVV95cUxNVjJHYVpaR2c2eU41NEk1ZVluM1d5ZVNaNUNIRGZNMW1rcVdkMmNldWhkUzBEa0l2bmRVakVSMDBST0tURi1jNUo1RTF1WHdLUF9NSjhLc20weHdrWjFMYlRkNHl4b0hJaVZzTUlTa1BMTkFaUkdNMEdMaU9RZ0loMkt3ZkFMb2VGNFVNOExOZFh2VnBqQVVjc3RBajNkUTRqU0lUODZ5bWVka2ZXbDlIa0x6UmtMbkk3YmZhcTFHYW5VRjNxa1VBVEdqcGU5NGc5dkxCd1FnZUxiWDJhN3BZWHBHZjQxRlI2Rjg2VlhZSFFmUVVXX21rMFRDX3VaRFVTd1VrcFZkOWU2V0plcmc0UXhRMmZBYTNsTU0zWWJ6R1lQZkViTEV1emtJeWNkbENjc0lteFZIZ0hSZ254dHllZy1Sc3doUlNqNGJMRUZNTzlMbjdMQkNjWjB5OWFHQkktLUVwSjRrMDh1VWZDX2U2MWtJSWtUTG9qdkhEX1BaTzJoOHFoQWNQcTlQT1lwRjc2NHhHalFhLVJjVUtQdjNrNTRoZTVuYjBCWnIxSjRVS0VReW54eWdiSnpTOGpFWl9QaTV2bG1zQVVzUmVyS3RHRVBHUnFOOUdnNlRrejNfS0ZJalg4NlU5Yk5lZTdzcDBDSkMzbmtkRVl2c2ktd3I3N293Sk1iNmUtbjVDM2l1bFUwZ1JBenJRQmpPZzdDM1FNa1ZTaFAzZE9YWmRaN2k3S0lTUk5MV1FZVTR1ZXBlMVhQZ2pYTk1SZjdMRmxlMmlCZVRsdFBDaDN6VU1Lb3RrUkxSempmN1VFZksxTEc0NXc0aXpSS0UtY2Q3NHJKbl9HLUtFVXdpMk1SU1BaRVE?oc=5"
+  },
   {
    "t": "بعد أزمة الأرجنتين في مونديال 2026.. فيفا يوقف حسام حسن وشقيقه و\"زيكو\"",
    "src": "الجزيرة نت",
    "u": "https://news.google.com/rss/articles/CBMiywJBVV95cUxNMFVSXzFFMmZHQzFyd1d1bHNBbkNPMlFvUGtLbmN6VFdFZ1I4VzFjbDZHRnVKTF9PLXk3MmkzUG5URUFZbjFLdHdhYnNtQ1VmQ21QTV95Umt6N2hRZ2FvYVQyQW1lb3JIc2VDWUlTaDh1TGNadDdxcVNCTzVGZzZhTWkzZmszcHByS2FJLVYxdmtSbnBpd1FvWW5tWG93WEdRVzJUU2JDVU1hVnFSWk10eEpPMkVjWGVBd21VQ2E0UlVFN1MwZEZwZjNFMlF3UUlyc3Rnc3RpbWhWZ0NDbUJmQXkzejZZN0xKbVJzMXlKZXpKQ3FYOXVqS0RuUUhaSmdCNUl1QmdiM1FRYjR1bFJNd0NZUDZVTVo0UC1FMDNMdmFuQTFGS1NOVlVQTndOeXJJZDVKbExkakstRWlNTnNaSy1KcnNPSEZMMldn0gHQAkFVX3lxTE85RGo2amFrZkNzQkpfbGdNUUttWVZkdHRTTjQ2akpTR24wNkEwSjJiaXFPTW85RFhqMUtRRTRSVUR0cVczRFJ1bUo2N1lfM01MQjlwQ0N0RTBPTnhQaDRwand0eUk0VGdjVFVwNWs2ZS1Zbmo5dUctN2pEVFhYTE8xclFfd3RJZnVkMTlzVG5WNmhTM3p4MEhocVl4OTlwREZyT19fbDFzbVJqbE9JbGM4c1ExZmU1REhqd3dMeEdKY3paSzhfaVVMb29wcVlfdTVMa09NbENYQmlNdjdEeG5QcTlXcXV0c2pNV0ZQOG1BSGxKNU1nbFNna2toWTJ3U2c0TFhraWVVVldsQjZwTWt5UEhZOHcwbnFCQV9jLU1pc1BlNGJRY2tWWWhNLTRIVEstMDRvOWFfMzJMYklFOFlHNlNES3c5VWJlNW1odV9jZw?oc=5"
   },
   {
-   "t": "فيفا يعاقب حسام وإبراهيم حسن وزيكو بعد تصريحات ضد التحكيم في مباراة الأرجنتين مصر",
-   "src": "DW.com",
-   "u": "https://news.google.com/rss/articles/CBMikwVBVV95cUxOUUxWSDl1WGpyTEUwZFByQ2I3bHlWS0drem5IdkFLUWIxcktqQ2xUTjVKMVplc1BWZEFtQ1djLW1UaFVOSHREZ09XaksxUjBuMHJwSVNVTEhEX2Z5bHlaRWVoYW9jQ1NEdV9zSWhDd1NybWY4WkpwRVpLaEllTWd3Y3otdzliVTZTSXJ3M044UEdVWjJjZS01N3RNLXFLdzV4OU92V3N1UUV0NHh6MTJrN2RWTHgzazlIS0RrbExkSzBkbjB0WU9PVW9mbUQ0dmJ4WjdpRkxfMUxoYTlieFdZYy1qMlBsNk9jRzAwZ1FNYTVBTFR6RkVFY202UUJIUXNyZEhQQzZ2Z0dSbWMzZkpwWjNoZmtYdFlublM4SGJLUklnUnhvOFpXRFY1aWJld2YyRHpySDVoT0hhNkZPYUJ0UldZcmRwZm1pTVhlQlhOQldOS2JKYlhvQmRGT0VReTU0WVhNUy1hSU1wNmF1UXk1djlqWjBELWc1VnNnM1NfaWhCWnBCNVA4cUZDWDhNTXk0N1FyVzhJWUZobnY3SHl4ZzRSUnNCcFZzRllyYzNUM05zVVRtZVZtOGdiQllBeDg4SF9MaFk5ckFZVGc0RExMYlVNRUgwc01uQTdoakFBcnJKNVN1WkUtVFR1NHNPWG5pOTZKeFV1aVpCdW5iMzBBeXN3U0IzYW1xa0pJVXJES2RwbmlpMUI0NDFteHgzSFlVazNfaTJqQXRLRkx1ZlRTblFoSk15Y3FqSDk1VGt3d1d2Mjg4b2FmOU5QTFFaV0JtdW03anpGSmlGejgxWUJsekh4dUx3d0ROMEIzek9jQUtUSURvOF9zX240bHZtSU42NkVwRVZFY192M1A2OGZnSHBfZ9IBkwVBVV95cUxQajhFWG1vd05HVDZoXzFJMUNOQkowWC1EeFNVTHY5YzJQZDI1M0IwMWZsLWdETnVTWklvTWNVbFVJMjUyU1ItakdZcjFCWVRXSGwtSmZGekQwWlVVZllqN0o1RjRFXzhhU1VRS0ctbVBpMEE2Y01jMEhLekxGLVRvcnByQVVlWUxFR09DbmJNMmJObU1DWXFxeXBjRGZibDl2OTgzRHBSQ2pFNTRrRkNmdFhHZFFtTTJMWkNxZzFxM2hfMVR3T0MzTThMLU9qdTRRbThKME9QdU52eXJtTXVUTDVrN1NsU0loT3h1d3diaFlpQXNadkR6NDdCSC1TV19oc1BaZ3NhU2JWZjhXQ0JPaXhvZ25DMTJ3OWMwYi1fc2FaVUxXc0F1YWxlR29UV1ppUHkzQWhzSFNzeGViSFhNUllnZmtDUTVxdjdBQ0JEWk5WM085c1RUZURhQmRac2JYUV9IeVE4Z19BenNhSlRKYWxVWXBXQXNma0UyUEZYT2ZQb3VYcnp5SVZfTnBBN0RTa29NZ2lseUxIYWlKeDBxZW0zMTRqRnRyR094NTBVN0I2ZnFpdTI1dm1VbDlEbU91QVZhSXBUR2RJYTZlSjZvcDlrTzJMSkVBS3ZTb3RrSUtBVkZxRHM1QV9SeEdoVkRHVWFocWNBUC1PNWxZcGFoQURMVEdzTW9pM182R2JqSnV5ODRrcUE0eXA3RFFkaF8yNWRlclNUaDVmanY3cWxEOE8zNjdKSkVPS2FaTDVoRGhCZVlsOUhCVW1FcjlvdzVwcm40QlFBakp2bnFYZ2pTLUpzdUpuOWVnbTJabU5XbTJUZ3FhMzJMeThaMmpVTHZkNHRyY0htU1FKdC02eS1pdFVMQQ?oc=5"
-  },
-  {
    "t": "كأس العالم 2026.. 10 قضايا أثارت الجدل داخل وخارج الملعب",
    "src": "قناة الغد",
    "u": "https://news.google.com/rss/articles/CBMi1wNBVV95cUxOd1lLYXNXVmR3QjNKRjlTeEp0S0UydEpieExUU3Z4c0M2QlVqNnhtV0xLbF9VMEFyN0R1X09Ec2lXcnRhY2dyRkRTRTJ0MzBkR19HeG9aMW4wX0JnUUk0dmxpODdSQmtrUC1oXzhpTlZSNE05V2FIVE1vU2FyaldUOF9zQVBxVzAyZEoxOWsyTy04b2IwdGM2M0hYc3NIYmJVSXJjeVlKb0VOT2RycFZPUHlUT0xkMUhFdjBwamFfa1ctWGdVZHBNd2hRdVR5aEhiSlJ0RFRVbnliOW43ZTNEbTVzSjlaQ3o5bTYwTVc0VkY5Tnc5S2RvVHNTeXpVcFRiQVVwLXNHZTM3TjdvVEt2NEhDVmRBMFVvSGN2TlR5MVpFUjVMNlprYnZxQjR1Vjk3OFVVekZnSEg0Snk0NEFiQVUxRlBRZmJGcUFmZjJMTjhfSUJ3clFpUU1vTzhRVlJTNGdwcmNtMERNQTJFLTZ4dnoxZ0pPaUlWTnhmVG5iSElwc2tqM2VfcG5TRmVOVzE5VlRIdnFLYnpmc1hGOGV5SmxjZVlBTmJvUmFYLWNuZWEtQ3lZa3l6M3c1S2JNLTRkcW1HWWNFYW16QmM1cFg4bmpaS0s2aTg?oc=5"
+  },
+  {
+   "t": "فيفا يعاقب حسام وإبراهيم حسن وزيكو بعد تصريحات ضد التحكيم في مباراة الأرجنتين مصر",
+   "src": "DW.com",
+   "u": "https://news.google.com/rss/articles/CBMikwVBVV95cUxOUUxWSDl1WGpyTEUwZFByQ2I3bHlWS0drem5IdkFLUWIxcktqQ2xUTjVKMVplc1BWZEFtQ1djLW1UaFVOSHREZ09XaksxUjBuMHJwSVNVTEhEX2Z5bHlaRWVoYW9jQ1NEdV9zSWhDd1NybWY4WkpwRVpLaEllTWd3Y3otdzliVTZTSXJ3M044UEdVWjJjZS01N3RNLXFLdzV4OU92V3N1UUV0NHh6MTJrN2RWTHgzazlIS0RrbExkSzBkbjB0WU9PVW9mbUQ0dmJ4WjdpRkxfMUxoYTlieFdZYy1qMlBsNk9jRzAwZ1FNYTVBTFR6RkVFY202UUJIUXNyZEhQQzZ2Z0dSbWMzZkpwWjNoZmtYdFlublM4SGJLUklnUnhvOFpXRFY1aWJld2YyRHpySDVoT0hhNkZPYUJ0UldZcmRwZm1pTVhlQlhOQldOS2JKYlhvQmRGT0VReTU0WVhNUy1hSU1wNmF1UXk1djlqWjBELWc1VnNnM1NfaWhCWnBCNVA4cUZDWDhNTXk0N1FyVzhJWUZobnY3SHl4ZzRSUnNCcFZzRllyYzNUM05zVVRtZVZtOGdiQllBeDg4SF9MaFk5ckFZVGc0RExMYlVNRUgwc01uQTdoakFBcnJKNVN1WkUtVFR1NHNPWG5pOTZKeFV1aVpCdW5iMzBBeXN3U0IzYW1xa0pJVXJES2RwbmlpMUI0NDFteHgzSFlVazNfaTJqQXRLRkx1ZlRTblFoSk15Y3FqSDk1VGt3d1d2Mjg4b2FmOU5QTFFaV0JtdW03anpGSmlGejgxWUJsekh4dUx3d0ROMEIzek9jQUtUSURvOF9zX240bHZtSU42NkVwRVZFY192M1A2OGZnSHBfZ9IBkwVBVV95cUxQajhFWG1vd05HVDZoXzFJMUNOQkowWC1EeFNVTHY5YzJQZDI1M0IwMWZsLWdETnVTWklvTWNVbFVJMjUyU1ItakdZcjFCWVRXSGwtSmZGekQwWlVVZllqN0o1RjRFXzhhU1VRS0ctbVBpMEE2Y01jMEhLekxGLVRvcnByQVVlWUxFR09DbmJNMmJObU1DWXFxeXBjRGZibDl2OTgzRHBSQ2pFNTRrRkNmdFhHZFFtTTJMWkNxZzFxM2hfMVR3T0MzTThMLU9qdTRRbThKME9QdU52eXJtTXVUTDVrN1NsU0loT3h1d3diaFlpQXNadkR6NDdCSC1TV19oc1BaZ3NhU2JWZjhXQ0JPaXhvZ25DMTJ3OWMwYi1fc2FaVUxXc0F1YWxlR29UV1ppUHkzQWhzSFNzeGViSFhNUllnZmtDUTVxdjdBQ0JEWk5WM085c1RUZURhQmRac2JYUV9IeVE4Z19BenNhSlRKYWxVWXBXQXNma0UyUEZYT2ZQb3VYcnp5SVZfTnBBN0RTa29NZ2lseUxIYWlKeDBxZW0zMTRqRnRyR094NTBVN0I2ZnFpdTI1dm1VbDlEbU91QVZhSXBUR2RJYTZlSjZvcDlrTzJMSkVBS3ZTb3RrSUtBVkZxRHM1QV9SeEdoVkRHVWFocWNBUC1PNWxZcGFoQURMVEdzTW9pM182R2JqSnV5ODRrcUE0eXA3RFFkaF8yNWRlclNUaDVmanY3cWxEOE8zNjdKSkVPS2FaTDVoRGhCZVlsOUhCVW1FcjlvdzVwcm40QlFBakp2bnFYZ2pTLUpzdUpuOWVnbTJabU5XbTJUZ3FhMzJMeThaMmpVTHZkNHRyY0htU1FKdC02eS1pdFVMQQ?oc=5"
   },
   {
    "t": "\"فيفا\" يوقف حسام وإبراهيم حسن وزيكو على خلفية مباراة الأرجنتين في مونديال 2026",
@@ -280,14 +285,14 @@
    "u": "https://news.google.com/rss/articles/CBMisgZBVV95cUxNSmtqRXp0Qkx2eFNTemhRUjJXQUVjQkpHeC1uWGU3WEZCZmVxZFF3VFUwRy1GRUZjRVVvV0xMQTVUWWxTenRySXRlTWdXUFBway16ZWZnN2h1czVSdXdHZGFoUXlMekljMDdVUzJJVldsOGlTOTN3QlVkTFhKUGNGOE81NHA3VmU1Z1hpYldybFM4ZC1zUlgtVF9YcXFLTlJHYzNsXzJuSTQ1UklBZTVyY0xjV1p1SDZYUW9YQThGaDlUQTk0THlPLUdFd25aa3NBZ3JoaFo1TlpZbWpqV2ctcGUxN2Y3Y1p1Y2NvVlpnYlY4OFlhQ1QxYkhOYjhTV1N2Q2FDT3ljY2NBSUhvS0xGc28xd0x5MTE5YkUtUmF4b2VZOTlzVjlrS3hMeEh2eThPZDdIakFIMEV1NEs0X1oyRUo4TlhpLTBCTnpZWnkzLXptN3Z1TktQRko5RUNVQTNKX2NLT2JwTlpFN0tKTHFaUWJobVZac2hLdm9kT0RsRDBZQm5uU1Jid1l3NWZxYlpObll4TXEyUUYzXzBRYWp5TFQ3ZTlHWG80ZUVuM0stV3d3LXBxZjhEc1RFZmNWM09ZMUNuZVJEaW9SZUZ0dy1UMVd2RUNFVWZqZ0R4WUJpaWswVDFRVG44TG92M1F1enNnV1BPdmNaRXVqVGEwTkJNQVFDVEZrdWY4cTRTZUtNVDJrd0p1cjZRei1wck5ocGV5a1dOSzFYVnpUcXlTNFRjV0Y2U1NVRkQzR3EtdXVzMkFqWnlvM2JacDZUbEtuSkxIX3hISDB1ME5zSUxLV3RRR1dnbFlDU0dKZjh3enNKczFqal9SV1F0ZkFTdXJZUHhwbHp1cnpRV0lRNGVOXzN0ZEFCcU9WaDItbUEtWUJfMGxMZDNGUEpKVGpoODJVdVRzZVBZRHNYaUZfN2hlQ1ZHbU9NLURpbDFhVkxfSmhnUGJYM2s5aVdoM1JhSzZmNHJVVWFDNTdTYWhkUTZoYlptX3g2VzhBSFliTlVyOFlSSml0UUx5NUVmVWNZdVhCLUJNUHVJSGt3aHIwVFhLal9rOVJGVTJXVktBTFFaNC1JZUxKZw?oc=5"
   },
   {
-   "t": "\"فيفا\" يعلن العقوبات على حسام وإبراهيم حسن وزيكو بسبب أحداث مباراة الأرجنتين",
-   "src": "نجوم إف إم",
-   "u": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxNazJuSmlRTG5qb3hRYllYWEI0RnNiNlVKOHk2WTZlZ2NrNXBqLVFOd2FmNnhLT0JZYnlSYlhodGRQMW5tM1NwZ2JQMDh0RjFtcDJULUstZWloanl0TzBtTldaLTcyNExVdDREYTNadXZwdDlfZ093SURyWF9oQXo2RVVoOUhBemRDckg0YVJYQXJyNHN5dHh5RVRDb0VtbkhtR01ITTFXNmZ4ZFZyM3JsVHNvUVBXVndyV1Y1NkNlQXJSMFFCLV9nX21kVGlWR25xUTd3bWQyNXlYczJTTmhiV2dKc0VqdXgtOFd6UmN5aXRWcmJXdm82TlBSZnBQdThfN2xuclhPc2JkeXhxbVhUSkZ1VVdxcFh6a3Z4LU9ZQUdLNzhVNGVoUmJNVTNXcG5vaE5NUXNFZ0dQWEt2Sk1WVGFzSzBmdUl4?oc=5"
-  },
-  {
    "t": "فيفا يقرر إيقاف حسام وإبراهيم حسن ثلاث مباريات وزيكو خمس مباريات بسبب تجاوزات في كأس العالم",
    "src": "القدس العربي",
    "u": "https://news.google.com/rss/articles/CBMixwJBVV95cUxNS3BZeWZSVlN5MkM5cWM3V2JLQVZIcTl6Z01xSHZKSS1rSGRKb1o4R2RHT2piYUZ0UG1seFNMQUxYei0yZ0JnQ0tKSFZqdF9pdUJJT05xX2JFQWxQX1BBZnhPbXJRRjFDLVREeFJoeEFMRlNBa3ZWT1k0NEpMay12MXNXRnBrYXdCU2V2eDRkNm9GdUFwbEN4NTVnMDlxeTZhdTRvSU4yU2E3a3htUDdzaW9FOGxIZGc0N0lsN2lhaVFGemxDeEluVW1IX3Rmc0JLcXBXa3NNZlhINXJLTk5oLW13QUVwbWVUd3h4QmtMbGIyelFkaEZDV2hrMlY4alVDVGYxanRqS1VfcUNMeV90bTNZU1ZaV2hPYzJPbDlZVWVSeTVVaUVyY1JMa0ZQZVlURXZ6bWFJbnU2aDBZclpjX2ttSzNKOTg?oc=5"
+  },
+  {
+   "t": "\"فيفا\" يعلن العقوبات على حسام وإبراهيم حسن وزيكو بسبب أحداث مباراة الأرجنتين",
+   "src": "نجوم إف إم",
+   "u": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxNazJuSmlRTG5qb3hRYllYWEI0RnNiNlVKOHk2WTZlZ2NrNXBqLVFOd2FmNnhLT0JZYnlSYlhodGRQMW5tM1NwZ2JQMDh0RjFtcDJULUstZWloanl0TzBtTldaLTcyNExVdDREYTNadXZwdDlfZ093SURyWF9oQXo2RVVoOUhBemRDckg0YVJYQXJyNHN5dHh5RVRDb0VtbkhtR01ITTFXNmZ4ZFZyM3JsVHNvUVBXVndyV1Y1NkNlQXJSMFFCLV9nX21kVGlWR25xUTd3bWQyNXlYczJTTmhiV2dKc0VqdXgtOFd6UmN5aXRWcmJXdm82TlBSZnBQdThfN2xuclhPc2JkeXhxbVhUSkZ1VVdxcFh6a3Z4LU9ZQUdLNzhVNGVoUmJNVTNXcG5vaE5NUXNFZ0dQWEt2Sk1WVGFzSzBmdUl4?oc=5"
   },
   {
    "t": "مباريات يغيب عنها حسام وإبراهيم حسن بعد قرار فيفا بإيقافهما",
@@ -295,19 +300,14 @@
    "u": "https://news.google.com/rss/articles/CBMilgRBVV95cUxPYVRoTk81OVh6c0tLUmFnb2ZVOEtMRjE0MkxGeTYyMHF1TTE0ak5pUk5TY2dfQTVuRHItR0pjMkRMbm50dGZkVUdEWEYxbk5JM2FVa1NmdWtPLURTSFo3SlNWeU1JUXpVY2I1b2tmb29JT09fSE9yZEplWGY5Zl9BaGY5VDZFV1BWbFRMOGVhNXhVaXBBTlZMYWFKcFdiVmotYUQ3NzlyM05yTG5OMHRZbHZCdk1EX2dhcGtLa1BMVVFYVHdMTVVkTFlfLXZuMmpiaFZGOWJFbkVRbFVjVmNsMG5VMWhzeWFuNDlyajRXclVIZUVGeFFTdXM4cWhzbmhaMWpid3U1cl9KWWMxbmI1S1Q5N0EwQk1zanlLVjZ5cDA1cXE2czd6d0dSVkUzcUk1ZWxCTmMzbFZlcWNUWUxuUk5maGZ6MUU1ZmMwVktENXRqU3ZsaThhb3ZLcUxzN2NZdkJwcl84LVI5SzlsU1dxbk1nMGlQTE5VZVBWdzBxMTRKRTVFbVRGdWlJQWIzeXhHSVhMaGdNMEcwY3ZOdWM3Wi1xZ25oSDVuZVJHQ0YwdVhGWVpVUkhmWWN4UUNWXzBDV3VWbFRoMFJQYWFjekN4dFl6UDBrQzE4SUJQalhYMG15bDk4NzVXYVpXMHlqSGRteHExVkt1ZFJYODJMUm0yazE0S2h6RjFrTkZkOTVyOUJIbVV3ZUHSAZsEQVVfeXFMTUlIUmRKNVJndEpOT3kwajFxRDBIRjdwcWNUODMya0lfNXlTSy1weU9ZZGhnczdYNjRna3RJclFVaUN3VU9uenhwR3NZT2R0SXZINHJ0bnQ4NDRMTlJQZnNSMHdTVUs5aTQ2WUJPUWYxT3diN2w2LVJfLXVBOWV5NjY5bWZuWEEwc1R3bE1yaEVaMzd2ODI5WkZWbjF0dVJ2V2tvLXN5aUVFQkN4RFRTTFBfVmFIQ0ZSZUJrRWRQSkhCNkVycVhQeFduUWRJS2I4b01TZ0xVdUFPZFhiV3F6UThhUW1INlRYWks5SzRRa3UzRTZnakNSRHdTNjJtQ0oxbDJlVlIyQzdySWtvSlIxUkVLUHp0MDRGYmtBWGhxblhmZVFjVXFwa1ZJemFQOFd3RmM1Um5tUUZLUnNBc1l2UnpkaDgzVUZ3X3htTnRIcnlBVTc2SGZiZnNpR0VIY1VKckh4VllxcW5KMkdfSTdTMDVZV2xLTXoyMkNNTVoyM1M2SmxhQ1VnY05NMTZQTVR4YmNSU0xEMUg1YUhsa0d1Ykp1RXVPRUhLNlhkQWlnNEZSMk1nUGE2ZXI3Wm5SaTdaaWRSWHE2c1d2QjVWU01EcHVSYkFYWEQ5OFdIOGEwVXk3TWhrWS02VERVV3JUY0EybWFqTm00LTRUSDJvbkRiZkJCaklxamp4X3REQUt3ZjU1aVpadFV5R2d0emM?oc=5"
   },
   {
-   "t": "104 مباريات بمشاركة 48 منتخبا.. انطلاق بيع تذاكر مونديال الناشئين في قطر",
-   "src": "الجزيرة نت",
-   "u": "https://news.google.com/rss/articles/CBMizAJBVV95cUxQcjQ2dWFTSTJWd3NNVU5oUmhObjNCWWgxdXRzdklsRWE3S2xncVhraHhaNUNtRVlRaUNoWWFPX25XUm5mcWxLODdUTy10X280ZkVDZm8xTFBjZkxJRlN0VzAtTWdrSFZkTUpvaGs5ZmtyY1UxblVFX2JZSTh4ZW9YaHhSZGgxZHBRQVNTV2N5T3YtQy1CTXhaMGR5cW9Qb3AzUFU3WkhPQS1mT0VHaXY0WXJBOVRUUHFkX3luNWpjXzlVWmFpVnphYkJkdnpDR0VpRmI3NUFCcmdibmVpQmg3QTVqTlA2eld4RHVYRGVBbW9NUUl1b3g0TExHVC0wQTRWTURkbm5uNTh4amd1N2xxeHY1ZXRGS0RtWk5vSFM2TWp4MDlNZmJXbXNmXzhfTFZmLUxraHdvSXJZZUE1NTdUMUNkd3hoNVdTR2hiYdIB0gJBVV95cUxPNTNsRUVab2tCR0F0d252ZV80NlNEa0E0ZktYYmc2UGphclBLeXJRQjVqbmM5aGFGcWc4WTFYRXJ0Q18ySlRwMXdweWtpRGNUcjhHeUtsOFkycHB5RTQ4R05DVjM2d2lyOHBTVGYyTm5WLUYwZlhMLUt3c1RJNjNFRlYzZm9QSXdvNm1xMGpBR1BORExWVmJ2X3RjaVVsWk1URElfOEE1eFMyYmhKZHlqaTV0cmJOcU16RmFBaXd6OHZjRnMybGV3WXFud1NyOElDS0dRaW9WNE9ocHZncXY0OXJDaWVKRlUxSGhQME55d0NWc0dpMmVhOURPWkVHd0d4YlQyOFJXNG8tWnFTVjE0bXRKVzhlUDBBck5LeEZWWXUxdHZaZGliRHJ1ODVLbkpreGJRdW93S3hfdGwtLU84aDZSbExKZ2czeXUxQWJKNTJTUQ?oc=5"
-  },
-  {
    "t": "^[KOORA TV] مباراة مانشستر يونايتد وليدز في كأس العالم 2026 بث مباشر",
    "src": "Universidad de Córdoba (UCO)",
    "u": "https://news.google.com/rss/articles/CBMikAVBVV95cUxOU1Y0NXRMdVBlXzNjX2h0Nk1UZ3RrRlBpR0FBSDI5Vnl6cUZuZzEzOUQzYjdIWFo4T3N2eDNqZ09rX19URWt3SXBGdnowYTR5R1dhUnRBVS1BSGhSTzlJMjFmRDQ5X2x5M0xsUk42Qk9TX2xOOGVoUG1mNnN4RVFkX1Z1TFNZX2tudWNCRU1SVlpxZjhINWhmVnZwZ25wc0FBcXJCUTU4d0NiRVQwM2VPNkEwN0xRQkh2dzN1M3luT1pnSlZwMmh4WkRpYW5yMk0zTHhuNVhZaFF5Z3MyUG5oYnlyYmRKNWc3V1Jxb3dHYzhDbDdvSWlsajZnUlRtWDdsRzYwZzdZOFJqRDVYdGtvTEtwVGZLX3lHQnhweG9DYkRwNVBRTWRXOHdZRkRMQWJMWGx4R3NpVnJnS0kwYmtVYkE0TVhTUTJRRGExWW5HU2xabVBrdXdhd0ZYU1dLYWhxRVRlZzN4MVVZVlJFZXZJNERXWmk1NzFQUG5URlAzdXNsRU9tVnNmejdKbm9peDJBUVJsd2lBRlN4N0taMEJrNWpfLWpyNlpKZ1pRTWdYazBwQTRiNTN2bkhqd3pLNEFVZXMyWEJvN3pnaS1seHBvckJpRVZaajZSQ09jQTR2ZzVRSjNLMHFCWndJQUxVbTRiakdCWWtUOVhrb1FtcDZfSEFwbDVGZW8wUWlwb0hyejVJNVBBdHhJcHpKU0xRWDctVk9Wd3ZVbi1BRVNBbUJyYlhSMGJTUnpTTEhHSTZuNlZXUjRaSG5GeEVFcE0ycjZWamNjVGxZdHpiUEY1ZkNfYnVvNGN2V3I3M2p6TVUtajRVd04xQzdHN0NwOU00V25oNTF2TEJtNC1Bc3JrX1FKYg?oc=5"
   },
   {
-   "t": "متى يعود حسام وإبراهيم حسن وزيكو إلى منتخب مصر بعد عقوبات فيفا؟",
-   "src": "https://www.youlyou.com/",
-   "u": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE1lajdWeHdwdlRzVzFCV3d3cGVRbzhKNlN4TWhJSGZhN0JDblduQzFsbnlUVHpPd2JGcUdaSUZWQU9DX3c?oc=5"
+   "t": "أخبار المغرب العاجلة",
+   "src": "https://inews.ma/",
+   "u": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTFA3SEtIVndIbkVtcFpnYnE3eC0yWjFrLUluWjFxaXd1QkVkOU9OY1ZkWl80U1dXS1Jvd0VFUWtjd1lrenM?oc=5"
   }
  ]
 }
